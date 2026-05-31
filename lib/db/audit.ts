@@ -18,6 +18,9 @@ export type AuditAction =
   | "ai.review_generated"
   | "subscription.updated"
   | "payment.recorded"
+  | "billing.checkout_started"
+  | "billing.portal_opened"
+  | "billing.webhook_processed"
   | "data.exported"
   | "entitlement.denied"
 
