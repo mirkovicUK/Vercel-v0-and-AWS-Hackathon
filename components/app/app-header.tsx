@@ -11,7 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { ChildAvatar } from "@/components/app/child-avatar"
-import { LogOut, CreditCard, LayoutDashboard } from "lucide-react"
+import { LogOut, CreditCard, LayoutDashboard, ShieldCheck } from "lucide-react"
 
 export function AppHeader({ email }: { email: string }) {
   return (
@@ -43,6 +43,12 @@ export function AppHeader({ email }: { email: string }) {
                 <Link href="/billing">
                   <CreditCard className="size-4" />
                   Billing & plan
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link href="/account">
+                  <ShieldCheck className="size-4" />
+                  Account & privacy
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuSeparator />
