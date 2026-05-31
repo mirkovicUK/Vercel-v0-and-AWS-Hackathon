@@ -38,7 +38,7 @@ export async function startSubscriptionCheckout(): Promise<{ clientSecret: strin
   const origin = await getOrigin()
 
   const session = await stripe.checkout.sessions.create({
-    ui_mode: "embedded",
+    ui_mode: "embedded_page",
     mode: "subscription",
     customer: customerId,
     return_url: `${origin}/billing?status=complete`,
