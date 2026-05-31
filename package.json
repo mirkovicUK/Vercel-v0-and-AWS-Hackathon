@@ -9,6 +9,8 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@ai-sdk/amazon-bedrock": "^4.0.111",
+    "@ai-sdk/react": "^3.0.195",
     "@aws-sdk/client-cognito-identity-provider": "^3.1057.0",
     "@aws-sdk/client-rds-data": "^3.1057.0",
     "@hookform/resolvers": "^3.9.1",
@@ -40,6 +42,7 @@
     "@radix-ui/react-toggle-group": "1.1.11",
     "@radix-ui/react-tooltip": "1.2.8",
     "@vercel/analytics": "1.6.1",
+    "ai": "^6.0.193",
     "autoprefixer": "^10.4.20",
     "aws-jwt-verify": "^5.1.1",
     "class-variance-authority": "^0.7.1",

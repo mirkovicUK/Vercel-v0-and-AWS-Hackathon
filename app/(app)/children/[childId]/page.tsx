@@ -12,6 +12,7 @@ import { ChildAvatar } from "@/components/app/child-avatar"
 import { TopicMasteryList } from "@/components/app/topic-mastery-list"
 import { SessionHistory } from "@/components/app/session-history"
 import { DeleteChildButton } from "@/components/app/delete-child-button"
+import { ReviewReportDialog } from "@/components/app/review-report-dialog"
 import { ArrowLeft, Play, AlertCircle } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -50,8 +51,9 @@ export default async function ChildDetailPage({ params }: { params: Promise<{ ch
             </p>
           </div>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <DeleteChildButton childId={child.id} childName={child.displayName} />
+          {hasActivity ? <ReviewReportDialog childId={child.id} childName={child.displayName} /> : null}
           <Button asChild>
             <Link href={`/practice/new?child=${child.id}`}>
               <Play className="size-4" />
