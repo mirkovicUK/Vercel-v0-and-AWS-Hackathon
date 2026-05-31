@@ -198,7 +198,7 @@ const toneStyles: Record<
   "strong" | "developing" | "needs_focus",
   { bar: string; badge: string; label: string }
 > = {
-  strong: { bar: "bg-accent", badge: "bg-accent/15 text-accent", label: "Strong" },
+  strong: { bar: "bg-success", badge: "bg-success/15 text-success", label: "Strong" },
   developing: { bar: "bg-primary", badge: "bg-primary/10 text-primary", label: "Developing" },
   needs_focus: { bar: "bg-destructive", badge: "bg-destructive/10 text-destructive", label: "Needs focus" },
 }
