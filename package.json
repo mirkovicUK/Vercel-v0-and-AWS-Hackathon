@@ -9,6 +9,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "^3.1057.0",
     "@aws-sdk/client-rds-data": "^3.1057.0",
     "@hookform/resolvers": "^3.9.1",
     "@radix-ui/react-accordion": "1.2.12",
@@ -40,6 +41,7 @@
     "@radix-ui/react-tooltip": "1.2.8",
     "@vercel/analytics": "1.6.1",
     "autoprefixer": "^10.4.20",
+    "aws-jwt-verify": "^5.1.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "1.1.1",

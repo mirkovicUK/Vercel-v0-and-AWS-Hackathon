@@ -4,6 +4,7 @@ import {
   Hero,
   ValueProp,
   HowItWorks,
+  ProgressShowcase,
   Features,
   Pricing,
   FinalCta,
@@ -17,6 +18,7 @@ export default function HomePage() {
         <Hero />
         <ValueProp />
         <HowItWorks />
+        <ProgressShowcase />
         <Features />
         <Pricing />
         <FinalCta />

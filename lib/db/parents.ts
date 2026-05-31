@@ -55,6 +55,22 @@ export async function upsertParent(input: {
   return mapParent(row!)
 }
 
+/** Record the guardian / age attestations during onboarding. */
+export async function setAttestations(parentId: string): Promise<Parent | null> {
+  const row = await queryOne<ParentRow>(
+    `UPDATE parents SET guardian_attested = TRUE, age_attested = TRUE
+     WHERE id = :id AND deleted_at IS NULL
+     RETURNING id, email, guardian_attested, age_attested, stripe_customer_id, created_at, deleted_at`,
+    { id: parentId },
+  )
+  return row ? mapParent(row) : null
+}
+
+/** Soft-delete the parent (GDPR). Cascades to children/sessions via FK on hard purge. */
+export async function softDeleteParent(parentId: string): Promise<void> {
+  await query(`UPDATE parents SET deleted_at = now() WHERE id = :id`, { id: parentId })
+}
+
 export async function setStripeCustomerId(parentId: string, stripeCustomerId: string): Promise<void> {
   await query(`UPDATE parents SET stripe_customer_id = :cid WHERE id = :id`, {
     cid: stripeCustomerId,
