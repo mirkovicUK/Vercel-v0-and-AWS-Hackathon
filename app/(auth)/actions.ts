@@ -18,7 +18,7 @@ import {
   getAccessToken,
   getCurrentParent,
 } from "@/lib/auth/session"
-import { setAttestations, upsertParent } from "@/lib/db/parents"
+import { setAttestations } from "@/lib/db/parents"
 import { audit } from "@/lib/db/audit"
 
 export interface ActionState {
@@ -83,12 +83,31 @@ export async function signUpAction(_prev: ActionState, formData: FormData): Prom
     return { ok: false, error: parsed.error.issues[0]?.message ?? "Invalid details." }
   }
   try {
-    const { userSub } = await signUp(parsed.data.email, parsed.data.password)
-    // Pre-create the Aurora parent row keyed by the Cognito sub.
-    await upsertParent({ id: userSub, email: parsed.data.email })
-    await audit({ action: "auth.signup", parentId: userSub, detail: { email: parsed.data.email } })
+    await signUp(parsed.data.email, parsed.data.password)
+    // NOTE: we do NOT create the Aurora parent row here. The account is not yet
+    // verified, and creating it now would persist orphan rows for accounts that
+    // never confirm — and couple sign-up to a DB write that can fail. The parent
+    // row is created lazily on the first authenticated visit (see getCurrentParent
+    // in lib/auth/session.ts), i.e. only after the user has verified and signed in.
+    await audit({ action: "auth.signup", detail: { email: parsed.data.email } })
     return { ok: true, step: "verify", email: parsed.data.email }
   } catch (err) {
+    // The email already has an account. The common case is an UNCONFIRMED account
+    // from an earlier sign-up that was never verified. Resending the code only
+    // works for unconfirmed accounts, so try it: on success, route the user to
+    // the verify step (recovering the loop). If it fails (account is already
+    // confirmed, or rate-limited), fall back to the friendly message.
+    if ((err as { name?: string })?.name === "UsernameExistsException") {
+      try {
+        await resendCode(parsed.data.email)
+        return { ok: true, step: "verify", email: parsed.data.email }
+      } catch {
+        return {
+          ok: false,
+          error: "An account with that email already exists. Try signing in instead.",
+        }
+      }
+    }
     return { ok: false, error: friendlyCognitoError(err) }
   }
 }
@@ -135,6 +154,13 @@ export async function signInAction(_prev: ActionState, formData: FormData): Prom
     await setSessionCookies(tokens, parsed.data.email)
     await audit({ action: "auth.signin", detail: { email: parsed.data.email } })
   } catch (err) {
+    // If the account exists but was never verified, send the user to the verify
+    // step (with a fresh code) instead of a dead-end error. This recovers the
+    // common "signed up, closed the tab before entering the code" case.
+    if ((err as { name?: string })?.name === "UserNotConfirmedException") {
+      await resendCode(parsed.data.email).catch(() => undefined)
+      return { ok: true, step: "verify", email: parsed.data.email }
+    }
     return { ok: false, error: friendlyCognitoError(err) }
   }
   redirect("/dashboard")
