@@ -3,6 +3,7 @@
 import { useActionState } from "react"
 import { forgotPasswordAction, resetPasswordAction, type ActionState } from "@/app/(auth)/actions"
 import { SubmitButton } from "@/components/auth/submit-button"
+import { PasswordInput } from "@/components/auth/password-input"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { AlertCircle, MailCheck } from "lucide-react"
@@ -49,7 +50,7 @@ function ResetStep({ email }: { email: string }) {
         </div>
         <div className="flex flex-col gap-1.5">
           <Label htmlFor="password">New password</Label>
-          <Input id="password" name="password" type="password" autoComplete="new-password" required />
+          <PasswordInput id="password" name="password" autoComplete="new-password" required />
           <p className="text-xs text-muted-foreground">
             At least 8 characters, with uppercase, lowercase and a number.
           </p>

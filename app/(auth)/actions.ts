@@ -92,20 +92,17 @@ export async function signUpAction(_prev: ActionState, formData: FormData): Prom
     await audit({ action: "auth.signup", detail: { email: parsed.data.email } })
     return { ok: true, step: "verify", email: parsed.data.email }
   } catch (err) {
-    // The email already has an account. The common case is an UNCONFIRMED account
-    // from an earlier sign-up that was never verified. Resending the code only
-    // works for unconfirmed accounts, so try it: on success, route the user to
-    // the verify step (recovering the loop). If it fails (account is already
-    // confirmed, or rate-limited), fall back to the friendly message.
+    // The email already has an account. We deliberately do NOT resend a code here:
+    // the client flow can't tell a CONFIRMED account from an UNCONFIRMED one, so
+    // resending would email a code to already-verified users (it looks like a
+    // second sign-up). Instead we point them to sign in. The unconfirmed-recovery
+    // lives on the sign-in path (signInAction handles UserNotConfirmedException by
+    // resending a code and showing the verify step), where the user proves intent
+    // with their password.
     if ((err as { name?: string })?.name === "UsernameExistsException") {
-      try {
-        await resendCode(parsed.data.email)
-        return { ok: true, step: "verify", email: parsed.data.email }
-      } catch {
-        return {
-          ok: false,
-          error: "An account with that email already exists. Try signing in instead.",
-        }
+      return {
+        ok: false,
+        error: "An account with that email already exists. Please sign in instead.",
       }
     }
     return { ok: false, error: friendlyCognitoError(err) }

@@ -4,6 +4,7 @@ import { useActionState } from "react"
 import Link from "next/link"
 import { signInAction, verifyAction, resendAction, type ActionState } from "@/app/(auth)/actions"
 import { SubmitButton } from "@/components/auth/submit-button"
+import { PasswordInput } from "@/components/auth/password-input"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { AlertCircle, MailCheck } from "lucide-react"
@@ -44,7 +45,7 @@ export function SignInForm() {
             Forgot password?
           </Link>
         </div>
-        <Input id="password" name="password" type="password" autoComplete="current-password" required />
+        <PasswordInput id="password" name="password" autoComplete="current-password" required />
       </div>
       <SubmitButton className="mt-1 w-full" pendingText="Signing in...">
         Sign in
