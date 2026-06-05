@@ -27,13 +27,18 @@ export interface CognitoConfig {
 }
 
 export function getCognitoConfig(): CognitoConfig {
-  const region = process.env.AWS_REGION ?? process.env.COGNITO_REGION ?? "eu-west-2"
   const userPoolId = process.env.COGNITO_USER_POOL_ID
   const clientId = process.env.COGNITO_CLIENT_ID
   const clientSecret = process.env.COGNITO_CLIENT_SECRET
   if (!userPoolId || !clientId) {
     throw new Error("Cognito is not configured. Set COGNITO_USER_POOL_ID and COGNITO_CLIENT_ID.")
   }
+  // A Cognito user pool id is "<region>_<id>" (e.g. "eu-west-2_DWGwRtfrk"), so the
+  // region is derivable from it. Prefer that — it cannot be wrong and is immune to
+  // the AWS_REGION that Vercel's runtime injects for its own Lambda region.
+  const regionFromPool = userPoolId.includes("_") ? userPoolId.split("_")[0] : undefined
+  const region =
+    regionFromPool ?? process.env.COGNITO_REGION ?? process.env.AWS_REGION ?? "eu-west-2"
   return { region, userPoolId, clientId, clientSecret }
 }
 
