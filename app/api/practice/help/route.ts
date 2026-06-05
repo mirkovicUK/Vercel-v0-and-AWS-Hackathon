@@ -12,7 +12,8 @@ export const runtime = "nodejs"
 
 const bodySchema = z.object({
   sessionId: z.string().uuid(),
-  questionId: z.string().uuid(),
+  // Question ids are stable string ids (e.g. "q-m1-002"), not UUIDs.
+  questionId: z.string().min(1).max(64),
 })
 
 const SYSTEM_PROMPT = `You are a friendly, patient maths tutor for a child (aged 9-11) preparing for the UK 11+ exam.

@@ -6,8 +6,30 @@ __v0_jsx-dev-runtime.ts
 .v0-trash/
 .vercel/
 
-# Environment variables
-.env*.local
+# Environment variables (never commit real secrets to a public repo)
+.env
+.env.*
+!.env.example
+
+# AWS SAM / CloudFormation
+.aws-sam/
+samconfig.toml
+packaged.yaml
+packaged.yml
+env.json
+*.env.json
+
+# AWS credentials / config (should live in ~/.aws, never in the repo)
+.aws/
+**/aws-exports.js
+*.pem
+*.key
+
+# AWS CDK
+cdk.out/
+**/cdk.out/
+cdk.context.json
+.cdk.staging/
 
 # Common ignores
 node_modules
@@ -15,3 +37,7 @@ node_modules
 .DS_Store
 
 .kiro*
+
+# Seed data: not committed (question source + raw figures stay local).
+# The served figure copies live in public/figures/.
+data/
