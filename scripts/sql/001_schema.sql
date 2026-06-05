@@ -66,9 +66,12 @@ CREATE TABLE IF NOT EXISTS children (
 CREATE INDEX IF NOT EXISTS idx_children_parent ON children(parent_id) WHERE deleted_at IS NULL;
 
 -- ---- Question bank (SERVER ONLY — never exposed with correct_index mid-session) ----
+-- id is a caller-supplied stable string (e.g. "q-m1-002"); figures are named
+-- after it (public/figures/<id>.png), so the linkage is human-readable and the
+-- seed is idempotent by id.
 CREATE TABLE IF NOT EXISTS questions (
-  id                UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  text              TEXT NOT NULL CHECK (char_length(text) BETWEEN 1 AND 500),
+  id                TEXT PRIMARY KEY,
+  text              TEXT NOT NULL CHECK (char_length(text) BETWEEN 1 AND 1000),
   options           JSONB NOT NULL, -- string[] of 3-5 items
   correct_index     INT NOT NULL CHECK (correct_index >= 0),
   topic             topic NOT NULL,
@@ -104,7 +107,7 @@ CREATE INDEX IF NOT EXISTS idx_sessions_parent ON sessions(parent_id);
 CREATE TABLE IF NOT EXISTS session_answers (
   id             UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   session_id     UUID NOT NULL REFERENCES sessions(id) ON DELETE CASCADE,
-  question_id    UUID NOT NULL REFERENCES questions(id),
+  question_id    TEXT NOT NULL REFERENCES questions(id),
   position       INT NOT NULL,
   selected_index INT,
   is_correct     BOOLEAN,

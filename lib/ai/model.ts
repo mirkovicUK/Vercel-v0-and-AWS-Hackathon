@@ -2,18 +2,20 @@ import { createAmazonBedrock } from "@ai-sdk/amazon-bedrock"
 import type { LanguageModel } from "ai"
 
 /**
- * Resolves the Nova Lite 2 model.
+ * Resolves the Amazon Nova 2 Lite model.
  *
  * - If AWS credentials are configured, the request runs against **Amazon Bedrock
  *   in your own AWS account** (billed to you, in your region) via `@ai-sdk/amazon-bedrock`.
  * - Otherwise it falls back to the zero-config Vercel AI Gateway model string,
  *   so the feature works during development before AWS is provisioned.
  *
- * Either way the underlying model is Amazon Nova Lite 2.
+ * Either way the underlying model is Amazon Nova 2 Lite.
  */
 
 // Bedrock model id (native) vs AI Gateway slug.
-const BEDROCK_MODEL_ID = "amazon.nova-lite-v2:0"
+// Nova 2 is invoked via an inference profile. From eu-west-2 (London) we use the
+// `global.` profile, since there is no eu-region Nova 2 Lite profile.
+const BEDROCK_MODEL_ID = "global.amazon.nova-2-lite-v1:0"
 const GATEWAY_MODEL_ID = "amazon/nova-2-lite"
 
 export function isBedrockConfigured(): boolean {
