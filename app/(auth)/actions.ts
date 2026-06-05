@@ -46,6 +46,10 @@ function configError(): ActionState {
 
 function friendlyCognitoError(err: unknown): string {
   const name = (err as { name?: string })?.name ?? ""
+  const message = (err as { message?: string })?.message ?? ""
+  // Log the real error to the server (Vercel function logs) for diagnosis.
+  // Never shown to the user; safe — contains no secrets.
+  console.error("[auth] Cognito error:", JSON.stringify({ name, message }))
   switch (name) {
     case "UsernameExistsException":
       return "An account with that email already exists. Try signing in instead."
@@ -64,7 +68,9 @@ function friendlyCognitoError(err: unknown): string {
     case "UserNotFoundException":
       return "Incorrect email or password."
     default:
-      return "Something went wrong. Please try again."
+      // Temporary diagnostic: surface the real error name so we can see the
+      // actual cause. Safe — error names contain no secrets. Remove once fixed.
+      return `Something went wrong${name ? ` (${name})` : ""}. Please try again.`
   }
 }
 
