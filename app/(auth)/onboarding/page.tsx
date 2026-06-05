@@ -6,7 +6,7 @@ import { requireParent } from "@/lib/auth/guard"
 
 export const metadata: Metadata = {
   title: "Confirm a few details",
-  description: "Confirm your guardian status to finish setting up Apex Maths.",
+  description: "Confirm your guardian status to finish setting up ApexMaths.",
 }
 
 export default async function OnboardingPage() {
@@ -16,7 +16,7 @@ export default async function OnboardingPage() {
   return (
     <AuthShell
       title="Just one quick step"
-      subtitle="Apex Maths is managed by adults on behalf of children. Please confirm the following before you continue."
+      subtitle="ApexMaths is managed by adults on behalf of children. Please confirm the following before you continue."
     >
       <OnboardingForm />
     </AuthShell>

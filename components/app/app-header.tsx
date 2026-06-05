@@ -17,7 +17,7 @@ export function AppHeader({ email }: { email: string }) {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur-sm">
       <div className="mx-auto flex h-16 w-full max-w-5xl items-center justify-between gap-4 px-4 sm:px-6">
-        <Link href="/dashboard" aria-label="Apex Maths dashboard">
+        <Link href="/dashboard" aria-label="ApexMaths dashboard">
           <Logo />
         </Link>
         <nav className="flex items-center gap-1" aria-label="Account">

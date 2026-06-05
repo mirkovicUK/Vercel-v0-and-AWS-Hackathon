@@ -34,7 +34,7 @@ export function Hero() {
           </h1>
           <p className="max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
             Timed, exam-style practice with an AI tutor that explains how — never just the answer — plus clear
-            topic-by-topic progress. All for £2.99/month, after a 7-day free trial.
+            topic-by-topic progress. All for £19.99/month, after a 7-day free trial.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Button asChild size="lg">
@@ -45,7 +45,7 @@ export function Hero() {
             </Button>
           </div>
           <dl className="mt-2 flex flex-wrap gap-x-8 gap-y-3">
-            <Stat value="£2.99" label="per month" />
+            <Stat value="£19.99" label="per month" />
             <Stat value="7 days" label="free trial" />
             <Stat value="6 topics" label="full curriculum coverage" />
           </dl>
@@ -102,9 +102,9 @@ export function ValueProp() {
           body="Marking worksheets and spotting weak topics manually is slow and easy to get wrong — so children practise the wrong things."
         />
         <ValueCard
-          stat="£2.99"
-          title="We charge only to cover costs"
-          body="Apex removes the financial barrier to good preparation, so every child gets a real chance to reach their potential."
+          stat="£19.99"
+          title="A fraction of the cost of a tutor"
+          body="ApexMaths gives your child structured, exam-style preparation for less than the price of a single tutoring hour — making good preparation accessible to more families."
           highlight
         />
       </div>
@@ -216,7 +216,7 @@ export function ProgressShowcase() {
             See exactly where each child is <span className="text-primary">strong</span> — and what needs work
           </h2>
           <p className="text-pretty leading-relaxed text-muted-foreground">
-            Every answer feeds a live mastery score for all six curriculum topics, per child. Apex automatically flags
+            Every answer feeds a live mastery score for all six curriculum topics, per child. ApexMaths automatically flags
             the topics that need attention, so you always know what to practise next — no marking, no guesswork.
           </p>
           <ul className="flex flex-col gap-3">
@@ -403,10 +403,10 @@ export function Pricing() {
           <Card className="border-border shadow-sm">
             <CardContent className="p-8">
               <div className="flex items-baseline gap-1">
-                <span className="font-heading text-5xl font-bold tabular-nums text-foreground">£2.99</span>
+                <span className="font-heading text-5xl font-bold tabular-nums text-foreground">£19.99</span>
                 <span className="text-muted-foreground">/month</span>
               </div>
-              <p className="mt-1 text-sm text-muted-foreground">7-day free trial · then £2.99/month · cancel anytime</p>
+              <p className="mt-1 text-sm text-muted-foreground">7-day free trial · then £19.99/month · cancel anytime</p>
               <Button asChild size="lg" className="mt-6 w-full">
                 <Link href="/sign-up">Start your free trial</Link>
               </Button>
@@ -437,7 +437,7 @@ export function FinalCta() {
           Affordable 11+ preparation your child deserves
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-pretty text-primary-foreground/90">
-          Join UK families using Apex to prepare with confidence — for less than the price of a single tutoring hour
+          Join UK families using ApexMaths to prepare with confidence — for less than the price of a single tutoring hour
           per month.
         </p>
         <Button asChild size="lg" variant="secondary" className="mt-8">

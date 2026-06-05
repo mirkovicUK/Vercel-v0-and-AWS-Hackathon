@@ -17,10 +17,10 @@ export const PLAN: Plan = {
   id: "apex-family-monthly",
   name: "Apex Family",
   description: "Unlimited 11+ maths practice for up to 3 children, with AI help and parent reports.",
-  priceInPence: 999, // £9.99 / month
+  priceInPence: 1999, // £19.99 / month
   currency: "gbp",
   interval: "month",
-  trialDays: 14,
+  trialDays: 7,
   features: [
     "Up to 3 child profiles",
     "Unlimited timed practice sessions",

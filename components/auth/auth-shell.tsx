@@ -17,7 +17,7 @@ export function AuthShell({
   return (
     <main className="flex min-h-screen flex-col bg-secondary/40">
       <header className="px-4 py-5 sm:px-6">
-        <Link href="/" aria-label="Apex Maths home">
+        <Link href="/" aria-label="ApexMaths home">
           <Logo />
         </Link>
       </header>

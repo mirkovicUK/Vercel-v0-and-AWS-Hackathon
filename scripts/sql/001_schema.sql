@@ -1,4 +1,4 @@
--- Apex 11+ Maths — Aurora PostgreSQL schema
+-- ApexMaths — Aurora PostgreSQL schema
 -- Run once against your Aurora cluster (see scripts/migrate.mjs).
 
 CREATE EXTENSION IF NOT EXISTS "pgcrypto"; -- gen_random_uuid()

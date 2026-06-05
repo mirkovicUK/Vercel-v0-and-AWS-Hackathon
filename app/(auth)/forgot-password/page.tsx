@@ -5,7 +5,7 @@ import { ForgotPasswordForm } from "@/components/auth/forgot-password-form"
 
 export const metadata: Metadata = {
   title: "Reset your password",
-  description: "Reset the password for your Apex Maths parent account.",
+  description: "Reset the password for your ApexMaths parent account.",
 }
 
 export default function ForgotPasswordPage() {
