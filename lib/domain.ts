@@ -1,4 +1,4 @@
-// Shared domain types & constants for Apex 11+ Maths.
+// Shared domain types & constants for ApexMaths.
 // Kept framework-agnostic so they can be used on client and server.
 
 export const TOPICS = [

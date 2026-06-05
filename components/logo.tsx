@@ -18,14 +18,14 @@ export function Logo({
         </svg>
       </span>
       <span className="font-heading text-lg font-bold tracking-tight text-foreground">
-        Apex<span className="text-primary"> 11+</span>
+        Apex<span className="text-primary">Maths</span>
       </span>
     </span>
   )
 
   if (!asLink) return content
   return (
-    <Link href={href} aria-label="Apex 11+ Maths home">
+    <Link href={href} aria-label="ApexMaths home">
       {content}
     </Link>
   )

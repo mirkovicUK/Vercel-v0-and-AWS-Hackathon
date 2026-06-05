@@ -19,11 +19,11 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "Apex 11+ Maths — Affordable AI tutoring for the 11+ exam",
-    template: "%s · Apex 11+ Maths",
+    default: "ApexMaths — Affordable AI tutoring for the 11+ exam",
+    template: "%s · ApexMaths",
   },
   description:
-    "Help your child prepare for the UK 11+ maths exam with timed practice, AI tutoring, and topic-level progress tracking. £2.99/month with a 7-day free trial.",
+    "Help your child prepare for the UK 11+ maths exam with timed practice, AI tutoring, and topic-level progress tracking. £19.99/month with a 7-day free trial.",
   generator: "v0.app",
   keywords: ["11 plus", "11+ maths", "UK exam prep", "AI tutoring", "grammar school", "maths practice"],
 }

@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge"
 import { Check, ArrowLeft } from "lucide-react"
 import Link from "next/link"
 
-export const metadata = { title: "Billing — Apex 11+ Maths" }
+export const metadata = { title: "Billing — ApexMaths" }
 
 const STATUS_LABEL: Record<string, { label: string; tone: string }> = {
   trialing: { label: "Free trial", tone: "bg-primary/10 text-primary" },
@@ -41,7 +41,7 @@ export default async function BillingPage() {
 
       <h1 className="font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl">Plan &amp; billing</h1>
       <p className="mt-1 text-pretty text-muted-foreground">
-        Manage your Apex subscription. Cancel any time from the billing portal.
+        Manage your ApexMaths subscription. Cancel any time from the billing portal.
       </p>
 
       <div className="mt-8 grid gap-6">

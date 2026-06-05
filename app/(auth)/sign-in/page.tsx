@@ -8,7 +8,7 @@ import { CheckCircle2 } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Sign in",
-  description: "Sign in to your Apex Maths parent account.",
+  description: "Sign in to your ApexMaths parent account.",
 }
 
 export default async function SignInPage({
@@ -27,7 +27,7 @@ export default async function SignInPage({
       subtitle="Sign in to view your children's progress and start a practice session."
       footer={
         <>
-          New to Apex Maths?{" "}
+          New to ApexMaths?{" "}
           <Link href="/sign-up" className="font-medium text-primary underline-offset-2 hover:underline">
             Create an account
           </Link>

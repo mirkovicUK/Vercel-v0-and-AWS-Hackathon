@@ -7,7 +7,7 @@ import { getCurrentParent } from "@/lib/auth/session"
 
 export const metadata: Metadata = {
   title: "Create your account",
-  description: "Start your free trial of Apex Maths and help your child master the 11+ maths curriculum.",
+  description: "Start your free trial of ApexMaths and help your child master the 11+ maths curriculum.",
 }
 
 export default async function SignUpPage() {

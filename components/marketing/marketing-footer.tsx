@@ -38,7 +38,7 @@ export function MarketingFooter() {
           </div>
         </div>
         <div className="mt-10 flex flex-col gap-2 border-t border-border pt-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Apex 11+ Maths. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} ApexMaths. All rights reserved.</p>
           <p>Made for UK families · Prices in GBP</p>
         </div>
       </div>

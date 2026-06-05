@@ -11,7 +11,7 @@ import { Sparkles } from "lucide-react"
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY ?? "")
 
-export function SubscriptionCheckout({ ctaLabel = "Start 14-day free trial" }: { ctaLabel?: string }) {
+export function SubscriptionCheckout({ ctaLabel = "Start 7-day free trial" }: { ctaLabel?: string }) {
   const [open, setOpen] = useState(false)
   const [error, setError] = useState<string | null>(null)
 

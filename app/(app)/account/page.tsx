@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, CreditCard, ShieldCheck } from "lucide-react"
 
-export const metadata = { title: "Account & privacy — Apex 11+ Maths" }
+export const metadata = { title: "Account & privacy — ApexMaths" }
 
 export default async function AccountPage() {
   const parent = await requireParent()
