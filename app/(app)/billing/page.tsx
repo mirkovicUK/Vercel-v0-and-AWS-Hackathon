@@ -3,6 +3,7 @@ import { getEntitlement } from "@/lib/db/subscriptions"
 import { PLAN, formatPrice } from "@/lib/plans"
 import { SubscriptionCheckout } from "@/components/app/subscription-checkout"
 import { ManagePlanButton } from "@/components/app/manage-plan-button"
+import { CheckoutCompleteNotice } from "@/components/app/checkout-complete-notice"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Check, ArrowLeft } from "lucide-react"
@@ -23,11 +24,16 @@ function formatDate(iso: string | null): string {
   return new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })
 }
 
-export default async function BillingPage() {
+export default async function BillingPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ status?: string }>
+}) {
   const parent = await requireOnboardedParent()
   const entitlement = await getEntitlement(parent.id)
   const hasPlan = entitlement.status !== null
   const status = entitlement.status ? STATUS_LABEL[entitlement.status] : null
+  const justCompleted = (await searchParams).status === "complete"
 
   return (
     <div className="mx-auto w-full max-w-3xl px-4 py-8 sm:px-6">
@@ -45,6 +51,9 @@ export default async function BillingPage() {
       </p>
 
       <div className="mt-8 grid gap-6">
+        {/* Completion confirmation after returning from embedded checkout (Req 18.4) */}
+        {justCompleted ? <CheckoutCompleteNotice entitled={entitlement.entitled} /> : null}
+
         {/* Current status */}
         {hasPlan ? (
           <Card>

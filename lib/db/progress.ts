@@ -1,6 +1,13 @@
 import "server-only"
 import { query, withTransaction } from "@/lib/aws/rds-data"
-import { classifyMastery, TOPICS, type MasteryClassification, type Topic, type TopicProgress } from "@/lib/domain"
+import {
+  classifyMastery,
+  MIN_ATTEMPTS_FOR_CLASSIFICATION,
+  TOPICS,
+  type MasteryClassification,
+  type Topic,
+  type TopicProgress,
+} from "@/lib/domain"
 
 interface ProgressRow {
   child_id: string
@@ -43,6 +50,14 @@ export async function applySessionToProgress(sessionId: string, childId: string)
     )
     for (const t of perTopic) {
       if (t.attempts === 0) continue
+      // Mastery model: `mastery_score` is kept as a 0-100 percentage so the dashboard/UI
+      // (TopicProgress.masteryScore) keeps rendering unchanged. The stored `classification`,
+      // however, follows the pinned rules in lib/domain.classifyMastery: it is based on the
+      // CUMULATIVE attempts/correct and uses FRACTIONAL thresholds (>=0.8 strong, >=0.5
+      // developing, else needs_focus), and yields `insufficient_data` whenever cumulative
+      // attempts are below MIN_ATTEMPTS_FOR_CLASSIFICATION. On first insert the cumulative
+      // counts equal this session's counts, so the JS-side classifyMastery call is authoritative;
+      // on conflict the SQL CASE recomputes from the summed (cumulative) counts.
       await tx.query(
         `INSERT INTO progress (child_id, topic, attempts, correct, mastery_score, classification, updated_at)
          VALUES (:childId, :topic::topic, :attempts, :correct,
@@ -55,10 +70,11 @@ export async function applySessionToProgress(sessionId: string, childId: string)
              ((progress.correct + EXCLUDED.correct)::numeric
               / NULLIF(progress.attempts + EXCLUDED.attempts, 0)) * 100, 2),
            classification = CASE
-             WHEN round(((progress.correct + EXCLUDED.correct)::numeric
-                  / NULLIF(progress.attempts + EXCLUDED.attempts,0)) * 100, 2) >= 75 THEN 'strong'
-             WHEN round(((progress.correct + EXCLUDED.correct)::numeric
-                  / NULLIF(progress.attempts + EXCLUDED.attempts,0)) * 100, 2) >= 50 THEN 'developing'
+             WHEN (progress.attempts + EXCLUDED.attempts) < :minAttempts THEN 'insufficient_data'
+             WHEN ((progress.correct + EXCLUDED.correct)::numeric
+                   / NULLIF(progress.attempts + EXCLUDED.attempts, 0)) >= 0.8 THEN 'strong'
+             WHEN ((progress.correct + EXCLUDED.correct)::numeric
+                   / NULLIF(progress.attempts + EXCLUDED.attempts, 0)) >= 0.5 THEN 'developing'
              ELSE 'needs_focus'
            END::mastery_classification,
            updated_at = now()`,
@@ -67,7 +83,8 @@ export async function applySessionToProgress(sessionId: string, childId: string)
           topic: t.topic,
           attempts: t.attempts,
           correct: t.correct,
-          classification: classifyMastery(t.attempts > 0 ? (t.correct / t.attempts) * 100 : 0),
+          minAttempts: MIN_ATTEMPTS_FOR_CLASSIFICATION,
+          classification: classifyMastery(t.attempts, t.attempts > 0 ? t.correct / t.attempts : 0),
         },
       )
     }
@@ -93,7 +110,9 @@ export async function getChildProgress(childId: string): Promise<TopicProgress[]
         attempts: 0,
         correct: 0,
         masteryScore: 0,
-        classification: "needs_focus",
+        // 0 attempts is below MIN_ATTEMPTS_FOR_CLASSIFICATION, so an unattempted
+        // topic is "insufficient_data" per the pinned precedence (not "needs_focus").
+        classification: "insufficient_data",
         updatedAt: new Date(0).toISOString(),
       },
   )

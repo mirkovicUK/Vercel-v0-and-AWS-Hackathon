@@ -4,11 +4,12 @@ import { requireEntitledParent } from "@/lib/auth/guard"
 import { getChildForParent } from "@/lib/db/children"
 import { getSessionForParent, getSessionAnswers } from "@/lib/db/sessions"
 import { getQuestionsByIds } from "@/lib/db/questions"
+import { getReviewReport } from "@/lib/db/reviews"
 import { SESSION_TYPE_CONFIG, TOPIC_LABELS, type Topic } from "@/lib/domain"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Check, X, Minus, Trophy, ChevronRight } from "lucide-react"
+import { Check, X, Minus, Trophy, ChevronRight, Lightbulb } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 export const dynamic = "force-dynamic"
@@ -24,12 +25,23 @@ export default async function ResultPage({ params }: { params: Promise<{ session
   const child = await getChildForParent(session.childId, parent.id)
   if (!child) notFound()
 
-  const [questions, answers] = await Promise.all([
+  const [questions, answers, review] = await Promise.all([
     getQuestionsByIds(session.questionIds),
     getSessionAnswers(sessionId),
+    getReviewReport(sessionId),
   ])
   const byId = new Map(questions.map((q) => [q.id, q]))
   const answerByPos = new Map(answers.map((a) => [a.position, a]))
+
+  // Map of questionId -> stored explanation/next step. Present only for wrong
+  // answers that have a generated (or fallback) review item.
+  const reviewByQuestionId = new Map(
+    (review?.document.items ?? []).map((item) => [
+      item.questionId,
+      { explanation: item.explanation, nextStep: item.nextStep },
+    ]),
+  )
+  const reviewPending = review?.document.status === "pending"
 
   const score = session.score ?? 0
   const total = session.total
@@ -94,6 +106,11 @@ export default async function ResultPage({ params }: { params: Promise<{ session
       {/* Question-by-question review */}
       <div className="mt-6">
         <h2 className="mb-3 text-sm font-semibold text-foreground">Review answers</h2>
+        {reviewPending ? (
+          <p className="mb-3 rounded-lg bg-muted px-4 py-2.5 text-sm text-muted-foreground">
+            Explanations are still finishing — refresh in a moment.
+          </p>
+        ) : null}
         <div className="flex flex-col gap-3">
           {session.questionIds.map((qid, position) => {
             const q = byId.get(qid)
@@ -101,6 +118,7 @@ export default async function ResultPage({ params }: { params: Promise<{ session
             if (!q) return null
             const answered = a && a.selectedIndex !== null
             const correct = a?.isCorrect ?? false
+            const reviewItem = reviewByQuestionId.get(qid)
             return (
               <Card key={qid}>
                 <CardContent className="flex flex-col gap-3 p-5">
@@ -143,6 +161,18 @@ export default async function ResultPage({ params }: { params: Promise<{ session
                       )
                     })}
                   </div>
+                  {reviewItem ? (
+                    <div className="ml-9 rounded-lg border border-accent/20 bg-accent/10 p-3">
+                      <div className="flex items-center gap-1.5 text-xs font-semibold text-accent-foreground">
+                        <Lightbulb className="size-3.5" />
+                        Explanation
+                      </div>
+                      <p className="mt-1.5 text-sm leading-snug text-foreground">{reviewItem.explanation}</p>
+                      <p className="mt-2 text-sm leading-snug text-muted-foreground">
+                        <span className="font-medium text-foreground">Next step:</span> {reviewItem.nextStep}
+                      </p>
+                    </div>
+                  ) : null}
                 </CardContent>
               </Card>
             )

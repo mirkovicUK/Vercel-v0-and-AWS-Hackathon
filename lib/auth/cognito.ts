@@ -8,6 +8,7 @@ import {
   ForgotPasswordCommand,
   ConfirmForgotPasswordCommand,
   GlobalSignOutCommand,
+  AdminDeleteUserCommand,
   type AuthenticationResultType,
 } from "@aws-sdk/client-cognito-identity-provider"
 import { createHmac } from "node:crypto"
@@ -175,4 +176,23 @@ export async function globalSignOut(accessToken: string): Promise<void> {
   await client(cfg.region)
     .send(new GlobalSignOutCommand({ AccessToken: accessToken }))
     .catch(() => undefined)
+}
+
+/**
+ * Hard-delete a Cognito user so the email is freed for re-registration (Req 15).
+ * Uses AdminDeleteUser (admin API). Requires the IAM permission
+ * cognito-idp:AdminDeleteUser on the user pool. Caller treats failure as non-fatal.
+ *
+ * `username` may be the email or the Cognito sub (both work as Username for admin
+ * APIs in a standard pool). This function does NOT swallow errors — it throws so
+ * the caller (deleteMyAccount) can decide to treat it as non-fatal.
+ */
+export async function adminDeleteUser(username: string): Promise<void> {
+  const cfg = getCognitoConfig()
+  await client(cfg.region).send(
+    new AdminDeleteUserCommand({
+      UserPoolId: cfg.userPoolId,
+      Username: username,
+    }),
+  )
 }

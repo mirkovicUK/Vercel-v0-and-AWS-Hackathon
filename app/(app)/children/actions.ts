@@ -6,6 +6,7 @@ import { redirect } from "next/navigation"
 import { requireOnboardedParent } from "@/lib/auth/guard"
 import { createChild, softDeleteChild, ChildLimitError } from "@/lib/db/children"
 import { audit } from "@/lib/db/audit"
+import { YEAR_GROUPS } from "@/lib/domain"
 
 export interface ChildActionState {
   ok: boolean
@@ -20,10 +21,20 @@ const createSchema = z.object({
     .trim()
     .min(1, "Please enter a name or nickname.")
     .max(40, "That name is a bit long — keep it under 40 characters."),
-  yearGroup: z
-    .union([z.coerce.number().int().min(1).max(8), z.literal(Number.NaN)])
-    .optional()
-    .transform((v) => (v && !Number.isNaN(v) ? v : null)),
+  yearGroup: z.preprocess(
+    (v) => (v === "" || v === null || v === undefined ? null : v),
+    z
+      .union([
+        z.null(),
+        z.coerce
+          .number()
+          .int()
+          .refine((n) => (YEAR_GROUPS as readonly number[]).includes(n), {
+            message: "Year group must be 4, 5 or 6.",
+          }),
+      ])
+      .transform((v) => (v === null || Number.isNaN(v) ? null : v)),
+  ),
   avatarColor: z.enum(AVATAR_COLORS).default("teal"),
 })
 
