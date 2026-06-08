@@ -7,6 +7,12 @@ import { PracticePlayer, type PlayerSlot } from "@/components/app/practice-playe
 
 export const dynamic = "force-dynamic"
 
+// The practice player calls finishSessionAction, which synchronously generates
+// the per-session AI review (one bounded Bedrock call per wrong answer). Allow
+// the function up to 60s so the review's overall time budget (45s) plus
+// score/summary persistence always completes within the limit (Req 8.7, 8.8).
+export const maxDuration = 60
+
 export default async function PlayerPage({ params }: { params: Promise<{ sessionId: string }> }) {
   const { sessionId } = await params
   const { parent } = await requireEntitledParent()

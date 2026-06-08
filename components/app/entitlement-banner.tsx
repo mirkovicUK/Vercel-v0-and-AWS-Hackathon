@@ -33,7 +33,10 @@ export function EntitlementBanner({ entitlement }: { entitlement: Entitlement })
     const message =
       entitlement.reason === "past_due"
         ? "Your last payment didn't go through. Update your payment method to restore practice sessions."
-        : "Your plan has ended. Reactivate to continue practising and tracking progress."
+        : entitlement.reason === "no_subscription"
+          ? "Start your free trial to begin practising and tracking progress."
+          : "Your plan has ended. Reactivate to continue practising and tracking progress."
+    const cta = entitlement.reason === "no_subscription" ? "Start free trial" : "Reactivate plan"
     return (
       <div className="flex flex-col items-start justify-between gap-3 rounded-xl border border-destructive/30 bg-destructive/10 p-4 sm:flex-row sm:items-center">
         <div className="flex items-center gap-3">
@@ -41,7 +44,7 @@ export function EntitlementBanner({ entitlement }: { entitlement: Entitlement })
           <p className="text-sm text-foreground">{message}</p>
         </div>
         <Button asChild size="sm" className="shrink-0">
-          <Link href="/billing">Reactivate plan</Link>
+          <Link href="/billing">{cta}</Link>
         </Button>
       </div>
     )

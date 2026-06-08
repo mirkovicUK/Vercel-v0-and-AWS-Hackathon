@@ -111,6 +111,18 @@ export class ApexMathsStack extends cdk.Stack {
     // Data API access + read of the DB credentials secret (scoped to this cluster).
     cluster.grantDataApiAccess(vercelUser)
 
+    // Cognito admin: delete a user on GDPR account erasure so the email is freed
+    // for re-registration (AdminDeleteUser). This is the ONLY Cognito admin API
+    // the app uses — normal auth (SignUp/InitiateAuth/etc.) is client-credential
+    // based and needs no IAM. Scoped to this single user pool.
+    vercelUser.addToPolicy(
+      new iam.PolicyStatement({
+        sid: "CognitoAdminDeleteUser",
+        actions: ["cognito-idp:AdminDeleteUser"],
+        resources: [userPool.userPoolArn],
+      }),
+    )
+
     // Bedrock: invoke Amazon Nova 2 Lite (and stream) for the AI tutor/report.
     // Nova 2 is invoked via inference profiles (global./us. prefixes), which in
     // turn invoke the underlying foundation model — so we grant both the

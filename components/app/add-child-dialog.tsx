@@ -19,6 +19,7 @@ import { SubmitButton } from "@/components/auth/submit-button"
 import { ChildAvatar } from "@/components/app/child-avatar"
 import { AlertCircle, Plus } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { YEAR_GROUPS } from "@/lib/domain"
 
 const initial: ChildActionState = { ok: false }
 const COLORS = ["teal", "blue", "amber", "rose", "emerald", "indigo"]
@@ -92,7 +93,7 @@ export function AddChildDialog({
                 <SelectValue placeholder="Select year group" />
               </SelectTrigger>
               <SelectContent>
-                {[3, 4, 5, 6, 7].map((y) => (
+                {YEAR_GROUPS.map((y) => (
                   <SelectItem key={y} value={String(y)}>
                     Year {y}
                   </SelectItem>

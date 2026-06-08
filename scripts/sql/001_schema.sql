@@ -1,5 +1,16 @@
 -- ApexMaths — Aurora PostgreSQL schema
 -- Run once against your Aurora cluster (see scripts/migrate.mjs).
+--
+-- ID CONVENTION (important — read before editing):
+--   ALL id and foreign-key columns are TEXT, never UUID.
+--   * parents.id is the Cognito `sub` (an opaque string).
+--   * questions.id is a stable human id (e.g. "q-m1-002").
+--   * other ids are generated with gen_random_uuid()::text (a uuid VALUE stored
+--     as text), so they still look like uuids but compare cleanly as strings.
+--   WHY: the app/RDS Data API bind every id as a string. A UUID column compared
+--   to a bound string fails with "operator does not exist: uuid = text". Keeping
+--   every id/FK as TEXT removes that entire class of error. Do NOT reintroduce
+--   the `uuid` type for any id or *_id column.
 
 CREATE EXTENSION IF NOT EXISTS "pgcrypto"; -- gen_random_uuid()
 
@@ -39,7 +50,7 @@ CREATE TABLE IF NOT EXISTS parents (
 
 -- ---- Subscriptions (server/webhook-writable only) ----
 CREATE TABLE IF NOT EXISTS subscriptions (
-  id                     UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::text,
   parent_id              TEXT NOT NULL REFERENCES parents(id) ON DELETE CASCADE,
   stripe_subscription_id TEXT UNIQUE,
   status                 subscription_status NOT NULL DEFAULT 'incomplete',
@@ -55,7 +66,7 @@ CREATE INDEX IF NOT EXISTS idx_subscriptions_parent ON subscriptions(parent_id);
 
 -- ---- Children (no PII beyond display name; max 3 enforced in app) ----
 CREATE TABLE IF NOT EXISTS children (
-  id           UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::text,
   parent_id    TEXT NOT NULL REFERENCES parents(id) ON DELETE CASCADE,
   display_name TEXT NOT NULL CHECK (char_length(display_name) BETWEEN 1 AND 40),
   year_group   INT CHECK (year_group BETWEEN 3 AND 8),
@@ -85,8 +96,8 @@ CREATE INDEX IF NOT EXISTS idx_questions_topic ON questions(topic) WHERE active;
 
 -- ---- Practice sessions ----
 CREATE TABLE IF NOT EXISTS sessions (
-  id                 UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  child_id           UUID NOT NULL REFERENCES children(id) ON DELETE CASCADE,
+  id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::text,
+  child_id TEXT NOT NULL REFERENCES children(id) ON DELETE CASCADE,
   parent_id          TEXT NOT NULL REFERENCES parents(id) ON DELETE CASCADE,
   type               session_type NOT NULL,
   topic              topic, -- null for mixed sessions
@@ -105,8 +116,8 @@ CREATE INDEX IF NOT EXISTS idx_sessions_parent ON sessions(parent_id);
 
 -- ---- Per-question answers ----
 CREATE TABLE IF NOT EXISTS session_answers (
-  id             UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  session_id     UUID NOT NULL REFERENCES sessions(id) ON DELETE CASCADE,
+  id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::text,
+  session_id TEXT NOT NULL REFERENCES sessions(id) ON DELETE CASCADE,
   question_id    TEXT NOT NULL REFERENCES questions(id),
   position       INT NOT NULL,
   selected_index INT,
@@ -119,8 +130,8 @@ CREATE INDEX IF NOT EXISTS idx_answers_session ON session_answers(session_id);
 
 -- ---- Topic-level progress (aggregated from completed sessions only) ----
 CREATE TABLE IF NOT EXISTS progress (
-  id             UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  child_id       UUID NOT NULL REFERENCES children(id) ON DELETE CASCADE,
+  id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::text,
+  child_id TEXT NOT NULL REFERENCES children(id) ON DELETE CASCADE,
   topic          topic NOT NULL,
   attempts       INT NOT NULL DEFAULT 0,
   correct        INT NOT NULL DEFAULT 0,
@@ -132,8 +143,8 @@ CREATE TABLE IF NOT EXISTS progress (
 
 -- ---- AI review reports (one per completed session) ----
 CREATE TABLE IF NOT EXISTS review_reports (
-  id           UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  session_id   UUID NOT NULL UNIQUE REFERENCES sessions(id) ON DELETE CASCADE,
+  id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::text,
+  session_id TEXT NOT NULL UNIQUE REFERENCES sessions(id) ON DELETE CASCADE,
   summary      JSONB NOT NULL,
   generated_by TEXT NOT NULL DEFAULT 'nova', -- 'nova' | 'fallback'
   created_at   TIMESTAMPTZ NOT NULL DEFAULT now()
@@ -160,7 +171,7 @@ CREATE TABLE IF NOT EXISTS processed_webhook_events (
 
 -- ---- Revenue tracker (from invoice.paid) ----
 CREATE TABLE IF NOT EXISTS revenue_events (
-  id                UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::text,
   parent_id         TEXT REFERENCES parents(id) ON DELETE SET NULL,
   stripe_invoice_id TEXT UNIQUE,
   amount_pence      INT NOT NULL,

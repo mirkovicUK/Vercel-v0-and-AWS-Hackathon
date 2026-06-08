@@ -63,6 +63,10 @@ export const SESSION_TYPE_CONFIG: Record<SessionType, SessionTypeConfig> = {
 export const MAX_CHILDREN_PER_PARENT = 3
 export const MAX_HELP_PER_SESSION = 5
 
+// Year groups are narrowed to KS2 upper years (4–6) for ApexMaths.
+export const YEAR_GROUPS = [4, 5, 6] as const
+export type YearGroup = (typeof YEAR_GROUPS)[number]
+
 // Subscription status mirrors Stripe's lifecycle.
 export const SUBSCRIPTION_STATUSES = [
   "trialing",
@@ -80,16 +84,23 @@ export const ENTITLED_STATUSES: SubscriptionStatus[] = ["trialing", "active"]
 export const SESSION_STATUSES = ["active", "completed", "expired", "abandoned"] as const
 export type SessionStatus = (typeof SESSION_STATUSES)[number]
 
-export const MASTERY_CLASSIFICATIONS = ["needs_focus", "developing", "strong"] as const
+export const MASTERY_CLASSIFICATIONS = ["insufficient_data", "needs_focus", "developing", "strong"] as const
 export type MasteryClassification = (typeof MASTERY_CLASSIFICATIONS)[number]
 
-export function classifyMastery(masteryScore: number): MasteryClassification {
-  if (masteryScore >= 75) return "strong"
-  if (masteryScore >= 50) return "developing"
+// Minimum graded attempts before a topic can be classified beyond "insufficient_data".
+export const MIN_ATTEMPTS_FOR_CLASSIFICATION = 10
+
+// Classify mastery from the number of graded attempts and a score expressed as a fraction in [0, 1].
+// Precedence: too few attempts always yields "insufficient_data" regardless of score.
+export function classifyMastery(attempts: number, score: number): MasteryClassification {
+  if (attempts < MIN_ATTEMPTS_FOR_CLASSIFICATION) return "insufficient_data"
+  if (score >= 0.8) return "strong"
+  if (score >= 0.5) return "developing"
   return "needs_focus"
 }
 
 export const CLASSIFICATION_LABELS: Record<MasteryClassification, string> = {
+  insufficient_data: "Not enough data yet",
   needs_focus: "Needs focus",
   developing: "Developing",
   strong: "Strong",
@@ -187,4 +198,65 @@ export interface TopicProgress {
   masteryScore: number
   classification: MasteryClassification
   updatedAt: string
+}
+
+// ---- Per-session summary helpers (pure, no IO) ----
+
+// Aggregate graded answers (isCorrect !== null) into per-topic attempted/correct counts.
+// Only topics with at least one graded answer are included. Invariant: correct <= attempted.
+export function computePerTopicSummary(
+  answers: SessionAnswer[],
+): Array<{ topic: Topic; attempted: number; correct: number }> {
+  const counts = new Map<Topic, { attempted: number; correct: number }>()
+
+  for (const answer of answers) {
+    if (answer.isCorrect === null) continue // skip ungraded answers
+    const entry = counts.get(answer.topic) ?? { attempted: 0, correct: 0 }
+    entry.attempted += 1
+    if (answer.isCorrect === true) entry.correct += 1
+    counts.set(answer.topic, entry)
+  }
+
+  return Array.from(counts.entries()).map(([topic, { attempted, correct }]) => ({
+    topic,
+    attempted,
+    correct,
+  }))
+}
+
+// Determine the strongest and weakest topics by correct/attempted ratio.
+// Ties are broken alphabetically by topic key. Only topics with >=1 attempt are ranked.
+// weakest = "n/a" iff fewer than 2 topics have >=1 attempt (Req 5.3); when 0 topics are
+// attempted strongest is also "n/a"; when exactly 1 topic is attempted strongest = that topic.
+export function strongestWeakest(
+  summary: Array<{ topic: Topic; attempted: number; correct: number }>,
+): { strongest: Topic | "n/a"; weakest: Topic | "n/a" } {
+  const ranked = summary
+    .filter((entry) => entry.attempted >= 1)
+    .map((entry) => ({ topic: entry.topic, ratio: entry.correct / entry.attempted }))
+
+  if (ranked.length === 0) {
+    return { strongest: "n/a", weakest: "n/a" }
+  }
+
+  // Strongest: highest ratio, ties broken alphabetically by topic key.
+  const strongest = ranked.reduce((best, current) => {
+    if (current.ratio > best.ratio) return current
+    if (current.ratio === best.ratio && current.topic < best.topic) return current
+    return best
+  })
+
+  if (ranked.length < 2) {
+    // Only one topic attempted: strongest known, weakest undefined per Req 5.3.
+    return { strongest: strongest.topic, weakest: "n/a" }
+  }
+
+  // Weakest: lowest ratio, ties broken alphabetically by topic key.
+  const weakest = ranked.reduce((worst, current) => {
+    if (current.ratio < worst.ratio) return current
+    if (current.ratio === worst.ratio && current.topic < worst.topic) return current
+    return worst
+  })
+
+  return { strongest: strongest.topic, weakest: weakest.topic }
 }

@@ -111,6 +111,41 @@ export async function createSession(input: {
   })
 }
 
+/**
+ * Pure predicate mirroring the production "active" rule used by `getActiveSession`
+ * (`status = 'active' AND now() <= expires_at`) and the `uniq_active_session_per_child`
+ * partial unique index / `startSessionAction` guard. A session occupies the single
+ * per-child active slot iff it is in status `active` and has not yet expired (Req 4.4).
+ *
+ * Kept minimal and side-effect-free so the invariant can be tested directly.
+ */
+export function isSessionActive(status: SessionStatus, expiresAt: string | Date, now: Date): boolean {
+  return status === "active" && now.getTime() <= new Date(expiresAt).getTime()
+}
+
+/** The single active, non-expired session for a child, or null (Req 4.4). */
+export async function getActiveSession(childId: string, parentId: string): Promise<PracticeSession | null> {
+  const row = await queryOne<SessionRow>(
+    `SELECT ${SESSION_COLS} FROM sessions
+     WHERE child_id = :childId AND parent_id = :parentId
+       AND status = 'active' AND now() <= expires_at
+     ORDER BY started_at DESC LIMIT 1`,
+    { childId, parentId },
+  )
+  return row ? mapSession(row) : null
+}
+
+/** End an active session by moving it to a terminal status (Req 4.5). */
+export async function endSession(sessionId: string, parentId: string): Promise<PracticeSession | null> {
+  const row = await queryOne<SessionRow>(
+    `UPDATE sessions SET status = 'abandoned', completed_at = now()
+     WHERE id = :sessionId AND parent_id = :parentId AND status = 'active'
+     RETURNING ${SESSION_COLS}`,
+    { sessionId, parentId },
+  )
+  return row ? mapSession(row) : null
+}
+
 /** Fetch a session scoped to the owning parent (defence-in-depth ownership check). */
 export async function getSessionForParent(sessionId: string, parentId: string): Promise<PracticeSession | null> {
   const row = await queryOne<SessionRow>(
