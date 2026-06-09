@@ -131,7 +131,9 @@ export async function startSubscriptionCheckout(): Promise<{ url: string | null;
     // customer in wrong mode) in logs rather than crashing into an opaque 500.
     const message = err instanceof Error ? err.message : String(err)
     console.log("[v0] startSubscriptionCheckout failed:", message)
-    return { url: null, error: "Could not start checkout. Please try again." }
+    // TEMP DEBUG: surface the real Stripe reason to the UI to diagnose checkout
+    // failures in production. Revert to the generic message once resolved.
+    return { url: null, error: `Checkout error: ${message}` }
   }
 }
 
