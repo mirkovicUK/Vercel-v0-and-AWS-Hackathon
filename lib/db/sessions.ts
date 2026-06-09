@@ -232,3 +232,24 @@ export async function expireIfElapsed(sessionId: string): Promise<boolean> {
   )
   return rows.length > 0
 }
+
+/**
+ * Expire ALL elapsed active sessions for a child in one statement.
+ *
+ * The partial unique index `uniq_active_session_per_child` counts any row with
+ * status='active' regardless of expiry, while getActiveSession only returns
+ * non-expired ones. A session that timed out but was never flipped becomes a
+ * "zombie": invisible to the guard yet still blocking a new INSERT. Sweeping
+ * elapsed active rows for the child before creating clears that deadlock.
+ * Returns the number of rows expired.
+ */
+export async function expireElapsedForChild(childId: string, parentId: string): Promise<number> {
+  const rows = await query<{ id: string }>(
+    `UPDATE sessions SET status = 'expired'
+     WHERE child_id = :childId AND parent_id = :parentId
+       AND status = 'active' AND now() > expires_at
+     RETURNING id`,
+    { childId, parentId },
+  )
+  return rows.length
+}

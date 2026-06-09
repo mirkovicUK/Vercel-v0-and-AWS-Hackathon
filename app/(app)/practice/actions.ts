@@ -14,6 +14,7 @@ import {
   recordAnswer,
   completeSession,
   expireIfElapsed,
+  expireElapsedForChild,
 } from "@/lib/db/sessions"
 import { getQuestionById, getQuestionsByIds, pickQuestionIds } from "@/lib/db/questions"
 import { applySessionToProgress } from "@/lib/db/progress"
@@ -54,6 +55,11 @@ export async function startSessionAction(
 
   const child = await getChildForParent(parsed.data.childId, parent.id)
   if (!child) return { error: "We couldn't find that child profile." }
+
+  // Clear any "zombie" sessions first: an active row whose timer already elapsed
+  // is invisible to getActiveSession but still occupies the partial unique index
+  // `uniq_active_session_per_child`, which would otherwise block the new INSERT.
+  await expireElapsedForChild(child.id, parent.id)
 
   // One-active-session-per-child guard (Req 4.1–4.4). Check before creating
   // anything. A genuinely expired session is flipped to terminal first so it
