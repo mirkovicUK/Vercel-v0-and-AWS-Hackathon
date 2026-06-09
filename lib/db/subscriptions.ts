@@ -49,11 +49,17 @@ export async function upsertSubscription(input: {
   currentPeriodEnd: Date | null
   trialEnd: Date | null
   cancelAtPeriodEnd: boolean
+  statusEventAt: Date | null
 }): Promise<void> {
+  // Out-of-order protection (Stripe does not guarantee delivery order): on
+  // conflict, only apply this event if its Stripe timestamp is newer than or
+  // equal to the last applied one. A NULL stored timestamp (legacy row) is
+  // always overwritten. This prevents an older `updated` from clobbering a
+  // newer `deleted` and re-granting access.
   await query(
     `INSERT INTO subscriptions
-       (parent_id, stripe_subscription_id, status, price_id, current_period_end, trial_end, cancel_at_period_end, updated_at)
-     VALUES (:pid, :sid, :status::subscription_status, :price, :cpe, :trial, :cancel, now())
+       (parent_id, stripe_subscription_id, status, price_id, current_period_end, trial_end, cancel_at_period_end, status_event_at, updated_at)
+     VALUES (:pid, :sid, :status::subscription_status, :price, :cpe, :trial, :cancel, :evt, now())
      ON CONFLICT (parent_id) DO UPDATE SET
        stripe_subscription_id = EXCLUDED.stripe_subscription_id,
        status = EXCLUDED.status,
@@ -61,7 +67,11 @@ export async function upsertSubscription(input: {
        current_period_end = EXCLUDED.current_period_end,
        trial_end = EXCLUDED.trial_end,
        cancel_at_period_end = EXCLUDED.cancel_at_period_end,
-       updated_at = now()`,
+       status_event_at = EXCLUDED.status_event_at,
+       updated_at = now()
+     WHERE subscriptions.status_event_at IS NULL
+        OR EXCLUDED.status_event_at IS NULL
+        OR EXCLUDED.status_event_at >= subscriptions.status_event_at`,
     {
       pid: input.parentId,
       sid: input.stripeSubscriptionId,
@@ -70,6 +80,7 @@ export async function upsertSubscription(input: {
       cpe: input.currentPeriodEnd,
       trial: input.trialEnd,
       cancel: input.cancelAtPeriodEnd,
+      evt: input.statusEventAt,
     },
   )
 }
