@@ -79,31 +79,44 @@ export interface Entitlement {
   status: SubscriptionStatus | null
   reason: "ok" | "no_subscription" | "past_due" | "canceled" | "expired"
   currentPeriodEnd: string | null
+  cancelAtPeriodEnd: boolean
 }
 
 /**
  * Authoritative entitlement check. Access is granted while trialing/active.
- * A canceled subscription keeps access until current_period_end.
+ *
+ * Stripe keeps a subscription `active`/`trialing` (with cancel_at_period_end =
+ * true) for the whole "cancel at period end" grace window, then fires
+ * customer.subscription.deleted once the period actually ends. So a `canceled`
+ * status means the subscription is gone and access stops immediately — we must
+ * NOT keep granting access based on a stale current_period_end.
  */
 export async function getEntitlement(parentId: string): Promise<Entitlement> {
   const sub = await getSubscriptionForParent(parentId)
-  if (!sub) return { entitled: false, status: null, reason: "no_subscription", currentPeriodEnd: null }
+  if (!sub)
+    return {
+      entitled: false,
+      status: null,
+      reason: "no_subscription",
+      currentPeriodEnd: null,
+      cancelAtPeriodEnd: false,
+    }
+
+  const base = {
+    status: sub.status,
+    currentPeriodEnd: sub.currentPeriodEnd,
+    cancelAtPeriodEnd: sub.cancelAtPeriodEnd,
+  }
 
   if (ENTITLED_STATUSES.includes(sub.status)) {
-    return { entitled: true, status: sub.status, reason: "ok", currentPeriodEnd: sub.currentPeriodEnd }
+    return { entitled: true, reason: "ok", ...base }
   }
   if (sub.status === "past_due" || sub.status === "unpaid" || sub.status === "incomplete") {
-    return { entitled: false, status: sub.status, reason: "past_due", currentPeriodEnd: sub.currentPeriodEnd }
+    return { entitled: false, reason: "past_due", ...base }
   }
-  // canceled: allow until period end.
+  // canceled / deleted: the subscription is gone — access ends now.
   if (sub.status === "canceled") {
-    const stillValid = sub.currentPeriodEnd ? new Date(sub.currentPeriodEnd).getTime() > Date.now() : false
-    return {
-      entitled: stillValid,
-      status: sub.status,
-      reason: stillValid ? "ok" : "canceled",
-      currentPeriodEnd: sub.currentPeriodEnd,
-    }
+    return { entitled: false, reason: "canceled", ...base }
   }
-  return { entitled: false, status: sub.status, reason: "expired", currentPeriodEnd: sub.currentPeriodEnd }
+  return { entitled: false, reason: "expired", ...base }
 }
