@@ -215,17 +215,20 @@ export async function finishSessionAction(
   const perTopicSummary = computePerTopicSummary(answers)
   const { strongest, weakest } = strongestWeakest(perTopicSummary)
 
-  // One review item per WRONG answer (isCorrect === false). Build the PII-free
-  // AI context alongside, so the two stay aligned by questionId.
-  const wrongAnswers = answers.filter((a) => a.isCorrect === false)
+  // One review item per question the child got WRONG or did NOT attempt
+  // (skipped / ran out of time). Build the PII-free AI context alongside, so
+  // the two stay aligned by questionId. Unanswered slots have isCorrect === null
+  // and answeredAt === null — they count as not-correct and must be explained.
+  const reviewable = answers.filter((a) => a.isCorrect === false || a.answeredAt == null)
   const contexts: ReviewItemContext[] = []
   const items: ReviewItem[] = []
-  for (const answer of wrongAnswers) {
+  for (const answer of reviewable) {
     const question = questionById.get(answer.questionId)
     if (!question) continue
     const correctAnswerText = question.options[question.correctIndex] ?? ""
+    const attempted = answer.answeredAt != null
     const selectedAnswerText =
-      answer.selectedIndex != null ? question.options[answer.selectedIndex] ?? null : null
+      attempted && answer.selectedIndex != null ? question.options[answer.selectedIndex] ?? null : null
     const context: ReviewItemContext = {
       questionId: question.id,
       topic: answer.topic,
@@ -233,6 +236,7 @@ export async function finishSessionAction(
       options: question.options,
       correctAnswerText,
       selectedAnswerText,
+      attempted,
       imageDescription: question.imageDescription,
       yearGroup,
     }

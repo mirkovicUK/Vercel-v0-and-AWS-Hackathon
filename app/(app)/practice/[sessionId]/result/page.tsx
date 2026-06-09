@@ -135,7 +135,14 @@ export default async function ResultPage({ params }: { params: Promise<{ session
                     >
                       {!answered ? <Minus className="size-3.5" /> : correct ? <Check className="size-3.5" /> : <X className="size-3.5" />}
                     </span>
-                    <p className="text-sm font-medium leading-snug text-foreground">{q.text}</p>
+                    <div className="flex flex-1 flex-col gap-0.5">
+                      <p className="text-sm font-medium leading-snug text-foreground">{q.text}</p>
+                      {!answered ? (
+                        <span className="text-xs font-medium text-muted-foreground">
+                          Not answered — this question was skipped
+                        </span>
+                      ) : null}
+                    </div>
                   </div>
                   <div className="ml-9 grid gap-1.5">
                     {q.options.map((opt, i) => {
