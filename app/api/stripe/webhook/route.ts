@@ -60,7 +60,10 @@ async function resolveParentId(sub: Stripe.Subscription): Promise<string | null>
   return parent?.id ?? null
 }
 
-async function syncSubscription(sub: Stripe.Subscription): Promise<void> {
+async function syncSubscription(
+  sub: Stripe.Subscription,
+  opts: { deleted?: boolean; eventCreated?: number } = {},
+): Promise<void> {
   const parentId = await resolveParentId(sub)
   if (!parentId) {
     console.log("[v0] Stripe webhook: could not resolve parent for subscription", sub.id)
@@ -80,14 +83,25 @@ async function syncSubscription(sub: Stripe.Subscription): Promise<void> {
     sub.items.data[0]?.current_period_end ??
     null
 
+  // On a delete event the subscription has fully ended: force the status to
+  // 'canceled' (don't trust the object) and clear any scheduled-cancel flags.
+  // Otherwise detect a scheduled cancellation two ways — the classic
+  // `cancel_at_period_end` flag AND the flexible-billing `cancel_at` timestamp
+  // used by the newer Customer Portal.
+  const cancelAt = (sub as unknown as { cancel_at?: number | null }).cancel_at ?? null
+  const status: SubscriptionStatus = opts.deleted ? "canceled" : (sub.status as SubscriptionStatus)
+  const cancelAtPeriodEnd = opts.deleted ? false : Boolean(sub.cancel_at_period_end) || cancelAt != null
+
   await upsertSubscription({
     parentId,
     stripeSubscriptionId: sub.id,
-    status: sub.status as SubscriptionStatus,
+    status,
     priceId,
     currentPeriodEnd: tsToDate(periodEnd),
     trialEnd: tsToDate(sub.trial_end),
-    cancelAtPeriodEnd: sub.cancel_at_period_end,
+    cancelAtPeriodEnd,
+    // Stripe event timestamp drives out-of-order protection in upsertSubscription.
+    statusEventAt: tsToDate(opts.eventCreated),
   })
 }
 
@@ -148,14 +162,21 @@ export async function POST(req: Request) {
         if (session.mode === "subscription" && session.subscription) {
           const subId = typeof session.subscription === "string" ? session.subscription : session.subscription.id
           const sub = await stripe.subscriptions.retrieve(subId)
-          await syncSubscription(sub)
+          await syncSubscription(sub, { eventCreated: event.created })
         }
         break
       }
       case "customer.subscription.created":
-      case "customer.subscription.updated":
+      case "customer.subscription.updated": {
+        await syncSubscription(event.data.object as Stripe.Subscription, { eventCreated: event.created })
+        break
+      }
       case "customer.subscription.deleted": {
-        await syncSubscription(event.data.object as Stripe.Subscription)
+        // Subscription fully ended: force status 'canceled', clear cancel flags.
+        await syncSubscription(event.data.object as Stripe.Subscription, {
+          deleted: true,
+          eventCreated: event.created,
+        })
         break
       }
       case "invoice.paid": {
@@ -169,7 +190,7 @@ export async function POST(req: Request) {
         if (subRef) {
           const subId = typeof subRef === "string" ? subRef : subRef.id
           const sub = await stripe.subscriptions.retrieve(subId)
-          await syncSubscription(sub)
+          await syncSubscription(sub, { eventCreated: event.created })
         }
         break
       }
@@ -182,9 +203,7 @@ export async function POST(req: Request) {
     console.log("[v0] Stripe webhook handler error:", message)
     // Return 500 so Stripe retries delivery. Deliberately do NOT mark the event
     // processed — leaving no suppressing marker (Req 12.3).
-    // TEMP DEBUG: include the real reason in the response body so it is visible
-    // in the Stripe delivery view. Revert to "Handler error" once resolved.
-    return new Response(`Handler error: ${message}`, { status: 500 })
+    return new Response("Handler error", { status: 500 })
   }
 
   // Dispatch succeeded: mark the event processed BEFORE acknowledging, so a

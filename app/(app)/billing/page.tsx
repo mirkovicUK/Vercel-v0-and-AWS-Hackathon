@@ -32,7 +32,14 @@ export default async function BillingPage({
   const parent = await requireOnboardedParent()
   const entitlement = await getEntitlement(parent.id)
   const hasPlan = entitlement.status !== null
-  const status = entitlement.status ? STATUS_LABEL[entitlement.status] : null
+  // Show a "Cancelling" badge during the grace window (entitled but set to cancel
+  // at period end) instead of the plain trialing/active label (matches lifecycle UX).
+  const status =
+    entitlement.entitled && entitlement.cancelAtPeriodEnd
+      ? { label: "Cancelling", tone: "bg-muted text-muted-foreground" }
+      : entitlement.status
+        ? STATUS_LABEL[entitlement.status]
+        : null
   const justCompleted = (await searchParams).status === "complete"
 
   return (
@@ -73,11 +80,13 @@ export default async function BillingPage({
               <dl className="grid gap-2 text-sm">
                 <div className="flex items-center justify-between">
                   <dt className="text-muted-foreground">
-                    {entitlement.status === "trialing"
-                      ? "Trial ends"
-                      : entitlement.status === "canceled"
-                        ? "Access until"
-                        : "Renews on"}
+                    {entitlement.cancelAtPeriodEnd
+                      ? "Access until"
+                      : entitlement.status === "trialing"
+                        ? "Trial ends"
+                        : entitlement.status === "canceled"
+                          ? "Access until"
+                          : "Renews on"}
                   </dt>
                   <dd className="font-medium text-foreground tabular-nums">
                     {formatDate(entitlement.currentPeriodEnd)}

@@ -49,11 +49,17 @@ export async function upsertSubscription(input: {
   currentPeriodEnd: Date | null
   trialEnd: Date | null
   cancelAtPeriodEnd: boolean
+  statusEventAt: Date | null
 }): Promise<void> {
+  // Out-of-order protection (Stripe does not guarantee delivery order): on
+  // conflict, only apply this event if its Stripe timestamp is newer than or
+  // equal to the last applied one. A NULL stored timestamp (legacy row) is
+  // always overwritten. This prevents an older `updated` from clobbering a
+  // newer `deleted` and re-granting access.
   await query(
     `INSERT INTO subscriptions
-       (parent_id, stripe_subscription_id, status, price_id, current_period_end, trial_end, cancel_at_period_end, updated_at)
-     VALUES (:pid, :sid, :status::subscription_status, :price, :cpe, :trial, :cancel, now())
+       (parent_id, stripe_subscription_id, status, price_id, current_period_end, trial_end, cancel_at_period_end, status_event_at, updated_at)
+     VALUES (:pid, :sid, :status::subscription_status, :price, :cpe, :trial, :cancel, :evt, now())
      ON CONFLICT (parent_id) DO UPDATE SET
        stripe_subscription_id = EXCLUDED.stripe_subscription_id,
        status = EXCLUDED.status,
@@ -61,7 +67,11 @@ export async function upsertSubscription(input: {
        current_period_end = EXCLUDED.current_period_end,
        trial_end = EXCLUDED.trial_end,
        cancel_at_period_end = EXCLUDED.cancel_at_period_end,
-       updated_at = now()`,
+       status_event_at = EXCLUDED.status_event_at,
+       updated_at = now()
+     WHERE subscriptions.status_event_at IS NULL
+        OR EXCLUDED.status_event_at IS NULL
+        OR EXCLUDED.status_event_at >= subscriptions.status_event_at`,
     {
       pid: input.parentId,
       sid: input.stripeSubscriptionId,
@@ -70,6 +80,7 @@ export async function upsertSubscription(input: {
       cpe: input.currentPeriodEnd,
       trial: input.trialEnd,
       cancel: input.cancelAtPeriodEnd,
+      evt: input.statusEventAt,
     },
   )
 }
@@ -79,31 +90,48 @@ export interface Entitlement {
   status: SubscriptionStatus | null
   reason: "ok" | "no_subscription" | "past_due" | "canceled" | "expired"
   currentPeriodEnd: string | null
+  cancelAtPeriodEnd: boolean
 }
 
 /**
- * Authoritative entitlement check. Access is granted while trialing/active.
- * A canceled subscription keeps access until current_period_end.
+ * Authoritative entitlement check.
+ *
+ * - trialing / active  → entitled (this also covers "cancel at period end":
+ *   Stripe keeps the subscription active/trialing through the grace window).
+ * - canceled           → the subscription is gone, but honour any remaining
+ *   PAID/booked period: entitled while current_period_end is still in the
+ *   future, otherwise access ends. (Matches Stripe: a normal cancel-at-period-
+ *   end fires `deleted` AT period end, so grace has already elapsed; an
+ *   immediate/hard cancel mid-period still honours what was paid for.)
+ * - past_due / unpaid / incomplete → not entitled.
  */
 export async function getEntitlement(parentId: string): Promise<Entitlement> {
   const sub = await getSubscriptionForParent(parentId)
-  if (!sub) return { entitled: false, status: null, reason: "no_subscription", currentPeriodEnd: null }
+  if (!sub)
+    return {
+      entitled: false,
+      status: null,
+      reason: "no_subscription",
+      currentPeriodEnd: null,
+      cancelAtPeriodEnd: false,
+    }
+
+  const base = {
+    status: sub.status,
+    currentPeriodEnd: sub.currentPeriodEnd,
+    cancelAtPeriodEnd: sub.cancelAtPeriodEnd,
+  }
 
   if (ENTITLED_STATUSES.includes(sub.status)) {
-    return { entitled: true, status: sub.status, reason: "ok", currentPeriodEnd: sub.currentPeriodEnd }
+    return { entitled: true, reason: "ok", ...base }
   }
   if (sub.status === "past_due" || sub.status === "unpaid" || sub.status === "incomplete") {
-    return { entitled: false, status: sub.status, reason: "past_due", currentPeriodEnd: sub.currentPeriodEnd }
+    return { entitled: false, reason: "past_due", ...base }
   }
-  // canceled: allow until period end.
+  // canceled: honour any remaining booked period, then revoke.
   if (sub.status === "canceled") {
     const stillValid = sub.currentPeriodEnd ? new Date(sub.currentPeriodEnd).getTime() > Date.now() : false
-    return {
-      entitled: stillValid,
-      status: sub.status,
-      reason: stillValid ? "ok" : "canceled",
-      currentPeriodEnd: sub.currentPeriodEnd,
-    }
+    return { entitled: stillValid, reason: stillValid ? "ok" : "canceled", ...base }
   }
-  return { entitled: false, status: sub.status, reason: "expired", currentPeriodEnd: sub.currentPeriodEnd }
+  return { entitled: false, reason: "expired", ...base }
 }
