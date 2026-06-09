@@ -53,16 +53,24 @@ export default async function AccountPage() {
               Billing
             </CardTitle>
             <CardDescription>
-              {entitlement.status === "trialing"
-                ? "You're on a free trial."
-                : entitlement.entitled
-                  ? "Your plan is active."
-                  : "No active plan."}
+              {entitlement.cancelAtPeriodEnd
+                ? "Your plan is cancelling — access continues until the period ends."
+                : entitlement.status === "trialing"
+                  ? "You're on a free trial."
+                  : entitlement.entitled
+                    ? "Your plan is active."
+                    : entitlement.status === "past_due"
+                      ? "Your last payment failed — update your card to restore access."
+                      : entitlement.status === "canceled"
+                        ? "Your access has ended. Resubscribe to continue."
+                        : "No active plan."}
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Button asChild variant="outline">
-              <Link href="/billing">Go to billing</Link>
+            <Button asChild variant={entitlement.entitled ? "outline" : "default"}>
+              <Link href="/billing">
+                {entitlement.entitled ? "Go to billing" : "Resubscribe"}
+              </Link>
             </Button>
           </CardContent>
         </Card>

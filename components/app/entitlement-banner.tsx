@@ -57,8 +57,8 @@ export function EntitlementBanner({ entitlement }: { entitlement: Entitlement })
         ? "Your last payment didn't go through. Update your payment method to restore practice sessions."
         : entitlement.reason === "no_subscription"
           ? "Start your free trial to begin practising and tracking progress."
-          : "Your plan has ended. Reactivate to continue practising and tracking progress."
-    const cta = entitlement.reason === "no_subscription" ? "Start free trial" : "Reactivate plan"
+          : "Your access has ended. Resubscribe to continue practising — your children's profiles and progress are preserved."
+    const cta = entitlement.reason === "no_subscription" ? "Start free trial" : "Resubscribe"
     return (
       <div className="flex flex-col items-start justify-between gap-3 rounded-xl border border-destructive/30 bg-destructive/10 p-4 sm:flex-row sm:items-center">
         <div className="flex items-center gap-3">

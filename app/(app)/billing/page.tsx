@@ -1,5 +1,6 @@
 import { requireOnboardedParent } from "@/lib/auth/guard"
 import { getEntitlement } from "@/lib/db/subscriptions"
+import { getHasUsedTrial } from "@/lib/db/parents"
 import { PLAN, formatPrice } from "@/lib/plans"
 import { SubscriptionCheckout } from "@/components/app/subscription-checkout"
 import { ManagePlanButton } from "@/components/app/manage-plan-button"
@@ -30,7 +31,7 @@ export default async function BillingPage({
   searchParams: Promise<{ status?: string }>
 }) {
   const parent = await requireOnboardedParent()
-  const entitlement = await getEntitlement(parent.id)
+  const [entitlement, hasUsedTrial] = await Promise.all([getEntitlement(parent.id), getHasUsedTrial(parent.id)])
   const hasPlan = entitlement.status !== null
   // Show a "Cancelling" badge during the grace window (entitled but set to cancel
   // at period end) instead of the plain trialing/active label (matches lifecycle UX).
@@ -41,6 +42,17 @@ export default async function BillingPage({
         ? STATUS_LABEL[entitlement.status]
         : null
   const justCompleted = (await searchParams).status === "complete"
+
+  // Manage (Stripe portal) and Resubscribe are mutually exclusive: the portal is
+  // useful only while the subscription still exists (entitled). Once access has
+  // ended we only offer a fresh checkout. A returning parent who has used their
+  // trial is billed immediately with honest copy (no second free trial).
+  const canManage = entitlement.entitled
+  const needsResubscribe = !entitlement.entitled
+  const billedImmediately = hasUsedTrial
+  const resubscribeCta = billedImmediately
+    ? `Resubscribe — ${formatPrice(PLAN.priceInPence)}/month`
+    : `Start ${PLAN.trialDays}-day free trial`
 
   return (
     <div className="mx-auto w-full max-w-3xl px-4 py-8 sm:px-6">
@@ -85,7 +97,7 @@ export default async function BillingPage({
                       : entitlement.status === "trialing"
                         ? "Trial ends"
                         : entitlement.status === "canceled"
-                          ? "Access until"
+                          ? "Access ended"
                           : "Renews on"}
                   </dt>
                   <dd className="font-medium text-foreground tabular-nums">
@@ -93,9 +105,31 @@ export default async function BillingPage({
                   </dd>
                 </div>
               </dl>
-              <div className="pt-1">
-                <ManagePlanButton />
-              </div>
+
+              {/* Honest, status-aware messaging */}
+              {entitlement.cancelAtPeriodEnd ? (
+                <p className="text-sm text-muted-foreground">
+                  You&apos;ve cancelled. Access continues until the date above and won&apos;t auto-renew. Changed your
+                  mind? Open the billing portal to resume.
+                </p>
+              ) : entitlement.status === "canceled" ? (
+                <p className="text-sm text-muted-foreground">
+                  Your access has ended. Resubscribe below to continue — your children&apos;s profiles and progress are
+                  preserved.
+                </p>
+              ) : entitlement.status === "past_due" ? (
+                <p className="text-sm text-destructive">
+                  Your last payment didn&apos;t go through. Update your payment method in the billing portal to restore
+                  access.
+                </p>
+              ) : null}
+
+              {/* Manage (portal) only while the subscription still exists. */}
+              {canManage ? (
+                <div className="pt-1">
+                  <ManagePlanButton />
+                </div>
+              ) : null}
             </CardContent>
           </Card>
         ) : null}
@@ -103,13 +137,20 @@ export default async function BillingPage({
         {/* Plan offer */}
         <Card className="border-primary/20">
           <CardHeader>
-            <CardTitle className="text-base">{hasPlan ? "Your plan includes" : "Start your free trial"}</CardTitle>
+            <CardTitle className="text-base">
+              {!hasPlan ? "Start your free trial" : needsResubscribe ? "Resubscribe" : "Your plan includes"}
+            </CardTitle>
           </CardHeader>
           <CardContent className="flex flex-col gap-5">
             {!hasPlan ? (
               <div className="flex items-baseline gap-2">
                 <span className="font-heading text-3xl font-bold text-foreground">{formatPrice(PLAN.priceInPence)}</span>
                 <span className="text-muted-foreground">/ month after {PLAN.trialDays}-day free trial</span>
+              </div>
+            ) : needsResubscribe ? (
+              <div className="flex items-baseline gap-2">
+                <span className="font-heading text-3xl font-bold text-foreground">{formatPrice(PLAN.priceInPence)}</span>
+                <span className="text-muted-foreground">/ month</span>
               </div>
             ) : null}
             <ul className="grid gap-2.5">
@@ -120,11 +161,13 @@ export default async function BillingPage({
                 </li>
               ))}
             </ul>
-            {!hasPlan || !entitlement.entitled ? (
+            {needsResubscribe ? (
               <div>
-                <SubscriptionCheckout ctaLabel={hasPlan ? "Reactivate plan" : `Start ${PLAN.trialDays}-day free trial`} />
+                <SubscriptionCheckout ctaLabel={resubscribeCta} />
                 <p className="mt-2 text-xs text-muted-foreground">
-                  No charge during your trial. Cancel any time before it ends and you won&apos;t be billed.
+                  {billedImmediately
+                    ? "Billed today — your free trial has already been used. Cancel any time."
+                    : "No charge during your trial. Cancel any time before it ends and you won't be billed."}
                 </p>
               </div>
             ) : null}
