@@ -69,7 +69,8 @@ function toField(value: ParamValue): { field: Field; cast?: string } {
     return Number.isInteger(value) ? { field: { longValue: value } } : { field: { doubleValue: value } }
   }
   if (value instanceof Date) {
-    // Aurora expects 'YYYY-MM-DD HH:MM:SS.FFF' for timestamp casts.
+    // Aurora expects 'YYYY-MM-DD HH:MM:SS.FFF' for timestamp casts, paired with
+    // the RDS Data API TIMESTAMP typeHint so it is not bound as plain text.
     return { field: { stringValue: value.toISOString().replace("T", " ").replace("Z", "") }, cast: "timestamptz" }
   }
   if (Array.isArray(value) || typeof value === "object") {
@@ -82,7 +83,10 @@ function buildParameters(params: Record<string, ParamValue>): SqlParameter[] {
   return Object.entries(params).map(([name, raw]) => {
     const { field, cast } = toField(raw)
     const p: SqlParameter = { name, value: field }
-    if (cast) p.typeHint = cast === "jsonb" ? "JSON" : undefined
+    // Map our internal cast hints to RDS Data API typeHints so the server binds
+    // the value as the right Postgres type instead of plain text.
+    if (cast === "jsonb") p.typeHint = "JSON"
+    else if (cast === "timestamptz") p.typeHint = "TIMESTAMP"
     return p
   })
 }
