@@ -40,8 +40,8 @@ export function EntitlementBanner({ entitlement }: { entitlement: Entitlement })
         <div className="flex items-center gap-3">
           <Clock className="size-5 shrink-0 text-primary" />
           <p className="text-sm text-foreground">
-            You&apos;re on a free trial{left != null ? <> — {left} {left === 1 ? "day" : "days"} left</> : null}. Add a
-            payment method any time to keep access without interruption.
+            You&apos;re on a free trial{left != null ? <> — {left} {left === 1 ? "day" : "days"} left</> : null}. Your
+            plan starts automatically when the trial ends. Cancel any time before then and you won&apos;t be charged.
           </p>
         </div>
         <Button asChild size="sm" variant="outline" className="shrink-0">
