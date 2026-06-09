@@ -20,7 +20,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 
-export function Hero() {
+export function Hero({ authed = false }: { authed?: boolean }) {
   return (
     <section className="relative overflow-hidden">
       <div className="mx-auto grid w-full max-w-6xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:py-24">
@@ -38,7 +38,9 @@ export function Hero() {
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Button asChild size="lg">
-              <Link href="/sign-up">Start your 7-day free trial</Link>
+              <Link href={authed ? "/dashboard" : "/sign-up"}>
+                {authed ? "Go to dashboard" : "Start your 7-day free trial"}
+              </Link>
             </Button>
             <Button asChild size="lg" variant="outline">
               <Link href="#how-it-works">See how it works</Link>
@@ -203,7 +205,7 @@ const toneStyles: Record<
   needs_focus: { bar: "bg-destructive", badge: "bg-destructive/10 text-destructive", label: "Needs focus" },
 }
 
-export function ProgressShowcase() {
+export function ProgressShowcase({ authed = false }: { authed?: boolean }) {
   return (
     <section id="progress" className="scroll-mt-20 border-y border-border bg-card">
       <div className="mx-auto grid w-full max-w-6xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:py-24">
@@ -233,7 +235,9 @@ export function ProgressShowcase() {
             ))}
           </ul>
           <Button asChild size="lg" className="mt-1">
-            <Link href="/sign-up">Track your child's progress</Link>
+            <Link href={authed ? "/dashboard" : "/sign-up"}>
+              {authed ? "Go to dashboard" : "Track your child's progress"}
+            </Link>
           </Button>
         </div>
 
@@ -390,7 +394,7 @@ const planFeatures = [
   "Cancel anytime — keep access until period end",
 ]
 
-export function Pricing() {
+export function Pricing({ authed = false }: { authed?: boolean }) {
   return (
     <section id="pricing" className="scroll-mt-20">
       <div className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:py-20">
@@ -408,7 +412,9 @@ export function Pricing() {
               </div>
               <p className="mt-1 text-sm text-muted-foreground">7-day free trial · then £19.99/month · cancel anytime</p>
               <Button asChild size="lg" className="mt-6 w-full">
-                <Link href="/sign-up">Start your free trial</Link>
+                <Link href={authed ? "/dashboard" : "/sign-up"}>
+                  {authed ? "Go to dashboard" : "Start your free trial"}
+                </Link>
               </Button>
               <ul className="mt-6 space-y-3">
                 {planFeatures.map((f) => (
@@ -429,7 +435,7 @@ export function Pricing() {
   )
 }
 
-export function FinalCta() {
+export function FinalCta({ authed = false }: { authed?: boolean }) {
   return (
     <section className="border-t border-border bg-primary">
       <div className="mx-auto w-full max-w-4xl px-4 py-16 text-center sm:px-6">
@@ -441,7 +447,9 @@ export function FinalCta() {
           per month.
         </p>
         <Button asChild size="lg" variant="secondary" className="mt-8">
-          <Link href="/sign-up">Start your 7-day free trial</Link>
+          <Link href={authed ? "/dashboard" : "/sign-up"}>
+            {authed ? "Go to dashboard" : "Start your 7-day free trial"}
+          </Link>
         </Button>
       </div>
     </section>
