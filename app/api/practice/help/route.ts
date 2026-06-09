@@ -30,7 +30,8 @@ Your job:
 export async function POST(req: Request) {
   let parent
   try {
-    parent = await requireEntitledParent()
+    const result = await requireEntitledParent()
+    parent = result.parent
   } catch {
     return Response.json({ error: "Not authorised." }, { status: 401 })
   }
