@@ -5,6 +5,7 @@ const toneStyles: Record<MasteryClassification, { bar: string; badge: string }> 
   strong: { bar: "bg-success", badge: "bg-success/15 text-success" },
   developing: { bar: "bg-primary", badge: "bg-primary/10 text-primary" },
   needs_focus: { bar: "bg-destructive", badge: "bg-destructive/10 text-destructive" },
+  insufficient_data: { bar: "bg-muted-foreground/40", badge: "bg-muted text-muted-foreground" },
 }
 
 export function TopicMasteryList({ progress }: { progress: TopicProgress[] }) {
