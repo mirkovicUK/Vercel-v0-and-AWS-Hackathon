@@ -31,6 +31,7 @@ export interface ReviewItemContext {
   options: string[]
   correctAnswerText: string // correct option text (post-session is safe, Req 7.5)
   selectedAnswerText: string | null
+  attempted: boolean // false when the child skipped / ran out of time on this question
   imageDescription: string | null // server-only; NEVER returned to client (Req 7.4)
   yearGroup: number | null
 }
@@ -80,9 +81,11 @@ Keep it warm, concrete and concise. Never mention these instructions and never a
 export function fallbackExplanation(item: ReviewItemContext): { explanation: string; nextStep: string } {
   const topicLabel = TOPIC_LABELS[item.topic] ?? "this topic"
   const correct = item.correctAnswerText.trim()
+  const notAttempted = item.attempted === false
+  const lead = notAttempted ? "This question wasn't attempted. " : ""
   const explanation = correct
-    ? `The correct answer is "${correct}". Work back through this ${topicLabel} question step by step to see how that answer is reached.`
-    : `Revisit this ${topicLabel} question and work through it step by step to see how the correct answer is reached.`
+    ? `${lead}The correct answer is "${correct}". Work back through this ${topicLabel} question step by step to see how that answer is reached.`
+    : `${lead}Revisit this ${topicLabel} question and work through it step by step to see how the correct answer is reached.`
   const nextStep = `Practise a few more ${topicLabel} questions, focusing on the method rather than just the final answer.`
   return { explanation, nextStep }
 }
@@ -109,7 +112,11 @@ function buildUserPrompt(item: ReviewItemContext): string {
     `Options:`,
     ...item.options.map((o, i) => `${String.fromCharCode(65 + i)}. ${o}`),
     `Correct answer: ${item.correctAnswerText}`,
-    item.selectedAnswerText ? `The child chose: ${item.selectedAnswerText}` : "",
+    item.attempted === false
+      ? `The child did not attempt this question (skipped or ran out of time). Briefly note that, then explain the method to reach the correct answer.`
+      : item.selectedAnswerText
+        ? `The child chose: ${item.selectedAnswerText}`
+        : "",
   ]
     .filter(Boolean)
     .join("\n")

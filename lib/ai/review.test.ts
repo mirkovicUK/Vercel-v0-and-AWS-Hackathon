@@ -84,6 +84,7 @@ const itemArb = (index: number): fc.Arbitrary<ReviewItemContext> =>
       options: fc.array(fc.string({ maxLength: 12 }), { minLength: 0, maxLength: 4 }),
       correctAnswerText: fc.string({ maxLength: 20 }),
       selectedAnswerText: fc.option(fc.string({ maxLength: 20 }), { nil: null }),
+      attempted: fc.boolean(),
       imageDescription: fc.option(fc.string({ maxLength: 20 }), { nil: null }),
       yearGroup: fc.option(fc.constantFrom(4, 5, 6), { nil: null }),
     })
@@ -95,6 +96,7 @@ const itemArb = (index: number): fc.Arbitrary<ReviewItemContext> =>
       options: r.options,
       correctAnswerText: r.correctAnswerText,
       selectedAnswerText: r.selectedAnswerText,
+      attempted: r.attempted,
       imageDescription: r.imageDescription,
       yearGroup: r.yearGroup,
     }))
