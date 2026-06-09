@@ -12,6 +12,9 @@ import Link from "next/link"
 
 export const metadata = { title: "Billing — ApexMaths" }
 
+// Entitlement is read per request and must always reflect live subscription state.
+export const dynamic = "force-dynamic"
+
 const STATUS_LABEL: Record<string, { label: string; tone: string }> = {
   trialing: { label: "Free trial", tone: "bg-primary/10 text-primary" },
   active: { label: "Active", tone: "bg-success/15 text-success" },

@@ -9,6 +9,9 @@ import { ArrowLeft, CreditCard, ShieldCheck } from "lucide-react"
 
 export const metadata = { title: "Account & privacy — ApexMaths" }
 
+// Entitlement is read per request and must always reflect live subscription state.
+export const dynamic = "force-dynamic"
+
 export default async function AccountPage() {
   const parent = await requireParent()
   const entitlement = await getEntitlement(parent.id)
