@@ -1,5 +1,6 @@
 import { MarketingHeader } from "@/components/marketing/marketing-header"
 import { MarketingFooter } from "@/components/marketing/marketing-footer"
+import { ScrollToTopOnLoad } from "@/components/marketing/scroll-to-top-on-load"
 import { getCurrentParent } from "@/lib/auth/session"
 import {
   Hero,
@@ -19,6 +20,7 @@ export default async function HomePage() {
   const authed = parent != null
   return (
     <div className="flex min-h-screen flex-col">
+      <ScrollToTopOnLoad />
       <MarketingHeader />
       <main className="flex-1">
         <Hero authed={authed} />

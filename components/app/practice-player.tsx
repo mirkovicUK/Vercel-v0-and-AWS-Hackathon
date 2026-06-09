@@ -1,13 +1,25 @@
 "use client"
 
 import { useCallback, useEffect, useRef, useState, useTransition } from "react"
+import { useRouter } from "next/navigation"
 import { toast } from "sonner"
 import type { ClientQuestion, SessionType, Topic } from "@/lib/domain"
 import { MAX_HELP_PER_SESSION, SESSION_TYPE_CONFIG, TOPIC_LABELS } from "@/lib/domain"
-import { submitAnswerAction, finishSessionAction } from "@/app/(app)/practice/actions"
+import { submitAnswerAction, finishSessionAction, endSessionAction } from "@/app/(app)/practice/actions"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
 import { Badge } from "@/components/ui/badge"
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
 import { cn } from "@/lib/utils"
 import { Clock, Check, X, ChevronRight, ChevronLeft, Flag, Lightbulb } from "lucide-react"
 import { SessionHelpDialog } from "@/components/app/session-help-dialog"
@@ -54,8 +66,10 @@ export function PracticePlayer({
   const [seconds, setSeconds] = useState(remainingSeconds)
   const [submitting, startSubmit] = useTransition()
   const [finishing, startFinish] = useTransition()
+  const [cancelling, startCancel] = useTransition()
   const [helpUsed, setHelpUsed] = useState(initialHelpUsed)
   const finishedRef = useRef(false)
+  const router = useRouter()
 
   const slot = slots[index]!
   const current = answers[slot.position] ?? null
@@ -71,6 +85,23 @@ export function PracticePlayer({
     },
     [sessionId],
   )
+
+  // Cancel/abandon the session WITHOUT scoring or generating a review. The
+  // session is marked abandoned server-side and the parent returns to the
+  // dashboard (Req: a cancelled session does not count or trigger the review).
+  function cancelSession() {
+    if (finishedRef.current) return
+    finishedRef.current = true
+    startCancel(async () => {
+      const res = await endSessionAction(sessionId)
+      if (res && "error" in res && res.error) {
+        finishedRef.current = false
+        toast.error(res.error)
+        return
+      }
+      router.push("/dashboard")
+    })
+  }
 
   // Server-authoritative countdown. The deadline lives on the server; this is a
   // display + auto-submit convenience. The server also rejects any late answers.
@@ -127,16 +158,41 @@ export function PracticePlayer({
               </Badge>
             ) : null}
           </div>
-          <div
-            className={cn(
-              "flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-semibold tabular-nums",
-              timeLow ? "bg-destructive/10 text-destructive" : "bg-secondary text-foreground",
-            )}
-            role="timer"
-            aria-live="off"
-          >
-            <Clock className="size-4" />
-            {formatTime(seconds)}
+          <div className="flex items-center gap-2">
+            <div
+              className={cn(
+                "flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-semibold tabular-nums",
+                timeLow ? "bg-destructive/10 text-destructive" : "bg-secondary text-foreground",
+              )}
+              role="timer"
+              aria-live="off"
+            >
+              <Clock className="size-4" />
+              {formatTime(seconds)}
+            </div>
+            <AlertDialog>
+              <AlertDialogTrigger asChild>
+                <Button variant="ghost" size="sm" disabled={cancelling || finishing} className="text-muted-foreground">
+                  <X className="size-4" />
+                  <span className="hidden sm:inline">Cancel</span>
+                </Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle>Cancel this session?</AlertDialogTitle>
+                  <AlertDialogDescription>
+                    This session will be discarded. It won&apos;t count towards {childName}&apos;s score or progress,
+                    and no review will be generated. This can&apos;t be undone.
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel disabled={cancelling}>Keep practising</AlertDialogCancel>
+                  <AlertDialogAction onClick={cancelSession} disabled={cancelling}>
+                    {cancelling ? "Cancelling…" : "Cancel session"}
+                  </AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
           </div>
         </div>
         <div className="flex items-center gap-3">
