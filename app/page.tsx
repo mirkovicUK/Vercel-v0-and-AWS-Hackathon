@@ -1,5 +1,6 @@
 import { MarketingHeader } from "@/components/marketing/marketing-header"
 import { MarketingFooter } from "@/components/marketing/marketing-footer"
+import { getCurrentParent } from "@/lib/auth/session"
 import {
   Hero,
   ValueProp,
@@ -10,18 +11,23 @@ import {
   FinalCta,
 } from "@/components/marketing/landing-sections"
 
-export default function HomePage() {
+// Header/CTAs reflect the signed-in state, which is read from cookies per request.
+export const dynamic = "force-dynamic"
+
+export default async function HomePage() {
+  const parent = await getCurrentParent()
+  const authed = parent != null
   return (
     <div className="flex min-h-screen flex-col">
       <MarketingHeader />
       <main className="flex-1">
-        <Hero />
+        <Hero authed={authed} />
         <ValueProp />
         <HowItWorks />
-        <ProgressShowcase />
+        <ProgressShowcase authed={authed} />
         <Features />
-        <Pricing />
-        <FinalCta />
+        <Pricing authed={authed} />
+        <FinalCta authed={authed} />
       </main>
       <MarketingFooter />
     </div>
