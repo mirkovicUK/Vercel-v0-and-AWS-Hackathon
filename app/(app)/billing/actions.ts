@@ -76,12 +76,13 @@ async function ensureCustomer(parentId: string, email: string, existingCustomerI
 }
 
 /**
- * Start an embedded Checkout session in subscription mode with a free trial.
- * Returns the client secret for the embedded checkout component.
+ * Start a Stripe-hosted Checkout session in subscription mode with a free trial.
+ * Returns the hosted checkout URL the browser redirects to. On success Stripe
+ * redirects back to `success_url`; on cancel it returns the user to `cancel_url`.
  */
-export async function startSubscriptionCheckout(): Promise<{ clientSecret: string | null; error?: string }> {
+export async function startSubscriptionCheckout(): Promise<{ url: string | null; error?: string }> {
   if (!isStripeConfigured()) {
-    return { clientSecret: null, error: "Billing is not configured yet. Please try again later." }
+    return { url: null, error: "Billing is not configured yet. Please try again later." }
   }
   const parent = await requireOnboardedParent()
   // Resolve the customer first so the prior-subscription lookup can run against it.
@@ -104,10 +105,11 @@ export async function startSubscriptionCheckout(): Promise<{ clientSecret: strin
   }
 
   const session = await stripe.checkout.sessions.create({
-    ui_mode: "embedded",
+    // Stripe-hosted Checkout: Stripe renders the payment page on its own domain.
     mode: "subscription",
     customer: customerId,
-    return_url: `${origin}/billing?status=complete`,
+    success_url: `${origin}/billing?status=complete`,
+    cancel_url: `${origin}/billing?status=cancelled`,
     line_items: [
       {
         quantity: 1,
@@ -127,7 +129,7 @@ export async function startSubscriptionCheckout(): Promise<{ clientSecret: strin
   })
 
   await audit({ action: "billing.checkout_started", parentId: parent.id })
-  return { clientSecret: session.client_secret ?? null }
+  return { url: session.url ?? null }
 }
 
 /** Open the Stripe billing portal so the parent can manage or cancel their plan. */
