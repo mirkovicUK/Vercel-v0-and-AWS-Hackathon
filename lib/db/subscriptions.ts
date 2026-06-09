@@ -83,13 +83,16 @@ export interface Entitlement {
 }
 
 /**
- * Authoritative entitlement check. Access is granted while trialing/active.
+ * Authoritative entitlement check.
  *
- * Stripe keeps a subscription `active`/`trialing` (with cancel_at_period_end =
- * true) for the whole "cancel at period end" grace window, then fires
- * customer.subscription.deleted once the period actually ends. So a `canceled`
- * status means the subscription is gone and access stops immediately — we must
- * NOT keep granting access based on a stale current_period_end.
+ * - trialing / active  → entitled (this also covers "cancel at period end":
+ *   Stripe keeps the subscription active/trialing through the grace window).
+ * - canceled           → the subscription is gone, but honour any remaining
+ *   PAID/booked period: entitled while current_period_end is still in the
+ *   future, otherwise access ends. (Matches Stripe: a normal cancel-at-period-
+ *   end fires `deleted` AT period end, so grace has already elapsed; an
+ *   immediate/hard cancel mid-period still honours what was paid for.)
+ * - past_due / unpaid / incomplete → not entitled.
  */
 export async function getEntitlement(parentId: string): Promise<Entitlement> {
   const sub = await getSubscriptionForParent(parentId)
@@ -114,9 +117,10 @@ export async function getEntitlement(parentId: string): Promise<Entitlement> {
   if (sub.status === "past_due" || sub.status === "unpaid" || sub.status === "incomplete") {
     return { entitled: false, reason: "past_due", ...base }
   }
-  // canceled / deleted: the subscription is gone — access ends now.
+  // canceled: honour any remaining booked period, then revoke.
   if (sub.status === "canceled") {
-    return { entitled: false, reason: "canceled", ...base }
+    const stillValid = sub.currentPeriodEnd ? new Date(sub.currentPeriodEnd).getTime() > Date.now() : false
+    return { entitled: stillValid, reason: stillValid ? "ok" : "canceled", ...base }
   }
   return { entitled: false, reason: "expired", ...base }
 }

@@ -60,7 +60,7 @@ async function resolveParentId(sub: Stripe.Subscription): Promise<string | null>
   return parent?.id ?? null
 }
 
-async function syncSubscription(sub: Stripe.Subscription): Promise<void> {
+async function syncSubscription(sub: Stripe.Subscription, opts: { deleted?: boolean } = {}): Promise<void> {
   const parentId = await resolveParentId(sub)
   if (!parentId) {
     console.log("[v0] Stripe webhook: could not resolve parent for subscription", sub.id)
@@ -80,14 +80,23 @@ async function syncSubscription(sub: Stripe.Subscription): Promise<void> {
     sub.items.data[0]?.current_period_end ??
     null
 
+  // On a delete event the subscription has fully ended: force the status to
+  // 'canceled' (don't trust the object) and clear any scheduled-cancel flags.
+  // Otherwise detect a scheduled cancellation two ways — the classic
+  // `cancel_at_period_end` flag AND the flexible-billing `cancel_at` timestamp
+  // used by the newer Customer Portal.
+  const cancelAt = (sub as unknown as { cancel_at?: number | null }).cancel_at ?? null
+  const status: SubscriptionStatus = opts.deleted ? "canceled" : (sub.status as SubscriptionStatus)
+  const cancelAtPeriodEnd = opts.deleted ? false : Boolean(sub.cancel_at_period_end) || cancelAt != null
+
   await upsertSubscription({
     parentId,
     stripeSubscriptionId: sub.id,
-    status: sub.status as SubscriptionStatus,
+    status,
     priceId,
     currentPeriodEnd: tsToDate(periodEnd),
     trialEnd: tsToDate(sub.trial_end),
-    cancelAtPeriodEnd: sub.cancel_at_period_end,
+    cancelAtPeriodEnd,
   })
 }
 
@@ -153,9 +162,13 @@ export async function POST(req: Request) {
         break
       }
       case "customer.subscription.created":
-      case "customer.subscription.updated":
-      case "customer.subscription.deleted": {
+      case "customer.subscription.updated": {
         await syncSubscription(event.data.object as Stripe.Subscription)
+        break
+      }
+      case "customer.subscription.deleted": {
+        // Subscription fully ended: force status 'canceled', clear cancel flags.
+        await syncSubscription(event.data.object as Stripe.Subscription, { deleted: true })
         break
       }
       case "invoice.paid": {
