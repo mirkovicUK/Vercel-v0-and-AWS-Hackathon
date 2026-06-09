@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, type ReactNode } from "react"
+import { useEffect, useState, type ReactNode } from "react"
 import { toast } from "sonner"
 import {
   Dialog,
@@ -37,6 +37,14 @@ export function SessionHelpDialog({
   const [loading, setLoading] = useState(false)
   const [explanation, setExplanation] = useState("")
   const [requested, setRequested] = useState(false)
+
+  // Reset cached state whenever the question changes, so moving to the next
+  // question fetches a fresh hint instead of showing the previous one.
+  useEffect(() => {
+    setExplanation("")
+    setRequested(false)
+    setLoading(false)
+  }, [questionId])
 
   async function requestHelp() {
     setLoading(true)
