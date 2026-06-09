@@ -84,47 +84,55 @@ export async function startSubscriptionCheckout(): Promise<{ url: string | null;
   if (!isStripeConfigured()) {
     return { url: null, error: "Billing is not configured yet. Please try again later." }
   }
-  const parent = await requireOnboardedParent()
-  // Resolve the customer first so the prior-subscription lookup can run against it.
-  const customerId = await ensureCustomer(parent.id, parent.email, parent.stripeCustomerId)
-  const origin = await getOrigin()
-
-  // Decide trial eligibility at checkout (Req 2.1-2.4). Replaces the always-on trial.
-  const hasUsedTrial = await getHasUsedTrial(parent.id)
-  const decision = await decideTrialEligibility({
-    hasUsedTrial,
-    stripeCustomerId: customerId,
-    listPriorSubscriptions: async (cid) =>
-      (await stripe.subscriptions.list({ customer: cid, status: "all", limit: 1 })).data.length,
-  })
-
-  // Only attach trial_period_days when eligible; always set subscription metadata.
-  const subscriptionData: Parameters<typeof stripe.checkout.sessions.create>[0]["subscription_data"] = {
-    metadata: { parentId: parent.id, planId: PLAN.id },
-    ...(decision.grantTrial ? { trial_period_days: PLAN.trialDays } : {}),
-  }
-
   // Dashboard-managed Price is the single source of truth for amount/currency.
   // STRIPE_PRICE_ID is required — no inline price fallback.
   const priceId = process.env.STRIPE_PRICE_ID
   if (!priceId) {
     return { url: null, error: "Billing is not configured yet. Please try again later." }
   }
+  const parent = await requireOnboardedParent()
+  const origin = await getOrigin()
 
-  const session = await stripe.checkout.sessions.create({
-    // Stripe-hosted Checkout: Stripe renders the payment page on its own domain.
-    mode: "subscription",
-    customer: customerId,
-    allow_promotion_codes: true,
-    success_url: `${origin}/billing?status=complete`,
-    cancel_url: `${origin}/billing?status=cancelled`,
-    line_items: [{ price: priceId, quantity: 1 }],
-    subscription_data: subscriptionData,
-    metadata: { parentId: parent.id, planId: PLAN.id },
-  })
+  try {
+    // Resolve the customer first so the prior-subscription lookup can run against it.
+    const customerId = await ensureCustomer(parent.id, parent.email, parent.stripeCustomerId)
 
-  await audit({ action: "billing.checkout_started", parentId: parent.id })
-  return { url: session.url ?? null }
+    // Decide trial eligibility at checkout (Req 2.1-2.4). Replaces the always-on trial.
+    const hasUsedTrial = await getHasUsedTrial(parent.id)
+    const decision = await decideTrialEligibility({
+      hasUsedTrial,
+      stripeCustomerId: customerId,
+      listPriorSubscriptions: async (cid) =>
+        (await stripe.subscriptions.list({ customer: cid, status: "all", limit: 1 })).data.length,
+    })
+
+    // Only attach trial_period_days when eligible; always set subscription metadata.
+    const subscriptionData: Parameters<typeof stripe.checkout.sessions.create>[0]["subscription_data"] = {
+      metadata: { parentId: parent.id, planId: PLAN.id },
+      ...(decision.grantTrial ? { trial_period_days: PLAN.trialDays } : {}),
+    }
+
+    const session = await stripe.checkout.sessions.create({
+      // Stripe-hosted Checkout: Stripe renders the payment page on its own domain.
+      mode: "subscription",
+      customer: customerId,
+      allow_promotion_codes: true,
+      success_url: `${origin}/billing?status=complete`,
+      cancel_url: `${origin}/billing?status=cancelled`,
+      line_items: [{ price: priceId, quantity: 1 }],
+      subscription_data: subscriptionData,
+      metadata: { parentId: parent.id, planId: PLAN.id },
+    })
+
+    await audit({ action: "billing.checkout_started", parentId: parent.id })
+    return { url: session.url ?? null }
+  } catch (err) {
+    // Surface the Stripe reason (e.g. "No such price", test/live key mismatch,
+    // customer in wrong mode) in logs rather than crashing into an opaque 500.
+    const message = err instanceof Error ? err.message : String(err)
+    console.log("[v0] startSubscriptionCheckout failed:", message)
+    return { url: null, error: "Could not start checkout. Please try again." }
+  }
 }
 
 /** Open the Stripe billing portal so the parent can manage or cancel their plan. */
