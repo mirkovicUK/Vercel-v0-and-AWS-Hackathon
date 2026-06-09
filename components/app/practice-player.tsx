@@ -156,11 +156,11 @@ export function PracticePlayer({
           <SessionHelpDialog
             sessionId={sessionId}
             questionId={slot.question.id}
-            disabled={helpUsed >= MAX_HELP_PER_SESSION}
+            disabled={helpUsed >= MAX_HELP_PER_SESSION || current != null}
             helpRemaining={MAX_HELP_PER_SESSION - helpUsed}
             onUsed={() => setHelpUsed((n) => n + 1)}
             trigger={
-              <Button variant="outline" size="sm" disabled={helpUsed >= MAX_HELP_PER_SESSION}>
+              <Button variant="outline" size="sm" disabled={helpUsed >= MAX_HELP_PER_SESSION || current != null}>
                 <Lightbulb className="size-4" />
                 Show me how
                 <span className="text-xs text-muted-foreground">
@@ -240,8 +240,8 @@ export function PracticePlayer({
               <p className="font-medium text-success">Correct — well done!</p>
             ) : (
               <p className="font-medium text-destructive">
-                Not quite. The right answer is {String.fromCharCode(65 + current.correctIndex)}. Tap “Show me how” for a
-                step-by-step explanation.
+                Not quite. The right answer is {String.fromCharCode(65 + current.correctIndex)}. You&apos;ll get a
+                full step-by-step explanation in your review at the end.
               </p>
             )}
           </div>
