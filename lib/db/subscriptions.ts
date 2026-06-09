@@ -96,13 +96,15 @@ export interface Entitlement {
 /**
  * Authoritative entitlement check.
  *
- * - trialing / active  → entitled (this also covers "cancel at period end":
- *   Stripe keeps the subscription active/trialing through the grace window).
- * - canceled           → the subscription is gone, but honour any remaining
- *   PAID/booked period: entitled while current_period_end is still in the
- *   future, otherwise access ends. (Matches Stripe: a normal cancel-at-period-
- *   end fires `deleted` AT period end, so grace has already elapsed; an
- *   immediate/hard cancel mid-period still honours what was paid for.)
+ * - trialing / active → entitled. This already covers "cancel at period end":
+ *   Stripe keeps the subscription active/trialing for the whole grace window
+ *   (with cancel_at_period_end = true) and only fires
+ *   customer.subscription.deleted once the period actually ends.
+ * - canceled → the subscription is gone; access ends immediately. We do NOT
+ *   honour a stale current_period_end, because an immediate cancel leaves the
+ *   old future period date on the row while the subscription no longer exists.
+ *   (Cancel-at-period-end never reaches here early — it stays active/trialing
+ *   until the period elapses, then deletes.)
  * - past_due / unpaid / incomplete → not entitled.
  */
 export async function getEntitlement(parentId: string): Promise<Entitlement> {
@@ -128,10 +130,10 @@ export async function getEntitlement(parentId: string): Promise<Entitlement> {
   if (sub.status === "past_due" || sub.status === "unpaid" || sub.status === "incomplete") {
     return { entitled: false, reason: "past_due", ...base }
   }
-  // canceled: honour any remaining booked period, then revoke.
+  // canceled: subscription is gone — revoke access immediately (Req: a cancelled
+  // user must not be able to start sessions).
   if (sub.status === "canceled") {
-    const stillValid = sub.currentPeriodEnd ? new Date(sub.currentPeriodEnd).getTime() > Date.now() : false
-    return { entitled: stillValid, reason: stillValid ? "ok" : "canceled", ...base }
+    return { entitled: false, reason: "canceled", ...base }
   }
   return { entitled: false, reason: "expired", ...base }
 }

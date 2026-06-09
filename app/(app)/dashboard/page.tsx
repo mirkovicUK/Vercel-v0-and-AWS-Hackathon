@@ -10,6 +10,9 @@ import { EntitlementBanner } from "@/components/app/entitlement-banner"
 import { Empty, EmptyHeader, EmptyMedia, EmptyTitle, EmptyDescription, EmptyContent } from "@/components/ui/empty"
 import { Users } from "lucide-react"
 
+// Entitlement is read per request and must always reflect live subscription state.
+export const dynamic = "force-dynamic"
+
 export const metadata: Metadata = {
   title: "Dashboard",
   description: "Track each child's progress across all six 11+ maths topics.",
