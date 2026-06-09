@@ -178,10 +178,13 @@ export async function POST(req: Request) {
         break
     }
   } catch (err) {
-    console.log("[v0] Stripe webhook handler error:", (err as Error).message)
+    const message = err instanceof Error ? err.message : String(err)
+    console.log("[v0] Stripe webhook handler error:", message)
     // Return 500 so Stripe retries delivery. Deliberately do NOT mark the event
     // processed — leaving no suppressing marker (Req 12.3).
-    return new Response("Handler error", { status: 500 })
+    // TEMP DEBUG: include the real reason in the response body so it is visible
+    // in the Stripe delivery view. Revert to "Handler error" once resolved.
+    return new Response(`Handler error: ${message}`, { status: 500 })
   }
 
   // Dispatch succeeded: mark the event processed BEFORE acknowledging, so a
