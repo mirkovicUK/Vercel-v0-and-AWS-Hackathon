@@ -29,7 +29,7 @@ const reportSchema = z.object({
 export async function generateReviewReport(
   childId: string,
 ): Promise<{ ok: true; report: ReviewReport } | { ok: false; error: string }> {
-  const parent = await requireEntitledParent()
+  const { parent } = await requireEntitledParent()
 
   const child = await getChildForParent(childId, parent.id)
   if (!child) return { ok: false, error: "Child not found." }
