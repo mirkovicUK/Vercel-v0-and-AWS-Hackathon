@@ -104,26 +104,21 @@ export async function startSubscriptionCheckout(): Promise<{ url: string | null;
     ...(decision.grantTrial ? { trial_period_days: PLAN.trialDays } : {}),
   }
 
+  // Dashboard-managed Price is the single source of truth for amount/currency.
+  // STRIPE_PRICE_ID is required — no inline price fallback.
+  const priceId = process.env.STRIPE_PRICE_ID
+  if (!priceId) {
+    return { url: null, error: "Billing is not configured yet. Please try again later." }
+  }
+
   const session = await stripe.checkout.sessions.create({
     // Stripe-hosted Checkout: Stripe renders the payment page on its own domain.
     mode: "subscription",
     customer: customerId,
+    allow_promotion_codes: true,
     success_url: `${origin}/billing?status=complete`,
     cancel_url: `${origin}/billing?status=cancelled`,
-    line_items: [
-      {
-        quantity: 1,
-        price_data: {
-          currency: PLAN.currency,
-          unit_amount: PLAN.priceInPence,
-          recurring: { interval: PLAN.interval },
-          product_data: {
-            name: PLAN.name,
-            description: PLAN.description,
-          },
-        },
-      },
-    ],
+    line_items: [{ price: priceId, quantity: 1 }],
     subscription_data: subscriptionData,
     metadata: { parentId: parent.id, planId: PLAN.id },
   })
