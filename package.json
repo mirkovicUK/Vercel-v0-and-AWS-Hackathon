@@ -46,6 +46,7 @@
     "@stripe/react-stripe-js": "^3.9.0",
     "@stripe/stripe-js": "^7.9.0",
     "@vercel/analytics": "1.6.1",
+    "@vercel/oidc-aws-credentials-provider": "^3.0.0",
     "ai": "^6.0.193",
     "autoprefixer": "^10.4.20",
     "aws-jwt-verify": "^5.1.1",

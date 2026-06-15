@@ -36,7 +36,6 @@ node_modules
 .next/
 .DS_Store
 
-.kiro*
 
 # Seed data: not committed (question source + raw figures stay local).
 # The served figure copies live in public/figures/.

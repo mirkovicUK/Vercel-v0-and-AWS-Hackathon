@@ -1,11 +1,15 @@
 import { createAmazonBedrock } from "@ai-sdk/amazon-bedrock"
+import { awsCredentialsProvider } from "@vercel/oidc-aws-credentials-provider"
 import type { LanguageModel } from "ai"
 
 /**
  * Resolves the Amazon Nova 2 Lite model.
  *
- * - If AWS credentials are configured, the request runs against **Amazon Bedrock
- *   in your own AWS account** (billed to you, in your region) via `@ai-sdk/amazon-bedrock`.
+ * - On Vercel (production/preview) the request runs against **Amazon Bedrock in
+ *   your own AWS account** using **OIDC federation** — Vercel mints a short-lived
+ *   token that is exchanged for temporary IAM credentials scoped to AWS_ROLE_ARN.
+ *   No long-lived AWS access keys are involved.
+ * - Locally, if static AWS keys are present they are used instead (dev convenience).
  * - Otherwise it falls back to the zero-config Vercel AI Gateway model string,
  *   so the feature works during development before AWS is provisioned.
  *
@@ -18,22 +22,34 @@ import type { LanguageModel } from "ai"
 const BEDROCK_MODEL_ID = "global.amazon.nova-2-lite-v1:0"
 const GATEWAY_MODEL_ID = "amazon/nova-2-lite"
 
+function region(): string | undefined {
+  return process.env.AWS_REGION || process.env.AWS_DEFAULT_REGION
+}
+
 export function isBedrockConfigured(): boolean {
-  return Boolean(
-    process.env.AWS_ACCESS_KEY_ID &&
-      process.env.AWS_SECRET_ACCESS_KEY &&
-      (process.env.AWS_REGION || process.env.AWS_DEFAULT_REGION),
-  )
+  if (!region()) return false
+  // OIDC role (preferred) or static keys (local dev).
+  if (process.env.AWS_ROLE_ARN) return true
+  return Boolean(process.env.AWS_ACCESS_KEY_ID && process.env.AWS_SECRET_ACCESS_KEY)
 }
 
 export function novaModel(): LanguageModel {
   if (isBedrockConfigured()) {
-    const bedrock = createAmazonBedrock({
-      region: process.env.AWS_REGION || process.env.AWS_DEFAULT_REGION,
-      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-      sessionToken: process.env.AWS_SESSION_TOKEN,
-    })
+    const roleArn = process.env.AWS_ROLE_ARN
+    const bedrock = createAmazonBedrock(
+      roleArn
+        ? {
+            region: region(),
+            // OIDC federation: temporary credentials assumed from the role.
+            credentialProvider: awsCredentialsProvider({ roleArn }),
+          }
+        : {
+            region: region(),
+            accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+            secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+            sessionToken: process.env.AWS_SESSION_TOKEN,
+          },
+    )
     return bedrock(BEDROCK_MODEL_ID)
   }
   // Gateway fallback (string model id is resolved by the AI SDK Gateway).

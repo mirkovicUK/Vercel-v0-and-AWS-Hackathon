@@ -5,8 +5,10 @@ Provisions the AWS resources ApexMaths needs, in **eu-west-2 (London)**:
 - **Amazon Cognito** User Pool + app client (no client secret) — identity.
 - **Amazon Aurora PostgreSQL** (Serverless v2) with the **RDS Data API** enabled,
   plus an auto-generated credentials secret in **Secrets Manager**.
-- A least-privilege **IAM user** for Vercel (Data API + Secrets read + Bedrock
-  Nova 2 Lite invoke).
+- A least-privilege **IAM role** for Vercel, assumed via **OIDC federation**
+  (Data API + Secrets read + Bedrock Nova 2 Lite invoke + Cognito AdminDeleteUser).
+- A **Vercel OIDC identity provider** so deployments can assume that role with
+  short-lived credentials instead of long-lived access keys.
 
 Compute runs on **Vercel**, not AWS — so there are no Lambdas here, just the
 backing infrastructure the Next.js app talks to.
@@ -18,9 +20,9 @@ This stack is designed so **no secret value is ever leaked**:
 - The **database password** is generated inside Secrets Manager (not in code or
   the template). Only its **ARN** is output.
 - The **Cognito app client has no secret** (removes that vector entirely).
-- **No IAM access keys are created by CloudFormation** — doing so would write the
-  secret access key into stack outputs/state in plaintext. You mint the key once
-  via the CLI (below); it shows only in your terminal and goes straight to Vercel.
+- **No IAM access keys exist at all** — Vercel assumes an IAM role through OIDC
+  federation and receives short-lived, auto-expiring credentials. There is no
+  long-lived AWS secret to store, rotate, or leak.
 
 All `CfnOutput`s are non-sensitive (ids and ARNs only). An ARN is an address, not
 a credential.
@@ -45,23 +47,26 @@ npx cdk deploy
 The stack prints these outputs (all safe to read):
 
 - `AWSRegion`, `CognitoUserPoolId`, `CognitoClientId`,
-  `AuroraClusterArn`, `AuroraSecretArn`, `AuroraDatabaseName`, `VercelIamUserName`.
+  `AuroraClusterArn`, `AuroraSecretArn`, `AuroraDatabaseName`, `VercelRoleArn`.
 
 > Aurora can take ~10–15 minutes to come up on first deploy. Don't leave this to
 > the last hour before a deadline.
 
-## Mint the Vercel access key (one-off, secret-safe)
+## Connect Vercel via OIDC (no access keys)
 
-CloudFormation does not create the key. Create it via CLI — the secret is shown
-**once**, in your terminal only:
+The CDK stack already created the Vercel OIDC identity provider and the role —
+there is **nothing to do in the AWS console**. You only:
 
-```bash
-aws iam create-access-key --user-name apexmaths-vercel
-```
+1. **Enable OIDC for the Vercel project**: Vercel dashboard → Project → Settings →
+   **Secure Backend Access (OIDC)** → ensure it's enabled with the **Team** issuer
+   mode (issuer `https://oidc.vercel.com/aurora75-s-projects`).
+2. Set `AWS_ROLE_ARN` in the project's env vars to the `VercelRoleArn` output.
+3. Set `AWS_REGION` to `eu-west-2` explicitly (Vercel's runtime sets `AWS_REGION`
+   to its own execution region, which can drift; pinning it keeps calls in-region).
 
-Copy `AccessKeyId` and `SecretAccessKey` directly into Vercel env vars
-(`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`). Do not paste them into any file in
-this repo. If you ever lose the secret, delete the key and create a new one.
+The trust policy allows any project in the `aurora75-s-projects` team on the
+`production` and `preview` environments. To restrict to a single project, tighten
+the `:sub` condition in `lib/apexmaths-stack.ts` to that project name.
 
 ## Vercel environment variables
 
@@ -70,8 +75,7 @@ From the stack outputs and the key above:
 | Vercel env var          | Source                                  |
 |-------------------------|-----------------------------------------|
 | `AWS_REGION`            | `AWSRegion` output (`eu-west-2`)        |
-| `AWS_ACCESS_KEY_ID`     | from `create-access-key`                |
-| `AWS_SECRET_ACCESS_KEY` | from `create-access-key`                |
+| `AWS_ROLE_ARN`          | `VercelRoleArn` output (assumed via OIDC) |
 | `COGNITO_USER_POOL_ID`  | `CognitoUserPoolId` output              |
 | `COGNITO_CLIENT_ID`     | `CognitoClientId` output                |
 | `AURORA_CLUSTER_ARN`    | `AuroraClusterArn` output               |

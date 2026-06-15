@@ -9,6 +9,7 @@ import {
   type Field,
   type ColumnMetadata,
 } from "@aws-sdk/client-rds-data"
+import { awsCredentials } from "./credentials"
 
 /**
  * Thin, typed wrapper around the Aurora PostgreSQL Data API.
@@ -52,8 +53,9 @@ function getClient(region: string): RDSDataClient {
   if (cachedClient) return cachedClient
   cachedClient = new RDSDataClient({
     region,
-    // Credentials are picked up from AWS_ACCESS_KEY_ID / AWS_SECRET_ACCESS_KEY
-    // (the least-privilege IAM user) via the default provider chain.
+    // On Vercel: temporary credentials from OIDC federation (sts:AssumeRoleWith-
+    // WebIdentity against AWS_ROLE_ARN). Locally: undefined => SDK default chain.
+    credentials: awsCredentials(),
   })
   return cachedClient
 }
