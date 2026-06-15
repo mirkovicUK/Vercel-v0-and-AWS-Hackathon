@@ -98,7 +98,8 @@ export AWS_REGION=eu-west-2
 node scripts/migrate.mjs
 ```
 
-This applies `scripts/sql/001_schema.sql` and `002_seed_questions.sql`.
+This applies `scripts/sql/001_schema.sql`, then seeds the question bank from
+`data/questions.json` (both handled by `scripts/migrate.mjs`).
 
 ## Tear down
 

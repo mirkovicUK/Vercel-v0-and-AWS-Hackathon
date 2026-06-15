@@ -1,16 +1,28 @@
--- ApexMaths — Aurora PostgreSQL schema
--- Run once against your Aurora cluster (see scripts/migrate.mjs).
+-- ============================================================================
+-- ApexMaths — Aurora PostgreSQL schema (single consolidated baseline)
+-- ============================================================================
 --
--- ID CONVENTION (important — read before editing):
---   ALL id and foreign-key columns are TEXT, never UUID.
---   * parents.id is the Cognito `sub` (an opaque string).
---   * questions.id is a stable human id (e.g. "q-m1-002").
---   * other ids are generated with gen_random_uuid()::text (a uuid VALUE stored
---     as text), so they still look like uuids but compare cleanly as strings.
---   WHY: the app/RDS Data API bind every id as a string. A UUID column compared
---   to a bound string fails with "operator does not exist: uuid = text". Keeping
---   every id/FK as TEXT removes that entire class of error. Do NOT reintroduce
---   the `uuid` type for any id or *_id column.
+-- This is the complete, current schema. The earlier incremental migrations
+-- (the original 001 base schema + 005 completion + 006 subscription event
+-- ordering) have been squashed into this one baseline. Applied by
+-- scripts/migrate.mjs, which globs scripts/sql/*.sql, splits each file into
+-- individual statements (respecting dollar-quoted blocks, single-quoted strings
+-- and line comments) and executes them one-by-one (NOT wrapped in a single
+-- transaction).
+--
+-- Running it is idempotent: every CREATE uses IF NOT EXISTS / duplicate_object
+-- guards, so re-running against an already-migrated database is a safe no-op.
+-- (Note: on an EXISTING database this baseline will NOT retro-add columns to a
+-- table that already exists — it is the from-scratch definition. Live DBs are
+-- already migrated; this file is the source of truth for a FRESH install.)
+--
+-- ID CONVENTION (do not change): ALL id and *_id columns are TEXT, never UUID.
+--   * parents.id          = Cognito `sub` (opaque string)
+--   * questions.id        = stable human id (e.g. "q-m1-002")
+--   * everything else     = gen_random_uuid()::text (uuid VALUE stored as text)
+--   WHY: the RDS Data API binds every id as a string; a real `uuid` column
+--   compared to a bound string fails with "operator does not exist: uuid = text".
+-- ============================================================================
 
 CREATE EXTENSION IF NOT EXISTS "pgcrypto"; -- gen_random_uuid()
 
@@ -34,7 +46,7 @@ DO $$ BEGIN
 EXCEPTION WHEN duplicate_object THEN NULL; END $$;
 
 DO $$ BEGIN
-  CREATE TYPE mastery_classification AS ENUM ('needs_focus','developing','strong');
+  CREATE TYPE mastery_classification AS ENUM ('needs_focus','developing','strong','insufficient_data');
 EXCEPTION WHEN duplicate_object THEN NULL; END $$;
 
 -- ---- Parents (identity provided by Cognito; id = Cognito sub) ----
@@ -44,6 +56,7 @@ CREATE TABLE IF NOT EXISTS parents (
   guardian_attested  BOOLEAN NOT NULL DEFAULT FALSE,
   age_attested       BOOLEAN NOT NULL DEFAULT FALSE,
   stripe_customer_id TEXT UNIQUE,
+  has_used_trial     BOOLEAN NOT NULL DEFAULT FALSE, -- server-only; never client-serialised
   created_at         TIMESTAMPTZ NOT NULL DEFAULT now(),
   deleted_at         TIMESTAMPTZ
 );
@@ -58,6 +71,7 @@ CREATE TABLE IF NOT EXISTS subscriptions (
   current_period_end     TIMESTAMPTZ,
   trial_end              TIMESTAMPTZ,
   cancel_at_period_end   BOOLEAN NOT NULL DEFAULT FALSE,
+  status_event_at        TIMESTAMPTZ, -- Stripe event ts; reject older-than-last events
   created_at             TIMESTAMPTZ NOT NULL DEFAULT now(),
   updated_at             TIMESTAMPTZ NOT NULL DEFAULT now(),
   UNIQUE (parent_id)
@@ -69,7 +83,7 @@ CREATE TABLE IF NOT EXISTS children (
   id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::text,
   parent_id    TEXT NOT NULL REFERENCES parents(id) ON DELETE CASCADE,
   display_name TEXT NOT NULL CHECK (char_length(display_name) BETWEEN 1 AND 40),
-  year_group   INT CHECK (year_group BETWEEN 3 AND 8),
+  year_group   INT CHECK (year_group IS NULL OR year_group BETWEEN 4 AND 6),
   avatar_color TEXT NOT NULL DEFAULT 'teal',
   created_at   TIMESTAMPTZ NOT NULL DEFAULT now(),
   deleted_at   TIMESTAMPTZ
@@ -77,9 +91,6 @@ CREATE TABLE IF NOT EXISTS children (
 CREATE INDEX IF NOT EXISTS idx_children_parent ON children(parent_id) WHERE deleted_at IS NULL;
 
 -- ---- Question bank (SERVER ONLY — never exposed with correct_index mid-session) ----
--- id is a caller-supplied stable string (e.g. "q-m1-002"); figures are named
--- after it (public/figures/<id>.png), so the linkage is human-readable and the
--- seed is idempotent by id.
 CREATE TABLE IF NOT EXISTS questions (
   id                TEXT PRIMARY KEY,
   text              TEXT NOT NULL CHECK (char_length(text) BETWEEN 1 AND 1000),
@@ -97,7 +108,7 @@ CREATE INDEX IF NOT EXISTS idx_questions_topic ON questions(topic) WHERE active;
 -- ---- Practice sessions ----
 CREATE TABLE IF NOT EXISTS sessions (
   id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::text,
-  child_id TEXT NOT NULL REFERENCES children(id) ON DELETE CASCADE,
+  child_id           TEXT NOT NULL REFERENCES children(id) ON DELETE CASCADE,
   parent_id          TEXT NOT NULL REFERENCES parents(id) ON DELETE CASCADE,
   type               session_type NOT NULL,
   topic              topic, -- null for mixed sessions
@@ -114,10 +125,15 @@ CREATE TABLE IF NOT EXISTS sessions (
 CREATE INDEX IF NOT EXISTS idx_sessions_child ON sessions(child_id);
 CREATE INDEX IF NOT EXISTS idx_sessions_parent ON sessions(parent_id);
 
+-- Hard one-active-session-per-child invariant. A second concurrent INSERT with
+-- status='active' fails at the DB level.
+CREATE UNIQUE INDEX IF NOT EXISTS uniq_active_session_per_child
+  ON sessions(child_id) WHERE status = 'active';
+
 -- ---- Per-question answers ----
 CREATE TABLE IF NOT EXISTS session_answers (
   id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::text,
-  session_id TEXT NOT NULL REFERENCES sessions(id) ON DELETE CASCADE,
+  session_id     TEXT NOT NULL REFERENCES sessions(id) ON DELETE CASCADE,
   question_id    TEXT NOT NULL REFERENCES questions(id),
   position       INT NOT NULL,
   selected_index INT,
@@ -131,7 +147,7 @@ CREATE INDEX IF NOT EXISTS idx_answers_session ON session_answers(session_id);
 -- ---- Topic-level progress (aggregated from completed sessions only) ----
 CREATE TABLE IF NOT EXISTS progress (
   id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::text,
-  child_id TEXT NOT NULL REFERENCES children(id) ON DELETE CASCADE,
+  child_id       TEXT NOT NULL REFERENCES children(id) ON DELETE CASCADE,
   topic          topic NOT NULL,
   attempts       INT NOT NULL DEFAULT 0,
   correct        INT NOT NULL DEFAULT 0,
@@ -142,9 +158,13 @@ CREATE TABLE IF NOT EXISTS progress (
 );
 
 -- ---- AI review reports (one per completed session) ----
+-- generated_by is a provenance sentinel: 'nova' = an AI model produced at least
+-- one explanation, 'fallback' = every item used deterministic text. ('nova' is
+-- a historical label kept for the persisted column and the admin dashboard; the
+-- model is now Claude Sonnet 4.6.)
 CREATE TABLE IF NOT EXISTS review_reports (
   id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::text,
-  session_id TEXT NOT NULL UNIQUE REFERENCES sessions(id) ON DELETE CASCADE,
+  session_id   TEXT NOT NULL UNIQUE REFERENCES sessions(id) ON DELETE CASCADE,
   summary      JSONB NOT NULL,
   generated_by TEXT NOT NULL DEFAULT 'nova', -- 'nova' | 'fallback'
   created_at   TIMESTAMPTZ NOT NULL DEFAULT now()
@@ -178,3 +198,22 @@ CREATE TABLE IF NOT EXISTS revenue_events (
   currency          TEXT NOT NULL DEFAULT 'gbp',
   occurred_at       TIMESTAMPTZ NOT NULL DEFAULT now()
 );
+
+-- ---- Singleton revenue summary (id is always 'current') ----
+CREATE TABLE IF NOT EXISTS revenue_summary (
+  id                  TEXT PRIMARY KEY DEFAULT 'current',
+  total_revenue_pence BIGINT NOT NULL DEFAULT 0,
+  paying_parent_count INT NOT NULL DEFAULT 0,
+  first_paid_at       TIMESTAMPTZ,
+  updated_at          TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- ============================================================================
+-- OPTIONAL TEARDOWN (for a true wipe). Uncomment and run BEFORE the CREATEs
+-- above if you want to drop everything first. DESTRUCTIVE — deletes all data.
+-- ============================================================================
+-- DROP TABLE IF EXISTS revenue_summary, revenue_events, processed_webhook_events,
+--   audit_log, review_reports, progress, session_answers, sessions, questions,
+--   children, subscriptions, parents CASCADE;
+-- DROP TYPE IF EXISTS mastery_classification, subscription_status, session_status,
+--   session_type, topic CASCADE;

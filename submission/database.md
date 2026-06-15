@@ -114,7 +114,7 @@ engine rather than scattering it through application code:
 > with `operator does not exist: uuid = text`. `parents.id` is the Cognito `sub`;
 > other ids are `gen_random_uuid()::text`.
 
-Full DDL: [`scripts/final_schema.sql`](../scripts/final_schema.sql).
+Full DDL: [`scripts/sql/001_schema.sql`](../scripts/sql/001_schema.sql).
 
 ---
 
