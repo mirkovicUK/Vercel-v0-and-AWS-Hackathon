@@ -3,7 +3,7 @@
 **App:** ApexMaths — a UK 11+ maths practice platform for parents and their children (Years 4–6).
 **Frontend / host:** Next.js (App Router, v0-scaffolded) on **Vercel** — serverless functions + server actions.
 **Primary database:** **Amazon Aurora PostgreSQL Serverless v2** (engine 16.6), accessed over the **RDS Data API**.
-**Other AWS:** Amazon **Cognito** (identity), Amazon **Bedrock** (Nova 2 Lite), AWS **Secrets Manager**, **IAM**, **VPC**.
+**Other AWS:** Amazon **Cognito** (identity), Amazon **Bedrock** (Claude Sonnet 4.6), AWS **Secrets Manager**, **IAM**, **VPC**.
 **Third party:** **Stripe** (subscriptions, billing, webhooks).
 **Region:** `eu-west-2` (London). **Infra-as-code:** AWS CDK (`infra/`).
 
@@ -39,7 +39,7 @@ flowchart TB
     subgraph AWS["☁️ AWS — eu-west-2 (London)"]
         direction TB
         COGNITO["Amazon Cognito<br/>User Pool + App Client<br/>(USER_PASSWORD_AUTH, no secret)"]
-        BEDROCK["Amazon Bedrock<br/>Nova 2 Lite<br/>(inference profile)"]
+        BEDROCK["Amazon Bedrock<br/>Claude Sonnet 4.6<br/>(global inference profile)"]
         SECRETS["AWS Secrets Manager<br/>DB credentials (ARN only)"]
 
         subgraph VPC["VPC — NAT-free (natGateways: 0)"]
@@ -118,7 +118,7 @@ flowchart TB
    │                                                                       │
    │  ┌────────────┐   ┌────────────┐   ┌──────────────────────────────┐  │
    │  │  Cognito   │   │  Bedrock   │   │  VPC (NAT-free)              │  │
-   │  │ User Pool  │   │ Nova 2 Lite│   │  ┌────────────────────────┐  │  │
+   │  │ User Pool  │   │Claude Son46│   │  ┌────────────────────────┐  │  │
    │  └────────────┘   └────────────┘   │  │ private isolated subnet │  │  │
    │                                     │  │  Aurora PostgreSQL      │  │  │
    │  ┌─────────────────────────┐        │  │  Serverless v2 · 16.6   │  │  │
@@ -147,8 +147,8 @@ flowchart TB
 | AWS | Amazon Cognito | Identity: signup, email verification, sign-in (USER_PASSWORD_AUTH, **no client secret**), password reset, `AdminDeleteUser` for GDPR |
 | AWS | Amazon Aurora PostgreSQL Serverless v2 (16.6) | System of record; accessed via **RDS Data API**; private isolated subnets; encrypted at rest |
 | AWS | AWS Secrets Manager | Holds the DB password; app references the **ARN** only — the password never enters code, env, or logs |
-| AWS | Amazon Bedrock (Nova 2 Lite) | AI tutor hints (streaming) and post-session review reports |
-| AWS | IAM user (least privilege) | Signs all SDK calls: Data API, Secrets read, Bedrock invoke, Cognito `AdminDeleteUser` |
+| AWS | Amazon Bedrock (Claude Sonnet 4.6) | AI tutor hints (streaming) and post-session review reports |
+| AWS | IAM role (OIDC federation, least privilege) | Provides temporary creds for all SDK calls: Data API, Secrets read, Bedrock invoke, Cognito `AdminDeleteUser` |
 | AWS | VPC (NAT-free, `natGateways: 0`) | Network isolation for Aurora; no public DB exposure |
 | Third party | Stripe | Subscriptions: Checkout, Customer Portal, invoices, webhooks |
 
@@ -171,13 +171,13 @@ mastery aggregation, transactional session creation, and FK-cascade GDPR deletes
 all run here.
 
 **C. AI tutor hint (streaming)**
-Browser → `/api/practice/help` → **Bedrock Nova 2 Lite** via
+Browser → `/api/practice/help` → **Bedrock Claude Sonnet 4.6** via
 `InvokeModelWithResponseStream`; tokens stream back to the browser. The prompt is
 PII-free (maths content only); hint usage is recorded in Aurora and capped per
 session.
 
 **D. AI review report**
-Server Action → **Bedrock Nova 2 Lite** (`generateText`, structured output) → result
+Server Action → **Bedrock Claude Sonnet 4.6** (`generateText`, structured output) → result
 persisted to `review_reports` in Aurora. Bounded by per-call timeouts and an
 overall budget, with deterministic fallback text.
 
@@ -205,8 +205,8 @@ re-registration.
   secret is stored in Vercel, the template, state, or this repo.
 - **Aurora is never publicly exposed** — private isolated subnets, reached only via
   the AWS-managed Data API endpoint; the VPC runs with **zero NAT Gateways**.
-- **Least-privilege IAM** — scoped to this cluster, this user pool, and the Nova 2
-  Lite model/inference-profile ARNs.
+- **Least-privilege IAM** — scoped to this cluster, this user pool, and the Claude
+  Sonnet 4.6 model/inference-profile ARNs.
 
 ### Vercel → AWS environment variables
 

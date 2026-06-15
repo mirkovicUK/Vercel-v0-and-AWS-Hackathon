@@ -45,7 +45,7 @@ flowchart TB
 
     DB[("3 · Aurora<br/>RDS Data API")]
     COG["2 · Cognito"]
-    AI["5 · Bedrock<br/>Nova 2 Lite"]
+    AI["5 · Bedrock<br/>Claude Sonnet 4.6"]
     PAY["4 · Stripe"]
 
     UI <--> RSC
@@ -100,8 +100,8 @@ retries — entitlement is driven entirely by these server-verified events, neve
 the client.
 
 ### 5 — AI (Bedrock, two execution shapes)
-- **Streaming hints:** `/api/practice/help` (`runtime = "nodejs"`) streams Nova 2
-  Lite tokens straight to the browser via `toTextStreamResponse()`.
+- **Streaming hints:** `/api/practice/help` (`runtime = "nodejs"`) streams Claude
+  Sonnet 4.6 tokens straight to the browser via `toTextStreamResponse()`.
 - **Inline review:** `finishSessionAction` runs the post-session review *inside the
   request*, which is why the practice player route sets `maxDuration = 60` — the
   review's 45s budget plus score persistence always completes within the limit.
