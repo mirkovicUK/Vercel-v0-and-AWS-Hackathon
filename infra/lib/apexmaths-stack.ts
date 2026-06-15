@@ -152,20 +152,20 @@ export class ApexMathsStack extends cdk.Stack {
       }),
     )
 
-    // Bedrock: invoke Amazon Nova 2 Lite (and stream) for the AI tutor/report.
-    // Nova 2 is invoked via inference profiles (global./us. prefixes), which in
-    // turn invoke the underlying foundation model — so we grant both the
-    // inference-profile ARNs and the foundation-model ARNs they fan out to.
+    // Bedrock: invoke Anthropic Claude Sonnet 4.6 (and stream) for the AI tutor/
+    // review. Claude Sonnet 4.6 is invoked via the *global* cross-Region inference
+    // profile, which routes to the underlying foundation model in a commercial
+    // Region — so we grant the global inference-profile ARN plus the foundation-
+    // model ARN (region wildcard, since global routing can land in any Region).
     vercelRole.addToPolicy(
       new iam.PolicyStatement({
-        sid: "InvokeNova2Lite",
+        sid: "InvokeClaudeSonnet46",
         actions: ["bedrock:InvokeModel", "bedrock:InvokeModelWithResponseStream"],
         resources: [
-          // Foundation model (this region + the regions an inference profile routes to).
-          `arn:aws:bedrock:*::foundation-model/amazon.nova-2-lite-v1:0`,
-          // Inference profiles for Nova 2 Lite (global + cross-region), in this account.
-          `arn:aws:bedrock:${this.region}:${this.account}:inference-profile/global.amazon.nova-2-lite-v1:0`,
-          `arn:aws:bedrock:${this.region}:${this.account}:inference-profile/*.amazon.nova-2-lite-v1:0`,
+          // Foundation model in any commercial Region the global profile routes to.
+          `arn:aws:bedrock:*::foundation-model/anthropic.claude-sonnet-4-6`,
+          // Global cross-Region inference profile for Claude Sonnet 4.6.
+          `arn:aws:bedrock:${this.region}:${this.account}:inference-profile/global.anthropic.claude-sonnet-4-6`,
         ],
       }),
     )

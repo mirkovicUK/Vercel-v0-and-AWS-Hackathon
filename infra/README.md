@@ -6,7 +6,7 @@ Provisions the AWS resources ApexMaths needs, in **eu-west-2 (London)**:
 - **Amazon Aurora PostgreSQL** (Serverless v2) with the **RDS Data API** enabled,
   plus an auto-generated credentials secret in **Secrets Manager**.
 - A least-privilege **IAM role** for Vercel, assumed via **OIDC federation**
-  (Data API + Secrets read + Bedrock Nova 2 Lite invoke + Cognito AdminDeleteUser).
+  (Data API + Secrets read + Bedrock Claude Sonnet 4.6 invoke + Cognito AdminDeleteUser).
 - A **Vercel OIDC identity provider** so deployments can assume that role with
   short-lived credentials instead of long-lived access keys.
 
@@ -33,7 +33,7 @@ a credential.
   (`aws configure` / SSO). These stay in `~/.aws`, never in this repo.
 - Node 22+, and Docker not required.
 - One-time per account/region: `npx cdk bootstrap aws://<ACCOUNT_ID>/eu-west-2`
-- In the Bedrock console (eu-west-2), request **model access to Amazon Nova 2 Lite**.
+- In the Bedrock console (eu-west-2), request **model access to Anthropic Claude Sonnet 4.6**.
 
 ## Deploy
 

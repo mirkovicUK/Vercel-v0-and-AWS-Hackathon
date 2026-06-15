@@ -9,7 +9,9 @@ import type { Topic } from "@/lib/domain"
 export type ReviewStatus = "pending" | "complete"
 
 // Provenance of the review explanations: "nova" when at least one explanation
-// came from the model, "fallback" when every item used deterministic text.
+// came from the AI model, "fallback" when every item used deterministic text.
+// NOTE: "nova" is a historical sentinel kept for the persisted `generated_by`
+// column and the admin dashboard; the model is now Claude Sonnet 4.6.
 export type ReviewGeneratedBy = "nova" | "fallback"
 
 // One review entry per wrong answer. Deliberately PII-free and free of any

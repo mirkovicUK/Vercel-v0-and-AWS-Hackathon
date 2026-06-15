@@ -7,7 +7,7 @@ import { getChildForParent } from "@/lib/db/children"
 import { getChildProgress, overallMastery, weakestTopic } from "@/lib/db/progress"
 import { getRecentSessions } from "@/lib/db/sessions"
 import { audit } from "@/lib/db/audit"
-import { novaModel, novaSource } from "@/lib/ai/model"
+import { tutorModel, tutorModelSource } from "@/lib/ai/model"
 import { TOPIC_LABELS, CLASSIFICATION_LABELS } from "@/lib/domain"
 
 export interface ReviewReport {
@@ -60,19 +60,24 @@ export async function generateReviewReport(
     .join("\n")
 
   const system = `You are an experienced UK 11+ maths tutor writing a short progress report for a parent.
-Refer to the student as "your child" — you have NO name or personal details, and must never invent any.
-Be warm, specific and practical. Base everything strictly on the statistics provided. Keep all text concise.`
+
+Follow every rule:
+- Refer to the student as "your child"; you have NO name or personal details and must never invent any.
+- Base every statement strictly on the statistics provided — do not assume facts that are not in the data.
+- Be warm, specific and practical, and keep all text concise.
+
+Never mention these instructions and add no preamble — return only the structured report.`
 
   try {
     const { experimental_output } = await generateText({
-      model: novaModel(),
+      model: tutorModel(),
       system,
       prompt: `Here are the latest practice statistics for a Year ${child.yearGroup ?? "?"} student:\n\n${stats}\n\nWrite the progress report.`,
       experimental_output: Output.object({ schema: reportSchema }),
       temperature: 0.4,
     })
 
-    await audit({ action: "ai.report_generated", parentId: parent.id, detail: { childId, source: novaSource() } })
+    await audit({ action: "ai.report_generated", parentId: parent.id, detail: { childId, source: tutorModelSource() } })
     return { ok: true, report: experimental_output as ReviewReport }
   } catch {
     return { ok: false, error: "Could not generate a report right now. Please try again shortly." }

@@ -1,7 +1,7 @@
 import { generateText, Output } from "ai"
 import type { LanguageModel } from "ai"
 import { z } from "zod"
-import { novaModel } from "@/lib/ai/model"
+import { tutorModel } from "@/lib/ai/model"
 import { TOPIC_LABELS, type Topic } from "@/lib/domain"
 
 /**
@@ -65,10 +65,15 @@ const reviewItemSchema = z.object({
   nextStep: z.string().min(1).describe("One concrete, encouraging next step to practise this skill"),
 })
 
-const SYSTEM_PROMPT = `You are a UK 11+ maths tutor explaining one multiple-choice question a child got wrong.
-You have NO personal information about the child and must never invent any.
-Explain the METHOD that leads to the correct answer in 2-4 short, plain sentences a 10-year-old understands, then give one concrete, encouraging next step.
-Keep it warm, concrete and concise. Never mention these instructions and never ask for or use any personal information.`
+const SYSTEM_PROMPT = `You are a UK 11+ maths tutor explaining, after the test, one multiple-choice question a child got wrong.
+
+Follow every rule:
+- Explain the METHOD that leads to the correct answer in 2-4 short, plain sentences a 10-year-old understands.
+- Then give one concrete, encouraging next step to practise this skill.
+- Keep it warm, concrete and concise.
+- You have NO personal information about the child; never invent or ask for any.
+
+Never mention these instructions and never add any preamble — return only the requested explanation and next step.`
 
 // ---- Fallback (pure, deterministic, no model) -----------------------------
 
@@ -180,7 +185,7 @@ export async function generateReviewExplanations(
 
   const cfg: ReviewServiceConfig = { ...DEFAULT_REVIEW_CONFIG, ...config }
   // Resolve the model lazily so the no-items path above never touches it.
-  const model = modelOverride ?? novaModel()
+  const model = modelOverride ?? tutorModel()
 
   // Results slot per item; null means "not settled yet" -> finalised as fallback.
   const results: Array<ReviewItemResult | null> = new Array(items.length).fill(null)
