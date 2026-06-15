@@ -12,6 +12,7 @@ import {
   type AuthenticationResultType,
 } from "@aws-sdk/client-cognito-identity-provider"
 import { createHmac } from "node:crypto"
+import { awsCredentials } from "../aws/credentials"
 
 /**
  * Amazon Cognito wrapper. Cognito owns identity (signup, email verification,
@@ -49,7 +50,10 @@ export function isCognitoConfigured(): boolean {
 
 let cached: CognitoIdentityProviderClient | null = null
 function client(region: string): CognitoIdentityProviderClient {
-  if (!cached) cached = new CognitoIdentityProviderClient({ region })
+  // Only AdminDeleteUser needs IAM; the auth flows are unauthenticated. On Vercel
+  // these credentials come from OIDC federation; locally they fall back to the
+  // SDK default chain (awsCredentials() returns undefined).
+  if (!cached) cached = new CognitoIdentityProviderClient({ region, credentials: awsCredentials() })
   return cached
 }
 

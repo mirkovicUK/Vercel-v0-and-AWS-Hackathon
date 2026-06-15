@@ -15,14 +15,21 @@ import * as iam from "aws-cdk-lib/aws-iam"
  *  - We output the Secrets Manager *ARN* (an address), never the secret value.
  *  - The Cognito app client is created WITHOUT a client secret, removing that
  *    leak vector entirely (the app supports the no-secret USER_PASSWORD_AUTH flow).
- *  - We do NOT create IAM access keys in CloudFormation. Generating them here
- *    would place the secret access key in CloudFormation outputs/state in
- *    plaintext. Instead we create only the IAM user + least-privilege policy;
- *    the key is minted once via the AWS CLI after deploy (see README) and pasted
- *    straight into Vercel — so it never touches the template, logs, or this repo.
+ *  - There are NO long-lived AWS access keys anywhere. Vercel reaches AWS via
+ *    **OIDC federation**: each deployment presents a short-lived OIDC token that
+ *    is exchanged (sts:AssumeRoleWithWebIdentity) for temporary credentials on
+ *    the least-privilege role below. Nothing secret is stored in Vercel, the
+ *    template, logs, or this repo — only the (non-secret) role ARN is shared.
  *
  * Every CfnOutput below is a non-sensitive identifier or ARN.
  */
+
+// Vercel team namespace (from https://vercel.com/aurora75-s-projects). Used to
+// build the OIDC issuer URL and the trust-policy claim conditions.
+const VERCEL_TEAM_SLUG = "aurora75-s-projects"
+const VERCEL_OIDC_ISSUER = `oidc.vercel.com/${VERCEL_TEAM_SLUG}`
+const VERCEL_OIDC_AUDIENCE = `https://vercel.com/${VERCEL_TEAM_SLUG}`
+
 export class ApexMathsStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props)
@@ -101,21 +108,43 @@ export class ApexMathsStack extends cdk.Stack {
     })
 
     // ---------------------------------------------------------------------
-    // IAM user for Vercel — least privilege. NO access keys created here
-    // (see secret-handling policy above; keys are minted via CLI post-deploy).
+    // Vercel OIDC federation — identity provider + assumable role.
+    // The provider trusts tokens issued by Vercel for this team. The role can
+    // only be assumed by deployments of this team targeting the `production` or
+    // `preview` environments (the `sub` condition); `development` (local) is
+    // excluded, so local dev uses its own AWS profile instead.
     // ---------------------------------------------------------------------
-    const vercelUser = new iam.User(this, "VercelUser", {
-      userName: "apexmaths-vercel",
+    const vercelOidcProvider = new iam.OpenIdConnectProvider(this, "VercelOidcProvider", {
+      url: `https://${VERCEL_OIDC_ISSUER}`,
+      clientIds: [VERCEL_OIDC_AUDIENCE],
+    })
+
+    const vercelRole = new iam.Role(this, "VercelRole", {
+      roleName: "apexmaths-vercel",
+      description: "Assumed by Vercel deployments via OIDC federation (no static keys).",
+      maxSessionDuration: cdk.Duration.hours(1),
+      assumedBy: new iam.WebIdentityPrincipal(vercelOidcProvider.openIdConnectProviderArn, {
+        StringEquals: {
+          [`${VERCEL_OIDC_ISSUER}:aud`]: VERCEL_OIDC_AUDIENCE,
+        },
+        StringLike: {
+          // Any project in this team, production or preview only.
+          [`${VERCEL_OIDC_ISSUER}:sub`]: [
+            `owner:${VERCEL_TEAM_SLUG}:project:*:environment:production`,
+            `owner:${VERCEL_TEAM_SLUG}:project:*:environment:preview`,
+          ],
+        },
+      }),
     })
 
     // Data API access + read of the DB credentials secret (scoped to this cluster).
-    cluster.grantDataApiAccess(vercelUser)
+    cluster.grantDataApiAccess(vercelRole)
 
     // Cognito admin: delete a user on GDPR account erasure so the email is freed
     // for re-registration (AdminDeleteUser). This is the ONLY Cognito admin API
     // the app uses — normal auth (SignUp/InitiateAuth/etc.) is client-credential
     // based and needs no IAM. Scoped to this single user pool.
-    vercelUser.addToPolicy(
+    vercelRole.addToPolicy(
       new iam.PolicyStatement({
         sid: "CognitoAdminDeleteUser",
         actions: ["cognito-idp:AdminDeleteUser"],
@@ -127,7 +156,7 @@ export class ApexMathsStack extends cdk.Stack {
     // Nova 2 is invoked via inference profiles (global./us. prefixes), which in
     // turn invoke the underlying foundation model — so we grant both the
     // inference-profile ARNs and the foundation-model ARNs they fan out to.
-    vercelUser.addToPolicy(
+    vercelRole.addToPolicy(
       new iam.PolicyStatement({
         sid: "InvokeNova2Lite",
         actions: ["bedrock:InvokeModel", "bedrock:InvokeModelWithResponseStream"],
@@ -175,9 +204,10 @@ export class ApexMathsStack extends cdk.Stack {
       value: "apex",
       description: "Set as AURORA_DATABASE in Vercel.",
     })
-    new cdk.CfnOutput(this, "VercelIamUserName", {
-      value: vercelUser.userName,
-      description: "Mint an access key for this user with: aws iam create-access-key --user-name <name>. Paste the key into Vercel; never commit it.",
+    new cdk.CfnOutput(this, "VercelRoleArn", {
+      value: vercelRole.roleArn,
+      description:
+        "Set as AWS_ROLE_ARN in Vercel. Vercel assumes this role via OIDC; no access keys needed.",
     })
   }
 }

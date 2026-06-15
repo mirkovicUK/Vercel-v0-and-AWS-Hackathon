@@ -1,0 +1,238 @@
+# ApexMaths — Architecture Diagram
+
+**App:** ApexMaths — a UK 11+ maths practice platform for parents and their children (Years 4–6).
+**Frontend / host:** Next.js (App Router, v0-scaffolded) on **Vercel** — serverless functions + server actions.
+**Primary database:** **Amazon Aurora PostgreSQL Serverless v2** (engine 16.6), accessed over the **RDS Data API**.
+**Other AWS:** Amazon **Cognito** (identity), Amazon **Bedrock** (Nova 2 Lite), AWS **Secrets Manager**, **IAM**, **VPC**.
+**Third party:** **Stripe** (subscriptions, billing, webhooks).
+**Region:** `eu-west-2` (London). **Infra-as-code:** AWS CDK (`infra/`).
+
+> This document is the mandatory architecture diagram for the submission. The
+> Mermaid diagram below renders on GitHub and at [mermaid.live](https://mermaid.live)
+> (where you can **export a PNG** for the Devpost upload). An ASCII fallback and
+> the data-flow walkthrough follow.
+
+---
+
+## 1. System diagram (Mermaid)
+
+```mermaid
+flowchart TB
+    subgraph CLIENT["👤 Client"]
+        BROWSER["Parent's Browser<br/>(desktop / mobile web)"]
+    end
+
+    subgraph VERCEL["▲ Vercel — Next.js App Router (v0-scaffolded)"]
+        direction TB
+        RSC["Server Components<br/>& Server Actions"]
+        GUARD["Auth guard<br/>httpOnly cookies + JWT verify<br/>(aws-jwt-verify / JWKS)"]
+        HELP["Route Handler<br/>/api/practice/help<br/>(streaming AI hints)"]
+        WEBHOOK["Route Handler<br/>/api/stripe/webhook<br/>(signed, idempotent)"]
+    end
+
+    subgraph STRIPE["💳 Stripe"]
+        CHECKOUT["Checkout + Customer Portal"]
+        BILLING["Billing / Invoices"]
+        WHSRC["Webhook events"]
+    end
+
+    subgraph AWS["☁️ AWS — eu-west-2 (London)"]
+        direction TB
+        COGNITO["Amazon Cognito<br/>User Pool + App Client<br/>(USER_PASSWORD_AUTH, no secret)"]
+        BEDROCK["Amazon Bedrock<br/>Nova 2 Lite<br/>(inference profile)"]
+        SECRETS["AWS Secrets Manager<br/>DB credentials (ARN only)"]
+
+        subgraph VPC["VPC — NAT-free (natGateways: 0)"]
+            subgraph ISOLATED["Private isolated subnets (2 AZ)"]
+                AURORA[("Amazon Aurora PostgreSQL<br/>Serverless v2 · 16.6<br/>Data API enabled<br/>encrypted at rest")]
+            end
+        end
+
+        IAM["IAM role (OIDC federation, least privilege)<br/>Data API · Secrets read ·<br/>Bedrock invoke · Cognito AdminDeleteUser"]
+    end
+
+    %% Client <-> Vercel
+    BROWSER <-->|"HTTPS"| RSC
+    BROWSER <-->|"HTTPS (token stream)"| HELP
+    RSC --> GUARD
+
+    %% Auth
+    GUARD <-->|"SignUp / SignIn / ForgotPassword<br/>(app client id, SigV4-free)"| COGNITO
+    GUARD -.->|"verify JWT via JWKS"| COGNITO
+
+    %% App data (RDS Data API over HTTPS, no VPC entry from Vercel)
+    RSC <-->|"RDS Data API (HTTPS)<br/>IAM + Secrets Manager"| AURORA
+    HELP -->|"record hint usage"| AURORA
+    WEBHOOK <-->|"subscriptions · revenue ·<br/>idempotency (Data API)"| AURORA
+    AURORA -.->|"fetch DB password"| SECRETS
+
+    %% AI
+    HELP <-->|"streamText<br/>InvokeModelWithResponseStream"| BEDROCK
+    RSC <-->|"generateText (review reports)<br/>InvokeModel"| BEDROCK
+
+    %% Billing
+    BROWSER <-->|"hosted Checkout / Portal"| CHECKOUT
+    RSC <-->|"create session / portal link"| BILLING
+    WHSRC -->|"signed webhook POST"| WEBHOOK
+
+    %% GDPR erasure
+    RSC -.->|"AdminDeleteUser (GDPR)"| COGNITO
+
+    %% Auth boundary
+    IAM -.->|"signs all SDK calls<br/>(Data API / Bedrock / Secrets / Cognito admin)"| AWS
+
+    classDef vercel fill:#000,color:#fff,stroke:#333;
+    classDef aws fill:#ff9900,color:#000,stroke:#cc7a00;
+    classDef stripe fill:#635bff,color:#fff,stroke:#4b45cc;
+    classDef db fill:#2e73b8,color:#fff,stroke:#1f5183;
+    class RSC,GUARD,HELP,WEBHOOK vercel;
+    class COGNITO,BEDROCK,SECRETS,IAM aws;
+    class CHECKOUT,BILLING,WHSRC stripe;
+    class AURORA db;
+```
+
+---
+
+## 2. ASCII fallback
+
+```
+                          ┌───────────────────────────┐
+                          │   Parent's Browser (web)   │
+                          └─────────────┬─────────────┘
+                                        │ HTTPS
+                                        ▼
+   ┌───────────────────────────────────────────────────────────────────┐
+   │              ▲ VERCEL — Next.js App Router (v0)                     │
+   │  ┌───────────────┐  ┌───────────────┐  ┌─────────────────────────┐ │
+   │  │ Server Comps  │  │ /api/practice │  │ /api/stripe/webhook     │ │
+   │  │ & Actions     │  │ /help (stream)│  │ (signed + idempotent)   │ │
+   │  └──────┬────────┘  └──────┬────────┘  └───────────┬─────────────┘ │
+   │   Auth guard (httpOnly cookies, JWT verify via JWKS)                │
+   └─────────┼──────────────────┼──────────────────────┼───────────────┘
+             │                  │                       │
+   RDS Data  │            Bedrock│ (stream)        Stripe│ webhook in
+   API(HTTPS)│            invoke │                       │
+             ▼                  ▼                       ▼
+   ┌─────────────────────────────────────────────────────────────────────┐
+   │            ☁️  AWS — eu-west-2 (London)        IAM (least privilege)  │
+   │                                                                       │
+   │  ┌────────────┐   ┌────────────┐   ┌──────────────────────────────┐  │
+   │  │  Cognito   │   │  Bedrock   │   │  VPC (NAT-free)              │  │
+   │  │ User Pool  │   │ Nova 2 Lite│   │  ┌────────────────────────┐  │  │
+   │  └────────────┘   └────────────┘   │  │ private isolated subnet │  │  │
+   │                                     │  │  Aurora PostgreSQL      │  │  │
+   │  ┌─────────────────────────┐        │  │  Serverless v2 · 16.6   │  │  │
+   │  │ Secrets Manager (ARN)   │◄───────┤  │  Data API · encrypted   │  │  │
+   │  └─────────────────────────┘        │  └────────────────────────┘  │  │
+   │                                     └──────────────────────────────┘  │
+   └─────────────────────────────────────────────────────────────────────┘
+
+   ┌───────────────┐
+   │    Stripe     │  Checkout + Customer Portal (browser) · Billing (server) ·
+   │               │  Webhooks ──► /api/stripe/webhook
+   └───────────────┘
+```
+
+---
+
+## 3. Components
+
+| Layer | Component | Role |
+|---|---|---|
+| Client | Browser (web) | Parent/child UI; receives streamed AI hints over HTTPS |
+| Vercel | Next.js App Router (v0-scaffolded) | Server Components, Server Actions, route handlers |
+| Vercel | Auth guard (`lib/auth/session.ts`, `guard.ts`) | httpOnly cookies; verifies Cognito JWTs via `aws-jwt-verify` (JWKS); transparent refresh |
+| Vercel | `/api/practice/help` | Streams step-by-step hints from Bedrock; PII-free prompt; per-session hint cap |
+| Vercel | `/api/stripe/webhook` | Signature-verified, idempotent billing event sink |
+| AWS | Amazon Cognito | Identity: signup, email verification, sign-in (USER_PASSWORD_AUTH, **no client secret**), password reset, `AdminDeleteUser` for GDPR |
+| AWS | Amazon Aurora PostgreSQL Serverless v2 (16.6) | System of record; accessed via **RDS Data API**; private isolated subnets; encrypted at rest |
+| AWS | AWS Secrets Manager | Holds the DB password; app references the **ARN** only — the password never enters code, env, or logs |
+| AWS | Amazon Bedrock (Nova 2 Lite) | AI tutor hints (streaming) and post-session review reports |
+| AWS | IAM user (least privilege) | Signs all SDK calls: Data API, Secrets read, Bedrock invoke, Cognito `AdminDeleteUser` |
+| AWS | VPC (NAT-free, `natGateways: 0`) | Network isolation for Aurora; no public DB exposure |
+| Third party | Stripe | Subscriptions: Checkout, Customer Portal, invoices, webhooks |
+
+---
+
+## 4. Key data flows
+
+**A. Authentication**
+Browser → Vercel Server Action → **Cognito** (`SignUp` / `InitiateAuth`). Tokens are
+stored in httpOnly cookies; the id token is verified on each request with
+`aws-jwt-verify` against Cognito's JWKS, refreshed transparently when expired. A
+matching `parents` row in Aurora is keyed by the Cognito `sub`.
+
+**B. App data (the relational core)**
+Vercel Server Components / Actions → **RDS Data API (HTTPS)** → **Aurora**. There is
+**no VPC entry from Vercel and no connection pool** — the Data API is stateless
+HTTPS, authenticated by the **IAM** user, with the DB password fetched from
+**Secrets Manager** inside AWS. Filtered random question selection, `GROUP BY`
+mastery aggregation, transactional session creation, and FK-cascade GDPR deletes
+all run here.
+
+**C. AI tutor hint (streaming)**
+Browser → `/api/practice/help` → **Bedrock Nova 2 Lite** via
+`InvokeModelWithResponseStream`; tokens stream back to the browser. The prompt is
+PII-free (maths content only); hint usage is recorded in Aurora and capped per
+session.
+
+**D. AI review report**
+Server Action → **Bedrock Nova 2 Lite** (`generateText`, structured output) → result
+persisted to `review_reports` in Aurora. Bounded by per-call timeouts and an
+overall budget, with deterministic fallback text.
+
+**E. Billing**
+Browser → hosted **Stripe** Checkout / Customer Portal; Server Actions create
+checkout/portal sessions. **Stripe webhooks** → `/api/stripe/webhook`, which
+verifies the signature, de-duplicates via `processed_webhook_events`, and updates
+`subscriptions` / `revenue_events` in Aurora.
+
+**F. GDPR account erasure**
+Server Action → single `DELETE FROM parents` in Aurora (FK `ON DELETE CASCADE`
+removes all owned data) **and** Cognito `AdminDeleteUser` to free the email for
+re-registration.
+
+---
+
+## 5. Security & deployment notes
+
+- **No DB password in code or env** — only the Secrets Manager **ARN**; the value is
+  resolved inside AWS by the Data API.
+- **No client secret on Cognito** — removes that leak vector; the app uses the
+  no-secret `USER_PASSWORD_AUTH` flow.
+- **No IAM access keys anywhere** — Vercel assumes a least-privilege IAM role via
+  **OIDC federation** (short-lived, auto-expiring credentials). No long-lived AWS
+  secret is stored in Vercel, the template, state, or this repo.
+- **Aurora is never publicly exposed** — private isolated subnets, reached only via
+  the AWS-managed Data API endpoint; the VPC runs with **zero NAT Gateways**.
+- **Least-privilege IAM** — scoped to this cluster, this user pool, and the Nova 2
+  Lite model/inference-profile ARNs.
+
+### Vercel → AWS environment variables
+
+| Vercel env var | Source (CDK output) |
+|---|---|
+| `AWS_REGION` | `AWSRegion` (`eu-west-2`) — set explicitly so Vercel's dynamic region can't reroute calls |
+| `AWS_ROLE_ARN` | `VercelRoleArn` (role assumed via OIDC; no access keys) |
+| `COGNITO_USER_POOL_ID` | `CognitoUserPoolId` |
+| `COGNITO_CLIENT_ID` | `CognitoClientId` |
+| `AURORA_CLUSTER_ARN` | `AuroraClusterArn` |
+| `AURORA_SECRET_ARN` | `AuroraSecretArn` (ARN only) |
+| `AURORA_DATABASE` | `AuroraDatabaseName` (`apex`) |
+| `STRIPE_SECRET_KEY` / `STRIPE_WEBHOOK_SECRET` / `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | Stripe dashboard |
+
+---
+
+## 6. Exporting this diagram as an image (for Devpost)
+
+The submission requires an image. To produce a PNG from the Mermaid diagram above:
+
+1. Open [mermaid.live](https://mermaid.live).
+2. Paste the contents of the ```mermaid``` block in §1.
+3. Use **Actions → Export → PNG** (or SVG), and save it into `submission/` (e.g.
+   `architecture_diagram.png`).
+4. Upload that image on the Devpost submission form.
+
+> Tip: for a more "AWS-official" look you can rebuild the same boxes and arrows in
+> [draw.io](https://draw.io) using the AWS 2024 icon set, then export to PNG. The
+> components and flows are exactly those listed in §3 and §4.
