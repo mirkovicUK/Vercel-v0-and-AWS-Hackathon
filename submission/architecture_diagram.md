@@ -206,7 +206,8 @@ re-registration.
 - **Aurora is never publicly exposed** — private isolated subnets, reached only via
   the AWS-managed Data API endpoint; the VPC runs with **zero NAT Gateways**.
 - **Least-privilege IAM** — scoped to this cluster, this user pool, and the Claude
-  Sonnet 4.6 model/inference-profile ARNs.
+  Sonnet 4.6 model/inference-profile ARNs. The role reads only the `app_user`
+  secret (DML-only DB role), never the schema-owner master secret.
 
 ### Vercel → AWS environment variables
 
@@ -217,7 +218,7 @@ re-registration.
 | `COGNITO_USER_POOL_ID` | `CognitoUserPoolId` |
 | `COGNITO_CLIENT_ID` | `CognitoClientId` |
 | `AURORA_CLUSTER_ARN` | `AuroraClusterArn` |
-| `AURORA_SECRET_ARN` | `AuroraSecretArn` (ARN only) |
+| `AURORA_SECRET_ARN` | `AppUserSecretArn` (least-privilege `app_user` role; ARN only) |
 | `AURORA_DATABASE` | `AuroraDatabaseName` (`apex`) |
 | `STRIPE_SECRET_KEY` / `STRIPE_WEBHOOK_SECRET` / `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | Stripe dashboard |
 

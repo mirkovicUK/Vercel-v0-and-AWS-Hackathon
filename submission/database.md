@@ -132,6 +132,11 @@ use the **RDS Data API** (`@aws-sdk/client-rds-data`, `lib/aws/rds-data.ts`,
 - **No secret in our code** — auth is the function's **short-lived OIDC-federated
   IAM credentials** plus a Secrets Manager **ARN**; the DB password is resolved
   inside AWS and never touches the codebase, environment, or logs.
+- **Least-privilege DB role** — the app connects as a dedicated `app_user`
+  Postgres role with DML-only grants (SELECT/INSERT/UPDATE/DELETE), never the
+  schema owner. The owner (`apexadmin`) is used only for migrations. And because
+  the IAM role can read only the `app_user` secret, the app cannot even fetch the
+  owner credentials — least privilege at both the AWS and database layers.
 - **Scale-to-near-zero** — `serverlessV2MinCapacity: 0.5`, `MaxCapacity: 2`: near-nil
   at idle, scales under load — right for a new product with bursty traffic.
 

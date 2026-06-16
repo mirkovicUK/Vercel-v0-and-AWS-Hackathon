@@ -4,6 +4,7 @@ import * as ec2 from "aws-cdk-lib/aws-ec2"
 import * as rds from "aws-cdk-lib/aws-rds"
 import * as cognito from "aws-cdk-lib/aws-cognito"
 import * as iam from "aws-cdk-lib/aws-iam"
+import * as secretsmanager from "aws-cdk-lib/aws-secretsmanager"
 
 /**
  * ApexMaths infrastructure.
@@ -75,6 +76,33 @@ export class ApexMathsStack extends cdk.Stack {
     })
 
     // ---------------------------------------------------------------------
+    // Least-privilege application DB credential.
+    //
+    // The cluster master secret (apexadmin) owns the schema and can run DDL; it
+    // is used ONLY for migrations (run locally via scripts/migrate.mjs). The
+    // running app must NOT connect as the owner. We therefore mint a SECOND
+    // Secrets Manager secret for a dedicated `app_user` Postgres role that holds
+    // only DML privileges (SELECT/INSERT/UPDATE/DELETE). The Postgres role and
+    // its grants are created by scripts/create-app-user.mjs, which reads this
+    // secret's generated password (so the password lives only in Secrets Manager
+    // and the DB — never in code or the template).
+    //
+    // The Data API requires the secret JSON to contain `username` + `password`.
+    // ---------------------------------------------------------------------
+    const appUserSecret = new secretsmanager.Secret(this, "AppUserSecret", {
+      secretName: "apexmaths/app-user-credentials",
+      description: "Least-privilege application DB role (DML only) used by Vercel at runtime.",
+      generateSecretString: {
+        secretStringTemplate: JSON.stringify({ username: "app_user" }),
+        generateStringKey: "password",
+        // Exclude chars that complicate SQL string literals / URLs / shells.
+        excludeCharacters: "\"'`\\/@ {}[]:;",
+        passwordLength: 32,
+      },
+      removalPolicy: cdk.RemovalPolicy.DESTROY, // hackathon-friendly teardown
+    })
+
+    // ---------------------------------------------------------------------
     // Cognito User Pool + app client (no client secret).
     // Password policy mirrors the app's Zod rules (min 8, upper/lower/number).
     // ---------------------------------------------------------------------
@@ -137,8 +165,29 @@ export class ApexMathsStack extends cdk.Stack {
       }),
     })
 
-    // Data API access + read of the DB credentials secret (scoped to this cluster).
-    cluster.grantDataApiAccess(vercelRole)
+    // Aurora Data API — least privilege on two axes:
+    //  (1) DB layer: the app connects as `app_user` (DML only), never the owner.
+    //  (2) AWS layer: the role may read ONLY the app_user secret, NOT the master
+    //      secret. With the Data API the CALLER must hold GetSecretValue on the
+    //      secret ARN it passes, so withholding the master secret means the app
+    //      physically cannot authenticate as the schema owner — defense in depth.
+    // (We deliberately do NOT use cluster.grantDataApiAccess(), which would also
+    //  grant read of the master secret.)
+    vercelRole.addToPolicy(
+      new iam.PolicyStatement({
+        sid: "AuroraDataApi",
+        actions: [
+          "rds-data:BatchExecuteStatement",
+          "rds-data:BeginTransaction",
+          "rds-data:CommitTransaction",
+          "rds-data:ExecuteStatement",
+          "rds-data:RollbackTransaction",
+        ],
+        resources: [cluster.clusterArn],
+      }),
+    )
+    // GetSecretValue (and DescribeSecret) on the app_user secret ONLY.
+    appUserSecret.grantRead(vercelRole)
 
     // Cognito admin: delete a user on GDPR account erasure so the email is freed
     // for re-registration (AdminDeleteUser). This is the ONLY Cognito admin API
@@ -198,7 +247,14 @@ export class ApexMathsStack extends cdk.Stack {
     new cdk.CfnOutput(this, "AuroraSecretArn", {
       // ARN only — this is the address of the secret, NOT the secret value.
       value: cluster.secret?.secretArn ?? "ERROR_NO_SECRET",
-      description: "Set as AURORA_SECRET_ARN in Vercel. (ARN only; retrieve the value via the AWS CLI when running migrations.)",
+      description:
+        "MASTER (apexadmin) secret ARN. Use ONLY for migrations locally (AURORA_SECRET_ARN when running scripts/migrate.mjs). Do NOT put this in Vercel.",
+    })
+    new cdk.CfnOutput(this, "AppUserSecretArn", {
+      // ARN only — the address of the least-privilege app_user secret.
+      value: appUserSecret.secretArn,
+      description:
+        "Least-privilege app_user secret ARN. Set as AURORA_SECRET_ARN in Vercel (runtime). Provision the role first with scripts/create-app-user.mjs.",
     })
     new cdk.CfnOutput(this, "AuroraDatabaseName", {
       value: "apex",
