@@ -5,7 +5,7 @@
  * (information_schema / pg_catalog). It performs NO writes and NO DDL.
  *
  * It cross-references the LIVE schema against the expectations baked into
- * scripts/final_schema.sql — covering, for every table:
+ * scripts/sql/001_schema.sql — covering, for every table:
  *   - column data types + nullability + defaults
  *   - primary keys
  *   - UNIQUE constraints
@@ -56,7 +56,7 @@ async function q(sql) {
 }
 
 // ============================================================================
-// EXPECTATIONS — transcribed from scripts/final_schema.sql
+// EXPECTATIONS — transcribed from scripts/sql/001_schema.sql
 // Column spec: [name, type, notNull, defaultContains|null]
 //   type ∈ text|boolean|timestamptz|jsonb|int|numeric|bigint|enum:<name>
 // ============================================================================
@@ -277,7 +277,7 @@ const ok = (m) => { console.log(`  \x1b[32m✓\x1b[0m ${m}`); pass++ }
 const bad = (m) => { console.log(`  \x1b[31m✗\x1b[0m ${m}`); fail++ }
 
 async function run() {
-  console.log(`\nFull cross-check of live Aurora schema vs final_schema.sql  (db="${database}", ${region})`)
+  console.log(`\nFull cross-check of live Aurora schema vs scripts/sql/001_schema.sql  (db="${database}", ${region})`)
 
   // ---------- ENUMS ----------
   console.log("\n── ENUM TYPES ──")
@@ -328,11 +328,11 @@ async function run() {
       }
       if (problems.length) { bad(`${table}.${name} — ${problems.join("; ")}`); tableOk = false }
     }
-    if (extra.length) { bad(`${table} has EXTRA columns not in final_schema.sql: ${extra.join(", ")}`); tableOk = false }
+    if (extra.length) { bad(`${table} has EXTRA columns not in 001_schema.sql: ${extra.join(", ")}`); tableOk = false }
     if (tableOk) ok(`${table} — all ${spec.columns.length} columns match (type/null/default)`)
   }
   for (const t of Object.keys(liveCols)) {
-    if (!EXPECTED[t]) bad(`table ${t} EXTRA in live DB (not in final_schema.sql)`)
+    if (!EXPECTED[t]) bad(`table ${t} EXTRA in live DB (not in 001_schema.sql)`)
   }
 
   // ---------- PRIMARY KEYS + UNIQUE ----------
@@ -369,7 +369,7 @@ async function run() {
     // extra uniques (informational, counts as mismatch to be safe)
     for (const lu of g.uniques) {
       if (!spec.unique.some((u) => sameSet(lu, u)))
-        bad(`${table} has EXTRA UNIQUE (${lu.join(",")}) not in final_schema.sql`)
+        bad(`${table} has EXTRA UNIQUE (${lu.join(",")}) not in 001_schema.sql`)
     }
   }
 
@@ -437,7 +437,7 @@ async function run() {
   // ---------- VERDICT ----------
   console.log("\n" + "=".repeat(64))
   if (fail === 0)
-    console.log(`\x1b[32mVERDICT: FULL MATCH\x1b[0m — live schema == final_schema.sql (${pass} checks passed)`)
+    console.log(`\x1b[32mVERDICT: FULL MATCH\x1b[0m — live schema == scripts/sql/001_schema.sql (${pass} checks passed)`)
   else
     console.log(`\x1b[31mVERDICT: MISMATCH\x1b[0m — ${fail} difference(s), ${pass} passed. See ✗ above.`)
   console.log("=".repeat(64) + "\n")
