@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react"
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel"
-import { Card, CardContent } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 import { MasteryTimelineChart } from "@/components/app/charts/mastery-timeline-chart"
 import { AccuracyByDifficultyChart } from "@/components/app/charts/accuracy-by-difficulty-chart"
@@ -10,7 +9,7 @@ import { TopicBreakdownChart } from "@/components/app/charts/topic-breakdown-cha
 import { TopicMasteryList } from "@/components/app/topic-mastery-list"
 import type { MasteryTimelinePoint, DifficultyAccuracy, TopicBreakdown } from "@/lib/db/analytics"
 import type { TopicProgress } from "@/lib/domain"
-import { TrendingUp, Layers, BarChart3, ListChecks, CheckCircle2, History } from "lucide-react"
+import { TrendingUp, Layers, BarChart3, ListChecks, CheckCircle2, Clock, ChevronRight, History } from "lucide-react"
 
 /* ---- Demo data (illustrative only — the real dashboard uses live Aurora queries) ---- */
 
@@ -48,13 +47,68 @@ const PROGRESS: TopicProgress[] = [
   { childId: "demo", topic: "data_handling", attempts: 45, correct: 38, masteryScore: 83, classification: "strong", updatedAt: "" },
 ]
 
-const SESSIONS = [
-  { label: "Full mock", topic: null as string | null, date: "17 May", score: 27, total: 30, pct: 90 },
-  { label: "Practice a topic", topic: "Algebra", date: "15 May", score: 3, total: 5, pct: 60 },
-  { label: "Warm-up", topic: null, date: "12 May", score: 8, total: 10, pct: 80 },
-  { label: "Practice a topic", topic: "Fractions, Decimals & %", date: "10 May", score: 4, total: 5, pct: 80 },
-  { label: "Full mock", topic: null, date: "6 May", score: 22, total: 30, pct: 73 },
+interface DemoSession {
+  label: string
+  topic: string | null
+  date: string
+  score: number
+  total: number
+  expired?: boolean
+}
+
+const SESSIONS: DemoSession[] = [
+  { label: "Full mock", topic: null, date: "17 May 2026", score: 27, total: 30 },
+  { label: "Practice a topic", topic: "Algebra", date: "15 May 2026", score: 3, total: 5 },
+  { label: "Warm-up", topic: null, date: "12 May 2026", score: 8, total: 10 },
+  { label: "Full mock", topic: null, date: "8 May 2026", score: 19, total: 30, expired: true },
+  { label: "Practice a topic", topic: "Fractions, Decimals & %", date: "6 May 2026", score: 4, total: 5 },
 ]
+
+function DemoSessions() {
+  return (
+    <ul className="flex flex-col divide-y divide-border overflow-hidden rounded-xl border border-border">
+      {SESSIONS.map((s, i) => {
+        const pct = Math.round((s.score / s.total) * 100)
+        return (
+          <li
+            key={i}
+            className="flex items-center justify-between gap-4 px-4 py-3 transition-colors hover:bg-muted/50"
+          >
+            <div className="flex min-w-0 items-center gap-3">
+              <span
+                className={cn(
+                  "flex size-9 shrink-0 items-center justify-center rounded-full",
+                  s.expired ? "bg-muted text-muted-foreground" : "bg-success/15 text-success",
+                )}
+              >
+                {s.expired ? <Clock className="size-4" /> : <CheckCircle2 className="size-4" />}
+              </span>
+              <div className="min-w-0">
+                <p className="truncate text-sm font-medium text-foreground">
+                  {s.label}
+                  {s.topic ? <span className="text-muted-foreground"> · {s.topic}</span> : null}
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  {s.date}
+                  {s.expired ? " · timed out" : ""}
+                </p>
+              </div>
+            </div>
+            <div className="flex shrink-0 items-center gap-2">
+              <div className="text-right">
+                <p className="text-sm font-semibold tabular-nums text-foreground">
+                  {s.score}/{s.total}
+                </p>
+                <p className="text-xs tabular-nums text-muted-foreground">{pct}%</p>
+              </div>
+              <ChevronRight className="size-4 text-muted-foreground" />
+            </div>
+          </li>
+        )
+      })}
+    </ul>
+  )
+}
 
 const SLIDES = [
   { key: "timeline", title: "Mastery over time", icon: TrendingUp, render: () => <MasteryTimelineChart points={TIMELINE} /> },
@@ -64,51 +118,31 @@ const SLIDES = [
   { key: "sessions", title: "Recent sessions", icon: History, render: () => <DemoSessions /> },
 ] as const
 
-function DemoSessions() {
-  return (
-    <ul className="flex flex-col divide-y divide-border overflow-hidden rounded-xl border border-border">
-      {SESSIONS.map((s, i) => (
-        <li key={i} className="flex items-center justify-between gap-4 p-3.5">
-          <div className="flex items-center gap-3">
-            <span className="flex size-9 items-center justify-center rounded-full bg-success/15 text-success">
-              <CheckCircle2 className="size-4" />
-            </span>
-            <div>
-              <p className="text-sm font-medium text-foreground">
-                {s.label}
-                {s.topic ? <span className="text-muted-foreground"> · {s.topic}</span> : null}
-              </p>
-              <p className="text-xs text-muted-foreground">{s.date}</p>
-            </div>
-          </div>
-          <div className="text-right">
-            <p className="text-sm font-semibold tabular-nums text-foreground">
-              {s.score}/{s.total}
-            </p>
-            <p className="text-xs text-muted-foreground">{s.pct}%</p>
-          </div>
-        </li>
-      ))}
-    </ul>
-  )
+/** Minimal circular distance from the selected slide (handles loop wrap). */
+function circularDelta(i: number, selected: number, n: number): number {
+  let d = i - selected
+  if (d > n / 2) d -= n
+  if (d < -n / 2) d += n
+  return d
 }
 
 export function DashboardCarousel() {
   const [api, setApi] = useState<CarouselApi>()
   const [selected, setSelected] = useState(0)
+  const [paused, setPaused] = useState(false)
+  const n = SLIDES.length
 
   useEffect(() => {
     if (!api) return
     const onSelect = () => setSelected(api.selectedScrollSnap())
     onSelect()
     api.on("select", onSelect)
+    api.on("reInit", onSelect)
     return () => {
       api.off("select", onSelect)
     }
   }, [api])
 
-  // Gentle auto-advance; pauses while the pointer is over the carousel.
-  const [paused, setPaused] = useState(false)
   useEffect(() => {
     if (!api || paused) return
     const id = setInterval(() => api.scrollNext(), 5000)
@@ -117,43 +151,58 @@ export function DashboardCarousel() {
 
   return (
     <div className="relative" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
-      <Card className="overflow-hidden border-border shadow-lg">
-        <CardContent className="p-5 sm:p-6">
-          <Carousel setApi={setApi} opts={{ loop: true }}>
-            <CarouselContent>
-              {SLIDES.map((slide) => (
-                <CarouselItem key={slide.key}>
-                  <div className="flex items-center gap-2">
-                    <span className="flex size-8 items-center justify-center rounded-lg bg-accent/15 text-accent">
-                      <slide.icon className="size-4" />
-                    </span>
-                    <h3 className="font-heading text-sm font-semibold text-foreground">{slide.title}</h3>
+      <Carousel setApi={setApi} opts={{ loop: true, align: "center" }}>
+        {/* perspective on the track gives the slides a shared 3D vanishing point */}
+        <CarouselContent className="py-4" style={{ perspective: "1600px" }}>
+          {SLIDES.map((slide, i) => {
+            const d = circularDelta(i, selected, n)
+            const isActive = d === 0
+            const rotateY = isActive ? 0 : d < 0 ? 14 : -14
+            const scale = isActive ? 1 : 0.82
+            return (
+              <CarouselItem key={slide.key} className="basis-[86%] sm:basis-[82%]">
+                <div
+                  className="rounded-2xl border border-border bg-card shadow-lg"
+                  style={{
+                    transform: `perspective(1600px) rotateY(${rotateY}deg) scale(${scale})`,
+                    opacity: isActive ? 1 : 0.45,
+                    filter: isActive ? "none" : "saturate(0.85)",
+                    transition: "transform 450ms ease, opacity 450ms ease, filter 450ms ease",
+                    pointerEvents: isActive ? "auto" : "none",
+                  }}
+                >
+                  <div className="p-5 sm:p-6">
+                    <div className="flex items-center gap-2">
+                      <span className="flex size-8 items-center justify-center rounded-lg bg-accent/15 text-accent">
+                        <slide.icon className="size-4" />
+                      </span>
+                      <h3 className="font-heading text-sm font-semibold text-foreground">{slide.title}</h3>
+                    </div>
+                    <div className="mt-4 min-h-[300px]">{slide.render()}</div>
                   </div>
-                  <div className="mt-4 flex min-h-[300px] items-center">
-                    <div className="w-full">{slide.render()}</div>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
+                </div>
+              </CarouselItem>
+            )
+          })}
+        </CarouselContent>
+      </Carousel>
 
-          {/* Dots */}
-          <div className="mt-5 flex items-center justify-center gap-2">
-            {SLIDES.map((slide, i) => (
-              <button
-                key={slide.key}
-                type="button"
-                aria-label={`Show ${slide.title}`}
-                onClick={() => api?.scrollTo(i)}
-                className={cn(
-                  "h-1.5 rounded-full transition-all",
-                  selected === i ? "w-6 bg-primary" : "w-1.5 bg-border hover:bg-muted-foreground/40",
-                )}
-              />
-            ))}
-          </div>
-        </CardContent>
-      </Card>
+      {/* Dots — visible on the card background */}
+      <div className="mt-2 flex items-center justify-center gap-2">
+        {SLIDES.map((slide, i) => (
+          <button
+            key={slide.key}
+            type="button"
+            aria-label={`Show ${slide.title}`}
+            aria-current={selected === i}
+            onClick={() => api?.scrollTo(i)}
+            className={cn(
+              "h-2 rounded-full transition-all",
+              selected === i ? "w-6 bg-primary" : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/60",
+            )}
+          />
+        ))}
+      </div>
 
       <p className="mt-3 text-center text-xs text-muted-foreground">
         Live example — every view is a real Aurora query in the app.
