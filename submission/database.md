@@ -39,6 +39,10 @@ Taken directly from our data layer (`lib/db/*`):
 | GDPR account erasure (`hardDeleteParent`) | Delete one parent → remove all owned data, keep accounting rows | **FKs with differentiated `ON DELETE` rules** |
 | Revenue rollup from `invoice.paid` (`recordRevenueEvent`) | Idempotent insert + distinct-paying-parent count, one commit | Cross-row consistency in a transaction |
 | Subscription entitlement from webhooks (`upsertSubscription`) | Upsert with out-of-order event protection | Conditional `WHERE` on conflict using a stored event timestamp |
+| Mastery over time, per topic (`getMasteryTimeline`) | Running cumulative accuracy across sessions | **Window function** (`PARTITION BY topic ORDER BY completed_at`) |
+| Improvement velocity (`getImprovementVelocity`) | Session-over-session change | **`LAG()`** over the ordered session series |
+| Accuracy by difficulty (`getAccuracyByDifficulty`) | Accuracy bucketed by question difficulty | **JOIN** `session_answers × questions` + `GROUP BY` |
+| Past-session detail (`getSessionDetail`) | Reconstruct a whole session + struggle breakdown | **Single FK join** + `FILTER` aggregate, no AI |
 
 The common thread is **relationships, aggregates, and invariants** — not "fetch
 item by key." Two examples make the point concrete:
@@ -115,6 +119,67 @@ engine rather than scattering it through application code:
 > other ids are `gen_random_uuid()::text`.
 
 Full DDL: [`scripts/sql/001_schema.sql`](../scripts/sql/001_schema.sql).
+
+---
+
+## The same event log powers live analytics (window functions, `LAG`, joins, `FILTER`)
+
+The dashboard has **two tiers from one source of truth**, and this duality is the
+clearest "the database is doing real work" story:
+
+- **`progress`** is a denormalised rollup (one row per child-topic) for an
+  **instant** mastery snapshot — a cheap point read.
+- The **event log** (`sessions` + `session_answers` + `questions`) is never thrown
+  away, so the richer **per-child analytics** are computed **live, on demand**, in
+  the engine — no ETL job, no second analytics store, no pre-modelled access paths.
+
+Every chart on the child dashboard is a single Aurora query over that log
+(`lib/db/analytics.ts`):
+
+```sql
+-- Mastery over time, per topic: a running cumulative accuracy WINDOW.
+SELECT completed_at, topic,
+       round(sum(correct) OVER w * 100.0 / NULLIF(sum(attempts) OVER w, 0))::int AS pct
+FROM per_session_topic
+WINDOW w AS (PARTITION BY topic ORDER BY completed_at
+             ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW);
+
+-- Improvement velocity: session-over-session delta with LAG().
+SELECT completed_at, cum_pct,
+       cum_pct - LAG(cum_pct) OVER (ORDER BY completed_at) AS delta
+FROM cumulative;
+
+-- Accuracy by difficulty: JOIN answers x questions, then GROUP BY.
+SELECT q.difficulty,
+       count(*) FILTER (WHERE sa.is_correct) AS correct,
+       count(*) FILTER (WHERE sa.is_correct IS NOT NULL) AS attempts
+FROM session_answers sa JOIN questions q ON q.id = sa.question_id
+JOIN sessions s ON s.id = sa.session_id
+WHERE s.child_id = :childId GROUP BY q.difficulty;
+```
+
+And the click-through **session detail** reconstructs an entire past session with a
+**single foreign-key join** across the normalised model, plus a per-topic
+"struggled most on" breakdown computed in **SQL** (a `FILTER` aggregate) — *not* an
+AI call (`lib/db/session-detail.ts`):
+
+```
+sessions ─< session_answers >─ questions   (+ the persisted review_reports)
+```
+
+**Why this is decisive for the Aurora choice:** window functions (running totals,
+`LAG` deltas), multi-table joins, and `FILTER` aggregates are exactly what a
+relational engine does in one round trip — and exactly what a key-value store
+*cannot* without exporting to a separate analytics system. The product getting
+richer (more analytics, smarter reporting) makes the database do **more**, not
+less. On DynamoDB these views would each need a pre-computed, write-fanned-out
+materialisation; here they're just queries.
+
+> **Judge framing:** *"Every chart and the session breakdown is a live Aurora query
+> over the practice event log — window functions, multi-table joins and `FILTER`
+> aggregates through the RDS Data API, with no ETL and no separate analytics store.
+> The denormalised `progress` rollup powers the instant view; the same event log
+> powers this rich history on demand."*
 
 ---
 
