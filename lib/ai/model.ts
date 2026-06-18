@@ -11,20 +11,22 @@ import type { LanguageModel } from "ai"
  * - Locally, static AWS keys are used if present (dev convenience).
  * - Otherwise it falls back to the zero-config Vercel AI Gateway model string.
  *
- * Two models, picked per job:
- * - **Claude Sonnet 4.6** — interactive tutoring (hints) + per-session review.
- * - **Claude Haiku 4.5** — the parent progress report: short, templated
- *   summarisation where Haiku's higher throughput makes it much faster/cheaper.
+ * Model choice:
+ * - **Claude Sonnet 4.6** powers everything — interactive tutoring (hints),
+ *   per-session review, AND the parent progress report.
  *
- * Both are invoked via their *global* cross-Region inference profile (from
+ * We trialled Haiku 4.5 for the report (cheaper/faster per token) but it was
+ * unreliable at conforming to the structured report schema. Sonnet conforms
+ * reliably, and because the report is STREAMED (streamObject), fields appear
+ * progressively — which hides Sonnet's lower per-token throughput and keeps the
+ * UX snappy. Reliability + good UX beats raw token speed here.
+ *
+ * Sonnet is invoked via its *global* cross-Region inference profile (from
  * eu-west-2 the request routes to the nearest commercial Region automatically).
  */
 
 const TUTOR_BEDROCK_MODEL_ID = "global.anthropic.claude-sonnet-4-6"
 const TUTOR_GATEWAY_MODEL_ID = "anthropic/claude-sonnet-4.6"
-
-const REPORT_BEDROCK_MODEL_ID = "global.anthropic.claude-haiku-4-5-20251001-v1:0"
-const REPORT_GATEWAY_MODEL_ID = "anthropic/claude-haiku-4.5"
 
 function region(): string | undefined {
   return process.env.AWS_REGION || process.env.AWS_DEFAULT_REGION
@@ -63,9 +65,13 @@ export function tutorModel(): LanguageModel {
   return resolveModel(TUTOR_BEDROCK_MODEL_ID, TUTOR_GATEWAY_MODEL_ID)
 }
 
-/** Haiku 4.5 — fast, cheap parent progress report. */
+/**
+ * Parent progress report. Uses Sonnet 4.6 (same as the tutor): it conforms to
+ * the structured report schema far more reliably than Haiku, and we stream it
+ * so the latency is hidden behind progressive rendering.
+ */
 export function reportModel(): LanguageModel {
-  return resolveModel(REPORT_BEDROCK_MODEL_ID, REPORT_GATEWAY_MODEL_ID)
+  return resolveModel(TUTOR_BEDROCK_MODEL_ID, TUTOR_GATEWAY_MODEL_ID)
 }
 
 /** Human-readable execution source for logging / debugging. */
