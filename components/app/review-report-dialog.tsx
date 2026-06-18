@@ -35,12 +35,25 @@ export function ReviewReportDialog({ childId, childName }: { childId: string; ch
     if (!next && isLoading) stop()
   }
 
-  // Partial object streams in field-by-field; guard everything.
-  const momentum = object?.momentum
-  const summary = object?.summary
-  const strengths = (object?.strengths ?? []).filter((s): s is string => Boolean(s && s.trim()))
-  const focusAreas = (object?.focusAreas ?? []).filter((f) => f && (f.topic || f.advice))
-  const nextSteps = (object?.nextSteps ?? []).filter((s): s is string => Boolean(s && s.trim()))
+  // `object` is the RAW partial-JSON parse from the stream — it is NOT coerced
+  // to the schema, so any field can transiently be the "wrong" type (e.g. a
+  // string where we expect an array, or a half-formed value). Normalise every
+  // field defensively so rendering can never throw mid-stream.
+  const str = (v: unknown): string | undefined =>
+    typeof v === "string" && v.trim().length > 0 ? v : undefined
+  const arr = <T,>(v: unknown): T[] => (Array.isArray(v) ? (v as T[]) : [])
+
+  const momentum = str(object?.momentum)
+  const summary = str(object?.summary)
+  const strengths = arr<unknown>(object?.strengths)
+    .map(str)
+    .filter((s): s is string => Boolean(s))
+  const focusAreas = arr<{ topic?: unknown; advice?: unknown }>(object?.focusAreas)
+    .map((f) => ({ topic: str(f?.topic), advice: str(f?.advice) }))
+    .filter((f) => f.topic || f.advice)
+  const nextSteps = arr<unknown>(object?.nextSteps)
+    .map(str)
+    .filter((s): s is string => Boolean(s))
   const showSpinner = isLoading && !summary && !momentum
 
   return (
