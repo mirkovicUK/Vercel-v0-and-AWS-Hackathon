@@ -1,7 +1,8 @@
 import type { PracticeSession } from "@/lib/domain"
 import { SESSION_TYPE_CONFIG, TOPIC_LABELS } from "@/lib/domain"
-import { CheckCircle2, Clock, FileText } from "lucide-react"
+import { CheckCircle2, Clock, ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { SessionDetailDialog } from "@/components/app/session-detail-dialog"
 
 function formatDate(iso: string | null): string {
   if (!iso) return ""
@@ -18,38 +19,48 @@ export function SessionHistory({ sessions }: { sessions: PracticeSession[] }) {
   }
 
   return (
-    <ul className="flex flex-col divide-y divide-border rounded-xl border border-border">
+    <ul className="flex flex-col divide-y divide-border overflow-hidden rounded-xl border border-border">
       {sessions.map((s) => {
         const pct = s.total > 0 && s.score != null ? Math.round((s.score / s.total) * 100) : 0
         const expired = s.status === "expired"
         return (
-          <li key={s.id} className="flex items-center justify-between gap-4 p-4">
-            <div className="flex items-center gap-3">
-              <span
-                className={cn(
-                  "flex size-9 items-center justify-center rounded-full",
-                  expired ? "bg-muted text-muted-foreground" : "bg-success/15 text-success",
-                )}
+          <li key={s.id}>
+            <SessionDetailDialog session={s}>
+              <button
+                type="button"
+                className="flex w-full items-center justify-between gap-4 p-4 text-left transition-colors hover:bg-muted/50"
               >
-                {expired ? <Clock className="size-4" /> : <CheckCircle2 className="size-4" />}
-              </span>
-              <div>
-                <p className="text-sm font-medium text-foreground">
-                  {SESSION_TYPE_CONFIG[s.type].label}
-                  {s.topic ? <span className="text-muted-foreground"> · {TOPIC_LABELS[s.topic]}</span> : null}
-                </p>
-                <p className="text-xs text-muted-foreground">
-                  {formatDate(s.completedAt)}
-                  {expired ? " · timed out" : ""}
-                </p>
-              </div>
-            </div>
-            <div className="text-right">
-              <p className="text-sm font-semibold tabular-nums text-foreground">
-                {s.score ?? 0}/{s.total}
-              </p>
-              <p className="text-xs text-muted-foreground">{pct}%</p>
-            </div>
+                <div className="flex items-center gap-3">
+                  <span
+                    className={cn(
+                      "flex size-9 items-center justify-center rounded-full",
+                      expired ? "bg-muted text-muted-foreground" : "bg-success/15 text-success",
+                    )}
+                  >
+                    {expired ? <Clock className="size-4" /> : <CheckCircle2 className="size-4" />}
+                  </span>
+                  <div>
+                    <p className="text-sm font-medium text-foreground">
+                      {SESSION_TYPE_CONFIG[s.type].label}
+                      {s.topic ? <span className="text-muted-foreground"> · {TOPIC_LABELS[s.topic]}</span> : null}
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      {formatDate(s.completedAt)}
+                      {expired ? " · timed out" : ""}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="text-right">
+                    <p className="text-sm font-semibold tabular-nums text-foreground">
+                      {s.score ?? 0}/{s.total}
+                    </p>
+                    <p className="text-xs text-muted-foreground">{pct}%</p>
+                  </div>
+                  <ChevronRight className="size-4 text-muted-foreground" />
+                </div>
+              </button>
+            </SessionDetailDialog>
           </li>
         )
       })}
