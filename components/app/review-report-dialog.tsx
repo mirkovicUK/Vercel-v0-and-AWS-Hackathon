@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { experimental_useObject as useObject } from "@ai-sdk/react"
 import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
 import {
@@ -14,47 +13,56 @@ import {
 } from "@/components/ui/dialog"
 import { Spinner } from "@/components/ui/spinner"
 import { Sparkles, TrendingUp, Target, ArrowRight } from "lucide-react"
-import { reportSchema } from "@/lib/ai/report"
+import type { ReviewReport } from "@/lib/ai/report"
 
 export function ReviewReportDialog({ childId, childName }: { childId: string; childName: string }) {
   const [open, setOpen] = useState(false)
+  const [report, setReport] = useState<ReviewReport | null>(null)
+  const [isLoading, setIsLoading] = useState(false)
+  const [failed, setFailed] = useState(false)
 
-  const { object, submit, isLoading, error, stop } = useObject({
-    api: "/api/children/report",
-    schema: reportSchema,
-    onError: (err) => {
-      // TEMPORARY diagnostic: surface the real streaming error, not just a toast.
-      console.error("[review-report-error]", err)
+  async function generate() {
+    setIsLoading(true)
+    setFailed(false)
+    try {
+      const res = await fetch("/api/children/report", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ childId }),
+      })
+      if (!res.ok) throw new Error(`Request failed (${res.status})`)
+      const data = (await res.json()) as ReviewReport
+      setReport(data)
+    } catch {
+      setFailed(true)
       toast.error("Could not generate a report right now. Please try again shortly.")
-    },
-  })
+    } finally {
+      setIsLoading(false)
+    }
+  }
 
   function onOpenChange(next: boolean) {
     setOpen(next)
-    if (next && !object && !isLoading) submit({ childId })
-    if (!next && isLoading) stop()
+    if (next && !report && !isLoading) void generate()
   }
 
-  // `object` is the RAW partial-JSON parse from the stream — it is NOT coerced
-  // to the schema, so any field can transiently be the "wrong" type (e.g. a
-  // string where we expect an array, or a half-formed value). Normalise every
-  // field defensively so rendering can never throw mid-stream.
+  // The object is schema-validated server-side, but stay defensive about types
+  // so a surprising payload can never crash the dialog.
   const str = (v: unknown): string | undefined =>
     typeof v === "string" && v.trim().length > 0 ? v : undefined
   const arr = <T,>(v: unknown): T[] => (Array.isArray(v) ? (v as T[]) : [])
 
-  const momentum = str(object?.momentum)
-  const summary = str(object?.summary)
-  const strengths = arr<unknown>(object?.strengths)
+  const momentum = str(report?.momentum)
+  const summary = str(report?.summary)
+  const strengths = arr<unknown>(report?.strengths)
     .map(str)
     .filter((s): s is string => Boolean(s))
-  const focusAreas = arr<{ topic?: unknown; advice?: unknown }>(object?.focusAreas)
+  const focusAreas = arr<{ topic?: unknown; advice?: unknown }>(report?.focusAreas)
     .map((f) => ({ topic: str(f?.topic), advice: str(f?.advice) }))
     .filter((f) => f.topic || f.advice)
-  const nextSteps = arr<unknown>(object?.nextSteps)
+  const nextSteps = arr<unknown>(report?.nextSteps)
     .map(str)
     .filter((s): s is string => Boolean(s))
-  const showSpinner = isLoading && !summary && !momentum
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -75,14 +83,17 @@ export function ReviewReportDialog({ childId, childName }: { childId: string; ch
           <DialogDescription>An AI summary of progress, generated from practice results.</DialogDescription>
         </DialogHeader>
 
-        {showSpinner ? (
+        {isLoading ? (
           <div className="flex items-center gap-2 py-8 text-sm text-muted-foreground">
             <Spinner className="size-4" />
             Analysing recent sessions…
           </div>
-        ) : error && !summary ? (
-          <div className="py-8 text-sm text-muted-foreground">
+        ) : failed && !report ? (
+          <div className="flex flex-col items-start gap-3 py-8 text-sm text-muted-foreground">
             Could not generate a report right now. Please try again.
+            <Button variant="outline" size="sm" onClick={() => void generate()}>
+              Try again
+            </Button>
           </div>
         ) : (
           <div className="flex flex-col gap-6 py-1">
@@ -121,8 +132,8 @@ export function ReviewReportDialog({ childId, childName }: { childId: string; ch
                 <ul className="flex flex-col gap-3">
                   {focusAreas.map((f, i) => (
                     <li key={i} className="rounded-lg border border-border bg-muted/40 p-3">
-                      {f?.topic ? <p className="text-sm font-medium text-foreground">{f.topic}</p> : null}
-                      {f?.advice ? <p className="mt-0.5 text-sm text-muted-foreground">{f.advice}</p> : null}
+                      {f.topic ? <p className="text-sm font-medium text-foreground">{f.topic}</p> : null}
+                      {f.advice ? <p className="mt-0.5 text-sm text-muted-foreground">{f.advice}</p> : null}
                     </li>
                   ))}
                 </ul>
@@ -146,7 +157,7 @@ export function ReviewReportDialog({ childId, childName }: { childId: string; ch
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => submit({ childId })}
+              onClick={() => void generate()}
               disabled={isLoading}
               className="self-start text-muted-foreground"
             >
