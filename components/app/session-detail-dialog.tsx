@@ -143,7 +143,7 @@ export function SessionDetailDialog({ session, children }: { session: PracticeSe
                         >
                           {!a.answered ? <Minus className="size-3.5" /> : a.isCorrect ? <Check className="size-3.5" /> : <X className="size-3.5" />}
                         </span>
-                        <span className="flex-1 truncate text-sm font-medium text-foreground group-open:whitespace-normal">
+                        <span className="min-w-0 flex-1 truncate text-sm font-medium text-foreground group-open:whitespace-normal">
                           {a.text}
                         </span>
                         <ChevronDown className="size-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" />
@@ -151,7 +151,7 @@ export function SessionDetailDialog({ session, children }: { session: PracticeSe
                       <div className="flex flex-col gap-3 px-4 pb-4">
                         {a.imageUrl ? (
                           // eslint-disable-next-line @next/next/no-img-element
-                          <img src={a.imageUrl} alt="" className="ml-9 max-h-56 w-auto self-start rounded-lg border border-border" />
+                          <img src={a.imageUrl} alt="" className="ml-9 max-h-56 max-w-full w-auto self-start rounded-lg border border-border" />
                         ) : null}
                         <div className="ml-9 grid gap-1.5">
                           {a.options.map((opt, i) => {
@@ -168,9 +168,9 @@ export function SessionDetailDialog({ session, children }: { session: PracticeSe
                                 )}
                               >
                                 <span className="text-xs font-semibold text-muted-foreground">{letter(i)}</span>
-                                {opt}
-                                {isCorrect ? <Check className="ml-auto size-4 text-success" /> : null}
-                                {isChosen && !isCorrect ? <X className="ml-auto size-4 text-destructive" /> : null}
+                                <span className="min-w-0 flex-1 break-words">{opt}</span>
+                                {isCorrect ? <Check className="ml-auto size-4 shrink-0 text-success" /> : null}
+                                {isChosen && !isCorrect ? <X className="ml-auto size-4 shrink-0 text-destructive" /> : null}
                               </div>
                             )
                           })}

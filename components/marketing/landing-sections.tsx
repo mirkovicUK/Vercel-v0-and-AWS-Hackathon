@@ -13,12 +13,11 @@ import {
   BarChart3,
   Check,
   Target,
-  TrendingUp,
-  AlertCircle,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
+import { DashboardCarousel } from "@/components/marketing/dashboard-carousel"
 
 export function Hero({ authed = false }: { authed?: boolean }) {
   return (
@@ -187,24 +186,6 @@ export function HowItWorks() {
 
 // ---- Killer feature: per-child, per-topic progress dashboard ----
 
-const demoTopics = [
-  { label: "Number", score: 88, tone: "strong" as const },
-  { label: "Fractions, Decimals & %", score: 72, tone: "developing" as const },
-  { label: "Ratio & Proportion", score: 64, tone: "developing" as const },
-  { label: "Algebra", score: 41, tone: "needs_focus" as const },
-  { label: "Geometry", score: 79, tone: "strong" as const },
-  { label: "Data Handling", score: 83, tone: "strong" as const },
-]
-
-const toneStyles: Record<
-  "strong" | "developing" | "needs_focus",
-  { bar: string; badge: string; label: string }
-> = {
-  strong: { bar: "bg-success", badge: "bg-success/15 text-success", label: "Strong" },
-  developing: { bar: "bg-primary", badge: "bg-primary/10 text-primary", label: "Developing" },
-  needs_focus: { bar: "bg-destructive", badge: "bg-destructive/10 text-destructive", label: "Needs focus" },
-}
-
 export function ProgressShowcase({ authed = false }: { authed?: boolean }) {
   return (
     <section id="progress" className="scroll-mt-20 border-y border-border bg-card">
@@ -241,66 +222,7 @@ export function ProgressShowcase({ authed = false }: { authed?: boolean }) {
           </Button>
         </div>
 
-        <Card className="border-border shadow-lg">
-          <CardContent className="flex flex-col gap-5 p-6">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <span className="flex size-10 items-center justify-center rounded-full bg-accent/15 font-heading text-sm font-bold text-accent">
-                  AM
-                </span>
-                <div>
-                  <p className="font-heading text-sm font-semibold text-foreground">Amara</p>
-                  <p className="text-xs text-muted-foreground">Year 5</p>
-                </div>
-              </div>
-              <div className="text-right">
-                <p className="font-heading text-2xl font-bold tabular-nums text-foreground">71%</p>
-                <p className="text-xs text-muted-foreground">overall mastery</p>
-              </div>
-            </div>
-
-            <div className="rounded-xl border border-primary/20 bg-primary/5 p-4">
-              <div className="flex items-center gap-2">
-                <AlertCircle className="size-4 text-primary" />
-                <p className="text-sm font-semibold text-foreground">Focus next: Algebra</p>
-              </div>
-              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-                This is Amara's weakest topic right now. A short practice session here will lift her score the fastest.
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-3.5" aria-label="Topic mastery breakdown">
-              {demoTopics.map((t) => {
-                const s = toneStyles[t.tone]
-                return (
-                  <div key={t.label} className="flex flex-col gap-1.5">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="text-sm font-medium text-foreground">{t.label}</span>
-                      <div className="flex items-center gap-2">
-                        <span
-                          className={`rounded-full px-2 py-0.5 text-[11px] font-medium ${s.badge}`}
-                        >
-                          {s.label}
-                        </span>
-                        <span className="w-9 text-right text-sm font-semibold tabular-nums text-foreground">
-                          {t.score}%
-                        </span>
-                      </div>
-                    </div>
-                    <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
-                      <div className={`h-full rounded-full ${s.bar}`} style={{ width: `${t.score}%` }} />
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
-
-            <div className="flex items-center gap-2 border-t border-border pt-4 text-xs text-muted-foreground">
-              <TrendingUp className="size-4 text-accent" />
-              <span>Fractions up 18% over the last 3 sessions</span>
-            </div>
-          </CardContent>
-        </Card>
+        <DashboardCarousel />
       </div>
     </section>
   )
