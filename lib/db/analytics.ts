@@ -184,3 +184,36 @@ export async function getImprovementVelocity(childId: string): Promise<Improveme
     series,
   }
 }
+
+// ---- Per-topic momentum (derived from the timeline) ------------------------
+
+export interface TopicMomentum {
+  topic: Topic
+  current: number // latest cumulative accuracy
+  delta: number // change vs the previous point that topic had
+}
+
+/**
+ * Most recent change in cumulative accuracy per topic, derived from the mastery
+ * timeline (latest vs the prior distinct value for that topic). Lets the AI
+ * report say which topics are climbing or stalling, not just where they stand.
+ */
+export function topicMomentumFromTimeline(points: MasteryTimelinePoint[]): TopicMomentum[] {
+  const lastTwo = new Map<Topic, number[]>()
+  for (const p of points) {
+    for (const [topic, value] of Object.entries(p.values) as [Topic, number][]) {
+      const arr = lastTwo.get(topic) ?? []
+      // Only push when the value actually changes, so "delta" reflects real movement.
+      if (arr.length === 0 || arr[arr.length - 1] !== value) arr.push(value)
+      if (arr.length > 2) arr.shift()
+      lastTwo.set(topic, arr)
+    }
+  }
+  const out: TopicMomentum[] = []
+  for (const [topic, arr] of lastTwo) {
+    const current = arr[arr.length - 1]!
+    const prev = arr.length > 1 ? arr[0]! : current
+    out.push({ topic, current, delta: current - prev })
+  }
+  return out
+}

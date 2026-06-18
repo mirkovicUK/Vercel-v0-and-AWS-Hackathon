@@ -63,6 +63,13 @@ export function ReviewReportDialog({ childId, childName }: { childId: string; ch
           </div>
         ) : report ? (
           <div className="flex flex-col gap-6 py-1">
+            {report.momentum ? (
+              <div className="flex items-start gap-2 rounded-xl border border-primary/20 bg-primary/5 p-3">
+                <TrendingUp className="mt-0.5 size-4 shrink-0 text-primary" />
+                <p className="text-sm font-medium text-foreground">{report.momentum}</p>
+              </div>
+            ) : null}
+
             <p className="text-pretty text-sm leading-relaxed text-foreground">{report.summary}</p>
 
             <section className="flex flex-col gap-2">
