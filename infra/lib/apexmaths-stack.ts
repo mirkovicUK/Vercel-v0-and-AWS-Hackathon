@@ -201,20 +201,22 @@ export class ApexMathsStack extends cdk.Stack {
       }),
     )
 
-    // Bedrock: invoke Anthropic Claude Sonnet 4.6 (and stream) for the AI tutor/
-    // review. Claude Sonnet 4.6 is invoked via the *global* cross-Region inference
-    // profile, which routes to the underlying foundation model in a commercial
-    // Region — so we grant the global inference-profile ARN plus the foundation-
-    // model ARN (region wildcard, since global routing can land in any Region).
+    // Bedrock: invoke Anthropic Claude models (and stream) for the AI tutor /
+    // review (Sonnet 4.6) and the parent progress report (Haiku 4.5). Each is
+    // invoked via its *global* cross-Region inference profile, which routes to the
+    // underlying foundation model in a commercial Region — so we grant the global
+    // inference-profile ARNs plus the foundation-model ARNs (region wildcard).
     vercelRole.addToPolicy(
       new iam.PolicyStatement({
-        sid: "InvokeClaudeSonnet46",
+        sid: "InvokeClaudeModels",
         actions: ["bedrock:InvokeModel", "bedrock:InvokeModelWithResponseStream"],
         resources: [
-          // Foundation model in any commercial Region the global profile routes to.
+          // Foundation models in any commercial Region the global profile routes to.
           `arn:aws:bedrock:*::foundation-model/anthropic.claude-sonnet-4-6`,
-          // Global cross-Region inference profile for Claude Sonnet 4.6.
+          `arn:aws:bedrock:*::foundation-model/anthropic.claude-haiku-4-5-20251001-v1:0`,
+          // Global cross-Region inference profiles.
           `arn:aws:bedrock:${this.region}:${this.account}:inference-profile/global.anthropic.claude-sonnet-4-6`,
+          `arn:aws:bedrock:${this.region}:${this.account}:inference-profile/global.anthropic.claude-haiku-4-5-20251001-v1:0`,
         ],
       }),
     )
