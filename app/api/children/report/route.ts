@@ -54,5 +54,13 @@ export async function POST(req: Request) {
     },
   })
 
-  return result.toTextStreamResponse()
+  return result.toTextStreamResponse({
+    headers: {
+      // Defeat proxy/CDN buffering so partial object frames reach the client as
+      // they are produced (otherwise the whole report "drops in" at the end).
+      "Content-Type": "text/plain; charset=utf-8",
+      "Cache-Control": "no-cache, no-transform",
+      "X-Accel-Buffering": "no",
+    },
+  })
 }
