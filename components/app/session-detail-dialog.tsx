@@ -51,12 +51,12 @@ export function SessionDetailDialog({ session, children }: { session: PracticeSe
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="max-h-[85vh] overflow-y-auto sm:max-w-2xl">
-        <DialogHeader>
-          <DialogTitle className="flex flex-wrap items-center gap-2">
-            {SESSION_TYPE_CONFIG[session.type].label}
-            {session.topic ? <span className="text-muted-foreground">· {TOPIC_LABELS[session.topic]}</span> : null}
-            <span className="ml-auto text-sm font-semibold tabular-nums text-foreground">
+      <DialogContent className="grid-cols-1 max-h-[85vh] overflow-y-auto overflow-x-hidden sm:max-w-2xl">
+        <DialogHeader className="min-w-0">
+          <DialogTitle className="flex flex-wrap items-center gap-2 pr-8">
+            <span className="min-w-0 truncate">{SESSION_TYPE_CONFIG[session.type].label}</span>
+            {session.topic ? <span className="min-w-0 truncate text-muted-foreground">· {TOPIC_LABELS[session.topic]}</span> : null}
+            <span className="ml-auto shrink-0 text-sm font-semibold tabular-nums text-foreground">
               {session.score ?? 0}/{session.total} · {pct}%
             </span>
           </DialogTitle>
@@ -80,11 +80,11 @@ export function SessionDetailDialog({ session, children }: { session: PracticeSe
           <>
             {/* Struggle summary — computed in SQL (FILTER aggregate), not by AI. */}
             {detail.struggle.length > 0 ? (
-              <div className="rounded-xl border border-primary/20 bg-primary/5 p-4">
+              <div className="min-w-0 rounded-xl border border-primary/20 bg-primary/5 p-4">
                 {detail.weakestTopic ? (
                   <div className="flex items-center gap-2">
-                    <Target className="size-4 text-primary" />
-                    <p className="text-sm font-semibold text-foreground">
+                    <Target className="size-4 shrink-0 text-primary" />
+                    <p className="min-w-0 text-sm font-semibold text-foreground">
                       Struggled most on {TOPIC_LABELS[detail.weakestTopic]}
                     </p>
                   </div>
@@ -124,11 +124,11 @@ export function SessionDetailDialog({ session, children }: { session: PracticeSe
             ) : null}
 
             {/* Per-question review — all folded, click to expand. */}
-            <div className="flex flex-col gap-2.5">
+            <div className="flex min-w-0 flex-col gap-2.5">
               {detail.answers.map((a) => {
                 const letter = (i: number) => String.fromCharCode(65 + i)
                 return (
-                  <div key={a.position} className="overflow-hidden rounded-xl border border-border">
+                  <div key={a.position} className="min-w-0 overflow-hidden rounded-xl border border-border">
                     <details className="group">
                       <summary className="flex cursor-pointer list-none items-center gap-3 p-4 [&::-webkit-details-marker]:hidden">
                         <span
