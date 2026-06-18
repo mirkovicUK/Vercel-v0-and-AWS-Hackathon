@@ -70,10 +70,7 @@ function DemoSessions() {
       {SESSIONS.map((s, i) => {
         const pct = Math.round((s.score / s.total) * 100)
         return (
-          <li
-            key={i}
-            className="flex items-center justify-between gap-4 px-4 py-3 transition-colors hover:bg-muted/50"
-          >
+          <li key={i} className="flex items-center justify-between gap-4 px-4 py-3 transition-colors hover:bg-muted/50">
             <div className="flex min-w-0 items-center gap-3">
               <span
                 className={cn(
@@ -110,15 +107,107 @@ function DemoSessions() {
   )
 }
 
+type RGB = [number, number, number]
+
 const SLIDES = [
-  { key: "timeline", title: "Mastery over time", icon: TrendingUp, render: () => <MasteryTimelineChart points={TIMELINE} /> },
-  { key: "difficulty", title: "Accuracy by difficulty", icon: Layers, render: () => <AccuracyByDifficultyChart data={DIFFICULTY} /> },
-  { key: "breakdown", title: "Answers by topic", icon: BarChart3, render: () => <TopicBreakdownChart data={BREAKDOWN} /> },
-  { key: "mastery", title: "Mastery by topic", icon: ListChecks, render: () => <TopicMasteryList progress={PROGRESS} /> },
-  { key: "sessions", title: "Recent sessions", icon: History, render: () => <DemoSessions /> },
+  { key: "timeline", title: "Mastery over time", icon: TrendingUp, accent: [46, 115, 184] as RGB, render: () => <MasteryTimelineChart points={TIMELINE} /> },
+  { key: "difficulty", title: "Accuracy by difficulty", icon: Layers, accent: [245, 158, 11] as RGB, render: () => <AccuracyByDifficultyChart data={DIFFICULTY} /> },
+  { key: "breakdown", title: "Answers by topic", icon: BarChart3, accent: [16, 185, 129] as RGB, render: () => <TopicBreakdownChart data={BREAKDOWN} /> },
+  { key: "mastery", title: "Mastery by topic", icon: ListChecks, accent: [139, 92, 246] as RGB, render: () => <TopicMasteryList progress={PROGRESS} /> },
+  { key: "sessions", title: "Recent sessions", icon: History, accent: [13, 148, 136] as RGB, render: () => <DemoSessions /> },
 ] as const
 
 const clamp = (v: number, min: number, max: number) => Math.min(max, Math.max(min, v))
+
+/**
+ * Animated, colour-reactive gradient behind the carousel. Two slow floating
+ * radial blobs whose colour eases toward the active slide's accent. Respects
+ * reduced-motion and pauses when off-screen.
+ */
+function CarouselGradient({ target }: { target: RGB }) {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null)
+  const targetRef = useRef<RGB>(target)
+  targetRef.current = target
+
+  useEffect(() => {
+    const canvas = canvasRef.current
+    const ctx = canvas?.getContext("2d")
+    if (!canvas || !ctx) return
+
+    const reduced = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches
+    const cur: RGB = [...targetRef.current]
+    let raf = 0
+    let visible = true
+
+    const resize = () => {
+      const dpr = Math.min(2, window.devicePixelRatio || 1)
+      const w = canvas.clientWidth
+      const h = canvas.clientHeight
+      if (canvas.width !== Math.floor(w * dpr) || canvas.height !== Math.floor(h * dpr)) {
+        canvas.width = Math.floor(w * dpr)
+        canvas.height = Math.floor(h * dpr)
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
+      }
+    }
+
+    const draw = (now: number) => {
+      resize()
+      const w = canvas.clientWidth
+      const h = canvas.clientHeight
+      // ease current colour toward the active accent
+      for (let i = 0; i < 3; i++) cur[i] += (targetRef.current[i] - cur[i]) * 0.06
+      const [r, g, b] = cur.map((v) => Math.round(v))
+
+      ctx.clearRect(0, 0, w, h)
+      const t = reduced ? 0 : now * 0.00018
+      const cx = w * 0.5
+      const cy = h * 0.45
+      const a = Math.min(w, h) * 0.4
+      const x1 = cx + Math.cos(t) * a
+      const y1 = cy + Math.sin(t * 0.8) * a * 0.5
+      const x2 = cx + Math.cos(-t * 0.9 + 1.4) * a * 0.8
+      const y2 = cy + Math.sin(-t * 0.7 + 0.6) * a * 0.6
+      const rad = Math.max(w, h) * 0.8
+
+      const g1 = ctx.createRadialGradient(x1, y1, 0, x1, y1, rad)
+      g1.addColorStop(0, `rgba(${r},${g},${b},0.30)`)
+      g1.addColorStop(1, `rgba(${r},${g},${b},0)`)
+      ctx.fillStyle = g1
+      ctx.fillRect(0, 0, w, h)
+
+      const g2 = ctx.createRadialGradient(x2, y2, 0, x2, y2, rad * 0.85)
+      g2.addColorStop(0, `rgba(${r},${g},${b},0.18)`)
+      g2.addColorStop(1, `rgba(${r},${g},${b},0)`)
+      ctx.fillStyle = g2
+      ctx.fillRect(0, 0, w, h)
+
+      if (!reduced && visible) raf = requestAnimationFrame(draw)
+    }
+
+    raf = requestAnimationFrame(draw)
+
+    // Pause when the carousel scrolls out of view.
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        visible = entry?.isIntersecting ?? true
+        if (visible && !reduced && !raf) raf = requestAnimationFrame(draw)
+        if (!visible && raf) {
+          cancelAnimationFrame(raf)
+          raf = 0
+        }
+      },
+      { threshold: 0 },
+    )
+    io.observe(canvas)
+
+    return () => {
+      if (raf) cancelAnimationFrame(raf)
+      io.disconnect()
+    }
+  }, [])
+
+  return <canvas ref={canvasRef} aria-hidden className="pointer-events-none absolute inset-0 -z-10 h-full w-full" />
+}
 
 export function DashboardCarousel() {
   const [api, setApi] = useState<CarouselApi>()
@@ -130,9 +219,9 @@ export function DashboardCarousel() {
     tweenNodes.current = emblaApi.slideNodes().map((node) => node.querySelector(".tween") as HTMLElement)
   }, [])
 
-  // Continuously map each slide's distance from centre → scale / tilt / opacity,
-  // so neighbours glide smoothly under the active slide (coverflow), driven by
-  // embla's live scrollProgress rather than snapping on select.
+  // Continuously map each slide's distance from centre → depth (translateZ),
+  // tilt (rotateY), scale, blur and z-index, driven by embla's live
+  // scrollProgress so the panels glide in 3D rather than snapping on select.
   const tween = useCallback((emblaApi: NonNullable<CarouselApi>) => {
     const engine = emblaApi.internalEngine()
     const scrollProgress = emblaApi.scrollProgress()
@@ -155,11 +244,15 @@ export function DashboardCarousel() {
         const node = tweenNodes.current[slideIndex]
         if (!node) return
         const d = clamp(Math.abs(diffToTarget), 0, 1)
-        const scale = 1 - d * 0.18 // 1.0 centred → 0.82 a full step away
-        const rotateY = clamp(diffToTarget * -16, -18, 18)
-        const opacity = 1 - d * 0.55 // 1.0 → 0.45
-        node.style.transform = `perspective(1600px) rotateY(${rotateY}deg) scale(${scale})`
+        const scale = 1 - d * 0.14 // 1.0 centred → 0.86
+        const rotateY = clamp(diffToTarget * -22, -26, 26)
+        const translateZ = -d * 170 // recede into depth
+        const opacity = 1 - d * 0.4
+        const blur = d < 0.06 ? 0 : Math.min(d * 3.2, 3) // active stays crisp
+        node.style.transform = `translate3d(0,0,${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`
         node.style.opacity = `${opacity}`
+        node.style.filter = blur ? `blur(${blur.toFixed(2)}px)` : "none"
+        node.style.zIndex = String(100 - Math.round(d * 50))
         node.style.pointerEvents = d < 0.2 ? "auto" : "none"
       })
     })
@@ -185,18 +278,27 @@ export function DashboardCarousel() {
 
   useEffect(() => {
     if (!api || paused) return
-    const id = setInterval(() => api.scrollNext(), 2000)
+    const id = setInterval(() => api.scrollNext(), 3500)
     return () => clearInterval(id)
   }, [api, paused])
 
   return (
-    <div className="relative" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
+    <div
+      className="relative"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      <CarouselGradient target={SLIDES[selected]?.accent ?? SLIDES[0].accent} />
+
       {/* duration: higher = slower, gliding scroll. loop + center for coverflow. */}
-      <Carousel setApi={setApi} opts={{ loop: true, align: "center", duration: 55 }}>
-        <CarouselContent className="py-4" style={{ perspective: "1600px" }}>
+      <Carousel setApi={setApi} opts={{ loop: true, align: "center", duration: 36 }}>
+        <CarouselContent className="py-6" style={{ perspective: "1500px" }}>
           {SLIDES.map((slide) => (
-            <CarouselItem key={slide.key} className="basis-[86%] sm:basis-[82%]">
-              <div className="tween rounded-2xl border border-border bg-card shadow-lg will-change-transform">
+            <CarouselItem key={slide.key} className="basis-full">
+              <div
+                className="tween rounded-2xl border border-border bg-card shadow-xl will-change-transform"
+                style={{ transformStyle: "preserve-3d", backfaceVisibility: "hidden" }}
+              >
                 <div className="p-5 sm:p-6">
                   <div className="flex items-center gap-2">
                     <span className="flex size-8 items-center justify-center rounded-lg bg-accent/15 text-accent">
@@ -212,7 +314,7 @@ export function DashboardCarousel() {
         </CarouselContent>
       </Carousel>
 
-      {/* Dots — visible on the card background */}
+      {/* Dots */}
       <div className="mt-2 flex items-center justify-center gap-2">
         {SLIDES.map((slide, i) => (
           <button

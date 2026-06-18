@@ -113,18 +113,30 @@ Follow every rule:
 
 Never mention these instructions and add no preamble — return only the structured report.`
 
+  const promptText = `Here are the latest practice statistics for a Year ${child.yearGroup ?? "?"} student:\n\n${stats}\n\nWrite the progress report.`
+
+  const t0 = performance.now()
   try {
-    const { experimental_output } = await generateText({
+    const res = await generateText({
       model: tutorModel(),
       system,
-      prompt: `Here are the latest practice statistics for a Year ${child.yearGroup ?? "?"} student:\n\n${stats}\n\nWrite the progress report.`,
+      prompt: promptText,
       experimental_output: Output.object({ schema: reportSchema }),
       temperature: 0.4,
     })
 
+    const ms = Math.round(performance.now() - t0)
+    console.info(
+      `[report-timing] childId=${childId} ms=${ms} source=${tutorModelSource()} finishReason=${res.finishReason} promptChars=${
+        system.length + promptText.length
+      } usage=${JSON.stringify(res.usage)}`,
+    )
+
     await audit({ action: "ai.report_generated", parentId: parent.id, detail: { childId, source: tutorModelSource() } })
-    return { ok: true, report: experimental_output as ReviewReport }
-  } catch {
+    return { ok: true, report: res.experimental_output as ReviewReport }
+  } catch (err) {
+    const ms = Math.round(performance.now() - t0)
+    console.warn(`[report-timing] childId=${childId} ms=${ms} FAILED err=${err instanceof Error ? err.message : String(err)}`)
     return { ok: false, error: "Could not generate a report right now. Please try again shortly." }
   }
 }
