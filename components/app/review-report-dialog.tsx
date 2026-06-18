@@ -22,7 +22,11 @@ export function ReviewReportDialog({ childId, childName }: { childId: string; ch
   const { object, submit, isLoading, error, stop } = useObject({
     api: "/api/children/report",
     schema: reportSchema,
-    onError: () => toast.error("Could not generate a report right now. Please try again shortly."),
+    onError: (err) => {
+      // TEMPORARY diagnostic: surface the real streaming error, not just a toast.
+      console.error("[review-report-error]", err)
+      toast.error("Could not generate a report right now. Please try again shortly.")
+    },
   })
 
   function onOpenChange(next: boolean) {
