@@ -165,29 +165,41 @@ matching `parents` row in Aurora is keyed by the Cognito `sub`.
 **B. App data (the relational core)**
 Vercel Server Components / Actions → **RDS Data API (HTTPS)** → **Aurora**. There is
 **no VPC entry from Vercel and no connection pool** — the Data API is stateless
-HTTPS, authenticated by the **IAM** user, with the DB password fetched from
+HTTPS, authenticated by the **OIDC-federated IAM role** (which can read only the
+least-privilege `app_user` DB secret), with the DB password fetched from
 **Secrets Manager** inside AWS. Filtered random question selection, `GROUP BY`
 mastery aggregation, transactional session creation, and FK-cascade GDPR deletes
 all run here.
 
-**C. AI tutor hint (streaming)**
+**C. AI tutor hint (streaming, adaptive)**
 Browser → `/api/practice/help` → **Bedrock Claude Sonnet 4.6** via
 `InvokeModelWithResponseStream`; tokens stream back to the browser. The prompt is
 PII-free (maths content only); hint usage is recorded in Aurora and capped per
-session.
+session. A repeat hint on the same question asks the model for a *different* correct
+approach (adaptive re-explanation).
 
-**D. AI review report**
-Server Action → **Bedrock Claude Sonnet 4.6** (`generateText`, structured output) → result
-persisted to `review_reports` in Aurora. Bounded by per-call timeouts and an
-overall budget, with deterministic fallback text.
+**D. AI review report (off the critical path)**
+`finishSessionAction` persists the deterministic skeleton, **redirects immediately**,
+and runs the per-question **Bedrock Claude Sonnet 4.6** calls in Next.js `after()`;
+results are merged into `review_reports` in Aurora and the result page auto-refreshes
+to show them. Bounded by per-call timeouts and an overall budget, with deterministic
+fallback text.
 
-**E. Billing**
+**E. Parent analytics (live relational reads)**
+Child dashboard Server Component → several parallel **Aurora** queries over the
+practice event log: a **window-function** mastery-over-time series, a **`LAG()`**
+improvement-velocity series, an **answers × questions JOIN** for accuracy-by-difficulty,
+and **`FILTER` aggregates** for correct/wrong/skipped. A past session opens via a
+read-only Server Action that reconstructs it with a single foreign-key join. No ETL,
+no separate analytics store.
+
+**F. Billing**
 Browser → hosted **Stripe** Checkout / Customer Portal; Server Actions create
 checkout/portal sessions. **Stripe webhooks** → `/api/stripe/webhook`, which
 verifies the signature, de-duplicates via `processed_webhook_events`, and updates
 `subscriptions` / `revenue_events` in Aurora.
 
-**F. GDPR account erasure**
+**G. GDPR account erasure**
 Server Action → single `DELETE FROM parents` in Aurora (FK `ON DELETE CASCADE`
 removes all owned data) **and** Cognito `AdminDeleteUser` to free the email for
 re-registration.

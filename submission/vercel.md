@@ -68,6 +68,14 @@ Pages that depend on live subscription state are `dynamic = "force-dynamic"`
 fresh on every request rather than cached. The UI is a thin React 19 client:
 Tailwind v4 + Radix primitives, `@vercel/analytics` enabled in production only.
 
+The **child analytics dashboard** is a good example of the Server-Component model:
+it issues several live Aurora queries in parallel on the server (mastery-over-time
+window function, accuracy-by-difficulty join, correct/wrong/skipped `FILTER`
+aggregate, and a `LAG()` improvement-velocity series) and ships only rendered
+charts (recharts) to the browser — the analytical SQL never leaves the server, and
+there's no separate analytics API. A past session opens in a dialog backed by a
+single read-only Server Action that reconstructs it with one foreign-key join.
+
 ### 2 — Auth (Cognito, enforced server-side)
 Authentication is composed in layers and enforced *before* a page renders. The
 `(app)` route-group layout calls `requireParent()`, so every protected page
@@ -101,12 +109,20 @@ the client.
 
 ### 5 — AI (Bedrock, two execution shapes)
 - **Streaming hints:** `/api/practice/help` (`runtime = "nodejs"`) streams Claude
-  Sonnet 4.6 tokens straight to the browser via `toTextStreamResponse()`.
-- **Inline review:** `finishSessionAction` runs the post-session review *inside the
-  request*, which is why the practice player route sets `maxDuration = 60` — the
-  review's 45s budget plus score persistence always completes within the limit.
-  This is a deliberate response to a platform constraint: Vercel freezes CPU once
-  the response is sent, so fire-and-forget background work would be starved.
+  Sonnet 4.6 tokens straight to the browser via `toTextStreamResponse()`. Repeat
+  hints are **adaptive** — the route takes the previously shown explanations and
+  asks the model for a genuinely different (still correct) approach.
+- **Post-session review, off the critical path:** `finishSessionAction` persists
+  the deterministic skeleton (score, per-topic summary, fallback text) and then
+  **redirects immediately**, scheduling the per-question Bedrock calls in
+  **Next.js `after()`** — work that runs *after* the response is sent, which Vercel
+  keeps the function alive to complete (the practice route allows `maxDuration =
+  60`). The result page renders instantly and **auto-refreshes** while the review
+  is `pending`, so the explanations stream in without the parent ever waiting. This
+  is a deliberate use of the platform: rather than block on ~5s of model latency,
+  the user-facing wait is just the deterministic finalize, and the AI fills in
+  behind it. If the background work fails it falls back to deterministic text, so
+  the report never hangs.
 
 ---
 
