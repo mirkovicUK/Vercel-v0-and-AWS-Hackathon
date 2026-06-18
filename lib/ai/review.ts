@@ -136,25 +136,41 @@ function buildUserPrompt(item: ReviewItemContext): string {
  * here becomes deterministic fallback text for the item (Req 8.4, 8.5).
  */
 async function generateOneExplanation(item: ReviewItemContext, model: LanguageModel): Promise<ReviewItemResult> {
-  const { experimental_output } = await generateText({
-    model,
-    system: SYSTEM_PROMPT,
-    prompt: buildUserPrompt(item),
-    experimental_output: Output.object({ schema: reviewItemSchema }),
-    temperature: 0.3,
-    maxOutputTokens: 400,
-  })
+  const t0 = performance.now()
+  let finishReason: string | undefined
+  let usage: unknown
+  try {
+    const res = await generateText({
+      model,
+      system: SYSTEM_PROMPT,
+      prompt: buildUserPrompt(item),
+      experimental_output: Output.object({ schema: reviewItemSchema }),
+      temperature: 0.3,
+      maxOutputTokens: 400,
+    })
+    finishReason = res.finishReason
+    usage = res.usage
+    const out = res.experimental_output as { explanation?: unknown; nextStep?: unknown } | null | undefined
+    const explanation = typeof out?.explanation === "string" ? out.explanation.trim() : ""
+    const nextStep = typeof out?.nextStep === "string" ? out.nextStep.trim() : ""
 
-  const out = experimental_output as { explanation?: unknown; nextStep?: unknown } | null | undefined
-  const explanation = typeof out?.explanation === "string" ? out.explanation.trim() : ""
-  const nextStep = typeof out?.nextStep === "string" ? out.nextStep.trim() : ""
+    // Validation (Req 8.5): both fields must be present and non-empty after trim.
+    if (!explanation || !nextStep) {
+      throw new Error("Model returned empty or malformed content")
+    }
 
-  // Validation (Req 8.5): both fields must be present and non-empty after trim.
-  if (!explanation || !nextStep) {
-    throw new Error("Model returned empty or malformed content")
+    const ms = Math.round(performance.now() - t0)
+    console.info(
+      `[review-timing] questionId=${item.questionId} ms=${ms} finishReason=${finishReason} usage=${JSON.stringify(usage)}`,
+    )
+    return { questionId: item.questionId, explanation, nextStep, source: "nova" }
+  } catch (err) {
+    const ms = Math.round(performance.now() - t0)
+    console.warn(
+      `[review-timing] questionId=${item.questionId} ms=${ms} FAILED err=${err instanceof Error ? err.message : String(err)}`,
+    )
+    throw err
   }
-
-  return { questionId: item.questionId, explanation, nextStep, source: "nova" }
 }
 
 // ---- Timer helpers --------------------------------------------------------
@@ -186,6 +202,7 @@ export async function generateReviewExplanations(
   const cfg: ReviewServiceConfig = { ...DEFAULT_REVIEW_CONFIG, ...config }
   // Resolve the model lazily so the no-items path above never touches it.
   const model = modelOverride ?? tutorModel()
+  const batchStart = performance.now()
 
   // Results slot per item; null means "not settled yet" -> finalised as fallback.
   const results: Array<ReviewItemResult | null> = new Array(items.length).fill(null)
@@ -251,5 +268,12 @@ export async function generateReviewExplanations(
   }
 
   // Finalise: every item gets a result, in order. Unsettled -> deterministic fallback.
-  return items.map((item, index) => results[index] ?? fallbackResult(item))
+  const finalResults = items.map((item, index) => results[index] ?? fallbackResult(item))
+  const aiCount = finalResults.filter((r) => r.source === "nova").length
+  console.info(
+    `[review-timing] BATCH items=${items.length} ai=${aiCount} fallback=${finalResults.length - aiCount} totalMs=${Math.round(
+      performance.now() - batchStart,
+    )} concurrency=${limit}`,
+  )
+  return finalResults
 }

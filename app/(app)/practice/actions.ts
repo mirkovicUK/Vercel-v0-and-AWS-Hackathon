@@ -3,6 +3,7 @@
 import { z } from "zod"
 import { redirect } from "next/navigation"
 import { revalidatePath } from "next/cache"
+import { after } from "next/server"
 import { requireEntitledParent } from "@/lib/auth/guard"
 import { getChildForParent } from "@/lib/db/children"
 import {
@@ -256,33 +257,59 @@ export async function finishSessionAction(
   }
   await upsertReviewReport({ sessionId, document: skeleton, generatedBy: "fallback" })
 
-  // 5. Generate one explanation per wrong answer synchronously (never throws),
-  // merge by questionId, and finalise. Skipped entirely when nothing is wrong.
-  if (contexts.length > 0) {
-    const results = await generateReviewExplanations(contexts)
-    const resultById = new Map(results.map((r) => [r.questionId, r]))
-    const mergedItems: ReviewItem[] = items.map((item) => {
-      const result = resultById.get(item.questionId)
-      return result
-        ? { questionId: item.questionId, explanation: result.explanation, nextStep: result.nextStep }
-        : item
-    })
-    const generatedBy: ReviewGeneratedBy = results.some((r) => r.source === "nova") ? "nova" : "fallback"
-    const finalDocument: ReviewDocument = {
-      perTopicSummary,
-      strongestTopic: strongest,
-      weakestTopic: weakest,
-      items: mergedItems,
-      status: "complete",
-    }
-    await upsertReviewReport({ sessionId, document: finalDocument, generatedBy })
-  }
-
   if (finished) {
     await audit({
       action: "session.completed",
       parentId: parent.id,
       detail: { sessionId, score: finished.score, total: finished.total, reason },
+    })
+  }
+
+  // 5. Generate the AI explanations AFTER the response is sent (Next.js `after`),
+  // so the parent is redirected to the result page immediately. The page renders
+  // the skeleton (score + per-topic + deterministic fallback text) right away and
+  // auto-refreshes while status === "pending"; once this background work finalises
+  // the report to "complete", the AI explanations appear. On Vercel `after` keeps
+  // the function alive past the response to do this (within maxDuration).
+  if (contexts.length > 0) {
+    after(async () => {
+      try {
+        const results = await generateReviewExplanations(contexts)
+        const resultById = new Map(results.map((r) => [r.questionId, r]))
+        const mergedItems: ReviewItem[] = items.map((item) => {
+          const result = resultById.get(item.questionId)
+          return result
+            ? { questionId: item.questionId, explanation: result.explanation, nextStep: result.nextStep }
+            : item
+        })
+        const generatedBy: ReviewGeneratedBy = results.some((r) => r.source === "nova") ? "nova" : "fallback"
+        await upsertReviewReport({
+          sessionId,
+          document: {
+            perTopicSummary,
+            strongestTopic: strongest,
+            weakestTopic: weakest,
+            items: mergedItems,
+            status: "complete",
+          },
+          generatedBy,
+        })
+      } catch (err) {
+        // Never leave the report stuck "pending": finalise with the deterministic
+        // fallback items already built above.
+        console.error("[review] background generation failed:", err)
+        await upsertReviewReport({
+          sessionId,
+          document: {
+            perTopicSummary,
+            strongestTopic: strongest,
+            weakestTopic: weakest,
+            items,
+            status: "complete",
+          },
+          generatedBy: "fallback",
+        }).catch(() => undefined)
+      }
     })
   }
 
