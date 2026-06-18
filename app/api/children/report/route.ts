@@ -1,4 +1,4 @@
-import { generateObject } from "ai"
+import { streamObject } from "ai"
 import { z } from "zod"
 import { requireEntitledParent } from "@/lib/auth/guard"
 import { buildReportInput } from "@/lib/ai/report-data"
@@ -13,14 +13,11 @@ export const maxDuration = 30
 const bodySchema = z.object({ childId: z.string().min(1).max(64) })
 
 /**
- * Generates the AI parent progress report as a single schema-VALIDATED object
- * (Claude Haiku 4.5 on Bedrock) and returns it as JSON.
- *
- * We deliberately do NOT stream: the report is short (~300 tokens, a few
- * seconds), and `generateObject` guarantees the full object validates against
- * `reportSchema` before it reaches the client — so every section (strengths,
- * focus areas, next steps) is always present and correctly typed. PII-free
- * input; scoped to the owning parent.
+ * Streams the AI parent progress report as a structured object (Claude Sonnet
+ * 4.6 on Bedrock). The client consumes it with `experimental_useObject`, so
+ * fields appear progressively — which keeps the UX snappy despite Sonnet's
+ * lower per-token throughput. Sonnet (vs Haiku) reliably conforms to the
+ * schema, so every section is present. PII-free input; scoped to the parent.
  */
 export async function POST(req: Request) {
   let parent
@@ -38,35 +35,24 @@ export async function POST(req: Request) {
   if (!input.ok) return Response.json({ error: input.error }, { status: input.status })
 
   const t0 = performance.now()
-  try {
-    const { object, usage, finishReason } = await generateObject({
-      model: reportModel(),
-      schema: reportSchema,
-      system: input.system,
-      prompt: input.prompt,
-      temperature: 0.4,
-    })
+  const result = streamObject({
+    model: reportModel(),
+    schema: reportSchema,
+    system: input.system,
+    prompt: input.prompt,
+    temperature: 0.4,
+    onFinish: ({ usage }) => {
+      const ms = Math.round(performance.now() - t0)
+      console.info(
+        `[report-timing] childId=${parsed.data.childId} ms=${ms} source=${tutorModelSource()} usage=${JSON.stringify(usage)}`,
+      )
+      void audit({
+        action: "ai.report_generated",
+        parentId: parent.id,
+        detail: { childId: parsed.data.childId, source: tutorModelSource() },
+      })
+    },
+  })
 
-    const ms = Math.round(performance.now() - t0)
-    console.info(
-      `[report-timing] childId=${parsed.data.childId} ms=${ms} source=${tutorModelSource()} finishReason=${finishReason} usage=${JSON.stringify(usage)}`,
-    )
-
-    void audit({
-      action: "ai.report_generated",
-      parentId: parent.id,
-      detail: { childId: parsed.data.childId, source: tutorModelSource() },
-    })
-
-    return Response.json(object)
-  } catch (err) {
-    const ms = Math.round(performance.now() - t0)
-    console.warn(
-      `[report-timing] childId=${parsed.data.childId} ms=${ms} FAILED err=${err instanceof Error ? err.message : String(err)}`,
-    )
-    return Response.json(
-      { error: "Could not generate a report right now. Please try again shortly." },
-      { status: 502 },
-    )
-  }
+  return result.toTextStreamResponse()
 }
