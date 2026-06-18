@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel"
 import { cn } from "@/lib/utils"
 import { MasteryTimelineChart } from "@/components/app/charts/mastery-timeline-chart"
@@ -118,72 +118,97 @@ const SLIDES = [
   { key: "sessions", title: "Recent sessions", icon: History, render: () => <DemoSessions /> },
 ] as const
 
-/** Minimal circular distance from the selected slide (handles loop wrap). */
-function circularDelta(i: number, selected: number, n: number): number {
-  let d = i - selected
-  if (d > n / 2) d -= n
-  if (d < -n / 2) d += n
-  return d
-}
+const clamp = (v: number, min: number, max: number) => Math.min(max, Math.max(min, v))
 
 export function DashboardCarousel() {
   const [api, setApi] = useState<CarouselApi>()
   const [selected, setSelected] = useState(0)
   const [paused, setPaused] = useState(false)
-  const n = SLIDES.length
+  const tweenNodes = useRef<HTMLElement[]>([])
+
+  const setTweenNodes = useCallback((emblaApi: NonNullable<CarouselApi>) => {
+    tweenNodes.current = emblaApi.slideNodes().map((node) => node.querySelector(".tween") as HTMLElement)
+  }, [])
+
+  // Continuously map each slide's distance from centre → scale / tilt / opacity,
+  // so neighbours glide smoothly under the active slide (coverflow), driven by
+  // embla's live scrollProgress rather than snapping on select.
+  const tween = useCallback((emblaApi: NonNullable<CarouselApi>) => {
+    const engine = emblaApi.internalEngine()
+    const scrollProgress = emblaApi.scrollProgress()
+
+    emblaApi.scrollSnapList().forEach((scrollSnap, snapIndex) => {
+      let diffToTarget = scrollSnap - scrollProgress
+      const slidesInSnap = engine.slideRegistry[snapIndex]
+
+      slidesInSnap.forEach((slideIndex) => {
+        if (engine.options.loop) {
+          engine.slideLooper.loopPoints.forEach((loopItem) => {
+            const target = loopItem.target()
+            if (slideIndex === loopItem.index && target !== 0) {
+              const sign = Math.sign(target)
+              if (sign === -1) diffToTarget = scrollSnap - (1 + scrollProgress)
+              if (sign === 1) diffToTarget = scrollSnap + (1 - scrollProgress)
+            }
+          })
+        }
+        const node = tweenNodes.current[slideIndex]
+        if (!node) return
+        const d = clamp(Math.abs(diffToTarget), 0, 1)
+        const scale = 1 - d * 0.18 // 1.0 centred → 0.82 a full step away
+        const rotateY = clamp(diffToTarget * -16, -18, 18)
+        const opacity = 1 - d * 0.55 // 1.0 → 0.45
+        node.style.transform = `perspective(1600px) rotateY(${rotateY}deg) scale(${scale})`
+        node.style.opacity = `${opacity}`
+        node.style.pointerEvents = d < 0.2 ? "auto" : "none"
+      })
+    })
+  }, [])
 
   useEffect(() => {
     if (!api) return
     const onSelect = () => setSelected(api.selectedScrollSnap())
+    setTweenNodes(api)
+    tween(api)
     onSelect()
     api.on("select", onSelect)
-    api.on("reInit", onSelect)
+    api.on("reInit", () => {
+      setTweenNodes(api)
+      tween(api)
+      onSelect()
+    })
+    api.on("scroll", () => tween(api))
     return () => {
       api.off("select", onSelect)
     }
-  }, [api])
+  }, [api, tween, setTweenNodes])
 
   useEffect(() => {
     if (!api || paused) return
-    const id = setInterval(() => api.scrollNext(), 5000)
+    const id = setInterval(() => api.scrollNext(), 2000)
     return () => clearInterval(id)
   }, [api, paused])
 
   return (
     <div className="relative" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
-      <Carousel setApi={setApi} opts={{ loop: true, align: "center" }}>
-        {/* perspective on the track gives the slides a shared 3D vanishing point */}
+      {/* duration: higher = slower, gliding scroll. loop + center for coverflow. */}
+      <Carousel setApi={setApi} opts={{ loop: true, align: "center", duration: 55 }}>
         <CarouselContent className="py-4" style={{ perspective: "1600px" }}>
-          {SLIDES.map((slide, i) => {
-            const d = circularDelta(i, selected, n)
-            const isActive = d === 0
-            const rotateY = isActive ? 0 : d < 0 ? 14 : -14
-            const scale = isActive ? 1 : 0.82
-            return (
-              <CarouselItem key={slide.key} className="basis-[86%] sm:basis-[82%]">
-                <div
-                  className="rounded-2xl border border-border bg-card shadow-lg"
-                  style={{
-                    transform: `perspective(1600px) rotateY(${rotateY}deg) scale(${scale})`,
-                    opacity: isActive ? 1 : 0.45,
-                    filter: isActive ? "none" : "saturate(0.85)",
-                    transition: "transform 450ms ease, opacity 450ms ease, filter 450ms ease",
-                    pointerEvents: isActive ? "auto" : "none",
-                  }}
-                >
-                  <div className="p-5 sm:p-6">
-                    <div className="flex items-center gap-2">
-                      <span className="flex size-8 items-center justify-center rounded-lg bg-accent/15 text-accent">
-                        <slide.icon className="size-4" />
-                      </span>
-                      <h3 className="font-heading text-sm font-semibold text-foreground">{slide.title}</h3>
-                    </div>
-                    <div className="mt-4 min-h-[300px]">{slide.render()}</div>
+          {SLIDES.map((slide) => (
+            <CarouselItem key={slide.key} className="basis-[86%] sm:basis-[82%]">
+              <div className="tween rounded-2xl border border-border bg-card shadow-lg will-change-transform">
+                <div className="p-5 sm:p-6">
+                  <div className="flex items-center gap-2">
+                    <span className="flex size-8 items-center justify-center rounded-lg bg-accent/15 text-accent">
+                      <slide.icon className="size-4" />
+                    </span>
+                    <h3 className="font-heading text-sm font-semibold text-foreground">{slide.title}</h3>
                   </div>
+                  <div className="mt-4 min-h-[300px]">{slide.render()}</div>
                 </div>
-              </CarouselItem>
-            )
-          })}
+              </div>
+            </CarouselItem>
+          ))}
         </CarouselContent>
       </Carousel>
 
