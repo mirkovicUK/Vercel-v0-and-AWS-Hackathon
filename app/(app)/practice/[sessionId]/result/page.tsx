@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Check, X, Minus, Trophy, ChevronRight, ChevronDown, Lightbulb } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { PendingAutoRefresh } from "@/components/app/pending-auto-refresh"
 
 export const dynamic = "force-dynamic"
 
@@ -107,9 +108,12 @@ export default async function ResultPage({ params }: { params: Promise<{ session
       <div className="mt-6">
         <h2 className="mb-3 text-sm font-semibold text-foreground">Review answers</h2>
         {reviewPending ? (
-          <p className="mb-3 rounded-lg bg-muted px-4 py-2.5 text-sm text-muted-foreground">
-            Explanations are still finishing — refresh in a moment.
-          </p>
+          <>
+            <PendingAutoRefresh />
+            <p className="mb-3 rounded-lg bg-muted px-4 py-2.5 text-sm text-muted-foreground">
+              Explanations are still finishing — they&apos;ll appear here in a moment.
+            </p>
+          </>
         ) : null}
         <div className="flex flex-col gap-3">
           {session.questionIds.map((qid, position) => {
@@ -119,12 +123,9 @@ export default async function ResultPage({ params }: { params: Promise<{ session
             const answered = a && a.selectedIndex !== null
             const correct = a?.isCorrect ?? false
             const reviewItem = reviewByQuestionId.get(qid)
-            // Wrong or skipped questions carry the explanation the parent wants
-            // to read, so they start expanded; correct ones start collapsed.
-            const startOpen = !correct
             return (
               <Card key={qid} className="overflow-hidden">
-                <details open={startOpen} className="group">
+                <details className="group">
                   <summary className="flex cursor-pointer list-none items-center gap-3 p-5 [&::-webkit-details-marker]:hidden">
                     <span
                       className={cn(
