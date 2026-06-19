@@ -1,7 +1,7 @@
 import { generateText, Output } from "ai"
 import type { LanguageModel } from "ai"
 import { z } from "zod"
-import { tutorModel } from "@/lib/ai/model"
+import { appModel } from "@/lib/ai/model"
 import { TOPIC_LABELS, type Topic } from "@/lib/domain"
 
 /**
@@ -11,10 +11,23 @@ import { TOPIC_LABELS, type Topic } from "@/lib/domain"
  * is malformed. This function NEVER throws and ALWAYS returns exactly one
  * result per input item, in the same order (Req 8, Property 8).
  *
- * The synchronous, in-request design is a Vercel platform constraint: CPU is
- * frozen once the HTTP response is sent, so fire-and-forget review work would
- * be starved. The overall budget — not just the per-call timeouts — is the real
- * guarantee that the completing request stays inside the route's maxDuration.
+ * HOW IT'S DRIVEN (off the critical path): `finishSessionAction` first persists
+ * a deterministic skeleton review (score, per-topic summary, fallback text) and
+ * redirects the parent to the result page immediately, then runs THIS function
+ * inside a Next.js `after()` callback — work that executes after the HTTP
+ * response is sent and which Vercel keeps the function alive to finish, within
+ * the invoking route's `maxDuration` (the practice route allows 60s). The result
+ * page renders the skeleton instantly and auto-refreshes while the review is
+ * `pending`; once this work upserts the merged explanations as `complete`, the
+ * AI text appears. So the parent never blocks on model latency.
+ *
+ * Each explanation is a non-streaming `generateText` call: the output is
+ * persisted and polled, not shown live, so streaming would add nothing here
+ * (unlike the parent report, which IS streamed because it renders in-view).
+ *
+ * The overall budget — not just the per-call timeouts — is the real guarantee
+ * that the background work stays inside `maxDuration`; whatever has not settled
+ * by the deadline is finalised with deterministic fallback text.
  */
 
 // ---- Public types ---------------------------------------------------------
@@ -201,7 +214,7 @@ export async function generateReviewExplanations(
 
   const cfg: ReviewServiceConfig = { ...DEFAULT_REVIEW_CONFIG, ...config }
   // Resolve the model lazily so the no-items path above never touches it.
-  const model = modelOverride ?? tutorModel()
+  const model = modelOverride ?? appModel()
   const batchStart = performance.now()
 
   // Results slot per item; null means "not settled yet" -> finalised as fallback.
