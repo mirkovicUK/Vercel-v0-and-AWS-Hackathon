@@ -4,7 +4,7 @@ import { requireEntitledParent } from "@/lib/auth/guard"
 import { getSessionForParent, getSessionAnswers, incrementHelpUsed, expireIfElapsed } from "@/lib/db/sessions"
 import { getQuestionById } from "@/lib/db/questions"
 import { audit } from "@/lib/db/audit"
-import { tutorModel, tutorModelSource } from "@/lib/ai/model"
+import { appModel, appModelSource } from "@/lib/ai/model"
 import { MAX_HELP_PER_SESSION, TOPIC_LABELS } from "@/lib/domain"
 
 // Never use the edge runtime with the AI SDK.
@@ -101,7 +101,7 @@ export async function POST(req: Request) {
   await audit({
     action: "ai.help_requested",
     parentId: parent.id,
-    detail: { sessionId, questionId, source: tutorModelSource(), retry: isRetry },
+    detail: { sessionId, questionId, source: appModelSource(), retry: isRetry },
   })
 
   // Build the user prompt WITHOUT any PII — only the maths content. On a retry,
@@ -121,7 +121,7 @@ export async function POST(req: Request) {
 
   try {
     const result = streamText({
-      model: tutorModel(),
+      model: appModel(),
       system: isRetry ? ADAPTIVE_SYSTEM_PROMPT : SYSTEM_PROMPT,
       prompt: userPrompt,
       // Slightly higher temperature on a retry to encourage a different angle.

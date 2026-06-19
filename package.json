@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "test": "vitest --run",
     "test:watch": "vitest",
-    "db:create-app-user": "node scripts/create-app-user.mjs"
+    "db:create-app-user": "node scripts/create-app-user.mjs",
+    "probe:stream": "node scripts/stream-probe.mjs"
   },
   "dependencies": {
     "@ai-sdk/amazon-bedrock": "^4.0.111",

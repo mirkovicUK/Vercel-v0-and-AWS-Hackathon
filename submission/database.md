@@ -76,8 +76,10 @@ engine rather than scattering it through application code:
 
 - **Foreign keys with three different delete behaviours**, because erasure
   semantics differ per relationship:
-  - `CASCADE` (7 FKs) for owned data — `children`, `sessions`, `session_answers`,
-    `progress`, `review_reports`, `subscriptions` all cascade from `parents`.
+  - `CASCADE` (7 FKs) for owned data — deleting a `parent` removes `children`,
+    `subscriptions`, `sessions`, and their `session_answers`, `progress`, and
+    `review_reports` (some directly off `parents`, others transitively via
+    `children`/`sessions`).
   - `SET NULL` for `revenue_events.parent_id` — keep the revenue row for accounting,
     de-attribute the person (GDPR).
   - `NO ACTION` for `session_answers.question_id` — deleting a user must never
@@ -133,29 +135,53 @@ clearest "the database is doing real work" story:
   away, so the richer **per-child analytics** are computed **live, on demand**, in
   the engine — no ETL job, no second analytics store, no pre-modelled access paths.
 
-Every chart on the child dashboard is a single Aurora query over that log
-(`lib/db/analytics.ts`):
+Every **history/analytics** chart on the child dashboard is a single live Aurora
+query over that event log (`lib/db/analytics.ts`); the two **snapshot** widgets
+read the denormalised `progress` rollup and the `sessions` table. The dashboard is
+rendered by six parallel queries (`children/[childId]/page.tsx`):
+
+| Dashboard widget | Query (`lib/db/*`) | Source | Relational technique |
+|---|---|---|---|
+| Mastery-over-time chart | `getMasteryTimeline` | event log | **Window function** — running cumulative accuracy `PARTITION BY topic` |
+| Improvement-velocity card | `getImprovementVelocity` | event log | **`LAG()`** session-over-session delta over a windowed cumulative |
+| Accuracy-by-difficulty chart | `getAccuracyByDifficulty` | event log | **JOIN** `session_answers × questions × sessions` + `FILTER` |
+| Answers-by-topic chart | `getTopicBreakdown` | event log | three **`FILTER` aggregates** (correct / wrong / skipped) in one pass |
+| Mastery-by-topic list | `getChildProgress` | `progress` rollup | cheap point read (instant snapshot) |
+| Recent-sessions list | `getRecentSessions` | `sessions` | indexed read, newest-first |
+
+The four analytical queries — the ones a key-value store can't serve without a
+separate system — are:
 
 ```sql
--- Mastery over time, per topic: a running cumulative accuracy WINDOW.
+-- 1. Mastery over time, per topic: a running cumulative accuracy WINDOW.
 SELECT completed_at, topic,
        round(sum(correct) OVER w * 100.0 / NULLIF(sum(attempts) OVER w, 0))::int AS pct
 FROM per_session_topic
 WINDOW w AS (PARTITION BY topic ORDER BY completed_at
              ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW);
 
--- Improvement velocity: session-over-session delta with LAG().
+-- 2. Improvement velocity: session-over-session delta with LAG().
 SELECT completed_at, cum_pct,
        cum_pct - LAG(cum_pct) OVER (ORDER BY completed_at) AS delta
 FROM cumulative;
 
--- Accuracy by difficulty: JOIN answers x questions, then GROUP BY.
+-- 3. Accuracy by difficulty: JOIN answers × questions × sessions, then GROUP BY.
 SELECT q.difficulty,
        count(*) FILTER (WHERE sa.is_correct) AS correct,
        count(*) FILTER (WHERE sa.is_correct IS NOT NULL) AS attempts
-FROM session_answers sa JOIN questions q ON q.id = sa.question_id
-JOIN sessions s ON s.id = sa.session_id
+FROM session_answers sa
+JOIN sessions  s ON s.id = sa.session_id
+JOIN questions q ON q.id = sa.question_id
 WHERE s.child_id = :childId GROUP BY q.difficulty;
+
+-- 4. Answers by topic: correct / wrong / skipped, three FILTER aggregates at once.
+SELECT sa.topic,
+       count(*) FILTER (WHERE sa.is_correct)          AS correct,
+       count(*) FILTER (WHERE sa.is_correct = false)  AS wrong,
+       count(*) FILTER (WHERE sa.answered_at IS NULL) AS skipped
+FROM session_answers sa
+JOIN sessions s ON s.id = sa.session_id
+WHERE s.child_id = :childId GROUP BY sa.topic;
 ```
 
 And the click-through **session detail** reconstructs an entire past session with a
@@ -219,10 +245,33 @@ denormalising, fanning writes across items, and re-implementing aggregation and
 referential integrity in application code — more complexity for less correctness.
 
 **Aurora DSQL — no.** Its reason to exist is active-active, multi-region distributed
-writes. ApexMaths is single-region with a single writer path, and we lean on
-conventional Aurora features DSQL constrains — foreign-key enforcement, `pgcrypto`,
-the RDS Data API integration above. Picking DSQL would solve a topology problem we
-don't have at the cost of features we actively use.
+writes with optimistic concurrency — low write latency for a globally distributed
+user base and survival of a whole-region outage.
+
+**Our market removes that motivation entirely.** ApexMaths serves the **UK 11+**
+audience — a market that is essentially UK-only (the commercialised grammar-school /
+private-tutoring 11+ funnel is specific to England). Our users are concentrated in
+one country, and a single region (`eu-west-2`, in London) sits right next to them,
+so there is no global write-distribution problem for DSQL to solve. Resilience is
+still covered the conventional way — Aurora **Multi-AZ failover within `eu-west-2`** —
+which is the right durability level for a single-country product.
+
+And even setting geography aside, ApexMaths leans on conventional Aurora/Postgres
+features DSQL does not provide:
+
+- **Foreign keys** — we have **9 FK constraints**, and GDPR erasure is a single
+  `DELETE FROM parents` resolved by `ON DELETE CASCADE`/`SET NULL`. DSQL does not
+  support foreign-key constraints, so all of that referential integrity and the
+  cascade-delete path would move into application code.
+- **Sequences** — `audit_log.id` is `BIGSERIAL`. DSQL has no sequences, so the
+  append-only audit log (and any serial id) would need redesigning.
+- **The serverless access model** — our connectionless integration is the **RDS
+  Data API**, an Aurora capability; DSQL is reached over the standard Postgres
+  wire protocol with IAM-token auth, so the exact "no pool, no VPC, no secret"
+  story below would not carry over unchanged.
+
+In short: a UK-only, single-region audience removes the reason to **adopt** DSQL,
+and the feature-compatibility gaps are why we would **decline** it even if we did.
 
 ---
 

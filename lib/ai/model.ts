@@ -3,30 +3,32 @@ import { awsCredentialsProvider } from "@vercel/oidc-aws-credentials-provider"
 import type { LanguageModel } from "ai"
 
 /**
- * Resolves the app's LLMs on **Amazon Bedrock** via **OIDC federation**.
+ * Single source of truth for the app's LLM.
  *
- * - On Vercel (production/preview) requests run against Bedrock in your own AWS
- *   account using OIDC — Vercel mints a short-lived token exchanged for temporary
- *   IAM credentials scoped to AWS_ROLE_ARN. No long-lived access keys.
+ * The WHOLE app — interactive tutoring hints, per-session review, AND the parent
+ * progress report — runs on ONE model: Claude Sonnet 4.6. There is exactly one
+ * place the model id is defined (below) and one accessor (`appModel`), so there
+ * is no chance of the three call sites drifting onto different models.
+ *
+ * Resolution (Amazon Bedrock via OIDC federation):
+ * - On Vercel (prod/preview), requests hit Bedrock in our own AWS account using
+ *   OIDC — Vercel mints a short-lived token exchanged for temporary IAM creds
+ *   scoped to AWS_ROLE_ARN. No long-lived access keys.
  * - Locally, static AWS keys are used if present (dev convenience).
  * - Otherwise it falls back to the zero-config Vercel AI Gateway model string.
  *
- * Model choice:
- * - **Claude Sonnet 4.6** powers everything — interactive tutoring (hints),
- *   per-session review, AND the parent progress report.
+ * Why Sonnet (not Haiku): Sonnet conforms reliably to the structured report
+ * schema where Haiku did not, and powers the tutoring/review quality.
  *
- * We trialled Haiku 4.5 for the report (cheaper/faster per token) but it was
- * unreliable at conforming to the structured report schema. Sonnet conforms
- * reliably, and because the report is STREAMED (streamObject), fields appear
- * progressively — which hides Sonnet's lower per-token throughput and keeps the
- * UX snappy. Reliability + good UX beats raw token speed here.
- *
- * Sonnet is invoked via its *global* cross-Region inference profile (from
- * eu-west-2 the request routes to the nearest commercial Region automatically).
+ * Why the `eu.` regional inference profile (not `global.`): our Vercel functions
+ * and Bedrock both run in London (eu-west-2). The EU profile keeps inference
+ * in-region (load-balanced across EU Regions) instead of routing to a distant
+ * commercial Region, which roughly halved time-to-first-token in measurement.
  */
 
-const TUTOR_BEDROCK_MODEL_ID = "global.anthropic.claude-sonnet-4-6"
-const TUTOR_GATEWAY_MODEL_ID = "anthropic/claude-sonnet-4.6"
+// --- THE model. One id, one fallback. Change here and the whole app follows. ---
+const APP_BEDROCK_MODEL_ID = "eu.anthropic.claude-sonnet-4-6"
+const APP_GATEWAY_MODEL_ID = "anthropic/claude-sonnet-4.6"
 
 function region(): string | undefined {
   return process.env.AWS_REGION || process.env.AWS_DEFAULT_REGION
@@ -54,27 +56,18 @@ function bedrockProvider() {
   )
 }
 
-function resolveModel(bedrockId: string, gatewayId: string): LanguageModel {
-  if (isBedrockConfigured()) return bedrockProvider()(bedrockId)
-  // Gateway fallback (string model id is resolved by the AI SDK Gateway).
-  return gatewayId as unknown as LanguageModel
-}
-
-/** Sonnet 4.6 — tutoring hints and per-session review. */
-export function tutorModel(): LanguageModel {
-  return resolveModel(TUTOR_BEDROCK_MODEL_ID, TUTOR_GATEWAY_MODEL_ID)
-}
-
 /**
- * Parent progress report. Uses Sonnet 4.6 (same as the tutor): it conforms to
- * the structured report schema far more reliably than Haiku, and we stream it
- * so the latency is hidden behind progressive rendering.
+ * The app's language model — used everywhere (hints, review, parent report).
+ * This is the ONLY model accessor; there are deliberately no per-feature
+ * variants because every feature uses the same Sonnet 4.6 model.
  */
-export function reportModel(): LanguageModel {
-  return resolveModel(TUTOR_BEDROCK_MODEL_ID, TUTOR_GATEWAY_MODEL_ID)
+export function appModel(): LanguageModel {
+  if (isBedrockConfigured()) return bedrockProvider()(APP_BEDROCK_MODEL_ID)
+  // Gateway fallback (string model id is resolved by the AI SDK Gateway).
+  return APP_GATEWAY_MODEL_ID as unknown as LanguageModel
 }
 
 /** Human-readable execution source for logging / debugging. */
-export function tutorModelSource(): "bedrock" | "gateway" {
+export function appModelSource(): "bedrock" | "gateway" {
   return isBedrockConfigured() ? "bedrock" : "gateway"
 }
