@@ -60,12 +60,14 @@ SELECT topic,
 FROM session_answers WHERE session_id = :sessionId GROUP BY topic;
 ```
 
-The roadmap reinforces this. The next iteration — adaptive selection that avoids
-recently-seen questions and weights toward weak topics — is a **join** of the
-question bank against each child's `session_answers` and `progress`. The smarter
-the tutor gets, the *more* the database earns its place; on a key-value store, the
-product getting smarter would mean the database doing *less* and our code doing
-more.
+This thesis is no longer just a roadmap promise — we **shipped** it. The adaptive
+"Skill builder" session chooses each child's questions by **joining** the question
+bank against their `session_answers` and `progress`, and it reuses the *exact same*
+relational analytics that power the dashboard (see
+[The adaptive session makes the database do more, not less](#the-adaptive-session-makes-the-database-do-more-not-less)).
+The smarter the tutor gets, the *more* the database earns its place; on a key-value
+store, the product getting smarter would mean the database doing *less* and our code
+doing more.
 
 ---
 
@@ -206,6 +208,59 @@ materialisation; here they're just queries.
 > aggregates through the RDS Data API, with no ETL and no separate analytics store.
 > The denormalised `progress` rollup powers the instant view; the same event log
 > powers this rich history on demand."*
+
+---
+
+## The adaptive session makes the database do more, not less
+
+The newest feature — the adaptive **"Skill builder"** session — is the roadmap
+promise above, now implemented, and it is the cleanest proof of the thesis: the
+*same* relational analytics that report a child's progress now also **drive** what
+they practise next. The selection core is a pure, property-tested function; the
+database does the relational work that feeds it.
+
+- **The relational analytics now drive selection, not just reporting.** The two
+  reads that feed the weighted choice are queries the dashboard already runs:
+  `getChildProgress` (the per-topic mastery rollup) and `getAccuracyByDifficulty`
+  (the `session_answers × questions × sessions` JOIN + `FILTER` analytic). Mastery
+  drives **inverse-mastery weighting** (more questions on weaker topics) and the
+  by-difficulty accuracy drives **ZPD difficulty targeting** (aim where the child is
+  ~75% accurate). Same engine work, now powering the product loop — not a second
+  store, not an ETL.
+
+- **A new recency anti-join** (`lib/db/adaptive.ts`) excludes anything the child saw
+  in the last day. `child_id` lives on `sessions`, not `session_answers`, so it
+  reaches the answers through the join key:
+
+  ```sql
+  SELECT DISTINCT sa.question_id
+  FROM session_answers sa
+  JOIN sessions s ON s.id = sa.session_id
+  WHERE s.child_id = :childId
+    AND sa.answered_at >= now() - (:windowDays::int * interval '1 day');
+  ```
+
+- **A deliberately shaped index for that anti-join**
+  (`idx_answers_child_recent ON session_answers(session_id, answered_at)`,
+  [`scripts/sql/002_adaptive.sql`](../scripts/sql/002_adaptive.sql)). The shape is
+  optimal for *this* schema: the leading `session_id` is the join key back to
+  `sessions` (where `child_id` lives), and the trailing `answered_at` satisfies the
+  time-window range filter within the index, per session. We **considered and
+  deferred** denormalising `child_id` directly onto `session_answers` — a
+  `(child_id, answered_at)` index would skip the join and win at very large scale,
+  but it would mean a new column, a write-time copy on every answer insert, and a
+  backfill of existing rows. The composite index serves the query shape with zero
+  denormalisation, zero write-path change, and zero backfill; the join to `sessions`
+  is on its indexed primary key.
+
+- **An additive enum migration with clean layering.** The session type is extended
+  with `ALTER TYPE session_type ADD VALUE 'adaptive'` (idempotent, and — because
+  `ADD VALUE` can't run inside a transaction — applied statement-by-statement by the
+  migrator). The selection logic itself — weighting, allocation, ZPD targeting,
+  recency exclusion, fallback, cold-start — is a **pure, deterministic, I/O-free
+  function** (`lib/practice/adaptive-selection.ts`, property-tested with `fast-check`);
+  the database does the relational reads and the recency anti-join. The engine does
+  the relational work; the core does the maths.
 
 ---
 

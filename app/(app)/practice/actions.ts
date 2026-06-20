@@ -18,6 +18,7 @@ import {
   expireElapsedForChild,
 } from "@/lib/db/sessions"
 import { getQuestionById, getQuestionsByIds, pickQuestionIds } from "@/lib/db/questions"
+import { selectAdaptiveQuestionsForChild } from "@/lib/db/adaptive"
 import { applySessionToProgress } from "@/lib/db/progress"
 import { upsertReviewReport, type ReviewDocument, type ReviewItem, type ReviewGeneratedBy } from "@/lib/db/reviews"
 import { generateReviewExplanations, fallbackExplanation, type ReviewItemContext } from "@/lib/ai/review"
@@ -36,11 +37,16 @@ import {
 // initial score/summary persist plus the redirect (Req 8.7, 8.8).
 
 
-const startSchema = z.object({
-  childId: z.string().uuid("Invalid child."),
-  type: z.enum(["warmup", "topic", "mock"]),
-  topic: z.enum(TOPICS).optional(),
-})
+const startSchema = z
+  .object({
+    childId: z.string().uuid("Invalid child."),
+    type: z.enum(["warmup", "topic", "mock", "adaptive"]),
+    topic: z.enum(TOPICS).optional(),
+  })
+  .refine((v) => !(v.type === "adaptive" && v.topic), {
+    message: "Skill builder uses a mix of topics and can't be limited to one.", // Req 1.6
+    path: ["topic"],
+  })
 
 /** Create a new practice session and route into the player. */
 export async function startSessionAction(
@@ -78,16 +84,29 @@ export async function startSessionAction(
   const topic: Topic | null = parsed.data.type === "topic" ? parsed.data.topic ?? null : null
   if (parsed.data.type === "topic" && !topic) return { error: "Please choose a topic to practise." }
 
-  const questionIds = await pickQuestionIds({ count: config.questionCount, topic })
-  if (questionIds.length === 0) {
-    return { error: "No questions are available yet. Please seed the question bank first." }
+  // Adaptive ("Skill builder") draws its ordered id list from the Selection_Service
+  // (mastery-weighted across all topics); every other type uses the existing random
+  // sampler. From `orderedIds`/`questionTopics` onward the path is identical.
+  let orderedIds: string[]
+  let questionTopics: Topic[]
+  if (parsed.data.type === "adaptive") {
+    const sel = await selectAdaptiveQuestionsForChild(child.id)
+    if (sel.questionIds.length === 0) {
+      return { error: "No questions are available yet. Please seed the question bank first." }
+    }
+    orderedIds = sel.questionIds
+    questionTopics = sel.questionTopics
+  } else {
+    const questionIds = await pickQuestionIds({ count: config.questionCount, topic })
+    if (questionIds.length === 0) {
+      return { error: "No questions are available yet. Please seed the question bank first." }
+    }
+    // Resolve each question's topic (needed for per-topic progress) without leaking answers.
+    const questions = await getQuestionsByIds(questionIds)
+    const topicById = new Map(questions.map((q) => [q.id, q.topic]))
+    orderedIds = questionIds.filter((id) => topicById.has(id))
+    questionTopics = orderedIds.map((id) => topicById.get(id)!)
   }
-
-  // Resolve each question's topic (needed for per-topic progress) without leaking answers.
-  const questions = await getQuestionsByIds(questionIds)
-  const topicById = new Map(questions.map((q) => [q.id, q.topic]))
-  const orderedIds = questionIds.filter((id) => topicById.has(id))
-  const questionTopics = orderedIds.map((id) => topicById.get(id)!)
 
   let session: Awaited<ReturnType<typeof createSession>>
   try {

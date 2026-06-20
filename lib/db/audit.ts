@@ -7,20 +7,32 @@ import { query } from "@/lib/aws/rds-data"
  * so we can demonstrate accountability and support GDPR requests.
  */
 export type AuditAction =
+  // Auth & onboarding lifecycle
+  | "auth.signup"
+  | "auth.verified"
+  | "auth.signin"
+  | "onboarding.completed"
+  // Account / profile
   | "parent.created"
   | "parent.attested"
   | "parent.deleted"
   | "child.created"
   | "child.deleted"
+  // Practice sessions
   | "session.started"
   | "session.completed"
+  // AI
   | "ai.help_used"
+  | "ai.help_requested"
   | "ai.review_generated"
+  | "ai.report_generated"
+  // Billing
   | "subscription.updated"
   | "payment.recorded"
   | "billing.checkout_started"
   | "billing.portal_opened"
   | "billing.webhook_processed"
+  // Privacy / access
   | "data.exported"
   | "entitlement.denied"
 

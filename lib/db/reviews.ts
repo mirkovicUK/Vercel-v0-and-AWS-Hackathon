@@ -25,7 +25,12 @@ export interface ReviewItem {
 // The persisted, client-renderable review for a completed session. It never
 // contains `imageDescription`: this module only persists what it is given, and
 // the shape intentionally has no field for it.
-export interface ReviewDocument {
+// NOTE: declared as a `type` (not an `interface`) deliberately. The whole
+// document is passed to the RDS Data API wrapper as a single JSONB parameter,
+// whose `ParamValue` object arm is `Record<string, unknown>`. A `type` alias of
+// an object shape carries an implicit index signature and is assignable to that;
+// an `interface` is not, so an interface here would fail type-checking.
+export type ReviewDocument = {
   perTopicSummary: Array<{ topic: Topic; attempted: number; correct: number }>
   strongestTopic: Topic | "n/a"
   weakestTopic: Topic | "n/a"

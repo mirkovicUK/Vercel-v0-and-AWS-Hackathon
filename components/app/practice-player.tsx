@@ -46,6 +46,8 @@ export function PracticePlayer({
   slots,
   remainingSeconds,
   helpUsed: initialHelpUsed,
+  adaptiveMix = null,
+  calibrating = false,
 }: {
   sessionId: string
   childName: string
@@ -54,6 +56,10 @@ export function PracticePlayer({
   slots: PlayerSlot[]
   remainingSeconds: number
   helpUsed: number
+  /** Adaptive-only: formatted per-topic allocation (e.g. "5 Geometry, 4 Fractions"). */
+  adaptiveMix?: string | null
+  /** Adaptive-only: render the cold-start calibrating note. */
+  calibrating?: boolean
 }) {
   const total = slots.length
   const firstUnanswered = slots.findIndex((s) => !s.answered)
@@ -201,6 +207,25 @@ export function PracticePlayer({
             {answeredCount}/{total}
           </span>
         </div>
+
+        {/* Adaptive explainability (Req 9.3/9.4): the per-topic mix and, for a
+            cold-start child, a brief calibrating note. Non-intrusive and only
+            present for adaptive sessions. */}
+        {adaptiveMix || calibrating ? (
+          <div className="flex flex-col gap-1.5">
+            {adaptiveMix ? (
+              <p className="text-xs text-muted-foreground">
+                <span className="font-medium text-foreground">Today&apos;s mix:</span> {adaptiveMix}
+              </p>
+            ) : null}
+            {calibrating ? (
+              <p className="rounded-lg bg-secondary px-3 py-2 text-xs text-muted-foreground">
+                Calibrating — we&apos;re still learning your child&apos;s strengths, so this is a mixed warm-up across
+                all topics.
+              </p>
+            ) : null}
+          </div>
+        ) : null}
       </div>
 
       {/* Question */}

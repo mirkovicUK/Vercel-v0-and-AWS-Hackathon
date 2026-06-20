@@ -166,6 +166,48 @@ In short: **stream when the user is watching (hints, report); pre-compute +
 persist + poll when they are not (review)** — same model, latency hidden two
 different ways.
 
+### 6 — Adaptive "Skill builder" session (maximum reuse, a pure tested core)
+
+The newest session type, **`adaptive`** (parent label **"Skill builder"**),
+shows the same server-authoritative discipline applied to *personalisation*. It
+**reuses the entire existing session lifecycle unchanged** — the entitlement
+gate, one-active-session guard, the answer firewall (`toClientQuestion`),
+idempotent server-side grading, the server-enforced timer, the `after()` review,
+and audit logging are all type-agnostic. The *only* new behaviour is **how the
+ordered question ids are chosen**. That "maximum reuse, minimum new surface
+area" is deliberate: a new product capability that adds almost no new attack
+surface or lifecycle complexity.
+
+The selection logic itself is split along the **pure/impure boundary, which is
+also the testability boundary**:
+- **`Selection_Core`** (`lib/practice/adaptive-selection.ts`) is a **pure,
+  deterministic, I/O-free** function — all weighting, allocation, difficulty
+  targeting, recency exclusion, fallback, and cold-start logic, depending only
+  on its arguments and an **injected seeded RNG**. Because it touches nothing
+  external it is exhaustively **property-tested with `fast-check`** (allocation
+  always sums to the session total, no duplicate ids, completeness vs. scarcity,
+  determinism under a fixed seed).
+- **`Selection_Service`** (`lib/db/adaptive.ts`) is a thin **`server-only`**
+  orchestrator that does the Aurora reads (mastery, accuracy-by-difficulty,
+  candidate pools, the recency anti-join), runs the core, and hands the result
+  to the *same* `createSession` every other type uses.
+
+The personalisation is **user-first**: the default **weak-weighted
+(inverse-mastery)** scheme concentrates practice where a child is weakest, with
+**ZPD difficulty targeting** (questions pitched near the band where they score
+~70–80%), a **coverage floor** so every topic stays warm, a **1-day recency
+exclusion** with a fallback chain that **always fills the session to its full
+count**, and graceful **cold-start "calibrating"** handling for brand-new
+learners. Parents get practice that demonstrably lands where it helps most.
+
+Finally, the **explainability** is a deliberate UX + data decision. The player
+page derives the per-topic breakdown (**"Today's mix: 5 Geometry, 4
+Fractions…"**) and the calibrating note **at render time** from the session's
+own question ids and the pre-session progress read — **no persisted selection
+state and no schema bloat** (the one migration is a recency index, nothing
+more). The explanation carries only topic names and counts, so it stays
+PII-free and the session proceeds even if it can't be produced.
+
 ---
 
 ## Engineering details that mark it as deliberate
@@ -175,6 +217,11 @@ different ways.
   `correctIndex` before any question is serialised mid-session; grading is
   server-authoritative and idempotent (first answer wins), with server-enforced
   timer expiry.
+- **Pure core, impure shell.** Adaptive question selection is a **pure,
+  deterministic, `fast-check`-property-tested** function (injected seeded RNG,
+  zero I/O) behind a thin `server-only` service that does the Aurora reads — the
+  new session type reuses the whole existing lifecycle, so the only new surface
+  area is *which* questions get chosen.
 - **Per-route runtime decisions, not defaults.** `nodejs` runtime for the AI SDK,
   `maxDuration = 60` only where inline AI needs it, `force-dynamic` only where
   per-request freshness matters. Functions are pinned to **`lhr1` (London,

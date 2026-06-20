@@ -107,7 +107,9 @@ export async function startSubscriptionCheckout(): Promise<{ url: string | null;
     })
 
     // Only attach trial_period_days when eligible; always set subscription metadata.
-    const subscriptionData: Parameters<typeof stripe.checkout.sessions.create>[0]["subscription_data"] = {
+    const subscriptionData: NonNullable<
+      Parameters<typeof stripe.checkout.sessions.create>[0]
+    >["subscription_data"] = {
       metadata: { parentId: parent.id, planId: PLAN.id },
       ...(decision.grantTrial ? { trial_period_days: PLAN.trialDays } : {}),
     }

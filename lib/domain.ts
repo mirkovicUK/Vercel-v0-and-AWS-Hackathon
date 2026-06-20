@@ -21,7 +21,7 @@ export const TOPIC_LABELS: Record<Topic, string> = {
   data_handling: "Data Handling",
 }
 
-export const SESSION_TYPES = ["warmup", "topic", "mock"] as const
+export const SESSION_TYPES = ["warmup", "topic", "mock", "adaptive"] as const
 export type SessionType = (typeof SESSION_TYPES)[number]
 
 export interface SessionTypeConfig {
@@ -58,7 +58,32 @@ export const SESSION_TYPE_CONFIG: Record<SessionType, SessionTypeConfig> = {
     mixedTopics: true,
     description: "30 questions across mixed topics in 50 minutes.",
   },
+  adaptive: {
+    type: "adaptive",
+    label: "Skill builder",
+    questionCount: 15,
+    timeLimitSeconds: 20 * 60,
+    mixedTopics: true,
+    description: "15 questions tuned to your child's level across all topics in 20 minutes.",
+  },
 }
+
+// ---- Adaptive selection configuration (single source of truth) ----
+// Pure tuning constants imported by the selection core and its tests.
+
+export const WEIGHTING_DIRECTIONS = ["weak_weighted", "strong_weighted"] as const
+export type WeightingDirection = (typeof WEIGHTING_DIRECTIONS)[number]
+
+export const DEFAULT_WEIGHTING_DIRECTION: WeightingDirection = "weak_weighted" // Req 2.2
+export const WEIGHTING_GAMMA = 1.5 // exponent applied to the (in)mastery base (Req 2.3/2.4)
+export const COVERAGE_FLOOR = 1 // questions per Attempted_Topic (Req 4)
+export const ZPD_TARGET_ACCURACY = 0.75 // centre of the 70–80% window (Req 5.1)
+export const DEFAULT_DIFFICULTY = 3 // mid of 1–5 when accuracy data absent (Req 5.6/5.7)
+export const DIFFICULTY_MIN = 1
+export const DIFFICULTY_MAX = 5
+export const RECENCY_WINDOW_DAYS = 1 // Req 6.4
+export const MASTERY_MIN = 0
+export const MASTERY_MAX = 100
 
 export const MAX_CHILDREN_PER_PARENT = 3
 export const MAX_HELP_PER_SESSION = 5
