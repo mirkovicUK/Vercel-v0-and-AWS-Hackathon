@@ -3,6 +3,9 @@ import { requireEntitledParent } from "@/lib/auth/guard"
 import { getChildForParent } from "@/lib/db/children"
 import { getSessionForParent, getSessionAnswers, expireIfElapsed } from "@/lib/db/sessions"
 import { getQuestionsByIds, toClientQuestion } from "@/lib/db/questions"
+import { getChildProgress } from "@/lib/db/progress"
+import { allocationFromTopics, formatAllocationExplanation } from "@/lib/practice/allocation-explanation"
+import type { Topic } from "@/lib/domain"
 import { PracticePlayer, type PlayerSlot } from "@/components/app/practice-player"
 
 export const dynamic = "force-dynamic"
@@ -63,6 +66,37 @@ export default async function PlayerPage({ params }: { params: Promise<{ session
 
   const remainingSeconds = Math.max(0, Math.floor((new Date(session.expiresAt).getTime() - Date.now()) / 1000))
 
+  // Adaptive-only explainability (Req 9.3): show the per-topic allocation
+  // breakdown and (Req 9.4) a calibrating note when the child is cold-start.
+  // Both derivations are NON-BLOCKING (Req 9.6): any failure or empty result
+  // simply omits the block without breaking the player page. Gated strictly on
+  // the adaptive type, so warmup/topic/mock never render it.
+  let adaptiveMix: string | null = null
+  let calibrating = false
+  if (session.type === "adaptive") {
+    try {
+      // Build the ordered topic list from the session's questions (in question
+      // order), then reconstruct + format the allocation. No correctIndex is
+      // touched here — only each question's topic.
+      const orderedTopics = session.questionIds
+        .map((qid) => byId.get(qid)?.topic)
+        .filter((t): t is Topic => Boolean(t))
+      const summary = formatAllocationExplanation(allocationFromTopics(orderedTopics))
+      adaptiveMix = summary.length > 0 ? summary : null
+    } catch {
+      adaptiveMix = null
+    }
+    try {
+      // Read progress DURING the active session. Progress is only rolled in at
+      // finishSessionAction, so this read still reflects the PRE-session state.
+      // Every topic showing 0 attempts ⇒ cold start ⇒ render the calibrating note.
+      const progress = await getChildProgress(session.childId)
+      calibrating = progress.length > 0 && progress.every((p) => p.attempts === 0)
+    } catch {
+      calibrating = false
+    }
+  }
+
   return (
     <PracticePlayer
       sessionId={session.id}
@@ -72,6 +106,8 @@ export default async function PlayerPage({ params }: { params: Promise<{ session
       slots={slots}
       remainingSeconds={remainingSeconds}
       helpUsed={session.helpUsed}
+      adaptiveMix={adaptiveMix}
+      calibrating={calibrating}
     />
   )
 }

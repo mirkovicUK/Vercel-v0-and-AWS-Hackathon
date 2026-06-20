@@ -113,7 +113,7 @@ class FakeDb {
   }
 
   withTransaction = async <T>(
-    fn: (tx: { query: typeof this.query; transactionId: string }) => Promise<T>,
+    fn: (tx: { query: FakeDb["query"]; transactionId: string }) => Promise<T>,
   ): Promise<T> => {
     // The fake is synchronous-by-await; we don't model rollback because the
     // production handler issues no failing statements in these scenarios.

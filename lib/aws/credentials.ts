@@ -1,6 +1,11 @@
 import "server-only"
 import { awsCredentialsProvider } from "@vercel/oidc-aws-credentials-provider"
-import type { AwsCredentialIdentityProvider } from "@aws-sdk/types"
+
+// The credential-provider type is derived from the provider library itself
+// (`ReturnType<typeof awsCredentialsProvider>`) rather than importing it from
+// `@aws-sdk/types`, which isn't a direct dependency. This stays accurate to the
+// exact type the SDK clients expect, with no extra package to install.
+type CredentialProvider = ReturnType<typeof awsCredentialsProvider>
 
 /**
  * Resolves AWS credentials for the server runtime.
@@ -17,7 +22,7 @@ import type { AwsCredentialIdentityProvider } from "@aws-sdk/types"
  * Pass the result straight to an SDK client's `credentials` option; passing
  * `undefined` is equivalent to not setting it, so the default chain applies.
  */
-export function awsCredentials(): AwsCredentialIdentityProvider | undefined {
+export function awsCredentials(): CredentialProvider | undefined {
   const roleArn = process.env.AWS_ROLE_ARN
   if (!roleArn) return undefined
   return awsCredentialsProvider({ roleArn })

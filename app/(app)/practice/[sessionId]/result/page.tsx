@@ -12,6 +12,7 @@ import { Badge } from "@/components/ui/badge"
 import { Check, X, Minus, Trophy, ChevronRight, ChevronDown, Lightbulb } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { PendingAutoRefresh } from "@/components/app/pending-auto-refresh"
+import { allocationFromTopics, formatAllocationExplanation } from "@/lib/practice/allocation-explanation"
 
 export const dynamic = "force-dynamic"
 
@@ -57,6 +58,24 @@ export default async function ResultPage({ params }: { params: Promise<{ session
     topicStats.set(a.topic, s)
   }
 
+  // Skill-builder allocation breakdown (adaptive only, Req 9.3). The per-topic
+  // split is fully recoverable from the session's ordered question topics, so
+  // no extra query is needed. Non-blocking: if derivation fails or yields an
+  // empty string, the block is omitted without breaking the page (Req 9.6).
+  // The calibrating note is deliberately NOT rendered here — by result time the
+  // session has been rolled into progress so cold start is no longer derivable.
+  let allocationExplanation = ""
+  if (session.type === "adaptive") {
+    try {
+      const orderedTopics = session.questionIds
+        .map((qid) => byId.get(qid)?.topic)
+        .filter((t): t is Topic => t != null)
+      allocationExplanation = formatAllocationExplanation(allocationFromTopics(orderedTopics))
+    } catch {
+      allocationExplanation = ""
+    }
+  }
+
   const config = SESSION_TYPE_CONFIG[session.type]
   const headline =
     pct >= 80 ? "Excellent work!" : pct >= 60 ? "Good effort!" : pct >= 40 ? "Keep practising!" : "Room to grow"
@@ -88,6 +107,11 @@ export default async function ResultPage({ params }: { params: Promise<{ session
       {topicStats.size > 0 ? (
         <div className="mt-6">
           <h2 className="mb-3 text-sm font-semibold text-foreground">How each topic went</h2>
+          {allocationExplanation ? (
+            <p className="mb-3 text-sm text-muted-foreground">
+              Skill builder mix: {allocationExplanation}
+            </p>
+          ) : null}
           <div className="grid gap-2 sm:grid-cols-2">
             {[...topicStats.entries()].map(([topic, s]) => (
               <div

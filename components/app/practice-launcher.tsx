@@ -157,7 +157,7 @@ export function PracticeLauncher({
       {/* Choose session type */}
       <section className="flex flex-col gap-3">
         <h2 className="text-sm font-semibold text-foreground">Choose a session</h2>
-        <div className="grid gap-3 sm:grid-cols-3">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {SESSION_TYPES.map((t) => {
             const config = SESSION_TYPE_CONFIG[t]
             const selected = t === type
