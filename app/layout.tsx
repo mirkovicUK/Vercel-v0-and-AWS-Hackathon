@@ -23,9 +23,9 @@ export const metadata: Metadata = {
     template: "%s · ApexMaths",
   },
   description:
-    "Help your child prepare for the UK 11+ maths exam with timed practice, AI tutoring, and topic-level progress tracking. £19.99/month with a 7-day free trial.",
+    "Help your child prepare for the UK 11+ maths exam with adaptive practice that targets their weak topics, an AI tutor, and a per-child progress dashboard with AI review reports. £19.99/month with a 7-day free trial.",
   generator: "v0.app",
-  keywords: ["11 plus", "11+ maths", "UK exam prep", "AI tutoring", "grammar school", "maths practice"],
+  keywords: ["11 plus", "11+ maths", "UK exam prep", "AI tutoring", "adaptive learning", "grammar school", "maths practice"],
 }
 
 export const viewport: Viewport = {

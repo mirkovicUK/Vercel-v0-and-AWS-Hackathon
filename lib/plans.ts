@@ -24,6 +24,7 @@ export const PLAN: Plan = {
   features: [
     "Up to 3 child profiles",
     "Unlimited timed practice sessions",
+    "Adaptive “Skill builder” sessions tailored to each child",
     "AI “Show me how” step-by-step tutor",
     "Per-topic progress tracking & focus areas",
     "AI parent review reports",
