@@ -31,7 +31,7 @@ export function MarketingFooter() {
             <FooterColumn
               title="Legal"
               links={[
-                { href: "/privacy", label: "Privacy & GDPR" },
+                { href: "/privacy", label: "Privacy notice" },
                 { href: "/terms", label: "Terms" },
               ]}
             />

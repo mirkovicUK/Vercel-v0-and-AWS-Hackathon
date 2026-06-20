@@ -13,6 +13,9 @@ import {
   BarChart3,
   Check,
   Target,
+  Brain,
+  TrendingUp,
+  FileText,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -32,8 +35,10 @@ export function Hero({ authed = false }: { authed?: boolean }) {
             Give your child a fair shot at the <span className="text-primary">11+ maths</span> exam
           </h1>
           <p className="max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
-            Timed, exam-style practice with an AI tutor that explains how — never just the answer — plus clear
-            topic-by-topic progress. All for £19.99/month, after a 7-day free trial.
+            Timed, exam-style practice with an AI tutor that explains how — never just the answer. Our adaptive
+            <span className="font-medium text-foreground"> Skill builder</span> tailors every session to your child,
+            quietly targeting their weakest topics over time — plus clear topic-by-topic progress for you. All for
+            £19.99/month, after a 7-day free trial.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Button asChild size="lg">
@@ -137,6 +142,13 @@ function ValueCard({
 
 const sessionTypes = [
   {
+    icon: Brain,
+    name: "Skill builder",
+    detail: "15 questions · adapts to your child · 20 minutes",
+    body: "A unique mix built from your child's own results — more questions on their weakest topics, pitched at the right level, so they improve where it matters most.",
+    badge: "Adaptive",
+  },
+  {
     icon: Sparkles,
     name: "Warm-up",
     detail: "10 questions · mixed topics · 10 minutes",
@@ -162,16 +174,27 @@ export function HowItWorks() {
       <div className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:py-20">
         <SectionHeading
           eyebrow="How it works"
-          title="Three ways to practise, built like the real exam"
-          subtitle="Every session is timed and server-enforced, so practice mirrors the pressure of the real 11+."
+          title="Four ways to practise — one adapts to your child"
+          subtitle="Every session is timed and server-enforced, so practice mirrors the pressure of the real 11+. The adaptive Skill builder goes further: it learns from each child's results and targets their weak spots over time."
         />
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {sessionTypes.map((s) => (
-            <Card key={s.name} className="border-border transition-shadow hover:shadow-md">
+            <Card
+              key={s.name}
+              className={`border-border transition-shadow hover:shadow-md ${s.badge ? "ring-1 ring-primary/30" : ""}`}
+            >
               <CardContent className="flex flex-col gap-3 p-6">
-                <span className="flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                  <s.icon className="size-5" />
-                </span>
+                <div className="flex items-center justify-between">
+                  <span className="flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                    <s.icon className="size-5" />
+                  </span>
+                  {s.badge ? (
+                    <Badge variant="secondary" className="gap-1 text-xs font-medium">
+                      <Target className="size-3 text-primary" />
+                      {s.badge}
+                    </Badge>
+                  ) : null}
+                </div>
                 <h3 className="font-heading text-lg font-semibold text-foreground">{s.name}</h3>
                 <p className="text-sm font-medium tabular-nums text-accent">{s.detail}</p>
                 <p className="text-sm leading-relaxed text-muted-foreground">{s.body}</p>
@@ -200,14 +223,16 @@ export function ProgressShowcase({ authed = false }: { authed?: boolean }) {
           </h2>
           <p className="text-pretty leading-relaxed text-muted-foreground">
             Every answer feeds a live mastery score for all six curriculum topics, per child. ApexMaths automatically flags
-            the topics that need attention, so you always know what to practise next — no marking, no guesswork.
+            the topics that need attention — and turns it into a written AI progress report, generated on demand from that
+            child's own data in the moment. No marking, no guesswork.
           </p>
           <ul className="flex flex-col gap-3">
             {[
               "A mastery score for all six topics, updated after every session",
               "Each topic marked Strong, Developing, or Needs focus at a glance",
+              "An on-demand AI review report, written fresh for each child from their latest results",
               "An automatic “focus next” nudge on the weakest topic",
-              "Separate progress for each of your children",
+              "Separate progress and reports for each of your children",
             ].map((point) => (
               <li key={point} className="flex items-start gap-3 text-sm text-foreground">
                 <Check className="mt-0.5 size-4 shrink-0 text-accent" />
@@ -230,19 +255,29 @@ export function ProgressShowcase({ authed = false }: { authed?: boolean }) {
 
 const features = [
   {
+    icon: Brain,
+    title: "Adaptive Skill builder",
+    body: "Builds a unique session for each child from their own results — weighting more questions onto their weakest topics and pitching the difficulty just right, so they improve where it matters, session after session.",
+  },
+  {
+    icon: FileText,
+    title: "AI review report, per child",
+    body: "A written progress report generated on demand for each child from their data in that moment — strengths, the topics to focus on, and concrete next steps for the week.",
+  },
+  {
     icon: Sparkles,
     title: "“Show me how” AI tutor",
     body: "Stuck on a question? Your child gets a clear, step-by-step explanation of the method — and it never reveals the answer.",
   },
   {
+    icon: TrendingUp,
+    title: "Improves over time",
+    body: "Every answer sharpens the picture, so each adaptive session targets your child's current weak spots — steady, compounding progress instead of random practice.",
+  },
+  {
     icon: LineChart,
     title: "Topic-level progress",
     body: "See mastery scores across all six curriculum topics, with each marked strong, developing, or needs focus.",
-  },
-  {
-    icon: Clock,
-    title: "True exam conditions",
-    body: "A server-authoritative timer keeps every session honest, so practice builds real exam-day stamina.",
   },
   {
     icon: ShieldCheck,
@@ -309,9 +344,11 @@ function TopicStrip() {
 
 const planFeatures = [
   "Unlimited timed practice sessions",
+  "Adaptive “Skill builder” sessions tailored to each child",
   "Up to 3 child profiles per account",
   "“Show me how” AI tutoring during practice",
   "Personalised AI review after every session",
+  "On-demand AI progress report for each child",
   "Topic-level progress tracking",
   "Cancel anytime — keep access until period end",
 ]
