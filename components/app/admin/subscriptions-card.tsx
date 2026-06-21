@@ -1,7 +1,8 @@
+import { CreditCard } from "lucide-react"
 import { SUBSCRIPTION_STATUSES } from "@/lib/domain"
 import type { SubscriptionStatus } from "@/lib/domain"
 import type { SettledSection, SubscriptionMetrics } from "@/lib/db/admin-metrics"
-import { SectionCard, StatRow } from "@/components/app/admin/section-card"
+import { MetricSection, StatChip, StatGrid, StatTile } from "@/components/app/admin/metric-section"
 
 const STATUS_LABELS: Record<SubscriptionStatus, string> = {
   trialing: "Trialing",
@@ -18,15 +19,32 @@ const STATUS_LABELS: Record<SubscriptionStatus, string> = {
  */
 export function SubscriptionsCard({ section }: { section: SettledSection<SubscriptionMetrics> }) {
   return (
-    <SectionCard title="Subscriptions" description="Counts by status" section={section}>
-      {(subscriptions) => (
-        <div className="flex flex-col divide-y divide-border">
-          {SUBSCRIPTION_STATUSES.map((status) => (
-            <StatRow key={status} label={STATUS_LABELS[status]} value={subscriptions.byStatus[status]} />
-          ))}
-          <StatRow label="Set to cancel at period end" value={subscriptions.cancelAtPeriodEnd} />
+    <MetricSection
+      id="subscriptions"
+      title="Subscriptions"
+      description="Counts by status"
+      icon={<CreditCard className="size-5" />}
+      accent="blue"
+      hasError={!section.ok}
+      preview={
+        section.ok ? (
+          <>
+            {section.data.byStatus.active}
+            <span className="ml-1 text-xs font-normal text-muted-foreground">active</span>
+          </>
+        ) : null
+      }
+    >
+      {section.ok ? (
+        <div className="flex flex-col gap-4">
+          <StatGrid cols={3}>
+            {SUBSCRIPTION_STATUSES.map((status) => (
+              <StatChip key={status} label={STATUS_LABELS[status]} value={section.data.byStatus[status]} />
+            ))}
+          </StatGrid>
+          <StatTile label="Set to cancel at period end" value={section.data.cancelAtPeriodEnd} highlight />
         </div>
-      )}
-    </SectionCard>
+      ) : null}
+    </MetricSection>
   )
 }

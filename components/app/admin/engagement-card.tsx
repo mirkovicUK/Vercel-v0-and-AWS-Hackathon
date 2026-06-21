@@ -1,7 +1,8 @@
+import { Activity } from "lucide-react"
 import { SESSION_STATUSES } from "@/lib/domain"
 import type { SessionStatus } from "@/lib/domain"
 import type { EngagementMetrics, SettledSection } from "@/lib/db/admin-metrics"
-import { SectionCard, StatRow } from "@/components/app/admin/section-card"
+import { MetricSection, StatChip, StatGrid, StatTile, SubHeading } from "@/components/app/admin/metric-section"
 
 const SESSION_STATUS_LABELS: Record<SessionStatus, string> = {
   active: "Active",
@@ -17,33 +18,48 @@ const SESSION_STATUS_LABELS: Record<SessionStatus, string> = {
  */
 export function EngagementCard({ section }: { section: SettledSection<EngagementMetrics> }) {
   return (
-    <SectionCard title="Engagement" description="Practice activity" section={section}>
-      {(engagement) => (
+    <MetricSection
+      id="engagement"
+      title="Engagement"
+      description="Practice activity"
+      icon={<Activity className="size-5" />}
+      accent="steel"
+      hasError={!section.ok}
+      preview={
+        section.ok ? (
+          <>
+            {section.data.totalSessions}
+            <span className="ml-1 text-xs font-normal text-muted-foreground">sessions</span>
+          </>
+        ) : null
+      }
+    >
+      {section.ok ? (
         <div className="flex flex-col gap-4">
-          <div className="flex flex-col divide-y divide-border">
-            <StatRow label="Total sessions" value={engagement.totalSessions} />
-            <StatRow label="Sessions (30d)" value={engagement.sessions30d} />
-            <StatRow label="AI hints used" value={engagement.totalHelpUsed} />
-          </div>
+          <StatGrid cols={3}>
+            <StatTile label="Total sessions" value={section.data.totalSessions} accent="steel" />
+            <StatTile label="Sessions (30d)" value={section.data.sessions30d} />
+            <StatTile label="AI hints used" value={section.data.totalHelpUsed} accent="amber" />
+          </StatGrid>
 
-          <div className="flex flex-col gap-1">
-            <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">Sessions by status</p>
-            <div className="flex flex-col divide-y divide-border">
+          <div>
+            <SubHeading>Sessions by status</SubHeading>
+            <StatGrid cols={2}>
               {SESSION_STATUSES.map((status) => (
-                <StatRow key={status} label={SESSION_STATUS_LABELS[status]} value={engagement.byStatus[status]} />
+                <StatChip key={status} label={SESSION_STATUS_LABELS[status]} value={section.data.byStatus[status]} />
               ))}
-            </div>
+            </StatGrid>
           </div>
 
-          <div className="flex flex-col gap-1">
-            <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">Review reports</p>
-            <div className="flex flex-col divide-y divide-border">
-              <StatRow label="Nova" value={engagement.reviewReportsByGenerator.nova} />
-              <StatRow label="Fallback" value={engagement.reviewReportsByGenerator.fallback} />
-            </div>
+          <div>
+            <SubHeading>Review reports</SubHeading>
+            <StatGrid cols={2}>
+              <StatChip label="Nova (AI)" value={section.data.reviewReportsByGenerator.nova} />
+              <StatChip label="Fallback" value={section.data.reviewReportsByGenerator.fallback} />
+            </StatGrid>
           </div>
         </div>
-      )}
-    </SectionCard>
+      ) : null}
+    </MetricSection>
   )
 }
