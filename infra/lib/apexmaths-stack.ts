@@ -125,6 +125,19 @@ export class ApexMathsStack extends cdk.Stack {
       removalPolicy: cdk.RemovalPolicy.DESTROY,
     })
 
+    // Operator-only "admins" group. The admin dashboard authorizes purely on
+    // the verified ID token's `cognito:groups` claim, so this group is the sole
+    // source of admin access. Defining it here makes the group reproducible
+    // across environments. NOTE: this creates the GROUP only — adding a specific
+    // parent to it is a runtime action (users self-sign-up), done via the console
+    // or `aws cognito-idp admin-add-user-to-group`. A user gains admin access on
+    // their next token refresh / re-login after being added.
+    new cognito.CfnUserPoolGroup(this, "AdminsGroup", {
+      userPoolId: userPool.userPoolId,
+      groupName: "admins",
+      description: "ApexMaths operators with access to the /admin dashboard.",
+    })
+
     const userPoolClient = userPool.addClient("WebClient", {
       userPoolClientName: "apexmaths-web",
       authFlows: { userPassword: true }, // enables USER_PASSWORD_AUTH (used by the app)
@@ -240,6 +253,11 @@ export class ApexMathsStack extends cdk.Stack {
     new cdk.CfnOutput(this, "CognitoClientId", {
       value: userPoolClient.userPoolClientId,
       description: "Set as COGNITO_CLIENT_ID in Vercel. (No client secret is used.)",
+    })
+    new cdk.CfnOutput(this, "CognitoAdminsGroupName", {
+      value: "admins",
+      description:
+        "Cognito group granting /admin access. Add an operator with: aws cognito-idp admin-add-user-to-group --user-pool-id <CognitoUserPoolId> --username <user> --group-name admins (re-login required).",
     })
     new cdk.CfnOutput(this, "AuroraClusterArn", {
       value: cluster.clusterArn,

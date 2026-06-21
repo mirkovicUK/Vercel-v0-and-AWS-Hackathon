@@ -21,8 +21,8 @@ tests mirroring `app/(app)/billing/actions.test.ts`.
 
 ## Tasks
 
-- [ ] 1. Expose Cognito group membership from the verified token
-  - [ ] 1.1 Extend the Session_Service with group-aware claims
+- [x] 1. Expose Cognito group membership from the verified token
+  - [x] 1.1 Extend the Session_Service with group-aware claims
     - In `lib/auth/session.ts`, add `groups: string[]` to the `IdClaims` interface.
     - Add a pure `readGroups(payload)` normalizer: `string[]` claim → that list, single `string` → one-element list, absent/undefined → `[]` (always returns an array).
     - Read `payload["cognito:groups"]` via `readGroups` on **both** the direct-verify path and the token-refresh path of `getVerifiedClaims()`, populating `groups`.
@@ -37,13 +37,13 @@ tests mirroring `app/(app)/billing/actions.test.ts`.
     - **Property 1: Group claim normalization**
     - **Validates: Requirements 1.1, 1.2**
 
-- [ ] 2. Extend the audit action vocabulary
-  - [ ] 2.1 Add admin audit actions
+- [x] 2. Extend the audit action vocabulary
+  - [x] 2.1 Add admin audit actions
     - In `lib/db/audit.ts`, add `"admin.denied"` and `"admin.viewed"` to the `AuditAction` union type.
     - _Requirements: 2.5_
 
-- [ ] 3. Provide and enforce the server-side admin guard
-  - [ ] 3.1 Implement `requireAdmin()`
+- [x] 3. Provide and enforce the server-side admin guard
+  - [x] 3.1 Implement `requireAdmin()`
     - In `lib/auth/guard.ts`, add `requireAdmin(): Promise<Parent>` mirroring the shape of `requireEntitledParent()`.
     - Resolve verified claims via `getCurrentClaims()` only; read no client-supplied header, query parameter, or cookie other than the verified session tokens.
     - Fail closed: when `isAdminClaims(claims)` is false (null claims or no `admins` group), `await audit({ action: "admin.denied", parentId: claims?.sub ?? null })` then call `notFound()` (HTTP 404) so no metric fetch is reachable on denial.
@@ -65,14 +65,14 @@ tests mirroring `app/(app)/billing/actions.test.ts`.
     - **Property 3: Denials are audited with the requesting sub only**
     - **Validates: Requirements 2.5**
 
-- [ ] 4. Build the read-only Metrics_Service
-  - [ ] 4.1 Create types and pure mapping helpers
+- [x] 4. Build the read-only Metrics_Service
+  - [x] 4.1 Create types and pure mapping helpers
     - Create `lib/db/admin-metrics.ts` (server-only). Define the payload interfaces: `RecentInvoice`, `SubscriptionMetrics`, `UserMetrics`, `EngagementMetrics`, `ContentMetrics`, `ProcessedWebhookEvent`, `AuditEntry`, `OperationalMetrics`, `AdminMetrics`, and the `SettledSection<T>` union.
     - Implement the pure, in-memory helpers extracted for testability: `mapGroupedCounts` (rows → keyed record over a fixed key set, missing → `0`), `mapInvoiceRow` (null `parent_id` → `parentEmail: null`), `classifyWithin30Days` (inclusive `[now − 30d, now]`), and `settle<T>(PromiseSettledResult<T>)`.
     - Ensure payload types contain no child field, no `sub`, no `stripe_customer_id`, no question `text`/`options`/`correct_index`, and no audit `detail` (PII firewall by construction).
     - _Requirements: 6.2, 6.3, 7.5, 9.4, 10.5, 12.1, 12.2, 12.3, 12.4, 14.3_
 
-  - [ ] 4.2 Implement the SELECT-only query functions and concurrent aggregator
+  - [x] 4.2 Implement the SELECT-only query functions and concurrent aggregator
     - In `lib/db/admin-metrics.ts`, implement one read-only function per metric group using `query`/`queryOne` from `lib/aws/rds-data.ts`: recent 10 invoices (`LEFT JOIN parents`, email only), subscription counts by status + `cancel_at_period_end`, parent active/soft-deleted/30-day-new + active children, session totals/by-status/30-day/`help_used` sum + review reports by `generated_by`, content totals/by-topic/active-inactive, and operational health (10 webhook events, 20 audit entries — `detail` never selected).
     - Reuse `getRevenueSummary()` from `lib/db/revenue.ts` for the revenue overview.
     - Use single `COUNT/SUM/GROUP BY` aggregate queries for grouped metrics and explicit `LIMIT`s for list queries.
@@ -128,11 +128,11 @@ tests mirroring `app/(app)/billing/actions.test.ts`.
     - **Property 10: Per-section failure isolation**
     - **Validates: Requirements 14.3**
 
-- [ ] 5. Checkpoint - core authorization and metrics
+- [x] 5. Checkpoint - core authorization and metrics
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 6. Build the admin metric card components
-  - [ ] 6.1 Implement the metric card components
+- [x] 6. Build the admin metric card components
+  - [x] 6.1 Implement the metric card components
     - Create `components/app/admin/` presentational server components mirroring `child-progress-card.tsx`, built on `components/ui/card` (`Card`, `CardContent`).
     - Add a shared `SectionCard` wrapper that renders a title and, when `section.ok === false`, an inline error indicator instead of the body.
     - Implement `RevenueCard`, `RecentInvoicesCard`, `SubscriptionsCard`, `UsersCard`, `EngagementCard`, `ContentCard`, `OperationsCard`, each accepting its `SettledSection<T>`.
@@ -145,18 +145,18 @@ tests mirroring `app/(app)/billing/actions.test.ts`.
     - A `SettledSection` with `ok: false` renders the error indicator and still allows other cards to render.
     - _Requirements: 4.1, 4.2, 4.3, 4.4, 5.4, 5.5, 14.3_
 
-- [ ] 7. Wire up the admin page
-  - [ ] 7.1 Create the force-dynamic admin page
+- [x] 7. Wire up the admin page
+  - [x] 7.1 Create the force-dynamic admin page
     - Create `app/(app)/admin/page.tsx` exporting `export const dynamic = "force-dynamic"`.
     - Call `requireAdmin()` before any data fetch, then `getAdminMetrics()`, then render the metric cards from task 6.1, each reading its `metrics.<section>`.
     - _Requirements: 3.1, 3.2, 3.4, 4.1, 4.2, 4.3, 11.1, 11.3_
 
-- [ ] 8. Add the conditional admin nav entry point
-  - [ ] 8.1 Compute admin status in the app layout
+- [x] 8. Add the conditional admin nav entry point
+  - [x] 8.1 Compute admin status in the app layout
     - In `app/(app)/layout.tsx`, alongside `requireParent()`, compute `isAdmin` via `isAdminClaims(await getCurrentClaims())` and pass it to `<AppHeader email={parent.email} isAdmin={isAdmin} />`.
     - _Requirements: 14.1, 14.2_
 
-  - [ ] 8.2 Render the conditional `/admin` link in the header
+  - [x] 8.2 Render the conditional `/admin` link in the header
     - In `components/app/app-header.tsx`, accept an `isAdmin` prop and render the `/admin` link (ghost `Button` + `DropdownMenuItem`, matching existing Dashboard/Billing entries, reusing the `ShieldCheck` icon) only when `isAdmin` is true; render no link when false.
     - _Requirements: 14.1, 14.2_
 
@@ -164,7 +164,7 @@ tests mirroring `app/(app)/billing/actions.test.ts`.
     - Assert the header renders the `/admin` link when `isAdmin` is true and omits it when `isAdmin` is false.
     - _Requirements: 14.1, 14.2_
 
-- [ ] 9. Final checkpoint - full feature wired together
+- [x] 9. Final checkpoint - full feature wired together
   - Ensure all tests pass, ask the user if questions arise.
 
 ## Notes
