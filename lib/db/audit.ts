@@ -35,6 +35,9 @@ export type AuditAction =
   // Privacy / access
   | "data.exported"
   | "entitlement.denied"
+  // Admin
+  | "admin.denied"
+  | "admin.viewed"
 
 export async function audit(input: {
   action: AuditAction

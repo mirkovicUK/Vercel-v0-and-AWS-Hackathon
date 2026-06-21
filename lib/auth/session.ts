@@ -34,6 +34,27 @@ function getIdVerifier() {
 export interface IdClaims {
   sub: string
   email: string
+  groups: string[]
+}
+
+/** The Cognito user-pool group that grants admin access. */
+const ADMIN_GROUP = "admins"
+
+/**
+ * Normalize the raw `cognito:groups` claim into a string list. Depending on
+ * pool configuration the claim can arrive as a `string[]`, a single `string`,
+ * or be absent — this always returns an array.
+ */
+function readGroups(payload: Record<string, unknown>): string[] {
+  const raw = payload["cognito:groups"]
+  if (Array.isArray(raw)) return raw.map(String)
+  if (typeof raw === "string" && raw.length > 0) return [raw]
+  return []
+}
+
+/** Pure predicate: true iff the claims carry membership of the admins group. */
+export function isAdminClaims(claims: IdClaims | null): boolean {
+  return claims !== null && claims.groups.includes(ADMIN_GROUP)
 }
 
 /** Persist tokens to httpOnly cookies after a successful sign-in. */
@@ -74,7 +95,7 @@ async function getVerifiedClaims(): Promise<IdClaims | null> {
   if (idToken) {
     try {
       const payload = await verifier.verify(idToken)
-      return { sub: payload.sub, email: String(payload.email ?? "") }
+      return { sub: payload.sub, email: String(payload.email ?? ""), groups: readGroups(payload) }
     } catch {
       // fall through to refresh
     }
@@ -87,7 +108,7 @@ async function getVerifiedClaims(): Promise<IdClaims | null> {
     const refreshed = await refreshTokens(refreshToken, email)
     await setSessionCookies(refreshed, email)
     const payload = await verifier.verify(refreshed.idToken)
-    return { sub: payload.sub, email: String(payload.email ?? email) }
+    return { sub: payload.sub, email: String(payload.email ?? email), groups: readGroups(payload) }
   } catch {
     return null
   }

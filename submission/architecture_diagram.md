@@ -39,7 +39,7 @@ flowchart TB
     subgraph AWS["☁️ AWS — eu-west-2 (London)"]
         direction TB
         COGNITO["Amazon Cognito<br/>User Pool + App Client<br/>(USER_PASSWORD_AUTH, no secret)"]
-        BEDROCK["Amazon Bedrock<br/>Claude Sonnet 4.6<br/>(global inference profile)"]
+        BEDROCK["Amazon Bedrock<br/>Claude Sonnet 4.6<br/>(EU regional inference profile)"]
         SECRETS["AWS Secrets Manager<br/>DB credentials (ARN only)"]
 
         subgraph VPC["VPC — NAT-free (natGateways: 0)"]
