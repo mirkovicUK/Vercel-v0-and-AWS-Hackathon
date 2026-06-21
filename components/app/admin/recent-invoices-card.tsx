@@ -2,7 +2,7 @@ import { Receipt } from "lucide-react"
 import { formatPrice } from "@/lib/plans"
 import type { RecentInvoice, SettledSection } from "@/lib/db/admin-metrics"
 import { Empty, EmptyHeader, EmptyMedia, EmptyTitle, EmptyDescription } from "@/components/ui/empty"
-import { SectionCard } from "@/components/app/admin/section-card"
+import { MetricSection } from "@/components/app/admin/metric-section"
 import { formatAdminDate } from "@/components/app/admin/format"
 
 /**
@@ -13,9 +13,24 @@ import { formatAdminDate } from "@/components/app/admin/format"
  */
 export function RecentInvoicesCard({ section }: { section: SettledSection<RecentInvoice[]> }) {
   return (
-    <SectionCard title="Recent invoices" description="10 most recent paid invoices" section={section}>
-      {(invoices) =>
-        invoices.length === 0 ? (
+    <MetricSection
+      id="invoices"
+      title="Recent invoices"
+      description="10 most recent paid invoices"
+      icon={<Receipt className="size-5" />}
+      accent="emerald"
+      hasError={!section.ok}
+      preview={
+        section.ok ? (
+          <>
+            {section.data.length}
+            <span className="ml-1 text-xs font-normal text-muted-foreground">recent</span>
+          </>
+        ) : null
+      }
+    >
+      {section.ok ? (
+        section.data.length === 0 ? (
           <Empty className="rounded-xl border border-dashed border-border py-8">
             <EmptyHeader>
               <EmptyMedia variant="icon">
@@ -26,23 +41,26 @@ export function RecentInvoicesCard({ section }: { section: SettledSection<Recent
             </EmptyHeader>
           </Empty>
         ) : (
-          <ul className="flex flex-col divide-y divide-border">
-            {invoices.map((invoice, index) => (
-              <li key={index} className="flex items-center justify-between gap-4 py-2">
+          <ul className="flex flex-col gap-1.5">
+            {section.data.map((invoice, index) => (
+              <li
+                key={index}
+                className="flex items-center justify-between gap-4 rounded-xl border border-border bg-secondary/40 px-3.5 py-2.5"
+              >
                 <div className="flex min-w-0 flex-col">
-                  <span className="truncate text-sm text-foreground">
+                  <span className="truncate text-sm font-medium text-foreground">
                     {invoice.parentEmail ?? "Unattributed"}
                   </span>
                   <span className="text-xs text-muted-foreground">{formatAdminDate(invoice.occurredAt)}</span>
                 </div>
-                <span className="font-heading text-sm font-semibold tabular-nums text-foreground">
+                <span className="shrink-0 rounded-lg bg-success/10 px-2.5 py-1 font-heading text-sm font-bold tabular-nums text-success">
                   {formatPrice(invoice.amountPence, invoice.currency)}
                 </span>
               </li>
             ))}
           </ul>
         )
-      }
-    </SectionCard>
+      ) : null}
+    </MetricSection>
   )
 }

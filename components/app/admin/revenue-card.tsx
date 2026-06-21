@@ -1,7 +1,8 @@
+import { PoundSterling } from "lucide-react"
 import { formatPrice } from "@/lib/plans"
 import type { RevenueSummary } from "@/lib/db/revenue"
 import type { SettledSection } from "@/lib/db/admin-metrics"
-import { SectionCard, StatHero, StatRow } from "@/components/app/admin/section-card"
+import { MetricSection, StatHero, StatGrid, StatTile } from "@/components/app/admin/metric-section"
 import { formatAdminDate } from "@/components/app/admin/format"
 
 /**
@@ -11,16 +12,24 @@ import { formatAdminDate } from "@/components/app/admin/format"
  */
 export function RevenueCard({ section }: { section: SettledSection<RevenueSummary> }) {
   return (
-    <SectionCard title="Revenue" description="Lifetime paid performance" section={section}>
-      {(revenue) => (
+    <MetricSection
+      id="revenue"
+      title="Revenue"
+      description="Lifetime paid performance"
+      icon={<PoundSterling className="size-5" />}
+      accent="emerald"
+      hasError={!section.ok}
+      preview={section.ok ? formatPrice(section.data.totalRevenuePence) : null}
+    >
+      {section.ok ? (
         <div className="flex flex-col gap-4">
-          <StatHero label="total revenue" value={formatPrice(revenue.totalRevenuePence)} />
-          <div className="flex flex-col divide-y divide-border">
-            <StatRow label="Paying parents" value={revenue.payingParentCount} />
-            <StatRow label="First paid" value={formatAdminDate(revenue.firstPaidAt)} />
-          </div>
+          <StatHero label="total revenue" value={formatPrice(section.data.totalRevenuePence)} accent="emerald" />
+          <StatGrid>
+            <StatTile label="Paying parents" value={section.data.payingParentCount} />
+            <StatTile label="First paid" value={formatAdminDate(section.data.firstPaidAt)} />
+          </StatGrid>
         </div>
-      )}
-    </SectionCard>
+      ) : null}
+    </MetricSection>
   )
 }

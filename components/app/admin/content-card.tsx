@@ -1,6 +1,7 @@
+import { Library } from "lucide-react"
 import { TOPICS, TOPIC_LABELS } from "@/lib/domain"
 import type { ContentMetrics, SettledSection } from "@/lib/db/admin-metrics"
-import { SectionCard, StatRow } from "@/components/app/admin/section-card"
+import { MetricSection, StatChip, StatGrid, StatTile, SubHeading } from "@/components/app/admin/metric-section"
 
 /**
  * Content metrics: total / active / inactive question counts and counts by topic
@@ -9,25 +10,39 @@ import { SectionCard, StatRow } from "@/components/app/admin/section-card"
  */
 export function ContentCard({ section }: { section: SettledSection<ContentMetrics> }) {
   return (
-    <SectionCard title="Content" description="Question bank" section={section}>
-      {(content) => (
+    <MetricSection
+      id="content"
+      title="Content"
+      description="Question bank"
+      icon={<Library className="size-5" />}
+      accent="amber"
+      hasError={!section.ok}
+      preview={
+        section.ok ? (
+          <>
+            {section.data.totalQuestions}
+            <span className="ml-1 text-xs font-normal text-muted-foreground">questions</span>
+          </>
+        ) : null
+      }
+    >
+      {section.ok ? (
         <div className="flex flex-col gap-4">
-          <div className="flex flex-col divide-y divide-border">
-            <StatRow label="Total questions" value={content.totalQuestions} />
-            <StatRow label="Active" value={content.activeQuestions} />
-            <StatRow label="Inactive" value={content.inactiveQuestions} />
-          </div>
-
-          <div className="flex flex-col gap-1">
-            <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">By topic</p>
-            <div className="flex flex-col divide-y divide-border">
+          <StatGrid cols={3}>
+            <StatTile label="Total" value={section.data.totalQuestions} />
+            <StatTile label="Active" value={section.data.activeQuestions} accent="emerald" />
+            <StatTile label="Inactive" value={section.data.inactiveQuestions} />
+          </StatGrid>
+          <div>
+            <SubHeading>By topic</SubHeading>
+            <StatGrid cols={3}>
               {TOPICS.map((topic) => (
-                <StatRow key={topic} label={TOPIC_LABELS[topic]} value={content.byTopic[topic]} />
+                <StatChip key={topic} label={TOPIC_LABELS[topic]} value={section.data.byTopic[topic]} />
               ))}
-            </div>
+            </StatGrid>
           </div>
         </div>
-      )}
-    </SectionCard>
+      ) : null}
+    </MetricSection>
   )
 }

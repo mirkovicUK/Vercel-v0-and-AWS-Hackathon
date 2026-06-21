@@ -1,4 +1,4 @@
-export { SectionCard } from "@/components/app/admin/section-card"
+export { MetricAccordion } from "@/components/app/admin/metric-section"
 export { RevenueCard } from "@/components/app/admin/revenue-card"
 export { RecentInvoicesCard } from "@/components/app/admin/recent-invoices-card"
 export { SubscriptionsCard } from "@/components/app/admin/subscriptions-card"
