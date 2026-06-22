@@ -40,6 +40,7 @@ export type AuditAction =
   | "admin.viewed"
   // Contact
   | "contact.submitted"
+  | "contact.acknowledged"
 
 export async function audit(input: {
   action: AuditAction
