@@ -104,7 +104,7 @@ Conventions followed: **TypeScript**, **vitest + fast-check** (mirroring `lib/ai
     - In the same file: ZPD targeting (mixed-difficulty pool, allocation 1 picks nearest target, Req 5.2); RNG tie-break (same seed agrees, different seeds may differ, Req 5.3); Hamilton tie-break by fixed topic order (Req 3.5); `A > total` branch (exactly `total` topics get 1, weakest-first, Req 4.2); fallback-chain ordering (`metadata.fallbacksApplied` records widen → drop-recency → reallocate and total met, Req 7.1–7.4); cold-start uniform sampling not weighted (Req 8.2).
     - _Requirements: 3.5, 4.2, 5.2, 5.3, 7.1, 7.2, 7.3, 7.4, 8.2_
 
-- [~] 6. Checkpoint — pure core complete
+- [ ] 6. Checkpoint — pure core complete
   - Ensure all tests pass, ask the user if questions arise.
 
 - [x] 7. `Selection_Service` server orchestration (`lib/db/adaptive.ts`)
