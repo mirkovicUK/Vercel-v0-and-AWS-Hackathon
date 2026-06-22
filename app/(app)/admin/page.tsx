@@ -11,6 +11,9 @@ import {
   EngagementCard,
   ContentCard,
   OperationsCard,
+  DecliningMasteryCard,
+  TrialsEndingCard,
+  ContactInboxCard,
 } from "@/components/app/admin"
 
 // Admin metrics are read live per request; never serve statically cached values (Req 3.4).
@@ -60,6 +63,9 @@ export default async function AdminPage() {
           <EngagementCard section={metrics.engagement} />
           <ContentCard section={metrics.content} />
           <OperationsCard section={metrics.operations} />
+          <DecliningMasteryCard section={metrics.decliningMastery} />
+          <TrialsEndingCard section={metrics.trialsEndingSoon} />
+          <ContactInboxCard section={metrics.contactInbox} />
         </MetricAccordion>
       </div>
     </main>

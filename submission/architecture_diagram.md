@@ -144,6 +144,7 @@ flowchart TB
 | Vercel | Auth guard (`lib/auth/session.ts`, `guard.ts`) | httpOnly cookies; verifies Cognito JWTs via `aws-jwt-verify` (JWKS); transparent refresh |
 | Vercel | `/api/practice/help` | Streams step-by-step hints from Bedrock; PII-free prompt; per-session hint cap |
 | Vercel | `/api/stripe/webhook` | Signature-verified, idempotent billing event sink |
+| Vercel | `/contact` + Submit_Action | Public contact form → validated, honeypot + rate-limited, session-linked parameterized write to `contact_messages` |
 | AWS | Amazon Cognito | Identity: signup, email verification, sign-in (USER_PASSWORD_AUTH, **no client secret**), password reset, `AdminDeleteUser` for GDPR |
 | AWS | Amazon Aurora PostgreSQL Serverless v2 (16.6) | System of record; accessed via **RDS Data API**; private isolated subnets; encrypted at rest |
 | AWS | AWS Secrets Manager | Holds the DB password; app references the **ARN** only — the password never enters code, env, or logs |
@@ -203,6 +204,20 @@ verifies the signature, de-duplicates via `processed_webhook_events`, and update
 Server Action → single `DELETE FROM parents` in Aurora (FK `ON DELETE CASCADE`
 removes all owned data) **and** Cognito `AdminDeleteUser` to free the email for
 re-registration.
+
+**H. Contact channel + operator inbox**
+Public "Contact us" form (logged-out reachable) → Server Action that validates
+(Zod), rejects bots (honeypot), rate-limits via a DB count, derives the sender's
+`parent_id` **only** from the verified session, and writes one parameterized row to
+**`contact_messages`** in Aurora (`parent_id … ON DELETE SET NULL`). The `/admin`
+inbox reads it back with a single **`LEFT JOIN contact_messages → parents →
+subscriptions`** so each message shows sender context (active vs trialing vs
+logged-out). Read-only; stored free-text is rendered escaped.
+
+**I. Operator lifecycle insights**
+`/admin` Server Components run cohort queries over Aurora: a **window/`LAG()`**
+declining-mastery cohort across all learners and a **`subscriptions ⋈ parents`**
+trials-ending-soon query — dispatched concurrently with the other admin metrics.
 
 ---
 
