@@ -104,6 +104,7 @@ Track 1: Monetizable B2C app. Develop a business-to-consumer application tailore
 Track 2: Monetizable B2B app. Create a business-to-business application that solves challenges for companies in industries such as finance, technology, healthcare, insurance, marketing and advertising, or any other sector you are passionate  about.
 Track 3: Million-scale global app. Create an application in the gaming, social media, or entertainment sectors, with a thoughtful application architecture designed to be able to scale to millions of users globally.
 Track 4: Open innovation. Anything goes! Build any full-stack application that creatively implements the Vercel/v0 and AWS Databases stack.
+
 Functionality: The Project must be capable of being successfully installed and running consistently on the platform for which it is intended and must function as depicted in the video and/or expressed in the text description.
 
 Platforms: A submitted Project must run on the platform for which it is intended and which is specified in the Submission Requirements. 
@@ -237,3 +238,46 @@ Principal Product Manager, AWS Databases
 Abhinav Anand
 Abhinav Anand
 Technical Product Marketing, AWS
+
+ What should an architecture diagram look like? 
+
+It should be clear and show your front end, backend, APIs/connections, and optionally, any components you plan to add later to ensure your application is ‘well architected’ for operational excellence, security, performance, reliability, cost optimization, etc.
+
+diagram: submission/Example_Arch_Diagram.png
+
+
+Tips:
+
+Label every box with both what it is (the component type, like "PostgreSQL" or "Lambda function") and what it does.
+Show direction of calls with arrows — bidirectional only when it's actually bidirectional.
+Group cloud-provider services if they're using one (e.g. a dashed box around "AWS" containing the components hosted there). The AWS Well-Architected page and the AWS Architecture Icons set are great references — many participants use those official icons.
+Tools that work well: draw.io / diagrams.net (free, has AWS icon libraries built in), Excalidraw, Lucidchart, or Figma. Any of these can export to PNG/JPG/SVG.
+
+
+
+Email from devpost 22 Jun 2026
+
+Seven days. The deadline is June 29 at 5:00 PM PT and the submission form closes on time — no extensions.
+
+If you haven't opened your submission draft yet, do it now. Go to h01.devpost.com, hit "Enter a Submission," and see every field before you need to fill it under pressure.
+
+Here's what you need to have ready:
+
+✅ A working project link — Vercel deployment, live and accessible
+
+✅ Your Vercel Team ID — find it in your Vercel team settings
+
+✅ A demo video — under 3 minutes, publicly visible on YouTube (preferred), Vimeo, or Youku. Show the app working and explain which AWS database you used and why.
+
+✅ Proof of AWS database usage — a screenshot showing your Aurora, Aurora DSQL, or DynamoDB setup (e.g., your AWS Console, Vercel Storage Configuration, or similar)
+
+✅ An architecture diagram — doesn't have to be fancy. A clear diagram showing how your frontend, backend, and database connect is enough.
+
+✅ Your text description — explain what it does, who it's for, what problem it solves. Write it in your own words.
+
+✅ Which database(s) you used — Aurora, Aurora DSQL, DynamoDB, or a combination
+
+✅ All teammates invited to the submission — go to your Devpost submission and add them before the deadline
+
+Bonus points (optional but worth it): Published a blog post, article, or video about how you built your project? Submit it for up to 0.6 bonus points on your score. It has to be public (not unlisted) and include a note that you created it for H0. Use #H0Hackathon when you share on social.
+
