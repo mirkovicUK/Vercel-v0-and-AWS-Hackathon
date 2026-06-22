@@ -47,14 +47,22 @@ export function AppHeader({ email, isAdmin }: { email: string; isAdmin?: boolean
             <DropdownMenuContent align="end" className="w-56">
               <DropdownMenuLabel className="truncate font-normal text-muted-foreground">{email}</DropdownMenuLabel>
               <DropdownMenuSeparator />
+              {/* Primary nav — shown as buttons in the bar on sm+, collapses into this menu on mobile. */}
+              <DropdownMenuItem asChild className="sm:hidden">
+                <Link href="/dashboard">
+                  <LayoutDashboard className="size-4" />
+                  Dashboard
+                </Link>
+              </DropdownMenuItem>
               {isAdmin && (
-                <DropdownMenuItem asChild>
+                <DropdownMenuItem asChild className="sm:hidden">
                   <Link href="/admin">
                     <Shield className="size-4" />
                     Admin
                   </Link>
                 </DropdownMenuItem>
               )}
+              <DropdownMenuSeparator className="sm:hidden" />
               <DropdownMenuItem asChild>
                 <Link href="/billing">
                   <CreditCard className="size-4" />

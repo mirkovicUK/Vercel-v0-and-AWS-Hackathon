@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
-import { ShieldCheck } from "lucide-react"
+import Link from "next/link"
+import { ArrowLeft, ShieldCheck } from "lucide-react"
 import { requireAdmin } from "@/lib/auth/guard"
 import { getAdminMetrics } from "@/lib/db/admin-metrics"
 import {
@@ -32,6 +33,14 @@ export default async function AdminPage() {
   return (
     <main className="mx-auto w-full max-w-4xl px-4 py-8 sm:px-6 sm:py-10">
       <div className="flex flex-col gap-6">
+        <Link
+          href="/dashboard"
+          className="inline-flex w-fit items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+        >
+          <ArrowLeft className="size-4" />
+          Back to dashboard
+        </Link>
+
         <header
           className="relative overflow-hidden rounded-2xl border border-border p-6 text-primary-foreground shadow-sm sm:p-8"
           style={{

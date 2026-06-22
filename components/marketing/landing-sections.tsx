@@ -211,9 +211,9 @@ export function HowItWorks() {
 
 export function ProgressShowcase({ authed = false }: { authed?: boolean }) {
   return (
-    <section id="progress" className="scroll-mt-20 border-y border-border bg-card">
+    <section id="progress" className="scroll-mt-20 overflow-x-clip border-y border-border bg-card">
       <div className="mx-auto grid w-full max-w-6xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:py-24">
-        <div className="flex flex-col items-start gap-5">
+        <div className="flex min-w-0 flex-col items-start gap-5">
           <Badge variant="secondary" className="gap-1.5 rounded-full px-3 py-1 text-xs font-medium">
             <Target className="size-3.5 text-accent" />
             The progress dashboard
