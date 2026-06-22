@@ -140,6 +140,32 @@ function ValueCard({
   )
 }
 
+export function Mission() {
+  return (
+    <section className="border-y border-border bg-primary/5">
+      <div className="mx-auto flex w-full max-w-3xl flex-col items-center gap-5 px-4 py-16 text-center sm:px-6 lg:py-20">
+        <Badge variant="secondary" className="gap-1.5 rounded-full px-3 py-1 text-xs font-medium">
+          <Target className="size-3.5 text-primary" />
+          Why we built ApexMaths
+        </Badge>
+        <h2 className="text-balance font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          Good 11+ preparation shouldn&apos;t hinge on what you can afford
+        </h2>
+        <p className="text-pretty text-lg leading-relaxed text-muted-foreground">
+          Effective 11+ tutoring runs £30–£50 an hour, which quietly decides which children get structured
+          preparation and which don&apos;t. We believe a child&apos;s chances should come down to their effort and
+          potential — not their family&apos;s budget.
+        </p>
+        <p className="text-pretty leading-relaxed text-muted-foreground">
+          So we built ApexMaths to put genuinely good, exam-style maths practice — with an AI tutor that teaches the
+          method, and clear progress tracking for parents — within reach of far more families, for less than the cost
+          of a single tutoring session a month.
+        </p>
+      </div>
+    </section>
+  )
+}
+
 const sessionTypes = [
   {
     icon: Brain,

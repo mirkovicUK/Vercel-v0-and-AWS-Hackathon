@@ -9,6 +9,7 @@ import {
   ProgressShowcase,
   Features,
   Pricing,
+  Mission,
   FinalCta,
 } from "@/components/marketing/landing-sections"
 
@@ -29,6 +30,7 @@ export default async function HomePage() {
         <ProgressShowcase authed={authed} />
         <Features />
         <Pricing authed={authed} />
+        <Mission />
         <FinalCta authed={authed} />
       </main>
       <MarketingFooter />
