@@ -1,8 +1,12 @@
 import "server-only"
 import { query, queryOne } from "@/lib/aws/rds-data"
 import { getRevenueSummary } from "@/lib/db/revenue"
+import { getDecliningMasteryCohort, getTrialsEndingSoon } from "@/lib/db/at-risk"
+import { getContactInbox } from "@/lib/db/contact"
 import { SESSION_STATUSES, SUBSCRIPTION_STATUSES, TOPICS } from "@/lib/domain"
 import type { RevenueSummary } from "@/lib/db/revenue"
+import type { DecliningMasteryItem, TrialEndingItem } from "@/lib/db/at-risk"
+import type { ContactInboxItem } from "@/lib/db/contact"
 import type { SessionStatus, SubscriptionStatus, Topic } from "@/lib/domain"
 
 /**
@@ -94,6 +98,9 @@ export interface AdminMetrics {
   engagement: SettledSection<EngagementMetrics>
   content: SettledSection<ContentMetrics>
   operations: SettledSection<OperationalMetrics>
+  decliningMastery: SettledSection<DecliningMasteryItem[]>
+  trialsEndingSoon: SettledSection<TrialEndingItem[]>
+  contactInbox: SettledSection<ContactInboxItem[]>
 }
 
 // ---- Pure mapping helpers (no I/O — unit/property testable) ----
@@ -392,7 +399,7 @@ export async function getOperationalMetrics(): Promise<OperationalMetrics> {
  * existing `getRevenueSummary()` helper unchanged (Req 4.5).
  */
 export async function getAdminMetrics(): Promise<AdminMetrics> {
-  const [revenue, invoices, subscriptions, users, engagement, content, operations] =
+  const [revenue, invoices, subscriptions, users, engagement, content, operations, decliningMastery, trialsEndingSoon, contactInbox] =
     await Promise.allSettled([
       getRevenueSummary(),
       getRecentInvoices(),
@@ -401,6 +408,9 @@ export async function getAdminMetrics(): Promise<AdminMetrics> {
       getEngagementMetrics(),
       getContentMetrics(),
       getOperationalMetrics(),
+      getDecliningMasteryCohort(),
+      getTrialsEndingSoon(),
+      getContactInbox(),
     ])
   return {
     revenue: settle(revenue),
@@ -410,5 +420,8 @@ export async function getAdminMetrics(): Promise<AdminMetrics> {
     engagement: settle(engagement),
     content: settle(content),
     operations: settle(operations),
+    decliningMastery: settle(decliningMastery),
+    trialsEndingSoon: settle(trialsEndingSoon),
+    contactInbox: settle(contactInbox),
   }
 }

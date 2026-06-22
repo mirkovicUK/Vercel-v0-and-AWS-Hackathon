@@ -19,6 +19,7 @@ export function MarketingFooter() {
                 { href: "#how-it-works", label: "How it works" },
                 { href: "#features", label: "Features" },
                 { href: "#pricing", label: "Pricing" },
+                { href: "/contact", label: "Contact us" },
               ]}
             />
             <FooterColumn

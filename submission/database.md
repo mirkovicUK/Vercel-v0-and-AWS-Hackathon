@@ -73,8 +73,9 @@ doing more.
 
 ## The schema is the architecture (deliberate, not generated)
 
-**12 tables · 5 enums · 9 foreign keys.** The design pushes correctness into the
-engine rather than scattering it through application code:
+**13 tables · 5 enums · 10 foreign keys** (across three migrations: the `001`
+baseline, `002` adaptive index/enum, and `003` contact inbox). The design pushes
+correctness into the engine rather than scattering it through application code:
 
 - **Foreign keys with three different delete behaviours**, because erasure
   semantics differ per relationship:
@@ -82,8 +83,8 @@ engine rather than scattering it through application code:
     `subscriptions`, `sessions`, and their `session_answers`, `progress`, and
     `review_reports` (some directly off `parents`, others transitively via
     `children`/`sessions`).
-  - `SET NULL` for `revenue_events.parent_id` — keep the revenue row for accounting,
-    de-attribute the person (GDPR).
+  - `SET NULL` (2 FKs) for `revenue_events.parent_id` and `contact_messages.parent_id`
+    — keep the row for accounting / support history, de-attribute the person (GDPR).
   - `NO ACTION` for `session_answers.question_id` — deleting a user must never
     delete shared question-bank rows.
 
@@ -150,16 +151,53 @@ missed relationship:
   `admin.denied` with the requesting `sub` even when no `parents` row exists; (3)
   append-only immutability shouldn't be hostage to a cascade fired elsewhere.
 
-By contrast, `revenue_events` **is** linked — `parent_id REFERENCES parents(id) ON
-DELETE SET NULL` — because a paid invoice is a real per-parent fact that must survive
-erasure with the *person* de-attributed but the *money* kept for accounting.
+By contrast, `revenue_events` and `contact_messages` **are** linked — each via
+`parent_id REFERENCES parents(id) ON DELETE SET NULL` — because a paid invoice and
+a support message are real per-parent facts that must survive erasure with the
+*person* de-attributed but the *record* kept (accounting / support history).
 
 > **Judge framing:** *"Three tables have no foreign keys by design — an idempotency
 > ledger keyed on Stripe's event id, a singleton revenue read-model, and an
 > append-only audit log that must survive GDPR cascade-deletes. FK coupling tracks
 > data lifecycle, not table count."*
 
-Full DDL: [`scripts/sql/001_schema.sql`](../scripts/sql/001_schema.sql).
+Full DDL: [`scripts/sql/001_schema.sql`](../scripts/sql/001_schema.sql) (baseline),
+[`002_adaptive.sql`](../scripts/sql/002_adaptive.sql), [`003_contact.sql`](../scripts/sql/003_contact.sql).
+
+---
+
+## The operator console leans on the same relational strengths
+
+Two operator-facing features added to the `/admin` dashboard are deliberate
+showcases of work the relational engine does that a key-value store cannot serve
+without a second system:
+
+- **At-risk learner cohorts (declining mastery).** A single window query computes
+  every child's running cumulative-accuracy series with `LAG()` over
+  `sessions ⋈ session_answers`, reduces each child's most-recent-N window to a signed
+  mastery slope, keeps only the negative trends, joins to `children`/`parents`, and
+  orders steepest-decline-first with a bounded `LIMIT` — the *same* window/`LAG()`
+  machinery that powers the per-child dashboard, now run as a cohort across all
+  learners in one statement. No ETL, no per-child app loop.
+
+- **Trials ending soon.** One `subscriptions ⋈ parents` query over a half-open time
+  window surfaces conversions about to lapse — a trivial, correct relational
+  predicate that turns the database into an operational early-warning system.
+
+- **Contact inbox — relational by design, not a flat island.** The public contact
+  form writes to `contact_messages`, linked to `parents` via
+  `parent_id … ON DELETE SET NULL`. The inbox is **one `LEFT JOIN`
+  `contact_messages → parents → subscriptions`**, so an operator sees each message
+  with sender context — *active subscriber* vs *trialing* vs *logged-out visitor* —
+  resolved in the engine. The link is captured only from the verified server session
+  (never a client-supplied id), and erasure de-attributes the message while keeping
+  the support record (the same GDPR `SET NULL` pattern as `revenue_events`).
+
+All three are **read-only** in the admin surface (`SELECT`-only via the RDS Data API),
+run **concurrently** in the dashboard's single `Promise.allSettled` aggregator, and
+expose a **PII-minimal projection by construction** (the payload types carry only the
+permitted fields — no Cognito `sub`, no `stripe_customer_id`, no child data beyond a
+display name).
 
 ---
 
@@ -377,7 +415,7 @@ which is the right durability level for a single-country product.
 And even setting geography aside, ApexMaths leans on conventional Aurora/Postgres
 features DSQL does not provide:
 
-- **Foreign keys** — we have **9 FK constraints**, and GDPR erasure is a single
+- **Foreign keys** — we have **10 FK constraints**, and GDPR erasure is a single
   `DELETE FROM parents` resolved by `ON DELETE CASCADE`/`SET NULL`. DSQL does not
   support foreign-key constraints, so all of that referential integrity and the
   cascade-delete path would move into application code.

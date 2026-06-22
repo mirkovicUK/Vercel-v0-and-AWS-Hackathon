@@ -38,6 +38,8 @@ export type AuditAction =
   // Admin
   | "admin.denied"
   | "admin.viewed"
+  // Contact
+  | "contact.submitted"
 
 export async function audit(input: {
   action: AuditAction
