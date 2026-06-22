@@ -284,7 +284,7 @@ export function DashboardCarousel() {
 
   return (
     <div
-      className="relative"
+      className="relative min-w-0"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
