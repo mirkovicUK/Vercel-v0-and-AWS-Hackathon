@@ -1,5 +1,7 @@
 # Design Document
 
+> **Version: v2.** v1 designed the public contact channel and the read-only admin inbox (Req 1–10). v2 is a **targeted amendment** adding a single, one-way admin status mutation — *acknowledge* (`new → seen`) — and the expandable inbox UI that surfaces and triggers it (Req 11, 12). All v1 sections are preserved; v2 changes are marked inline and summarized in [the v2 amendment](#v2-amendment-the-inbox-gains-a-single-one-way-status-mutation-req-11-12). **No database migration** — the `status` column already exists.
+
 ## Overview
 
 Parent Contact Inbox adds two surfaces to ApexMaths:
@@ -91,20 +93,22 @@ Identical to the at-risk cohorts: `/admin` is `force-dynamic`, calls `requireAdm
 
 ### Module map
 
-| Concern | File | Status |
-| --- | --- | --- |
-| Migration: `contact_messages` table + indexes | `scripts/sql/003_contact.sql` | new |
-| Data layer: schema, types, INSERT, rate-limit count, inbox read, pure helpers | `lib/db/contact.ts` | new |
-| Submit_Action | `app/contact/actions.ts` | new |
-| Contact form page (server) | `app/contact/page.tsx` | new |
-| Contact form (client) | `components/marketing/contact-form.tsx` | new |
-| Inbox card | `components/app/admin/contact-inbox-card.tsx` | new |
-| Footer "Contact us" link | `components/marketing/marketing-footer.tsx` | extend (1 link) |
-| Aggregator + `AdminMetrics` type | `lib/db/admin-metrics.ts` | extend (1 section, 1 `allSettled` entry) |
-| Admin page render | `app/(app)/admin/page.tsx` | extend (1 card) |
-| Card barrel | `components/app/admin/index.ts` | extend (1 export) |
-| New `AuditAction` value | `lib/db/audit.ts` | extend (`'contact.submitted'`) |
-| Authorization, RDS helpers, MetricSection shell, form primitives | `lib/auth/guard.ts`, `lib/aws/rds-data.ts`, `components/app/admin/metric-section.tsx`, `components/ui/*` | reused unchanged |
+| Concern | File | Status (v1) | v2 change |
+| --- | --- | --- | --- |
+| Migration: `contact_messages` table + indexes | `scripts/sql/003_contact.sql` | new | **unchanged** — `status` column already exists; **no migration** |
+| Data layer: schema, types, INSERT, rate-limit count, inbox read, pure helpers | `lib/db/contact.ts` | new | extend — `cm.status` in `CONTACT_INBOX_SQL`; `status` on `ContactInboxRow`/`ContactInboxItem`/`mapContactInboxRow`; new `acknowledgeContactMessage(id)`; pure `nextStatusOnAcknowledge`/`parseContactId` |
+| Submit_Action | `app/contact/actions.ts` | new | unchanged |
+| **Acknowledge_Action** | `app/(app)/admin/contact-actions.ts` | — | **new** (`"use server"`) — admin-only, guarded one-way status write |
+| Contact form page (server) | `app/contact/page.tsx` | new | unchanged |
+| Contact form (client) | `components/marketing/contact-form.tsx` | new | unchanged |
+| Inbox card (server: maps data → client list) | `components/app/admin/contact-inbox-card.tsx` | new | extend — delegates rows to the new client component |
+| **Inbox message list / row (client)** | `components/app/admin/contact-message-list.tsx` | — | **new** (`"use client"`) — per-row expand/collapse, unread styling, acknowledge control |
+| Footer "Contact us" link | `components/marketing/marketing-footer.tsx` | extend (1 link) | unchanged |
+| Aggregator + `AdminMetrics` type | `lib/db/admin-metrics.ts` | extend (1 section, 1 `allSettled` entry) | unchanged (payload now carries `status`) |
+| Admin page render | `app/(app)/admin/page.tsx` | extend (1 card) | unchanged |
+| Card barrel | `components/app/admin/index.ts` | extend (1 export) | extend (1 export for the client list, if surfaced) |
+| New `AuditAction` value | `lib/db/audit.ts` | extend (`'contact.submitted'`) | extend (`'contact.acknowledged'`) |
+| Authorization, RDS helpers, MetricSection shell, form primitives | `lib/auth/guard.ts`, `lib/aws/rds-data.ts`, `components/app/admin/metric-section.tsx`, `components/ui/*` | reused unchanged | reused unchanged (`requireAdmin()` now also called *inside* the Acknowledge_Action) |
 
 ### Decision: storing the IP for rate limiting
 
@@ -115,6 +119,22 @@ Justification and alternatives:
 - **Requirement 4.5 forbids new infrastructure** and explicitly blesses "a database-backed count over recent Contact_Messages". A per-IP count needs the IP to live somewhere queryable; the lowest-risk place is a column on the same table, counted with `created_at >= now() - interval '60 minutes'`.
 - **Alternative considered — hash the IP.** Storing `sha256(ip+salt)` would reduce the stored value's sensitivity. Rejected for v1 because (a) it complicates the count query and the pure rate-limit logic for marginal benefit on a column that is already never displayed and never leaves the server, and (b) a stable salt is itself a secret to manage. The privacy guarantee here comes from **non-exposure** (the column has no slot in `ContactInboxItem` and is never selected), which a hash would not improve. This is noted as a future hardening option.
 - **Privacy implication (documented).** `source_ip` is the one PII field beyond `{name,email,message}`. It is collected for abuse prevention only, is never shown to operators, and is de-attributed alongside the rest of the row when the linked Parent is erased (the row is retained per the GDPR pattern; the IP is not tied to `parent_id`). Reading the IP is best-effort: when the header is absent, `source_ip` is `null` and only the per-email limit applies.
+
+### v2 amendment: the inbox gains a single, one-way status mutation (Req 11, 12)
+
+> **Scope of this amendment.** Everything above and in the v1 sections below is unchanged. v2 adds exactly **one** new capability — an Admin can *acknowledge* a message, moving its `status` from `new` to `seen` — plus the UI to surface and trigger it. No other behavior, table, guard, or PII boundary changes.
+
+This is the **first and only write the admin surface performs**. Until now `/admin` was strictly read-only (a `SELECT`-only inbox folded into `Promise.allSettled`); v2 introduces a single mutation entry point, the **Acknowledge_Action**. Because that action is an *independently-invocable server action* — reachable by anyone who can craft a POST to it, not merely by rendering `/admin` — it cannot lean on the page-level `requireAdmin()` gate. It must **re-establish authorization itself**. The amendment therefore treats the new write with the same fail-closed discipline the public Submit_Action uses for anonymous writes:
+
+1. **`requireAdmin()` first** — the action calls the reused guard before reading or mutating anything; denial ⇒ `notFound()` ⇒ HTTP 404 with no mutation (Req 11.5, 11.6). This mirrors the page boundary but runs *inside* the action so the protection travels with the entry point.
+2. **Validate the id (Zod)** — a supplied message id is parsed as a non-empty trimmed string before any SQL; missing/invalid ⇒ validation error, no mutation (Req 11.7).
+3. **One guarded, one-way `UPDATE`** — a single parameterized statement, `UPDATE contact_messages SET status='seen' WHERE id = :id AND status = 'new'`. The **`AND status = 'new'` clause is the load-bearing invariant**: it makes the transition *one-way* (a `seen` row matches zero rows, so it can never revert to `new` — Req 11.3) and *idempotent at the SQL level* (re-acknowledging a `seen` row updates 0 rows and is a silent no-op — Req 11.4). No client value is interpolated; both `:id` and the literal `'seen'`/`'new'` are fixed or bound (Req 11.2).
+4. **Best-effort audit** — `audit({ action: "contact.acknowledged", … })`, which already swallows its own errors, so a logging failure never undoes the committed status change (Req 11.8, 11.9).
+5. **`revalidatePath('/admin')`** — invalidates the dynamic admin render so the inbox re-fetches and the row now shows `seen` with its acknowledge control gone, without a manual reload (Req 12.6).
+
+**No database migration.** The `contact_messages.status` column already exists (`TEXT NOT NULL DEFAULT 'new'`, shipped in `003_contact.sql` for v1). The *only* data-layer read change is that the inbox `SELECT` must now also return `cm.status`, surfaced as a new top-level `status: "new" | "seen"` field on `ContactInboxItem` (it is **not** part of `SenderContext` — status is a property of the message, not the sender).
+
+**The inbox stays a single mutation, no more.** Reply, archive, delete, and outbound messaging remain out of scope; the *only* permitted mutation of `contact_messages` from the inbox is this `new → seen` transition (Req 11.10).
 
 ### Reading the source IP on Vercel
 
@@ -331,6 +351,7 @@ export const CONTACT_INBOX_SQL = `
          cm.email       AS submitter_email,
          cm.message,
          cm.created_at,
+         cm.status,
          cm.parent_id,
          p.email        AS linked_parent_email,
          s.status       AS subscription_status
@@ -346,6 +367,7 @@ interface ContactInboxRow {
   submitter_email: string
   message: string
   created_at: string
+  status: string                     // 'new' | 'seen' (v2 — Req 11.1)
   parent_id: string | null
   linked_parent_email: string | null
   subscription_status: string | null
@@ -356,7 +378,7 @@ export async function getContactInbox(): Promise<ContactInboxItem[]> {
   return rows.map(mapContactInboxRow)
 }
 
-/** Pure: project a joined row to the PII-bounded payload (Req 8.3–8.6, 10.2–10.4). */
+/** Pure: project a joined row to the PII-bounded payload (Req 8.3–8.6, 10.2–10.4, 11.1). */
 export function mapContactInboxRow(row: ContactInboxRow): ContactInboxItem {
   return {
     id: row.id,
@@ -364,12 +386,67 @@ export function mapContactInboxRow(row: ContactInboxRow): ContactInboxItem {
     submitterEmail: row.submitter_email,
     message: row.message,
     createdAt: row.created_at,
+    status: normalizeMessageStatus(row.status),  // coerce to the closed union (Req 11.1)
     sender: mapSenderContext(row),
   }
 }
 ```
 
+The `status` column is added to the `SELECT` list (v2 — Req 11.1) and carried as a new top-level field on `ContactInboxItem`; it deliberately sits **outside** `SenderContext` because the status describes the *message*, not the *sender*. `subscription_status` (the join column `s.status`) and the message `cm.status` are distinct: the `SELECT` aliases the message status as `status` and the subscription status as `subscription_status`, so they never collide.
+
 Because `subscriptions` has a `UNIQUE (parent_id)` constraint (per `001_schema.sql`), the `LEFT JOIN` yields at most one subscription row per message — no row fan-out.
+
+#### 2f. Message-status helpers and the guarded one-way acknowledge write (v2 — Req 11)
+
+The acknowledgement's *rule* is extracted into two **pure, I/O-free helpers** so the one-way/idempotent transition and the id validation are property-testable without a database, and the *effect* is a single guarded parameterized `UPDATE`.
+
+```typescript
+export type MessageStatus = "new" | "seen"
+
+/** Pure: coerce a raw DB status into the closed union; anything unexpected is treated as 'new'
+ *  (fail-safe — an unknown status is shown as unread rather than silently hidden). (Req 11.1) */
+export function normalizeMessageStatus(raw: unknown): MessageStatus {
+  return raw === "seen" ? "seen" : "new"
+}
+
+/** Pure: the one-way acknowledge transition. `new` advances to `seen`; `seen` stays `seen`.
+ *  It is one-way (never returns 'new' once 'seen') and idempotent
+ *  (nextStatusOnAcknowledge(nextStatusOnAcknowledge(s)) === nextStatusOnAcknowledge(s)). (Req 11.2–11.4) */
+export function nextStatusOnAcknowledge(current: MessageStatus): MessageStatus {
+  return "seen"
+}
+
+/** Zod: a supplied message id must be a non-empty trimmed string (Req 11.7). */
+export const ContactId_Schema = z.string().trim().min(1, "A message id is required.")
+
+/** Pure: parse/validate a raw id before any SQL; `ok:false` on missing/blank (Req 11.7). */
+export function parseContactId(raw: unknown): { ok: true; id: string } | { ok: false; error: string } {
+  const parsed = ContactId_Schema.safeParse(raw)
+  return parsed.success
+    ? { ok: true, id: parsed.data }
+    : { ok: false, error: parsed.error.issues[0]?.message ?? "Invalid message id." }
+}
+
+/**
+ * The single, one-way status write — the only mutation the admin surface performs.
+ * A lone parameterized `UPDATE` whose `AND status = 'new'` guard is load-bearing:
+ *   • one-way — a `seen` row matches zero rows, so it can never revert to `new` (Req 11.3);
+ *   • idempotent — re-acknowledging a `seen` (or unknown) id updates 0 rows, a silent no-op (Req 11.4);
+ *   • safe — `:id` is bound, and the only column written is `status`, set to the literal `'seen'` (Req 11.2, 11.10).
+ * No authorization here — the Acknowledge_Action calls `requireAdmin()` before invoking this (Req 11.5).
+ */
+export async function acknowledgeContactMessage(id: string): Promise<void> {
+  await query(
+    `UPDATE contact_messages
+        SET status = 'seen'
+      WHERE id = :id
+        AND status = 'new'`,
+    { id },
+  )
+}
+```
+
+`nextStatusOnAcknowledge` is intentionally total and constant over the closed `MessageStatus` union — it documents the transition the SQL guard enforces and gives the property suite a deterministic model. The DB-level guarantee and the pure model agree: acknowledging is one-way and idempotent.
 
 #### 2e. Parameterized INSERT (Req 2.5, 2.6, 3.6)
 
@@ -463,6 +540,62 @@ Notes:
 - **`readSourceIp()`** is the helper shown in [Reading the source IP](#reading-the-source-ip-on-vercel); it may live in this file or in `lib/db/contact.ts`. It returns `null` when the header is absent, in which case the per-IP count is `0` and only the per-email limit applies.
 - **Audit safety (Req 6.4).** `audit()` already wraps its write in try/catch and never throws (see `lib/db/audit.ts`), so a logging failure cannot undo the insert or surface to the Visitor. The audit detail carries **no PII beyond what the log already stores** — only the action and the verified `parent_id` (Req 6.3); the submitter's email/name/message are deliberately not put in `detail`.
 - **No `revalidatePath`/`redirect`.** The form shows an inline success state, so the action returns a result rather than redirecting (consistent with `createChildAction`'s result return).
+
+### 3b. Acknowledge_Action (v2 — `app/(app)/admin/contact-actions.ts`)
+
+A **new** `"use server"` module, co-located with the admin route group and kept **separate from the public `app/contact/actions.ts`** so the public Submit_Action and the admin-only mutation never share a file or surface. It is the **first write the admin surface performs**, and because it is an independently-invocable server action it **re-establishes authorization itself** rather than relying on the `/admin` page guard.
+
+The control flow is fixed and fail-stopped — each step returns before the next can run, and **no `contact_messages` row is touched unless the guard passes and the id validates**:
+
+```typescript
+"use server"
+
+import { z } from "zod"
+import { revalidatePath } from "next/cache"
+import { requireAdmin } from "@/lib/auth/guard"
+import { parseContactId, acknowledgeContactMessage } from "@/lib/db/contact"
+import { audit } from "@/lib/db/audit"
+
+export interface AcknowledgeActionState {
+  ok: boolean
+  error?: string
+}
+
+/**
+ * Transition one Contact_Message from `new` to `seen`. Independently invocable,
+ * so it guards itself (Req 11.5). Form-friendly signature: reads the id from
+ * FormData so a `<form action={...}>` button can submit it directly.
+ */
+export async function acknowledgeContactAction(formData: FormData): Promise<AcknowledgeActionState> {
+  // 1. Authorize INSIDE the action — denial ⇒ notFound() ⇒ HTTP 404, no mutation (Req 11.5, 11.6).
+  const admin = await requireAdmin()
+
+  // 2. Validate the supplied id BEFORE any SQL (Req 11.7).
+  const parsed = parseContactId(formData.get("id"))
+  if (!parsed.ok) return { ok: false, error: parsed.error }
+
+  // 3. The single guarded one-way UPDATE (… AND status='new'): new→seen, else 0-row no-op (Req 11.2–11.4).
+  await acknowledgeContactMessage(parsed.id)
+
+  // 4. Best-effort audit — audit() swallows its own errors, so a logging failure
+  //    never undoes the committed status change (Req 11.8, 11.9).
+  await audit({ action: "contact.acknowledged", parentId: admin.id })
+
+  // 5. Refresh the dynamic admin render so the row now shows `seen`
+  //    and its acknowledge control disappears — no manual reload (Req 12.6).
+  revalidatePath("/admin")
+
+  return { ok: true }
+}
+```
+
+Notes:
+
+- **Self-guarding is the security crux of v2.** `requireAdmin()` runs as the *first* statement, before the id is even read, exactly as it does at the page boundary — but here it travels *with* the entry point so a direct POST to the action (bypassing a page render) is still fail-closed to 404 (Req 11.5, 11.6). `requireAdmin()` returns the authenticated admin Parent, whose `id` is the only identifier put in the audit entry (no submitter PII — consistent with Req 6.3's discipline).
+- **Idempotent and one-way by construction.** The guard column lives in the SQL (`AND status = 'new'`), not in branching code: acknowledging a `new` row updates exactly one row; acknowledging an already-`seen` row (or a non-existent/stale id) updates **zero** rows and still returns `{ ok: true }` — a silent, error-free no-op (Req 11.3, 11.4). There is no code path that sets `status` back to `'new'`.
+- **Signature.** A `formData` parameter suits a `<form action={…}>` submit button and `useActionState`/`useTransition`. A thin `(id: string)` overload could wrap the same body if a non-form caller is ever needed; the FormData form is the canonical one used by the client list.
+- **Separation from the public action.** Living under `app/(app)/admin/` (an authenticated route group) keeps it adjacent to the surface it serves and ensures editing the admin mutation can never accidentally weaken the anonymous public Submit_Action, which stays in `app/contact/actions.ts`.
+- **The only admin write.** This action issues the *sole* mutation reachable from the inbox; there is no reply/archive/delete action (Req 11.10).
 
 ### 4. Contact form page + client component (Req 1, 5.1, 10.1)
 
@@ -652,16 +785,116 @@ export function ContactInboxCard({ section }: { section: SettledSection<ContactI
 }
 ```
 
-The card presents **no** mark-read/archive/reply control and triggers no outbound message — the v1 read-only contract (Req 11.2, 11.4). It is exported from `components/app/admin/index.ts` and rendered on `app/(app)/admin/page.tsx` inside the existing `MetricAccordion`.
+The card presents the message count as `preview` and the empty state when there are no rows. **In v2 the card stays a server component but delegates row rendering to a client component** so each message can expand/collapse and (when unread) offer an acknowledge control — see [6b](#6b-expandable-inbox-rows--unread-styling--acknowledge-control-v2). It still uses **no `dangerouslySetInnerHTML`** anywhere (Req 9.1). It is exported from `components/app/admin/index.ts` and rendered on `app/(app)/admin/page.tsx` inside the existing `MetricAccordion`.
+
+> **v2 note.** The code block above is the v1 server-only card. In v2 the `<ul>…</ul>` body is replaced by a single `<ContactMessageList items={section.data} />` (a client component); the surrounding `MetricSection`, error chrome, `preview`, and empty state are unchanged. The card remains a server component that fetches/maps nothing new beyond the now-present `status` field flowing through `ContactInboxItem`.
+
+### 6b. Expandable inbox rows + unread styling + acknowledge control (v2 — `components/app/admin/contact-message-list.tsx`)
+
+A **new** `"use client"` component renders the list as **individually expandable rows** (Req 12.1). The server card passes the already-mapped, PII-firewalled `ContactInboxItem[]` as a prop — the client component receives **no** new data and adds **no** fetch; it only adds interaction and styling. The Acknowledge_Action is imported directly (a server action can be imported into a client component and used as a `<form action>`).
+
+```tsx
+"use client"
+
+import { useState } from "react"
+import { ChevronRight } from "lucide-react"
+import type { ContactInboxItem } from "@/lib/db/contact"
+import { acknowledgeContactAction } from "@/app/(app)/admin/contact-actions"
+import { formatAdminDate } from "@/components/app/admin/format"
+import { SubmitButton } from "@/components/auth/submit-button"
+
+export function ContactMessageList({ items }: { items: ContactInboxItem[] }) {
+  return (
+    <ul className="flex flex-col gap-2">
+      {items.map((m) => (
+        <ContactMessageRow key={m.id} item={m} />
+      ))}
+    </ul>
+  )
+}
+
+function ContactMessageRow({ item: m }: { item: ContactInboxItem }) {
+  const [expanded, setExpanded] = useState(false)
+  const isUnread = m.status === "new"
+
+  return (
+    <li
+      // Req 12.5 — unread gets a distinct treatment: left accent border + tinted bg + unread dot;
+      // seen renders muted.
+      className={[
+        "rounded-xl border p-3.5 transition-colors",
+        isUnread
+          ? "border-l-2 border-l-primary border-border bg-primary/5"
+          : "border-border bg-secondary/20 text-muted-foreground",
+      ].join(" ")}
+    >
+      {/* Collapsed summary: name · date · email · sender-context (Req 12.2). The whole header toggles. */}
+      <button
+        type="button"
+        onClick={() => setExpanded((v) => !v)}
+        aria-expanded={expanded}
+        className="flex w-full flex-col gap-1 text-left"
+      >
+        <div className="flex items-center justify-between gap-3">
+          <span className="flex min-w-0 items-center gap-2">
+            {isUnread ? <span aria-hidden className="size-2 shrink-0 rounded-full bg-primary" /> : null}
+            <span className="truncate text-sm font-medium text-foreground">{m.submitterName}</span>
+            <span className="sr-only">{isUnread ? "Unread" : "Seen"}</span>
+          </span>
+          <span className="flex shrink-0 items-center gap-2">
+            <span className="text-xs text-muted-foreground">{formatAdminDate(m.createdAt)}</span>
+            <ChevronRight className={`size-4 transition-transform ${expanded ? "rotate-90" : ""}`} />
+          </span>
+        </div>
+        <span className="text-xs text-muted-foreground">{m.submitterEmail}</span>
+        {/* Sender context — escaped text only (Req 8.4–8.6, 9.1) */}
+        <span className="text-xs">
+          {m.sender.kind === "linked"
+            ? `Account: ${m.sender.parentEmail} · ${m.sender.subscriptionStatus}`
+            : "Logged-out visitor"}
+        </span>
+      </button>
+
+      {expanded ? (
+        <div className="mt-3 border-t border-border pt-3">
+          {/* Full message revealed only when expanded (Req 12.3). React escapes the untrusted text. */}
+          <p className="whitespace-pre-wrap break-words text-sm text-foreground">{m.message}</p>
+
+          {/* Acknowledge control: shown ONLY while expanded AND unread (Req 12.4, 12.7). */}
+          {isUnread ? (
+            <form action={acknowledgeContactAction} className="mt-3">
+              <input type="hidden" name="id" value={m.id} />
+              <SubmitButton variant="secondary" size="sm" pendingText="Marking as seen…">
+                Mark as seen
+              </SubmitButton>
+            </form>
+          ) : null}
+        </div>
+      ) : null}
+    </li>
+  )
+}
+```
+
+Design points:
+
+- **Server/client split.** `ContactInboxCard` stays a server component (it owns the `MetricSection` shell, error chrome, empty state, and the `SettledSection` contract). It renders `<ContactMessageList items={section.data} />`; the client component owns only per-row `useState` expand/collapse and the acknowledge `<form>`. The action is passed by **direct import** into the client module (the canonical Next.js pattern for `"use server"` actions consumed by `"use client"` components).
+- **Acknowledge submission.** The control is a `<form action={acknowledgeContactAction}>` with a hidden `id` input, driven by the shared `SubmitButton` (which already uses `useFormStatus` for a pending state). On success the action's `revalidatePath('/admin')` re-renders the dynamic admin page, the row arrives with `status: "seen"`, the unread treatment drops to muted, and the control is no longer rendered (Req 12.6, 12.7). `useActionState`/`useTransition` are interchangeable here if inline error/optimistic feedback is wanted; the form-action form is the baseline.
+- **Conditional control by status.** The acknowledge button renders **iff** `m.status === "new"` *and* the row is expanded (Req 12.4); a `seen` message never offers it, even when expanded (Req 12.7).
+- **Unread vs seen styling.** Unread rows carry a left accent border, a tinted background, and an unread dot (plus an `sr-only` "Unread" label for assistive tech); `seen` rows render muted (Req 12.5).
+- **Untrusted text still escaped.** Every displayed value remains a `{jsxExpression}`; moving rendering into a client component does not change React's default escaping, and there is still no `dangerouslySetInnerHTML` (Req 9.1, 9.2).
 
 ### 7. New audit action (`lib/db/audit.ts`)
 
-The `AuditAction` union gains one member under a "Contact" group:
+The `AuditAction` union gains contact members under a "Contact" group — `contact.submitted` (v1) and `contact.acknowledged` (v2):
 
 ```typescript
   // Contact
   | "contact.submitted"
+  | "contact.acknowledged"   // v2 — written best-effort when a message moves new→seen (Req 11.8)
 ```
+
+The acknowledgement audit entry carries only `action` and the authenticated admin's `parentId` — no submitter name/email/message in `detail`, matching the audit-minimalism discipline used for `contact.submitted` (Req 6.3). It is written best-effort after the committed `UPDATE`; `audit()` already swallows its own errors, so a failure cannot undo the status change (Req 11.9).
 
 ## Data Models
 
@@ -678,10 +911,14 @@ interface ContactInboxRow {
   submitter_email: string
   message: string
   created_at: string                 // ISO timestamp
+  status: string                     // 'new' | 'seen' — message status (v2, Req 11.1)
   parent_id: string | null
   linked_parent_email: string | null // null ⇒ logged-out submitter
   subscription_status: string | null // null ⇒ linked parent has no subscription row
 }
+
+// ---- Message status (closed union; the only mutable field) ----
+export type MessageStatus = "new" | "seen"  // v2 — Req 11
 
 // ---- Sender context (total over the three triage cases) ----
 export type SenderContext =
@@ -695,11 +932,12 @@ export interface ContactInboxItem {
   submitterEmail: string             // Visitor-provided (Req 8.3, 10.2)
   message: string                    // Visitor-provided, untrusted text (Req 8.3, 9.2)
   createdAt: string                  // ISO timestamp (Req 8.3)
+  status: MessageStatus              // 'new' | 'seen' — drives unread styling + acknowledge control (Req 11.1, 12.4, 12.5, 12.7)
   sender: SenderContext              // linked parent email + sub status, or logged-out (Req 8.4–8.6)
 }
 ```
 
-**PII firewall by construction.** `ContactInboxItem` has **no field** for `parents.id`/Cognito `sub`, `stripe_customer_id`, `source_ip`, or any child attribute — the permitted set is *exactly* `{ id, submitterName, submitterEmail, message, createdAt, sender }`, and `sender` carries at most `{ parentEmail, subscriptionStatus }`. Forbidden data cannot reach the admin view because the type has no slot for it and the `CONTACT_INBOX_SQL` `SELECT` list never names those columns (Req 10.2–10.4). This is the same type-level guarantee the admin-dashboard and at-risk specs rely on.
+**PII firewall by construction.** `ContactInboxItem` has **no field** for `parents.id`/Cognito `sub`, `stripe_customer_id`, `source_ip`, or any child attribute — the permitted set is *exactly* `{ id, submitterName, submitterEmail, message, createdAt, status, sender }`, and `sender` carries at most `{ parentEmail, subscriptionStatus }`. The v2 `status` addition is a closed `"new" | "seen"` union, not PII; it widens the permitted key set by exactly one non-sensitive field. Forbidden data cannot reach the admin view because the type has no slot for it and the `CONTACT_INBOX_SQL` `SELECT` list never names those columns (Req 10.2–10.4). This is the same type-level guarantee the admin-dashboard and at-risk specs rely on.
 
 The `source_ip` column exists only on the table and is referenced only by `countRecentSubmissions`; it is absent from every payload type, so the rate-limit PII never crosses into rendering.
 
@@ -707,7 +945,7 @@ The `source_ip` column exists only on the table and is referenced only by `count
 
 *A property is a characteristic or behavior that should hold true across all valid executions of a system — essentially, a formal statement about what the system should do. Properties serve as the bridge between human-readable specifications and machine-verifiable correctness guarantees.*
 
-These properties are derived from the prework analysis. The acceptance criteria collapse into a small set of universally-quantified properties over the **pure** logic extracted from the I/O layer: input validation, the honeypot check, the rate-limit decision, the parent-linkage rule, the sender-context mapping, the inbox ordering/bound, the PII firewall, the SELECT-only discipline, and per-section resilience. Each property targets a pure function so it can be tested deterministically without a live database, Cognito, or the RDS Data API. The remaining criteria are reused-guard behavior, single-statement/structural facts, FK-engine behavior, and rendering specifics — covered by example tests, integration checks, and structural review (see [Testing Strategy](#testing-strategy)).
+These properties are derived from the prework analysis. The acceptance criteria collapse into a small set of universally-quantified properties over the **pure** logic extracted from the I/O layer: input validation, the honeypot check, the rate-limit decision, the parent-linkage rule, the sender-context mapping, the inbox ordering/bound, the PII firewall, the SELECT-only discipline, per-section resilience, and (v2) the one-way/idempotent acknowledge transition, the status carry in the inbox payload, and the acknowledge-id validation. Each property targets a pure function so it can be tested deterministically without a live database, Cognito, or the RDS Data API. The remaining criteria are reused-guard behavior (including the Acknowledge_Action's self-guard), single-statement/structural facts (the guarded one-way `UPDATE`), best-effort audit, FK-engine behavior, and rendering/interaction specifics (the expandable rows, unread styling, and acknowledge control) — covered by example tests, integration checks, and structural review (see [Testing Strategy](#testing-strategy)).
 
 ### Property 1: Validation accepts exactly the in-bounds, well-formed inputs
 
@@ -753,15 +991,33 @@ These properties are derived from the prework analysis. The acceptance criteria 
 
 ### Property 8: Inbox service issues only read statements
 
-*For any* SQL statement defined by the Inbox_Service (the `CONTACT_INBOX_SQL` constant), the statement SHALL be read-only — its first significant keyword is `SELECT` or a `WITH … SELECT` CTE — and SHALL contain no `INSERT`, `UPDATE`, `DELETE`, `MERGE`, `UPSERT`, `ALTER`, `DROP`, `CREATE`, or `TRUNCATE` keyword, so loading the inbox cannot mutate any `contact_messages` row.
+*For any* SQL statement defined by the Inbox_Service (the `CONTACT_INBOX_SQL` constant), the statement SHALL be read-only — its first significant keyword is `SELECT` or a `WITH … SELECT` CTE — and SHALL contain no `INSERT`, `UPDATE`, `DELETE`, `MERGE`, `UPSERT`, `ALTER`, `DROP`, `CREATE`, or `TRUNCATE` keyword, so loading the inbox cannot mutate any `contact_messages` row. The sole mutation reachable from the inbox is the Acknowledge_Action's guarded one-way `UPDATE`.
 
-**Validates: Requirements 11.1, 11.3**
+**Validates: Requirements 11.10**
 
 ### Property 9: Per-section failure isolation
 
 *For any* assignment of success/failure outcomes to the independent admin queries (including the contact-inbox query), `getAdminMetrics()` SHALL resolve (never reject) with a result that marks exactly the failed sections — including the contact-inbox section — as `{ ok: false }` and every other section as `{ ok: true, data }`, so a failure in the inbox query never blanks any other admin section and a failure elsewhere never blanks the inbox.
 
 **Validates: Requirements 8.1, 8.8**
+
+### Property 10: Acknowledge is a one-way, idempotent status transition
+
+*For any* message status `s ∈ { new, seen }`, `nextStatusOnAcknowledge(s)` SHALL equal `seen` — so acknowledging a `new` message advances it to `seen`, acknowledging a `seen` message leaves it `seen` (the transition is **one-way**: the result is never `new` once `seen`), and the operation is **idempotent**: `nextStatusOnAcknowledge(nextStatusOnAcknowledge(s)) === nextStatusOnAcknowledge(s)`. This models the SQL guard `UPDATE … SET status='seen' WHERE id=:id AND status='new'`, under which a `seen` row matches zero rows and so can neither revert nor change again.
+
+**Validates: Requirements 11.2, 11.3, 11.4**
+
+### Property 11: Inbox payload carries a valid message status
+
+*For any* joined inbox row, the `ContactInboxItem` produced by `mapContactInboxRow` SHALL carry a `status` field whose value is exactly one of `{ new, seen }` (any unrecognized stored value is normalized to `new`, never dropped or invented), and the payload's key set SHALL remain a subset of `{ id, submitterName, submitterEmail, message, createdAt, status, sender }` — the status carry widens the permitted keys by exactly the one non-sensitive `status` field and introduces no forbidden data.
+
+**Validates: Requirements 11.1**
+
+### Property 12: Acknowledge id validation accepts exactly non-empty trimmed ids
+
+*For any* raw id value, `parseContactId(raw)` SHALL return `ok: true` with the trimmed id **if and only if** the value is a string whose trimmed length is greater than zero; for a missing, non-string, empty, or all-whitespace value it SHALL return `ok: false` with a descriptive error and SHALL yield no id — so a missing or invalid id can never reach the `UPDATE`.
+
+**Validates: Requirements 11.7**
 
 ## Error Handling
 
@@ -779,8 +1035,14 @@ These properties are derived from the prework analysis. The acceptance criteria 
 | More than 50 messages | `ORDER BY created_at DESC LIMIT 50` keeps exactly the 50 most-recent | 8.1 |
 | Non-admin requests `/admin` | Reused `requireAdmin()` calls `notFound()` → HTTP 404; control never reaches `getAdminMetrics()`, so `getContactInbox()` never runs and no message data is revealed | 7.1, 7.3, 7.4 |
 | One admin query throws (incl. the inbox) | `Promise.allSettled` + `settle()` mark only that section `{ ok: false }`; every other section, and the inbox card's own error chrome, render normally | 8, 9 (resilience) |
+| **Acknowledge: non-admin invokes the action** | `requireAdmin()` (first statement) calls `notFound()` → HTTP 404; control never reaches `parseContactId`/`acknowledgeContactMessage`, so **no row is mutated** | 11.5, 11.6 |
+| **Acknowledge: missing / blank / non-string id** | `parseContactId` returns `{ ok: false, error }`; the action returns the validation error before any SQL; **no row mutated** | 11.7 |
+| **Acknowledge: id refers to an already-`seen` (or non-existent/stale) message** | The guarded `UPDATE … WHERE id=:id AND status='new'` matches **zero** rows; the action returns `{ ok: true }` — a silent, error-free no-op; status stays `seen` (idempotent, one-way) | 11.3, 11.4 |
+| **Acknowledge: audit write fails** | `audit()` swallows its own error; the `UPDATE` is already committed, so the `new → seen` change is retained and the failure never surfaces | 11.8, 11.9 |
+| **Acknowledge: revalidation after success** | `revalidatePath('/admin')` invalidates the dynamic render; the next fetch returns the row as `seen`, dropping the unread styling and the acknowledge control | 12.6, 12.7 |
+| **Acknowledge: Aurora not configured / `UPDATE` throws** | The RDS helper throws; the action rejects and the row is unchanged (single statement, no partial write); the audit and revalidate never run | 11.2 |
 
-Because the submission gauntlet is **fail-stopped** — each of validation, honeypot, and rate-limit returns before reaching `insertContactMessage` — there is structurally no path on which a malformed, bot, or throttled submission writes a row (Req 2.2–2.4, 4.2, 4.3, 5.2). Because parent linkage flows only through `deriveParentId` → `getCurrentParent`, there is no path on which a client-supplied id determines `parent_id` (Req 3.4). Because the inbox is a single `SELECT`, a successful admin load leaves every row unchanged (Req 11.3).
+Because the submission gauntlet is **fail-stopped** — each of validation, honeypot, and rate-limit returns before reaching `insertContactMessage` — there is structurally no path on which a malformed, bot, or throttled submission writes a row (Req 2.2–2.4, 4.2, 4.3, 5.2). Because parent linkage flows only through `deriveParentId` → `getCurrentParent`, there is no path on which a client-supplied id determines `parent_id` (Req 3.4). Because the inbox **read** is a single `SELECT`, a successful admin load leaves every row unchanged, and the *only* write the admin surface performs is the Acknowledge_Action's guarded one-way `UPDATE` (Req 11.10). That action is itself fail-stopped — `requireAdmin()` then `parseContactId` each return before any SQL — so neither an unauthorized caller nor an invalid id can mutate a row (Req 11.5–11.7), and the `AND status='new'` guard makes the write one-way and idempotent at the SQL level (Req 11.3, 11.4).
 
 ## Testing Strategy
 
@@ -793,6 +1055,7 @@ This feature adds a **public, unauthenticated, write-capable endpoint**, so the 
 The properties target the pure helpers in `lib/db/contact.ts`, which take raw inputs / already-fetched rows and contain no I/O:
 
 - `validateContactInput(raw)`, `isHoneypotTriggered(value)`, `isRateLimited(counts, max)`, `mapSenderContext(row)`, `mapContactInboxRow(row)`.
+- (v2) `nextStatusOnAcknowledge(status)`, `normalizeMessageStatus(raw)`, and `parseContactId(raw)` — the one-way/idempotent transition, the status carry, and the id validation, all pure.
 - The parent-linkage rule modeled as a pure function of a session value (`Parent | null` ⇒ `id | null`), mirroring how `deriveParentId` consumes `getCurrentParent()`.
 - A pure ordering/bound helper (e.g. `orderAndLimitByCreatedAtDesc(rows, limit)`) so Property 6 runs in-memory against an oversized random dataset, mirroring the SQL `ORDER BY created_at DESC LIMIT 50`.
 - The inbox SQL exposed as the module constant `CONTACT_INBOX_SQL` so Property 8 asserts against the literal text.
@@ -818,6 +1081,9 @@ Each correctness property maps to a **single** property-based test, tagged with 
 | P7 PII firewall | random `ContactInboxRow` ⇒ `mapContactInboxRow` | `Object.keys(item)` ⊆ permitted set; `sender` keys ⊆ permitted set; no forbidden key ever present |
 | P8 SELECT-only | the `CONTACT_INBOX_SQL` constant | matches `/^\s*(WITH|SELECT)\b/i`; contains no write/DDL keyword |
 | P9 resilience | random success/failure vector over all admin sections incl. the inbox | aggregator resolves; exactly failed sections `ok:false`, rest `ok:true` |
+| P10 acknowledge transition | status `s ∈ {new, seen}` (and via `normalizeMessageStatus`, arbitrary raw values) | `nextStatusOnAcknowledge(s) === "seen"` for all `s`; one-way (never `new` from `seen`); idempotent: `next(next(s)) === next(s)` |
+| P11 status carry | random `ContactInboxRow` incl. `status ∈ {new, seen}` and unknown strings | `mapContactInboxRow(row).status ∈ {new, seen}` (unknown ⇒ `new`); `Object.keys(item)` ⊆ permitted set incl. `status`; no forbidden key |
+| P12 acknowledge id validation | random raw ids: `undefined`, non-strings, `""`, whitespace, valid non-empty | `ok` iff string ∧ trimmed length > 0; else `ok:false` with error, no id |
 
 ### Example / edge-case unit tests (Vitest)
 
@@ -829,6 +1095,18 @@ Each correctness property maps to a **single** property-based test, tagged with 
 - **Card rendering (Req 8.3, 8.7, 9.1):** `ContactInboxCard` with one item shows name/email/message/date; with `[]` shows the empty state; a `message` containing `"<script>alert(1)</script>"` renders as literal text (React escaping), and the component contains no `dangerouslySetInnerHTML`.
 - **Form fields (Req 1.3, 5.1, 10.1):** `ContactForm` renders name/email/message inputs and a hidden, `aria-hidden`, `tabIndex=-1` `website` honeypot, and no other PII inputs.
 - **Guard denial (Req 7.3):** reuses the admin-dashboard guard test — `requireAdmin()` throwing ⇒ `getAdminMetrics()` (and thus `getContactInbox()`) is never invoked.
+
+#### v2 — Acknowledge_Action and expandable UI
+
+- **Acknowledge self-guard (Req 11.5, 11.6):** with `requireAdmin()` mocked to throw (its `notFound()`), `acknowledgeContactAction` rejects and `acknowledgeContactMessage`/`audit`/`revalidatePath` are **never** called — no mutation on denial.
+- **Acknowledge happy path (Req 11.2, 11.8, 12.6):** admin authorized, valid `id` in FormData ⇒ `acknowledgeContactMessage(id)` called **exactly once**, then `audit` once with `action: "contact.acknowledged"` and the admin's `parentId`, then `revalidatePath("/admin")`.
+- **Acknowledge invalid id (Req 11.7):** FormData with missing/blank `id` ⇒ action returns `{ ok: false, error }` and `acknowledgeContactMessage` is **not** called (no mutation).
+- **Acknowledge idempotent no-op (Req 11.3, 11.4):** `acknowledgeContactMessage` issues the `… WHERE id=:id AND status='new'` statement; an already-`seen` id updates 0 rows and the action still resolves `{ ok: true }` (asserted via the SQL text + a mocked 0-row result).
+- **Acknowledge audit failure tolerated (Req 11.9):** `audit` mocked to reject (or its internal swallow) ⇒ action still returns `{ ok: true }` and `revalidatePath` still runs after the committed `UPDATE`.
+- **Expandable rows (Req 12.1, 12.2, 12.3):** `ContactMessageList` (RTL) — each row starts collapsed showing name/date/email/sender-context and **not** the full message; toggling one row reveals its full message and does not expand the others.
+- **Conditional acknowledge control (Req 12.4, 12.7):** an expanded **`new`** row renders a "Mark as seen" control wired to `acknowledgeContactAction` with a hidden `id`; an expanded **`seen`** row renders **no** such control.
+- **Unread styling (Req 12.5):** a `new` row carries the unread treatment (accent border + tint + unread dot + `sr-only` "Unread"); a `seen` row renders muted without the dot.
+- **XSS-as-text in client rows (Req 9.1):** a `message` of `"<script>alert(1)</script>"` renders as literal text when expanded; `ContactMessageList` contains no `dangerouslySetInnerHTML`.
 
 ### Integration tests (1–3 examples, not property loops)
 
@@ -843,11 +1121,14 @@ Each correctness property maps to a **single** property-based test, tagged with 
 - **Session-only linkage (Req 3.4):** the action never reads a `parentId`/`parent_id` from `formData`, headers, or query params; `deriveParentId` uses only `getCurrentParent()`.
 - **Audit minimalism (Req 6.3):** the `audit()` call carries only `action` and `parentId` — no `name`/`email`/`message` in `detail`.
 - **Admin wiring (Req 7.1, 7.5, 8.8):** `app/(app)/admin/page.tsx` exports `dynamic = "force-dynamic"` and calls `requireAdmin()` before `getAdminMetrics()`; the inbox is a `MetricSection` card folded into the existing `MetricAccordion`; `getContactInbox()` sits in the same `Promise.allSettled` batch.
-- **Read-only inbox (Req 11.1, 11.2, 11.4):** `lib/db/contact.ts` exposes no mutating function reachable from the inbox path; `ContactInboxCard` renders no mark-read/archive/reply control and triggers no outbound email/push/SMS.
-- **No new infrastructure (Req 4.5):** the rate limit is a `SELECT COUNT(*)` over `contact_messages`; no new service, queue, or store is introduced.
+- **Single permitted mutation (Req 11.10, 11.2):** `lib/db/contact.ts` exposes exactly one mutating function reachable from the inbox path — `acknowledgeContactMessage` — whose statement is a lone `UPDATE contact_messages SET status='seen' WHERE id=:id AND status='new'` (named bind, the `AND status='new'` guard present, only `status` written); there is no reply/archive/delete function, and `ContactMessageList` renders only the "Mark as seen" control.
+- **Inbox selects status (Req 11.1):** `CONTACT_INBOX_SQL` includes `cm.status`, and `mapContactInboxRow` copies it (via `normalizeMessageStatus`) onto `ContactInboxItem.status`.
+- **Acknowledge parameterized write (Req 11.2):** `acknowledgeContactMessage` uses only the named `:id` bind; no string interpolation of the id into SQL.
+- **Acknowledge guards itself (Req 11.5):** `acknowledgeContactAction` calls `requireAdmin()` as its first statement, before `parseContactId` and before any DB call; it lives under `app/(app)/admin/` and is separate from the public `app/contact/actions.ts`.
+- **No new infrastructure / no migration (Req 4.5, v2):** the rate limit is a `SELECT COUNT(*)` over `contact_messages`; the acknowledge is a status `UPDATE` on the existing `status` column — no new service, table, or migration is introduced.
 - **Footer link (Req 1.1):** `marketing-footer.tsx` includes a link to `/contact` labelled "Contact us".
 - **Logged-out reachability (Req 1.4):** `app/contact/page.tsx` lives outside the `(app)`/`(auth)` route groups and invokes no guard; `getCurrentParent()` is used only to prefill and tolerates `null`.
 
 ### Why not property-test everything
 
-The reused `requireAdmin()` guard (Req 7.x) is already property-tested in the admin-dashboard spec and is exercised here only structurally and by one example. The FK erasure behavior (Req 3.5, 10.5) and the join shape (Req 8.2) are Aurora/engine behavior best pinned by a seeded integration example, not a 100-iteration loop. The HTML-escaping guarantee (Req 9.1) is a React framework default, asserted by one example payload plus the structural "no `dangerouslySetInnerHTML`" check. What the property suite verifies deterministically in-memory is exactly the feature's own decision logic — the validation bounds, the anti-abuse gates, the linkage rule, the sender-context mapping, the ordering/bound, the PII firewall, the SELECT-only discipline, and per-section resilience.
+The reused `requireAdmin()` guard (Req 7.x, and the Acknowledge_Action's self-guard at Req 11.5/11.6) is already property-tested in the admin-dashboard spec and is exercised here only structurally and by one example. The FK erasure behavior (Req 3.5, 10.5) and the join shape (Req 8.2) are Aurora/engine behavior best pinned by a seeded integration example, not a 100-iteration loop. The HTML-escaping guarantee (Req 9.1) and the expandable-row/unread-styling/acknowledge-control UI (Req 12.x) are React rendering/interaction, asserted by example/RTL tests plus the structural "no `dangerouslySetInnerHTML`" check. The best-effort audit (Req 11.8/11.9) and the `revalidatePath` refresh (Req 12.6) are side effects pinned by example. What the property suite verifies deterministically in-memory is exactly the feature's own decision logic — the validation bounds, the anti-abuse gates, the linkage rule, the sender-context mapping, the ordering/bound, the PII firewall, the SELECT-only discipline, per-section resilience, and (v2) the one-way/idempotent acknowledge transition, the status carry, and the acknowledge-id validation.

@@ -116,6 +116,7 @@ export interface ContactInboxRow {
   submitter_email: string
   message: string
   created_at: string
+  status: string
   parent_id: string | null
   linked_parent_email: string | null
   subscription_status: string | null
@@ -131,9 +132,17 @@ export type SenderContext =
   | { kind: "linked"; parentEmail: string; subscriptionStatus: SubscriptionStatus | "none" } // (Req 8.4, 8.6)
 
 /**
+ * The closed status union for a Contact_Message (v2 — Req 11.1). `status`
+ * describes the *message* (whether an operator has acknowledged it), not the
+ * sender, so it lives as a top-level field on `ContactInboxItem` rather than
+ * inside `SenderContext`.
+ */
+export type MessageStatus = "new" | "seen"
+
+/**
  * The inbox payload the admin card renders. The permitted set is *exactly*
- * `{ id, submitterName, submitterEmail, message, createdAt, sender }`: there is
- * no field for any forbidden attribute (Req 8.3–8.6, 10.2–10.4).
+ * `{ id, submitterName, submitterEmail, message, createdAt, status, sender }`:
+ * there is no field for any forbidden attribute (Req 8.3–8.6, 10.2–10.4, 11.1).
  */
 export interface ContactInboxItem {
   id: string
@@ -141,6 +150,7 @@ export interface ContactInboxItem {
   submitterEmail: string
   message: string
   createdAt: string
+  status: MessageStatus
   sender: SenderContext
 }
 
@@ -168,7 +178,18 @@ export function mapSenderContext(row: {
   }
 }
 
-/** Pure: project a joined row to the PII-bounded inbox payload (Req 8.3–8.6, 10.2–10.4). */
+/**
+ * Pure: coerce a raw DB status into the closed `MessageStatus` union. Returns
+ * `"seen"` iff the raw value is exactly `"seen"`; anything else (including
+ * `"new"`, empty, or an unrecognized value) is treated as `"new"`. This is a
+ * fail-safe coercion — an unknown status is shown as unread rather than silently
+ * dropped or invented (Req 11.1).
+ */
+export function normalizeMessageStatus(raw: unknown): MessageStatus {
+  return raw === "seen" ? "seen" : "new"
+}
+
+/** Pure: project a joined row to the PII-bounded inbox payload (Req 8.3–8.6, 10.2–10.4, 11.1). */
 export function mapContactInboxRow(row: ContactInboxRow): ContactInboxItem {
   return {
     id: row.id,
@@ -176,6 +197,7 @@ export function mapContactInboxRow(row: ContactInboxRow): ContactInboxItem {
     submitterEmail: row.submitter_email,
     message: row.message,
     createdAt: row.created_at,
+    status: normalizeMessageStatus(row.status),
     sender: mapSenderContext(row),
   }
 }
@@ -280,6 +302,7 @@ export const CONTACT_INBOX_SQL = `
          cm.email       AS submitter_email,
          cm.message,
          cm.created_at,
+         cm.status      AS status,
          cm.parent_id,
          p.email        AS linked_parent_email,
          s.status       AS subscription_status
@@ -314,4 +337,46 @@ export async function readSourceIp(): Promise<string | null> {
   if (!xff) return null
   const first = xff.split(",")[0]?.trim()
   return first && first.length > 0 ? first : null
+}
+
+// ---- Message-status helpers and the guarded one-way acknowledge write (v2 — Req 11) ----
+
+/**
+ * Pure: the one-way acknowledge transition. Acknowledging always advances to
+ * `"seen"` — `new` becomes `seen` and `seen` stays `seen`. It is total and
+ * constant over the closed union, modelling the SQL guard's behavior: one-way
+ * (never returns `"new"` once acknowledged) and idempotent
+ * (`nextStatusOnAcknowledge(nextStatusOnAcknowledge(s)) === nextStatusOnAcknowledge(s)`)
+ * (Req 11.2–11.4).
+ */
+export function nextStatusOnAcknowledge(current: MessageStatus): MessageStatus {
+  return "seen"
+}
+
+/** Zod: a supplied message id must be a non-empty trimmed string (Req 11.7). */
+export const ContactId_Schema = z.string().trim().min(1, "A message id is required.")
+
+/**
+ * Pure: parse/validate a raw message id before any SQL. Returns the trimmed id on
+ * success, or a descriptive error on a missing/blank/non-string value (Req 11.7).
+ */
+export function parseContactId(raw: unknown): { ok: true; id: string } | { ok: false; error: string } {
+  const parsed = ContactId_Schema.safeParse(raw)
+  return parsed.success
+    ? { ok: true, id: parsed.data }
+    : { ok: false, error: parsed.error.issues[0]?.message ?? "Invalid message id." }
+}
+
+/**
+ * The single, one-way status write — the only mutation the admin surface
+ * performs. A lone parameterized `UPDATE` whose `AND status = 'new'` guard is
+ * load-bearing:
+ *   • one-way — a `seen` row matches zero rows, so it can never revert to `new` (Req 11.3);
+ *   • idempotent — re-acknowledging a `seen` (or unknown) id updates 0 rows, a silent no-op (Req 11.4).
+ * Only `status` is written, set to the literal `'seen'`; `:id` is bound, never
+ * interpolated. This function performs no authorization — the Acknowledge_Action
+ * guards itself with `requireAdmin()` (Req 11.2).
+ */
+export async function acknowledgeContactMessage(id: string): Promise<void> {
+  await query("UPDATE contact_messages SET status = 'seen' WHERE id = :id AND status = 'new'", { id })
 }

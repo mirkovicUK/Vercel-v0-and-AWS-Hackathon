@@ -6,7 +6,11 @@ Parent Contact Inbox adds a public **"Contact us"** channel to ApexMaths plus an
 
 The public submission endpoint is **unauthenticated and write-capable**, so anti-abuse is a first-class requirement: bounded-length validation via the app's existing Zod conventions, a rate-limit throttle window (per-email and/or per-IP) plus a honeypot field, untrusted-text handling (safe escaping in the admin view, no injection/XSS), and parent linkage derived **only** from the verified server-side session (never a client-supplied id).
 
-The admin inbox reuses already-shipped platform patterns: the `requireAdmin()` guard (fail-closed, HTTP 404), the RDS Data API `SELECT`-only query helpers (`lib/aws/rds-data.ts`), the existing append-only audit log (`lib/db/audit.ts`), and the existing `MetricSection` collapsible-card pattern in the admin dashboard. The inbox is **read-only in v1**: it displays messages and sender context only. Triage mutations (mark read/archived, reply), outbound email/notifications, and spam-scoring beyond the basic rate-limit + honeypot + validation are explicitly out of scope for v1.
+The admin inbox reuses already-shipped platform patterns: the `requireAdmin()` guard (fail-closed, HTTP 404), the RDS Data API query helpers (`lib/aws/rds-data.ts`), the existing append-only audit log (`lib/db/audit.ts`), and the existing `MetricSection` collapsible-card pattern in the admin dashboard. Outbound email/notifications, reply/outbound contact, and spam-scoring beyond the basic rate-limit + honeypot + validation remain explicitly out of scope.
+
+### v2 amendment: a single one-way admin status transition
+
+v2 introduces a single, one-way admin status transition (`new` → `seen`) so operators can track which messages they have handled. As a result the inbox is **no longer strictly read-only**: it now permits exactly this one mutation and no other. The `contact_messages.status` column already exists (`TEXT NOT NULL DEFAULT 'new'`), so **no database migration is required**; the only data-layer change is that the inbox query must now also select `status`. The acknowledgement is performed by an Admin-only server action (the Acknowledge_Action) that transitions a single message from `new` to `seen` and is idempotent. Reply, outbound email/notifications, archive, and delete remain out of scope.
 
 ### Deliberate, documented PII collection
 
@@ -15,12 +19,15 @@ The contact form **deliberately collects contact PII** — a submitter name, ema
 ### Out of scope for v1
 
 - Outbound email, auto-reply, or any notification triggered by a submission.
-- Admin triage mutations: mark read/archived, reply, or any change to `contact_messages.status`.
+- Admin triage mutations other than the single one-way `new` → `seen` acknowledgement introduced in v2: reply, archive, delete, or any other change to `contact_messages.status`.
 - Spam-scoring or reputation systems beyond the basic rate-limit window, honeypot, and input validation.
 
 ## Glossary
 
 - **Contact_Message**: A row in the new `contact_messages` table representing one public contact submission.
+- **Message_Status**: The value of the `contact_messages.status` column for a Contact_Message, one of `new` or `seen`, defaulting to `new`.
+- **Acknowledge_Action**: The Admin-only server action that transitions a single Contact_Message from `new` to `seen` by updating its Message_Status.
+- **Unread**: The state of a Contact_Message whose Message_Status is `new`.
 - **Contact_Messages_Table**: The new Aurora PostgreSQL table `contact_messages` with columns: `id` TEXT PRIMARY KEY (`gen_random_uuid()::text`), `parent_id` TEXT NULL REFERENCES `parents(id)` ON DELETE SET NULL, `name` TEXT, `email` TEXT, `message` TEXT (length-bounded), `status` TEXT NOT NULL DEFAULT `'new'`, `created_at` TIMESTAMPTZ NOT NULL DEFAULT `now()`.
 - **Contact_Form**: The public, server-rendered page hosting the contact submission form, reachable from the Marketing_Footer.
 - **Marketing_Footer**: The existing footer component `components/marketing/marketing-footer.tsx`.
@@ -170,13 +177,33 @@ The contact form **deliberately collects contact PII** — a submitter name, ema
 4. THE Contact_Inbox SHALL NOT display any Child_PII.
 5. WHEN a Parent is deleted, THE Contact_Messages_Table SHALL de-attribute that Parent's messages by setting `parent_id` to null while retaining the stored free-text, consistent with the documented erasure behavior.
 
-### Requirement 11: Read-only inbox operation in v1
+### Requirement 11: Message status lifecycle and acknowledgement
 
-**User Story:** As a product owner, I want the v1 inbox to be strictly read-only, so that there is no risk of operators mutating message state or triggering outbound contact from the dashboard.
+**User Story:** As an Admin, I want to acknowledge a contact message so its status moves from `new` to `seen`, so that I can track which messages I have already handled.
 
 #### Acceptance Criteria
 
-1. THE Inbox_Service SHALL issue only read-only `SELECT` statements against Aurora via the RDS_Data_Helpers AND SHALL NOT issue any `INSERT`, `UPDATE`, `DELETE`, `MERGE`, `UPSERT`, or data-definition (DDL) statement against `contact_messages`.
-2. THE Contact_Inbox SHALL NOT present any control that marks a Contact_Message as read or archived, replies to a Contact_Message, or otherwise mutates `contact_messages.status`.
-3. WHEN an Admin loads or interacts with the Contact_Inbox, THE Contact_Messages_Table SHALL leave every existing Contact_Message row unchanged.
-4. THE Contact_Inbox SHALL NOT trigger any outbound email, push notification, SMS, or other outbound message to any Visitor or Parent.
+1. WHEN the Inbox_Service retrieves Contact_Messages for the Contact_Inbox, THE Inbox_Service SHALL also select the `status` column AND the returned payload SHALL carry the Message_Status for each Contact_Message.
+2. WHEN the Acknowledge_Action is invoked for a Contact_Message whose Message_Status is `new`, THE Acknowledge_Action SHALL transition that Contact_Message to `seen` via a single parameterized `UPDATE` of `contact_messages.status` for the given message id using the RDS_Data_Helpers.
+3. THE Acknowledge_Action SHALL treat the transition as one-way and SHALL NOT change a Contact_Message whose Message_Status is `seen` back to `new`.
+4. WHEN the Acknowledge_Action is invoked for a Contact_Message whose Message_Status is already `seen`, THE Acknowledge_Action SHALL complete as a no-op that leaves the Message_Status as `seen` and SHALL NOT return an error (idempotent).
+5. WHEN the Acknowledge_Action is invoked, THE Acknowledge_Action SHALL invoke the Admin_Guard independently and obtain an authorized decision before reading or mutating any Contact_Message, because the Acknowledge_Action is an independently-invocable server action and is not protected merely by any page-level guard.
+6. IF the Admin_Guard denies access to the Acknowledge_Action, THEN THE system SHALL return HTTP status 404 AND THE Acknowledge_Action SHALL NOT mutate any `contact_messages` row.
+7. WHEN the Acknowledge_Action receives a supplied message id, THE Acknowledge_Action SHALL validate and parse that message id before issuing the `UPDATE`, AND IF the supplied message id is missing or invalid, THEN THE Acknowledge_Action SHALL reject the request with a validation error and SHALL NOT mutate any `contact_messages` row.
+8. WHEN the Acknowledge_Action transitions a Contact_Message to `seen`, THE Acknowledge_Action SHALL record an Audit_Log entry for the acknowledgement (action `contact.acknowledged`) on a best-effort basis.
+9. IF writing the acknowledgement Audit_Log entry fails, THEN THE Acknowledge_Action SHALL retain the `new` → `seen` status change and SHALL NOT undo the status change.
+10. THE Contact_Inbox SHALL NOT provide any reply, archive, delete, or outbound-message control AND the only permitted mutation of `contact_messages` from the Contact_Inbox SHALL be the `new` → `seen` transition performed by the Acknowledge_Action.
+
+### Requirement 12: Expandable inbox presentation and acknowledgement controls
+
+**User Story:** As an Admin, I want each message to be individually expandable with a clear unread indicator and an acknowledge control, so that I can scan, read, and mark messages as seen efficiently.
+
+#### Acceptance Criteria
+
+1. THE Contact_Inbox SHALL render each Contact_Message as an individually expandable and collapsible item.
+2. WHILE a Contact_Message item is collapsed, THE Contact_Inbox SHALL display a compact summary comprising the submitter `name`, the `created_at` date, the submitter `email`, and the Sender_Context line.
+3. WHILE a Contact_Message item is expanded, THE Contact_Inbox SHALL reveal the full `message` text.
+4. WHILE a Contact_Message item is expanded AND the Contact_Message is Unread, THE Contact_Inbox SHALL present an acknowledge control that invokes the Acknowledge_Action for that Contact_Message.
+5. THE Contact_Inbox SHALL visually distinguish Unread Contact_Messages from `seen` Contact_Messages using distinct styling.
+6. WHEN an Admin acknowledges a Contact_Message, THE Contact_Inbox SHALL reflect the resulting `seen` state without a manual page reload (for example via revalidation).
+7. WHEN a Contact_Message has Message_Status `seen`, THE Contact_Inbox SHALL NOT offer the acknowledge control for that Contact_Message.
