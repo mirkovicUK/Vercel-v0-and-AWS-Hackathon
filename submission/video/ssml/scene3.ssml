@@ -1,0 +1,7 @@
+<speak>
+Now, the engineering. <break time="300ms"/> Apex Maths is a complete, deployable product — Cognito authentication, Stripe billing, U K G D P R compliant, and an admin dashboard that runs the whole business, all server-side on Vercel with no separate backend.
+<break time="500ms"/>
+Vercel reaches my AWS account with no static keys — through O I D C federation. <break time="250ms"/> O I D C is enabled in Vercel, the environment points at my database by A R N, and in the AWS console the role's trust policy accepts exactly that Vercel identity, scoped to this Aurora cluster. <break time="300ms"/> And that role can reach only one database user — an app-user granted create, read, update and delete, never schema ownership — so least privilege is enforced at the database itself.
+<break time="500ms"/>
+The database is Aurora Postgres — and the choice was deliberate. <break time="300ms"/> Apex Maths is relational to its core: choosing questions, rolling answers into per-topic mastery, and erasing an account as one cascading delete across ten foreign keys. <break time="250ms"/> Those are joins, aggregates, and transactions, not a single partition key. <break time="300ms"/> This dashboard query computes mastery trends with window functions live, in the engine. <break time="300ms"/> Serving one U K market, I didn't need D S Q L's multi-region writes. <break time="300ms"/> And the R D S Data A P I reaches a private database over H T T P S — no connection pool, no V P C, and no password anywhere in my code.
+</speak>
