@@ -40,3 +40,5 @@ node_modules
 # Seed data: not committed (question source + raw figures stay local).
 # The served figure copies live in public/figures/.
 data/
+# TypeScript incremental build cache (generated)
+*.tsbuildinfo
