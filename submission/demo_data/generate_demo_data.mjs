@@ -3,7 +3,7 @@
  * account (uros1311@gmail.com) so the dashboard/analytics are full for the video.
  *
  * Writes across sessions, session_answers, progress, and review_reports for the
- * three existing children (Nina ~85%, Amara ~50%, Lui ~30%) over 1–22 Jun 2026.
+ * three existing children (Nina ~85%, Amara ~50%, Lui ~30%) over 1 Jun–31 Jul 2026.
  *
  * Scoped + idempotent: clears existing sessions/progress for ONLY these three
  * child IDs, then regenerates deterministically (seeded RNG).
@@ -145,9 +145,10 @@ async function resolveChildren() {
   return CHILDREN
 }
 
-// Date window (inclusive) — 1 Jun 2026 .. 22 Jun 2026.
+// Date window (inclusive) — 1 Jun 2026 .. 31 Jul 2026. Spans the whole judging
+// period so the default 30-day mastery chart stays full on any day a judge looks.
 const START = new Date("2026-06-01T00:00:00Z")
-const END = new Date("2026-06-22T00:00:00Z")
+const END = new Date("2026-07-31T00:00:00Z")
 const DAY_MS = 86_400_000
 const TOTAL_DAYS = Math.round((END - START) / DAY_MS) + 1 // 22 (inclusive 1–22 Jun)
 
