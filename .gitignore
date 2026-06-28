@@ -42,3 +42,7 @@ node_modules
 data/
 # TypeScript incremental build cache (generated)
 *.tsbuildinfo
+
+# Local-only credentials / submission notes (never commit)
+CREDENTIALS.local.md
+*.local.md
