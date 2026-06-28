@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-064",
+  "seedQid": "q-m1-028",
+  "topic": "algebra",
+  "difficulty": 4,
+  "text": "A gardener charges £y for mowing every 50 square metres of lawn. She mows a rectangular garden that is 25 metres long and 14 metres wide. If she earns £24.50 in total for this job, what is the value of y?",
+  "options": [
+    "£2.50",
+    "£3.00",
+    "£3.50",
+    "£4.00",
+    "£4.50"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find the area of the rectangular garden.\nArea = 25 × 14 = 350 square metres.\n\nStep 2: Find how many groups of 50 square metres are in 350 square metres.\n350 ÷ 50 = 7 groups.\n\nStep 3: She earns £y for each group of 50 square metres, and she earns £24.50 total.\nSo 7 × y = £24.50.\n\nStep 4: Solve for y.\ny = £24.50 ÷ 7 = £3.50.\n\nThe answer is £3.50.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:25:51+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-101",
+  "seedQid": "q-m1-039",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 1,
+  "text": "A bag contains 10 sweets. If you eat 50% of them, how many sweets do you eat?",
+  "options": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "50% means half. To find 50% of 10, divide 10 by 2.\n10 ÷ 2 = 5.\nSo you eat 5 sweets.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:29:42+00:00"
+}

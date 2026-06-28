@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-391",
+  "seedQid": "q-m5-014",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "Sam has some stickers. He gives away 5 stickers and has 8 left. Which equation shows how many stickers Sam started with?",
+  "options": [
+    "s + 5 = 8",
+    "s - 5 = 8",
+    "s - 8 = 5",
+    "s + 8 = 5",
+    "5 - s = 8"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Sam started with s stickers. He gave away 5, so we subtract 5 from s. He has 8 left, so the result equals 8. The correct equation is s - 5 = 8. We can check: if s = 13, then 13 - 5 = 8, which is correct.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:02:41+00:00"
+}

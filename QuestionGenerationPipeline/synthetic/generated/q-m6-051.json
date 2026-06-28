@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-051",
+  "seedQid": "q-m1-026",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "A baker makes cookies in batches. He uses this rule:\n\n3 × y = 12\n\nWhat number does y stand for?",
+  "options": [
+    "2",
+    "3",
+    "4",
+    "5",
+    "6"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "We need to find the value of y in the equation 3 × y = 12.\n\nStep 1: To find y, divide both sides by 3.\n\ny = 12 ÷ 3\n\nStep 2: 12 ÷ 3 = 4\n\nSo y = 4.\n\nThe correct answer is 4.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:24:28+00:00"
+}

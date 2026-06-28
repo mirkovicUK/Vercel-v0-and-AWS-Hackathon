@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-125",
+  "answer": "D",
+  "steps": "1. Fertiliser ratio N:P:K = 5:3:2. Phosphorus used = 900 ml.\n2. Let the parts for phosphorus be 3 parts = 900 ml → 1 part = 300 ml.\n3. Total parts = 5 + 3 + 2 = 10 parts.\n4. Total fertiliser made = 10 × 300 ml = 3000 ml.\n5. Gardener gives away some in ratio gardener:neighbour = 2:3.\n   This means from the total amount given, neighbour gets 3/(2+3) = 3/5.\n6. But careful: The ratio 2:3 is for the finished fertiliser given away? The wording: 'She then gives away some of the finished fertiliser to her neighbour in the ratio 2:3 (gardener : neighbour).' This could mean she splits the finished fertiliser between herself and neighbour in ratio 2:3.\n   If so, total fertiliser = 3000 ml, split into 2+3=5 parts, each part = 600 ml.\n   Neighbour gets 3 parts = 3 × 600 ml = 1800 ml.\n7. Check options: 1800 ml is option D.\n8. Alternative interpretation: 'gives away some' might mean she gives away a portion, not necessarily all. But ratio given is gardener:neighbour = 2:3 for the portion given? That would mean she keeps 2 parts, gives neighbour 3 parts of that portion, but total fertiliser is 3000 ml, so portion given = 5 parts, neighbour gets 3/5 of portion. Without more info, the natural reading is she splits the whole fertiliser 2:3 with neighbour, using all of it. So neighbour gets 1800 ml.",
+  "inspectorDifficulty": 3,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-328",
+  "answer": "B",
+  "steps": "Sam needs £350 total and already has £50, so he still needs £350 - £50 = £300. He saves for 12 more weeks, saving £w each week, so total saved in those weeks is 12w. Set 12w = 300 → w = 300 ÷ 12 = 25. So w = £25.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-435",
+  "seedQid": "q-m5-027",
+  "topic": "number",
+  "difficulty": 5,
+  "text": "A factory produces 748 widgets per batch. The manager knows that 748 × 250 = 187,000. Using this information, work out the value of 748 × 125.",
+  "options": [
+    "93,500",
+    "94,500",
+    "93,000",
+    "96,500",
+    "87,500"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "We know that 748 × 250 = 187,000.\n\nSince 125 is exactly half of 250, we can find 748 × 125 by halving the known result:\n\n748 × 125 = 748 × (250 ÷ 2) = (748 × 250) ÷ 2 = 187,000 ÷ 2 = 93,500.\n\nTherefore the answer is 93,500.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:07:54+00:00"
+}

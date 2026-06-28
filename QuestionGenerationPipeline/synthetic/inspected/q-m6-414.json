@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-414",
+  "answer": "A",
+  "steps": "Total pupils = 240. Walk: 3/8 of 240 = (3/8)*240 = 90 pupils. Cycle: 25% of 240 = 0.25*240 = 60 pupils. Walk + cycle = 90 + 60 = 150 pupils. Travel by car = 240 - 150 = 90 pupils. Percentage by car = (90/240)*100% = (9/24)*100% = (3/8)*100% = 37.5%.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-307",
+  "seedQid": "q-m4-001",
+  "topic": "geometry",
+  "difficulty": 2,
+  "text": "A shape has exactly 2 lines of symmetry and rotational symmetry of order 2. Which of these shapes could it be?",
+  "options": [
+    "Equilateral triangle",
+    "Rectangle (not a square)",
+    "Regular pentagon",
+    "Scalene triangle",
+    "Regular hexagon"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Consider each shape and count its lines of symmetry and order of rotational symmetry.\n\nStep 2: An equilateral triangle has 3 lines of symmetry and rotational symmetry of order 3 — not a match.\n\nStep 3: A rectangle (that is not a square) has exactly 2 lines of symmetry (one horizontal, one vertical) and rotational symmetry of order 2 (it looks the same after a half turn). This matches!\n\nStep 4: A regular pentagon has 5 lines of symmetry and rotational symmetry of order 5 — not a match.\n\nStep 5: A scalene triangle has 0 lines of symmetry and rotational symmetry of order 1 — not a match.\n\nStep 6: A regular hexagon has 6 lines of symmetry and rotational symmetry of order 6 — not a match.\n\nThe answer is a rectangle (not a square).",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:52:48+00:00"
+}

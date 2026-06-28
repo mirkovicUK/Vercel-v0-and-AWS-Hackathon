@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-400",
+  "answer": "B) 480 litres",
+  "steps": "1. Convert all dimensions to cm for consistent volume calculation in cm³ (since 1 litre = 1000 cm³).\n   Length = 1.2 m = 1.2 × 100 = 120 cm.\n   Width = 80 cm.\n   Height = 50 cm.\n2. Calculate volume in cm³: Volume = length × width × height = 120 cm × 80 cm × 50 cm.\n   First, 120 × 80 = 9600.\n   Then, 9600 × 50 = 480,000 cm³.\n3. Convert cm³ to litres: Divide by 1000: 480,000 ÷ 1000 = 480 litres.\n4. Check options: Option B matches 480 litres.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-561",
+  "answer": "B",
+  "steps": "The pattern given: Monday 10, Tuesday 20, Wednesday 30. This is an arithmetic sequence increasing by 10 each day. So Thursday = Wednesday + 10 = 30 + 10 = 40.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

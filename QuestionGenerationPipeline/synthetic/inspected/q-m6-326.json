@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-326",
+  "answer": "B) 7 weeks",
+  "steps": "Total cost = £100. Already saved = £30. Remaining needed = £100 - £30 = £70. Weekly saving = £10. Weeks needed = £70 ÷ £10 = 7 weeks.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

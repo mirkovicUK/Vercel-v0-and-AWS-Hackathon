@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-043",
+  "seedQid": "q-m1-019",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A family-sized bottle of lemonade holds about 2 litres. How many millilitres is this?",
+  "options": [
+    "200 ml",
+    "500 ml",
+    "1000 ml",
+    "2000 ml",
+    "20000 ml"
+  ],
+  "correctIndex": 3,
+  "generatorSolution": "To convert litres to millilitres, we multiply by 1000.\n\nStep 1: Recall that 1 litre = 1000 millilitres.\nStep 2: Calculate 2 litres × 1000 = 2000 millilitres.\n\nTherefore, 2 litres = 2000 ml, which is option D.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:23:32+00:00"
+}

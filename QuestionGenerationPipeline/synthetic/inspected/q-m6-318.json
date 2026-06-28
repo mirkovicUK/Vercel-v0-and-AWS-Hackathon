@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-318",
+  "answer": "C",
+  "steps": "Recipe for 4 people uses 300 g flour. For 6 people, scaling factor = 6 / 4 = 1.5. Flour needed = 300 g × 1.5 = 450 g.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-258",
+  "answer": "C",
+  "steps": "Multiply each number of books by its frequency and sum: (0*3) + (1*5) + (2*8) + (3*6) + (4*4) + (5*2) = 0 + 5 + 16 + 18 + 16 + 10 = 65.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

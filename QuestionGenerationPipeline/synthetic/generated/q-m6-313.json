@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-313",
+  "seedQid": "q-m4-004",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "A pet shop has a total of 150 fish split between two tanks. Tank A contains 22 more fish than Tank B. How many fish are in Tank A?",
+  "options": [
+    "64",
+    "76",
+    "86",
+    "88",
+    "96"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Let the number of fish in Tank B = x. Then Tank A = x + 22. Together they total 150, so: x + (x + 22) = 150. This gives 2x + 22 = 150. Subtract 22 from both sides: 2x = 128. Divide both sides by 2: x = 64. So Tank B has 64 fish and Tank A has 64 + 22 = 86 fish.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:53:45+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-277",
+  "seedQid": "q-m3-013",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "Mia goes swimming every weekday (Monday to Friday). Each session lasts 45 minutes. If t stands for the total number of minutes she swims in one week, which equation is correct and what is the value of t?",
+  "options": [
+    "t = 5 × 45 = 225 minutes",
+    "t = 4 × 45 = 180 minutes",
+    "t = 5 × 40 = 200 minutes",
+    "t = 7 × 45 = 315 minutes",
+    "t = 5 × 45 = 250 minutes"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Identify how many days Mia swims. She swims every weekday, which is Monday to Friday = 5 days.\nStep 2: Each session lasts 45 minutes.\nStep 3: Write the equation: t = 5 × 45\nStep 4: Calculate: 5 × 45 = 225 minutes.\nTherefore t = 225 minutes, which matches option A.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:49:07+00:00"
+}

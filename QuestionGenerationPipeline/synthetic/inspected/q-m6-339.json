@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-339",
+  "answer": "B",
+  "steps": "Let the four consecutive even numbers be n, n+2, n+4, n+6. Their sum is n + (n+2) + (n+4) + (n+6) = 4n + 12. Given sum = 84, so 4n + 12 = 84 → 4n = 72 → n = 18. Check: 18 + 20 + 22 + 24 = 84. Smallest label is 18.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

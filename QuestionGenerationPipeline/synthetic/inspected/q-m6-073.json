@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-073",
+  "answer": "C",
+  "steps": "Let n be the initial number of books. The student borrows 3/4 of them, so books borrowed = (3/4)n. Books left on shelf = n - (3/4)n = (1/4)n. Then the student returns 5 books, so books on shelf become (1/4)n + 5. This equals 17. So (1/4)n + 5 = 17. Subtract 5: (1/4)n = 12. Multiply by 4: n = 48. Check: 48 books initially, borrow 3/4 = 36, left 12, return 5 gives 17. Correct.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-448",
+  "answer": "A) 330 m",
+  "steps": "1. Convert length from km to metres: 0.12 km = 0.12 × 1000 = 120 m.\n2. Convert width from cm to metres: 4500 cm = 4500 ÷ 100 = 45 m.\n3. Perimeter of rectangle = 2 × (length + width) = 2 × (120 m + 45 m) = 2 × 165 m = 330 m.\n4. Check options: A) 330 m matches exactly. B) 150 m is half the perimeter. C) 330 cm is wrong unit. D) 5400 m is far too large. E) 114 m is not correct.\n5. Only A matches the calculated perimeter with correct unit.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

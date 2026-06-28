@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-524",
+  "answer": "A",
+  "steps": "1. Write 'one million, forty-seven thousand and eight hundred' in numerals: one million = 1,000,000; forty-seven thousand = 47,000; eight hundred = 800. So total = 1,000,000 + 47,000 + 800 = 1,047,800.\n2. The other number is 985,600.\n3. Find the difference: 1,047,800 - 985,600.\n4. Subtract step by step: 1,047,800 - 985,600 = (1,047,800 - 985,000) - 600 = 62,800 - 600 = 62,200.\n5. Alternatively, align vertically: 1,047,800 - 985,600 = 62,200.\n6. Check options: 62,200 matches option A.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

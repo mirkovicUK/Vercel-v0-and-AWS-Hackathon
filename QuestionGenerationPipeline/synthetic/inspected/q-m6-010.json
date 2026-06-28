@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-010",
+  "answer": "A",
+  "steps": "The number is 4,304,042. Write it without commas: 4304042. Identify the positions of each digit 4 from left to right:\n1st digit from left: 4 in the millions place → value = 4 × 1,000,000 = 4,000,000.\n3rd digit from left: 4 in the ten-thousands place → value = 4 × 10,000 = 40,000.\n5th digit from left: 4 in the tens place → value = 4 × 10 = 40.\nSum = 4,000,000 + 40,000 + 40 = 4,040,040.\nCheck options: A) 4,004,040, B) 4,004,004, C) 4,400,040, D) 4,004,042, E) 4,040,004.\nNone match 4,040,040 exactly. Re-examine number: 4,304,042 → digits: 4 (millions), 3 (hundred-thousands), 0 (ten-thousands), 4 (thousands), 0 (hundreds), 4 (tens), 2 (ones). Wait: digit positions in full: millions: 4 (value 4,000,000), hundred-thousands: 3, ten-thousands: 0, thousands: 4 (value 4,000), hundreds: 0, tens: 4 (value 40), ones: 2. So three 4s: at millions (4,000,000), thousands (4,000), tens (40). Sum = 4,000,000 + 4,000 + 40 = 4,004,040. That matches option A exactly. So answer is A.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

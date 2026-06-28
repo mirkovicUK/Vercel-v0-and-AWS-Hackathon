@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-411",
+  "seedQid": "q-m5-019",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 1,
+  "text": "A baker makes 20 cupcakes. He gives away 1/2 of them. How many cupcakes does he give away?",
+  "options": [
+    "5",
+    "8",
+    "10",
+    "12",
+    "15"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "To find 1/2 of 20, divide 20 by 2.\n20 ÷ 2 = 10.\nSo the baker gives away 10 cupcakes.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:05:34+00:00"
+}

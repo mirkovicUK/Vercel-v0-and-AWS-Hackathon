@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-528",
+  "answer": "A",
+  "steps": "First, write the amounts in figures.\nFirst year: 'three million, two hundred and five thousand and eighteen' = 3,000,000 + 205,000 + 18 = 3,205,018.\nSecond year: 'one million, eight hundred and sixty thousand and ninety-four' = 1,000,000 + 860,000 + 94 = 1,860,094.\nNow add: 3,205,018 + 1,860,094.\nStep 1: Units: 8 + 4 = 12, write 2, carry 1.\nStep 2: Tens: 1 + 1 + 9 = 11, write 1, carry 1.\nStep 3: Hundreds: 1 + 0 + 0 = 1, write 1.\nStep 4: Thousands: 5 + 0 = 5, write 5.\nStep 5: Ten thousands: 0 + 6 = 6, write 6.\nStep 6: Hundred thousands: 2 + 8 = 10, write 0, carry 1.\nStep 7: Millions: 3 + 1 + 1 = 5, write 5.\nResult: 5,065,112.\nCheck options: A) 5,065,112 matches.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-259",
+  "seedQid": "q-m2-047",
+  "topic": "data_handling",
+  "difficulty": 4,
+  "text": "A school recorded the number of books read by pupils in Year 6 over one term. The results are shown in this table:\n\nBooks read: 0–2 → 5 pupils\nBooks read: 3–5 → 8 pupils\nBooks read: 6–8 → 12 pupils\nBooks read: 9–11 → 7 pupils\nBooks read: 12–14 → 3 pupils\n\nThe headteacher says: 'To find the estimated total number of books read by all pupils, you multiply the middle value of each group by the number of pupils in that group, then add all the results together.'\n\nUsing the headteacher's method, which of the following statements is NOT correct?",
+  "options": [
+    "The middle value of the 3–5 group is 4",
+    "The 6–8 group contributes an estimated 84 books to the total",
+    "The estimated total number of books read by all pupils is 215",
+    "The 9–11 group contributes an estimated 70 books to the total",
+    "There are 35 pupils in total"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find the middle value of each group:\n0–2 → middle value = 1\n3–5 → middle value = 4\n6–8 → middle value = 7\n9–11 → middle value = 10\n12–14 → middle value = 13\n\nStep 2: Multiply each middle value by the number of pupils:\n1 × 5 = 5\n4 × 8 = 32\n7 × 12 = 84\n10 × 7 = 70\n13 × 3 = 39\n\nStep 3: Add all the results together:\n5 + 32 + 84 + 70 + 39 = 230\n\nStep 4: Check each statement:\n- 'The middle value of the 3–5 group is 4' → Correct (3+5)÷2 = 4\n- 'The 6–8 group contributes an estimated 84 books' → Correct (7 × 12 = 84)\n- 'The estimated total number of books read by all pupils is 215' → INCORRECT (the correct total is 230)\n- 'The 9–11 group contributes an estimated 70 books' → Correct (10 × 7 = 70)\n- 'There are 35 pupils in total' → Correct (5 + 8 + 12 + 7 + 3 = 35)\n\nThe statement that is NOT correct is that the estimated total is 215. The correct estimated total is 230.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:46:52+00:00"
+}

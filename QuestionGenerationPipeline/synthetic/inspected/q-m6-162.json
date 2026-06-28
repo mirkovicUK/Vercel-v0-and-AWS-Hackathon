@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-162",
+  "answer": "34",
+  "steps": "1. The number is a two-digit even number. 2. The sum of its digits is 7. 3. It is greater than 30 and less than 50, so it must be between 31 and 49 inclusive, and even. 4. Possible two-digit even numbers between 30 and 50: 32, 34, 36, 38, 40, 42, 44, 46, 48. 5. Check digit sums: 3+2=5, 3+4=7, 3+6=9, 3+8=11, 4+0=4, 4+2=6, 4+4=8, 4+6=10, 4+8=12. 6. Only 34 has digit sum 7. 7. Check options: A) 34 fits all conditions. B) 42 digit sum is 6, not 7. C) 52 is greater than 50, not allowed. D) 16 is less than 30, not allowed. E) 44 digit sum is 8, not 7. 8. Therefore, only 34 is correct.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

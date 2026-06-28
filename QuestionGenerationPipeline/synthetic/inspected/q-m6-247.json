@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-247",
+  "answer": "C",
+  "steps": "2.3 means 2 and 3 tenths. As a decimal, 2.3 = 2 + 0.3. 0.3 = 3/10. So 2.3 = 2 3/10. Check options: A) 2 1/3 ≈ 2.333..., B) 2 3/100 = 2.03, C) 2 3/10 = 2.3, D) 23/100 = 0.23, E) 2 1/10 = 2.1. Only C equals 2.3 exactly.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

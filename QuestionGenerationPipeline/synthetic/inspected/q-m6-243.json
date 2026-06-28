@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-243",
+  "answer": "C",
+  "steps": "The sum of interior angles of a polygon with n sides is (n-2) × 180°. For a hexagon, n = 6, so sum = (6-2) × 180° = 4 × 180° = 720°. In a regular hexagon, all interior angles are equal, so each interior angle = 720° ÷ 6 = 120°.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

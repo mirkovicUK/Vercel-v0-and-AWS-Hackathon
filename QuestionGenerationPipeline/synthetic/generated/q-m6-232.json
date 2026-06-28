@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-232",
+  "seedQid": "q-m2-038",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A baker makes cookies using this rule: the number of cookies equals 4 times the number of trays plus 2 extra cookies. He uses the letter t to stand for the number of trays. If he bakes 3 trays of cookies, how many cookies does he make in total?",
+  "options": [
+    "10",
+    "12",
+    "14",
+    "16",
+    "18"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Write the rule as an expression. The number of cookies = 4 × t + 2.\nStep 2: Substitute t = 3 into the expression: 4 × 3 + 2.\nStep 3: Work out the multiplication first: 4 × 3 = 12.\nStep 4: Then add 2: 12 + 2 = 14.\nSo the baker makes 14 cookies in total.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:43:43+00:00"
+}

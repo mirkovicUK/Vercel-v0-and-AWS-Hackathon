@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-466",
+  "seedQid": "q-m5-036",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 1,
+  "text": "A ribbon is 50 cm long. What is this length in metres, written as a decimal?",
+  "options": [
+    "0.05 m",
+    "0.5 m",
+    "5.0 m",
+    "50.0 m",
+    "0.005 m"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "There are 100 cm in 1 metre. To convert centimetres to metres, divide by 100.\n\n50 ÷ 100 = 0.5\n\nSo 50 cm = 0.5 m.\n\nThe correct answer is 0.5 m.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:11:24+00:00"
+}

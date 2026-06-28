@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-223",
+  "seedQid": "q-m2-033",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "A baker uses the same number of eggs, y, in every cake he makes. He baked 4 cakes and used 48 eggs in total. How many eggs would he need to bake 5 cakes?",
+  "options": [
+    "48",
+    "52",
+    "56",
+    "60",
+    "64"
+  ],
+  "correctIndex": 3,
+  "generatorSolution": "Step 1: Write the equation for the total eggs used: 4 × y = 48.\nStep 2: Solve for y by dividing both sides by 4: y = 48 ÷ 4 = 12. So each cake uses 12 eggs.\nStep 3: Find how many eggs are needed for 5 cakes: 5 × 12 = 60.\nThe answer is 60.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:42:57+00:00"
+}

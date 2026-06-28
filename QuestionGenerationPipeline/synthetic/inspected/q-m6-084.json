@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-084",
+  "answer": "C",
+  "steps": "Let total flour needed = x kg. 55% of x = 2.75 kg. So 0.55x = 2.75. Divide both sides by 0.55: x = 2.75 / 0.55 = 275 / 55 = 5. Therefore total flour needed = 5 kg.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

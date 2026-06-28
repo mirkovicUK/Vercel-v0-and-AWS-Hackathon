@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-272",
+  "seedQid": "q-m3-011",
+  "topic": "number",
+  "difficulty": 2,
+  "text": "A school library has 45,672 books. They receive a delivery of 1,000 more books. How many books does the library have now?",
+  "options": [
+    "45,772",
+    "46,672",
+    "55,672",
+    "46,672",
+    "45,682"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Start with the number of books the library already has: 45,672.\nStep 2: Add 1,000 to this number.\nStep 3: Adding 1,000 means the thousands digit increases by 1: 45,672 + 1,000 = 46,672.\nThe correct answer is 46,672.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:48:38+00:00"
+}

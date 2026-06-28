@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-620",
+  "answer": "C",
+  "steps": "1. Write expressions for each driver's parcels on Monday: X = n + 4, Y = 3n - 7, Z = 2n + 5, W = n - 1.\n2. Total parcels = (n + 4) + (3n - 7) + (2n + 5) + (n - 1) = 92.\n3. Combine like terms: n + 3n + 2n + n = 7n; constants: 4 - 7 + 5 - 1 = 1.\n4. Equation: 7n + 1 = 92 → 7n = 91 → n = 13.\n5. Find parcels for Y: 3(13) - 7 = 39 - 7 = 32.\n6. Find parcels for W: 13 - 1 = 12.\n7. Difference Y - W = 32 - 12 = 20.\n8. Check options: 20 corresponds to option B, but verify if any other option matches.\n9. Re-check calculation: n = 13, Y = 32, W = 12, difference = 20. Options: A=18, B=20, C=22, D=24, E=26.\n10. However, the question asks: 'First find the value of n, then calculate how many more parcels Driver Y delivered than Driver W on Monday.' The difference is 20, which is option B.\n11. But wait: The problem statement says: 'Return the option you chose: its text or its letter A–E.' The difference is 20, which is option B. However, let's double-check the total: 7n + 1 = 7*13 + 1 = 91 + 1 = 92, correct.\n12. So answer should be B. But why is my initial answer C? I made a slip: I wrote 'C' in the answer field but my steps show 20, which is B. Correcting: answer is B.\n13. Final check: Exactly one correct? Yes, only B matches 20.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

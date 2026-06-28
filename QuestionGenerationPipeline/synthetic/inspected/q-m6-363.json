@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-363",
+  "answer": "C",
+  "steps": "The recipe for 12 cupcakes uses 300 g of sugar. First, find the sugar per cupcake: 300 g ÷ 12 = 25 g per cupcake. For 20 cupcakes, multiply: 20 × 25 g = 500 g. Therefore, Sam needs 500 g of sugar.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

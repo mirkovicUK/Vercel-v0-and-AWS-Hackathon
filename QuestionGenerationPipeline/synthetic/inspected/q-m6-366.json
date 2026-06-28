@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-366",
+  "answer": "D",
+  "steps": "1. One pizza cut into halves gives 2 halves.\n2. For 3 whole pizzas, each cut into halves, the total number of halves = 3 × 2 = 6.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

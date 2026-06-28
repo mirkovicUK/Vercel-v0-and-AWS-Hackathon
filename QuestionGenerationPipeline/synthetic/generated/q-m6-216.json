@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-216",
+  "seedQid": "q-m2-030",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 1,
+  "text": "A jug contains 1 litre of juice. Sam pours out half of the juice into a glass. How many millilitres of juice are left in the jug?",
+  "options": [
+    "250 ml",
+    "400 ml",
+    "500 ml",
+    "750 ml",
+    "600 ml"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Convert 1 litre to millilitres. 1 litre = 1000 ml.\nStep 2: Find half of 1000 ml. Half means ½, so 1000 ÷ 2 = 500 ml.\nStep 3: There are 500 ml of juice left in the jug.\nThe correct answer is 500 ml.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:42:14+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-587",
+  "answer": "C) 600 ml",
+  "steps": "The ratio of orange concentrate to water is 1:4. This means for every 1 part concentrate, 4 parts water are used. Sam uses 150 ml of concentrate, which is 1 part. Therefore, 1 part = 150 ml. Water is 4 parts, so water needed = 4 × 150 ml = 600 ml.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

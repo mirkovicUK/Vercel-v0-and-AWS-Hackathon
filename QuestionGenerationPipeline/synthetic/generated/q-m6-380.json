@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-380",
+  "seedQid": "q-m5-009",
+  "topic": "number",
+  "difficulty": 5,
+  "text": "A charity marathon recorded 396,472 runners across five cities. The organisers need to report this number rounded to the nearest ten thousand for a press release. They also need to find the difference between the rounded number and the actual number. What is this difference?",
+  "options": [
+    "4,472",
+    "3,528",
+    "6,472",
+    "3,472",
+    "4,528"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Identify the ten-thousands digit in 396,472. The number is 396,472, and the ten-thousands digit is 9 (in 96,472).\n\nStep 2: To round to the nearest ten thousand, look at the thousands digit, which is 6. Since 6 ≥ 5, we round up.\n\nStep 3: Rounding 396,472 to the nearest ten thousand gives 400,000 (since 396,472 rounds up past 400,000).\n\nStep 4: Find the difference between the rounded number and the actual number: 400,000 − 396,472 = 3,528.\n\nThe answer is 3,528.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:01:05+00:00"
+}

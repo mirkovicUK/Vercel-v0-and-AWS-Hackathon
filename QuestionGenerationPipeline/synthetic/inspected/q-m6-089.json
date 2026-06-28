@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-089",
+  "answer": "B",
+  "steps": "1. Weight of one full crate in kg = 12p ÷ 1000.\n2. Three full crates weigh 10.8 kg, so one crate weighs 10.8 ÷ 3 = 3.6 kg.\n3. Set up equation: 12p ÷ 1000 = 3.6.\n4. Multiply both sides by 1000: 12p = 3600.\n5. Divide both sides by 12: p = 300.\n6. Check: p = 300 grams per tile → 12 tiles = 3600 grams = 3.6 kg → 3 crates = 10.8 kg, correct.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

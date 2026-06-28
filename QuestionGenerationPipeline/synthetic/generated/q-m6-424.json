@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-424",
+  "seedQid": "q-m5-024",
+  "topic": "algebra",
+  "difficulty": 4,
+  "text": "A baker makes cupcakes in batches. Each batch uses 8 eggs. She starts the day with n eggs, sells 14 eggs to a neighbour, then uses the rest to make as many complete batches of cupcakes as possible. She manages to make exactly 11 complete batches with some eggs left over. Which of the following could be the value of n?",
+  "options": [
+    "100",
+    "103",
+    "106",
+    "112",
+    "120"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: After selling 14 eggs, the baker has (n − 14) eggs remaining.\n\nStep 2: She makes 11 complete batches using 8 eggs each, so she uses 11 × 8 = 88 eggs.\n\nStep 3: Since she has some eggs left over but not enough for another full batch, we need:\n88 ≤ n − 14 < 96\n\nStep 4: Adding 14 to all parts: 102 ≤ n < 110\n\nStep 5: Looking at the options, only 103 falls in the range 102 ≤ n < 110.\n\nCheck: 103 − 14 = 89 eggs. 89 ÷ 8 = 11 remainder 1. ✓ She makes 11 complete batches with 1 egg left over.\n\nThe answer is 103.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:06:56+00:00"
+}

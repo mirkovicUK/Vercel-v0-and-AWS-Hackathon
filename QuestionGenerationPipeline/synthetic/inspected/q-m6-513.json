@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-513",
+  "answer": "B",
+  "steps": "Forty-seven thousand = 47,000. Two hundred = 200. Nine = 9. Adding: 47,000 + 200 = 47,200; 47,200 + 9 = 47,209. Check options: A) 47,029 (incorrect), B) 47,209 (matches), C) 4,729 (too small), D) 470,209 (too large), E) 47,290 (incorrect).",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-560",
+  "seedQid": "q-m6-011",
+  "topic": "number",
+  "difficulty": 5,
+  "text": "A scientist records bacteria counts at regular intervals. The sequence of counts is: 2, 6, 18, 54, 162, ___. Each term follows the same rule. What is the next number in this sequence?",
+  "options": [
+    "324",
+    "486",
+    "216",
+    "504",
+    "648"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Identify the pattern by looking at how consecutive terms are related.\nStep 2: 6 ÷ 2 = 3, 18 ÷ 6 = 3, 54 ÷ 18 = 3, 162 ÷ 54 = 3. Each term is multiplied by 3 to get the next term.\nStep 3: This is a geometric sequence with a common ratio of 3.\nStep 4: The next term = 162 × 3 = 486.\nThe answer is 486.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:21:49+00:00"
+}

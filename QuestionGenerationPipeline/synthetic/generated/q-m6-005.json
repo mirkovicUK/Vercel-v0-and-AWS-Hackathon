@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-005",
+  "seedQid": "q-m1-001",
+  "topic": "number",
+  "difficulty": 5,
+  "text": "A spacecraft's distance computer displays numbers in a special way: it shows the digit sum of a number, then multiplies that digit sum by the original number's thousands digit, and finally adds the hundreds digit. If the spacecraft's distance is 7,482 km, what value does the computer display?",
+  "options": [
+    "155",
+    "151",
+    "148",
+    "158",
+    "145"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Identify the number: 7,482.\n\nStep 2: Find the digit sum of 7,482.\nDigit sum = 7 + 4 + 8 + 2 = 21\n\nStep 3: Identify the thousands digit of 7,482.\nThousands digit = 7\n\nStep 4: Multiply the digit sum by the thousands digit.\n21 × 7 = 147\n\nStep 5: Identify the hundreds digit of 7,482.\nHundreds digit = 4\n\nStep 6: Add the hundreds digit to the result.\n147 + 4 = 151\n\nThe computer displays 151.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-11T20:22:09+00:00"
+}

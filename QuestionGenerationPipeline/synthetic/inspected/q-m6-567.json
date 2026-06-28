@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-567",
+  "answer": "B",
+  "steps": "The sequence of stop numbers is: 8, 14, 20, 26. Differences: 14 - 8 = 6, 20 - 14 = 6, 26 - 20 = 6. So it is an arithmetic sequence with common difference 6. Next stop = 26 + 6 = 32.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

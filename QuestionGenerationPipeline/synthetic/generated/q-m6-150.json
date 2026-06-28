@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-150",
+  "seedQid": "q-m2-007",
+  "topic": "ratio_proportion",
+  "difficulty": 5,
+  "text": "A grandmother divides £360 among her three grandchildren in the ratio 2 : 3 : 7. The oldest grandchild then gives 40% of his share to a charity. How much money does the oldest grandchild have left after his donation?",
+  "options": [
+    "£126",
+    "£105",
+    "£210",
+    "£84",
+    "£150"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Find the total number of parts in the ratio. 2 + 3 + 7 = 12 parts.\n\nStep 2: Find the value of one part. £360 ÷ 12 = £30 per part.\n\nStep 3: Find the oldest grandchild's share (7 parts). 7 × £30 = £210.\n\nStep 4: Calculate 40% of £210 (the charity donation). 40% × £210 = £84.\n\nStep 5: Subtract the donation from the oldest grandchild's share. £210 − £84 = £126.\n\nThe oldest grandchild has £126 left after his donation.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:35:06+00:00"
+}

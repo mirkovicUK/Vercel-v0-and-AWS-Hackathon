@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-535",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "B",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "One 6 is in the millions place, which has a place value of 6,000,000. The sum of the place values of both 6s is 6,006,000. Therefore, the second 6 must contribute 6,000. The place with place value 6,000 is the thousands place. So the second 6 is in the thousands place. Option B (Thousands) is correct and unambiguous.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

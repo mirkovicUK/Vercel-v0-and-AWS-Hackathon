@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-085",
+  "seedQid": "q-m1-034",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 5,
+  "text": "A scientist measures the concentration of a chemical solution as 0.375 litres per litre. She needs to increase the concentration by 33⅓%. She then converts the new concentration into a fraction in its simplest form. What fraction does she get?",
+  "options": [
+    "3/8",
+    "1/2",
+    "5/8",
+    "2/5",
+    "7/16"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Convert 33⅓% to a fraction. 33⅓% = 1/3.\n\nStep 2: Find 1/3 of the original concentration. 1/3 × 0.375 = 0.125.\n\nStep 3: Add this increase to the original concentration. 0.375 + 0.125 = 0.5.\n\nStep 4: Convert 0.5 to a fraction in simplest form. 0.5 = 5/10 = 1/2.\n\nThe answer is 1/2.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:28:10+00:00"
+}

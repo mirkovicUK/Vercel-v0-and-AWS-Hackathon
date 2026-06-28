@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-033",
+  "seedQid": "q-m1-016",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "A baker has a secret recipe. She starts with a number of eggs, doubles the amount, then adds 5 more eggs. She ends up using 19 eggs in total. How many eggs did she start with?",
+  "options": [
+    "5",
+    "6",
+    "7",
+    "8",
+    "9"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Let the number of eggs the baker started with be n.\nStep 1: She doubles the amount: 2 × n = 2n\nStep 2: She adds 5 more: 2n + 5\nStep 3: This equals 19, so we write the equation: 2n + 5 = 19\nStep 4: Subtract 5 from both sides: 2n = 14\nStep 5: Divide both sides by 2: n = 7\nThe baker started with 7 eggs.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:22:36+00:00"
+}

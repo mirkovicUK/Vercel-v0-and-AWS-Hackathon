@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-305",
+  "answer": "B",
+  "steps": "Perimeter of rectangle = 2 × (length + width). Given length = 3x + 2.7, width = x + 1.45, perimeter = 40.3. So 2 × ((3x + 2.7) + (x + 1.45)) = 40.3. Simplify inside: 3x + 2.7 + x + 1.45 = 4x + 4.15. Then 2 × (4x + 4.15) = 8x + 8.3 = 40.3. Subtract 8.3: 8x = 32. Divide by 8: x = 4.0. Check options: 4.0 is option C. But verify calculation: 4x + 4.15 = 4×4 + 4.15 = 16 + 4.15 = 20.15, times 2 = 40.3. So x = 4.0. However, check if any rounding issues? The numbers are given to one decimal, so exact. But wait: 4.0 is option C. However, re-check addition: 2.7 + 1.45 = 4.15 correct. 3x + x = 4x. So 4x + 4.15 = sum. Multiply by 2: 8x + 8.3 = 40.3 → 8x = 32 → x = 4. So answer is 4.0. But is there a trick? Possibly the options include 4.0 and 4.2 etc. Let's test each option: For A) 3.5: length = 3×3.5+2.7=10.5+2.7=13.2, width=3.5+1.45=4.95, perimeter=2×(13.2+4.95)=2×18.15=36.3 ≠40.3. B) 4.2: length=3×4.2+2.7=12.6+2.7=15.3, width=4.2+1.45=5.65, perimeter=2×(15.3+5.65)=2×20.95=41.9 ≠40.3. C) 4.0: length=12+2.7=14.7, width=4+1.45=5.45, perimeter=2×(14.7+5.45)=2×20.15=40.3 correct. D) 4.5: length=13.5+2.7=16.2, width=4.5+1.45=5.95, perimeter=2×(16.2+5.95)=2×22.15=44.3 ≠40.3. E) 3.8: length=11.4+2.7=14.1, width=3.8+1.45=5.25, perimeter=2×(14.1+5.25)=2×19.35=38.7 ≠40.3. So only C gives exactly 40.3. Therefore correct option is C. Wait, but earlier I wrote answer B in JSON by mistake. Actually correct is C. Let's correct: answer is C.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": false,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

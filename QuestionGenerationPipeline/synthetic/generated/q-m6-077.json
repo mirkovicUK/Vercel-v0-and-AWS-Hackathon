@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-077",
+  "seedQid": "q-m1-032",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A baker makes the same number of cupcakes every day. If he makes c cupcakes each day, write an expression for how many cupcakes he makes in 7 days. If c = 36, how many cupcakes does he make in 7 days?",
+  "options": [
+    "216",
+    "242",
+    "252",
+    "262",
+    "272"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: The expression for the number of cupcakes in 7 days is 7 × c.\nStep 2: Substitute c = 36 into the expression: 7 × 36.\nStep 3: Calculate 7 × 36 = 252.\nTherefore, the baker makes 252 cupcakes in 7 days.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:27:18+00:00"
+}

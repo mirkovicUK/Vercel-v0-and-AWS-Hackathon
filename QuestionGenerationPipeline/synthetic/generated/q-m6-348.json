@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-348",
+  "seedQid": "q-m4-022",
+  "topic": "ratio_proportion",
+  "difficulty": 3,
+  "text": "A smoothie recipe uses 400 ml of orange juice for every 150 ml of yoghurt. Jake wants to make a smaller batch using only 200 ml of orange juice. How much yoghurt does he need?",
+  "options": [
+    "50 ml",
+    "60 ml",
+    "75 ml",
+    "100 ml",
+    "120 ml"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find the ratio of orange juice to yoghurt in the original recipe.\nOrange juice : Yoghurt = 400 ml : 150 ml\n\nStep 2: Jake is using 200 ml of orange juice, which is half of 400 ml (200 ÷ 400 = 1/2).\n\nStep 3: Since he is using half the orange juice, he needs half the yoghurt.\nYoghurt needed = 150 ÷ 2 = 75 ml\n\nThe answer is 75 ml.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:57:12+00:00"
+}

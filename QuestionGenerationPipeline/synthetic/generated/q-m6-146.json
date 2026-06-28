@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-146",
+  "seedQid": "q-m2-007",
+  "topic": "ratio_proportion",
+  "difficulty": 1,
+  "text": "A baker makes 20 cupcakes and shares them equally between 2 boxes. How many cupcakes are in each box?",
+  "options": [
+    "5",
+    "8",
+    "10",
+    "12",
+    "20"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "To share 20 cupcakes equally between 2 boxes, we divide 20 by 2.\n20 ÷ 2 = 10\nSo each box contains 10 cupcakes.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:34:48+00:00"
+}

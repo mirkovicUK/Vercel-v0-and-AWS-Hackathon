@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-082",
+  "answer": "C",
+  "steps": "Initial amount = 1.5 litres. Amount poured out = 0.75 litres. Amount left = 1.5 - 0.75 = 0.75 litres.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

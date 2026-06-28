@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-061",
+  "answer": "C",
+  "steps": "Each cupcake costs 5p. For n cupcakes, total cost = 5 × n pence. In algebra, 5 × n is written as 5n. Option A: n + 5 means adding 5 to the number of cupcakes, not multiplying. Option B: 5 + n is the same as n + 5, not correct. Option C: 5n means 5 multiplied by n, correct. Option D: n ÷ 5 means dividing n by 5, not correct. Option E: 5 - n means subtracting n from 5, not correct. Only option C matches the total cost expression.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-093",
+  "answer": "C",
+  "steps": "1. Morning cupcakes: 80.\n2. Sold 3/5 before lunch: (3/5)*80 = 48 sold, remaining = 80 - 48 = 32.\n3. After lunch, sold 25% of remaining: 25% of 32 = 0.25*32 = 8 sold.\n4. Left at end: 32 - 8 = 24.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-202",
+  "seedQid": "q-m2-027",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A rectangular picture frame has a length of n cm and a width of 3 cm. The total distance around the frame is 20 cm. What is the value of n?",
+  "options": [
+    "5 cm",
+    "6 cm",
+    "7 cm",
+    "8 cm",
+    "10 cm"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "The perimeter of a rectangle is found by adding all four sides together: n + 3 + n + 3 = 20. This simplifies to 2n + 6 = 20. Subtract 6 from both sides: 2n = 14. Divide both sides by 2: n = 7. So the length is 7 cm.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:40:50+00:00"
+}

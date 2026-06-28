@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-047",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "D",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "The percentage of red sweets is calculated as (50 / 200) * 100 = 25%. Option D corresponds to 25%, which is correct. All other options are incorrect, and the correct answer is unambiguous.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

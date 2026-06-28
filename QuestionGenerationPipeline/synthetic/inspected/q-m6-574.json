@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-574",
+  "answer": "C",
+  "steps": "The recorded depths are: 3156, 3219, 3282, ___, 3408, 3471. Differences between consecutive known readings: 3219 - 3156 = 63, 3282 - 3219 = 63, 3471 - 3408 = 63. So the submarine dives at a constant rate of 63 metres per minute. Therefore, missing depth = 3282 + 63 = 3345. Check: 3345 + 63 = 3408, which matches the next given reading.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

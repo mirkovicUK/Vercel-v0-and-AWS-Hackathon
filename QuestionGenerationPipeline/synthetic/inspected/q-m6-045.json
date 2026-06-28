@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-045",
+  "answer": "B",
+  "steps": "1. Each cycle: start with 2.5 litres = 2500 ml. Pour away 750 ml, so remaining after each pour = 2500 - 750 = 1750 ml.\n2. She repeats the process 4 times in total, meaning she does this cycle 4 times: each time she fills the 2.5-litre flask completely, then pours away 750 ml, and keeps the remaining liquid from that cycle.\n3. Total liquid collected after 4 cycles = 4 × 1750 ml = 7000 ml.\n4. Divide equally into bottles of 175 ml: number of bottles = 7000 ÷ 175.\n5. 175 × 40 = 7000, so 40 bottles can be filled completely.\n6. Check options: 40 is option B.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

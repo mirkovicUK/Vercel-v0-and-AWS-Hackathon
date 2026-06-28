@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-438",
+  "answer": "B",
+  "steps": "Rounding to 1 decimal place means looking at the hundredths digit (the second digit after the decimal point). The number is 1.867. The digit in the tenths place is 8, and the hundredths digit is 6. Since 6 is 5 or greater, we round up the tenths digit from 8 to 9. The rounded number is 1.9 cm.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

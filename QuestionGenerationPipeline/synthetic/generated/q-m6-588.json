@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-588",
+  "seedQid": "q-m6-018",
+  "topic": "ratio_proportion",
+  "difficulty": 3,
+  "text": "A smoothie recipe for 3 people uses 450 ml of milk and 6 bananas. Priya wants to make the same smoothie for 5 people. How much milk does she need?",
+  "options": [
+    "600 ml",
+    "650 ml",
+    "700 ml",
+    "750 ml",
+    "900 ml"
+  ],
+  "correctIndex": 3,
+  "generatorSolution": "Step 1: Find how much milk is needed per person.\n450 ml ÷ 3 people = 150 ml per person.\n\nStep 2: Multiply by the number of people Priya is making the smoothie for.\n150 ml × 5 = 750 ml.\n\nTherefore, Priya needs 750 ml of milk.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:24:42+00:00"
+}

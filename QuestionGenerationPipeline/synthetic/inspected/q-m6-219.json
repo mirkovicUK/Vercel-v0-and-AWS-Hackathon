@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-219",
+  "answer": "B",
+  "steps": "1. Total flour per batch = 0.75 kg.\n2. Fraction used for white rolls = 2/5, so fraction for wholemeal rolls = 1 - 2/5 = 3/5.\n3. Wholemeal flour used = 0.75 kg × (3/5) = 0.75 × 0.6 = 0.45 kg.\n4. Wholemeal flour cost per kg = £2.40.\n5. Cost of wholemeal flour for one batch = 0.45 kg × £2.40 = £1.08.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

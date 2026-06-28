@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-255",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "D",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "Working backwards from the final result 24: multiply by 2 to get 48, add 9 to get 57, divide by 3 to get 19, subtract 7 to get 12, then divide by 2 to get 6. The original number is 6, which corresponds to option D. This matches Solver 2's answer. Solver 1's answer of 3 is incorrect. The correct and unambiguous answer is D.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

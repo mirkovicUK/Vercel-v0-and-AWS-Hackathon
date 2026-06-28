@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-278",
+  "seedQid": "q-m3-013",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "A swimming pool charges £p per session. Mia swims 3 sessions per week. She also pays a weekly locker fee of £2. Write an expression for her total weekly cost in pounds, then find the total cost when p = 4.",
+  "options": [
+    "£10",
+    "£14",
+    "£12",
+    "£16",
+    "£18"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Write an expression for Mia's total weekly cost. She pays £p per session and swims 3 times, so the session cost is 3p. Adding the £2 locker fee gives: Total cost = 3p + 2.\n\nStep 2: Substitute p = 4 into the expression: 3 × 4 + 2 = 12 + 2 = 14.\n\nTherefore, Mia's total weekly cost is £14.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:49:13+00:00"
+}

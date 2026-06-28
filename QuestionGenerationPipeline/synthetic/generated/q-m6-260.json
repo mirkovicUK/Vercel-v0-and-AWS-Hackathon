@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-260",
+  "seedQid": "q-m2-047",
+  "topic": "data_handling",
+  "difficulty": 5,
+  "text": "A scientist records temperature readings every hour. She notices that the mean of her first 5 readings is 12°C. After taking a 6th reading, the mean of all 6 readings becomes 14°C. She plots all 6 readings on a bar chart and notices that exactly 3 readings are above the overall mean of 14°C, and those 3 readings are 18°C, 20°C, and one unknown reading. The remaining readings below or equal to the mean have a combined total that she can calculate. What is the 6th reading she took?",
+  "options": [
+    "22°C",
+    "24°C",
+    "26°C",
+    "28°C",
+    "30°C"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find the total of the first 5 readings. Mean of 5 readings = 12°C, so total = 5 × 12 = 60°C.\n\nStep 2: Find the total of all 6 readings. Mean of 6 readings = 14°C, so total = 6 × 14 = 84°C.\n\nStep 3: Find the 6th reading. The 6th reading = 84 - 60 = 24°C.\n\nStep 4: Verify this makes sense with the bar chart information. The 6th reading is 24°C, which is above the mean of 14°C. The three readings above the mean are 18°C, 20°C, and 24°C, which total 62°C. The remaining three readings total 84 - 62 = 22°C, and since 22 ÷ 3 ≈ 7.3°C (all below 14°C), this is consistent.\n\nThe answer is 24°C.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:47:01+00:00"
+}

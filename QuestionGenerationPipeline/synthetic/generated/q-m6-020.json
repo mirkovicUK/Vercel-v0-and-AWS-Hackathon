@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-020",
+  "seedQid": "q-m1-007",
+  "topic": "ratio_proportion",
+  "difficulty": 5,
+  "text": "A recipe for 8 people uses 360 grams of flour and 240 grams of sugar. Tom wants to make the recipe for 14 people, but he only has 500 grams of flour available. He decides to use all 500 grams of flour and adjust the sugar to keep the flour-to-sugar ratio the same as the original recipe. How many grams of sugar does Tom need?",
+  "options": [
+    "300 g",
+    "320 g",
+    "333⅓ g",
+    "420 g",
+    "500 g"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Identify the original ratio of flour to sugar. In the original recipe, flour : sugar = 360 : 240. Simplify by dividing both by 120: flour : sugar = 3 : 2.\n\nStep 2: Tom uses 500 g of flour and must keep the same ratio of 3 : 2 (flour : sugar).\n\nStep 3: Set up the proportion: 3/2 = 500/sugar.\n\nStep 4: Cross-multiply: 3 × sugar = 2 × 500 = 1000.\n\nStep 5: Solve: sugar = 1000 ÷ 3 = 333⅓ grams.\n\nNote: The information about 14 people is a red herring — since Tom is constrained by his available flour (500 g) and must maintain the ratio, the number of people doesn't directly determine the answer.\n\nThe correct answer is 333⅓ g.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-11T19:48:30+00:00"
+}

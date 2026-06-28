@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-399",
+  "answer": "A",
+  "steps": "1. Full volume of tank = length × width × height = 80 cm × 40 cm × 50 cm.\n2. Calculate: 80 × 40 = 3200 cm² (base area).\n3. Multiply by height: 3200 × 50 = 160,000 cm³ (full volume).\n4. Water fills to three-quarters of height, so water height = (3/4) × 50 cm = 37.5 cm.\n5. Volume of water = base area × water height = 3200 cm² × 37.5 cm.\n6. 3200 × 37.5 = 3200 × (75/2) = (3200 × 75) / 2 = (240,000) / 2 = 120,000 cm³.\n7. Check options: 120,000 cm³ matches option A.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

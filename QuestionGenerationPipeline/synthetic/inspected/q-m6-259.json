@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-259",
+  "answer": "C",
+  "steps": "Step 1: Identify middle values for each group.\n0–2: middle = (0+2)/2 = 1\n3–5: middle = (3+5)/2 = 4 → Option A says middle is 4, correct.\n6–8: middle = (6+8)/2 = 7\n9–11: middle = (9+11)/2 = 10\n12–14: middle = (12+14)/2 = 13.\nStep 2: Calculate estimated books per group.\n0–2: 1 × 5 = 5 books\n3–5: 4 × 8 = 32 books\n6–8: 7 × 12 = 84 books → Option B says 84, correct.\n9–11: 10 × 7 = 70 books → Option D says 70, correct.\n12–14: 13 × 3 = 39 books.\nStep 3: Sum estimated total books.\n5 + 32 + 84 + 70 + 39 = 230.\nOption C says estimated total is 215, incorrect.\nStep 4: Check total pupils.\n5 + 8 + 12 + 7 + 3 = 35 pupils → Option E says 35 pupils, correct.\nStep 5: Determine which statement is NOT correct.\nOnly option C is false.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,241 @@
+<mxfile host="app.diagrams.net" agent="ApexMaths pipeline architecture">
+  <diagram name="Question Generation Pipeline" id="qgen-pipeline-arch">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1760" pageHeight="1280" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ===================== TITLE ===================== -->
+        <mxCell id="title" parent="1" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=22;fontStyle=1;fontColor=#111111;" value="ApexMaths · Question Generation — Offline Content Pipeline &amp;nbsp;·&amp;nbsp; H0 &amp;nbsp;·&amp;nbsp; Page 2 of 2">
+          <mxGeometry x="40" y="24" width="1180" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" parent="1" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;fontColor=#555555;" value="Build-time, NOT in the request path. Three independent model families propose; deterministic code judges; a human disposes. &amp;nbsp;Bridge → output handoff/questions.json seeds the Aurora &lt;i&gt;questions&lt;/i&gt; table the live app (Page 1) reads.">
+          <mxGeometry x="40" y="58" width="1180" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== OPERATOR ===================== -->
+        <mxCell id="operator" parent="1" vertex="1" style="sketch=0;outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.users;fillColor=#232F3E;gradientColor=none;" value="">
+          <mxGeometry x="70" y="120" width="56" height="53" as="geometry" />
+        </mxCell>
+        <mxCell id="operatorLbl" parent="1" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontColor=#232F3E;" value="Engineer / Operator&#10;(runs the CLI, resumable)">
+          <mxGeometry x="40" y="178" width="120" height="34" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== INPUT SEEDS ===================== -->
+        <mxCell id="seedsIn" parent="1" vertex="1" style="shape=note;whiteSpace=wrap;html=1;size=16;fillColor=#FFF2CC;strokeColor=#D6B656;fontColor=#000000;fontSize=11;align=center;verticalAlign=middle;" value="handoff/questions.json&#10;&lt;b&gt;Seed bank&lt;/b&gt; — human-vetted 11+ questions&#10;(the SAME schema the app consumes)">
+          <mxGeometry x="40" y="250" width="220" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== ARTIFACT STORE ===================== -->
+        <mxCell id="store" parent="1" vertex="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=14;fillColor=#FFE6CC;strokeColor=#D79B00;fontColor=#000000;fontSize=11;align=center;verticalAlign=middle;" value="&lt;b&gt;Per-question artifacts&lt;/b&gt;&#10;(local JSON, one file per qid)&#10;synthetic/generated/&#10;synthetic/inspected/&#10;synthetic/adjudicated/&#10;&lt;i&gt;idempotent · resumable&lt;/i&gt;">
+          <mxGeometry x="40" y="560" width="220" height="150" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== CENTER PIPELINE LANE ===================== -->
+        <mxCell id="laneLbl" parent="1" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=12;fontStyle=2;fontColor=#444444;" value="pipeline/ — Python stages (one network module only)">
+          <mxGeometry x="350" y="98" width="300" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s1" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#232F3E;strokeColor=#232F3E;fontColor=#ffffff;fontSize=11;arcSize=8;" value="&lt;b&gt;Stage 1 · seed_selector.py&lt;/b&gt;&#10;pick figure-less seeds&#10;assign stable ordinals (q-m6-NNN)">
+          <mxGeometry x="350" y="130" width="300" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#232F3E;strokeColor=#232F3E;fontColor=#ffffff;fontSize=11;arcSize=8;" value="&lt;b&gt;Stage 2 · generate_questions.py&lt;/b&gt;&#10;5 questions per seed (difficulty 1–5)&#10;text + 5 options + flagged answer + solution">
+          <mxGeometry x="350" y="226" width="300" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#232F3E;strokeColor=#B12704;fontColor=#ffffff;fontSize=11;arcSize=8;strokeWidth=3;" value="&lt;b&gt;Stage 3 · inspect_questions.py&lt;/b&gt;&#10;🔒 THE FIREWALL&#10;cold_solve(text, options) — &lt;b&gt;NO correctIndex&lt;/b&gt;">
+          <mxGeometry x="350" y="322" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s4" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1B7A43;strokeColor=#0B5A2E;fontColor=#ffffff;fontSize=11;arcSize=8;" value="&lt;b&gt;Stage 4 · synthetic_match.py&lt;/b&gt; (pure, inline)&#10;deterministic answer → option index&#10;letter · exact · loose · numeric tiers">
+          <mxGeometry x="350" y="424" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s5" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#232F3E;strokeColor=#232F3E;fontColor=#ffffff;fontSize=11;arcSize=8;" value="&lt;b&gt;Stage 5 · adjudicate_questions.py&lt;/b&gt;&#10;tie-breaker — &lt;b&gt;only&lt;/b&gt; on disagreement&#10;or ambiguity (else no call)">
+          <mxGeometry x="350" y="514" width="300" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="s6" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1B7A43;strokeColor=#0B5A2E;fontColor=#ffffff;fontSize=11;arcSize=8;" value="&lt;b&gt;Stage 6 · synthetic_dedup.py&lt;/b&gt; (pure)&#10;near-duplicate detection in-batch&#10;advisory only — nothing is dropped">
+          <mxGeometry x="350" y="610" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s7" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFB000;strokeColor=#B12704;fontColor=#000000;fontSize=11;arcSize=8;strokeWidth=3;" value="&lt;b&gt;Stage 7 · synthetic_triage.py&lt;/b&gt; (pure)&#10;⚖️ green / flagged verdict — &lt;b&gt;OUR CODE&lt;/b&gt;&#10;never read from a model · never auto-rejects">
+          <mxGeometry x="350" y="696" width="300" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="s8" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1B7A43;strokeColor=#0B5A2E;fontColor=#ffffff;fontSize=11;arcSize=8;" value="&lt;b&gt;Stage 8 · build_m6_review.py&lt;/b&gt; (pure join)&#10;join all evidence + verdict + duplicates&#10;→ review-bundle.json">
+          <mxGeometry x="350" y="788" width="300" height="64" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== AWS REGION + BEDROCK ===================== -->
+        <mxCell id="region" parent="1" vertex="1" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_region;strokeColor=#00A4A6;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#147EBA;dashed=1;" value="AWS Region — eu-west-2 (London)">
+          <mxGeometry x="760" y="140" width="600" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="bedrockGroup" parent="region" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fontStyle=1;fontSize=13;fillColor=#F0FBFA;strokeColor=#01A88D;fontColor=#147060;arcSize=4;" value="Amazon Bedrock — Converse API (text-only)">
+          <mxGeometry x="40" y="50" width="520" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="bedrockIcon" parent="bedrockGroup" vertex="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock;" value="Bedrock">
+          <mxGeometry x="226" y="34" width="64" height="64" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mGen" parent="bedrockGroup" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE8D5;strokeColor=#D97A2B;fontColor=#5a3210;fontSize=11;arcSize=10;" value="&lt;b&gt;Generator&lt;/b&gt; — Anthropic Claude Opus&#10;authors a new question, options,&#10;its own answer + worked solution">
+          <mxGeometry x="40" y="120" width="440" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="mInsp" parent="bedrockGroup" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6F2FB;strokeColor=#2E73B8;fontColor=#143b5e;fontSize=11;arcSize=10;" value="&lt;b&gt;Inspector&lt;/b&gt; — DeepSeek (reasoning)&#10;re-solves COLD from stem + options only&#10;never sees the proposed answer">
+          <mxGeometry x="40" y="204" width="440" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="mAdj" parent="bedrockGroup" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EFE8FB;strokeColor=#7A4FD6;fontColor=#3a2370;fontSize=11;arcSize=10;" value="&lt;b&gt;Adjudicator&lt;/b&gt; — Qwen (reasoning)&#10;independent tie-breaker / ambiguity judge&#10;invoked only when the first two disagree">
+          <mxGeometry x="40" y="288" width="440" height="64" as="geometry" />
+        </mxCell>
+
+        <mxCell id="netNote" parent="1" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=2;fontColor=#147EBA;" value="bedrock_text_client.py — the ONLY network module&#10;3 distinct families ⇒ no single model's blind spot passes unchecked">
+          <mxGeometry x="770" y="612" width="560" height="34" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== HUMAN-IN-THE-LOOP BAND ===================== -->
+        <mxCell id="hitlBand" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fontStyle=1;fontSize=13;fillColor=#F4F1FB;strokeColor=#3F51B5;fontColor=#283593;arcSize=2;dashed=1;" value="Human-in-the-loop review &amp; handoff">
+          <mxGeometry x="40" y="905" width="1320" height="320" as="geometry" />
+        </mxCell>
+
+        <mxCell id="bundle" parent="1" vertex="1" style="shape=note;whiteSpace=wrap;html=1;size=16;fillColor=#FFF2CC;strokeColor=#D6B656;fontColor=#000000;fontSize=11;align=center;verticalAlign=middle;" value="synthetic/review-bundle.json&#10;evidence + triage verdict + duplicates&#10;(green pre-approved · flagged = null)">
+          <mxGeometry x="350" y="950" width="280" height="78" as="geometry" />
+        </mxCell>
+
+        <mxCell id="reviewer" parent="1" vertex="1" style="sketch=0;outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.user;fillColor=#3F51B5;gradientColor=none;" value="">
+          <mxGeometry x="110" y="1070" width="48" height="53" as="geometry" />
+        </mxCell>
+        <mxCell id="reviewerLbl" parent="1" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontColor=#283593;" value="Human Reviewer&#10;(the answer authority)">
+          <mxGeometry x="74" y="1124" width="120" height="34" as="geometry" />
+        </mxCell>
+
+        <mxCell id="reviewApp" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3F51B5;strokeColor=#283593;fontColor=#ffffff;fontSize=11;arcSize=8;" value="&lt;b&gt;Review UI&lt;/b&gt; — review_app/m6.html + m6.js&#10;static, served at localhost:8000&#10;per-question evidence · edit · approve/reject&#10;&lt;i&gt;blocks rubber-stamping a flagged item&lt;/i&gt;">
+          <mxGeometry x="250" y="1060" width="320" height="92" as="geometry" />
+        </mxCell>
+
+        <mxCell id="decisions" parent="1" vertex="1" style="shape=note;whiteSpace=wrap;html=1;size=16;fillColor=#FFF2CC;strokeColor=#D6B656;fontColor=#000000;fontSize=11;align=center;verticalAlign=middle;" value="review/m6-decisions.json&#10;(exported decisions)">
+          <mxGeometry x="660" y="1066" width="220" height="64" as="geometry" />
+        </mxCell>
+
+        <mxCell id="buildHandoff" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1B7A43;strokeColor=#0B5A2E;fontColor=#ffffff;fontSize=11;arcSize=8;" value="&lt;b&gt;build_handoff.py&lt;/b&gt;&#10;validate schema · approved-only&#10;(topic, difficulty 1–5, in-range answer)">
+          <mxGeometry x="660" y="950" width="280" height="74" as="geometry" />
+        </mxCell>
+
+        <mxCell id="handoffOut" parent="1" vertex="1" style="shape=note;whiteSpace=wrap;html=1;size=16;fillColor=#D5E8D4;strokeColor=#82B366;fontColor=#000000;fontSize=11;align=center;verticalAlign=middle;" value="handoff/questions.json&#10;&lt;b&gt;deliverable bank&lt;/b&gt;">
+          <mxGeometry x="980" y="952" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="aurora" parent="1" vertex="1" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#C925D1;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.rds;" value="">
+          <mxGeometry x="1240" y="952" width="72" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="auroraLbl" parent="1" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontColor=#7A1F86;" value="&lt;b&gt;ApexMaths · Amazon Aurora PostgreSQL&lt;/b&gt;&#10;questions table (seeded by the app)">
+          <mxGeometry x="1190" y="1028" width="180" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== EDGES: pipeline flow ===================== -->
+        <mxCell id="f_seed_s1" parent="1" edge="1" source="seedsIn" target="s1" style="endArrow=classic;html=1;strokeColor=#333333;fontSize=10;exitX=1;exitY=0.3;exitDx=0;exitDy=0;" value="read seeds">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f_op_s1" parent="1" edge="1" source="operator" target="s1" style="endArrow=classic;html=1;dashed=1;strokeColor=#777777;fontSize=10;" value="run CLI">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="f12" parent="1" edge="1" source="s1" target="s2" style="endArrow=classic;html=1;strokeColor=#333333;" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f23" parent="1" edge="1" source="s2" target="s3" style="endArrow=classic;html=1;strokeColor=#333333;" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f34" parent="1" edge="1" source="s3" target="s4" style="endArrow=classic;html=1;strokeColor=#333333;" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f45" parent="1" edge="1" source="s4" target="s5" style="endArrow=classic;html=1;strokeColor=#333333;" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f56" parent="1" edge="1" source="s5" target="s6" style="endArrow=classic;html=1;strokeColor=#333333;" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f67" parent="1" edge="1" source="s6" target="s7" style="endArrow=classic;html=1;strokeColor=#333333;" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f78" parent="1" edge="1" source="s7" target="s8" style="endArrow=classic;html=1;strokeColor=#333333;" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== EDGES: model calls ===================== -->
+        <mxCell id="cGen" parent="1" edge="1" source="s2" target="mGen" style="endArrow=classic;startArrow=classic;html=1;strokeColor=#D97A2B;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="generate()">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cInsp" parent="1" edge="1" source="s3" target="mInsp" style="endArrow=classic;startArrow=classic;html=1;strokeColor=#2E73B8;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="cold_solve() 🔒 no correctIndex">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cAdj" parent="1" edge="1" source="s5" target="mAdj" style="endArrow=classic;startArrow=classic;html=1;strokeColor=#7A4FD6;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="adjudicate() (conditional)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== EDGES: artifact store ===================== -->
+        <mxCell id="wStore3" parent="1" edge="1" source="s3" target="store" style="endArrow=classic;html=1;strokeColor=#D79B00;fontSize=10;dashed=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" value="write">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wStore5" parent="1" edge="1" source="s5" target="store" style="endArrow=classic;html=1;strokeColor=#D79B00;fontSize=10;dashed=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" value="write">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rStore8" parent="1" edge="1" source="store" target="s8" style="endArrow=classic;html=1;strokeColor=#D79B00;fontSize=10;dashed=1;" value="read all">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== EDGES: HITL + handoff ===================== -->
+        <mxCell id="b_s8_bundle" parent="1" edge="1" source="s8" target="bundle" style="endArrow=classic;html=1;strokeColor=#333333;" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b_bundle_app" parent="1" edge="1" source="bundle" target="reviewApp" style="endArrow=classic;html=1;strokeColor=#3F51B5;fontSize=10;" value="load">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b_rev_app" parent="1" edge="1" source="reviewer" target="reviewApp" style="endArrow=classic;startArrow=classic;html=1;strokeColor=#3F51B5;fontSize=10;" value="review / edit / decide">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b_app_dec" parent="1" edge="1" source="reviewApp" target="decisions" style="endArrow=classic;html=1;strokeColor=#3F51B5;fontSize=10;" value="export">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b_dec_build" parent="1" edge="1" source="decisions" target="buildHandoff" style="endArrow=classic;html=1;strokeColor=#333333;fontSize=10;" value="approved-only">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b_build_out" parent="1" edge="1" source="buildHandoff" target="handoffOut" style="endArrow=classic;html=1;strokeColor=#333333;fontSize=10;" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b_out_aurora" parent="1" edge="1" source="handoffOut" target="aurora" style="endArrow=classic;html=1;strokeColor=#C925D1;fontSize=10;" value="app seed step">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- feedback loop: deliverable becomes next-run seed bank -->
+        <mxCell id="b_loop" parent="1" edge="1" source="handoffOut" target="seedsIn" style="endArrow=classic;html=1;dashed=1;strokeColor=#999999;fontSize=10;" value="becomes next-run seed bank">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1090" y="1240" />
+              <mxPoint x="150" y="1240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ===================== LEGEND ===================== -->
+        <mxCell id="legend" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=left;fontStyle=1;fontSize=12;fillColor=#ffffff;strokeColor=#999999;fontColor=#000000;spacingLeft=8;spacingTop=6;" value="Legend">
+          <mxGeometry x="1390" y="140" width="330" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="lg1" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#232F3E;strokeColor=#232F3E;fontColor=#ffffff;fontSize=10;" value="model-calling stage (network)">
+          <mxGeometry x="1404" y="174" width="300" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="lg2" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1B7A43;strokeColor=#0B5A2E;fontColor=#ffffff;fontSize=10;" value="pure stage — deterministic, no network">
+          <mxGeometry x="1404" y="206" width="300" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="lg3" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFB000;strokeColor=#B12704;fontColor=#000000;fontSize=10;strokeWidth=2;" value="triage — green/flagged authority (our code)">
+          <mxGeometry x="1404" y="238" width="300" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="lg4" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3F51B5;strokeColor=#283593;fontColor=#ffffff;fontSize=10;" value="human-in-the-loop">
+          <mxGeometry x="1404" y="270" width="300" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="lg5" parent="1" vertex="1" style="shape=note;whiteSpace=wrap;html=1;size=10;fillColor=#FFF2CC;strokeColor=#D6B656;fontColor=#000000;fontSize=10;" value="JSON artifact / data file">
+          <mxGeometry x="1404" y="302" width="300" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== FOOTNOTE ===================== -->
+        <mxCell id="foot" parent="1" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#777777;" value="Built for H0: Hack the Zero Stack with Vercel v0 &amp; AWS Databases — the offline content-trust layer that seeds the ApexMaths Aurora question bank.">
+          <mxGeometry x="40" y="1245" width="1000" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

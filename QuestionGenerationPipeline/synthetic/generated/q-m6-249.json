@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-249",
+  "seedQid": "q-m2-045",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 4,
+  "text": "A scientist measures that a chemical reaction is 0.375 complete. She then discovers that an additional 5/8 of the reaction has also finished. What fraction of the total reaction is now complete, expressed in its simplest form?",
+  "options": [
+    "3/4",
+    "7/8",
+    "1",
+    "15/16",
+    "5/6"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Convert 0.375 to a fraction. 0.375 = 375/1000. Simplify by dividing numerator and denominator by 125: 375 ÷ 125 = 3, 1000 ÷ 125 = 8. So 0.375 = 3/8.\n\nStep 2: Add the two fractions together: 3/8 + 5/8 = 8/8 = 1.\n\nStep 3: 8/8 simplifies to 1 (one whole).\n\nThe correct answer is 1.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:45:51+00:00"
+}

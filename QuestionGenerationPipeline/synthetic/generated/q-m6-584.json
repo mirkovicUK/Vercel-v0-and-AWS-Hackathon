@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-584",
+  "seedQid": "q-m6-017",
+  "topic": "ratio_proportion",
+  "difficulty": 4,
+  "text": "A paint mixture uses red, blue, and yellow paint in the ratio 5:3:2. If a painter uses 750 ml of this mixture in total, how much more red paint than yellow paint does she use?",
+  "options": [
+    "150 ml",
+    "225 ml",
+    "250 ml",
+    "300 ml",
+    "375 ml"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find the total number of parts in the ratio. 5 + 3 + 2 = 10 parts.\n\nStep 2: Find the value of one part. 750 ml ÷ 10 = 75 ml per part.\n\nStep 3: Find the amount of red paint. 5 × 75 = 375 ml.\n\nStep 4: Find the amount of yellow paint. 2 × 75 = 150 ml.\n\nStep 5: Find the difference between red and yellow. 375 − 150 = 225 ml.\n\nThe answer is 225 ml.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:24:23+00:00"
+}

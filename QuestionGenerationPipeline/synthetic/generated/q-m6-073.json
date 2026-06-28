@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-073",
+  "seedQid": "q-m1-031",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "A library has n books on a shelf. A student borrows 3/4 of the books and then returns 5 of them. There are now 17 books on the shelf. How many books were on the shelf to start with?",
+  "options": [
+    "36",
+    "44",
+    "48",
+    "52",
+    "56"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Write an expression for the number of books remaining after the student borrows 3/4 of them. Books remaining = n - (3/4)n = (1/4)n.\n\nStep 2: The student then returns 5 books, so the number on the shelf becomes (1/4)n + 5.\n\nStep 3: We are told this equals 17, so set up the equation: (1/4)n + 5 = 17.\n\nStep 4: Subtract 5 from both sides: (1/4)n = 12.\n\nStep 5: Multiply both sides by 4: n = 48.\n\nThe library started with 48 books.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:26:35+00:00"
+}

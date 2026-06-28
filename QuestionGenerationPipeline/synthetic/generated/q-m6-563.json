@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-563",
+  "seedQid": "q-m6-012",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A swimming pool is being filled with water. At 9:00 am it contains 150 litres, at 10:00 am it contains 185 litres, and at 11:00 am it contains 220 litres. If the pattern continues, how many litres will it contain at 1:00 pm?",
+  "options": [
+    "275 litres",
+    "280 litres",
+    "285 litres",
+    "290 litres",
+    "295 litres"
+  ],
+  "correctIndex": 3,
+  "generatorSolution": "Step 1: Find the pattern. From 9:00 am to 10:00 am, the water increases by 185 − 150 = 35 litres. From 10:00 am to 11:00 am, it increases by 220 − 185 = 35 litres. So the pool gains 35 litres every hour.\n\nStep 2: Work out how many hours from 11:00 am to 1:00 pm. That is 2 hours.\n\nStep 3: Calculate the amount at 1:00 pm. At 11:00 am there are 220 litres. After 2 more hours: 220 + (2 × 35) = 220 + 70 = 290 litres.\n\nThe answer is 290 litres.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:22:02+00:00"
+}

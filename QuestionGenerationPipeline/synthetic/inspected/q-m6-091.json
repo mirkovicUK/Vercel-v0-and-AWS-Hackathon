@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-091",
+  "answer": "C",
+  "steps": "1. The pizza is cut into 4 equal slices. 2. The whole pizza is represented as 1 whole or 4/4. 3. Sam eats 1 slice out of 4 slices. 4. The fraction eaten is 1 out of 4, which is 1/4.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

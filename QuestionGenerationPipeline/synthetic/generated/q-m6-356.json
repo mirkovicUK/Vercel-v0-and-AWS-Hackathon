@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-356",
+  "seedQid": "q-m4-029",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "A box contains 10 identical pencils. The total weight of the box and pencils together is 250 g. The empty box weighs 50 g. What is the weight of one pencil?",
+  "options": [
+    "15 g",
+    "20 g",
+    "25 g",
+    "30 g",
+    "50 g"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find the total weight of just the pencils by subtracting the weight of the empty box from the total weight.\n250 g − 50 g = 200 g\n\nStep 2: Divide the weight of all the pencils by the number of pencils.\n200 g ÷ 10 = 20 g\n\nSo one pencil weighs 20 g.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:58:20+00:00"
+}

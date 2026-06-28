@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-511",
+  "answer": "B",
+  "steps": "The phrase 'one thousand and fifty-two' means 1000 + 52 = 1052. In figures, that is written as 1052. Option A (1502) is one thousand five hundred two. Option C (10052) is ten thousand fifty-two. Option D (152) is one hundred fifty-two. Option E (1520) is one thousand five hundred twenty. Only option B matches the number described.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

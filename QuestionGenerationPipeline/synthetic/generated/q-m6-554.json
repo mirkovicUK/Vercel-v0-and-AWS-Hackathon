@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-554",
+  "seedQid": "q-m6-010",
+  "topic": "number",
+  "difficulty": 4,
+  "text": "A librarian is labelling shelves with the code number 7,560,757. She notices that the digit 7 appears several times. What is the difference between the largest value and the smallest value represented by the digit 7 in this number?",
+  "options": [
+    "6,999,993",
+    "7,000,000",
+    "6,999,300",
+    "6,993,000",
+    "699,993"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "First, identify where the digit 7 appears in 7,560,757:\n\n- Position 1 (millions): 7,000,000\n- Position 4 (hundreds): 700\n- Position 6 (tens): 50? No — let's recount.\n\nThe number 7,560,757 has digits:\nPosition: Millions | Hundred-thousands | Ten-thousands | Thousands | Hundreds | Tens | Units\nDigit:       7    |        5         |      6       |     0     |    7     |  5   |  7\n\nSo the digit 7 appears in:\n- Millions place: value = 7,000,000\n- Hundreds place: value = 700\n- Units place: value = 7\n\nThe largest value represented by 7 is 7,000,000.\nThe smallest value represented by 7 is 7.\n\nThe difference = 7,000,000 − 7 = 6,999,993.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:21:11+00:00"
+}

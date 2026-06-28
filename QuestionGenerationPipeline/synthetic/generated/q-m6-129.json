@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-129",
+  "seedQid": "q-m2-001",
+  "topic": "ratio_proportion",
+  "difficulty": 4,
+  "text": "A recipe for 8 pancakes uses 200g of flour, 2 eggs, and 300ml of milk. Tom wants to make 20 pancakes. He has 480g of flour, 6 eggs, and 800ml of milk. Which ingredient will run out first, and how many pancakes can he actually make with what he has?",
+  "options": [
+    "Flour runs out first; he can make 19 pancakes",
+    "Eggs runs out first; he can make 16 pancakes",
+    "Milk runs out first; he can make 16 pancakes",
+    "Eggs run out first; he can make 24 pancakes",
+    "Flour runs out first; he can make 16 pancakes"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Find the amount of each ingredient needed per pancake.\n- Flour: 200g ÷ 8 = 25g per pancake\n- Eggs: 2 ÷ 8 = 0.25 eggs per pancake (or 1 egg per 4 pancakes)\n- Milk: 300ml ÷ 8 = 37.5ml per pancake\n\nStep 2: Find how many pancakes each ingredient can make.\n- Flour: 480g ÷ 25g = 19.2, so 19 whole pancakes\n- Eggs: 6 ÷ 0.25 = 24 pancakes\n- Milk: 800ml ÷ 37.5ml = 21.3, so 21 whole pancakes\n\nStep 3: The ingredient that makes the fewest pancakes runs out first.\n- Flour allows only 19 pancakes, which is the smallest number.\n\nTherefore, flour runs out first and Tom can make 19 pancakes.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:32:43+00:00"
+}

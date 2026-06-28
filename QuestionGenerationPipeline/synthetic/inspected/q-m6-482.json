@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-482",
+  "answer": "A",
+  "steps": "Cost of 4 cupcakes = £3.00, so one cupcake = £3.00 ÷ 4 = £0.75. Cost of 2 milkshakes = £2.50, so one milkshake = £2.50 ÷ 2 = £1.25. Total for one cupcake and one milkshake = £0.75 + £1.25 = £2.00. However, option C says £2.00, but option B says $2.00 (dollars, not pounds). The question uses pounds, so only C matches £2.00. But check: £0.75 + £1.25 = £2.00 exactly. Option C is £2.00, option B is $2.00 (incorrect currency). Therefore the correct choice is C? Wait, re-read options: A) £1.75, B) $2.00, C) £2.00, D) £1.50, E) £2.25. Our calculated total is £2.00, which matches option C. However, option B is $2.00, which is not the same currency, so it is incorrect. So exactly one correct option is C. But let's verify calculations: 3/4 = 0.75, 2.50/2 = 1.25, sum = 2.00. Yes. So answer is C.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": false,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

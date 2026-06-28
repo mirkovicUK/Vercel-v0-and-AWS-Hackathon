@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-607",
+  "answer": "A",
+  "steps": "Let s = seeds planted on Monday. On Tuesday, 12 more seeds planted, so total seeds planted = s + 12. By Friday, 5 seeds have not grown, so growing plants = total seeds planted − seeds not grown = (s + 12) − 5. The problem says she now has 25 growing plants, so equation: s + 12 − 5 = 25. Simplify: s + 7 = 25 → s = 18. Check options: A says s + 12 − 5 = 25, so s = 18 → matches. D says same equation but s = 20 → wrong. E says same equation but s = 15 → wrong. B and C have different equations. Only A matches the correct equation and correct solution.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

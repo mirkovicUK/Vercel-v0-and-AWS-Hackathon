@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-349",
+  "seedQid": "q-m4-022",
+  "topic": "ratio_proportion",
+  "difficulty": 4,
+  "text": "A paint mixing guide says that for every 750 ml of white paint, you need 250 ml of blue paint and 125 ml of yellow paint to make a specific shade of green. Marcus wants to make a smaller batch using only 100 ml of yellow paint. How much white paint and blue paint does he need in total?",
+  "options": [
+    "600 ml",
+    "700 ml",
+    "800 ml",
+    "900 ml",
+    "1000 ml"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find the scale factor. The original recipe uses 125 ml of yellow paint, but Marcus uses 100 ml. The scale factor is 100 ÷ 125 = 4/5.\n\nStep 2: Calculate the amount of white paint needed. White paint = 750 × 4/5 = 600 ml.\n\nStep 3: Calculate the amount of blue paint needed. Blue paint = 250 × 4/5 = 200 ml.\n\nStep 4: Find the total of white and blue paint. Total = 600 + 200 = 800 ml.\n\nThe answer is 800 ml.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:57:17+00:00"
+}

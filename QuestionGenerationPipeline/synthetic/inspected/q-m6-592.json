@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-592",
+  "answer": "B",
+  "steps": "Recipe for 4 people uses 200 ml orange juice. For 1 person: 200 ml / 4 = 50 ml orange juice. For 6 people: 50 ml × 6 = 300 ml orange juice.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-294",
+  "seedQid": "q-m3-022",
+  "topic": "algebra",
+  "difficulty": 4,
+  "text": "A delivery drone flies between three landmarks along a straight road. The library is 'x' metres east of the post office. The bakery is 380 metres west of the library. The distance between the post office and the bakery is 95 metres. If the bakery is west of the post office, find the value of x.",
+  "options": [
+    "185 m",
+    "285 m",
+    "475 m",
+    "380 m",
+    "190 m"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Set up the positions on a number line. Let the post office be at position 0.\n\nStep 2: The library is x metres east of the post office, so the library is at position x.\n\nStep 3: The bakery is 380 metres west of the library, so the bakery is at position x − 380.\n\nStep 4: We are told the bakery is west of the post office and the distance between the post office and the bakery is 95 metres. Since the bakery is west of the post office (position 0), the bakery is at position −95.\n\nStep 5: Set up the equation: x − 380 = −95\n\nStep 6: Solve for x: x = −95 + 380 = 285\n\nTherefore x = 285 m.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:51:24+00:00"
+}

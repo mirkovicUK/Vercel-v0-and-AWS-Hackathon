@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-202",
+  "answer": "C) 7 cm",
+  "steps": "Perimeter of a rectangle = 2 × (length + width). Given width = 3 cm, length = n cm, perimeter = 20 cm. So 2 × (n + 3) = 20 → n + 3 = 10 → n = 7 cm.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

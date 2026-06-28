@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-144",
+  "seedQid": "q-m2-006",
+  "topic": "number",
+  "difficulty": 4,
+  "text": "A museum recorded its visitor numbers over four days. On Monday there were 12,450 visitors. On Tuesday there were two thousand and sixty-seven more visitors than Monday. On Wednesday the number dropped to nine thousand, four hundred and eight. On Thursday the museum had exactly half the number of Wednesday's visitors. What was the total number of visitors across all four days?",
+  "options": [
+    "38,671",
+    "39,079",
+    "41,079",
+    "40,079",
+    "38,079"
+  ],
+  "correctIndex": 3,
+  "generatorSolution": "Step 1: Monday = 12,450\nStep 2: Tuesday = 12,450 + 2,067 = 14,517\nStep 3: Wednesday = 9,408 (written in figures from words)\nStep 4: Thursday = 9,408 ÷ 2 = 4,704\nStep 5: Total = 12,450 + 14,517 + 9,408 + 4,704 = 41,079. Wait, let me recalculate: 12,450 + 14,517 = 26,967. Then 26,967 + 9,408 = 36,375. Then 36,375 + 4,704 = 41,079. Hmm, but let me recheck: 12,450 + 14,517 = 26,967. 26,967 + 9,408 = 36,375. 36,375 + 4,704 = 41,079. That gives 41,079 which is option C. Let me recalculate to make sure the correct answer matches. Actually 12,450 + 14,517 = 26,967; 26,967 + 9,408 = 36,375; 36,375 + 4,704 = 41,079. The correct answer is 41,079.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:34:38+00:00"
+}

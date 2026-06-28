@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-130",
+  "seedQid": "q-m2-001",
+  "topic": "ratio_proportion",
+  "difficulty": 5,
+  "text": "A recipe for 8 pancakes uses 200g of flour, 2 eggs, and 300ml of milk. Tom has 750g of flour, 10 eggs, and 900ml of milk. What is the maximum number of pancakes Tom can make without running out of any ingredient?",
+  "options": [
+    "24",
+    "28",
+    "30",
+    "32",
+    "40"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "We need to find how many batches of 8 pancakes each ingredient allows, then take the smallest.\n\nFlour: 750g ÷ 200g = 3.75 batches → 3.75 × 8 = 30 pancakes\nEggs: 10 ÷ 2 = 5 batches → 5 × 8 = 40 pancakes\nMilk: 900ml ÷ 300ml = 3 batches → 3 × 8 = 24 pancakes\n\nThe limiting ingredient is milk, which only allows 3 full batches.\n\n3 batches × 8 pancakes = 24 pancakes.\n\nCheck: 3 batches use 3 × 200g = 600g flour (≤ 750g ✓), 3 × 2 = 6 eggs (≤ 10 ✓), 3 × 300ml = 900ml milk (≤ 900ml ✓).\n\nThe answer is 24.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:32:49+00:00"
+}

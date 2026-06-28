@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-472",
+  "answer": "C",
+  "steps": "1. The baker has 36 cupcakes and puts them into boxes of 4. 2. Check each option: A) 36 is an odd number — false, 36 is even. B) 36 divided by 4 gives a remainder of 2 — false, 36 ÷ 4 = 9 exactly, remainder 0. C) 36 is a multiple of 4 — true, 4 × 9 = 36. D) 36 is a prime number — false, it has factors other than 1 and itself. E) 4 is a factor of 35 — false, 35 ÷ 4 = 8 remainder 3, so 4 is not a factor. 3. Only option C is correct.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

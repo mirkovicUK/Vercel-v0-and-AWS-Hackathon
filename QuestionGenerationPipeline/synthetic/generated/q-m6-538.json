@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-538",
+  "seedQid": "q-m6-007",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A stadium has a capacity of 47,256 people. What is the difference between the value of the digit 4 and the value of the digit 2 in this number?",
+  "options": [
+    "39,800",
+    "40,200",
+    "39,744",
+    "40,000",
+    "42,000"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Identify the value of the digit 4 in 47,256. The digit 4 is in the ten-thousands place, so its value is 40,000.\n\nStep 2: Identify the value of the digit 2 in 47,256. The digit 2 is in the hundreds place, so its value is 200.\n\nStep 3: Find the difference between these two values: 40,000 − 200 = 39,800.\n\nThe correct answer is 39,800.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:19:15+00:00"
+}

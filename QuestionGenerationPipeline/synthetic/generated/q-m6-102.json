@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-102",
+  "seedQid": "q-m1-039",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 2,
+  "text": "A baker made 40 cupcakes. He sold 75% of them at a school fair. How many cupcakes did he sell?",
+  "options": [
+    "25",
+    "28",
+    "30",
+    "32",
+    "35"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: We need to find 75% of 40.\nStep 2: 75% means 75 out of 100, which is the same as 3/4.\nStep 3: To find 3/4 of 40, divide 40 by 4 = 10, then multiply by 3 = 30.\nAlternatively: 75 ÷ 100 × 40 = 0.75 × 40 = 30.\nThe baker sold 30 cupcakes.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:29:46+00:00"
+}

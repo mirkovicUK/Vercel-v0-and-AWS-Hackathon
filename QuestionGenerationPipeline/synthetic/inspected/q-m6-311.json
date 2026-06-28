@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-311",
+  "answer": "B",
+  "steps": "Let r = number of red marbles, b = number of blue marbles. We have r + b = 20 and r = b + 4. Substitute r in the first equation: (b + 4) + b = 20 → 2b + 4 = 20 → 2b = 16 → b = 8. Then r = 8 + 4 = 12. Check: 8 + 12 = 20, and 12 is 4 more than 8. So blue marbles = 8.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

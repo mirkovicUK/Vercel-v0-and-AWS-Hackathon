@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-237",
+  "seedQid": "q-m2-039",
+  "topic": "data_handling",
+  "difficulty": 2,
+  "text": "A class recorded the number of books each pupil read during the summer holiday. The results are shown in this tally chart:\n\n0 books: |||| (4 pupils)\n1 book: |||| || (7 pupils)\n2 books: |||| |||| (9 pupils)\n3 books: |||| (5 pupils)\n\nHow many pupils are in the class altogether?",
+  "options": [
+    "20",
+    "23",
+    "25",
+    "27",
+    "30"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Read the number of pupils for each row of the tally chart.\n0 books: 4 pupils\n1 book: 7 pupils\n2 books: 9 pupils\n3 books: 5 pupils\n\nStep 2: Add all the pupils together.\n4 + 7 + 9 + 5 = 25\n\nThe total number of pupils in the class is 25.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:44:31+00:00"
+}

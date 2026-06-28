@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-325",
+  "seedQid": "q-m4-009",
+  "topic": "algebra",
+  "difficulty": 5,
+  "text": "A delivery company charges a fixed booking fee plus a rate per kilogram for parcels. For a parcel weighing w kg, the total cost in pounds is given by the expression 4w + 3. A second company uses the formula 7w − 2(w + 6) for the same parcel. For what weight are the two companies' charges equal, and what is the charge at that weight?",
+  "options": [
+    "w = 3, charge = £15",
+    "w = 5, charge = £23",
+    "w = 15, charge = £63",
+    "w = 9, charge = £39",
+    "w = 12, charge = £51"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Set the two expressions equal to each other.\n4w + 3 = 7w − 2(w + 6)\n\nStep 2: Expand the right-hand side.\n7w − 2(w + 6) = 7w − 2w − 12 = 5w − 12\n\nStep 3: Now solve 4w + 3 = 5w − 12.\nSubtract 4w from both sides: 3 = w − 12\nAdd 12 to both sides: 15 = w... wait, let me recheck.\n\nActually: 4w + 3 = 5w − 12\n3 + 12 = 5w − 4w\n15 = w\n\nStep 4: Check — substitute w = 15:\nFirst company: 4(15) + 3 = 63\nSecond company: 5(15) − 12 = 75 − 12 = 63 ✓\n\nSo w = 15 and the charge is £63.\n\nWait — that gives option C. Let me redesign so the answer is more interesting and the difficulty is appropriate.\n\nActually, let me recompute with the original formula. The answer is w = 15, charge = £63, which is option C (index 2).",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:55:15+00:00"
+}

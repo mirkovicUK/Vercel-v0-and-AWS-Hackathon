@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-278",
+  "answer": "B",
+  "steps": "1. Swimming cost per week: 3 sessions × £p = £3p.\n2. Weekly locker fee: £2.\n3. Total weekly cost expression: £(3p + 2).\n4. Substitute p = 4: 3×4 + 2 = 12 + 2 = 14.\n5. Total cost is £14.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

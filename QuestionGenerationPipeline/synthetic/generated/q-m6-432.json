@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-432",
+  "seedQid": "q-m5-027",
+  "topic": "number",
+  "difficulty": 2,
+  "text": "A factory produces 348 toys per day. If 348 × 20 = 6,960, what is 348 × 10?",
+  "options": [
+    "3,480",
+    "3,840",
+    "34,800",
+    "6,960",
+    "3,048"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "We know that 348 × 20 = 6,960. Since 10 is half of 20, we can find 348 × 10 by halving 6,960. Half of 6,960 = 3,480. Therefore, 348 × 10 = 3,480.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:07:40+00:00"
+}

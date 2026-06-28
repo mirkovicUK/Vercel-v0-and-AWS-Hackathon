@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-426",
+  "seedQid": "q-m5-026",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "A baker makes 5 cupcakes every hour. She starts at 9 am. How many cupcakes has she made by 12 noon?",
+  "options": [
+    "10",
+    "12",
+    "15",
+    "20",
+    "25"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "From 9 am to 12 noon is 3 hours. The baker makes 5 cupcakes each hour. So the total number of cupcakes is 5 × 3 = 15.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:07:09+00:00"
+}

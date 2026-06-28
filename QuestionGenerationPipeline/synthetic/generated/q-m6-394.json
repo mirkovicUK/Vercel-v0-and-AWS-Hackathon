@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-394",
+  "seedQid": "q-m5-014",
+  "topic": "algebra",
+  "difficulty": 4,
+  "text": "A bakery produces bread rolls in batches. Each batch contains r rolls. On Monday, they made 8 batches and sold 5 batches worth of rolls plus an extra 47 rolls. On Tuesday, they made 6 more batches but sold none. The total number of unsold rolls after both days can be written as 9r − 47. If the bakery has exactly 133 unsold rolls at the end of Tuesday, what is the value of r?",
+  "options": [
+    "18",
+    "20",
+    "22",
+    "24",
+    "26"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Set up the equation from the information given.\nTotal unsold rolls = 9r − 47\nWe are told this equals 133.\n\nStep 2: Solve the equation.\n9r − 47 = 133\n9r = 133 + 47\n9r = 180\nr = 180 ÷ 9\nr = 20\n\nStep 3: Verify by checking the scenario.\nMonday: Made 8 × 20 = 160 rolls, sold 5 × 20 + 47 = 147 rolls. Left over: 160 − 147 = 13 rolls.\nTuesday: Made 6 × 20 = 120 rolls, sold 0. Left over from Tuesday: 120 rolls.\nTotal unsold: 13 + 120 = 133 rolls. ✓\n\nThe answer is r = 20.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:02:57+00:00"
+}

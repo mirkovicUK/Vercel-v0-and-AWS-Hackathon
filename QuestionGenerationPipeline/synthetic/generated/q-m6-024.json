@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-024",
+  "seedQid": "q-m1-010",
+  "topic": "algebra",
+  "difficulty": 4,
+  "text": "A baker makes cupcakes in batches. He notices that if he triples the number of cupcakes in a batch and then subtracts 14, he gets the same result as if he doubles the batch and adds 9. Let b represent the number of cupcakes in one batch. What is the value of b?",
+  "options": [
+    "15",
+    "19",
+    "23",
+    "25",
+    "27"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "We set up the equation from the problem:\n\nTripling the batch and subtracting 14 equals doubling the batch and adding 9:\n3b − 14 = 2b + 9\n\nStep 1: Subtract 2b from both sides:\n3b − 2b − 14 = 9\nb − 14 = 9\n\nStep 2: Add 14 to both sides:\nb = 9 + 14\nb = 23\n\nWe can check: 3 × 23 − 14 = 69 − 14 = 55, and 2 × 23 + 9 = 46 + 9 = 55. ✓\n\nThe correct answer is 23.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-11T19:48:51+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-187",
+  "answer": "B",
+  "steps": "Tom buys 3 bags at £p each, so total cost = 3p. He pays £10 and gets £4 change, so 10 - 3p = 4. Subtract 10 from both sides: -3p = -6. Divide both sides by -3: p = 2. So p = £2.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

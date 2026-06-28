@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-113",
+  "answer": "D",
+  "steps": "Start with 8. Check each option: A) 8 × 3 = 24, 24 − 4 = 20 → gives 20. B) 8 + 7 = 15, 15 × 2 = 30 → gives 30, not 20. C) 8 × 2 = 16, 16 + 4 = 20 → gives 20. D) 8 + 2 = 10, 10 × 2 = 20 → gives 20. E) 8 − 3 = 5, 5 × 4 = 20 → gives 20. Only B gives a result not equal to 20.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": false,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

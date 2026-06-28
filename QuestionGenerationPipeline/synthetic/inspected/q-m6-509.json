@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-509",
+  "answer": "C",
+  "steps": "The formula given is flowers = n(n+1) ÷ 2. For Row 8, n = 8. Compute: 8 × (8+1) = 8 × 9 = 72. Then 72 ÷ 2 = 36. So Row 8 has 36 flowers.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

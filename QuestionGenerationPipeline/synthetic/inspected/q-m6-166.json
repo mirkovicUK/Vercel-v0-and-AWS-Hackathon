@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-166",
+  "answer": "C",
+  "steps": "The baker starts with 2 cupcakes. He makes 5 cupcakes per hour. After 3 hours, he makes 5 × 3 = 15 more cupcakes. Total cupcakes = 2 + 15 = 17.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

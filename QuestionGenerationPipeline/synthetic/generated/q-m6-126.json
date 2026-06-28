@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-126",
+  "seedQid": "q-m2-001",
+  "topic": "ratio_proportion",
+  "difficulty": 1,
+  "text": "A bag contains red and blue sweets in the ratio 1:2. If there are 4 red sweets, how many blue sweets are there?",
+  "options": [
+    "2",
+    "4",
+    "6",
+    "8",
+    "10"
+  ],
+  "correctIndex": 3,
+  "generatorSolution": "The ratio of red to blue sweets is 1:2. This means for every 1 red sweet, there are 2 blue sweets. Since there are 4 red sweets, we multiply both parts of the ratio by 4. Red: 1 × 4 = 4. Blue: 2 × 4 = 8. So there are 8 blue sweets.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:32:29+00:00"
+}

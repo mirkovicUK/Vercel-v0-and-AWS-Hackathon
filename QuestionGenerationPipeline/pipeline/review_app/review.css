@@ -1,0 +1,128 @@
+/* Question-bank review app — plain CSS, no framework, no build step. */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: #0f172a;
+  background: #f8fafc;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 1rem;
+  background: #fff;
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.topbar-left, .topbar-right { display: flex; align-items: center; gap: 0.6rem; }
+.progress { color: #475569; font-size: 0.9rem; }
+
+button {
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  border-radius: 8px;
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+button:hover { background: #f1f5f9; }
+button.primary { background: #0ea5e9; color: #fff; border-color: #0ea5e9; }
+button.primary:hover { background: #0284c7; }
+
+select, input[type="number"], textarea {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+#jump-input { width: 4rem; }
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 320px;
+  gap: 1rem;
+  padding: 1rem;
+  align-items: start;
+}
+
+.pane {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+/* child view */
+.child-view.flagged { border-color: #f59e0b; box-shadow: 0 0 0 2px #fde68a inset; }
+.q-heading { font-size: 1rem; color: #64748b; margin: 0 0 0.5rem; }
+.q-stem { font-size: 1.25rem; line-height: 1.5; margin: 0 0 1rem; }
+.q-figure { margin: 0 0 1rem; text-align: center; }
+.q-figure img { max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; }
+.q-figure figcaption { font-size: 0.8rem; color: #64748b; margin-top: 0.25rem; }
+
+.q-options { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.5rem; }
+.q-options li {
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 0.6rem 0.8rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  gap: 0.6rem;
+  align-items: baseline;
+}
+.q-options li .opt-letter { font-weight: 700; color: #64748b; min-width: 1.2rem; }
+.q-options li.correct { border-color: #14b8a6; background: #f0fdfa; }
+.q-options li.correct .opt-letter { color: #0d9488; }
+.q-options li:hover { background: #f8fafc; }
+
+.flags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.5rem; }
+.badge {
+  font-size: 0.75rem;
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  font-weight: 600;
+}
+.badge.warn { background: #fef3c7; color: #92400e; }
+.badge.info { background: #e0f2fe; color: #075985; }
+.badge.danger { background: #ffe4e6; color: #9f1239; }
+.badge.ok { background: #dcfce7; color: #166534; }
+
+/* source view */
+.source-view h3 { margin: 0 0 0.5rem; font-size: 0.9rem; color: #64748b; display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
+.answerkey-toggle { font-size: 0.75rem; padding: 0.25rem 0.55rem; }
+.source-scroll { position: relative; max-height: 70vh; overflow: auto; border: 1px solid #e2e8f0; border-radius: 8px; }
+.source-scroll img { width: 100%; display: block; user-select: none; -webkit-user-drag: none; }
+.hint { font-size: 0.78rem; color: #94a3b8; margin: 0.4rem 0 0; }
+.crop-overlay { display: none; }
+
+/* controls */
+.controls { display: flex; flex-direction: column; gap: 1rem; position: sticky; top: 4rem; }
+.control-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.control-label { font-size: 0.8rem; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.03em; }
+.mini-label { font-size: 0.75rem; color: #64748b; margin-top: 0.4rem; }
+.decision-row { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.95rem; }
+.correct-display { margin: 0; font-size: 1rem; font-weight: 600; color: #0d9488; min-height: 1.2rem; }
+.edit-group summary { cursor: pointer; font-size: 0.85rem; color: #475569; }
+.edit-group textarea { width: 100%; }
+
+.warning {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  border-radius: 8px;
+  padding: 0.5rem 0.7rem;
+  font-size: 0.85rem;
+}
+
+.decided-approve { box-shadow: 0 0 0 3px #bbf7d0 inset; }
+.decided-reject { box-shadow: 0 0 0 3px #fecaca inset; }
+.decided-needs_edit { box-shadow: 0 0 0 3px #fde68a inset; }

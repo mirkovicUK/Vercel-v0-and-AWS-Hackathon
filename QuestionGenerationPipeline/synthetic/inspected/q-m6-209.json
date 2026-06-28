@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-209",
+  "answer": "B",
+  "steps": "Monthly total = mortgage + service charge = £1,245 + £168 = £1,413. Over 9 months: £1,413 × 9 = £12,717.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": false,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

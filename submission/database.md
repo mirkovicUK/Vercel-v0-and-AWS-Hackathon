@@ -409,8 +409,12 @@ audience — a market that is essentially UK-only (the commercialised grammar-sc
 private-tutoring 11+ funnel is specific to England). Our users are concentrated in
 one country, and a single region (`eu-west-2`, in London) sits right next to them,
 so there is no global write-distribution problem for DSQL to solve. Resilience is
-still covered the conventional way — Aurora **Multi-AZ failover within `eu-west-2`** —
-which is the right durability level for a single-country product.
+covered the conventional way — Aurora replicates storage across **three
+Availability Zones within `eu-west-2`**, so data survives an AZ loss. We run a
+**single Serverless v2 compute instance** to control cost at this pre-revenue
+stage; a **second-AZ reader for sub-minute automatic failover** is the documented,
+one-line next step — the right durability/cost balance for a single-country
+product today.
 
 And even setting geography aside, ApexMaths leans on conventional Aurora/Postgres
 features DSQL does not provide:

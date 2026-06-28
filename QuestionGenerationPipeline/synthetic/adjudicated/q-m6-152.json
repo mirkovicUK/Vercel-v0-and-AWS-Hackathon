@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-152",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "C) 700",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "The number 4,752 has the digit 7 in the hundreds place. Therefore, the value of the digit 7 is 7 × 100 = 700. Option C is correct and unambiguous.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

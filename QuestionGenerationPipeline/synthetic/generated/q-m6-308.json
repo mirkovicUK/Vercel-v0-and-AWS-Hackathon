@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-308",
+  "seedQid": "q-m4-001",
+  "topic": "geometry",
+  "difficulty": 3,
+  "text": "A designer is creating a logo that must look exactly the same when rotated 180° about its centre. Which of the following shapes has this property (called rotational symmetry of order 2 or more)?",
+  "options": [
+    "A scalene triangle",
+    "A regular pentagon",
+    "A parallelogram",
+    "A kite",
+    "An isosceles triangle"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "A shape looks the same when rotated 180° if it has rotational symmetry of order 2 (or higher).\n\nStep 1: A scalene triangle has no rotational symmetry (order 1 only) — it does NOT look the same at 180°.\n\nStep 2: A regular pentagon has rotational symmetry of order 5 (it looks the same at 72°, 144°, 216°, 288°, 360°). Since 180° is not one of these angles, it does NOT look the same at exactly 180°.\n\nStep 3: A parallelogram has rotational symmetry of order 2. If you rotate it 180° about its centre, it maps onto itself — it DOES look the same.\n\nStep 4: A kite has only 1 line of symmetry and rotational symmetry of order 1 — it does NOT look the same at 180°.\n\nStep 5: An isosceles triangle has 1 line of symmetry but rotational symmetry of order 1 — it does NOT look the same at 180°.\n\nTherefore the correct answer is a parallelogram.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:52:56+00:00"
+}

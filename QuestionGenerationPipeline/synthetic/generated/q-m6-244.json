@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-244",
+  "seedQid": "q-m2-041",
+  "topic": "geometry",
+  "difficulty": 4,
+  "text": "A regular nonagon (9-sided polygon) is used as the shape of a decorative floor tile. What is the size of each interior angle of this tile?",
+  "options": [
+    "120°",
+    "135°",
+    "140°",
+    "144°",
+    "150°"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find the sum of interior angles of a nonagon. The formula is (number of sides − 2) × 180°. So for a nonagon: (9 − 2) × 180° = 7 × 180° = 1260°.\n\nStep 2: Since the nonagon is regular, all interior angles are equal. Divide the total by the number of angles: 1260° ÷ 9 = 140°.\n\nTherefore, each interior angle of a regular nonagon is 140°.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:45:23+00:00"
+}

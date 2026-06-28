@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-233",
+  "answer": "C",
+  "steps": "The first train leaves at 06:00. The 5th train leaves at 07:00. From the 1st to the 5th train, there are 4 intervals of t minutes each. So total time from 06:00 to 07:00 is 60 minutes. Therefore 4t = 60, so t = 60/4 = 15 minutes.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-242",
+  "seedQid": "q-m2-041",
+  "topic": "geometry",
+  "difficulty": 2,
+  "text": "A pentagon is a shape with 5 sides. To find the total of all the interior angles of a polygon, you subtract 2 from the number of sides and then multiply by 180°. What is the sum of the interior angles of a pentagon?",
+  "options": [
+    "360°",
+    "450°",
+    "540°",
+    "720°",
+    "900°"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: A pentagon has 5 sides.\nStep 2: Subtract 2 from the number of sides: 5 − 2 = 3.\nStep 3: Multiply this result by 180°: 3 × 180° = 540°.\nTherefore, the sum of the interior angles of a pentagon is 540°.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:45:13+00:00"
+}

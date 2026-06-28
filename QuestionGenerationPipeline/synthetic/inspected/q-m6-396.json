@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-396",
+  "answer": "B",
+  "steps": "1. The question asks for a unit to measure length. 2. Length is a one-dimensional measurement. 3. Check each option: A) Square centimetres (cm²) measures area, not length. B) Centimetres (cm) measures length. C) Cubic centimetres (cm³) measures volume, not length. D) Kilograms (kg) measures mass, not length. E) Litres (l) measures capacity (volume), not length. 4. Only centimetres (cm) is a correct unit for measuring length.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

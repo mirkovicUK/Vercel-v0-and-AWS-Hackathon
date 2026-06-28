@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-462",
+  "answer": "B",
+  "steps": "Total marbles = 20. Red marbles = 4. Fraction of red marbles = 4/20. Simplify by dividing numerator and denominator by 4: 4 ÷ 4 = 1, 20 ÷ 4 = 5, so simplest form = 1/5.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

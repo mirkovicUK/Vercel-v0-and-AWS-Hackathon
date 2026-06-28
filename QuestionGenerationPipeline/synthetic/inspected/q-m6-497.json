@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-497",
+  "answer": "C",
+  "steps": "Original price = £4.00. 25% reduction means the price is reduced by 25% of £4.00 = 0.25 × 4 = £1.00. Sale price = £4.00 - £1.00 = £3.00.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

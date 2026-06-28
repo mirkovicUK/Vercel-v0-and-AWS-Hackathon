@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-248",
+  "seedQid": "q-m2-045",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 3,
+  "text": "A recipe calls for 2.35 litres of milk. What is 2.35 written as a mixed number in its simplest form?",
+  "options": [
+    "2 7/20",
+    "2 35/100",
+    "2 7/10",
+    "2 3/5",
+    "2 35/10"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Separate the whole number and the decimal part. 2.35 = 2 + 0.35\nStep 2: Convert 0.35 to a fraction. 0.35 = 35/100\nStep 3: Simplify 35/100 by finding the highest common factor (HCF) of 35 and 100. The HCF is 5.\nStep 4: Divide numerator and denominator by 5: 35 ÷ 5 = 7, 100 ÷ 5 = 20. So 35/100 = 7/20\nStep 5: Write as a mixed number: 2 7/20\nThe correct answer is 2 7/20.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:45:44+00:00"
+}

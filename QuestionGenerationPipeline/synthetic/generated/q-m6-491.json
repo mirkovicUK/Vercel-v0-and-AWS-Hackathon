@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-491",
+  "seedQid": "q-m5-047",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 1,
+  "text": "A fruit bowl contains 3 apples, 5 oranges and 2 bananas. What fraction of the fruit are oranges?",
+  "options": [
+    "1/5",
+    "1/2",
+    "3/10",
+    "2/5",
+    "5/8"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Count the total number of fruits. 3 + 5 + 2 = 10 fruits in total.\nStep 2: The number of oranges is 5.\nStep 3: The fraction that are oranges = 5/10.\nStep 4: Simplify 5/10 by dividing the top and bottom by 5: 5/10 = 1/2.\nThe correct answer is 1/2.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:14:30+00:00"
+}

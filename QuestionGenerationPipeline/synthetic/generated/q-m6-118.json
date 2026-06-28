@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-118",
+  "seedQid": "q-m1-049",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A swimming pool is being filled with water. The pump first runs for 15 minutes to fill the pipes, during which no water enters the pool. After that, the pump fills the pool at a rate of 200 litres every 5 minutes. If the pump runs for a total of 1 hour and 15 minutes, how many litres of water are in the pool?",
+  "options": [
+    "2000 litres",
+    "2400 litres",
+    "3000 litres",
+    "2800 litres",
+    "1200 litres"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: The pump runs for a total of 1 hour and 15 minutes = 75 minutes.\n\nStep 2: The first 15 minutes are spent filling the pipes, so no water enters the pool during this time.\n\nStep 3: Time actually filling the pool = 75 − 15 = 60 minutes.\n\nStep 4: The pump fills 200 litres every 5 minutes. In 60 minutes there are 60 ÷ 5 = 12 intervals of 5 minutes.\n\nStep 5: Total water in the pool = 12 × 200 = 2400 litres.\n\nThe answer is 2400 litres.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:31:21+00:00"
+}

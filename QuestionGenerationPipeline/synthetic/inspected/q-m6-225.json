@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-225",
+  "answer": "B",
+  "steps": "Let Y = gadgets per hour for Machine A. Machine B makes (Y + 5) gadgets per hour. Together they make Y + (Y + 5) = 2Y + 5 gadgets per hour. Given total per hour = 47, so 2Y + 5 = 47 → 2Y = 42 → Y = 21. Machine A makes 21 per hour, Machine B makes 26 per hour. Both run for 3 hours: (21 + 26) × 3 = 47 × 3 = 141 gadgets. Then only Machine A runs for 2 hours: 21 × 2 = 42 gadgets. Total = 141 + 42 = 183 gadgets.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

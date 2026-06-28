@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-618",
+  "seedQid": "q-m6-025",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "Three friends are collecting stickers. Raj has 'n' stickers, Priya has 'n + 7' stickers, and Sam has '2n − 3' stickers. Altogether they have 52 stickers. What is the value of n?",
+  "options": [
+    "10",
+    "11",
+    "12",
+    "13",
+    "14"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Write an equation for the total number of stickers.\nRaj + Priya + Sam = 52\nn + (n + 7) + (2n − 3) = 52\n\nStep 2: Simplify the left side by collecting like terms.\nn + n + 2n = 4n\n7 − 3 = 4\nSo: 4n + 4 = 52\n\nStep 3: Solve for n.\n4n + 4 = 52\n4n = 52 − 4\n4n = 48\nn = 48 ÷ 4\nn = 12\n\nThe correct answer is 12.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:28:16+00:00"
+}

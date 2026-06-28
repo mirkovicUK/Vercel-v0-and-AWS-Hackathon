@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-542",
+  "seedQid": "q-m6-008",
+  "topic": "number",
+  "difficulty": 2,
+  "text": "A school has 45,271 pupils registered across all its branches. What is the value of the digit 5 in this number?",
+  "options": [
+    "50",
+    "500",
+    "5,000",
+    "50,000",
+    "5"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Identify the position of the digit 5 in the number 45,271.\nStep 2: Starting from the right, the digits are: 1 (ones), 7 (tens), 2 (hundreds), 5 (thousands), 4 (ten thousands).\nStep 3: The digit 5 is in the thousands column.\nStep 4: The value of the digit 5 in the thousands column is 5 × 1,000 = 5,000.\nThe correct answer is 5,000.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:19:39+00:00"
+}

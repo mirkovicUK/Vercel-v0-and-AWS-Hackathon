@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-477",
+  "seedQid": "q-m5-040",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 2,
+  "text": "A fruit bowl contains 20 pieces of fruit. 5 of them are apples. What fraction of the fruit are apples? Give your answer in its simplest form.",
+  "options": [
+    "1/5",
+    "1/4",
+    "5/20",
+    "1/3",
+    "2/5"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: There are 5 apples out of 20 pieces of fruit, so the fraction is 5/20.\nStep 2: Simplify 5/20 by dividing both the numerator and denominator by 5.\n5 ÷ 5 = 1\n20 ÷ 5 = 4\nStep 3: The simplified fraction is 1/4.\nThe correct answer is 1/4.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:12:23+00:00"
+}

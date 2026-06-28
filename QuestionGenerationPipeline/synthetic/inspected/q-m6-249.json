@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-249",
+  "answer": "C",
+  "steps": "0.375 = 3/8. Initially 3/8 complete. Additional 5/8 finished. Total complete = 3/8 + 5/8 = 8/8 = 1. So the reaction is fully complete, which is 1 whole. Among the options, 1 is option C.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-553",
+  "answer": "D",
+  "steps": "Catalogue number: 3,527,353. Write digits with place values: millions, hundred-thousands, ten-thousands, thousands, hundreds, tens, ones. Positions (from left): digit 1: 3 (millions place, value 3,000,000), digit 2: 5, digit 3: 2, digit 4: 7, digit 5: 3 (hundreds place, value 300), digit 6: 5, digit 7: 3 (ones place, value 3). The three 3s are at positions 1, 5, and 7. Their values: 3,000,000 + 300 + 3 = 3,000,303.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-026",
+  "answer": "C",
+  "steps": "1. The pizza is cut into 4 equal slices, so the whole pizza is 4/4. 2. Tom eats 1 slice, which is 1/4 of the pizza. 3. Fraction left = whole pizza - eaten part = 4/4 - 1/4 = 3/4. 4. Check options: A) 1/4 is the part eaten, not left. B) 1/2 is equivalent to 2/4, but 2/4 is also an option (D). C) 3/4 is correct. D) 2/4 simplifies to 1/2, which is not the exact fraction left unless simplified, but the question asks for fraction left, and 3/4 is the exact unsimplified fraction left. E) 4/4 is the whole pizza before eating. 5. Only 3/4 is mathematically correct and matches exactly one option.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

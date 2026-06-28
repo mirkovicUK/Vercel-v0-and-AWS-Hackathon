@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-087",
+  "seedQid": "q-m1-036",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A farmer collects eggs every day. He puts them into trays that hold 6 eggs each. If he fills t trays, the total number of eggs is given by the formula: eggs = 6 × t. How many eggs does the farmer have if he fills 7 trays?",
+  "options": [
+    "36",
+    "38",
+    "42",
+    "48",
+    "54"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Write down the formula: eggs = 6 × t\nStep 2: We are told t = 7, so substitute into the formula: eggs = 6 × 7\nStep 3: Calculate 6 × 7 = 42\nThe farmer has 42 eggs altogether.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:28:19+00:00"
+}

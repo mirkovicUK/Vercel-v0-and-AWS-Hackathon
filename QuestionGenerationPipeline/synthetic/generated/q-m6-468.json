@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-468",
+  "seedQid": "q-m5-036",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 3,
+  "text": "A baker makes 80 cupcakes for a school fair. She decorates 3/5 of them with chocolate icing and 25% of them with vanilla icing. The rest have strawberry icing. What fraction of the cupcakes have strawberry icing?",
+  "options": [
+    "1/10",
+    "3/20",
+    "1/5",
+    "3/10",
+    "2/5"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find how many cupcakes have chocolate icing. 3/5 of 80 = 80 × 3 ÷ 5 = 48 cupcakes.\n\nStep 2: Find how many cupcakes have vanilla icing. 25% of 80 = 80 ÷ 4 = 20 cupcakes.\n\nStep 3: Find how many have strawberry icing. 80 − 48 − 20 = 12 cupcakes.\n\nStep 4: Write this as a fraction of the total. 12/80 = 3/20.\n\nThe answer is 3/20.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:11:33+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-223",
+  "answer": "D",
+  "steps": "The baker uses the same number of eggs y in each cake. For 4 cakes, total eggs = 4y = 48. So y = 48 / 4 = 12 eggs per cake. For 5 cakes, eggs needed = 5 * 12 = 60 eggs.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

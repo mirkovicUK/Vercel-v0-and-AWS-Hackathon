@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-358",
+  "seedQid": "q-m4-029",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "A delivery crate contains 250 identical tins of paint and weighs 53 kg in total. The empty crate weighs 3 kg. If w represents the weight of one tin of paint in grams, which equation could be used to find w, and what is the value of w?",
+  "options": [
+    "250w + 3000 = 53000, so w = 200 g",
+    "250w + 3 = 53, so w = 200 g",
+    "250w = 53000, so w = 212 g",
+    "250w + 3000 = 53000, so w = 100 g",
+    "250w - 3000 = 53000, so w = 224 g"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: The total weight of the crate and tins is 53 kg. Convert this to grams: 53 kg = 53,000 g.\n\nStep 2: The empty crate weighs 3 kg = 3,000 g.\n\nStep 3: The weight of all the tins together is 53,000 - 3,000 = 50,000 g.\n\nStep 4: Since there are 250 identical tins, we can write the equation: 250w + 3000 = 53000.\n\nStep 5: Solving for w: 250w = 53000 - 3000 = 50000, so w = 50000 ÷ 250 = 200 g.\n\nThe correct answer is 250w + 3000 = 53000, so w = 200 g.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:58:31+00:00"
+}

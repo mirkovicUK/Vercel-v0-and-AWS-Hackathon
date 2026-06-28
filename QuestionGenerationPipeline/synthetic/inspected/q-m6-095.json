@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-095",
+  "answer": "A",
+  "steps": "Original price = £80. First reduction: 15% off means paying 85% of original. Price after first reduction = 80 × 0.85 = £68. Second reduction: 20% off the reduced price means paying 80% of that price. Price after second reduction = 68 × 0.80 = £54.40. Fraction of original price = 54.40 / 80 = 5440/8000 = simplify by dividing numerator and denominator by 80: 5440 ÷ 80 = 68, 8000 ÷ 80 = 100 → 68/100 = simplify by dividing by 4: 68 ÷ 4 = 17, 100 ÷ 4 = 25 → 17/25. Check options: 17/25 is option A.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

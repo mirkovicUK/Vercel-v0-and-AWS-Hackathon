@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-599",
+  "answer": "B) b ÷ 2 + 10 = 34, so b = 48",
+  "steps": "Let b = morning loaves. After selling half before lunch, loaves left = b - b/2 = b/2. Then she bakes 10 more: b/2 + 10. End of day total = 34. So equation: b/2 + 10 = 34. Solve: b/2 = 24 → b = 48. Check options: A says b=38 (incorrect), B says b=48 (correct), C uses b-2+10 (wrong), D uses b/2-10 (wrong), E says b=44 (incorrect). Only B matches equation and solution.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

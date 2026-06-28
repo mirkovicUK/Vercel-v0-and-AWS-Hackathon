@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-371",
+  "seedQid": "q-m5-007",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "Which of these numbers is the largest?",
+  "options": [
+    "15",
+    "51",
+    "35",
+    "25",
+    "45"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Compare all the numbers: 15, 51, 35, 25, 45.\nStep 2: Look at the tens digit of each number. 51 has a tens digit of 5, which is the highest tens digit among all the options.\nStep 3: Therefore, 51 is the largest number.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:00:10+00:00"
+}

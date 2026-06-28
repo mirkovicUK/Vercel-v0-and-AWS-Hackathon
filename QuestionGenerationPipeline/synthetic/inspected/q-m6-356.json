@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-356",
+  "answer": "B",
+  "steps": "Total weight of box and pencils = 250 g. Empty box weight = 50 g. Therefore weight of 10 pencils = 250 g - 50 g = 200 g. Weight of one pencil = 200 g ÷ 10 = 20 g.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

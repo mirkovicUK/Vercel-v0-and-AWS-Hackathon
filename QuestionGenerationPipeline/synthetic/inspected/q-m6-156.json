@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-156",
+  "answer": "B",
+  "steps": "The ratio of flour to sugar is 2:1, meaning for every 2 parts flour, 1 part sugar is needed. If 4 cups of flour are used, that is 2 × 2 cups. So sugar needed = (4 ÷ 2) = 2 cups.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

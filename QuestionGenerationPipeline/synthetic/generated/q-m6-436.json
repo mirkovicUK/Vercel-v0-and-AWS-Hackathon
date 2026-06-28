@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-436",
+  "seedQid": "q-m5-028",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 1,
+  "text": "A pencil is 0.18 m long. What is this length as a fraction of a metre?",
+  "options": [
+    "18/10",
+    "18/100",
+    "18/1000",
+    "1/8",
+    "8/100"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: 0.18 means 18 hundredths.\nStep 2: As a fraction, 0.18 = 18/100.\nTherefore the correct answer is 18/100.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:07:57+00:00"
+}

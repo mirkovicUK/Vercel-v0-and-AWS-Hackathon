@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-577",
+  "seedQid": "q-m6-016",
+  "topic": "ratio_proportion",
+  "difficulty": 2,
+  "text": "A fruit punch is made by mixing orange juice and lemonade in the ratio 3:1. If Sam uses 9 litres of orange juice, how many litres of lemonade does he need?",
+  "options": [
+    "1 litre",
+    "2 litres",
+    "3 litres",
+    "4 litres",
+    "6 litres"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "The ratio of orange juice to lemonade is 3:1. This means for every 3 parts of orange juice, there is 1 part of lemonade.\n\nStep 1: Find the value of one part. Sam uses 9 litres of orange juice, which represents 3 parts. So 1 part = 9 ÷ 3 = 3 litres.\n\nStep 2: Lemonade is 1 part, so he needs 1 × 3 = 3 litres of lemonade.\n\nThe answer is 3 litres.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:23:39+00:00"
+}

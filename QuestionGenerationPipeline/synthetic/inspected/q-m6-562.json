@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-562",
+  "answer": "C",
+  "steps": "Week 1: 80, Week 2: 95, Week 3: 110. Differences: 95 - 80 = 15, 110 - 95 = 15. Pattern is adding 15 each week. So Week 4 = 110 + 15 = 125.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

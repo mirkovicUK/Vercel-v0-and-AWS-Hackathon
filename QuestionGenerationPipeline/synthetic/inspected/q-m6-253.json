@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-253",
+  "answer": "B",
+  "steps": "Let the starting number of eggs be x. The steps: divide by 4 → x/4, add 7 → (x/4) + 7, multiply by 3 → 3 * ((x/4) + 7). Set equal to 33: 3 * ((x/4) + 7) = 33. Divide both sides by 3: (x/4) + 7 = 11. Subtract 7: x/4 = 4. Multiply by 4: x = 16. Check: 16 ÷ 4 = 4, 4 + 7 = 11, 11 × 3 = 33. Correct.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

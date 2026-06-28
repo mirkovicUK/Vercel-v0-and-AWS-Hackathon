@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-549",
+  "answer": "B) 4,516,293",
+  "steps": "Original number: 4,916,253. Identify digits: millions place = 4, hundred-thousands place = 9, ten-thousands place = 1, thousands place = 6, hundreds place = 2, tens place = 5, ones place = 3. Swap digit in hundred-thousands place (9) with digit in tens place (5). New digits: millions = 4, hundred-thousands = 5, ten-thousands = 1, thousands = 6, hundreds = 2, tens = 9, ones = 3. New number: 4,516,293.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

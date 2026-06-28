@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-479",
+  "seedQid": "q-m5-040",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 4,
+  "text": "A baker makes a batch of 80 cupcakes. She decorates 25% of them with chocolate icing, 3/8 of them with vanilla icing, and the rest with strawberry icing. She then gives away 2/3 of the strawberry cupcakes to a neighbour. What fraction of the cupcakes she still has are strawberry?",
+  "options": [
+    "1/6",
+    "1/5",
+    "3/20",
+    "10/60",
+    "2/11"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Find how many cupcakes have each type of icing.\n- Chocolate: 25% of 80 = 20 cupcakes\n- Vanilla: 3/8 of 80 = 30 cupcakes\n- Strawberry: 80 − 20 − 30 = 30 cupcakes\n\nStep 2: Find how many strawberry cupcakes she gives away.\n- She gives away 2/3 of 30 = 20 strawberry cupcakes\n- Strawberry cupcakes remaining = 30 − 20 = 10\n\nStep 3: Find the total number of cupcakes she still has.\n- Total remaining = 20 (chocolate) + 30 (vanilla) + 10 (strawberry) = 60 cupcakes\n\nStep 4: Find the fraction that are strawberry.\n- Strawberry fraction = 10/60 = 1/6\n\nThe correct answer is 1/6.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:12:35+00:00"
+}

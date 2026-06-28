@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-002",
+  "seedQid": "q-m1-001",
+  "topic": "number",
+  "difficulty": 2,
+  "text": "A library has 'three thousand and forty-seven' books. What is this number in figures?",
+  "options": [
+    "3470",
+    "30047",
+    "3047",
+    "3407",
+    "347"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: 'Three thousand' means 3000.\nStep 2: 'and forty-seven' means 47.\nStep 3: Add them together: 3000 + 47 = 3047.\nThe correct answer is 3047.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-11T19:46:19+00:00"
+}

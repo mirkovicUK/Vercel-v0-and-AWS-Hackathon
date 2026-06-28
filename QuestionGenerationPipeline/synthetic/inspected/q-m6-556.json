@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-556",
+  "answer": "B",
+  "steps": "The baker puts 5 cupcakes on each tray. He fills 4 trays. Total cupcakes = 5 cupcakes/tray × 4 trays = 20 cupcakes.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

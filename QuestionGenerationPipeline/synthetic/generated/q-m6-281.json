@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-281",
+  "seedQid": "q-m3-017",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "A pencil costs 30p. Sam buys 4 pencils. How much does he spend in total?",
+  "options": [
+    "90p",
+    "£1.00",
+    "£1.20",
+    "£1.50",
+    "£1.60"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Each pencil costs 30p.\nStep 2: Sam buys 4 pencils.\nStep 3: Total cost = 4 × 30p = 120p = £1.20.\nThe correct answer is £1.20.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:49:40+00:00"
+}

@@ -59,7 +59,7 @@ them, not hide them.
 *Perform the intended function; recover from failure; meet demand.*
 
 **Today**
-- **Aurora Serverless v2 with Multi-AZ failover** within `eu-west-2` — the right durability level for a single-country product.
+- **Aurora Serverless v2 — storage replicated across 3 AZs, single-AZ compute** within `eu-west-2`. Data survives an AZ failure (the storage layer is always 3-AZ); on instance loss Aurora rebuilds a replacement from the surviving storage. A second-AZ reader for sub-minute *automatic* failover is **deliberately deferred to control cost** at this pre-revenue stage — it's one CDK line away (see Cost Optimization and Known high-risk items).
 - **The RDS Data API removes the classic serverless failure mode** — it's stateless HTTPS, so a burst of short-lived Vercel function invocations can't exhaust a connection pool.
 - **Idempotent, retry-safe billing** — Stripe webhooks are de-duplicated via a `processed_webhook_events` ledger, protected against out-of-order delivery (`status_event_at`), and the handler returns 500 (so Stripe retries) while marking an event processed **only after success**.
 - **DB-enforced invariants** — a partial unique index guarantees one active session per child even under concurrent double-submit; session expiry is server-authoritative with zombie-session cleanup.
@@ -68,7 +68,7 @@ them, not hide them.
 - **Fail-closed, retryable GDPR erasure** — ordered so any failure leaves the account fully intact and retryable.
 
 **Next at scale**
-- Aurora read replicas for the analytics read path; documented backup/PITR restore drills; a written DR runbook; and a load test to validate ACU scaling under exam-season spikes.
+- A **second-AZ Serverless v2 reader** to add sub-minute automatic failover (one CDK line, deferred today purely for cost); Aurora read replicas for the analytics read path; documented backup/PITR restore drills; a written DR runbook; and a load test to validate ACU scaling under exam-season spikes.
 
 ---
 
@@ -94,6 +94,7 @@ them, not hide them.
 
 **Today**
 - **Scale-to-near-zero data tier** — Aurora Serverless v2 at `0.5–2` ACU costs almost nothing at idle and scales under load, which suits a new product with bursty (exam-season) traffic.
+- **Single-AZ compute by choice** — one Serverless v2 instance, so we don't pay for a standby node before revenue justifies it. The storage layer is still 3-AZ durable; a second-AZ reader is a one-line add when traffic warrants the failover guarantee over the saving.
 - **NAT-free networking** — `natGateways: 0` removes the standing NAT Gateway cost and per-GB data-processing charges; the Data API endpoint replaces it.
 - **Serverless compute + static marketing** — Vercel functions bill per use; the public marketing pages are prerendered static.
 - **Bounded AI spend** — a single model resolved through one accessor, a hard cap of 5 hints per session, and the review batched off the critical path keep token usage predictable.
@@ -122,7 +123,7 @@ them, not hide them.
 
 A Well-Architected review is judged on honesty about gaps, not a clean sheet. Ours:
 
-1. **Single-region — no cross-region DR.** Multi-AZ covers an AZ failure, not a full-region outage. Acceptable for a UK-only v1; revisit if we expand.
+1. **Single-region, single-AZ compute.** Aurora storage is replicated across 3 AZs, so data survives an AZ loss — but with one compute instance, an instance/AZ failure means a short automatic-recovery gap rather than sub-minute failover. A second-AZ reader is one CDK line, deferred purely for cost at this pre-revenue stage; cross-region DR is a later step. Acceptable for a UK-only v1; revisit as revenue and traffic grow.
 2. **No edge WAF / edge rate-limiting yet.** The public contact endpoint is throttled at the DB layer only; a WAF is the right next control.
 3. **Observability is logs-only.** No metric dashboards or alarms yet — a real gap for operating at scale.
 4. **`source_ip` stored for the contact rate-limit** (documented, never displayed, de-attributed on erasure). A hash would reduce sensitivity further; deferred for v1.

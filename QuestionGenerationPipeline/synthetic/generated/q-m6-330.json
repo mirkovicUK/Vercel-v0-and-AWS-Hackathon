@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-330",
+  "seedQid": "q-m4-012",
+  "topic": "algebra",
+  "difficulty": 5,
+  "text": "A charity fundraiser sets a target of £1,250. In the first week, they raise £p. Each following week, they raise £30 more than the previous week. After 5 weeks in total, they have raised exactly £1,250. What is the value of p?",
+  "options": [
+    "£170",
+    "£190",
+    "£210",
+    "£250",
+    "£310"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "The amounts raised each week form a pattern: Week 1 = p, Week 2 = p + 30, Week 3 = p + 60, Week 4 = p + 90, Week 5 = p + 120.\n\nThe total raised over 5 weeks is:\np + (p + 30) + (p + 60) + (p + 90) + (p + 120) = 1250\n\nCombine like terms:\n5p + 30 + 60 + 90 + 120 = 1250\n5p + 300 = 1250\n\nSubtract 300 from both sides:\n5p = 950\n\nDivide both sides by 5:\np = 190\n\nTherefore p = £190.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:55:40+00:00"
+}

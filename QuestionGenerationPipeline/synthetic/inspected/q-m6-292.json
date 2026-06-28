@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-292",
+  "answer": "B",
+  "steps": "1. Visualise the layout: Park is a reference point. Toy shop is 300 m north of the park. Library is 180 m south of the park. 2. Since they are on the same straight road, the toy shop and library are on opposite sides of the park. 3. The distance between them is the sum of their distances from the park: 300 m (north to toy shop) + 180 m (south to library) = 480 m. 4. Check each option: A) 300 - 180 = 120 m (would be correct if both were on same side, but they are on opposite sides). B) 300 + 180 = 480 m (correct). C) 300 × 180 = 54000 m (wrong). D) 180 - 300 = -120 m (distance cannot be negative). E) 300 ÷ 180 ≈ 1.67 m (wrong). 5. Only option B gives the correct distance.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

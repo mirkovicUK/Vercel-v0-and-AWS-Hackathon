@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-502",
+  "answer": "D",
+  "steps": "Given formula: Cost = 3 + 2n, where n = number of people. For n = 4, Cost = 3 + 2*4 = 3 + 8 = 11. So cost is £11.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

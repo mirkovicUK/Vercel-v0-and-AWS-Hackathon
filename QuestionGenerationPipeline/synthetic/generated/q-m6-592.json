@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-592",
+  "seedQid": "q-m6-019",
+  "topic": "ratio_proportion",
+  "difficulty": 2,
+  "text": "A fruit punch recipe for 4 people uses 200 ml of orange juice, 100 ml of lemonade, and 50 ml of cranberry juice. How much orange juice is needed to make the punch for 6 people?",
+  "options": [
+    "250 ml",
+    "300 ml",
+    "350 ml",
+    "400 ml",
+    "150 ml"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: The recipe serves 4 people and uses 200 ml of orange juice.\nStep 2: We need to serve 6 people, so we need to find the scale factor: 6 ÷ 4 = 1.5\nStep 3: Multiply the amount of orange juice by 1.5: 200 ml × 1.5 = 300 ml\nTherefore, 300 ml of orange juice is needed for 6 people.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:25:17+00:00"
+}

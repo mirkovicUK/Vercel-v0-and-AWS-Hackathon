@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-458",
+  "seedQid": "q-m5-033",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 3,
+  "text": "A baker uses 2.75 kg of flour on Monday, 3.4 kg on Tuesday, and 1.85 kg on Wednesday. What is the total amount of flour used over the three days?",
+  "options": [
+    "7.00 kg",
+    "7.55 kg",
+    "8.00 kg",
+    "8.10 kg",
+    "7.90 kg"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Add the amounts for Monday and Tuesday: 2.75 + 3.40 = 6.15 kg.\nStep 2: Add Wednesday's amount: 6.15 + 1.85 = 8.00 kg.\nTherefore, the total flour used is 8.00 kg.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:10:26+00:00"
+}

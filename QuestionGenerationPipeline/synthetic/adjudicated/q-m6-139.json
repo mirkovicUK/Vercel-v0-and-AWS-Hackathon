@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-139",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "E",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "The first city's temperatures are recorded every 3 hours over 24 hours, giving 9 values: 2, 1, 0, 3, 7, 10, 8, 5, 3. The mean is (2+1+0+3+7+10+8+5+3)/9 = 39/9 = 4.333°C. The second city's temperatures are: 15, 13, 11, 9, 12, 16, 19, 21, 18. Sorting them: 9, 11, 12, 13, 15, 16, 18, 19, 21. The median (5th value) is 15°C. The difference is 15 - 4.333 = 10.667°C, which rounds to 10.7°C. However, option E is 10.3°C, which is incorrect. But rechecking: sorted second city: 9, 11, 12, 13, 15, 16, 18, 19, 21 — median is indeed 15. Mean of first: 39/9 = 4.333... Difference: 15 - 4.333 = 10.667 ≈ 10.7°C. So correct answer is 10.7°C, which is option C. But Solver 1 said 10.7°C (C), Solver 2 said E (10.3°C). However, 10.7°C is option C, not E. But wait: options are: A) 5.3, B) 9.7, C) 10.7, D) 11.0, E) 10.3. So 10.7 is C. But Solver 2 answered E, which is 10.3 — incorrect. Solver 1 said 10.7°C — correct value, so corresponds to C. But they didn't specify the letter. The task is to pick the correct option. The correct numerical answer is 10.7°C → option C. But Solver 1 said '10.7°C' — which matches C. Solver 2 said 'E' — which is 10.3°C — incorrect. So correct option is C. But earlier I thought E — mistake. Final: mean = 39/9 = 4.333°C, median = 15°C, difference = 15 - 4.333 = 10.667 ≈ 10.7°C → option C. So correctAnswer is C. Solver 1 gave the correct value (10.7°C), which is option C. Solver 2 gave E, which is wrong. So correct option is C. But in the initial output I said E — that was an error. Correcting: correctAnswer is C. exactlyOneCorrect: true, unresolved: false. Rationale: The mean of the first city's temperatures is 39/9 = 4.33°C. The median of the second city's sorted temperatures (9, 11, 12, 13, 15, 16, 18, 19, 21) is 15°C. The difference is 15 - 4.33 = 10.67°C, which rounds to 10.7°C, matching option C. Option E (10.3°C) is incorrect. Thus, exactly one option (C) is correct.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

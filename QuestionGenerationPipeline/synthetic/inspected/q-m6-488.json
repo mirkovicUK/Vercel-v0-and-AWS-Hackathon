@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-488",
+  "answer": "B",
+  "steps": "Original water = 8 litres. Evaporation rate = 0.5 litres per hour. After 6 hours, water evaporated = 0.5 × 6 = 3 litres. Water remaining = 8 - 3 = 5 litres. Fraction remaining = 5/8.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

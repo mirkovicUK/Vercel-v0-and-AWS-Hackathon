@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-594",
+  "seedQid": "q-m6-019",
+  "topic": "ratio_proportion",
+  "difficulty": 4,
+  "text": "A smoothie recipe for 4 servings requires 360 ml of orange juice, 200 g of yoghurt, and 3 bananas. Priya wants to make 10 servings using the same recipe. She has 850 ml of orange juice, 480 g of yoghurt, and 8 bananas. Which ingredient will run out first, and how many full servings can she actually make?",
+  "options": [
+    "Orange juice — she can make 9 full servings",
+    "Yoghurt — she can make 9 full servings",
+    "Bananas — she can make 10 full servings",
+    "Orange juice — she can make 8 full servings",
+    "Yoghurt — she can make 8 full servings"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Find the amount of each ingredient needed per serving.\n• Orange juice: 360 ml ÷ 4 = 90 ml per serving\n• Yoghurt: 200 g ÷ 4 = 50 g per serving\n• Bananas: 3 ÷ 4 = 0.75 bananas per serving\n\nStep 2: Find how many servings each ingredient can provide.\n• Orange juice: 850 ÷ 90 = 9.44... → 9 full servings\n• Yoghurt: 480 ÷ 50 = 9.6 → 9 full servings\n• Bananas: 8 ÷ 0.75 = 10.66... → 10 full servings\n\nStep 3: The ingredient that allows the fewest servings runs out first. Both orange juice and yoghurt allow 9 full servings, but orange juice runs out slightly sooner (9.44 servings vs 9.6 servings), meaning it is the first ingredient to be completely used up.\n\nTherefore, orange juice runs out first, and Priya can make 9 full servings.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:25:29+00:00"
+}

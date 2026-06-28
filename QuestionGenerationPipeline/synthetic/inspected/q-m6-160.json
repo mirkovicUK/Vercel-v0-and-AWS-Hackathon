@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-160",
+  "answer": "A",
+  "steps": "Original ratio cement:sand:gravel = 2:5:8. Total parts = 2+5+8 = 15. For 900 kg total, cement = (2/15)*900 = 120 kg, sand = (5/15)*900 = 300 kg, gravel = (8/15)*900 = 480 kg. He accidentally uses 40 kg too much sand, so sand used = 300+40 = 340 kg. Total must stay 900 kg, so cement stays 120 kg, but gravel is reduced. Let new gravel = g kg. Then 120 + 340 + g = 900 → 460 + g = 900 → g = 440 kg. New amounts: cement = 120, sand = 340, gravel = 440. New ratio = 120:340:440. Divide by 20: 6:17:22. Check options: A) 6:17:22 matches.",
+  "inspectorDifficulty": 3,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

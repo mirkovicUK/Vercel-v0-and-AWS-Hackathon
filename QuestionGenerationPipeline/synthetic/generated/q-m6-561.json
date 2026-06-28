@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-561",
+  "seedQid": "q-m6-012",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "A farmer collects eggs each day. On Monday she collected 10 eggs, on Tuesday she collected 20 eggs, and on Wednesday she collected 30 eggs. If the pattern continues, how many eggs will she collect on Thursday?",
+  "options": [
+    "35",
+    "40",
+    "45",
+    "50",
+    "60"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Look at the pattern. Monday = 10, Tuesday = 20, Wednesday = 30.\nStep 2: Each day, the number of eggs goes up by 10 (10, 20, 30, ...).\nStep 3: Thursday = 30 + 10 = 40.\nThe answer is 40.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:21:52+00:00"
+}

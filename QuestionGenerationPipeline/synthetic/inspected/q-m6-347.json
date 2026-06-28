@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-347",
+  "answer": "C",
+  "steps": "The recipe uses 400 ml water for every 100 ml lemon juice, so the ratio of water to lemon juice is 400:100 = 4:1. For 50 ml lemon juice, water needed = 4 × 50 ml = 200 ml.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

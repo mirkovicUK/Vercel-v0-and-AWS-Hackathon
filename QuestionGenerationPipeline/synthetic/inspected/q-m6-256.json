@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-256",
+  "answer": "B",
+  "steps": "Add the number of children for each pet type and those with none: Dog 8 + Cat 6 + Fish 3 + Rabbit 2 + None 5 = 8 + 6 = 14, 14 + 3 = 17, 17 + 2 = 19, 19 + 5 = 24. Total children = 24.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

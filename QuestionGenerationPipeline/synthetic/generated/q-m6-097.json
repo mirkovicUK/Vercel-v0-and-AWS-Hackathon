@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-097",
+  "seedQid": "q-m1-038",
+  "topic": "data_handling",
+  "difficulty": 2,
+  "text": "A pet shop has 24 animals. The bar chart below shows how many of each type there are:\n\nDogs: 8\nCats: 6\nRabbits: ?\nFish: 4\n\nHow many rabbits are there?",
+  "options": [
+    "4",
+    "5",
+    "6",
+    "7",
+    "8"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Add up the animals we already know: Dogs (8) + Cats (6) + Fish (4) = 18.\nStep 2: Subtract from the total: 24 − 18 = 6.\nStep 3: Therefore there are 6 rabbits.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:29:18+00:00"
+}

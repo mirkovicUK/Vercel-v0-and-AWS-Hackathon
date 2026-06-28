@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-141",
+  "answer": "B",
+  "steps": "Three thousand and six means 3000 + 6. In figures: 3000 is written as 3000, adding 6 gives 3006. Check options: A) 3600 is three thousand six hundred, not three thousand and six. B) 3006 matches. C) 306 is three hundred six. D) 3060 is three thousand sixty. E) 30006 is thirty thousand six. Only B matches the correct figure.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

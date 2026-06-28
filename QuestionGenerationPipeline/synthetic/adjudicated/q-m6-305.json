@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-305",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "C",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "The perimeter of a rectangle is given by 2(length + width). Substituting the expressions: 2((3x + 2.7) + (x + 1.45)) = 40.3. Simplifying: 2(4x + 4.15) = 40.3 → 8x + 8.3 = 40.3 → 8x = 32 → x = 4.0. This matches option C. Solver 1 gave the correct value. Solver 2 chose B (4.2), which is incorrect. The correct answer is unambiguously C.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

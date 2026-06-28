@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-362",
+  "answer": "D",
+  "steps": "The ratio of flour to milk is 1:3, meaning for every 1 part flour, you need 3 parts milk. If flour used is 200 g, which is 1 part, then 1 part = 200 g. Therefore, milk needed = 3 parts = 3 × 200 g = 600 g.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

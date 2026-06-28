@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-279",
+  "answer": "B",
+  "steps": "Charge per hour = £p = £4. Mia swims 45 minutes per session = 45/60 = 0.75 hours. Cost per session = p × 0.75 = 4 × 0.75 = £3. Total weekly cost = cost per session × d = 3d. Given total cost = £12, so 3d = 12 → d = 12/3 = 4.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-011",
+  "answer": "B",
+  "steps": "The sequence is 10, 20, 30, 40. Each term increases by 10. So the next term is 40 + 10 = 50.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

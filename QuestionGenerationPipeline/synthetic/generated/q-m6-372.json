@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-372",
+  "seedQid": "q-m5-007",
+  "topic": "number",
+  "difficulty": 2,
+  "text": "A baker counts the cupcakes left on four trays at the end of the day. Tray A has 47 cupcakes, Tray B has 39 cupcakes, Tray C has 52 cupcakes, and Tray D has 44 cupcakes. Which tray has the fewest cupcakes?",
+  "options": [
+    "Tray A",
+    "Tray B",
+    "Tray C",
+    "Tray D",
+    "Tray A and Tray D have the same (tied fewest)"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: List the number of cupcakes on each tray:\n- Tray A: 47\n- Tray B: 39\n- Tray C: 52\n- Tray D: 44\n\nStep 2: Compare the numbers to find the smallest. Looking at the tens digits: 39 has 3 tens, while the others have 4 or 5 tens. So 39 is the smallest number.\n\nStep 3: Tray B has 39 cupcakes, which is the fewest.\n\nThe answer is Tray B.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:00:15+00:00"
+}

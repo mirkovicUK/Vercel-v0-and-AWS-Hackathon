@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-014",
+  "answer": "B",
+  "steps": "The rocket is descending at a constant rate, so the altitude readings form an arithmetic sequence. The differences between consecutive terms should be equal. Given: 1284, 1247, 1210, ___, 1136, 1099. First differences: 1247 - 1284 = -37, 1210 - 1247 = -37. So the common difference is -37. Therefore, missing term = 1210 + (-37) = 1173. Check next: 1173 + (-37) = 1136, matches given 1136. Then 1136 + (-37) = 1099, matches. So missing altitude is 1173.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

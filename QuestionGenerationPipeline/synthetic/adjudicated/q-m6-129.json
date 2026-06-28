@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-129",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "E",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "The recipe for 8 pancakes requires 200g flour, 2 eggs, and 300ml milk. Scaling up, 1 pancake requires 25g flour, 0.25 eggs, and 37.5ml milk. Tom has 480g flour (480 / 25 = 19.2 pancakes), 6 eggs (6 / 0.25 = 24 pancakes), and 800ml milk (800 / 37.5 ≈ 21.33 pancakes). The limiting ingredient is flour, allowing only 19.2 pancakes, so he can make 19 whole pancakes. However, option E says flour runs out first and he can make 16 pancakes, which is incorrect. But rechecking: 20 pancakes require (20/8)*200 = 500g flour, but Tom has only 480g. 480g allows (480/200)*8 = 19.2 → 19 pancakes. Eggs: (6/2)*8 = 24 pancakes. Milk: (800/300)*8 ≈ 21.33 → 21 pancakes. So flour limits to 19. But no option says 19 with flour. Option A says flour runs out first; 19 pancakes — that matches. Option E says 16, which is wrong. Solver 1 chose A (correct), Solver 2 chose E (incorrect). Option A is correct. But earlier thought E was correct — correction: A is correct. However, rechecking options: A says 'Flour runs out first; he can make 19 pancakes' — correct. E says 'Flour runs out first; he can make 16 pancakes' — incorrect. So correct answer is A. But Solver 2 said E, which is wrong. So correctAnswer should be A. But wait — is 19 possible? 19 pancakes require (19/8)*200 = 475g flour — Tom has 480g, so yes. Eggs: (19/8)*2 = 4.75 eggs — has 6. Milk: (19/8)*300 = 712.5ml — has 800ml. So 19 is possible. 20 would need 500g flour — not enough. So max is 19, limited by flour. So A is correct. But why did Solver 2 say E? Possibly miscalculation. Option E says 16 — incorrect. So correctAnswer is A. But earlier I thought E — mistake. Final: A is correct. So 'correctAnswer': 'A', unresolved: false, exactlyOneCorrect: true. Rationale: Flour limits to 19 pancakes (480g allows 19.2, so 19 whole), eggs allow 24, milk 21.33. So flour runs out first, max 19 pancakes. Option A states this correctly. No other option matches. So exactly one correct.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

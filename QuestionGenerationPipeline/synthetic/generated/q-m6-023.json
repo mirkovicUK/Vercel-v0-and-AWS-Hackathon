@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-023",
+  "seedQid": "q-m1-010",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "A baker makes some cupcakes in the morning and then bakes 15 more in the afternoon. He sells 8 cupcakes during the day. At the end of the day he has 30 cupcakes left. If n represents the number of cupcakes he made in the morning, which equation is correct and what is the value of n?",
+  "options": [
+    "n + 15 − 8 = 30, so n = 23",
+    "n + 15 − 8 = 30, so n = 37",
+    "n − 15 + 8 = 30, so n = 37",
+    "n + 15 + 8 = 30, so n = 7",
+    "n + 15 − 8 = 30, so n = 25"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: The baker starts with n cupcakes, adds 15 more (n + 15), then sells 8 (n + 15 − 8). This equals 30.\n\nStep 2: Write the equation: n + 15 − 8 = 30\n\nStep 3: Simplify the left side: n + 7 = 30\n\nStep 4: Subtract 7 from both sides: n = 30 − 7 = 23\n\nThe correct answer is n + 15 − 8 = 30, so n = 23.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-11T19:48:45+00:00"
+}

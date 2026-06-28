@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-459",
+  "seedQid": "q-m5-033",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 4,
+  "text": "A baker uses three bags of flour during a week. Bag A weighs 2.75 kg, Bag B weighs 3.4 kg, and Bag C weighs 1.85 kg. She uses 60% of the total flour for bread and the rest for cakes. How many kilograms of flour does she use for cakes?",
+  "options": [
+    "3.2 kg",
+    "3.6 kg",
+    "4.8 kg",
+    "2.4 kg",
+    "3.0 kg"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Find the total weight of flour.\n2.75 + 3.4 + 1.85 = 8.0 kg\n\nStep 2: Find the percentage used for cakes.\nIf 60% is used for bread, then 100% − 60% = 40% is used for cakes.\n\nStep 3: Calculate 40% of 8.0 kg.\n40% = 40/100 = 0.4\n0.4 × 8.0 = 3.2 kg\n\nThe baker uses 3.2 kg of flour for cakes.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:10:32+00:00"
+}

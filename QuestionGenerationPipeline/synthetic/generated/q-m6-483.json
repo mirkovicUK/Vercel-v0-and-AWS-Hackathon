@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-483",
+  "seedQid": "q-m5-042",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 3,
+  "text": "A bakery sells 4 muffins for £3.60 and 6 cookies for £2.70. Emma buys 2 muffins and 3 cookies. What fraction of her total spending is on muffins?",
+  "options": [
+    "1/4",
+    "2/5",
+    "4/7",
+    "1/2",
+    "3/5"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find the cost of one muffin. £3.60 ÷ 4 = £0.90 per muffin.\nStep 2: Find the cost of one cookie. £2.70 ÷ 6 = £0.45 per cookie.\nStep 3: Find the cost of 2 muffins. 2 × £0.90 = £1.80.\nStep 4: Find the cost of 3 cookies. 3 × £0.45 = £1.35.\nStep 5: Find the total cost. £1.80 + £1.35 = £3.15.\nStep 6: Find the fraction spent on muffins. £1.80 ÷ £3.15 = 180/315. Simplify by dividing both by 45: 4/7.\nThe answer is 4/7.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:13:15+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-507",
+  "answer": "B",
+  "steps": "Day 1: 5, Day 2: 10, Day 3: 15, Day 4: 20. The sequence is 5, 10, 15, 20, which is 5 times the day number. Check: Day 1 → 5×1 = 5, Day 2 → 5×2 = 10, Day 3 → 5×3 = 15, Day 4 → 5×4 = 20. So Day n → 5n. Check options: A) n+5 gives Day 1 = 6 (wrong), B) 5n gives correct, C) n×10 gives Day 1 = 10 (wrong), D) 5n+5 gives Day 1 = 10 (wrong), E) n+4 gives Day 1 = 5? Actually n+4: Day 1 = 5, Day 2 = 6 (wrong). Only B matches all given days.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-070",
+  "answer": "C",
+  "steps": "0.00047 cm = 4.7 × 0.0001 = 4.7 × 10⁻⁴. Check options: A) 4.7 × 10⁻⁵ = 0.000047 (too small). B) 47 × 10⁻⁴ = 0.0047 (too large). C) 4.7 × 10⁻⁴ = 0.00047 (correct). D) 0.47 × 10⁻⁴ = 0.000047 (too small). E) 4.7 × 10⁻³ = 0.0047 (too large). Only C matches exactly.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

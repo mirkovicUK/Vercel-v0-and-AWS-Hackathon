@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-337",
+  "answer": "B",
+  "steps": "Let the three consecutive house numbers be n, n+1, n+2. Their sum: n + (n+1) + (n+2) = 3n + 3 = 63. Subtract 3: 3n = 60. Divide by 3: n = 20. So the smallest house number is 20. Check: 20 + 21 + 22 = 63. Option B is 20.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

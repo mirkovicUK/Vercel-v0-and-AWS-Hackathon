@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-535",
+  "seedQid": "q-m6-006",
+  "topic": "number",
+  "difficulty": 5,
+  "text": "A secret code is formed by a 7-digit number. The digit 6 appears exactly twice in this number. The sum of the place values of both 6s is 6,006,000. One of the 6s is in the millions place. In which other place is the second 6?",
+  "options": [
+    "Hundreds",
+    "Thousands",
+    "Ten thousands",
+    "Hundred thousands",
+    "Tens"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: The place value of the 6 in the millions place is 6 × 1,000,000 = 6,000,000.\n\nStep 2: The sum of both place values is 6,006,000. So the place value of the second 6 is 6,006,000 − 6,000,000 = 6,000.\n\nStep 3: If the digit 6 has a place value of 6,000, then it must be in the thousands place, because 6 × 1,000 = 6,000.\n\nTherefore, the second 6 is in the thousands place.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:19:04+00:00"
+}

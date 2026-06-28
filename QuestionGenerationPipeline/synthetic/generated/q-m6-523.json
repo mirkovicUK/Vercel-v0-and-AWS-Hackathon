@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-523",
+  "seedQid": "q-m6-003",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A school is trying to raise money for new computers. So far they have collected fifteen thousand and eight pounds from donations, and another two thousand, seven hundred and fifty pounds from a cake sale. What is the total amount raised, written in figures?",
+  "options": [
+    "£17,__(17,258)",
+    "£17,758",
+    "£17,508",
+    "£15,758",
+    "£17,058"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Write the first amount in figures. Fifteen thousand and eight = £15,008.\nStep 2: Write the second amount in figures. Two thousand, seven hundred and fifty = £2,750.\nStep 3: Add the two amounts together: £15,008 + £2,750.\n15,008 + 2,750: 8 + 0 = 8, 0 + 5 = 5 (tens), 0 + 7 = 7 (hundreds), 5 + 2 = 7 (thousands), 1 + 0 = 1 (ten-thousands).\nTotal = £17,758.\nThe correct answer is £17,758.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:17:49+00:00"
+}

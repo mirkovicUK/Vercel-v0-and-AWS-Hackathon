@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-331",
+  "answer": "C",
+  "steps": "Let Tom's sweets = x, dad's sweets = 2x (ratio 1:2). Total sweets = x + 2x = 3x. Given total = 12, so 3x = 12, x = 4. Therefore Tom gets 4 sweets.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

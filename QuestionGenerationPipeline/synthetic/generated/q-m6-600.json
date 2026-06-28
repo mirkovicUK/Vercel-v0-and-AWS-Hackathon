@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-600",
+  "seedQid": "q-m6-021",
+  "topic": "algebra",
+  "difficulty": 5,
+  "text": "A baker makes some loaves of bread each morning. She sells two-thirds of them before lunch, then bakes 10 more loaves in the afternoon. By the end of the day she sells another 15 loaves and has 13 loaves remaining. If we let b represent the number of loaves she baked in the morning, which equation matches this situation, and what is the value of b?",
+  "options": [
+    "b − (2b/3) + 10 − 15 = 13; b = 54",
+    "b − (2b/3) + 10 − 15 = 13; b = 36",
+    "(2b/3) + 10 − 15 = 13; b = 27",
+    "b − (2b/3) − 10 − 15 = 13; b = 114",
+    "b/3 + 10 − 15 = 13; b = 54"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: She starts with b loaves and sells two-thirds before lunch, leaving b − 2b/3 = b/3 loaves.\n\nStep 2: She then bakes 10 more, giving her b/3 + 10 loaves.\n\nStep 3: She sells 15 more loaves, leaving b/3 + 10 − 15 = b/3 − 5 loaves.\n\nStep 4: We're told she has 13 left, so: b/3 − 5 = 13.\n\nStep 5: Add 5 to both sides: b/3 = 18.\n\nStep 6: Multiply both sides by 3: b = 54.\n\nThe equation b − (2b/3) + 10 − 15 = 13 simplifies to b/3 − 5 = 13, which gives b = 54. The correct answer is the first option.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:26:17+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-512",
+  "answer": "B",
+  "steps": "Four thousand = 4000, one hundred = 100, nine = 9. Adding: 4000 + 100 + 9 = 4109.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

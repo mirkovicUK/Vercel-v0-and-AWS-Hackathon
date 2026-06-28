@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-343",
+  "answer": "B) 8 cm",
+  "steps": "Scale 1:50 means 1 unit on the model represents 50 units on the real car. Real car length = 4 m = 400 cm. Model length = (real length) / 50 = 400 cm / 50 = 8 cm.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

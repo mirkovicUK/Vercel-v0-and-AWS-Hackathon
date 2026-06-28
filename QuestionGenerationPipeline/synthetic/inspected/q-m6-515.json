@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-515",
+  "answer": "A",
+  "steps": "1. Write 'four million, seven hundred and six thousand and fifty' in digits: 4,706,050.\n2. Write 'three million, nine hundred and ninety-nine thousand, nine hundred and ninety-nine' in digits: 3,999,999.\n3. Subtract: 4,706,050 - 3,999,999 = (4,706,050 - 4,000,000) + 1 = 706,050 + 1 = 706,051.\n4. Check: 4,706,050 - 3,999,999 = 706,051.\n5. Compare with options: 706,051 matches option A.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

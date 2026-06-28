@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-521",
+  "seedQid": "q-m6-003",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "A school has raised five thousand and twelve pounds for new books. What is this amount written in figures?",
+  "options": [
+    "£5,120",
+    "£5,012",
+    "£512",
+    "£50,012",
+    "£5,102"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: 'Five thousand' means 5,000.\nStep 2: 'and twelve' means we add 12.\nStep 3: 5,000 + 12 = 5,012.\nSo the correct answer is £5,012.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:17:39+00:00"
+}

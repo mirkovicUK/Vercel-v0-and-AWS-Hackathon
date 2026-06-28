@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-007",
+  "seedQid": "q-m1-003",
+  "topic": "number",
+  "difficulty": 2,
+  "text": "A library has 5,863 books. What is the value of the digit 8 in this number?",
+  "options": [
+    "8",
+    "80",
+    "800",
+    "8000",
+    "8600"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Write out the place values of 5,863.\n- 5 is in the thousands place (5,000)\n- 8 is in the hundreds place (800)\n- 6 is in the tens place (60)\n- 3 is in the ones place (3)\n\nStep 2: The digit 8 is in the hundreds column, so its value is 8 × 100 = 800.\n\nThe correct answer is 800.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-11T19:46:59+00:00"
+}

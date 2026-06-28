@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-204",
+  "seedQid": "q-m2-027",
+  "topic": "algebra",
+  "difficulty": 4,
+  "text": "A rectangular swimming pool has a length that is 3 metres more than twice its width. The total distance around the edge of the pool (its perimeter) is 54 metres. If the width of the pool is w metres, which equation represents this situation, and what is the width of the pool?",
+  "options": [
+    "2w + 2(2w + 3) = 54, so w = 8 metres",
+    "2w + 2(2w + 3) = 54, so w = 9 metres",
+    "w + (2w + 3) = 54, so w = 17 metres",
+    "2w + 2(2w + 3) = 54, so w = 7 metres",
+    "2w + 2(3w + 2) = 54, so w = 5 metres"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Let the width = w metres. The length is 3 more than twice the width, so length = 2w + 3 metres.\n\nStep 2: The perimeter of a rectangle = 2 × width + 2 × length. So the equation is:\n2w + 2(2w + 3) = 54\n\nStep 3: Expand the brackets:\n2w + 4w + 6 = 54\n\nStep 4: Simplify:\n6w + 6 = 54\n\nStep 5: Subtract 6 from both sides:\n6w = 48\n\nStep 6: Divide both sides by 6:\nw = 8\n\nStep 7: Check: width = 8 m, length = 2(8) + 3 = 19 m. Perimeter = 2(8) + 2(19) = 16 + 38 = 54 m ✓\n\nThe correct answer is w = 8 metres.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:41:02+00:00"
+}

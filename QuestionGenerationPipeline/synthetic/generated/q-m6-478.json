@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-478",
+  "seedQid": "q-m5-040",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 3,
+  "text": "A fruit bowl contains 15 apples, 10 oranges, 5 bananas and 20 grapes. Tom eats 5 of the apples and 5 of the grapes. What fraction of the remaining fruit are oranges?",
+  "options": [
+    "1/8",
+    "1/5",
+    "1/4",
+    "1/3",
+    "2/5"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find the total number of fruit at the start: 15 + 10 + 5 + 20 = 50 pieces of fruit.\n\nStep 2: Tom eats 5 apples and 5 grapes, so he removes 10 pieces of fruit. Remaining fruit = 50 − 10 = 40.\n\nStep 3: The number of oranges hasn't changed, so there are still 10 oranges.\n\nStep 4: The fraction of remaining fruit that are oranges = 10/40 = 1/4.\n\nThe correct answer is 1/4.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:12:28+00:00"
+}

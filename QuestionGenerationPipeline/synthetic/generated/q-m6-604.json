@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-604",
+  "seedQid": "q-m6-022",
+  "topic": "algebra",
+  "difficulty": 4,
+  "text": "A cinema has several rows of seats. Each row holds the same number of seats. When 3 extra chairs are added to each row, each row then holds 11 seats. There are 6 rows in total. If 20 people are already seated, how many empty seats are there altogether in the cinema?",
+  "options": [
+    "46",
+    "48",
+    "44",
+    "66",
+    "28"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Let s = the original number of seats per row.\nStep 2: We are told that when 3 extra chairs are added to each row, each row holds 11 seats. So: s + 3 = 11, which gives s = 8.\nStep 3: After adding the extra chairs, each row now has 11 seats. With 6 rows, the total number of seats = 6 × 11 = 66.\nStep 4: If 20 people are already seated, the number of empty seats = 66 − 20 = 46.\nThe answer is 46.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:26:35+00:00"
+}

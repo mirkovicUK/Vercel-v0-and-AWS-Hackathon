@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-552",
+  "answer": "C) 5,000,050",
+  "steps": "The number is 5,627,653. Write its place values: millions, hundred-thousands, ten-thousands, thousands, hundreds, tens, ones. So: 5,627,653 = 5,000,000 + 600,000 + 20,000 + 7,000 + 600 + 50 + 3. The digit 5 appears in the millions place (5,000,000) and in the tens place (50). The total value of all 5s is 5,000,000 + 50 = 5,000,050.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

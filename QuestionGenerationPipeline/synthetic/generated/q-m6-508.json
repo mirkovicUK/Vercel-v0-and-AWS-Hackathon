@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-508",
+  "seedQid": "q-m5-050",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "A baker arranges cupcakes in rows. Row 1 has 3 cupcakes, Row 2 has 7 cupcakes, Row 3 has 11 cupcakes, and Row 4 has 15 cupcakes. Which expression gives the number of cupcakes in Row n?",
+  "options": [
+    "3n + 1",
+    "4n - 1",
+    "4n + 1",
+    "3n + 2",
+    "2n + 1"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find the pattern by looking at the differences between terms.\nRow 1: 3, Row 2: 7, Row 3: 11, Row 4: 15\nThe difference between each term is 4 (7-3=4, 11-7=4, 15-11=4).\n\nStep 2: Since the difference is 4, the expression starts with 4n.\n\nStep 3: Test 4n with n=1: 4×1 = 4, but we need 3. So we need to subtract 1.\nThe expression is 4n - 1.\n\nStep 4: Check with other rows:\nn=2: 4×2 - 1 = 7 ✓\nn=3: 4×3 - 1 = 11 ✓\nn=4: 4×4 - 1 = 15 ✓\n\nThe correct answer is 4n - 1.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:16:30+00:00"
+}

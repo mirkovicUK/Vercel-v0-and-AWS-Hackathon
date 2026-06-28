@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-402",
+  "seedQid": "q-m5-016",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A baker makes cookies and puts them into boxes of 6. He uses the letter n to stand for the total number of cookies he bakes. Which expression shows how many cookies are left over after he fills as many boxes as possible?",
+  "options": [
+    "n × 6",
+    "n + 6",
+    "n ÷ 6",
+    "n - 6",
+    "the remainder when n ÷ 6"
+  ],
+  "correctIndex": 4,
+  "generatorSolution": "Step 1: The baker puts cookies into boxes of 6. He fills as many complete boxes as he can.\nStep 2: The cookies 'left over' are the ones that don't fill a complete box.\nStep 3: In maths, when we divide n by 6, the leftover amount is called the remainder.\nStep 4: For example, if n = 20, then 20 ÷ 6 = 3 remainder 2, so 2 cookies are left over.\nStep 5: The correct expression is 'the remainder when n ÷ 6'.\nThe answer is option E.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:03:49+00:00"
+}

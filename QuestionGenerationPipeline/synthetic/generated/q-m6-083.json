@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-083",
+  "seedQid": "q-m1-034",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 3,
+  "text": "A baker uses 2.75 kg of flour in the morning. In the afternoon, she uses 1.5 times as much flour as she used in the morning. How much flour does she use altogether during the whole day?",
+  "options": [
+    "5.50 kg",
+    "6.25 kg",
+    "6.875 kg",
+    "4.125 kg",
+    "7.00 kg"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find how much flour was used in the afternoon.\nAfternoon flour = 1.5 × 2.75 = 4.125 kg\n\nStep 2: Add the morning and afternoon amounts together.\nTotal flour = 2.75 + 4.125 = 6.875 kg\n\nThe correct answer is 6.875 kg.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:27:59+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-523",
+  "answer": "B) £17,758",
+  "steps": "Fifteen thousand and eight pounds = £15,008. Two thousand, seven hundred and fifty pounds = £2,750. Total = 15,008 + 2,750 = 17,758.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-084",
+  "seedQid": "q-m1-034",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 4,
+  "text": "A baker uses 2.75 kg of flour to make a batch of bread. She discovers that this amount is only 55% of the flour she actually needs for a larger order. How much flour does she need in total for the larger order?",
+  "options": [
+    "4.5 kg",
+    "4.75 kg",
+    "5 kg",
+    "5.25 kg",
+    "5.5 kg"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: We know that 2.75 kg represents 55% of the total flour needed.\nStep 2: To find 1% of the total, divide 2.75 by 55:\n2.75 ÷ 55 = 0.05 kg\nStep 3: To find 100% (the total flour needed), multiply by 100:\n0.05 × 100 = 5 kg\nStep 4: We can check: 55% of 5 kg = 0.55 × 5 = 2.75 kg ✓\nThe answer is 5 kg.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:28:05+00:00"
+}

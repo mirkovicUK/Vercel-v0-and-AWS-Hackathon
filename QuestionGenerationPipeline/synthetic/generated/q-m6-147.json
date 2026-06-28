@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-147",
+  "seedQid": "q-m2-007",
+  "topic": "ratio_proportion",
+  "difficulty": 2,
+  "text": "A baker makes 180 cupcakes and shares them equally between 3 shops. How many cupcakes does each shop receive?",
+  "options": [
+    "45",
+    "50",
+    "60",
+    "70",
+    "90"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "To find how many cupcakes each shop receives, we divide the total number of cupcakes by the number of shops:\n180 ÷ 3 = 60\nEach shop receives 60 cupcakes.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:34:51+00:00"
+}

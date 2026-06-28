@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-550",
+  "seedQid": "q-m6-009",
+  "topic": "number",
+  "difficulty": 5,
+  "text": "A space probe transmits the code number 8,461,253. Mission control needs to calculate the following: take the digit in the millions place, multiply it by the value of the digit in the tens place, then subtract the result from the total value of the digit in the hundred-thousands place. What number do they get?",
+  "options": [
+    "359,960",
+    "399,960",
+    "400,040",
+    "360,000",
+    "439,960"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Identify the digits in the number 8,461,253.\n- Millions place: 8\n- Hundred-thousands place: 4\n- Ten-thousands place: 6\n- Thousands place: 1\n- Hundreds place: 2\n- Tens place: 5\n- Units place: 3\n\nStep 2: Find the value of the digit in the tens place. The digit is 5, but the question says 'the digit in the tens place' — this is just the digit 5 (not its value of 50).\n\nStep 3: Multiply the digit in the millions place by the digit in the tens place: 8 × 5 = 40.\n\nStep 4: Find the total value of the digit in the hundred-thousands place. The digit 4 is in the hundred-thousands place, so its value is 4 × 100,000 = 400,000.\n\nStep 5: Subtract the result from Step 3 from the value in Step 4: 400,000 − 40 = 399,960.\n\nThe answer is 399,960.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:20:51+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-516",
+  "seedQid": "q-m6-002",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "A school has 'two thousand and fifteen' pupils. What is this number written in figures?",
+  "options": [
+    "2150",
+    "2015",
+    "20015",
+    "215",
+    "2105"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: 'Two thousand' means 2000.\nStep 2: 'and fifteen' means we add 15.\nStep 3: 2000 + 15 = 2015.\nThe correct answer is 2015.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:17:07+00:00"
+}

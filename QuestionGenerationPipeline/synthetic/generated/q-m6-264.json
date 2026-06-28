@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-264",
+  "seedQid": "q-m3-001",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 4,
+  "text": "A jar contains red, green and yellow sweets. 25% of the sweets are red and 3/8 of the sweets are green. There are 18 yellow sweets in the jar. How many sweets are in the jar altogether?",
+  "options": [
+    "36",
+    "42",
+    "48",
+    "54",
+    "60"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find the fraction of sweets that are yellow.\nRed sweets = 25% = 1/4\nGreen sweets = 3/8\nYellow sweets = 1 − 1/4 − 3/8\n\nStep 2: Convert to the same denominator (8).\n1/4 = 2/8\nSo yellow fraction = 8/8 − 2/8 − 3/8 = 3/8\n\nStep 3: Use the yellow fraction to find the total.\n3/8 of the total = 18 yellow sweets\nTotal = 18 ÷ 3/8 = 18 × 8/3 = 48\n\nThe jar contains 48 sweets altogether.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:47:40+00:00"
+}

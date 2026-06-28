@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-359",
+  "seedQid": "q-m4-029",
+  "topic": "algebra",
+  "difficulty": 4,
+  "text": "A delivery van carries 250 identical parcels and has a total weight of 3,020 kg. The van itself weighs 1,520 kg. Each parcel contains an item packed with protective foam that weighs 2 kg. If we let p represent the weight of the item inside each parcel (in kg), which equation correctly represents this situation, and what is the value of p?",
+  "options": [
+    "250(p + 2) + 1520 = 3020, so p = 4 kg",
+    "250p + 1520 = 3020, so p = 6 kg",
+    "250(p + 2) + 1520 = 3020, so p = 6 kg",
+    "250p + 2 + 1520 = 3020, so p = 5.99 kg",
+    "250(p - 2) + 1520 = 3020, so p = 8 kg"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: The total weight is made up of the van plus all 250 parcels.\nStep 2: Each parcel weighs (p + 2) kg, where p is the item's weight and 2 kg is the foam.\nStep 3: Set up the equation: 250(p + 2) + 1520 = 3020\nStep 4: Subtract 1520 from both sides: 250(p + 2) = 1500\nStep 5: Divide both sides by 250: p + 2 = 6\nStep 6: Subtract 2 from both sides: p = 4 kg\nThe correct answer is 250(p + 2) + 1520 = 3020, so p = 4 kg.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:58:39+00:00"
+}

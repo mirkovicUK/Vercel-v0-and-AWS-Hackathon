@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-251",
+  "seedQid": "q-m2-046",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "Amy thinks of a number and adds 5 to it. Her answer is 12. What number did Amy think of?",
+  "options": [
+    "5",
+    "6",
+    "7",
+    "8",
+    "17"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Let the number Amy thinks of be n.\nShe adds 5 to it: n + 5 = 12\nTo find n, subtract 5 from both sides: n = 12 - 5 = 7\nThe answer is 7.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:46:03+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-609",
+  "answer": "B) p + 2p + (2p − 12) − 25 = 89, so p = 26",
+  "steps": "Monday: £p. Tuesday: twice Monday = £2p. Wednesday: £12 less than Tuesday = £(2p − 12). Total collected = p + 2p + (2p − 12). After spending £25, remaining = p + 2p + (2p − 12) − 25 = 89. Solve: p + 2p + 2p − 12 − 25 = 89 → 5p − 37 = 89 → 5p = 126 → p = 25.2. Wait, that gives p = 25.2, but option B says p = 26. Check: 5p − 37 = 89 → 5p = 126 → p = 25.2. However, re-read: 'On Wednesday they collect £12 less than Tuesday' → Wednesday = 2p − 12. So equation is p + 2p + (2p − 12) − 25 = 89. Solve: 5p − 37 = 89 → 5p = 126 → p = 25.2. But option A says p = 25.2, B says p = 26. Which is correct? Let's verify: If p = 25.2, Monday = 25.2, Tuesday = 50.4, Wednesday = 50.4 − 12 = 38.4. Total collected = 25.2 + 50.4 + 38.4 = 114. Subtract 25 → 89. So p = 25.2 works. Option B says p = 26: Monday = 26, Tuesday = 52, Wednesday = 52 − 12 = 40, total = 26 + 52 + 40 = 118, minus 25 = 93, not 89. So p = 26 is wrong. Option A says p = 25.2 and has correct equation. Option B has same equation but wrong p. So only A is fully correct? Wait, check option A text: 'p + 2p + (2p − 12) − 25 = 89, so p = 25.2' — that matches our solution. Option B: same equation but p = 26, which is incorrect. So exactly one option is correct: A. But let's check others: C has p − 12 instead of 2p − 12, wrong. D has 2p + 12, wrong. E has +25 instead of −25, wrong. So only A is correct. However, p = 25.2 is a decimal, but money can be in pounds and pence. That's fine. So answer is A.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

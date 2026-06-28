@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-229",
+  "answer": "A",
+  "steps": "1. Add the masses of the three samples: 0.075 kg + 2.48 kg + 0.007 kg = 2.562 kg.\n2. Remove the contaminated portion: 2.562 kg - 0.06 kg = 2.502 kg.\n3. Check the options: 2.502 kg corresponds to option A.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

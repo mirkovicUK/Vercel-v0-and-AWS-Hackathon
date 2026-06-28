@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-421",
+  "seedQid": "q-m5-024",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "A baker puts 4 cupcakes into each box. If she has 20 cupcakes, how many boxes does she fill? Let b stand for the number of boxes. Which number solves 4 × b = 20?",
+  "options": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "8"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "We need to find the value of b in the equation 4 × b = 20.\n\nStep 1: To find b, divide both sides by 4.\nb = 20 ÷ 4\n\nStep 2: 20 ÷ 4 = 5\n\nSo b = 5. The baker fills 5 boxes.\n\nThe correct answer is 5.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:06:39+00:00"
+}

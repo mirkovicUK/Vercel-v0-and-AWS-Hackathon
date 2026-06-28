@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-509",
+  "seedQid": "q-m5-050",
+  "topic": "algebra",
+  "difficulty": 4,
+  "text": "A gardener plants flowers in a triangular pattern. Row 1 has 1 flower, Row 2 has 3 flowers, Row 3 has 6 flowers, Row 4 has 10 flowers, and so on. She notices that the number of flowers in each row follows the rule: flowers = n(n+1) ÷ 2, where n is the row number. How many flowers are in Row 8?",
+  "options": [
+    "28",
+    "32",
+    "36",
+    "40",
+    "44"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "We need to find the number of flowers in Row 8 using the formula: flowers = n(n+1) ÷ 2.\n\nStep 1: Substitute n = 8 into the formula.\nflowers = 8 × (8 + 1) ÷ 2\n\nStep 2: Calculate inside the brackets first.\n8 + 1 = 9\n\nStep 3: Multiply 8 × 9 = 72\n\nStep 4: Divide by 2.\n72 ÷ 2 = 36\n\nWe can verify the formula works for the given rows:\nRow 1: 1×2÷2 = 1 ✓\nRow 2: 2×3÷2 = 3 ✓\nRow 3: 3×4÷2 = 6 ✓\nRow 4: 4×5÷2 = 10 ✓\n\nTherefore, Row 8 has 36 flowers. The answer is 36.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:16:36+00:00"
+}

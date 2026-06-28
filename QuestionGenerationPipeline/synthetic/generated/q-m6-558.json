@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-558",
+  "seedQid": "q-m6-011",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A baker makes cupcakes in batches. On Monday she made 12, on Tuesday she made 24, on Wednesday she made 48, and on Thursday she made 96. If the pattern continues, how many cupcakes will she make on Friday?",
+  "options": [
+    "108",
+    "144",
+    "168",
+    "192",
+    "200"
+  ],
+  "correctIndex": 3,
+  "generatorSolution": "Step 1: Look at the sequence: 12, 24, 48, 96.\nStep 2: Find the pattern by looking at how each number relates to the previous one: 24 ÷ 12 = 2, 48 ÷ 24 = 2, 96 ÷ 48 = 2.\nStep 3: Each number is double (×2) the previous number.\nStep 4: To find Friday's amount, multiply Thursday's amount by 2: 96 × 2 = 192.\nThe answer is 192.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:21:39+00:00"
+}

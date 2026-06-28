@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-344",
+  "answer": "B",
+  "steps": "Real building height = 35 m, length = 60 m. Scale 1:250 means 1 cm on model = 250 cm in reality. Convert real dimensions to cm: height = 35 × 100 = 3500 cm, length = 60 × 100 = 6000 cm. Model height = 3500 ÷ 250 = 14 cm. Model length = 6000 ÷ 250 = 24 cm. Total = 14 + 24 = 38 cm.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

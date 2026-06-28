@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-111",
+  "seedQid": "q-m1-044",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "Emma thinks of the number 10. She doubles it and then subtracts 4. What answer does she get?",
+  "options": [
+    "14",
+    "16",
+    "18",
+    "20",
+    "24"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Start with 10.\nStep 2: Double it: 10 × 2 = 20.\nStep 3: Subtract 4: 20 − 4 = 16.\nThe answer is 16.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:30:29+00:00"
+}

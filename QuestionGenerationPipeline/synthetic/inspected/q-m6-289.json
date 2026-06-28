@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-289",
+  "answer": "B",
+  "steps": "1. List prime numbers between 20 and 50: 23, 29, 31, 37, 41, 43, 47.\n2. Condition 1: Multiply the prime by 3, the result must be a factor of 261.\n   Factors of 261: 1, 3, 9, 29, 87, 261.\n   So 3 × prime must be one of these factors.\n   Check each prime: 3×23=69 (not a factor), 3×29=87 (is a factor), 3×31=93 (not), 3×37=111 (not), 3×41=123 (not), 3×43=129 (not), 3×47=141 (not). Only 29 satisfies condition 1.\n3. Condition 2: Add 10 to the prime number and get an odd result.\n   For 29: 29+10=39 (odd) – satisfies.\n   Check others from list for completeness: 23+10=33 (odd) but 23 failed condition 1; 31+10=41 (odd) but failed condition 1; 37+10=47 (odd) but failed; 41+10=51 (odd) but failed; 43+10=53 (odd) but failed; 47+10=57 (odd) but failed.\n4. Only 29 satisfies both conditions.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-514",
+  "answer": "A",
+  "steps": "1. Write 'four hundred thousand and seventy-six kilometres' in numerals: 400,076.\n2. Subtract 9,999 from 400,076.\n3. Perform subtraction: 400,076 - 9,999 = (400,076 - 10,000) + 1 = 390,076 + 1 = 390,077.\n4. Check options: 390,077 matches option A.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

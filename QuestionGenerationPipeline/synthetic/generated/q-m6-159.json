@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-159",
+  "seedQid": "q-m2-012",
+  "topic": "ratio_proportion",
+  "difficulty": 4,
+  "text": "A baker mixes flour, sugar, and butter in the ratio 5 : 3 : 2. She uses 750 g of flour. She then decides to add extra butter so that the ratio of flour to butter becomes 5 : 4. How much extra butter does she need to add?",
+  "options": [
+    "200 g",
+    "300 g",
+    "600 g",
+    "150 g",
+    "400 g"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find the value of one 'part' using the flour. The ratio is 5 : 3 : 2, and flour = 5 parts = 750 g. So one part = 750 ÷ 5 = 150 g.\n\nStep 2: Find the original amount of butter. Butter = 2 parts = 2 × 150 = 300 g.\n\nStep 3: Find the new amount of butter needed. The new ratio of flour to butter is 5 : 4. Flour is still 750 g = 5 parts, so one part is still 150 g. New butter = 4 parts = 4 × 150 = 600 g.\n\nStep 4: Find the extra butter added. Extra butter = 600 − 300 = 300 g.\n\nThe answer is 300 g.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:36:04+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-528",
+  "seedQid": "q-m6-004",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A charity raises money over two years. In the first year, they raise 'three million, two hundred and five thousand and eighteen' pounds. In the second year, they raise 'one million, eight hundred and sixty thousand and ninety-four' pounds. What is the total amount raised over both years, written in figures?",
+  "options": [
+    "5,065,112",
+    "4,065,112",
+    "5,065,012",
+    "5,056,112",
+    "4,065,012"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Convert the first year's amount into figures.\n'Three million, two hundred and five thousand and eighteen' = 3,205,018\n\nStep 2: Convert the second year's amount into figures.\n'One million, eight hundred and sixty thousand and ninety-four' = 1,860,094\n\nStep 3: Add the two amounts together.\n3,205,018 + 1,860,094\n= 3,205,018 + 1,860,094\nAdd the units: 8 + 4 = 12 (write 2, carry 1)\nAdd the tens: 1 + 9 + 1 = 11 (write 1, carry 1)\nAdd the hundreds: 0 + 0 + 1 = 1\nAdd the thousands: 5 + 0 = 5\nAdd the ten-thousands: 0 + 6 = 6\nAdd the hundred-thousands: 2 + 8 = 10 (write 0, carry 1)\nAdd the millions: 3 + 1 + 1 = 5\n\nTotal = 5,065,112\n\nThe correct answer is 5,065,112.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:18:16+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-215",
+  "answer": "B",
+  "steps": "1. Initial flour: 2 kg. 2. Stale portion: 12.5% of 2 kg = 0.125 × 2 = 0.25 kg. 3. Usable flour from first bag: 2 − 0.25 = 1.75 kg. 4. Flour per cake: 0.375 kg. 5. Flour needed for 18 cakes: 18 × 0.375 = 6.75 kg. 6. Flour still needed after first bag: 6.75 − 1.75 = 5 kg. 7. Each additional bag: 2 kg fully usable. 8. Number of additional bags needed: 5 ÷ 2 = 2.5 bags. 9. Since bags must be opened whole, need 3 additional bags (2 bags give 4 kg, which is insufficient; 3 bags give 6 kg, enough). 10. Check: 1.75 + (3 × 2) = 1.75 + 6 = 7.75 kg total flour, which is more than 6.75 kg, so 3 bags are enough.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-212",
+  "answer": "B",
+  "steps": "Sophie starts with a 2-metre ribbon and cuts off 0.5 metres, leaving 2 - 0.5 = 1.5 metres left from the first ribbon. She needs 8.5 metres total, so she still needs 8.5 - 1.5 = 7.0 metres more. Each new 2-metre ribbon provides 2 metres. Number of additional 2-metre ribbons needed = 7.0 / 2 = 3.5 ribbons. Since she can only buy whole ribbons, she must buy 4 ribbons to get at least 7 metres (4 × 2 = 8 metres, which is enough).",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": false,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-004",
+  "answer": "B",
+  "steps": "First, convert the words to figures. 'Two million, forty thousand and seven hundred and six' means 2,000,000 + 40,000 + 700 + 6 = 2,040,706 km. 'One million, nine hundred and ninety-nine thousand and sixty' means 1,000,000 + 999,000 + 60 = 1,999,060 km. Difference = 2,040,706 - 1,999,060 = 41,646 km. Check options: 41,646 km is option B.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

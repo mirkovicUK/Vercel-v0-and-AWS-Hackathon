@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-088",
+  "answer": "B",
+  "steps": "Total eggs collected = (6 hens) × (n eggs/hen/day) × (5 days) = 30n eggs. Boxes hold 10 eggs each, and exactly 9 boxes are filled with no remainder, so total eggs = 9 × 10 = 90. Therefore 30n = 90 → n = 90 ÷ 30 = 3.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

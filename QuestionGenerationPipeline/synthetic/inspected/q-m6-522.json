@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-522",
+  "answer": "B) £15,208",
+  "steps": "The amount is 'fifteen thousand, two hundred and eight pounds'. Fifteen thousand is 15,000. Two hundred is 200. Eight is 8. Adding: 15,000 + 200 = 15,200; 15,200 + 8 = 15,208. So the figure is £15,208.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

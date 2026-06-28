@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-340",
+  "trigger": "answer_mismatch+ambiguity",
+  "correctAnswer": "2",
+  "unresolved": true,
+  "exactlyOneCorrect": false,
+  "rationale": "The five consecutive odd numbers summing to 275 are 51, 53, 55, 57, and 59. The smallest is 51 and the largest is 59. Their product is 51 * 59 = 3009. However, all answer options are listed as '2', which is incorrect. Since the correct answer (3009) is not among the choices and all options are identical and wrong, the question is unresolved and no option is correct or unambiguous.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

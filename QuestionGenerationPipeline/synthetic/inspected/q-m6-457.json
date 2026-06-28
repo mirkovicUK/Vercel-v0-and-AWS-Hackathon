@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-457",
+  "answer": "B) 2.58 litres",
+  "steps": "Add the three capacities: 0.33 + 0.75 + 1.5. First, add 0.33 and 0.75: 0.33 + 0.75 = 1.08. Then add 1.08 and 1.5: 1.08 + 1.5 = 2.58 litres.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

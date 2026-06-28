@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-022",
+  "seedQid": "q-m1-010",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A bag contains some marbles. If you take away 7 marbles, there are 15 left. How many marbles were in the bag to start with?\n\nLet m = the number of marbles at the start.\n\nm − 7 = 15\n\nm = ?",
+  "options": [
+    "8",
+    "20",
+    "22",
+    "23",
+    "21"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "We need to solve m − 7 = 15.\n\nStep 1: To find m, add 7 to both sides of the equation.\nm = 15 + 7\n\nStep 2: Calculate 15 + 7 = 22.\n\nSo m = 22. The bag started with 22 marbles.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-11T19:48:39+00:00"
+}

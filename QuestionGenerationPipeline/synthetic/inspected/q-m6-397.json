@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-397",
+  "answer": "B",
+  "steps": "1. The question asks for units to measure the area of a bedroom floor. 2. Area is measured in square units. 3. Among the options: A) Metres (m) is for length, not area. B) Square metres (m²) is the metric unit for area. C) Cubic metres (m³) is for volume. D) Kilograms (kg) is for mass. E) Litres (l) is for capacity (volume). 4. Therefore, only square metres (m²) is correct for measuring area.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

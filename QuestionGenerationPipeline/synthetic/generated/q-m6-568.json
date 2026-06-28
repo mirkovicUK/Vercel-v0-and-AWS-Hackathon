@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-568",
+  "seedQid": "q-m6-013",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A deep-sea diver descends from the surface at a steady rate. A depth gauge records her position at equal time intervals: 0 m, −8 m, −16 m, ___, −32 m, −40 m. What is the missing depth reading?",
+  "options": [
+    "-20 m",
+    "-22 m",
+    "-24 m",
+    "-26 m",
+    "-28 m"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find the pattern. Each reading decreases by the same amount.\nStep 2: From 0 m to −8 m the change is −8. From −8 m to −16 m the change is also −8.\nStep 3: So the next reading is −16 − 8 = −24 m.\nStep 4: Check: −24 − 8 = −32 ✓ and −32 − 8 = −40 ✓.\nThe missing depth reading is −24 m.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:22:43+00:00"
+}

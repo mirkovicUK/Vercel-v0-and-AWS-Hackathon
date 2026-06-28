@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-215",
+  "seedQid": "q-m2-029",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 5,
+  "text": "A baker is making celebration cakes. Each cake requires 0.375 kg of flour. He starts with a 2 kg bag but discovers that 12.5% of it has gone stale and must be thrown away. After using what remains of this bag, he opens additional 2 kg bags (all fully usable). If he needs to make exactly 18 cakes in total, how many additional 2 kg bags must he open?",
+  "options": [
+    "2",
+    "3",
+    "4",
+    "5",
+    "6"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Calculate the total flour needed.\n18 cakes × 0.375 kg = 6.75 kg\n\nStep 2: Calculate how much flour is usable from the first bag.\n12.5% of 2 kg is stale: 12.5% = 12.5/100 = 1/8\n1/8 × 2 = 0.25 kg is stale\nUsable from first bag: 2 − 0.25 = 1.75 kg\n\nStep 3: Calculate how much more flour is still needed.\n6.75 − 1.75 = 5 kg\n\nStep 4: Calculate how many additional 2 kg bags are needed.\n5 ÷ 2 = 2.5\nSince you cannot buy half a bag, he must open 3 additional bags.\n\nThe answer is 3.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:42:10+00:00"
+}

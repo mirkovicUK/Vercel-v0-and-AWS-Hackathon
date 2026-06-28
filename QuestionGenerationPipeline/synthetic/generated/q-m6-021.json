@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-021",
+  "seedQid": "q-m1-010",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "Sam has some stickers. He gives away 5 stickers and has 8 left. How many stickers did Sam start with?\n\nIf we write this as: s − 5 = 8, what is s?",
+  "options": [
+    "3",
+    "8",
+    "13",
+    "14",
+    "15"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "We need to find s in the equation s − 5 = 8.\n\nStep 1: To find s, add 5 to both sides of the equation.\ns = 8 + 5\n\nStep 2: Calculate 8 + 5 = 13\n\nSo s = 13. Sam started with 13 stickers.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-11T19:48:34+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-109",
+  "seedQid": "q-m1-041",
+  "topic": "number",
+  "difficulty": 4,
+  "text": "A Roman mosaic artist uses Roman numerals to label his designs. He calculates the area of a rectangular mosaic by multiplying its width (XXIV) by its length (XXXVII). What is the area of the mosaic?",
+  "options": [
+    "848",
+    "868",
+    "878",
+    "888",
+    "898"
+  ],
+  "correctIndex": 3,
+  "generatorSolution": "Step 1: Convert the Roman numerals to standard numbers.\nXXIV = 10 + 10 + 4 = 24\nXXXVII = 10 + 10 + 10 + 5 + 1 + 1 = 37\n\nStep 2: Multiply 24 × 37.\nBreak this into parts: 24 × 37 = 24 × 30 + 24 × 7\n24 × 30 = 720\n24 × 7 = 168\n\nStep 3: Add the parts together.\n720 + 168 = 888\n\nThe area of the mosaic is 888.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:30:19+00:00"
+}

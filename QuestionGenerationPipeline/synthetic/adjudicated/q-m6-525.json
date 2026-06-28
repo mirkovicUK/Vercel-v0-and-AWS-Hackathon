@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-525",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "A",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "The correct number is 107,040,009. Swapping the ten-thousands digit (4) and the tens digit (0) gives 107,000,049. The difference is 107,040,009 - 107,000,049 = 39,960. Solver 1 gave the correct answer. Solver 2 chose option C, which is 39,990, incorrect. Option A is correct and unambiguous.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

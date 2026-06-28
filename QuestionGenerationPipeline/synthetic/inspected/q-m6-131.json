@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-131",
+  "answer": "A",
+  "steps": "Compare the numbers: 12, 31, 47, 85. Smallest is 12, then 31, then 47, then 85. So correct order is 12, 31, 47, 85. Check options: A) 12, 31, 47, 85 matches. B) 12, 47, 31, 85 is wrong because 47 > 31. C) 85, 47, 31, 12 is descending. D) 31, 12, 47, 85 is wrong because 31 > 12. E) 12, 31, 85, 47 is wrong because 85 > 47.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

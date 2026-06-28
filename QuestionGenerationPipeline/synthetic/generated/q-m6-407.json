@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-407",
+  "seedQid": "q-m5-017",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A baker makes cookies using this rule: number of cookies = 6 × n + 4, where n is the number of trays used. How many cookies does the baker make if he uses 5 trays?",
+  "options": [
+    "30",
+    "34",
+    "36",
+    "40",
+    "54"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Write down the formula: number of cookies = 6 × n + 4\nStep 2: Substitute n = 5 into the formula: 6 × 5 + 4\nStep 3: Calculate 6 × 5 = 30\nStep 4: Add 4: 30 + 4 = 34\nThe baker makes 34 cookies.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:05:10+00:00"
+}

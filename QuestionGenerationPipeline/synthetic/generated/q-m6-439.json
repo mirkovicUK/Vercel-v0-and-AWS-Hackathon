@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-439",
+  "seedQid": "q-m5-028",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 4,
+  "text": "A scientist measures the mass of a sample as 3.672 kg. She needs to express this mass as a fraction of 10 kg, giving her answer as a simplified percentage. She then rounds this percentage to one decimal place. What is the result?",
+  "options": [
+    "36.7%",
+    "36.8%",
+    "37.2%",
+    "3.7%",
+    "36.72%"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Express 3.672 kg as a fraction of 10 kg.\n3.672 ÷ 10 = 0.3672\n\nStep 2: Convert this to a percentage.\n0.3672 × 100 = 36.72%\n\nStep 3: Round 36.72% to one decimal place.\nLook at the second decimal digit: 2. Since 2 < 5, we round down.\n36.72% rounded to one decimal place = 36.7%\n\nThe correct answer is 36.7%.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:08:12+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-039",
+  "answer": "C",
+  "steps": "Morning: 3/8 = 0.375. Afternoon: 0.45. Total used = 0.375 + 0.45 = 0.825. Left = 1 - 0.825 = 0.175. As percentage = 0.175 × 100 = 17.5%.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

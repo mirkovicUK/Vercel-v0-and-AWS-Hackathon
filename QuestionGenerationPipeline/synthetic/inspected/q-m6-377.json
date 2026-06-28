@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-377",
+  "answer": "A",
+  "steps": "The number is twenty-three thousand, four hundred and fifty-six, which is 23,456. To round to the nearest thousand, look at the hundreds digit: it is 4 (since 456 has hundreds digit 4). Since 4 is less than 5, we round down. Therefore, 23,456 rounded to the nearest thousand is 23,000.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

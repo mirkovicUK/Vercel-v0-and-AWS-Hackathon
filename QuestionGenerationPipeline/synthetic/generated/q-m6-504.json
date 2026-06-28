@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-504",
+  "seedQid": "q-m5-049",
+  "topic": "algebra",
+  "difficulty": 4,
+  "text": "A gym charges a monthly membership fee using the formula: F = 5n + 3(n − 2), where n is the number of classes attended that month. If a member attends 8 classes and then the gym adds a one-off £12 joining bonus discount, what is the final amount the member pays that month?",
+  "options": [
+    "£46",
+    "£46",
+    "£46",
+    "£46",
+    "£46"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Substitute n = 8 into the formula.\nF = 5(8) + 3(8 − 2)\nStep 2: Calculate each part.\n5 × 8 = 40\n8 − 2 = 6, so 3 × 6 = 18\nStep 3: Add the two parts.\nF = 40 + 18 = 58\nStep 4: Subtract the £12 joining bonus discount.\n58 − 12 = £46\nThe final amount the member pays is £46.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:16:04+00:00"
+}

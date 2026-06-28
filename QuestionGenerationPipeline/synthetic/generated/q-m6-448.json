@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-448",
+  "seedQid": "q-m5-030",
+  "topic": "geometry",
+  "difficulty": 3,
+  "text": "A rectangular garden has a length of 0.12 km and a width of 4500 cm. What is the perimeter of the garden in metres?",
+  "options": [
+    "A) 330 m",
+    "B) 150 m",
+    "C) 330 cm",
+    "D) 5400 m",
+    "E) 114 m"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Convert the length to metres. 0.12 km = 0.12 × 1000 = 120 m.\nStep 2: Convert the width to metres. 4500 cm = 4500 ÷ 100 = 45 m.\nStep 3: Calculate the perimeter of the rectangle. Perimeter = 2 × (length + width) = 2 × (120 + 45) = 2 × 165 = 330 m.\nThe correct answer is A) 330 m.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:09:14+00:00"
+}

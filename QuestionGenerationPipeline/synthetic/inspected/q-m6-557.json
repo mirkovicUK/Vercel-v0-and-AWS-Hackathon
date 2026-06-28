@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-557",
+  "answer": "D",
+  "steps": "The baker makes 15 cupcakes per hour. In 5 hours, the total is 15 × 5 = 75 cupcakes.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

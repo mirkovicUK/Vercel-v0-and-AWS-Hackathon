@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-569",
+  "seedQid": "q-m6-013",
+  "topic": "number",
+  "difficulty": 4,
+  "text": "A deep-sea submarine descends from the surface. A computer records its depth (in metres below sea level) every minute: 15, 26, 39, 54, ___. The differences between consecutive readings form a pattern. What is the next depth reading?",
+  "options": [
+    "67",
+    "69",
+    "71",
+    "73",
+    "75"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find the differences between consecutive depth readings.\n26 − 15 = 11\n39 − 26 = 13\n54 − 39 = 15\n\nStep 2: Notice the differences are increasing by 2 each time (11, 13, 15, ...). So the next difference should be 17.\n\nStep 3: Add this difference to the last reading: 54 + 17 = 71.\n\nThe next depth reading is 71 metres below sea level.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:22:48+00:00"
+}

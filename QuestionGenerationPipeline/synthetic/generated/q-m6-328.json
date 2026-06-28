@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-328",
+  "seedQid": "q-m4-012",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "Sam is saving up for a new bicycle that costs £350. He already has £50 saved. Each week he earns £w from his paper round and puts all of it into his savings. After 12 more weeks of saving, he will have exactly enough to buy the bicycle. What is the value of w?",
+  "options": [
+    "£20",
+    "£25",
+    "£30",
+    "£35",
+    "£40"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Work out how much more Sam needs to save.\n£350 − £50 = £300\n\nStep 2: He saves £w each week for 12 weeks, so set up the equation:\n12 × w = 300\n\nStep 3: Solve for w:\nw = 300 ÷ 12\nw = 25\n\nSo w = £25. The correct answer is £25.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:55:28+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-583",
+  "answer": "C) 140 ml",
+  "steps": "The ratio of orange juice to lemonade is 2:5. This means for every 5 parts of lemonade, there are 2 parts of orange juice. Priya uses 350 ml of lemonade. Let the amount of orange juice be x ml. Set up proportion: 2/5 = x/350. Cross-multiply: 5x = 2 * 350 = 700. Divide both sides by 5: x = 700 / 5 = 140. So she needs 140 ml of orange juice.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

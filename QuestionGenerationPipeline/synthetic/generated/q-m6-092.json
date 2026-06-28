@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-092",
+  "seedQid": "q-m1-037",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 2,
+  "text": "A pizza is cut into 10 equal slices. Sam eats 3 slices. What fraction of the pizza has Sam eaten? Give your answer in its simplest form.",
+  "options": [
+    "3/10",
+    "1/3",
+    "3/7",
+    "30/100",
+    "1/10"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Sam eats 3 slices out of 10 equal slices, so the fraction eaten is 3/10. To check if this can be simplified, we look for common factors of 3 and 10. The factors of 3 are 1 and 3. The factors of 10 are 1, 2, 5, and 10. The only common factor is 1, so 3/10 is already in its simplest form. The answer is 3/10.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:28:50+00:00"
+}

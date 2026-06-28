@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-099",
+  "seedQid": "q-m1-038",
+  "topic": "data_handling",
+  "difficulty": 4,
+  "text": "A survey asked 60 children which sport they prefer. The results are shown in a partially completed bar chart. Football: 20 children. Swimming: unknown. Tennis: unknown. Cricket: 8 children. The number of children who chose Swimming was three times the number who chose Tennis. How many children chose Swimming?",
+  "options": [
+    "18",
+    "21",
+    "24",
+    "27",
+    "32"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find the total number of children who chose Swimming and Tennis combined.\nTotal = 60, Football = 20, Cricket = 8\nSwimming + Tennis = 60 − 20 − 8 = 32\n\nStep 2: Let the number who chose Tennis = t. Then Swimming = 3t (since Swimming is three times Tennis).\nSo 3t + t = 32\n4t = 32\nt = 8\n\nStep 3: Swimming = 3 × 8 = 24\n\nThe answer is 24.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:29:32+00:00"
+}

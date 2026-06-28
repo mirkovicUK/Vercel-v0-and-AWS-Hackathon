@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-174",
+  "seedQid": "q-m2-017",
+  "topic": "number",
+  "difficulty": 4,
+  "text": "A factory produces 4,536 bottles of juice in one day. The bottles are packed equally into crates that each hold 8 bottles. These crates are then loaded equally onto 9 delivery trucks. How many crates does each truck carry?",
+  "options": [
+    "56",
+    "63",
+    "72",
+    "567",
+    "504"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find the total number of crates by dividing the total bottles by bottles per crate.\n4,536 ÷ 8 = 567 crates in total.\n\nStep 2: Divide the total crates equally among 9 trucks.\n567 ÷ 9 = 63 crates per truck.\n\nTo check: 63 × 9 = 567 crates, and 567 × 8 = 4,536 bottles. ✓\n\nThe correct answer is 63.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:37:46+00:00"
+}

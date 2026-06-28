@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-239",
+  "answer": "C",
+  "steps": "1. Identify pupils who read 6 or more books: groups 6–8 and 9–11. 2. Frequency for 6–8 is 11, for 9–11 is 6. 3. Total pupils = 11 + 6 = 17. 4. Each certificate weighs 80 grams. 5. Total weight in grams = 17 × 80 = 1360 grams. 6. Convert to kilograms: 1360 ÷ 1000 = 1.36 kg. 7. Check options: 1.36 kg matches option C.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-239",
+  "seedQid": "q-m2-039",
+  "topic": "data_handling",
+  "difficulty": 4,
+  "text": "A class of 30 pupils recorded how many books they read during the summer holiday. The results are shown in this frequency table:\n\nBooks read: 0–2 (frequency 4), 3–5 (frequency 9), 6–8 (frequency 11), 9–11 (frequency 6)\n\nThe teacher says that each pupil who read 6 or more books will receive a certificate. She also knows that each certificate weighs 80 grams. What is the total weight of all the certificates she needs to give out, in kilograms?",
+  "options": [
+    "1.20 kg",
+    "1.28 kg",
+    "1.36 kg",
+    "1.44 kg",
+    "1.60 kg"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find how many pupils read 6 or more books. This includes the '6–8' group and the '9–11' group.\nNumber of pupils = 11 + 6 = 17\n\nStep 2: Calculate the total weight of 17 certificates.\n17 × 80 grams = 1360 grams\n\nStep 3: Convert grams to kilograms.\n1360 grams ÷ 1000 = 1.36 kg\n\nThe correct answer is 1.36 kg.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:44:56+00:00"
+}

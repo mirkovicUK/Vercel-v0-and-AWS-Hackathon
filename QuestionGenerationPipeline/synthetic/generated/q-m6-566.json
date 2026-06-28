@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-566",
+  "seedQid": "q-m6-013",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "A baker puts cupcakes on a cooling rack. She adds the same number of cupcakes every minute. After 1 minute she has 3 cupcakes, after 2 minutes she has 6 cupcakes, after 3 minutes she has 9 cupcakes. How many cupcakes will she have after 4 minutes?",
+  "options": [
+    "10",
+    "11",
+    "12",
+    "13",
+    "15"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "The baker adds the same number of cupcakes each minute. The pattern is: 3, 6, 9, ...\nEach time, the number goes up by 3 (6 - 3 = 3, and 9 - 6 = 3).\nSo after 4 minutes: 9 + 3 = 12 cupcakes.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:22:34+00:00"
+}

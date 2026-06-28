@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-122",
+  "answer": "D",
+  "steps": "The recipe uses 3 parts banana and 1 part strawberry, so total parts = 3 + 1 = 4 parts. Banana fraction = 3/4 of total. For 20 litres, banana needed = (3/4) × 20 = 15 litres.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-476",
+  "answer": "D",
+  "steps": "Total pieces of fruit = 20. Number of apples = 5. Percentage of apples = (5 / 20) * 100 = 0.25 * 100 = 25%.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

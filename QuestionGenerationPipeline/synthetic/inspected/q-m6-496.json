@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-496",
+  "answer": "B",
+  "steps": "Original price = £10. Reduction = 50% of £10 = (50/100) * 10 = £5. Sale price = original price - reduction = £10 - £5 = £5.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

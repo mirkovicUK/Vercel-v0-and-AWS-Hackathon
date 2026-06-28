@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-222",
+  "seedQid": "q-m2-033",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A baker uses the same number of eggs for each cake. If 4 cakes need 20 eggs altogether, how many eggs would 3 cakes need?",
+  "options": [
+    "12",
+    "14",
+    "15",
+    "16",
+    "18"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Let the number of eggs per cake be n.\nStep 2: We know that 4 × n = 20.\nStep 3: Divide both sides by 4: n = 20 ÷ 4 = 5 eggs per cake.\nStep 4: For 3 cakes: 3 × 5 = 15 eggs.\nThe answer is 15.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:42:52+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-304",
+  "answer": "B",
+  "steps": "Perimeter of a rectangle = 2 × (length + width). Given length = (3y + 7) m, width = (y + 2) m, perimeter = 58 m. So 2 × ((3y + 7) + (y + 2)) = 58. Simplify inside: (3y + 7) + (y + 2) = 4y + 9. Then 2 × (4y + 9) = 58 → 8y + 18 = 58 → 8y = 58 - 18 → 8y = 40 → y = 40 / 8 → y = 5.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

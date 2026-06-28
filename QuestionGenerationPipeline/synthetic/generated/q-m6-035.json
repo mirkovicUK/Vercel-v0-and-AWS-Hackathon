@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-035",
+  "seedQid": "q-m1-016",
+  "topic": "algebra",
+  "difficulty": 5,
+  "text": "A magician asks two volunteers to each think of a number. The first volunteer multiplies her number by 3 and then adds 5. The second volunteer multiplies his number by 2 and then subtracts 1. The magician reveals that both volunteers ended up with the same result, and that this result is 23. What is the sum of the two original numbers the volunteers thought of?",
+  "options": [
+    "16",
+    "17",
+    "18",
+    "19",
+    "20"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find the first volunteer's original number. She multiplied by 3 and added 5 to get 23. Working backwards: 23 − 5 = 18, then 18 ÷ 3 = 6. So her number was 6.\n\nStep 2: Find the second volunteer's original number. He multiplied by 2 and subtracted 1 to get 23. Working backwards: 23 + 1 = 24, then 24 ÷ 2 = 12. So his number was 12.\n\nStep 3: Find the sum of the two original numbers: 6 + 12 = 18.\n\nThe answer is 18.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:22:46+00:00"
+}

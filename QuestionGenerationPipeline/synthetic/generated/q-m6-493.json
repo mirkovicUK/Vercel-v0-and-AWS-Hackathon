@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-493",
+  "seedQid": "q-m5-047",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 3,
+  "text": "A fruit bowl contains 6 apples, 9 oranges and 5 bananas. Emma picks a piece of fruit at random. What is the probability that she picks a fruit that is not a banana? Give your answer as a simplified fraction.",
+  "options": [
+    "1/4",
+    "1/2",
+    "3/4",
+    "7/10",
+    "3/5"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find the total number of fruits. 6 + 9 + 5 = 20 fruits in total.\n\nStep 2: Find the number of fruits that are NOT bananas. 20 - 5 = 15 fruits are not bananas.\n\nStep 3: Write the probability as a fraction. P(not banana) = 15/20.\n\nStep 4: Simplify the fraction by dividing numerator and denominator by 5. 15/20 = 3/4.\n\nThe correct answer is 3/4.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:14:38+00:00"
+}

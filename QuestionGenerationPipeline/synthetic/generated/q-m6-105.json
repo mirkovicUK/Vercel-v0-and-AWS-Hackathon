@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-105",
+  "seedQid": "q-m1-039",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 5,
+  "text": "A shop reduces the price of a jacket by 15%. During a further sale, the reduced price is then cut by an additional 20%. If the original price was £80, what is the final price of the jacket?",
+  "options": [
+    "£48.00",
+    "$52.40",
+    "£54.40",
+    "£56.00",
+    "£52.00"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find the price after the first reduction of 15%.\n15% of £80 = 0.15 × 80 = £12\nPrice after first reduction = £80 − £12 = £68\n\nStep 2: Find the price after the second reduction of 20% (applied to the already-reduced price of £68).\n20% of £68 = 0.20 × 68 = £13.60\nPrice after second reduction = £68 − £13.60 = £54.40\n\nThe final price of the jacket is £54.40.\n\nNote: A common mistake is to add 15% + 20% = 35% and take 35% off the original price, which would give £52.00. However, the second discount applies to the already-reduced price, not the original price.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:30:01+00:00"
+}

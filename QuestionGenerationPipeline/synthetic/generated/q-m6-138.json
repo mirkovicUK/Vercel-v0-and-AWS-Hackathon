@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-138",
+  "seedQid": "q-m2-004",
+  "topic": "data_handling",
+  "difficulty": 3,
+  "text": "A weather station records the temperature at different times of day. The table below shows the readings:\n\nTime: 6 am → 2°C\nTime: 9 am → 7°C\nTime: 12 noon → 13°C\nTime: 3 pm → 11°C\nTime: 6 pm → 5°C\n\nWhat is the difference between the highest and lowest temperatures recorded, and at what time was the temperature rising the fastest (greatest increase between consecutive readings)?",
+  "options": [
+    "Difference: 11°C, fastest rise: 6 am to 9 am",
+    "Difference: 11°C, fastest rise: 9 am to 12 noon",
+    "Difference: 13°C, fastest rise: 9 am to 12 noon",
+    "Difference: 8°C, fastest rise: 6 am to 9 am",
+    "Difference: 11°C, fastest rise: 12 noon to 3 pm"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find the highest temperature. Looking at the table, the highest is 13°C (at 12 noon).\n\nStep 2: Find the lowest temperature. The lowest is 2°C (at 6 am).\n\nStep 3: Calculate the difference: 13°C − 2°C = 11°C.\n\nStep 4: Find the greatest increase between consecutive readings:\n• 6 am to 9 am: 7 − 2 = 5°C increase\n• 9 am to 12 noon: 13 − 7 = 6°C increase\n• 12 noon to 3 pm: 11 − 13 = −2°C (a decrease)\n• 3 pm to 6 pm: 5 − 11 = −6°C (a decrease)\n\nThe fastest rise is 6°C, which occurred between 9 am and 12 noon.\n\nTherefore the answer is: Difference 11°C, fastest rise from 9 am to 12 noon.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:33:56+00:00"
+}

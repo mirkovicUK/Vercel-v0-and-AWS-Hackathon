@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-571",
+  "seedQid": "q-m6-014",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "A baker counts the cupcakes on a tray. She counts: 2, 4, 6, 8, ___. What number comes next?",
+  "options": [
+    "9",
+    "10",
+    "11",
+    "12",
+    "14"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "The numbers go up by 2 each time: 2, 4, 6, 8, ... Adding 2 to 8 gives 10. So the next number is 10.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:22:57+00:00"
+}

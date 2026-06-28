@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-469",
+  "answer": "A",
+  "steps": "1. Bars per hour = 450. Weight per bar = 35 g. Weight per hour = 450 × 35 = 15750 g.\n2. Hours per day = 8. Total weight per day = 15750 × 8 = 126000 g.\n3. 1 tonne = 1000 kg = 1,000,000 g.\n4. Fraction of a tonne = 126000 / 1000000 = 0.126.\n5. Percentage = 0.126 × 100% = 12.6%.\n6. Check options: 12.6% matches option A.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

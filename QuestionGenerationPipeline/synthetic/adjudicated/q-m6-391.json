@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-391",
+  "trigger": "ambiguity",
+  "correctAnswer": "B",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "Sam started with s stickers, gave away 5, and had 8 left, so s - 5 = 8. Option B represents this equation correctly. All other options are mathematically inconsistent with the scenario.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

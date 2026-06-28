@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-589",
+  "seedQid": "q-m6-018",
+  "topic": "ratio_proportion",
+  "difficulty": 4,
+  "text": "A fruit punch recipe uses orange juice and lemonade in the ratio 3:5. Sam makes 2.4 litres of punch for a party, but then decides he needs to increase the total amount to 4 litres while keeping the same ratio. How many extra millilitres of orange juice does he need to add?",
+  "options": [
+    "450 ml",
+    "600 ml",
+    "900 ml",
+    "1500 ml",
+    "750 ml"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find the total number of parts in the ratio. 3 + 5 = 8 parts.\n\nStep 2: Find how much orange juice is in the original 2.4 litres. Orange juice = (3/8) × 2400 ml = 900 ml.\n\nStep 3: Find how much orange juice is needed in the new 4 litres. Orange juice = (3/8) × 4000 ml = 1500 ml.\n\nStep 4: Find the extra orange juice needed. 1500 ml − 900 ml = 600 ml.\n\nThe answer is 600 ml.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:24:48+00:00"
+}

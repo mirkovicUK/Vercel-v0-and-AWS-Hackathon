@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-094",
+  "seedQid": "q-m1-037",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 4,
+  "text": "A shop reduces the price of a jacket by 15%. The reduced price is £59.50. What was the original price of the jacket before the reduction?",
+  "options": [
+    "£65.00",
+    "£68.50",
+    "£70.00",
+    "£72.50",
+    "£74.50"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "After a 15% reduction, the customer pays 85% of the original price. So 85% of the original price = £59.50. To find the original price, we divide by 0.85:\n\nOriginal price = £59.50 ÷ 0.85\n\nStep 1: Convert to a simpler calculation. £59.50 ÷ 0.85 = 5950 ÷ 85\nStep 2: 85 × 70 = 5950\nStep 3: So the original price = £70.00\n\nCheck: 15% of £70.00 = £10.50, and £70.00 − £10.50 = £59.50 ✓\n\nThe answer is £70.00.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:29:01+00:00"
+}

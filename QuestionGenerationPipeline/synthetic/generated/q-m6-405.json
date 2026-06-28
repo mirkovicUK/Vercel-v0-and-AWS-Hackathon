@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-405",
+  "seedQid": "q-m5-016",
+  "topic": "algebra",
+  "difficulty": 5,
+  "text": "A factory produces chocolate bars and packs them into boxes. Each box holds exactly 12 bars. The factory produces (5n + 3) bars each hour, where n is the number of machines running. If 7 machines are running, how many bars are left over after filling as many complete boxes as possible during one hour?",
+  "options": [
+    "2",
+    "4",
+    "6",
+    "8",
+    "10"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Substitute n = 7 into the expression (5n + 3).\n5 × 7 + 3 = 35 + 3 = 38 bars produced per hour.\n\nStep 2: Find how many complete boxes of 12 can be filled.\n38 ÷ 12 = 3 remainder 2... but wait, let me recalculate.\n38 ÷ 12: 12 × 3 = 36, so 38 - 36 = 2.\n\nHmm, that gives 2. Let me revise the question to make it difficulty 5.\n\nActually, let me reconsider. Let me use a more complex expression.\n\nRevised: The factory runs for (n + 1) hours producing (5n + 3) bars each hour with 7 machines.\n\nTotal bars = (7 + 1) × (5 × 7 + 3) = 8 × 38 = 304.\n304 ÷ 12 = 25 remainder 4. That gives 4.\n\nLet me redesign properly.\n\nFinal calculation with the given question as stated:\n5 × 7 + 3 = 38 bars.\n38 ÷ 12 = 3 boxes with 38 - 36 = 2 left over.\n\nThe answer is 2.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:05:03+00:00"
+}

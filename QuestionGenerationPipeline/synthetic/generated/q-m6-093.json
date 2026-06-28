@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-093",
+  "seedQid": "q-m1-037",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 3,
+  "text": "A bakery made 80 cupcakes in the morning. They sold 3/5 of them before lunch. After lunch, they sold 25% of the remaining cupcakes. How many cupcakes were left at the end of the day?",
+  "options": [
+    "18",
+    "20",
+    "24",
+    "28",
+    "32"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find how many cupcakes were sold before lunch.\n3/5 of 80 = (3 × 80) ÷ 5 = 240 ÷ 5 = 48 cupcakes sold.\n\nStep 2: Find how many remained after the morning sales.\n80 − 48 = 32 cupcakes remaining.\n\nStep 3: Find how many were sold after lunch.\n25% of 32 = 25/100 × 32 = 1/4 × 32 = 8 cupcakes sold.\n\nStep 4: Find how many were left at the end of the day.\n32 − 8 = 24 cupcakes.\n\nThe answer is 24.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:28:56+00:00"
+}

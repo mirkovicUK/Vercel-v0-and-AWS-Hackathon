@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-160",
+  "seedQid": "q-m2-012",
+  "topic": "ratio_proportion",
+  "difficulty": 5,
+  "text": "A builder mixes cement, sand, and gravel in the ratio 2 : 5 : 8. He needs exactly 900 kg of the mixture in total. However, he accidentally uses 40 kg too much sand. To keep the total at 900 kg, he reduces only the gravel. What is the new ratio of cement to sand to gravel in its simplest form?",
+  "options": [
+    "6 : 17 : 22",
+    "2 : 7 : 6",
+    "6 : 17 : 7",
+    "4 : 10 : 13",
+    "6 : 16 : 23"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Find the original amounts. The ratio is 2 : 5 : 8, so total parts = 2 + 5 + 8 = 15. Each part = 900 ÷ 15 = 60 kg.\n\nStep 2: Original amounts: Cement = 2 × 60 = 120 kg, Sand = 5 × 60 = 300 kg, Gravel = 8 × 60 = 480 kg.\n\nStep 3: The builder uses 40 kg too much sand, so new sand = 300 + 40 = 340 kg.\n\nStep 4: To keep the total at 900 kg, he reduces gravel by 40 kg. New gravel = 480 − 40 = 440 kg.\n\nStep 5: New ratio = 120 : 340 : 440. Divide all by 20 = 6 : 17 : 22.\n\nStep 6: Check if 6 : 17 : 22 simplifies further — no common factor exists for all three numbers.\n\nThe answer is 6 : 17 : 22.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:36:12+00:00"
+}

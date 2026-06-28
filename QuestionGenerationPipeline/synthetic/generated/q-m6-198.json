@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-198",
+  "seedQid": "q-m2-025",
+  "topic": "data_handling",
+  "difficulty": 3,
+  "text": "The bar chart below shows how many books five children read during the summer holidays:\n\n• Amy: 8 books\n• Ben: 5 books\n• Cara: 10 books\n• Dan: 7 books\n• Ella: 6 books\n\nEach child spent an average of 3 hours reading each book. How many more hours did Cara spend reading than Ella?",
+  "options": [
+    "9 hours",
+    "12 hours",
+    "15 hours",
+    "18 hours",
+    "21 hours"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find how many books Cara read: 10 books.\nStep 2: Find how many books Ella read: 6 books.\nStep 3: Find the difference in books read: 10 − 6 = 4 books.\nStep 4: Each book took an average of 3 hours to read, so multiply the difference by 3: 4 × 3 = 12 hours.\nTherefore, Cara spent 12 more hours reading than Ella.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:40:15+00:00"
+}

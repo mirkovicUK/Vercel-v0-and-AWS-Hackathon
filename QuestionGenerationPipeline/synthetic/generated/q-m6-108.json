@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-108",
+  "seedQid": "q-m1-041",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A Roman mosaic artist labels his designs using Roman numerals. He has completed design number XXXIV and wants to multiply it by design number XII to create a catalogue reference number. What is the result of XXXIV × XII?",
+  "options": [
+    "396",
+    "408",
+    "388",
+    "418",
+    "372"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Convert the Roman numerals to ordinary numbers.\nXXXIV = 10 + 10 + 10 + 4 = 34\nXII = 10 + 1 + 1 = 12\n\nStep 2: Multiply 34 × 12.\nBreak this into parts: 34 × 12 = 34 × 10 + 34 × 2\n34 × 10 = 340\n34 × 2 = 68\n\nStep 3: Add the parts together.\n340 + 68 = 408\n\nThe answer is 408.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:30:13+00:00"
+}

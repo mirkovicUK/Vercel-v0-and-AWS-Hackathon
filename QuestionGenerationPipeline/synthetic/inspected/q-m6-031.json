@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-031",
+  "answer": "C",
+  "steps": "Let Sophie's original number be x. She adds 3 to it: x + 3. The result is 8, so x + 3 = 8. Subtract 3 from both sides: x = 8 - 3 = 5. Therefore, the number she first thought of is 5.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

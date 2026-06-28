@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-132",
+  "answer": "A",
+  "steps": "We have four digits: 3, 0, 7, 2. To make the largest possible four-digit number, arrange them in descending order: 7, 3, 2, 0. That gives 7320. Check the options: A) 7320 matches. Others are smaller: B) 7302, C) 7230, D) 3720, E) 7032. So the largest is 7320.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

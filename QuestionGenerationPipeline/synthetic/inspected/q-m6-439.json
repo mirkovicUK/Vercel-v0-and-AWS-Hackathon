@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-439",
+  "answer": "A",
+  "steps": "1. Express the mass as a fraction of 10 kg: 3.672 / 10 = 0.3672.\n2. Convert to a percentage: 0.3672 × 100 = 36.72%.\n3. The question says 'simplified percentage' — 36.72% is already in decimal percentage form, no further simplification needed.\n4. Round to one decimal place: 36.72% rounded to one decimal place is 36.7% (since the digit after the first decimal is 2, which is less than 5).",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

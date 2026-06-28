@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-503",
+  "answer": "B",
+  "steps": "Given formula: C = 5n + 3(n − 2). For n = 4, substitute: C = 5(4) + 3(4 − 2) = 20 + 3(2) = 20 + 6 = 26. So total cost is £26.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

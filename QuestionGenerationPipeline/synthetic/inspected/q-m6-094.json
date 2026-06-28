@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-094",
+  "answer": "C",
+  "steps": "Let original price = P. Reduction of 15% means selling price is 85% of original: 0.85P = £59.50. Therefore P = £59.50 / 0.85. Compute: 59.50 ÷ 0.85 = (59.50 × 100) ÷ 85 = 5950 ÷ 85 = 70. So original price = £70.00. Check options: £70.00 is option C.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

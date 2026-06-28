@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-248",
+  "answer": "A",
+  "steps": "1. The decimal is 2.35, which means 2 and 35 hundredths.\n2. Write as a mixed number: 2 35/100.\n3. Simplify the fractional part: 35/100 = (35 ÷ 5)/(100 ÷ 5) = 7/20.\n4. So 2.35 = 2 7/20 in simplest form.\n5. Check options:\n   A) 2 7/20 → matches.\n   B) 2 35/100 → not simplest form.\n   C) 2 7/10 = 2.7, not 2.35.\n   D) 2 3/5 = 2.6, not 2.35.\n   E) 2 35/10 = 2 + 3.5 = 5.5, not 2.35.\n6. Only A is correct and in simplest form.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

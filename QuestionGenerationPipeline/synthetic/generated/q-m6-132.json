@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-132",
+  "seedQid": "q-m2-003",
+  "topic": "number",
+  "difficulty": 2,
+  "text": "A postman has four parcels with the weight labels 3, 0, 7, and 2 on them. He needs to arrange these digits to make the largest possible four-digit number. What number should he make?",
+  "options": [
+    "7320",
+    "7302",
+    "7230",
+    "3720",
+    "7032"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "To make the largest possible number, place the largest digit in the thousands place, the next largest in the hundreds place, and so on.\n\nThe digits are: 3, 0, 7, 2\n\nStep 1: Order the digits from largest to smallest: 7, 3, 2, 0\n\nStep 2: Write them in that order: 7320\n\nThe largest four-digit number using these digits is 7320.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:32:59+00:00"
+}

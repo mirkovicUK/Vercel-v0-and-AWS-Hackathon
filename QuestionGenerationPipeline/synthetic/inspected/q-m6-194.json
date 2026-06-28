@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-194",
+  "answer": "C",
+  "steps": "Total pupils = 360. Walk: 35% of 360 = 0.35 × 360 = 126. Bus: 3/8 of 360 = (3/8) × 360 = 3 × 45 = 135. Walk + bus = 126 + 135 = 261. Cycle = total − (walk + bus) = 360 − 261 = 99.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-486",
+  "seedQid": "q-m5-043",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 1,
+  "text": "A jug contains 1 litre of orange juice. Sam pours out half of the juice. How many millilitres of orange juice are left in the jug?",
+  "options": [
+    "250 ml",
+    "400 ml",
+    "500 ml",
+    "750 ml",
+    "600 ml"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Convert 1 litre to millilitres. 1 litre = 1000 ml.\nStep 2: Sam pours out half of the juice. Half of 1000 ml = 1000 ÷ 2 = 500 ml poured out.\nStep 3: Amount left = 1000 ml − 500 ml = 500 ml.\nThe correct answer is 500 ml.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:13:51+00:00"
+}

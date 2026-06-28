@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-078",
+  "answer": "B",
+  "steps": "1. Boxes per hour = 24. 2. Hours = 7. 3. Total boxes = 24 × 7 = 168 boxes. 4. Each box has n chocolates, so total chocolates = 168 × n. 5. Expression: 168n. 6. If n = 12, total chocolates = 168 × 12 = 2016.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

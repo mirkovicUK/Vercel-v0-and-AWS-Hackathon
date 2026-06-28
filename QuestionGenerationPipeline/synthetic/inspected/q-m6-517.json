@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-517",
+  "answer": "B",
+  "steps": "The phrase 'two thousand, five hundred and six' means: two thousand = 2000, five hundred = 500, and six = 6. Adding them: 2000 + 500 + 6 = 2506. In figures, that is 2,506. Checking options: A) 2,560 is two thousand five hundred sixty, B) 2,506 matches, C) 2,056 is two thousand fifty-six, D) 25,006 is twenty-five thousand six, E) 2,516 is two thousand five hundred sixteen. Only B matches 2506.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

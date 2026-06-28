@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-341",
+  "answer": "D",
+  "steps": "The ratio of apples to oranges is 1:2. This means for every 1 apple, there are 2 oranges. Given there are 4 apples, we multiply the number of apples by 2 to find the number of oranges: 4 × 2 = 8. So there are 8 oranges.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

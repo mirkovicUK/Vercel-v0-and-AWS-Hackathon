@@ -1,0 +1,13 @@
+{
+  "qid": "q-m6-098",
+  "answer": null,
+  "steps": null,
+  "inspectorDifficulty": null,
+  "exactlyOneCorrect": null,
+  "inspectorIndex": null,
+  "answersAgree": false,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "failed",
+  "reason": "cold_solve failed (Converse error or unparseable response)"
+}

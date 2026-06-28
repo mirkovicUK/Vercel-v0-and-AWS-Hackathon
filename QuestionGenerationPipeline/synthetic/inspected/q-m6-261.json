@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-261",
+  "answer": "D",
+  "steps": "Total sweets = 10. Strawberry sweets = 5. Fraction = strawberry / total = 5/10 = 1/2.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

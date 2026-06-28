@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-197",
+  "seedQid": "q-m2-025",
+  "topic": "data_handling",
+  "difficulty": 2,
+  "text": "The table below shows how many books four children read during one week.\n\nChild | Books read\nAmy | 3\nBen | 5\nCara | 2\nDan | 4\n\nHow many books did the children read altogether?",
+  "options": [
+    "12",
+    "13",
+    "14",
+    "15",
+    "16"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Add up the number of books each child read.\nAmy: 3\nBen: 5\nCara: 2\nDan: 4\n\nStep 2: 3 + 5 + 2 + 4 = 14\n\nThe children read 14 books altogether.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:40:09+00:00"
+}

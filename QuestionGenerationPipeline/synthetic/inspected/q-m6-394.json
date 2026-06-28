@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-394",
+  "answer": "B",
+  "steps": "Let r = rolls per batch.\nMonday: produced 8 batches = 8r rolls.\nMonday: sold 5 batches worth + 47 extra = 5r + 47 rolls.\nUnsold after Monday = 8r - (5r + 47) = 3r - 47.\nTuesday: produced 6 more batches = 6r rolls.\nTuesday: sold none.\nTotal unsold after Tuesday = (3r - 47) + 6r = 9r - 47.\nGiven unsold rolls = 133, so 9r - 47 = 133.\nAdd 47 to both sides: 9r = 180.\nDivide by 9: r = 20.\nCheck: r = 20 gives unsold = 9*20 - 47 = 180 - 47 = 133, correct.\nOptions: A)18, B)20, C)22, D)24, E)26. Only B matches.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

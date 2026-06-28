@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-477",
+  "answer": "B",
+  "steps": "Total fruit = 20. Number of apples = 5. Fraction of apples = 5/20. Simplify: divide numerator and denominator by 5 → (5÷5)/(20÷5) = 1/4. Check options: A) 1/5 = 0.2, B) 1/4 = 0.25, C) 5/20 = 0.25 but not simplest form, D) 1/3 ≈ 0.333, E) 2/5 = 0.4. Correct simplest form is 1/4, which is option B. Option C is mathematically equivalent but not in simplest form as requested.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

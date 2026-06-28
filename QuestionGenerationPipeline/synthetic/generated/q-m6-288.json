@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-288",
+  "seedQid": "q-m3-021",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "Sara picks a prime number between 20 and 50. Her number is also a factor of 93. What is Sara's number?",
+  "options": [
+    "23",
+    "29",
+    "31",
+    "37",
+    "43"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: List the prime numbers between 20 and 50: 23, 29, 31, 37, 41, 43, 47.\n\nStep 2: Find the factors of 93. We test: 93 ÷ 3 = 31. So 93 = 3 × 31.\n\nStep 3: The factors of 93 are 1, 3, 31, and 93.\n\nStep 4: Check which prime number from our list is a factor of 93. From the list, 31 is a factor of 93.\n\nTherefore, Sara's number is 31.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:50:32+00:00"
+}

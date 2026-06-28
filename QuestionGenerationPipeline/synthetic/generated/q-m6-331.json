@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-331",
+  "seedQid": "q-m4-014",
+  "topic": "ratio_proportion",
+  "difficulty": 1,
+  "text": "Tom and his dad share some sweets in the ratio 1:2. They have 12 sweets altogether. How many sweets does Tom get?",
+  "options": [
+    "2",
+    "3",
+    "4",
+    "6",
+    "8"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "The ratio is 1:2, so there are 1 + 2 = 3 equal parts in total. There are 12 sweets altogether. Each part = 12 ÷ 3 = 4 sweets. Tom gets 1 part, so Tom gets 4 sweets.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:55:44+00:00"
+}

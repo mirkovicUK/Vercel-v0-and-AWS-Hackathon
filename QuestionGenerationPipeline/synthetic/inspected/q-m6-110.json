@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-110",
+  "answer": "A",
+  "steps": "First, convert Roman numerals to numbers: XLIV = 44 (XL = 40, IV = 4), XXIX = 29 (XX = 20, IX = 9), LXXXVII = 87 (L = 50, XXX = 30, VII = 7). Multiply width by length: 44 × 29 = 44 × (30 - 1) = 1320 - 44 = 1276. Subtract damaged corner: 1276 - 87 = 1189. Check options: A, C, E all say 1189, but they are identical numbers. Since the question is multiple-choice, likely only one distinct letter is intended as correct, but mathematically all three give the same value. However, the problem asks 'What is the remaining area expressed as a normal number?' and lists 1189 three times. Possibly a misprint, but mathematically the answer is 1189. Among the options, A is the first occurrence of 1189, so I choose A.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": false,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-306",
+  "answer": "D",
+  "steps": "A line of symmetry divides a shape into two identical halves that are mirror images. For a square: 1) Two lines through the midpoints of opposite sides (horizontal and vertical). 2) Two lines through opposite corners (diagonals). That gives 4 lines of symmetry. Checking options: A) 1 is too few. B) 2 is only the horizontal and vertical, ignoring diagonals. C) 3 is not correct. D) 4 matches. E) 8 is too many (a square does not have 8 lines of symmetry).",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

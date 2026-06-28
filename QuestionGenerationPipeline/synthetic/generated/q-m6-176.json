@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-176",
+  "seedQid": "q-m2-019",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "A box contains 20 stickers. Sam takes out half of the stickers. How many stickers does Sam take out?",
+  "options": [
+    "5",
+    "8",
+    "10",
+    "12",
+    "15"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: We need to find half of 20 stickers.\nStep 2: Half means dividing by 2.\nStep 3: 20 ÷ 2 = 10.\nSo Sam takes out 10 stickers.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:37:55+00:00"
+}

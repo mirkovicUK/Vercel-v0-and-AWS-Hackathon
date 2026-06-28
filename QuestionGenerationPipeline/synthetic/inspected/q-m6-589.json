@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-589",
+  "answer": "B",
+  "steps": "Original ratio orange:lemonade = 3:5, total parts = 8. Original total = 2.4 L = 2400 ml. Original orange = (3/8) × 2400 = 900 ml. Original lemonade = (5/8) × 2400 = 1500 ml. New total = 4 L = 4000 ml. Keeping same ratio, new orange needed = (3/8) × 4000 = 1500 ml. Extra orange = 1500 − 900 = 600 ml.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

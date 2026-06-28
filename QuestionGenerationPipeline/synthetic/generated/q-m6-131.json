@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-131",
+  "seedQid": "q-m2-003",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "Put these numbers in order from smallest to largest: 47, 12, 85, 31. Which list shows the correct order?",
+  "options": [
+    "12, 31, 47, 85",
+    "12, 47, 31, 85",
+    "85, 47, 31, 12",
+    "31, 12, 47, 85",
+    "12, 31, 85, 47"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Find the smallest number. Looking at 47, 12, 85, and 31, the smallest is 12.\nStep 2: Find the next smallest. Of the remaining numbers (47, 85, 31), the smallest is 31.\nStep 3: Find the next smallest. Of the remaining numbers (47, 85), the smallest is 47.\nStep 4: The last number is 85.\nSo the correct order from smallest to largest is: 12, 31, 47, 85.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:32:54+00:00"
+}

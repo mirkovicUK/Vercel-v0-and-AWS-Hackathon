@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-334",
+  "seedQid": "q-m4-014",
+  "topic": "ratio_proportion",
+  "difficulty": 4,
+  "text": "A recipe uses flour and sugar in the ratio 5 : 2. Tom makes a batch using 350g of flour. He then decides to make a second batch that is 1.5 times larger than the first. How much sugar does he need for the second batch?",
+  "options": [
+    "140g",
+    "180g",
+    "200g",
+    "210g",
+    "240g"
+  ],
+  "correctIndex": 3,
+  "generatorSolution": "Step 1: Find how much sugar is in the first batch. The ratio of flour to sugar is 5 : 2. If flour = 350g, then each 'part' = 350 ÷ 5 = 70g. So sugar in the first batch = 2 × 70 = 140g.\n\nStep 2: The second batch is 1.5 times larger than the first. So sugar needed for the second batch = 140 × 1.5 = 210g.\n\nThe answer is 210g.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:55:59+00:00"
+}

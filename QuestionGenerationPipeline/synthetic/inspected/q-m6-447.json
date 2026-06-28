@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-447",
+  "answer": "B",
+  "steps": "Perimeter of a rectangle = 2 × (length + width). Given length = 8 m, width = 5 m. Perimeter = 2 × (8 + 5) = 2 × 13 = 26 m.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

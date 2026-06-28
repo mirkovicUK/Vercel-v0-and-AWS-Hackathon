@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-599",
+  "seedQid": "q-m6-021",
+  "topic": "algebra",
+  "difficulty": 4,
+  "text": "A baker makes some loaves of bread each morning. She sells half of them before lunch, then bakes 10 more in the afternoon. By the end of the day she has 34 loaves. If we let b represent the number of loaves she baked in the morning, which equation matches this problem, and what is the value of b?",
+  "options": [
+    "b ÷ 2 + 10 = 34, so b = 38",
+    "b ÷ 2 + 10 = 34, so b = 48",
+    "b − 2 + 10 = 34, so b = 26",
+    "b ÷ 2 − 10 = 34, so b = 88",
+    "b ÷ 2 + 10 = 34, so b = 44"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Write the equation. She starts with b loaves, sells half (b ÷ 2 remain), then bakes 10 more. At the end she has 34. So: b ÷ 2 + 10 = 34.\n\nStep 2: Subtract 10 from both sides: b ÷ 2 = 24.\n\nStep 3: Multiply both sides by 2: b = 48.\n\nStep 4: Check: 48 ÷ 2 = 24, then 24 + 10 = 34. ✓\n\nThe correct answer is b = 48.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:26:08+00:00"
+}

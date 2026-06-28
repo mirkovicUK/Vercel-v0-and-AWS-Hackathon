@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-162",
+  "seedQid": "q-m2-014",
+  "topic": "number",
+  "difficulty": 2,
+  "text": "Sophie is thinking of a two-digit number. It is an even number. Its digits add up to 7. It is greater than 30 but less than 50. What number is Sophie thinking of?",
+  "options": [
+    "34",
+    "42",
+    "52",
+    "16",
+    "44"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: List two-digit even numbers between 30 and 50: 30, 32, 34, 36, 38, 40, 42, 44, 46, 48.\n\nStep 2: Check which of these have digits that add up to 7:\n- 30: 3 + 0 = 3 ✗\n- 32: 3 + 2 = 5 ✗\n- 34: 3 + 4 = 7 ✓\n- 36: 3 + 6 = 9 ✗\n- 38: 3 + 8 = 11 ✗\n- 40: 4 + 0 = 4 ✗\n- 42: 4 + 2 = 6 ✗\n- 44: 4 + 4 = 8 ✗\n- 46: 4 + 6 = 10 ✗\n- 48: 4 + 8 = 12 ✗\n\nStep 3: The only number that meets all the conditions is 34.\n\nThe answer is 34.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:36:20+00:00"
+}

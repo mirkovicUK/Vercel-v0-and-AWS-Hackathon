@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-038",
+  "seedQid": "q-m1-017",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 3,
+  "text": "A baker uses 3/8 of a bag of flour in the morning and 0.25 of the same bag in the afternoon. What percentage of the bag of flour has he used in total?",
+  "options": [
+    "55%",
+    "60%",
+    "62.5%",
+    "65%",
+    "75%"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Convert 3/8 to a decimal. 3 ÷ 8 = 0.375.\nStep 2: Add the two amounts together: 0.375 + 0.25 = 0.625.\nStep 3: Convert 0.625 to a percentage by multiplying by 100: 0.625 × 100 = 62.5%.\nTherefore, the baker used 62.5% of the bag of flour in total.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:22:57+00:00"
+}

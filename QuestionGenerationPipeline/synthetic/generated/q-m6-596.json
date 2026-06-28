@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-596",
+  "seedQid": "q-m6-021",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "Lily has some books on her shelf. She buys 3 more books and now has 10 books altogether. If we write this as b + 3 = 10, what is b?",
+  "options": [
+    "5",
+    "6",
+    "7",
+    "10",
+    "13"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "We need to find the value of b in the equation b + 3 = 10.\n\nStep 1: To find b, we subtract 3 from both sides of the equation.\nb = 10 − 3\n\nStep 2: Calculate 10 − 3 = 7\n\nSo b = 7. Lily started with 7 books.\n\nThe correct answer is 7.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:25:51+00:00"
+}

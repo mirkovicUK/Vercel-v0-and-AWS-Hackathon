@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-183",
+  "seedQid": "q-m2-020",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "Tom is saving up for a bicycle that costs £p. He already has £28.50 saved. His grandmother gives him £15.75 more. He still needs £20.75 to buy the bicycle. What is the value of p?",
+  "options": [
+    "£55.00",
+    "£60.00",
+    "£65.00",
+    "£64.00",
+    "£70.00"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Write an expression for the total cost of the bicycle. The total cost p equals the money Tom already has, plus what his grandmother gave him, plus what he still needs.\n\nStep 2: Set up the equation: p = £28.50 + £15.75 + £20.75\n\nStep 3: Add £28.50 + £15.75 = £44.25\n\nStep 4: Add £44.25 + £20.75 = £65.00\n\nTherefore p = £65.00",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:38:43+00:00"
+}

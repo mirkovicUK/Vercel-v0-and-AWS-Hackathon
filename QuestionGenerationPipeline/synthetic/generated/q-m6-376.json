@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-376",
+  "seedQid": "q-m5-009",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "A library has twelve thousand, four hundred and fifty-six books. What is this number written in digits?",
+  "options": [
+    "12,456",
+    "12,546",
+    "1,2456",
+    "124,56",
+    "12,465"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: 'Twelve thousand' means 12,000.\nStep 2: 'Four hundred' means 400.\nStep 3: 'Fifty-six' means 56.\nStep 4: Add them together: 12,000 + 400 + 56 = 12,456.\nThe correct answer is 12,456.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:00:45+00:00"
+}

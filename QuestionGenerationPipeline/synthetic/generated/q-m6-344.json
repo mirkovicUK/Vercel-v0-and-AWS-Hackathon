@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-344",
+  "seedQid": "q-m4-020",
+  "topic": "ratio_proportion",
+  "difficulty": 4,
+  "text": "An architect builds a model of a building using a scale of 1:250. The real building is 35 metres tall and 60 metres long. What is the total of the model's height and length in centimetres?",
+  "options": [
+    "28 cm",
+    "38 cm",
+    "14 cm",
+    "24 cm",
+    "48 cm"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Convert the real measurements to centimetres.\n35 metres = 3500 cm\n60 metres = 6000 cm\n\nStep 2: Use the scale 1:250 to find the model's height.\nModel height = 3500 ÷ 250 = 14 cm\n\nStep 3: Use the scale 1:250 to find the model's length.\nModel length = 6000 ÷ 250 = 24 cm\n\nStep 4: Add the model's height and length together.\n14 + 24 = 38 cm\n\nThe answer is 38 cm.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:56:52+00:00"
+}

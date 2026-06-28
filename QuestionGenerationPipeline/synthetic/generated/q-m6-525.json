@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-525",
+  "seedQid": "q-m6-003",
+  "topic": "number",
+  "difficulty": 5,
+  "text": "A space telescope has detected a distant star that is approximately one hundred and seven million, forty thousand and nine kilometres from Earth. A scientist writes this number down but accidentally swaps the digits in the ten-thousands and tens places. What is the difference between the correct number and the scientist's incorrect number?",
+  "options": [
+    "39,960",
+    "40,000",
+    "39,990",
+    "36,000",
+    "39,600"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Write the correct number in figures. 'One hundred and seven million, forty thousand and nine' = 107,040,009.\n\nStep 2: Identify the digits in each place value:\n- Hundred-millions: 1\n- Ten-millions: 0\n- Millions: 7\n- Hundred-thousands: 0\n- Ten-thousands: 4\n- Thousands: 0\n- Hundreds: 0\n- Tens: 0\n- Units: 9\n\nStep 3: The scientist swaps the digit in the ten-thousands place (4) with the digit in the tens place (0). The incorrect number becomes 107,000,049.\n\nStep 4: Find the difference: 107,040,009 − 107,000,049 = 39,960.\n\nThe correct answer is 39,960.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:18:01+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-510",
+  "seedQid": "q-m5-050",
+  "topic": "algebra",
+  "difficulty": 5,
+  "text": "A scientist records the number of bacteria in a dish at regular intervals. The sequence she records is: 2, 6, 12, 20, 30, ...\n\nShe discovers that the n-th term of this sequence can be written as n² + an, where a is a constant. What is the value of the 8th term in this sequence?",
+  "options": [
+    "64",
+    "72",
+    "80",
+    "56",
+    "90"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find the value of 'a' by using a known term from the sequence.\n\nThe formula is n² + an.\n\nFor the 1st term (n = 1): 1² + a(1) = 1 + a = 2, so a = 1.\n\nStep 2: Verify with another term. For n = 2: 2² + 1(2) = 4 + 2 = 6 ✓\nFor n = 3: 3² + 1(3) = 9 + 3 = 12 ✓\nFor n = 4: 4² + 1(4) = 16 + 4 = 20 ✓\n\nSo the n-th term formula is n² + n.\n\nStep 3: Find the 8th term by substituting n = 8:\n8² + 8 = 64 + 8 = 72.\n\nThe answer is 72.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:16:42+00:00"
+}

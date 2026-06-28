@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-224",
+  "answer": "B",
+  "steps": "First, translate '4 lots of Y, plus 10, equals 50' into an equation: 4Y + 10 = 50. Subtract 10 from both sides: 4Y = 40. Divide both sides by 4: Y = 10. Then compute '3 lots of Y, minus 5': 3Y - 5 = 3*10 - 5 = 30 - 5 = 25. So the answer is 25.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": false,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

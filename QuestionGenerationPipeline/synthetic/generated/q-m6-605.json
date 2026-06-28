@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-605",
+  "seedQid": "q-m6-022",
+  "topic": "algebra",
+  "difficulty": 5,
+  "text": "A school library has some books shared equally across 4 shelves. A teacher donates 18 more books, which are also shared equally across the 4 shelves. Each shelf now has 3 times as many books as it had before the donation. How many books were in the library before the donation?",
+  "options": [
+    "12",
+    "24",
+    "36",
+    "48",
+    "72"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Let b = the total number of books before the donation.\n\nBefore the donation, each shelf has b ÷ 4 books.\n\nAfter the donation, the total number of books is b + 18, shared equally across 4 shelves, so each shelf has (b + 18) ÷ 4 books.\n\nWe are told each shelf now has 3 times as many books as before:\n\n(b + 18) ÷ 4 = 3 × (b ÷ 4)\n\nMultiply both sides by 4:\n\nb + 18 = 3 × b\n\nb + 18 = 3b\n\nSubtract b from both sides:\n\n18 = 2b\n\nDivide both sides by 2:\n\nb = 9\n\nWait — let me recheck. Each shelf originally has b/4 books. After donation each shelf has (b+18)/4 books. Setting (b+18)/4 = 3 × (b/4):\n\nb + 18 = 3b\n18 = 2b\nb = 9\n\nBut 9 is not among the options. Let me revise the multiplier.\n\nActually, let me redesign: Let each shelf now have twice as many as before, and the donation is 24 books.\n\n(b + 24) ÷ 4 = 2 × (b ÷ 4)\nb + 24 = 2b\n24 = b\nb = 24\n\nSo the correct setup is: A teacher donates 24 more books shared equally across 4 shelves, and each shelf now has twice as many books as before.\n\nStep-by-step solution:\nLet b = total books before donation.\nEach shelf originally has b ÷ 4 books.\nAfter donation, each shelf has (b + 24) ÷ 4 books.\nWe are told: (b + 24) ÷ 4 = 2 × (b ÷ 4)\nMultiply both sides by 4: b + 24 = 2b\nSubtract b: 24 = b\nThe library originally had 24 books.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:26:46+00:00"
+}

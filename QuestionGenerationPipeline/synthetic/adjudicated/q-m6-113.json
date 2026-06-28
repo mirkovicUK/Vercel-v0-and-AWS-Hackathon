@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-113",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "B",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "Evaluating each option starting with 8: A) (8×3)−4 = 24−4 = 20 → correct. B) (8+7)×2 = 15×2 = 30 ≠ 20 → incorrect. C) (8×2)+4 = 16+4 = 20 → correct. D) (8+2)×2 = 10×2 = 20 → correct. E) (8−3)×4 = 5×4 = 20 → correct. Only B does not give 20, so B is the correct answer. Solver 1 gave the text of option B, and Solver 2 chose D (which is incorrect). The correct and unambiguous answer is B.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

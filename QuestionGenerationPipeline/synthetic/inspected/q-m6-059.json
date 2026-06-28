@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-059",
+  "answer": "C) £12",
+  "steps": "Normal price per session = £4.80. Member price = 3/4 × £4.80 = £3.60. Let membership cost = £m. After 10 visits, Priya's total cost = m + 10 × 3.60 = m + 36. Non-member cost for 10 visits = 10 × 4.80 = 48. Condition: m + 36 = 48 → m = 48 - 36 = 12. So m = £12.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

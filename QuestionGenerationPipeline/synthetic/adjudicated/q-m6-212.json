@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-212",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "B",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "Sophie has 2 metres and cuts off 0.5 metres, leaving 1.5 metres unused. She needs 8.5 metres in total. She already used 0.5 metres, so she still needs 8.5 - 0.5 = 8 metres more. Each new ribbon is 2 metres long, so she needs 8 / 2 = 4 more ribbons. Thus, the correct answer is B) 4. Solver 1 answered '5', which is incorrect. Solver 2 answered 'B', which is correct. The question is unambiguous and exactly one option is correct.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

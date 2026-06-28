@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-192",
+  "seedQid": "q-m2-023",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 2,
+  "text": "A baker made 60 cupcakes. He sold 25% of them in the morning. How many cupcakes did he sell in the morning?",
+  "options": [
+    "10",
+    "12",
+    "15",
+    "20",
+    "25"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "To find 25% of 60, we can think of 25% as one quarter (1/4).\n\nStep 1: Divide 60 by 4.\n60 ÷ 4 = 15\n\nSo the baker sold 15 cupcakes in the morning.\n\nThe correct answer is 15.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:39:44+00:00"
+}

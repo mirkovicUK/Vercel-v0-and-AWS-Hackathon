@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-603",
+  "seedQid": "q-m6-022",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "A library shelf holds some books. After a librarian adds 12 more books and then removes 5 damaged ones, there are 30 books on the shelf. How many books were on the shelf to start with?\n\nLet b = the number of books at the start.\n\nb + 12 − 5 = 30\n\nb = ?",
+  "options": [
+    "18",
+    "23",
+    "25",
+    "37",
+    "47"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Write the equation based on the problem.\nb + 12 − 5 = 30\n\nStep 2: Simplify the left side.\nb + 7 = 30\n\nStep 3: Subtract 7 from both sides to find b.\nb = 30 − 7\nb = 23\n\nThe shelf started with 23 books.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:26:30+00:00"
+}

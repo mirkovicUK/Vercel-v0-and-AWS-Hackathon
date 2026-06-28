@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-244",
+  "answer": "C",
+  "steps": "The sum of interior angles of an n-sided polygon is (n-2) × 180°. For a nonagon, n = 9, so sum = (9-2) × 180° = 7 × 180° = 1260°. Since it is regular, all interior angles are equal. Each interior angle = 1260° ÷ 9 = 140°.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

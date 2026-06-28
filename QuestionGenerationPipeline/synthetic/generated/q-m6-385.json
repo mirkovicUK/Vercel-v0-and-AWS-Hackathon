@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-385",
+  "seedQid": "q-m5-010",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 5,
+  "text": "A factory produces 840 toys in one day. On Monday, 3/8 of the toys were faulty. On Tuesday, the factory produced the same number of toys but the percentage of faulty toys decreased by 15 percentage points compared to Monday. How many non-faulty toys were produced in total across both days?",
+  "options": [
+    "1155",
+    "1218",
+    "1281",
+    "1302",
+    "1365"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Find the number of faulty toys on Monday.\n3/8 of 840 = 840 ÷ 8 × 3 = 105 × 3 = 315 faulty toys.\nSo non-faulty on Monday = 840 − 315 = 525.\n\nStep 2: Convert Monday's fault rate to a percentage.\n3/8 = 0.375 = 37.5%\n\nStep 3: Find Tuesday's fault rate.\n37.5% − 15% = 22.5%\n\nStep 4: Find the number of faulty toys on Tuesday.\n22.5% of 840 = 0.225 × 840 = 189 faulty toys.\nSo non-faulty on Tuesday = 840 − 189 = 651.\n\nStep 5: Find the total non-faulty toys across both days.\n525 + 651 = 1155.\n\nThe answer is 1155.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:01:52+00:00"
+}

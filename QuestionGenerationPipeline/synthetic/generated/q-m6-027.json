@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-027",
+  "seedQid": "q-m1-013",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 2,
+  "text": "A charity jar is 1/4 full. After adding some more coins, it becomes 3/4 full. What fraction of the jar was filled by the extra coins?",
+  "options": [
+    "1/4",
+    "1/2",
+    "3/4",
+    "1/3",
+    "2/3"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: The jar started at 1/4 full.\nStep 2: The jar ended at 3/4 full.\nStep 3: To find the fraction filled by the extra coins, subtract the starting amount from the ending amount: 3/4 − 1/4 = 2/4.\nStep 4: Simplify 2/4 = 1/2.\nThe extra coins filled 1/2 of the jar.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:22:06+00:00"
+}

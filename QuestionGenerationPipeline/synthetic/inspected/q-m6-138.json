@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-138",
+  "answer": "B) Difference: 11°C, fastest rise: 9 am to 12 noon",
+  "steps": "1. Find highest temperature: 13°C at 12 noon. 2. Find lowest temperature: 2°C at 6 am. 3. Difference = 13 - 2 = 11°C. 4. Compute temperature increases between consecutive readings: 6am to 9am: 7 - 2 = 5°C over 3 hours → rate = 5/3 ≈ 1.67°C per hour. 9am to 12 noon: 13 - 7 = 6°C over 3 hours → rate = 6/3 = 2°C per hour. 12 noon to 3pm: 11 - 13 = -2°C (decrease, not rise). 3pm to 6pm: 5 - 11 = -6°C (decrease). 5. The fastest rise (greatest increase per hour) is 2°C per hour from 9am to 12 noon. 6. Check options: A says fastest rise 6am to 9am (incorrect). B says difference 11°C, fastest rise 9am to 12 noon (correct). C says difference 13°C (incorrect). D says difference 8°C (incorrect). E says fastest rise 12 noon to 3pm (decrease, incorrect).",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

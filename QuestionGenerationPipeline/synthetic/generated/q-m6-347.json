@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-347",
+  "seedQid": "q-m4-022",
+  "topic": "ratio_proportion",
+  "difficulty": 2,
+  "text": "A lemonade recipe uses 400 ml of water for every 100 ml of lemon juice. If Sam wants to make a smaller batch using only 50 ml of lemon juice, how much water does he need?",
+  "options": [
+    "100 ml",
+    "150 ml",
+    "200 ml",
+    "250 ml",
+    "300 ml"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "The ratio of water to lemon juice is 400 ml : 100 ml, which simplifies to 4 : 1. This means for every 1 ml of lemon juice, Sam needs 4 ml of water. Sam is using 50 ml of lemon juice, so he needs 50 × 4 = 200 ml of water.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:57:07+00:00"
+}

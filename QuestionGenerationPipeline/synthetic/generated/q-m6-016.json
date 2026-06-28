@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-016",
+  "seedQid": "q-m1-007",
+  "topic": "ratio_proportion",
+  "difficulty": 1,
+  "text": "A recipe uses flour and sugar in the ratio 2:1. If you use 4 cups of flour, how many cups of sugar do you need?",
+  "options": [
+    "1 cup",
+    "2 cups",
+    "3 cups",
+    "4 cups",
+    "5 cups"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "The ratio of flour to sugar is 2:1. This means for every 2 cups of flour, you need 1 cup of sugar. If you use 4 cups of flour, that is 2 × 2 cups of flour. So you also multiply the sugar by 2: 1 × 2 = 2 cups of sugar. The answer is 2 cups.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-11T19:48:08+00:00"
+}

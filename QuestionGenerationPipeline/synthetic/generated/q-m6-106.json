@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-106",
+  "seedQid": "q-m1-041",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "What is the value of the Roman numeral XIV?",
+  "options": [
+    "12",
+    "13",
+    "14",
+    "15",
+    "16"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "In Roman numerals:\n• X = 10\n• IV = 4 (because I before V means 5 − 1 = 4)\n\nSo XIV = 10 + 4 = 14.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:30:04+00:00"
+}

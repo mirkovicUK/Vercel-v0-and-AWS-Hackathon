@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-329",
+  "seedQid": "q-m4-012",
+  "topic": "algebra",
+  "difficulty": 4,
+  "text": "A swimming club charges a joining fee of £35 plus £12 per month. Marcus has been a member for some months and has paid a total of £131 so far. He wants to stay until his total payments reach £251. If m represents the number of additional months Marcus needs to stay, which equation correctly represents this situation, and what is the value of m?",
+  "options": [
+    "131 + 12m = 251, so m = 10",
+    "131 + 12m = 251, so m = 8",
+    "131 + 35m = 251, so m = 4",
+    "12m + 35 = 251, so m = 18",
+    "131 + 12m = 286, so m = 12"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Marcus has already paid £131 in total.\nStep 2: He wants his total payments to reach £251.\nStep 3: The remaining amount he needs to pay is £251 − £131 = £120.\nStep 4: Since he has already joined, he only pays the monthly fee of £12 for each additional month. So the equation is: 131 + 12m = 251.\nStep 5: Solving for m: 12m = 251 − 131 = 120, so m = 120 ÷ 12 = 10.\nStep 6: Marcus needs to stay for 10 more months. The correct answer is 131 + 12m = 251, so m = 10.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:55:35+00:00"
+}

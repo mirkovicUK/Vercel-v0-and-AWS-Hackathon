@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-042",
+  "answer": "B",
+  "steps": "A standard kitchen teaspoon is a common household measure. From everyday knowledge, a teaspoon is about 5 millilitres. Checking the options: 0.5 ml is too small (a drop), 5 ml matches common knowledge, 50 ml is a tablespoon or larger, 500 ml is half a litre (far too large), 5 litres is enormous (like a large jug). Therefore, the reasonable estimate is 5 ml.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

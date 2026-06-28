@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-325",
+  "answer": "B) w = 5, charge = £23",
+  "steps": "First company: cost = 4w + 3. Second company: cost = 7w − 2(w + 6). Simplify second company's expression: 7w − 2w − 12 = 5w − 12. Set equal: 4w + 3 = 5w − 12. Solve: 3 + 12 = 5w − 4w → 15 = w → w = 15 kg. Then charge = 4(15) + 3 = 60 + 3 = £63. Check with second formula: 5(15) − 12 = 75 − 12 = £63. So correct weight is 15 kg, charge £63. Check options: Option C says w = 15, charge = £63. That matches our calculation. However, verify other options: Option A: w=3 → first: 4(3)+3=15, second: 5(3)-12=3 → not equal. Option B: w=5 → first: 23, second: 5(5)-12=13 → not equal. Option D: w=9 → first: 39, second: 5(9)-12=33 → not equal. Option E: w=12 → first: 51, second: 5(12)-12=48 → not equal. Only option C matches our derived solution.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": false,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

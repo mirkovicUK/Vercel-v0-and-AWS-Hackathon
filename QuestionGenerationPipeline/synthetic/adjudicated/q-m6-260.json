@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-260",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "B",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "The sum of the first 5 readings is 5 × 12 = 60. The sum of all 6 readings is 6 × 14 = 84, so the 6th reading is 84 − 60 = 24°C. The three readings above the mean are 18, 20, and one unknown, but since the mean is 14, only values above 14 count. The 6th reading must be one of these three above-mean values. Since 24°C is above 14°C and fits as the 6th reading, and the other two above-mean values are 18 and 20, the unknown above-mean reading must be 24°C. The remaining three readings (including possibly the 6th) must be ≤14. But only one of the three above-mean readings is unknown, and the 6th reading is 24, which is above the mean, so it must be the unknown one. Thus, the 6th reading is 24°C, corresponding to option B. Solver 1 gave the correct value; Solver 2 chose C (26°C), which is incorrect. The correct and unambiguous answer is B.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-113",
+  "seedQid": "q-m1-044",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "Mia thinks of the number 8. She tries five different calculations. Which one does NOT give an answer of 20?",
+  "options": [
+    "Multiply by 3 and subtract 4",
+    "Add 7 and then double the result",
+    "Multiply by 2 and add 4",
+    "Add 2 and then multiply by 2",
+    "Subtract 3 and then multiply by 4"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Let's check each calculation starting with 8:\n\nA: Multiply by 3 and subtract 4 → 8 × 3 = 24, then 24 − 4 = 20 ✓\n\nB: Add 7 and then double the result → 8 + 7 = 15, then 15 × 2 = 30 ✗ (This gives 30, not 20)\n\nC: Multiply by 2 and add 4 → 8 × 2 = 16, then 16 + 4 = 20 ✓\n\nD: Add 2 and then multiply by 2 → 8 + 2 = 10, then 10 × 2 = 20 ✓\n\nE: Subtract 3 and then multiply by 4 → 8 − 3 = 5, then 5 × 4 = 20 ✓\n\nThe only calculation that does NOT give 20 is option B, which gives 30.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:30:42+00:00"
+}

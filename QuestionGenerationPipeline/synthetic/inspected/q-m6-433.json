@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-433",
+  "answer": "A",
+  "steps": "We know 438 × 200 = 87,600. Since 50 is ¼ of 200, we can find 438 × 50 by dividing 87,600 by 4. 87,600 ÷ 4 = 21,900. Check: 438 × 50 = 21,900. Among the options, A) 21,900 matches.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

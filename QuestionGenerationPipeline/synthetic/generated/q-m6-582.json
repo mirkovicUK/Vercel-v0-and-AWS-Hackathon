@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-582",
+  "seedQid": "q-m6-017",
+  "topic": "ratio_proportion",
+  "difficulty": 2,
+  "text": "A smoothie recipe uses banana and yoghurt in the ratio 2:5. If Mia uses 10 spoonfuls of yoghurt, how many spoonfuls of banana does she need?",
+  "options": [
+    "2",
+    "3",
+    "4",
+    "5",
+    "25"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "The ratio of banana to yoghurt is 2:5. This means for every 5 parts of yoghurt, there are 2 parts of banana. Mia uses 10 spoonfuls of yoghurt. To find the multiplier: 10 ÷ 5 = 2. So each 'part' equals 2 spoonfuls. Banana = 2 × 2 = 4 spoonfuls. The answer is 4.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:24:15+00:00"
+}

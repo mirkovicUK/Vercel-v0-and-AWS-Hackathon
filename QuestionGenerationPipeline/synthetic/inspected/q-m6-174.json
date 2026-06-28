@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-174",
+  "answer": "B",
+  "steps": "1. Total bottles = 4,536.\n2. Bottles per crate = 8.\n3. Number of crates = 4,536 ÷ 8 = 567 crates.\n4. Crates are loaded equally onto 9 trucks.\n5. Crates per truck = 567 ÷ 9 = 63 crates.\n6. Check options: 63 is option B.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

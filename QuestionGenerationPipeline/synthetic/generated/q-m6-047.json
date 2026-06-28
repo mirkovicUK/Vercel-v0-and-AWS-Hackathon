@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-047",
+  "seedQid": "q-m1-022",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 2,
+  "text": "A jar contains 200 sweets. If 50 of them are red, what percentage of the sweets are red?",
+  "options": [
+    "10%",
+    "15%",
+    "20%",
+    "25%",
+    "50%"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Write the fraction of red sweets: 50 out of 200 = 50/200.\nStep 2: Simplify the fraction: 50/200 = 1/4.\nStep 3: Convert to a percentage: 1/4 = 25/100 = 25%.\nWait — let's recalculate more carefully: 50/200 = 50 ÷ 200 = 0.25? No: 50 ÷ 200 = 0.25, and 0.25 × 100 = 25%. Hmm, let me recheck: 50/200 simplifies by dividing both by 50: 1/4 = 25%. Actually that gives 25%. Let me reconsider: 50/200 = 5/20 = 1/4 = 25%. The correct answer is 25%.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:23:55+00:00"
+}

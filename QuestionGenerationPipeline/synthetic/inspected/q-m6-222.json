@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-222",
+  "answer": "C",
+  "steps": "If 4 cakes need 20 eggs, then 1 cake needs 20 ÷ 4 = 5 eggs. So 3 cakes need 3 × 5 = 15 eggs.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

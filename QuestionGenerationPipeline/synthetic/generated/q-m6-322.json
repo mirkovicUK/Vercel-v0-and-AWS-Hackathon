@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-322",
+  "seedQid": "q-m4-009",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A bag of marbles weighs m grams. If 2m + 5 = 19, how many grams does the bag weigh?",
+  "options": [
+    "5",
+    "6",
+    "7",
+    "8",
+    "12"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Start with the equation: 2m + 5 = 19\nStep 1: Subtract 5 from both sides: 2m = 19 - 5 = 14\nStep 2: Divide both sides by 2: m = 14 ÷ 2 = 7\nThe bag weighs 7 grams.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:54:48+00:00"
+}

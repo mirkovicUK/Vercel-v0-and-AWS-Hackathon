@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-155",
+  "seedQid": "q-m2-009",
+  "topic": "number",
+  "difficulty": 5,
+  "text": "A scientist writes a number in which the digit 7 appears three times. The 7 in the thousands place is worth how many times more than the 7 in the tens place, and how many times less than the 7 in the millions place?",
+  "options": [
+    "100 times more and 100 times less",
+    "100 times more and 1000 times less",
+    "10 times more and 100 times less",
+    "100 times more and 10 times less",
+    "1000 times more and 100 times less"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Identify the value of the digit 7 in each position.\n- The 7 in the tens place is worth 70.\n- The 7 in the thousands place is worth 7,000.\n- The 7 in the millions place is worth 7,000,000.\n\nStep 2: Compare the thousands place to the tens place.\n7,000 ÷ 70 = 100. So the 7 in the thousands place is worth 100 times more than the 7 in the tens place.\n\nStep 3: Compare the thousands place to the millions place.\n7,000,000 ÷ 7,000 = 1,000. So the 7 in the thousands place is worth 1,000 times less than the 7 in the millions place.\n\nStep 4: The answer is '100 times more and 1000 times less'.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:35:44+00:00"
+}

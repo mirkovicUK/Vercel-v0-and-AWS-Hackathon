@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-573",
+  "seedQid": "q-m6-014",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A deep-sea diver is descending at a steady rate. Her depth gauge shows the following readings in metres below sea level: 48, 71, 94, ___, 140, 163. What is the missing reading?",
+  "options": [
+    "112",
+    "115",
+    "117",
+    "119",
+    "121"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find the constant difference between consecutive readings.\n71 − 48 = 23\n94 − 71 = 23\nSo the diver descends 23 metres between each reading.\n\nStep 2: Add 23 to the last known reading before the gap.\n94 + 23 = 117\n\nStep 3: Check by continuing the pattern.\n117 + 23 = 140 ✓\n140 + 23 = 163 ✓\n\nThe missing reading is 117.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:23:06+00:00"
+}

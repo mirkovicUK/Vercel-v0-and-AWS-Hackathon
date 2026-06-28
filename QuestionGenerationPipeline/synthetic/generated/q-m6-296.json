@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-296",
+  "seedQid": "q-m3-027",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "A baker makes 6 cupcakes every hour. If he uses the letter n to stand for the number of hours he works, which expression shows the total number of cupcakes he makes?",
+  "options": [
+    "n + 6",
+    "6n",
+    "n ÷ 6",
+    "6 + n + 6",
+    "n - 6"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "The baker makes 6 cupcakes each hour. After 1 hour he has 6 cupcakes, after 2 hours he has 12 cupcakes, after 3 hours he has 18 cupcakes, and so on. Each time, we multiply the number of hours (n) by 6. So the total number of cupcakes = 6 × n, which is written as 6n.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:51:46+00:00"
+}

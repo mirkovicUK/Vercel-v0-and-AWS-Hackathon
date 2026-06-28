@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-441",
+  "seedQid": "q-m5-029",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "A bag of apples weighs 12 kg. A bag of oranges weighs half as much as the bag of apples. How much does the bag of oranges weigh?",
+  "options": [
+    "3 kg",
+    "4 kg",
+    "6 kg",
+    "8 kg",
+    "24 kg"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: We know the bag of apples weighs 12 kg.\nStep 2: The bag of oranges weighs half as much as the bag of apples.\nStep 3: Half of 12 kg = 12 ÷ 2 = 6 kg.\nTherefore, the bag of oranges weighs 6 kg.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:08:24+00:00"
+}

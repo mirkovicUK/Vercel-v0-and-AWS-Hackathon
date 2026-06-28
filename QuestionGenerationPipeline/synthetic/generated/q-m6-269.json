@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-269",
+  "seedQid": "q-m3-008",
+  "topic": "data_handling",
+  "difficulty": 4,
+  "text": "A teacher records the scores of 8 students on a maths test. The mean score of the first 5 students is 14. The mean score of the last 3 students is 18. She displays all 8 scores on a bar chart. What is the mean score of all 8 students combined?",
+  "options": [
+    "14.5",
+    "15",
+    "15.5",
+    "16",
+    "16.5"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find the total score of the first 5 students. Mean = 14, so total = 5 × 14 = 70.\nStep 2: Find the total score of the last 3 students. Mean = 18, so total = 3 × 18 = 54.\nStep 3: Find the combined total of all 8 students: 70 + 54 = 124.\nStep 4: Find the overall mean: 124 ÷ 8 = 15.5.\nThe correct answer is 15.5.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:48:19+00:00"
+}

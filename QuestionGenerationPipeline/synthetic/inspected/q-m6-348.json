@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-348",
+  "answer": "C",
+  "steps": "Original ratio: orange juice : yoghurt = 400 ml : 150 ml. Simplify ratio: divide both by 50 → 8 : 3. For 200 ml orange juice, set up proportion: 8/3 = 200/y → cross multiply: 8y = 600 → y = 600/8 = 75 ml.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

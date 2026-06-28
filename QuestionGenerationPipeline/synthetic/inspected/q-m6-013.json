@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-013",
+  "answer": "B",
+  "steps": "The lift starts at floor 52 and goes down the same number of floors each time it stops. The sequence given: 52, 45, 38, ___, 24. From 52 to 45 is a decrease of 7 floors. From 45 to 38 is also a decrease of 7 floors. So the common difference is -7. Therefore, from 38, subtract 7 to get the missing floor: 38 - 7 = 31. Then check: 31 - 7 = 24, which matches the next given floor. So the missing floor is 31.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

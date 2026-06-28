@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-410",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "B",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "Evaluate W = 3n² - 5n + 7 for successive n. For n=6: W=3(36)-5(6)+7=108-30+7=85. For n=7: W=3(49)-35+7=147-35+7=119. 119 > 100, so first exceeds 100 on Day 7. Solver 1 said 'Day 7', which matches option B. Solver 2 said 'A', which is Day 6, but 85 < 100, so incorrect. Only B is correct.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

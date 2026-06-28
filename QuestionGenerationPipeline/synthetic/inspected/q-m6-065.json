@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-065",
+  "answer": "C",
+  "steps": "Let p be the cost in pounds for every 40 widgets produced. The cost per widget is £(p/40). On Monday, 260 widgets produced cost = 260 × (p/40) = (260/40)p = 6.5p. On Tuesday, 180 widgets produced cost = 180 × (p/40) = (180/40)p = 4.5p. Total cost = 6.5p + 4.5p = 11p. Given total cost = £49.50, so 11p = 49.50 → p = 49.50 / 11 = 4.5. Therefore p = £4.50.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

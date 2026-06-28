@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-231",
+  "answer": "B",
+  "steps": "1. The cost of one bag of sweets is £p. 2. The cost of 3 bags of sweets is 3 times the cost of one bag. 3. In algebra, 3 times p is written as 3p. 4. Check the options: A) p + 3 is addition, not multiplication. B) 3p matches. C) p ÷ 3 is division. D) p - 3 is subtraction. E) 3 + p is addition (same as A but order reversed). 5. Only 3p correctly represents the cost of 3 bags.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

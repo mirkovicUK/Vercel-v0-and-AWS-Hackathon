@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-474",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "D",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "Sum of donations: £127.50 + £84.75 + £203.25 + £134.50 = £550.00. Total is not more than £550, so first claim is false. Average = £550 / 4 = £137.50, so second claim is true. Thus, only the second claim is true, making D correct.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

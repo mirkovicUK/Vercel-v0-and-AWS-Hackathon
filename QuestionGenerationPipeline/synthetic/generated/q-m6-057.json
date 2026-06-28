@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-057",
+  "seedQid": "q-m1-027",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A cinema ticket normally costs £8. With a loyalty card, you save £2 on every ticket. The loyalty card costs £6. If n stands for the number of visits, which expression shows the total amount saved after n visits (taking away the cost of the card)?",
+  "options": [
+    "2n - 6",
+    "8n - 6",
+    "6 - 2n",
+    "2n + 6",
+    "8n + 6"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Each visit saves £2 on the ticket price. After n visits, the total saving on tickets is 2 × n = 2n. However, the loyalty card cost £6, so we subtract that. Total amount saved = 2n - 6. The correct answer is 2n - 6.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:25:06+00:00"
+}

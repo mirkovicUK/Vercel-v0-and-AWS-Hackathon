@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-591",
+  "seedQid": "q-m6-019",
+  "topic": "ratio_proportion",
+  "difficulty": 1,
+  "text": "A fruit squash is made by mixing squash and water in the ratio 1:4. If you use 3 cups of squash, how many cups of water do you need?",
+  "options": [
+    "3 cups",
+    "4 cups",
+    "7 cups",
+    "8 cups",
+    "12 cups"
+  ],
+  "correctIndex": 4,
+  "generatorSolution": "The ratio of squash to water is 1:4. This means for every 1 cup of squash, you need 4 cups of water.\n\nIf you use 3 cups of squash, you need 3 × 4 = 12 cups of water.\n\nThe answer is 12 cups.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:25:13+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-054",
+  "seedQid": "q-m1-026",
+  "topic": "algebra",
+  "difficulty": 4,
+  "text": "A factory produces boxes of chocolates. Each box contains Y rows, and each row has Y chocolates. The factory ships 3 boxes to a shop, and the shop receives 147 chocolates in total. What number does Y stand for?",
+  "options": [
+    "5",
+    "6",
+    "7",
+    "8",
+    "9"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Each box contains Y rows with Y chocolates in each row, so each box has Y × Y = Y² chocolates.\nStep 2: The factory ships 3 boxes, so the total number of chocolates is 3 × Y².\nStep 3: We know the total is 147, so we write the equation: 3 × Y² = 147.\nStep 4: Divide both sides by 3: Y² = 147 ÷ 3 = 49.\nStep 5: Find Y by taking the square root: Y = √49 = 7.\nTherefore Y = 7.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:24:42+00:00"
+}

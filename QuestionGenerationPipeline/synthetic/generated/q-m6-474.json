@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-474",
+  "seedQid": "q-m5-038",
+  "topic": "number",
+  "difficulty": 4,
+  "text": "A school charity fundraiser collected donations over four days. On Monday they collected £127.50, on Tuesday £84.75, on Wednesday £203.25, and on Thursday £134.50. The head teacher said: 'We collected more than £550 in total, and the average daily collection was exactly £137.50.' Which of the following statements about the head teacher's claims is correct?",
+  "options": [
+    "Both claims are true",
+    "Both claims are false",
+    "Only the first claim (more than £550) is true",
+    "Only the second claim (average of £137.50) is true",
+    "The total collected was exactly £550"
+  ],
+  "correctIndex": 3,
+  "generatorSolution": "Step 1: Find the total amount collected.\n£127.50 + £84.75 + £203.25 + £134.50\n= £127.50 + £84.75 = £212.25\n£212.25 + £203.25 = £415.50\n£415.50 + £134.50 = £550.00\n\nStep 2: Check the first claim — 'more than £550'.\nThe total is exactly £550.00, which is NOT more than £550. So the first claim is FALSE.\n\nStep 3: Check the second claim — 'average daily collection was exactly £137.50'.\nAverage = Total ÷ Number of days = £550 ÷ 4 = £137.50. So the second claim is TRUE.\n\nStep 4: Since only the second claim is true, the correct answer is 'Only the second claim (average of £137.50) is true'.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:12:08+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-538",
+  "answer": "A",
+  "steps": "The number is 47,256. The digit 4 is in the ten-thousands place, so its value is 40,000. The digit 2 is in the hundreds place, so its value is 200. The difference between the value of the digit 4 and the value of the digit 2 is 40,000 - 200 = 39,800.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

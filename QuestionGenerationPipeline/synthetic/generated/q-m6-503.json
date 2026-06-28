@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-503",
+  "seedQid": "q-m5-049",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "A swimming pool charges an entry fee using the formula: C = 5n + 3(n − 2), where C is the total cost in pounds and n is the number of people in a group. A family group has 4 people. What is the total cost for the family?",
+  "options": [
+    "£20",
+    "£26",
+    "£28",
+    "£32",
+    "£35"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Write down the formula: C = 5n + 3(n − 2)\nStep 2: Substitute n = 4 into the formula:\nC = 5 × 4 + 3 × (4 − 2)\nStep 3: Work out each part:\n5 × 4 = 20\n4 − 2 = 2, then 3 × 2 = 6\nStep 4: Add the two parts together:\nC = 20 + 6 = 26\nThe total cost is £26.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:15:58+00:00"
+}

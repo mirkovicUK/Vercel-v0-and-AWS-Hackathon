@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-451",
+  "trigger": "ambiguity",
+  "correctAnswer": "C",
+  "unresolved": false,
+  "exactlyOneCorrect": false,
+  "rationale": "The factors of 12 are 1, 2, 3, 4, 6, and 12. The even numbers among these that are greater than 2 are 4, 6, and 12. Therefore, options B (4), C (6), and E (12) all satisfy the conditions. Since more than one option is valid, the correct answer is not unique. Solver 1 gave '6', which is one valid answer but not the only one. Solver 2 gave 'C', which corresponds to 6, also correct but not exclusive. Thus, while the question has valid answers, it does not have exactly one correct and unambiguous option.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

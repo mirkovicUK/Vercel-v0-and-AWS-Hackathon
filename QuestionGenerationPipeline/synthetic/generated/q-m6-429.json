@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-429",
+  "seedQid": "q-m5-026",
+  "topic": "number",
+  "difficulty": 4,
+  "status": "failed",
+  "raw": "{\n  \"text\": \"A clock tower chimes every day at specific times. The number of chimes follows this pattern: 7, 18, 29, 40, 51, ... What is the 10th number in this sequence?\",\n  \"options\": [\"96\", \"99\", \"105\", \"106\", \"108\"],\n  \"correctIndex\": 1,\n  \"solution\": \"Step 1: Find the common difference between consecutive terms.\\n18 - 7 = 11\\n29 - 18 = 11\\n40 - 29 = 11\\n51 - 40 = 11\\nThe common difference is 11.\\n\\nStep 2: Use the formula for the nth term of an arithmetic sequence: nth term = first term + (n - 1) × common difference.\\n\\nStep 3: Calculate the 10th term.\\n10th term = 7 + (10 - 1) × 11\\n10th term = 7 + 9 × 11\\n10th term = 7 + 99\\n10th term = 106\\n\\nWait — let me recheck. 7 + 99 = 106.\\n\\nActually let me verify by listing: 7, 18, 29, 40, 51, 62, 73, 84, 95, 106.\\n\\nThe 10th term is 106.\\n\\nWait, that gives 106 which is option index 3. Let me recount: Term 1: 7, Term 2: 18, Term 3: 29, Term 4: 40, Term 5: 51, Term 6: 62, Term 7: 73, Term 8: 84, Term 9: 95, Term 10: 106.\\n\\nThe correct answer is 106.\"\n}\n\nWait, I need to fix the correctIndex. Let me redo this properly.\n\n{\"text\":\"A clock tower chimes every day at specific times. The number of chimes follows this pattern: 7, 18, 29, 40, 51, ... What is the 10th number in this sequence?\",\"options\":[\"95\",\"99\",\"102\",\"106\",\"117\"],\"correctIndex\":3,\"solution\":\"Step 1: Find the common difference between consecutive terms.\\n18 - 7 = 11\\n29 - 18 = 11\\n40 - 29 = 11\\n51 - 40 = 11\\nThe common difference is 11.\\n\\nStep 2: Use the formula for the nth term of an arithmetic sequence: nth term = first term + (n - 1) × common difference.\\n\\nStep 3: Calculate the 10th term.\\n10th term = 7 + (10 - 1) × 11\\n10th term = 7 + 9 × 11\\n10th term = 7 + 99\\n10th term = 106\\n\\nStep 4: Verify by listing all terms: 7, 18, 29, 40, 51, 62, 73, 84, 95, 106.\\n\\nThe 10th term is 106.\"}",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "createdAt": "2026-06-12T18:07:27+00:00"
+}

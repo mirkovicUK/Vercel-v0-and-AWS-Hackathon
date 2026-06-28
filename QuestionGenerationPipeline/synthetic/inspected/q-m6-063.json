@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-063",
+  "answer": "B",
+  "steps": "Total charge = p + 4q = 22. Given p = 6, substitute: 6 + 4q = 22. Subtract 6: 4q = 16. Divide by 4: q = 4. So q = £4.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

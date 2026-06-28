@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-089",
+  "seedQid": "q-m1-036",
+  "topic": "algebra",
+  "difficulty": 4,
+  "text": "A factory produces tiles that each weigh p grams. The tiles are packed into crates of 12. The weight of one full crate of tiles, in kilograms, is given by the expression 12p ÷ 1000. If three full crates together weigh 10.8 kilograms, what is the value of p?",
+  "options": [
+    "250",
+    "300",
+    "360",
+    "900",
+    "3600"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: The weight of one crate in kilograms is 12p ÷ 1000.\n\nStep 2: Three full crates weigh 10.8 kg, so we write the equation:\n3 × (12p ÷ 1000) = 10.8\n\nStep 3: Simplify the left side:\n36p ÷ 1000 = 10.8\n\nStep 4: Multiply both sides by 1000:\n36p = 10800\n\nStep 5: Divide both sides by 36:\np = 10800 ÷ 36 = 300\n\nTherefore, each tile weighs 300 grams, and the answer is 300.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:28:30+00:00"
+}

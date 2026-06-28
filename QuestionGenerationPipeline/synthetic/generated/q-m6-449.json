@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-449",
+  "seedQid": "q-m5-030",
+  "topic": "geometry",
+  "difficulty": 4,
+  "text": "A rectangular garden has a length of 0.035 km and a width of 1800 cm. A diagonal path is built across the garden from one corner to the opposite corner. What is the length of the diagonal path in metres?",
+  "options": [
+    "38.5 m",
+    "41.2 m",
+    "53 m",
+    "39.1 m",
+    "45.0 m"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Convert all measurements to metres.\nLength = 0.035 km = 0.035 × 1000 = 35 m\nWidth = 1800 cm = 1800 ÷ 100 = 18 m\n\nStep 2: Use Pythagoras' theorem to find the diagonal.\nDiagonal² = Length² + Width²\nDiagonal² = 35² + 18²\nDiagonal² = 1225 + 324\nDiagonal² = 1549\n\nStep 3: Find the square root.\n√1549 ≈ 39.36... \n\nWait, let me recalculate. Let me reconsider the numbers.\n\nActually, let me recalculate: 35² = 1225, 18² = 324, sum = 1549.\n√1549 ≈ 39.4 m\n\nLet me revise the question with numbers that work more cleanly. Using length = 0.035 km = 35 m and width = 1200 cm = 12 m.\nDiagonal² = 35² + 12² = 1225 + 144 = 1369\n√1369 = 37 m\n\nLet me use different values: length = 2400 cm = 24 m, width = 0.032 km = 32 m.\nDiagonal² = 24² + 32² = 576 + 1024 = 1600\n√1600 = 40 m. But let me try: length = 0.021 km = 21 m, width = 2800 cm = 28 m.\n21² + 28² = 441 + 784 = 1225. √1225 = 35 m. Perfect.\n\nSo the correct answer is 35 m. Let me redo with these values.\n\nStep 1: Convert length: 0.021 km = 21 m. Convert width: 2800 cm = 28 m.\nStep 2: Diagonal² = 21² + 28² = 441 + 784 = 1225.\nStep 3: √1225 = 35 m.\nThe correct answer is 35 m.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:09:24+00:00"
+}

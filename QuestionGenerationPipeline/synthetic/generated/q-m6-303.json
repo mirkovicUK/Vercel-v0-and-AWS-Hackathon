@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-303",
+  "seedQid": "q-m3-029",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "A rectangular garden has a length of (3x + 5) metres and a width of (x + 2) metres. The perimeter of the garden is 54 metres. What is the value of x?",
+  "options": [
+    "4",
+    "5",
+    "5.5",
+    "6",
+    "7"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "The perimeter of a rectangle = 2 × (length + width).\n\nStep 1: Write the equation for the perimeter.\n2 × [(3x + 5) + (x + 2)] = 54\n\nStep 2: Simplify inside the brackets.\n2 × (3x + x + 5 + 2) = 54\n2 × (4x + 7) = 54\n\nStep 3: Divide both sides by 2.\n4x + 7 = 27\n\nStep 4: Subtract 7 from both sides.\n4x = 20\n\nStep 5: Divide both sides by 4.\nx = 5\n\nThe correct answer is 5.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:52:29+00:00"
+}

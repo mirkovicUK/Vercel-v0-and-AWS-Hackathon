@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-470",
+  "seedQid": "q-m5-036",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 5,
+  "text": "A factory produces 450 identical metal bolts. Each bolt weighs 0.08 kg. The bolts are packed into boxes, with each box holding 25 bolts. A delivery truck carries 12 boxes. What percentage of the total weight of ALL the bolts is carried by one delivery truck?",
+  "options": [
+    "66⅔%",
+    "53⅓%",
+    "33⅓%",
+    "26⅔%",
+    "16⅔%"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Find the total number of bolts: 450 bolts.\n\nStep 2: Find how many bolts one truck carries: 12 boxes × 25 bolts per box = 300 bolts.\n\nStep 3: Find what fraction of the total bolts one truck carries: 300 ÷ 450 = 300/450 = 2/3.\n\nStep 4: Convert 2/3 to a percentage: 2/3 × 100 = 66⅔%.\n\nNote: The weight of each bolt (0.08 kg) is given as extra information to make the problem more challenging — since every bolt weighs the same, the percentage of weight equals the percentage of bolts.\n\nThe correct answer is 66⅔%.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:11:44+00:00"
+}

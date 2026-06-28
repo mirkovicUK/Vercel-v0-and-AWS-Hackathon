@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-316",
+  "answer": "B",
+  "steps": "The ratio of flour to sugar is 3:1, meaning for every 3 cups of flour, 1 cup of sugar is used. If 6 cups of flour are used, we can set up the proportion: 3/1 = 6/x, where x is the cups of sugar needed. Cross-multiplying gives 3x = 6, so x = 2. Alternatively, 6 cups of flour is twice 3 cups, so sugar needed is twice 1 cup = 2 cups.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-554",
+  "answer": "A",
+  "steps": "Number: 7,560,757. Write digits with place values from left to right: millions, hundred-thousands, ten-thousands, thousands, hundreds, tens, ones. Positions (from leftmost digit as position 1): 1: 7 (millions place, value = 7 × 1,000,000 = 7,000,000), 2: 5, 3: 6, 4: 0, 5: 7 (hundreds place, value = 7 × 100 = 700), 6: 5, 7: 7 (ones place, value = 7 × 1 = 7). Digit 7 appears at positions 1, 5, 7. Largest value = 7,000,000. Smallest value = 7. Difference = 7,000,000 - 7 = 6,999,993. Check options: A) 6,999,993 matches.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

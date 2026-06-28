@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-473",
+  "answer": "C",
+  "steps": "Check each option: A) Factors of 12: 1, 2, 3, 4, 6, 12. Sum = 1+2+3+4+6+12 = 28, not 24 → false. B) 51 = 3 × 17 → not prime → false. C) Factors of 18: 1, 2, 3, 6, 9, 18. Factors of 24: 1, 2, 3, 4, 6, 8, 12, 24. Highest common factor = 6 → true. D) LCM of 6 and 9: multiples of 6: 6, 12, 18, 24; multiples of 9: 9, 18, 27. LCM = 18, not 36 → false. E) Factors of 87: 1, 3, 29, 87 → 4 factors, not 3 → false. Only option C is correct.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-389",
+  "answer": "B",
+  "steps": "Let p = price per adult ticket, q = price per child ticket.\nFrom first group: 3p + 5q = 44.\nFrom second group: 2p + 5q = 37.\nSubtract second equation from first: (3p + 5q) - (2p + 5q) = 44 - 37 → p = 7.\nSubstitute p = 7 into second equation: 2(7) + 5q = 37 → 14 + 5q = 37 → 5q = 23 → q = 4.6.\nCheck with first equation: 3(7) + 5(4.6) = 21 + 23 = 44, correct.\nSo p = 7, q = 4.6.\nNow check options:\nA: p=5, q=7 → 3*5+5*7=15+35=50 ≠44 → incorrect.\nB: p=7, q=5 → 3*7+5*5=21+25=46 ≠44 → incorrect.\nC: p=8, q=4 → 3*8+5*4=24+20=44 (first group ok), but 2*8+5*4=16+20=36 ≠37 → incorrect.\nD: p=7, q=4.60 → 3*7+5*4.6=21+23=44, 2*7+5*4.6=14+23=37 → correct.\nE: p=6, q=5 → 3*6+5*5=18+25=43 ≠44 → incorrect.\nOnly option D matches p=7, q=4.6 exactly.\nBut wait: Option B says p=7, q=5, which does not satisfy equations. Option D is correct.\nHowever, re-examining: The solution from equations is p=7, q=4.6. Option D states q=4.60, which is the same as 4.6. So D is correct.\nBut is there exactly one correct? Yes, only D matches exactly.\nI must check if any other option could be interpreted as correct: Option B says p=7, q=5, which gives 2*7+5*5=14+25=39 ≠37, so no.\nThus exactly one correct is D.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": false,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

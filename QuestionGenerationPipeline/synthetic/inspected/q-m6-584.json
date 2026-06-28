@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-584",
+  "answer": "B) 225 ml",
+  "steps": "The ratio is 5:3:2 for red:blue:yellow. Total parts = 5+3+2 = 10 parts. Total mixture = 750 ml, so each part = 750/10 = 75 ml. Red paint = 5 parts = 5*75 = 375 ml. Yellow paint = 2 parts = 2*75 = 150 ml. Difference (red more than yellow) = 375 - 150 = 225 ml.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

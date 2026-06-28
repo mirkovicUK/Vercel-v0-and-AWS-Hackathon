@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-273",
+  "seedQid": "q-m3-011",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A school fundraiser has collected £48,365 so far. They then receive a donation of £100,000. What is the new total amount collected?",
+  "options": [
+    "£148,365",
+    "£58,365",
+    "£149,365",
+    "£138,365",
+    "£148,465"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Start with the current total: £48,365.\nStep 2: Add the donation of £100,000.\nStep 3: 48,365 + 100,000 = 148,365.\nStep 4: The new total is £148,365.\nThe correct answer is £148,365.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:48:42+00:00"
+}

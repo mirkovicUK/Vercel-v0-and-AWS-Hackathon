@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-570",
+  "answer": "B",
+  "steps": "The sequence is: 2, 6, 18, 54, ___, 486, 1458. Each term is obtained by multiplying the previous term by the same number. Check ratio from 2 to 6: 6 ÷ 2 = 3. Check 6 to 18: 18 ÷ 6 = 3. Check 18 to 54: 54 ÷ 18 = 3. So multiplier is 3. Then missing term = 54 × 3 = 162. Verify next term after 162: 162 × 3 = 486, matches given 486. Then 486 × 3 = 1458, matches given. So missing value is 162.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

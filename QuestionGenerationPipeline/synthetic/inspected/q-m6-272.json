@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-272",
+  "answer": "B",
+  "steps": "Start with 45,672 books. Add 1,000 books: 45,672 + 1,000 = 46,672.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": false,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

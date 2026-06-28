@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-431",
+  "seedQid": "q-m5-027",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "A baker makes 200 cupcakes every day. How many cupcakes does the baker make in 3 days?",
+  "options": [
+    "400",
+    "500",
+    "600",
+    "800",
+    "900"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "To find the total number of cupcakes made in 3 days, multiply the number made each day by 3:\n200 × 3 = 600\nThe baker makes 600 cupcakes in 3 days.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:07:36+00:00"
+}

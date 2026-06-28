@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-581",
+  "answer": "C",
+  "steps": "The ratio of orange juice to lemonade is 2:1. This means for every 2 cups of orange juice, 1 cup of lemonade is used. Tom uses 6 cups of orange juice. 6 cups is 3 times the 2 cups in the ratio (since 6 ÷ 2 = 3). Therefore, the amount of lemonade needed is 3 times the 1 cup in the ratio: 3 × 1 = 3 cups.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

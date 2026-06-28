@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-341",
+  "seedQid": "q-m4-020",
+  "topic": "ratio_proportion",
+  "difficulty": 1,
+  "text": "In a fruit bowl, the ratio of apples to oranges is 1:2. If there are 4 apples, how many oranges are there?",
+  "options": [
+    "2",
+    "4",
+    "6",
+    "8",
+    "10"
+  ],
+  "correctIndex": 3,
+  "generatorSolution": "The ratio of apples to oranges is 1:2. This means for every 1 apple, there are 2 oranges. Since there are 4 apples, we multiply both parts of the ratio by 4. Oranges = 2 × 4 = 8. So there are 8 oranges.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:56:40+00:00"
+}

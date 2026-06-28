@@ -24,6 +24,32 @@ Deep-dive docs: [Architecture](submission/architecture_diagram.md) ·
 
 ---
 
+## 🔑 Try it live (free — no real payment)
+
+**Live app:** https://vercel-v0-and-aws-hackathon.vercel.app/
+
+Billing runs on a **Stripe sandbox (test mode)**, so you can subscribe and use the
+full product **without any real charge**. To explore everything:
+
+1. **Sign up** with an email and confirm the verification code Cognito emails you.
+2. Complete the short **onboarding** (guardian / age attestation).
+3. **Subscribe** with Stripe's test card:
+
+   | Field | Value |
+   |---|---|
+   | Card number | `4242 4242 4242 4242` |
+   | Expiry | any **future** date (e.g. `12/34`) |
+   | CVC | any 3 digits (e.g. `123`) |
+   | Name / postcode | anything (e.g. `AB12 3CD`) |
+
+4. Add a child, run a **Skill Builder** session, tap **"Show me how"**, finish to
+   see the **AI review**, then open the child's **analytics dashboard**.
+
+> The `4242…` card always succeeds in test mode — no real money moves. (Admin
+> dashboard access is restricted to operators in the Cognito `admins` group.)
+
+---
+
 ## Real-world impact — the problem and who it's for
 
 In England, a place at a state grammar school comes down to a single exam, the
@@ -160,9 +186,12 @@ HTTPS endpoint — no connection pool to exhaust, no public exposure.
 into per-topic mastery, cascade-delete erasure, and live window-function
 analytics are joins, aggregates, and transactions — not a single partition key,
 so DynamoDB was the wrong fit. Serving one UK market, we didn't need Aurora
-DSQL's multi-region distributed writes; Multi-AZ failover is the right
-durability. Full reasoning, with the access-pattern table and the "three tables
-deliberately have no foreign keys" discussion, is in
+DSQL's multi-region distributed writes. Aurora replicates storage across three
+Availability Zones automatically, so data is durable to an AZ loss; we
+deliberately run a single Serverless v2 compute instance to keep cost near zero
+for a pre-revenue product, with a second-AZ reader for sub-minute automatic
+failover as a one-line next step. Full reasoning, with the access-pattern table
+and the "three tables deliberately have no foreign keys" discussion, is in
 [`submission/database.md`](submission/database.md).
 
 **Tested where it matters.** The correctness-critical pure logic (adaptive

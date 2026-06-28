@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-612",
+  "seedQid": "q-m6-024",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A farmer counts her chickens. She finds that if she doubles the number of chickens and adds 5, she gets 29. Let c stand for the number of chickens. What is the value of c?",
+  "options": [
+    "10",
+    "11",
+    "12",
+    "13",
+    "17"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Write the equation from the problem. Doubling the number of chickens and adding 5 gives 29:\n2c + 5 = 29\n\nStep 2: Subtract 5 from both sides:\n2c = 24\n\nStep 3: Divide both sides by 2:\nc = 12\n\nThe answer is 12.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:27:35+00:00"
+}

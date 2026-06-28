@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-096",
+  "seedQid": "q-m1-038",
+  "topic": "data_handling",
+  "difficulty": 1,
+  "text": "A teacher counted the pets owned by children in her class. She made a tally chart:\n\nDogs: 8\nCats: 5\nFish: 3\nRabbits: 4\n\nHow many pets were there in total?",
+  "options": [
+    "16",
+    "18",
+    "20",
+    "22",
+    "24"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "To find the total number of pets, add up all the numbers:\nDogs: 8\nCats: 5\nFish: 3\nRabbits: 4\n\n8 + 5 = 13\n13 + 3 = 16\n16 + 4 = 20\n\nThe total number of pets is 20.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:29:14+00:00"
+}

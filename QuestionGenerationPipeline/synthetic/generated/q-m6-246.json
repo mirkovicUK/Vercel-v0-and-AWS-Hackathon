@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-246",
+  "seedQid": "q-m2-045",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 1,
+  "text": "A jug contains 0.5 litres of juice. What is 0.5 written as a fraction?",
+  "options": [
+    "1/5",
+    "1/2",
+    "5/10",
+    "1/4",
+    "2/5"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: 0.5 means 5 tenths, which can be written as 5/10.\nStep 2: Simplify 5/10 by dividing both the numerator and denominator by 5.\nStep 3: 5 ÷ 5 = 1 and 10 ÷ 5 = 2, so 5/10 = 1/2.\nNote: Option C (5/10) is equivalent but not in its simplest form. The simplest form is 1/2, which is option B.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:45:35+00:00"
+}

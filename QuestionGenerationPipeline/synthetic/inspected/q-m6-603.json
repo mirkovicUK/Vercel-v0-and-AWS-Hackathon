@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-603",
+  "answer": "B",
+  "steps": "Let b be the initial number of books. After adding 12 books: b + 12. After removing 5 damaged ones: b + 12 - 5. This equals 30, so b + 7 = 30. Subtract 7 from both sides: b = 23.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

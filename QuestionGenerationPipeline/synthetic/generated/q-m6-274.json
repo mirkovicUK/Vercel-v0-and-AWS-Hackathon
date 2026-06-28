@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-274",
+  "seedQid": "q-m3-011",
+  "topic": "number",
+  "difficulty": 4,
+  "text": "A satellite is currently 2,748,365 kilometres from Earth. It travels another 100,000 kilometres away from Earth, and then moves 5,000 kilometres closer. What is the satellite's final distance from Earth in kilometres?",
+  "options": [
+    "2,843,365",
+    "2,853,365",
+    "2,848,365",
+    "2,838,365",
+    "2,843,865"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Start with the initial distance: 2,748,365 km.\nStep 2: The satellite moves 100,000 km further away: 2,748,365 + 100,000 = 2,848,365 km.\nStep 3: The satellite then moves 5,000 km closer: 2,848,365 − 5,000 = 2,843,365 km.\nThe correct answer is 2,843,365.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:48:47+00:00"
+}

@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-532",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "C",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "The number 4,617 has the digit 6 in the hundreds place, so its value is 6 × 100 = 600. Option C is correct. Solver 1 gave the correct value (600), which corresponds to option C. Solver 2 chose B (60), which is incorrect. The correct option is unambiguous.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-547",
+  "answer": "B) 30,000",
+  "steps": "The number is 4,836,215. Write it with place values: millions: 4, hundred-thousands: 8, ten-thousands: 3, thousands: 6, hundreds: 2, tens: 1, ones: 5. The digit 3 is in the ten-thousands place, so its value is 3 × 10,000 = 30,000.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": false,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-296",
+  "answer": "B",
+  "steps": "1. The baker makes 6 cupcakes per hour. 2. Let n = number of hours worked. 3. Total cupcakes = (cupcakes per hour) × (hours) = 6 × n. 4. In algebra, 6 × n is written as 6n. 5. Check options: A) n + 6 is addition, not multiplication. B) 6n matches. C) n ÷ 6 is division, incorrect. D) 6 + n + 6 simplifies to n + 12, incorrect. E) n - 6 is subtraction, incorrect. So only option B is correct.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

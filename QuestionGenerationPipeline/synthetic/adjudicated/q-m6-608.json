@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-608",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "A",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "The equation b + 12 − 9 = 38 correctly represents the situation: b bulbs planted on Monday, 12 more on Tuesday, 9 lost to frost, leaving 38. Solving: b + 3 = 38 → b = 35. Option A has the correct equation and correct solution. Option D has the correct equation but incorrect solution (b = 29), so only A is fully correct and unambiguous.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

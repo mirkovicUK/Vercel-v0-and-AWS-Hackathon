@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-117",
+  "answer": "C",
+  "steps": "Total time = 1 hour 5 minutes = 65 minutes. Preheat time = 20 minutes, so baking time = 65 - 20 = 45 minutes. Baking time per 200 g = 15 minutes. Weight of dough = (45 / 15) * 200 = 3 * 200 = 600 g.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

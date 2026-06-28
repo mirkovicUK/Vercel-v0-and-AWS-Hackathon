@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-155",
+  "answer": "B",
+  "steps": "1. Identify the places of the digit 7: it appears in the thousands place, tens place, and millions place.\n2. Determine the value of each 7 based on its place:\n   - 7 in the thousands place = 7 × 1000 = 7000\n   - 7 in the tens place = 7 × 10 = 70\n   - 7 in the millions place = 7 × 1,000,000 = 7,000,000\n3. Compare the thousands-place 7 to the tens-place 7: 7000 ÷ 70 = 100. So the 7 in the thousands place is worth 100 times more than the 7 in the tens place.\n4. Compare the thousands-place 7 to the millions-place 7: 7,000,000 ÷ 7000 = 1000. So the 7 in the millions place is worth 1000 times more than the 7 in the thousands place. Therefore, the 7 in the thousands place is worth 1000 times less than the 7 in the millions place.\n5. The question asks: 'The 7 in the thousands place is worth how many times more than the 7 in the tens place, and how many times less than the 7 in the millions place?'\n   Answer: 100 times more and 1000 times less.\n6. Check options: Option B says '100 times more and 1000 times less', which matches exactly.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

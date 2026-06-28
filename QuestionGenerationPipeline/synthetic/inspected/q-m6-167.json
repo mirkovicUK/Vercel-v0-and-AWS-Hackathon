@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-167",
+  "answer": "B",
+  "steps": "Monday: 50, Tuesday: 44 (decrease of 6), Wednesday: 38 (decrease of 6), Thursday: 32 (decrease of 6). The pattern is a constant decrease of 6 biscuits each day. So Friday = Thursday 32 - 6 = 26 biscuits.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

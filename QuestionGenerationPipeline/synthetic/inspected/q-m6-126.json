@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-126",
+  "answer": "D",
+  "steps": "Ratio of red to blue sweets is 1:2. This means for every 1 red sweet, there are 2 blue sweets. Given there are 4 red sweets, multiply the blue part of the ratio by 4: 2 * 4 = 8 blue sweets.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-551",
+  "answer": "C) 400",
+  "steps": "The number 3,456 is written in decimal. The digits from left to right are thousands, hundreds, tens, units. So: 3 is thousands (3,000), 4 is hundreds (400), 5 is tens (50), 6 is units (6). Therefore the value of digit 4 is 400.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

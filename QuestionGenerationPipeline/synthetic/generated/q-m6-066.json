@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-066",
+  "seedQid": "q-m1-029",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "A baker makes 10 trays of cupcakes. Each tray holds 4.2 dozen cupcakes. How many dozen cupcakes does the baker make in total?",
+  "options": [
+    "4.2",
+    "42",
+    "420",
+    "0.42",
+    "4200"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "To find the total number of dozen cupcakes, multiply 4.2 by 10.\n\nWhen you multiply a decimal number by 10, you move the decimal point one place to the right.\n\n4.2 × 10 = 42\n\nThe baker makes 42 dozen cupcakes in total.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:26:00+00:00"
+}

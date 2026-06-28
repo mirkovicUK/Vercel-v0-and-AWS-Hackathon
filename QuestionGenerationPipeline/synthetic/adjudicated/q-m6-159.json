@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-159",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "B",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "The initial ratio is 5:3:2 (flour:sugar:butter). With 750g flour, the multiplier is 750 / 5 = 150. So initial butter is 2 * 150 = 300g. The new ratio of flour to butter is 5:4. With 750g flour, butter should be (4/5) * 750 = 600g. Extra butter needed = 600 - 300 = 300g. Option B is 300g. Solver 1 is correct. Solver 2 chose D (150g), which is incorrect. The correct and unambiguous answer is B.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

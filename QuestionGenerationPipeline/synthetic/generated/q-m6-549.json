@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-549",
+  "seedQid": "q-m6-009",
+  "topic": "number",
+  "difficulty": 4,
+  "text": "A library catalogue lists a rare book's reference number as 4,916,253. The librarian decides to swap the digit in the hundred-thousands place with the digit in the tens place. What is the new number after the swap?",
+  "options": [
+    "4,956,213",
+    "4,516,293",
+    "4,916,523",
+    "4,516,253",
+    "4,956,253"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Identify the digits and their place values in 4,916,253.\n- Millions: 4\n- Hundred-thousands: 9\n- Ten-thousands: 1\n- Thousands: 6\n- Hundreds: 2\n- Tens: 5\n- Units: 3\n\nStep 2: Identify the digit in the hundred-thousands place: 9\nIdentify the digit in the tens place: 5\n\nStep 3: Swap these two digits. The 9 moves to the tens place and the 5 moves to the hundred-thousands place.\n\nStep 4: Write the new number:\n- Millions: 4\n- Hundred-thousands: 5\n- Ten-thousands: 1\n- Thousands: 6\n- Hundreds: 2\n- Tens: 9\n- Units: 3\n\nThe new number is 4,516,293.\n\nThe correct answer is 4,516,293.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:20:43+00:00"
+}

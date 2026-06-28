@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-323",
+  "answer": "C",
+  "steps": "Let b = number of bags, c = total cookies. First condition: c = 5b + 3. Second condition: c = 4b + 11. Set equal: 5b + 3 = 4b + 11 → 5b - 4b = 11 - 3 → b = 8. Check: c = 5*8 + 3 = 43, and 4*8 + 11 = 43, consistent. Only b = 8 matches an option.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

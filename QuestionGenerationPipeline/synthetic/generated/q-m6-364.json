@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-364",
+  "seedQid": "q-m5-001",
+  "topic": "ratio_proportion",
+  "difficulty": 4,
+  "text": "A recipe for 12 cupcakes uses 360 g of sugar and 540 g of flour. Tom wants to make 20 cupcakes using the same recipe. He has already measured out 500 g of flour. How many more grams of flour does he need, and what total weight of sugar will he need?",
+  "options": [
+    "400 g more flour and 600 g of sugar",
+    "360 g more flour and 500 g of sugar",
+    "400 g more flour and 500 g of sugar",
+    "360 g more flour and 600 g of sugar",
+    "500 g more flour and 600 g of sugar"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Find the ratio of cupcakes. Tom wants 20 cupcakes instead of 12, so the scale factor is 20 ÷ 12 = 5/3.\n\nStep 2: Calculate the total flour needed. 540 g × 5/3 = 900 g.\n\nStep 3: Find how much more flour Tom needs. He already has 500 g, so he needs 900 − 500 = 400 g more flour.\n\nStep 4: Calculate the total sugar needed. 360 g × 5/3 = 600 g of sugar.\n\nTherefore, Tom needs 400 g more flour and 600 g of sugar. The answer is the first option.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:59:07+00:00"
+}

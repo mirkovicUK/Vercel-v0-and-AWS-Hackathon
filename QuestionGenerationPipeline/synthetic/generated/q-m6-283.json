@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-283",
+  "seedQid": "q-m3-017",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "At a bowling alley, each game costs £4.75 and shoe hire costs £2.50 per person. A group of friends each plays one game and hires shoes. If the total cost for the group is £36.25, how many friends are in the group?",
+  "options": [
+    "4",
+    "5",
+    "6",
+    "7",
+    "8"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Work out the cost per person. Each person pays £4.75 for a game plus £2.50 for shoe hire.\n£4.75 + £2.50 = £7.25 per person.\n\nStep 2: Let n = the number of friends. The total cost is:\nn × £7.25 = £36.25\n\nStep 3: Solve for n:\nn = £36.25 ÷ £7.25 = 5\n\nSo there are 5 friends in the group.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:49:48+00:00"
+}

@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-547",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "B",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "The number 4,836,215 has the digit 3 in the ten thousands place, which is 30,000. Solver 1 incorrectly stated 300,000 (hundred thousands place), while Solver 2 correctly selected B) 30,000. The correct value is therefore B.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

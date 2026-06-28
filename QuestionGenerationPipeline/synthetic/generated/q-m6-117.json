@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-117",
+  "seedQid": "q-m1-049",
+  "topic": "number",
+  "difficulty": 2,
+  "text": "A recipe for baking bread says: Allow 20 minutes to preheat the oven, then bake for 15 minutes for every 200 g of dough. If the total time from start to finish is 1 hour and 5 minutes, how heavy is the dough?",
+  "options": [
+    "400 g",
+    "500 g",
+    "600 g",
+    "800 g",
+    "1000 g"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Convert the total time to minutes. 1 hour and 5 minutes = 65 minutes.\nStep 2: Subtract the preheating time. 65 − 20 = 45 minutes of baking time.\nStep 3: Work out how many lots of 15 minutes fit into 45 minutes. 45 ÷ 15 = 3.\nStep 4: Each lot of 15 minutes corresponds to 200 g, so the dough weighs 3 × 200 g = 600 g.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:31:15+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-427",
+  "seedQid": "q-m5-026",
+  "topic": "number",
+  "difficulty": 2,
+  "text": "A baker makes loaves of bread throughout the morning. At 7am he has made 14 loaves, at 8am he has made 23 loaves, at 9am he has made 32 loaves, and at 10am he has made 41 loaves. If this pattern continues, how many loaves will he have made by 11am?",
+  "options": [
+    "48",
+    "49",
+    "50",
+    "51",
+    "52"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find the pattern by looking at the difference between each number.\n14 → 23: difference is 9\n23 → 32: difference is 9\n32 → 41: difference is 9\n\nStep 2: The sequence increases by 9 each time.\n\nStep 3: Add 9 to the last number: 41 + 9 = 50\n\nSo by 11am, the baker will have made 50 loaves.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:07:13+00:00"
+}

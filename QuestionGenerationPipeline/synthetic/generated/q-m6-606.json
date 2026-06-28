@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-606",
+  "seedQid": "q-m6-023",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "Sam has some stickers. His friend gives him 5 more stickers. He now has 12 stickers in total. If s represents the number of stickers Sam started with, what is the value of s?",
+  "options": [
+    "s = 5",
+    "s = 7",
+    "s = 12",
+    "s = 17",
+    "s = 6"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Sam starts with s stickers and receives 5 more, giving him a total of 12.\n\nWe can write the equation: s + 5 = 12\n\nTo find s, subtract 5 from both sides:\ns = 12 - 5\ns = 7\n\nSo Sam started with 7 stickers. The correct answer is s = 7.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:26:50+00:00"
+}

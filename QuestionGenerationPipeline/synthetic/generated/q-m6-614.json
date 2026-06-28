@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-614",
+  "seedQid": "q-m6-024",
+  "topic": "algebra",
+  "difficulty": 4,
+  "text": "A gardener plants flowers in rows. She notices that if she quadruples the number of flowers in each row and then subtracts 15, she gets the same number as if she triples the flowers in each row and adds 8. Let f represent the number of flowers in one row. What is the value of f?",
+  "options": [
+    "17",
+    "19",
+    "23",
+    "25",
+    "27"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Write an equation based on the information given.\nQuadrupling and subtracting 15 gives: 4f − 15\nTripling and adding 8 gives: 3f + 8\nThese are equal, so: 4f − 15 = 3f + 8\n\nStep 2: Solve for f.\nSubtract 3f from both sides: 4f − 3f − 15 = 8\nSimplify: f − 15 = 8\nAdd 15 to both sides: f = 23\n\nStep 3: Check the answer.\n4 × 23 − 15 = 92 − 15 = 77\n3 × 23 + 8 = 69 + 8 = 77 ✓\n\nThe answer is 23.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:27:45+00:00"
+}

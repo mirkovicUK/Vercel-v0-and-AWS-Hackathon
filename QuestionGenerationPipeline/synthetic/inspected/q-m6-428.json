@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-428",
+  "answer": "B",
+  "steps": "First loaf: 17. Each subsequent loaf adds 13. So the sequence is arithmetic with first term a = 17, common difference d = 13. The nth term is a + (n-1)d. For 6th loaf: n = 6, term = 17 + (6-1)*13 = 17 + 5*13 = 17 + 65 = 82.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-114",
+  "seedQid": "q-m1-044",
+  "topic": "number",
+  "difficulty": 4,
+  "text": "Priya thinks of a number. She multiplies it by 4, then subtracts 7, then divides by 3. Her answer is 11. Which of these could be Priya's starting number?",
+  "options": [
+    "8",
+    "9",
+    "10",
+    "11",
+    "12"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Work backwards from the answer of 11.\n\nStep 1: The last operation was 'divides by 3' giving 11. So before dividing: 11 × 3 = 33.\n\nStep 2: The previous operation was 'subtracts 7' giving 33. So before subtracting: 33 + 7 = 40.\n\nStep 3: The first operation was 'multiplies by 4' giving 40. So the starting number: 40 ÷ 4 = 10.\n\nCheck forward: 10 × 4 = 40, then 40 − 7 = 33, then 33 ÷ 3 = 11. ✓\n\nThe correct answer is 10.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:30:47+00:00"
+}

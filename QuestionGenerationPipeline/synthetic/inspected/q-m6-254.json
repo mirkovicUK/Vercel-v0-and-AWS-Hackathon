@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-254",
+  "answer": "C",
+  "steps": "Let the input number be x. The machine does: (1) add 7 → x+7, (2) divide by 4 → (x+7)/4, (3) multiply by 5 → 5*(x+7)/4. Set equal to 30: 5(x+7)/4 = 30. Multiply both sides by 4: 5(x+7) = 120. Divide both sides by 5: x+7 = 24. Subtract 7: x = 17. Check: 17+7=24, 24/4=6, 6*5=30. Correct.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

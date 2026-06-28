@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-147",
+  "answer": "C",
+  "steps": "The baker makes 180 cupcakes and shares them equally between 3 shops. To find how many each shop receives, divide 180 by 3: 180 ÷ 3 = 60. So each shop receives 60 cupcakes.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

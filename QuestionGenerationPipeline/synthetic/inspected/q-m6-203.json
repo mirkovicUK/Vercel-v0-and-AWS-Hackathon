@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-203",
+  "answer": "B",
+  "steps": "Perimeter of rectangle = 2 × (length + width). Given length = (2n + 3) m, width = (n + 1) m, perimeter = 38 m. So 2 × ((2n + 3) + (n + 1)) = 38. Simplify inside: (2n + 3) + (n + 1) = 3n + 4. Then 2 × (3n + 4) = 38 → 6n + 8 = 38 → 6n = 30 → n = 5. Check: length = 2×5 + 3 = 13 m, width = 5 + 1 = 6 m, perimeter = 2×(13+6) = 2×19 = 38 m, correct.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

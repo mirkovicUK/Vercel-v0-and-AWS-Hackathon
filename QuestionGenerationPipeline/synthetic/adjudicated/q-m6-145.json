@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-145",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "C",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "The spacecraft's display reads 'two hundred and three millions, forty-seven thousands, and eight hundred and six units.' The actual number is 203,047,806. The digit sum is 2+0+3+0+4+7+8+0+6 = 30. The fault shows the digit sum of each section: millions part '203' has digit sum 5, thousands part '047' has digit sum 11, units part '806' has digit sum 14. But the question asks for the digit sum of the complete number, not the faulty display. So the correct digit sum is 30, corresponding to option C. Solver 1 gave the correct value; Solver 2 chose B (29), which is incorrect. The correct and unambiguous answer is C.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

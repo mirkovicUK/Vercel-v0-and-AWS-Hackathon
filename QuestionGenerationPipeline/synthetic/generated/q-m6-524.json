@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-524",
+  "seedQid": "q-m6-003",
+  "topic": "number",
+  "difficulty": 4,
+  "text": "A museum recorded its total number of visitors last year as 'one million, forty-seven thousand and eight hundred'. The museum director wants to find the difference between this number and 985,600. What is the difference?",
+  "options": [
+    "62,200",
+    "52,200",
+    "162,200",
+    "61,200",
+    "63,200"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Write 'one million, forty-seven thousand and eight hundred' in figures.\n- One million = 1,000,000\n- Forty-seven thousand = 47,000\n- Eight hundred = 800\n- Combined: 1,047,800\n\nStep 2: Find the difference between 1,047,800 and 985,600.\n1,047,800 − 985,600 = 62,200\n\nStep 3: Check the subtraction:\n985,600 + 62,200 = 1,047,800 ✓\n\nThe correct answer is 62,200.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:17:54+00:00"
+}

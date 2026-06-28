@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-245",
+  "seedQid": "q-m2-041",
+  "topic": "geometry",
+  "difficulty": 5,
+  "text": "A designer is creating a regular nonagon (9-sided polygon) for a logo. She knows that the sum of interior angles of any polygon is (n − 2) × 180°, where n is the number of sides. She wants to know the size of each interior angle of the nonagon. However, one of the angles has been made 20° larger than it should be. What is the sum of the remaining 8 angles?",
+  "options": [
+    "1100°",
+    "1120°",
+    "1140°",
+    "1240°",
+    "1260°"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Find the sum of interior angles of a nonagon. Using the formula (n − 2) × 180°, with n = 9: (9 − 2) × 180° = 7 × 180° = 1260°.\n\nStep 2: Find the size of each interior angle in a regular nonagon. Since all angles are equal: 1260° ÷ 9 = 140°.\n\nStep 3: One angle has been made 20° larger than it should be, so that angle is now 140° + 20° = 160°.\n\nStep 4: The sum of all 9 angles in the modified shape still equals 1260° (since the polygon's interior angles must still sum to the same total based on the number of sides). Wait — actually, if the shape is physically altered so one angle is 160°, the remaining 8 angles must together make up the rest of the 1260° total.\n\nStep 5: Sum of remaining 8 angles = 1260° − 160° = 1100°.\n\nThe answer is 1100°.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:45:31+00:00"
+}

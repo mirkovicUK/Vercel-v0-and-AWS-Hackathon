@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-219",
+  "seedQid": "q-m2-030",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 4,
+  "text": "A baker uses 0.75 kg of flour to make a batch of bread rolls. She uses 2/5 of the flour for white rolls and the rest for wholemeal rolls. The wholemeal flour costs £2.40 per kilogram. What is the cost of the wholemeal flour she uses for one batch?",
+  "options": [
+    "£0.96",
+    "£1.08",
+    "£1.20",
+    "£1.44",
+    "£1.80"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find the fraction of flour used for wholemeal rolls. She uses 2/5 for white rolls, so she uses 1 − 2/5 = 3/5 for wholemeal rolls.\n\nStep 2: Find the weight of wholemeal flour. 3/5 of 0.75 kg = 3/5 × 0.75 = 3 × 0.75 ÷ 5 = 2.25 ÷ 5 = 0.45 kg.\n\nStep 3: Find the cost of 0.45 kg at £2.40 per kilogram. 0.45 × £2.40 = £1.08.\n\nThe answer is £1.08.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:42:40+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-617",
+  "answer": "C",
+  "steps": "Let Sam have n stickers. His sister has twice as many, so she has 2n stickers. Together they have n + 2n = 3n stickers. Given total is 24, so 3n = 24. Divide both sides by 3: n = 8. Check: Sam 8, sister 16, total 24. This matches the condition.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

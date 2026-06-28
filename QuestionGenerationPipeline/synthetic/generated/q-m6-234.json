@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-234",
+  "seedQid": "q-m2-038",
+  "topic": "algebra",
+  "difficulty": 4,
+  "text": "A train departs every t minutes from a station. The first train leaves at 06:15. Emma arrives at the station at 07:33 and catches the next train that comes. If she waits exactly 12 minutes for her train, which equation can you solve to find t?\n\nNote: Between 06:15 and 07:45 (when Emma's train arrives), trains depart at regular intervals of t minutes.",
+  "options": [
+    "90 ÷ t = a whole number",
+    "78 ÷ t = a whole number",
+    "90t = 12",
+    "78 + 12 = t",
+    "t × 12 = 90"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Emma arrives at 07:33 and waits 12 minutes, so she catches a train at 07:33 + 12 = 07:45.\n\nStep 2: The first train left at 06:15. The time from 06:15 to 07:45 is 1 hour 30 minutes = 90 minutes.\n\nStep 3: Since trains leave every t minutes starting at 06:15, the train at 07:45 must be a whole number of intervals after 06:15. This means 90 ÷ t must equal a whole number.\n\nStep 4: We can verify: if t = 15, then 90 ÷ 15 = 6 (a whole number), and trains would leave at 06:15, 06:30, 06:45, 07:00, 07:15, 07:30, 07:45 — Emma arrives at 07:33 and the next train is at 07:45, giving a 12-minute wait. ✓\n\nThe correct equation is: 90 ÷ t = a whole number.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:43:57+00:00"
+}

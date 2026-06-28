@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-387",
+  "answer": "B",
+  "steps": "1. The bag costs p pence. 2. Tom buys 3 bags, so total cost = 3p pence. 3. He pays with a £5 note. Since £1 = 100 pence, £5 = 5 × 100 = 500 pence. 4. Change in pence = amount paid − cost = 500 − 3p. 5. Check options: A) 5 − 3p (wrong units, 5 is pounds not pence). B) 500 − 3p (correct). C) 3p − 500 (negative unless 3p > 500, not change expression). D) 500 − p (only 1 bag, not 3). E) 5 − p (wrong units and only 1 bag).",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

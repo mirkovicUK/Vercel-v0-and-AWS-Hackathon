@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-461",
+  "answer": "B",
+  "steps": "Total chocolates = 10. White chocolates = 2. Fraction = white chocolates / total chocolates = 2/10. Simplify: divide numerator and denominator by 2 gives 1/5.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

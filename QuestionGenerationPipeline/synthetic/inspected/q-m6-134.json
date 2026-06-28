@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-134",
+  "answer": "A",
+  "steps": "We need the largest even number using digits 3, 0, 7, 2, 9 each exactly once. For a number to be even, its last digit must be even. Available even digits: 0 and 2. To maximize the number, we want the largest possible digits in the highest place values, and choose the smallest even digit for the units place only if necessary to keep the number large. Strategy: try both possible even endings and compare. Option 1: end with 2. Remaining digits: 9, 7, 3, 0. Arrange them descending for largest: 9,7,3,0 → number 97302. Option 2: end with 0. Remaining digits: 9,7,3,2. Arrange descending: 9,7,3,2 → number 97320. Compare 97320 and 97302: 97320 > 97302. So largest even number is 97320. Check options: A) 97320 matches. B) 97302 is smaller. C) 97230 is smaller (97230 < 97320). D) 93720 is smaller. E) 97032 is smaller. So only A is correct.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

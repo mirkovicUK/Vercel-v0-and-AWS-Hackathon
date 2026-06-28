@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-570",
+  "seedQid": "q-m6-013",
+  "topic": "number",
+  "difficulty": 5,
+  "text": "A scientist is tracking a bacteria population that follows a special pattern. The population values recorded each hour are: 2, 6, 18, 54, ___, 486, 1458. Each value is obtained by multiplying the previous value by the same number. What is the missing population value?",
+  "options": [
+    "108",
+    "162",
+    "216",
+    "144",
+    "180"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Identify the pattern. Each number is obtained by multiplying the previous number by a constant.\nStep 2: Find the multiplier. 6 ÷ 2 = 3, 18 ÷ 6 = 3, 54 ÷ 18 = 3. So the multiplier is 3.\nStep 3: Verify with the later terms. If the missing value times 3 = 486, then the missing value = 486 ÷ 3 = 162.\nStep 4: Check: 54 × 3 = 162, and 162 × 3 = 486. ✓\nStep 5: Also verify: 486 × 3 = 1458. ✓\nThe missing population value is 162.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:22:53+00:00"
+}

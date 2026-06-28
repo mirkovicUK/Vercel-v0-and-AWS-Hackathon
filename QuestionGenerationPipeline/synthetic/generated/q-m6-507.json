@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-507",
+  "seedQid": "q-m5-050",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A baker makes cupcakes each day following this pattern: Day 1 = 5, Day 2 = 10, Day 3 = 15, Day 4 = 20. Which expression gives the number of cupcakes made on Day n?",
+  "options": [
+    "n + 5",
+    "5n",
+    "n × 10",
+    "5n + 5",
+    "n + 4"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Look at the pattern. Each day the number of cupcakes increases by 5.\n\nStep 2: Check if the expression 5n works:\n- Day 1: 5 × 1 = 5 ✓\n- Day 2: 5 × 2 = 10 ✓\n- Day 3: 5 × 3 = 15 ✓\n- Day 4: 5 × 4 = 20 ✓\n\nStep 3: The expression 5n correctly gives the number of cupcakes on Day n.\n\nThe correct answer is 5n.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:16:23+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-184",
+  "seedQid": "q-m2-020",
+  "topic": "algebra",
+  "difficulty": 4,
+  "text": "A plumber charges a call-out fee of £p plus £12 for every hour worked. After working for 3 hours on one job, the plumber's total charge was £57. Write an equation and solve it to find the call-out fee £p. The plumber then does a second job that takes 5 hours. What is the total charge for the second job?",
+  "options": [
+    "£75",
+    "£81",
+    "£69",
+    "£85",
+    "£60"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Write an equation for the first job. The total charge is the call-out fee plus £12 per hour for 3 hours:\np + 12 × 3 = 57\np + 36 = 57\n\nStep 2: Solve for p.\np = 57 − 36\np = 21\nSo the call-out fee is £21.\n\nStep 3: Find the total charge for the second job (5 hours).\nTotal = p + 12 × 5\nTotal = 21 + 60\nTotal = £81\n\nThe correct answer is £81.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:38:49+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-377",
+  "seedQid": "q-m5-009",
+  "topic": "number",
+  "difficulty": 2,
+  "text": "A charity fun run had twenty-three thousand, four hundred and fifty-six participants. What is this number rounded to the nearest thousand?",
+  "options": [
+    "23,000",
+    "23,500",
+    "24,000",
+    "23,400",
+    "24,500"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Write the number in digits: 23,456.\nStep 2: To round to the nearest thousand, look at the hundreds digit. The hundreds digit is 4.\nStep 3: Since 4 is less than 5, we round down.\nStep 4: The number rounded to the nearest thousand is 23,000.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:00:49+00:00"
+}

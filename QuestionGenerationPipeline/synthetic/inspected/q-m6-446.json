@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-446",
+  "answer": "B",
+  "steps": "Perimeter of a rectangle = 2 × (length + width). Length = 8 cm, width = 3 cm. Perimeter = 2 × (8 + 3) = 2 × 11 = 22 cm.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

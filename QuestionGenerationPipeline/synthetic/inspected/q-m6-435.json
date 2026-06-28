@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-435",
+  "answer": "A",
+  "steps": "We are given that 748 × 250 = 187,000. We want 748 × 125. Notice that 125 is half of 250. So 748 × 125 = (748 × 250) ÷ 2 = 187,000 ÷ 2 = 93,500.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

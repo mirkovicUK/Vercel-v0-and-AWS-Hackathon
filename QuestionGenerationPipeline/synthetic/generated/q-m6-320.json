@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-320",
+  "seedQid": "q-m4-006",
+  "topic": "ratio_proportion",
+  "difficulty": 5,
+  "text": "A factory produces red and blue paint in the ratio 3 : 5. The blue paint is then mixed with yellow paint in the ratio 2 : 7 to make green paint. If the factory starts with a total of 72 litres of red and blue paint combined, how many litres of yellow paint are needed to convert ALL of the blue paint into green paint?",
+  "options": [
+    "135 litres",
+    "157.5 litres",
+    "126 litres",
+    "105 litres",
+    "315 litres"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find the amount of blue paint. Red to blue is 3 : 5, so the total parts = 3 + 5 = 8. Blue paint = (5/8) × 72 = 45 litres.\n\nStep 2: The blue paint is mixed with yellow paint in the ratio 2 : 7. This means for every 2 parts of blue, 7 parts of yellow are needed.\n\nStep 3: Find how much yellow is needed for 45 litres of blue. If 2 parts = 45 litres, then 1 part = 45 ÷ 2 = 22.5 litres. Yellow needed = 7 × 22.5 = 157.5 litres.\n\nThe answer is 157.5 litres.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:54:40+00:00"
+}

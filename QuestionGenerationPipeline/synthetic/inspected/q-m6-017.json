@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-017",
+  "answer": "C",
+  "steps": "The ratio of flour to sugar is 3:1, meaning for every 3 parts flour, 1 part sugar is used. If Sam uses 9 tablespoons of flour, we set up the proportion: 3/1 = 9/x, where x is the tablespoons of sugar. Cross-multiplying gives 3x = 9, so x = 9/3 = 3. Therefore, 3 tablespoons of sugar are needed.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

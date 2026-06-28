@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-195",
+  "answer": "C) £54.40",
+  "steps": "Original price = £80. First reduction: 15% off. Reduction amount = 15% of £80 = 0.15 × 80 = £12. Price after first reduction = 80 - 12 = £68. Second reduction: 20% off the reduced price. Reduction amount = 20% of £68 = 0.20 × 68 = £13.60. Final price = 68 - 13.60 = £54.40.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

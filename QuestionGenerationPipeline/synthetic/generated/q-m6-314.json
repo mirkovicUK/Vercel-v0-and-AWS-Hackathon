@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-314",
+  "seedQid": "q-m4-004",
+  "topic": "algebra",
+  "difficulty": 4,
+  "text": "A school library has fiction and non-fiction books. There are 3 times as many fiction books as non-fiction books, and there are 56 more fiction books than non-fiction books. Let n represent the number of non-fiction books. Write an equation and solve it to find the total number of books in the library.",
+  "options": [
+    "72",
+    "84",
+    "96",
+    "108",
+    "112"
+  ],
+  "correctIndex": 4,
+  "generatorSolution": "Let n = the number of non-fiction books.\nFiction books = 3n.\nWe are told there are 56 more fiction books than non-fiction books, so:\n3n - n = 56\n2n = 56\nn = 28\nSo there are 28 non-fiction books and 3 × 28 = 84 fiction books.\nTotal number of books = 28 + 84 = 112.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:53:49+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-287",
+  "answer": "C",
+  "steps": "1. List prime numbers between 20 and 40: 23, 29, 31, 37.\n2. Check which of these are factors of 93.\n3. 93 ÷ 23 ≈ 4.043, not integer.\n4. 93 ÷ 29 ≈ 3.207, not integer.\n5. 93 ÷ 31 = 3 exactly, so 31 is a factor.\n6. 93 ÷ 37 ≈ 2.514, not integer.\n7. Also check option E (33) — not prime, so ignore per question.\n8. Only prime factor between 20 and 40 is 31.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

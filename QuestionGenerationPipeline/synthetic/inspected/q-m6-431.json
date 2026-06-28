@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-431",
+  "answer": "C",
+  "steps": "The baker makes 200 cupcakes each day. Over 3 days, total cupcakes = 200 × 3 = 600.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

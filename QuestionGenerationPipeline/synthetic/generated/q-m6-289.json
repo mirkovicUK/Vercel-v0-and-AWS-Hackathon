@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-289",
+  "seedQid": "q-m3-021",
+  "topic": "number",
+  "difficulty": 4,
+  "text": "Sara picks a prime number between 20 and 50. When she multiplies her number by 3, the result is a factor of 261. She then adds 10 to her prime number and gets an odd result. What is Sara's prime number?",
+  "options": [
+    "23",
+    "29",
+    "31",
+    "37",
+    "43"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: List prime numbers between 20 and 50: 23, 29, 31, 37, 41, 43, 47.\n\nStep 2: Find which prime, when multiplied by 3, gives a factor of 261.\nFirst, find the factors of 261: 261 ÷ 3 = 87, 87 ÷ 3 = 29, so 261 = 3 × 3 × 29.\nThe factors of 261 are: 1, 3, 9, 29, 87, 261.\n\nStep 3: We need 3 × prime = a factor of 261.\n3 × 23 = 69 → not a factor of 261\n3 × 29 = 87 → 87 IS a factor of 261 ✓\n3 × 31 = 93 → not a factor of 261\n3 × 37 = 111 → not a factor of 261\n3 × 43 = 129 → not a factor of 261\n\nSo the prime number must be 29.\n\nStep 4: Check the final condition: 29 + 10 = 39, which is odd. ✓\n\nThe answer is 29.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:50:39+00:00"
+}

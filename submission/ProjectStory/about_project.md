@@ -68,8 +68,11 @@ rolling answers into per-topic mastery, reporting across a child's whole history
 and erasing an account as a single cascading delete across **ten foreign keys**.
 Those are joins, aggregates, and transactions, not a single partition key, so
 **DynamoDB** was the wrong tool. And because I serve one UK-only market, I had no
-need for **Aurora DSQL's** multi-region distributed writes — Multi-AZ failover is
-the right durability. The key advantage is the: **RDS Data API**: it lets a
+need for **Aurora DSQL's** multi-region distributed writes. Aurora's storage is
+already replicated across **three Availability Zones**, so the data survives an AZ
+loss; I deliberately run a **single Serverless v2 instance** to keep costs near
+zero for a pre-revenue product, with a Multi-AZ reader (one CDK line) as the
+documented next step. The key advantage is the: **RDS Data API**: it lets a
 serverless Vercel function reach a *private* Postgres database over HTTPS with **no
 connection pool to exhaust, no VPC to enter, and no database password in my
 code** — it kills the classic "serverless + relational" failure mode outright.

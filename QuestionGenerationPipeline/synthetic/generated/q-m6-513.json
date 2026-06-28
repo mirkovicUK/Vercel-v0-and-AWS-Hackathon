@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-513",
+  "seedQid": "q-m6-001",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A sports stadium has a capacity of forty-seven thousand, two hundred and nine spectators. What is this number in figures?",
+  "options": [
+    "47,029",
+    "47,209",
+    "4,729",
+    "470,209",
+    "47,290"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Break the number into parts.\n'Forty-seven thousand' = 47,000\n'Two hundred' = 200\n'Nine' = 9\n\nStep 2: Add the parts together.\n47,000 + 200 + 9 = 47,209\n\nThe correct answer is 47,209.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:16:53+00:00"
+}

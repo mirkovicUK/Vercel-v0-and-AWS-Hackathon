@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-397",
+  "seedQid": "q-m5-015",
+  "topic": "geometry",
+  "difficulty": 2,
+  "text": "Priya wants to measure the area of her bedroom floor so she can buy new carpet. What units should she use to measure the area?",
+  "options": [
+    "Metres (m)",
+    "Square metres (m²)",
+    "Cubic metres (m³)",
+    "Kilograms (kg)",
+    "Litres (l)"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Think about what area means. Area is the amount of flat space a surface covers.\n\nStep 2: Area is found by multiplying two lengths together (for example, length × width).\n\nStep 3: When you multiply metres × metres, you get square metres (m²).\n\nStep 4: Check the other options:\n- Metres (m) measure length, not area.\n- Cubic metres (m³) measure volume, not area.\n- Kilograms (kg) measure mass/weight.\n- Litres (l) measure capacity/volume of liquids.\n\nThe correct answer is square metres (m²).",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:03:24+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-048",
+  "answer": "B",
+  "steps": "Total amount = £8. Amount donated by children = £1.20. Percentage = (children's amount / total amount) × 100 = (1.20 / 8) × 100. 1.20 ÷ 8 = 0.15. 0.15 × 100 = 15%.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

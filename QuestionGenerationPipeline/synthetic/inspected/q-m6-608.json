@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-608",
+  "answer": "D",
+  "steps": "Let b = bulbs planted on Monday. On Tuesday she plants 12 more, so total planted = b + 12. On Wednesday, frost kills 9 bulbs, so healthy bulbs = (b + 12) - 9. She now has 38 healthy bulbs, so equation: b + 12 - 9 = 38. Simplify: b + 3 = 38 → b = 35. Check options: A says b + 12 - 9 = 38, so b = 35 (matches our equation and solution). D says b + 12 - 9 = 38, so b = 29 (contradicts our solution). Only A has the correct equation and correct solution. However, re-read: 'She now has 38 healthy bulbs in total' means after frost, healthy bulbs = (b + 12) - 9 = 38 → b = 35. Option A states equation and solution b = 35. Option D states same equation but solution b = 29, which is wrong. Therefore only A is fully correct. Wait: check D's solution: b + 12 - 9 = 38 → b + 3 = 38 → b = 35, not 29. So D's stated solution is incorrect. A's stated solution is correct. Thus exactly one option (A) is correct. But let's verify: Option A: 'b + 12 − 9 = 38, so b = 35' — correct. Option D: 'b + 12 − 9 = 38, so b = 29' — equation correct, solution wrong. So only A is fully correct. Therefore answer is A. However, the question asks 'which equation is correct?' Possibly they mean the equation itself, not the solution? But each option includes both equation and solution. The correct equation is b + 12 - 9 = 38, which appears in A and D. But only A has the correct solution. Since the option includes 'so b = ...', the full statement must be true. Thus only A is correct. So answer is A.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": false,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

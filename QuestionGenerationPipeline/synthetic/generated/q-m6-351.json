@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-351",
+  "seedQid": "q-m4-027",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "What is 10 × 10 × 10?",
+  "options": [
+    "100",
+    "300",
+    "1000",
+    "10000",
+    "30"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: 10 × 10 = 100.\nStep 2: 100 × 10 = 1000.\nSo 10 × 10 × 10 = 1000.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:57:42+00:00"
+}

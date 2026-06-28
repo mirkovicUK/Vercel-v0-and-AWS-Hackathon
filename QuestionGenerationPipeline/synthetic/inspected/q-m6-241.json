@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-241",
+  "answer": "B",
+  "steps": "1. Recall the fundamental property of Euclidean plane geometry: the sum of the interior angles of any triangle is always 180°. 2. This can be derived from the fact that a straight line is 180°, and by drawing a parallel line to one side through the opposite vertex, alternate interior angles show the three angles of the triangle combine to form a straight line. 3. Check the options: A) 90° is too small (right triangle alone has 90° plus two acute angles). B) 180° matches the known theorem. C) 270° is the sum of three right angles, not possible in a triangle. D) 360° is the sum of angles in a quadrilateral. E) 540° is the sum of interior angles of a pentagon. 4. Therefore, the correct answer is 180°.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

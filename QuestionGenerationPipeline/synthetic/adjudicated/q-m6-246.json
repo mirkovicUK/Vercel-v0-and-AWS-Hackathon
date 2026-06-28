@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-246",
+  "trigger": "ambiguity",
+  "correctAnswer": "B",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "0.5 is equivalent to 1/2. Option B is 1/2, which is correct. Although C (5/10) is mathematically equivalent, it simplifies to 1/2 and is not in simplest form. In standard testing contexts, simplest form is expected unless otherwise stated. Thus, B is the unambiguous correct answer.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

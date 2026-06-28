@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-167",
+  "seedQid": "q-m2-015",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A baker makes biscuits every day. On Monday he made 50 biscuits, on Tuesday he made 44, on Wednesday he made 38, and on Thursday he made 32. If the pattern continues, how many biscuits will he make on Friday?",
+  "options": [
+    "24",
+    "26",
+    "28",
+    "30",
+    "22"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find the pattern by looking at the difference between each day.\n50 − 44 = 6\n44 − 38 = 6\n38 − 32 = 6\n\nStep 2: The number of biscuits decreases by 6 each day.\n\nStep 3: To find Friday's amount, subtract 6 from Thursday's total:\n32 − 6 = 26\n\nThe answer is 26.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:37:08+00:00"
+}

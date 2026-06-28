@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-541",
+  "answer": "C",
+  "steps": "The number 4,729 is read as four thousand seven hundred twenty-nine. The digit 7 is in the hundreds place. Therefore, its value is 7 × 100 = 700.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

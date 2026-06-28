@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-229",
+  "seedQid": "q-m2-036",
+  "topic": "number",
+  "difficulty": 4,
+  "text": "A scientist measures three samples of a chemical. The masses are 0.075 kg, 2.48 kg, and 0.007 kg. She then removes a contaminated portion weighing 0.06 kg from the total. What is the final combined mass of the remaining chemical?",
+  "options": [
+    "2.502 kg",
+    "2.562 kg",
+    "2.492 kg",
+    "2.552 kg",
+    "2.402 kg"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Add the three masses together.\n0.075 + 2.48 + 0.007\n\nStep 2: Add 0.075 + 2.48. Line up the decimal places: 0.075 + 2.480 = 2.555\n\nStep 3: Add 0.007 to the result: 2.555 + 0.007 = 2.562\n\nStep 4: Subtract the contaminated portion: 2.562 − 0.06 = 2.562 − 0.060 = 2.502\n\nThe final combined mass is 2.502 kg.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:43:30+00:00"
+}

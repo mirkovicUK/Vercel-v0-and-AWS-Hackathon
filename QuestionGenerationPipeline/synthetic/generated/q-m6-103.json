@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-103",
+  "seedQid": "q-m1-039",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 3,
+  "text": "A school has 120 pupils. 35% of them bring a packed lunch. How many pupils bring a packed lunch?",
+  "options": [
+    "38",
+    "40",
+    "42",
+    "45",
+    "48"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: We need to find 35% of 120.\nStep 2: Find 10% of 120: 120 ÷ 10 = 12.\nStep 3: Find 30% of 120: 12 × 3 = 36.\nStep 4: Find 5% of 120: 12 ÷ 2 = 6.\nStep 5: Add 30% and 5%: 36 + 6 = 42.\nSo 35% of 120 = 42 pupils.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:29:50+00:00"
+}

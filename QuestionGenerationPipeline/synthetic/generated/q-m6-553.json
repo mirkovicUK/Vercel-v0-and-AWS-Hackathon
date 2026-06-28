@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-553",
+  "seedQid": "q-m6-010",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A library has a book with the catalogue number 3,527,353. The digit 3 appears three times in this number. What is the total value of all the 3s in this catalogue number?",
+  "options": [
+    "3,003,003",
+    "300,353",
+    "3,000,353",
+    "3,000,303",
+    "3,300,003"
+  ],
+  "correctIndex": 3,
+  "generatorSolution": "Step 1: Identify where the digit 3 appears in 3,527,353.\n\nThe number has 7 digits. Writing out the place values:\n3 = millions place\n5 = hundred thousands place\n2 = ten thousands place\n7 = thousands place\n3 = hundreds place\n5 = tens place\n3 = ones place\n\nStep 2: Find the value of each 3.\n- The first 3 is in the millions place, so its value is 3,000,000\n- The second 3 is in the hundreds place, so its value is 300\n- The third 3 is in the ones place, so its value is 3\n\nStep 3: Add these values together.\n3,000,000 + 300 + 3 = 3,000,303\n\nThe correct answer is 3,000,303.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:21:04+00:00"
+}

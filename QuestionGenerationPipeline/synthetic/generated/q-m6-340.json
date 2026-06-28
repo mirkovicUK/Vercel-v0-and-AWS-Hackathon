@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-340",
+  "seedQid": "q-m4-016",
+  "topic": "number",
+  "difficulty": 5,
+  "text": "Five consecutive odd numbers have a sum of 275. If you multiply the smallest of these numbers by the largest, what is the result?",
+  "options": [
+    "2.",
+    "2.",
+    "2.",
+    "2.",
+    "2."
+  ],
+  "correctIndex": 3,
+  "generatorSolution": "Let the five consecutive odd numbers be (n-4), (n-2), n, (n+2), (n+4). Their sum is 5n = 275, so n = 55. The five numbers are 51, 53, 55, 57, 59. The smallest is 51 and the largest is 59. Multiplying: 51 × 59 = 51 × 60 - 51 = 3060 - 51 = 3009.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:56:37+00:00"
+}

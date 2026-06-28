@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-526",
+  "answer": "A",
+  "steps": "1. Break down the words: 'three hundred and fifty-two thousand' means 352,000. 2. 'and fourteen' means adding 14. 3. Combine: 352,000 + 14 = 352,014. 4. Check options: A) 352,014 matches. B) 352,140 is 352,140 (wrong). C) 350,214 is 350,214 (wrong). D) 352,040 is 352,040 (wrong). E) 300,52014 is not a standard five/six-digit number (wrong).",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

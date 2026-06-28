@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-442",
+  "seedQid": "q-m5-029",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A baker makes 24 cupcakes on Monday. On Tuesday, he makes half as many cupcakes as Monday. On Wednesday, he makes three times as many cupcakes as Tuesday. How many cupcakes does the baker make on Wednesday?",
+  "options": [
+    "12",
+    "24",
+    "36",
+    "48",
+    "72"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Monday's cupcakes = 24.\nStep 2: Tuesday's cupcakes = half of Monday's = 24 ÷ 2 = 12.\nStep 3: Wednesday's cupcakes = three times Tuesday's = 12 × 3 = 36.\nThe answer is 36.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:08:28+00:00"
+}

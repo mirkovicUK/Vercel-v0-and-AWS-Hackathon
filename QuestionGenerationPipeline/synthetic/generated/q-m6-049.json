@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-049",
+  "seedQid": "q-m1-022",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 4,
+  "text": "A charity fundraiser has a target of £8. So far, they have raised £2.40. What percentage of the target has been raised, and how much more money (as a fraction of the target) do they still need?",
+  "options": [
+    "30% raised, 7/10 still needed",
+    "24% raised, 19/25 still needed",
+    "30% raised, 3/4 still needed",
+    "32% raised, 17/25 still needed",
+    "25% raised, 3/4 still needed"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Convert £2.40 and £8 to pence: 240p out of 800p.\nStep 2: Find the percentage raised: (240 ÷ 800) × 100 = 0.3 × 100 = 30%.\nStep 3: Find how much is still needed: £8 − £2.40 = £5.60.\nStep 4: Express £5.60 out of £8 as a fraction: 5.60/8 = 560/800 = 7/10.\nStep 5: Check: 30% + 70% = 100% ✓\nThe answer is 30% raised, with 7/10 of the target still needed.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:24:06+00:00"
+}

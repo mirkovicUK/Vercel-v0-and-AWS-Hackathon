@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-452",
+  "seedQid": "q-m5-032",
+  "topic": "number",
+  "difficulty": 2,
+  "text": "A baker wants to arrange 18 cupcakes into equal rows with no cupcakes left over. How many different ways can she do this? (Count each different number of rows as one way.)",
+  "options": [
+    "4",
+    "5",
+    "6",
+    "8",
+    "9"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "We need to find how many factors 18 has, since each factor represents a possible number of equal rows.\n\nStep 1: Find all the factors of 18 by checking which numbers divide into 18 exactly.\n1 × 18 = 18 ✓\n2 × 9 = 18 ✓\n3 × 6 = 18 ✓\n\nStep 2: List all the factors: 1, 2, 3, 6, 9, 18\n\nStep 3: Count them: there are 6 factors.\n\nSo the baker can arrange the cupcakes in 6 different ways (1 row of 18, 2 rows of 9, 3 rows of 6, 6 rows of 3, 9 rows of 2, or 18 rows of 1).\n\nThe answer is 6.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:09:50+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-471",
+  "answer": "C",
+  "steps": "An even number is an integer divisible by 2, i.e., its last digit is 0, 2, 4, 6, or 8. Check each option: A) 13 ends with 3 → odd. B) 27 ends with 7 → odd. C) 36 ends with 6 → even. D) 45 ends with 5 → odd. E) 51 ends with 1 → odd. Only option C is even.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

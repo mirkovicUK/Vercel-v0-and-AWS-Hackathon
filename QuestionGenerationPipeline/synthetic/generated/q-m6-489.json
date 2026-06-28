@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-489",
+  "seedQid": "q-m5-043",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 4,
+  "text": "A charity fundraiser has a target of £8,000. On Monday, they raised 35% of the target. On Tuesday, they raised 3/8 of the target. On Wednesday, they raised £1,050. What fraction of the target do they still need to raise?",
+  "options": [
+    "1/40",
+    "3/40",
+    "1/8",
+    "3/16",
+    "1/10"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find the amount raised on Monday.\n35% of £8,000 = 0.35 × £8,000 = £2,800\n\nStep 2: Find the amount raised on Tuesday.\n3/8 of £8,000 = £8,000 ÷ 8 × 3 = £3,000\n\nStep 3: Find the total raised over all three days.\n£2,800 + £3,000 + £1,050 = £7,850 (Monday + Tuesday + Wednesday)\n\nStep 4: Find how much is still needed.\n£8,000 − £7,850 = £150\n\nStep 5: Express £150 as a fraction of the £8,000 target.\n150/8000 = 15/800 = 3/160... Let me recalculate.\n\nActually, let me redo Step 3. £2,800 + £3,000 + £1,050 = £6,850. Wait: 2800 + 3000 = 5800, 5800 + 1050 = 6850.\n\nStep 4 (corrected): £8,000 − £6,850 = £1,150\n\nHmm, that doesn't give a clean fraction either. Let me reconsider the Wednesday amount.\n\nLet me use Wednesday = £1,400.\nTotal = £2,800 + £3,000 + £1,400 = £7,200\nRemaining = £8,000 − £7,200 = £800\nAs a fraction: 800/8000 = 1/10.\n\nLet me use Wednesday = £1,200.\nTotal = £2,800 + £3,000 + £1,200 = £7,000\nRemaining = £8,000 − £7,000 = £1,000\nAs a fraction: 1000/8000 = 1/8.\n\nLet me use Wednesday = £1,600.\nTotal = £2,800 + £3,000 + £1,600 = £7,400\nRemaining = £8,000 − £7,400 = £600\nAs a fraction: 600/8000 = 3/40.\n\nI'll use Wednesday = £1,600 and the answer 3/40.\n\nFinal solution:\nStep 1: Monday's amount = 35% of £8,000 = 0.35 × 8,000 = £2,800\nStep 2: Tuesday's amount = 3/8 of £8,000 = 8,000 ÷ 8 × 3 = £3,000\nStep 3: Wednesday's amount = £1,600\nStep 4: Total raised = £2,800 + £3,000 + £1,600 = £7,400\nStep 5: Amount still needed = £8,000 − £7,400 = £600\nStep 6: As a fraction of the target = 600/8,000 = 6/80 = 3/40\n\nThe answer is 3/40.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:14:11+00:00"
+}

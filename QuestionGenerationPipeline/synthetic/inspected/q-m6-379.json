@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-379",
+  "answer": "C",
+  "steps": "1. Original amount: £286,549.\n2. Round to nearest ten thousand: Look at the thousands digit (6). Since 6 ≥ 5, round up. Ten thousands digit is 8, so rounding up gives 290,000.\n3. Round to nearest thousand: Look at the hundreds digit (5). Since 5 ≥ 5, round up. Thousands digit is 6, so rounding up gives 287,000.\n4. Difference: 290,000 − 287,000 = £3,000.\n5. Check options: £3,000 corresponds to option C.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}
