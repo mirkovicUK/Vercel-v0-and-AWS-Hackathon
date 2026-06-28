@@ -36,11 +36,11 @@ export async function buildReportInput(childId: string, parentId: string): Promi
 
   const [velocity, timeline, difficulty, breakdown] = await Promise.all([
     getImprovementVelocity(childId),
-    getMasteryTimeline(childId),
+    getMasteryTimeline(childId, "all"),
     getAccuracyByDifficulty(childId),
     getTopicBreakdown(childId),
   ])
-  const movers = topicMomentumFromTimeline(timeline)
+  const movers = topicMomentumFromTimeline(timeline.points)
     .filter((m) => m.delta !== 0)
     .sort((a, b) => Math.abs(b.delta) - Math.abs(a.delta))
     .slice(0, 3)

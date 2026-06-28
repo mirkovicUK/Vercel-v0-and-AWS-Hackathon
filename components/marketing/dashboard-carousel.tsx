@@ -7,8 +7,8 @@ import { MasteryTimelineChart } from "@/components/app/charts/mastery-timeline-c
 import { AccuracyByDifficultyChart } from "@/components/app/charts/accuracy-by-difficulty-chart"
 import { TopicBreakdownChart } from "@/components/app/charts/topic-breakdown-chart"
 import { TopicMasteryList } from "@/components/app/topic-mastery-list"
-import type { MasteryTimelinePoint, DifficultyAccuracy, TopicBreakdown } from "@/lib/db/analytics"
-import type { TopicProgress } from "@/lib/domain"
+import type { MasteryTimelinePoint, MasteryTimeline, DifficultyAccuracy, TopicBreakdown } from "@/lib/db/analytics"
+import { type TopicProgress, TOPICS, type Topic } from "@/lib/domain"
 import { TrendingUp, Layers, BarChart3, ListChecks, CheckCircle2, Clock, ChevronRight, History } from "lucide-react"
 
 /* ---- Demo data (illustrative only — the real dashboard uses live Aurora queries) ---- */
@@ -20,6 +20,13 @@ const TIMELINE: MasteryTimelinePoint[] = [
   { date: "2026-05-10", values: { number: 81, fractions_decimals_percentages: 67, ratio_proportion: 60, algebra: 37, geometry: 75, data_handling: 79 } },
   { date: "2026-05-17", values: { number: 88, fractions_decimals_percentages: 72, ratio_proportion: 64, algebra: 41, geometry: 79, data_handling: 83 } },
 ]
+
+const TIMELINE_DEMO: MasteryTimeline = {
+  range: "all",
+  bucket: "week",
+  points: TIMELINE,
+  topics: [...TOPICS] as Topic[],
+}
 
 const DIFFICULTY: DifficultyAccuracy[] = [
   { difficulty: 1, attempts: 24, correct: 23, pct: 96 },
@@ -110,7 +117,7 @@ function DemoSessions() {
 type RGB = [number, number, number]
 
 const SLIDES = [
-  { key: "timeline", title: "Mastery over time", icon: TrendingUp, accent: [46, 115, 184] as RGB, render: () => <MasteryTimelineChart points={TIMELINE} /> },
+  { key: "timeline", title: "Mastery over time", icon: TrendingUp, accent: [46, 115, 184] as RGB, render: () => <MasteryTimelineChart timeline={TIMELINE_DEMO} interactive={false} defaultTopics={[...TOPICS] as Topic[]} /> },
   { key: "difficulty", title: "Accuracy by difficulty", icon: Layers, accent: [245, 158, 11] as RGB, render: () => <AccuracyByDifficultyChart data={DIFFICULTY} /> },
   { key: "breakdown", title: "Answers by topic", icon: BarChart3, accent: [16, 185, 129] as RGB, render: () => <TopicBreakdownChart data={BREAKDOWN} /> },
   { key: "mastery", title: "Mastery by topic", icon: ListChecks, accent: [139, 92, 246] as RGB, render: () => <TopicMasteryList progress={PROGRESS} /> },

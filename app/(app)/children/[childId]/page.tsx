@@ -10,6 +10,7 @@ import {
   getAccuracyByDifficulty,
   getTopicBreakdown,
   getImprovementVelocity,
+  type TimelineRange,
 } from "@/lib/db/analytics"
 import { TOPIC_LABELS } from "@/lib/domain"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -31,8 +32,20 @@ export const metadata: Metadata = {
   title: "Child progress",
 }
 
-export default async function ChildDetailPage({ params }: { params: Promise<{ childId: string }> }) {
+const VALID_RANGES: TimelineRange[] = ["30d", "3m", "all"]
+
+export default async function ChildDetailPage({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ childId: string }>
+  searchParams: Promise<{ range?: string }>
+}) {
   const { childId } = await params
+  const { range: rangeParam } = await searchParams
+  const range: TimelineRange = VALID_RANGES.includes(rangeParam as TimelineRange)
+    ? (rangeParam as TimelineRange)
+    : "30d"
   const parent = await requireOnboardedParent()
   const child = await getChildForParent(childId, parent.id)
   if (!child) notFound()
@@ -40,7 +53,7 @@ export default async function ChildDetailPage({ params }: { params: Promise<{ ch
   const [progress, sessions, timeline, difficulty, breakdown, velocity] = await Promise.all([
     getChildProgress(childId),
     getRecentSessions(childId, 5),
-    getMasteryTimeline(childId),
+    getMasteryTimeline(childId, range),
     getAccuracyByDifficulty(childId),
     getTopicBreakdown(childId),
     getImprovementVelocity(childId),
@@ -136,14 +149,16 @@ export default async function ChildDetailPage({ params }: { params: Promise<{ ch
         </div>
       </div>
 
-      {/* Mastery over time — window-function timeline */}
+      {/* Mastery over time — time-bucketed, range-aware timeline */}
       <Card className="mt-6">
         <CardHeader>
           <CardTitle className="text-base">Mastery over time</CardTitle>
-          <p className="text-sm text-muted-foreground">Cumulative accuracy per topic after each session.</p>
+          <p className="text-sm text-muted-foreground">
+            Accuracy per period — pick a range, and add topics to compare.
+          </p>
         </CardHeader>
         <CardContent>
-          <MasteryTimelineChart points={timeline} />
+          <MasteryTimelineChart timeline={timeline} overallPct={overall} />
         </CardContent>
       </Card>
 

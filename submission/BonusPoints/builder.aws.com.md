@@ -13,7 +13,7 @@ I built **ApexMaths**, a subscription product that helps UK families prepare chi
 This article is about the part AWS database folks actually care about: *why Aurora, and how a serverless frontend talks to it cleanly.*
 
 ![ApexMaths runtime architecture](ApexMaths-Architecture.drawio.png)
-*Runtime architecture — Vercel compute, OIDC federation into AWS, Aurora over the RDS Data API. (Upload `ApexMaths-Architecture.drawio.png` when posting.)*
+*Runtime architecture — Vercel compute, OIDC federation into AWS, Aurora over the RDS Data API.*
 
 ---
 
@@ -23,7 +23,7 @@ I picked the database for my access patterns, not the hype. ApexMaths is relatio
 
 - **Choosing questions** by topic and difficulty, excluding recently-seen items.
 - **Rolling answers into per-topic mastery** with aggregates over a child's history.
-- **Analytics**: mastery-over-time uses window functions and `LAG()`; accuracy breakdowns use `FILTER` aggregates.
+- **Analytics**: mastery-over-time uses window functions and LAG(); accuracy breakdowns use FILTER aggregates.
 - **GDPR erasure**: deleting a parent cascades across ten foreign keys in one statement.
 
 Those are joins, aggregates, and transactions — not a single partition key — so **DynamoDB** was the wrong fit. And because I serve one UK market, I had no need for **Aurora DSQL's** multi-region distributed writes. Aurora PostgreSQL is the natural home for this workload, and Serverless v2 scales to near-zero at idle, which suits a pre-revenue product with bursty (exam-season) traffic.
@@ -38,24 +38,24 @@ The **RDS Data API** removes that entirely. It's a stateless HTTPS endpoint, so 
 - **No VPC to enter** — Aurora stays in private isolated subnets; I don't NAT or peer into the VPC. (My VPC even runs with zero NAT gateways.)
 - **No database password in my code** — the app holds only the Secrets Manager *ARN*; the Data API resolves the credential inside AWS.
 
-One sharp edge worth knowing: **the Data API binds every parameter as a string.** A real `uuid` column compared against a bound string fails with `operator does not exist: uuid = text`. I made every id a `TEXT` column by design — a small decision that saved a lot of pain.
+One sharp edge worth knowing: **the Data API binds every parameter as a string.** A real uuid column compared against a bound string fails with the error: operator does not exist: uuid = text. I made every id a TEXT column by design — a small decision that saved a lot of pain.
 
 ## Zero static AWS keys: OIDC federation
 
-Vercel reaches my AWS account through **OIDC federation**. Vercel presents a short-lived OpenID Connect token, which is exchanged for temporary IAM credentials via STS. The IAM role's trust policy accepts only my Vercel project's OIDC identity, and the role is least-privilege: `rds-data:*` scoped to exactly one Aurora cluster, plus read on one Secrets Manager secret and a specific Bedrock inference profile.
+Vercel reaches my AWS account through **OIDC federation**. Vercel presents a short-lived OpenID Connect token, which is exchanged for temporary IAM credentials via STS. The IAM role's trust policy accepts only my Vercel project's OIDC identity, and the role is least-privilege: the rds-data actions scoped to exactly one Aurora cluster, plus read on one Secrets Manager secret and a specific Bedrock inference profile.
 
-There are **no long-lived AWS access keys** in my code, environment, or repo. Least privilege is enforced twice: at the IAM layer, and again at the database — the role can only use a dedicated `app_user` Postgres role with DML-only grants, never the schema owner.
+There are **no long-lived AWS access keys** in my code, environment, or repo. Least privilege is enforced twice: at the IAM layer, and again at the database — the role can only use a dedicated app_user Postgres role with DML-only grants, never the schema owner.
 
 ## The schema does the work
 
 I pushed correctness into the engine rather than app code:
 
-- **A business invariant as an index** — a *partial unique index* (`WHERE status = 'active'`) guarantees one active practice session per child, even under a concurrent double-submit.
-- **Three `ON DELETE` strategies** — `CASCADE` for owned data (so GDPR erasure is one `DELETE FROM parents`), `SET NULL` to de-attribute financial/support rows while keeping them, and `NO ACTION` to protect the shared question bank.
+- **A business invariant as an index** — a *partial unique index* (WHERE status = 'active') guarantees one active practice session per child, even under a concurrent double-submit.
+- **Three ON DELETE strategies** — CASCADE for owned data (so GDPR erasure is one DELETE FROM parents), SET NULL to de-attribute financial/support rows while keeping them, and NO ACTION to protect the shared question bank.
 - **Analytics live, in-engine** — no ETL, no second analytics store. The same relational data that *reports* a child's progress also *drives* what they practise next.
 
 ![Database schema](database-architecture.png)
-*The relational model — tables, foreign-key relationships, and enums. (Upload `database-architecture.png` when posting.)*
+*The relational model — tables, foreign-key relationships, and enums.*
 
 ## AI, one model, three jobs
 
