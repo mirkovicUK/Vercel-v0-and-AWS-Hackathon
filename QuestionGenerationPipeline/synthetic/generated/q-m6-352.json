@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-352",
+  "seedQid": "q-m4-027",
+  "topic": "number",
+  "difficulty": 2,
+  "text": "A number is multiplied by itself and then divided by 4. The result is 25. What was the original number?",
+  "options": [
+    "5",
+    "8",
+    "10",
+    "12",
+    "20"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Let the number be n. We are told that n × n ÷ 4 = 25.\nStep 2: This means n × n = 25 × 4 = 100.\nStep 3: We need to find a number that when multiplied by itself gives 100.\nStep 4: 10 × 10 = 100, so n = 10.\nThe answer is 10.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:57:46+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-207",
+  "seedQid": "q-m2-028",
+  "topic": "number",
+  "difficulty": 2,
+  "text": "A swimming club costs £45 per month. How much does it cost to be a member for 6 months?",
+  "options": [
+    "£240",
+    "£250",
+    "£260",
+    "£270",
+    "£280"
+  ],
+  "correctIndex": 3,
+  "generatorSolution": "To find the total cost for 6 months, multiply the monthly cost by 6:\n£45 × 6 = £270\nSo the cost for 6 months is £270.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:41:13+00:00"
+}

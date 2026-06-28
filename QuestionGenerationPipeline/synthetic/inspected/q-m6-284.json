@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-284",
+  "answer": "B) £2.10",
+  "steps": "Let c = price of one cupcake (£), d = price of one cookie (£). Given d = 0.80. Emma buys 4 cupcakes and 6 cookies, total cost = 13.20. Equation: 4c + 6d = 13.20. Substitute d = 0.80: 4c + 6(0.80) = 13.20 → 4c + 4.80 = 13.20 → 4c = 13.20 - 4.80 → 4c = 8.40 → c = 8.40 / 4 → c = 2.10. So one cupcake costs £2.10.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-407",
+  "answer": "B",
+  "steps": "The rule is: number of cookies = 6 × n + 4, where n is the number of trays. For n = 5, calculate: 6 × 5 = 30, then 30 + 4 = 34. So the baker makes 34 cookies.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

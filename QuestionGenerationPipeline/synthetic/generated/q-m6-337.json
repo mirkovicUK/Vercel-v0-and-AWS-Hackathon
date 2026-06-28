@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-337",
+  "seedQid": "q-m4-016",
+  "topic": "number",
+  "difficulty": 2,
+  "text": "Three friends have consecutive house numbers on their street. When they add their house numbers together, they get a total of 63. What is the smallest house number?",
+  "options": [
+    "19",
+    "20",
+    "21",
+    "22",
+    "23"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Let the three consecutive numbers be n, n+1, and n+2.\nTheir sum is: n + (n+1) + (n+2) = 3n + 3 = 63\n3n = 63 - 3 = 60\nn = 60 ÷ 3 = 20\nSo the three house numbers are 20, 21, and 22.\nThe smallest house number is 20.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:56:23+00:00"
+}

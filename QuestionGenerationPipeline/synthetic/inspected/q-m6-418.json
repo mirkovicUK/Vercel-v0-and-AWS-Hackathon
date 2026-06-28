@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-418",
+  "answer": "C",
+  "steps": "Set the two expressions equal: 6n + 4 = 4n + 12. Subtract 4n from both sides: 2n + 4 = 12. Subtract 4 from both sides: 2n = 8. Divide both sides by 2: n = 4. Check: For n=4, cupcakes = 6*4+4=28, cookies = 4*4+12=28. So n=4 gives the same number.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

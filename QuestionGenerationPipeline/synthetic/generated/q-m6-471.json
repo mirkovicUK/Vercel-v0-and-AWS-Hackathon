@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-471",
+  "seedQid": "q-m5-038",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "Which of these numbers is an even number?",
+  "options": [
+    "13",
+    "27",
+    "36",
+    "45",
+    "51"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "An even number is any number that can be divided exactly by 2 (with no remainder). We can check each option:\n• 13 ÷ 2 = 6 remainder 1 (odd)\n• 27 ÷ 2 = 13 remainder 1 (odd)\n• 36 ÷ 2 = 18 exactly (even) ✓\n• 45 ÷ 2 = 22 remainder 1 (odd)\n• 51 ÷ 2 = 25 remainder 1 (odd)\nAlternatively, even numbers always end in 0, 2, 4, 6, or 8. Only 36 ends in 6, so 36 is the even number.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:11:48+00:00"
+}

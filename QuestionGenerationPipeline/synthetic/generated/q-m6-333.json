@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-333",
+  "seedQid": "q-m4-014",
+  "topic": "ratio_proportion",
+  "difficulty": 3,
+  "text": "A recipe uses flour and sugar in the ratio 3:1. If Tom uses 450 grams of flour, how many grams of sugar does he need? He then decides to double the entire recipe. How much flour and sugar will he need in total for the doubled recipe?",
+  "options": [
+    "900 g flour and 300 g sugar",
+    "600 g flour and 200 g sugar",
+    "900 g flour and 150 g sugar",
+    "450 g flour and 300 g sugar",
+    "900 g flour and 600 g sugar"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Find the amount of sugar in the original recipe. The ratio of flour to sugar is 3:1. If flour = 450 g, then sugar = 450 ÷ 3 = 150 g.\n\nStep 2: Double the entire recipe. Doubled flour = 450 × 2 = 900 g. Doubled sugar = 150 × 2 = 300 g.\n\nStep 3: The answer is 900 g flour and 300 g sugar.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:55:54+00:00"
+}

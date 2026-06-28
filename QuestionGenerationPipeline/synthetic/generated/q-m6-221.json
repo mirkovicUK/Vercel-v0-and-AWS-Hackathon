@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-221",
+  "seedQid": "q-m2-033",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "A bag contains some marbles. If y stands for the number of marbles in the bag, and 2 × y = 10, what is the value of y?",
+  "options": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "8"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "We are told that 2 × y = 10. To find y, we divide both sides by 2: y = 10 ÷ 2 = 5. So the value of y is 5.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:42:48+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-557",
+  "seedQid": "q-m6-011",
+  "topic": "number",
+  "difficulty": 2,
+  "text": "A baker makes 15 cupcakes every hour. How many cupcakes does she make in 5 hours?",
+  "options": [
+    "60",
+    "65",
+    "70",
+    "75",
+    "80"
+  ],
+  "correctIndex": 3,
+  "generatorSolution": "Step 1: The baker makes 15 cupcakes each hour.\nStep 2: In 5 hours, she makes 15 × 5 = 75 cupcakes.\nThe answer is 75.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:21:34+00:00"
+}

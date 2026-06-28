@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-045",
+  "seedQid": "q-m1-019",
+  "topic": "number",
+  "difficulty": 5,
+  "text": "A scientist measures out chemicals using different containers. She fills a 2.5-litre flask completely, then pours away 750 ml. She repeats this process 4 times in total. She then divides all the remaining liquid equally into bottles that each hold 175 ml. How many bottles can she fill completely?",
+  "options": [
+    "36",
+    "40",
+    "28",
+    "32",
+    "44"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find how much liquid remains after each flask is filled and some poured away.\n2.5 litres = 2500 ml\n2500 ml − 750 ml = 1750 ml remaining each time.\n\nStep 2: She repeats this process 4 times in total.\n4 × 1750 ml = 7000 ml of liquid in total.\n\nStep 3: Divide the total liquid into 175 ml bottles.\n7000 ÷ 175 = 40\n\nShe can fill exactly 40 bottles completely.\n\nThe correct answer is 40.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:23:46+00:00"
+}

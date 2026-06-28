@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-478",
+  "answer": "C",
+  "steps": "Initial total fruit = 15 apples + 10 oranges + 5 bananas + 20 grapes = 50 fruits.\nTom eats 5 apples and 5 grapes, so apples left = 15 - 5 = 10, grapes left = 20 - 5 = 15.\nOranges and bananas unchanged: oranges = 10, bananas = 5.\nRemaining total fruit = 10 apples + 10 oranges + 5 bananas + 15 grapes = 40 fruits.\nFraction of remaining fruit that are oranges = oranges left / total remaining = 10 / 40 = 1/4.\nCheck options: 1/4 is option C.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

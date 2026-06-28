@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-052",
+  "seedQid": "q-m1-026",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A baker makes biscuits in batches. He has 72 biscuits and puts them equally into boxes. Each box holds Y biscuits, and he fills exactly 8 boxes.\n\n72 ÷ Y = 8\n\nWhat number does Y stand for?",
+  "options": [
+    "6",
+    "8",
+    "9",
+    "10",
+    "12"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "We need to find Y in the equation 72 ÷ Y = 8.\n\nStep 1: Rearrange the equation. If 72 ÷ Y = 8, then Y = 72 ÷ 8.\n\nStep 2: Calculate 72 ÷ 8 = 9.\n\nSo Y = 9. Each box holds 9 biscuits.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:24:32+00:00"
+}

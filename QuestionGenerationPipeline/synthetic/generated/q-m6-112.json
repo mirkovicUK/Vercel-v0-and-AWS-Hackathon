@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-112",
+  "seedQid": "q-m1-044",
+  "topic": "number",
+  "difficulty": 2,
+  "text": "Emma thinks of the number 8. She then doubles it and adds 4. What answer does she get?",
+  "options": [
+    "16",
+    "18",
+    "20",
+    "24",
+    "12"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Start with 8.\nStep 2: Double it: 8 × 2 = 16.\nStep 3: Add 4: 16 + 4 = 20.\nThe correct answer is 20.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:30:36+00:00"
+}

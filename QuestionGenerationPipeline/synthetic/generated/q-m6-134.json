@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-134",
+  "seedQid": "q-m2-003",
+  "topic": "number",
+  "difficulty": 4,
+  "text": "A teacher writes the digits 3, 0, 7, 2, and 9 on the board. She asks her students to arrange these digits to make the largest possible even number using each digit exactly once. What is the largest even number that can be made?",
+  "options": [
+    "97320",
+    "97302",
+    "97230",
+    "93720",
+    "97032"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: To make the largest possible number, we want the largest digits in the highest place values.\n\nStep 2: However, the number must be even, which means the last digit must be even. The even digits available are 0 and 2.\n\nStep 3: To make the number as large as possible, we want the smallest even digit in the units place. We should try putting 0 in the units place first, since that 'wastes' the smallest digit.\n\nStep 4: With 0 in the units place, we arrange the remaining digits (9, 7, 3, 2) in descending order for the other positions: 9, 7, 3, 2.\n\nStep 5: This gives us 97320.\n\nStep 6: Let's verify: if we put 2 in the units place instead, the remaining digits (9, 7, 3, 0) in descending order give 97302, which is smaller than 97320.\n\nTherefore, the largest even number is 97320.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:33:24+00:00"
+}

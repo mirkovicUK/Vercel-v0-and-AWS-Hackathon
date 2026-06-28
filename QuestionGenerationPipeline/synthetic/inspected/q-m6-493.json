@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-493",
+  "answer": "C",
+  "steps": "Total fruits = 6 apples + 9 oranges + 5 bananas = 20 fruits. Fruits that are not bananas = apples + oranges = 6 + 9 = 15. Probability = 15/20 = 3/4 after simplifying by dividing numerator and denominator by 5.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

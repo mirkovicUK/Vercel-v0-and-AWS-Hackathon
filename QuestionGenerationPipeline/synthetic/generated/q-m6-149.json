@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-149",
+  "seedQid": "q-m2-007",
+  "topic": "ratio_proportion",
+  "difficulty": 4,
+  "text": "A baker mixes flour, sugar, and butter in the ratio 5 : 3 : 2. If she uses 750 g of flour, how much butter does she need?",
+  "options": [
+    "150 g",
+    "250 g",
+    "300 g",
+    "450 g",
+    "500 g"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: The ratio of flour to sugar to butter is 5 : 3 : 2.\nStep 2: Flour corresponds to 5 parts. We know flour = 750 g, so 1 part = 750 ÷ 5 = 150 g.\nStep 3: Butter corresponds to 2 parts, so butter = 2 × 150 = 300 g.\nThe correct answer is 300 g.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:35:00+00:00"
+}

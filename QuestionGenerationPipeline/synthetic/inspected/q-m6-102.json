@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-102",
+  "answer": "C",
+  "steps": "The baker made 40 cupcakes. 75% of them sold means 75% of 40. 75% = 75/100 = 3/4. (3/4) * 40 = 3 * (40/4) = 3 * 10 = 30. So he sold 30 cupcakes.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

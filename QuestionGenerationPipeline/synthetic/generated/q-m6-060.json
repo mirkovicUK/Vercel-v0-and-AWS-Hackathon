@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-060",
+  "seedQid": "q-m1-027",
+  "topic": "algebra",
+  "difficulty": 5,
+  "text": "A gym offers two membership plans.\n\nPlan A: Pay £4.50 per visit with no joining fee.\nPlan B: Pay a £20 joining fee, then £2.50 per visit.\n\nLet n represent the number of visits. Write an inequality to find when Plan B becomes cheaper than Plan A, and determine the minimum number of whole visits needed for Plan B to be the better deal.",
+  "options": [
+    "8 visits",
+    "9 visits",
+    "10 visits",
+    "11 visits",
+    "12 visits"
+  ],
+  "correctIndex": 3,
+  "generatorSolution": "Step 1: Write expressions for the total cost of each plan after n visits.\nPlan A total cost = 4.50n\nPlan B total cost = 20 + 2.50n\n\nStep 2: Set up the inequality for when Plan B is cheaper than Plan A.\n20 + 2.50n < 4.50n\n\nStep 3: Solve the inequality.\n20 < 4.50n − 2.50n\n20 < 2n\n10 < n\nSo n > 10.\n\nStep 4: Since n must be a whole number and n must be greater than 10, the minimum number of visits is 11.\n\nThe answer is 11 visits.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:25:33+00:00"
+}

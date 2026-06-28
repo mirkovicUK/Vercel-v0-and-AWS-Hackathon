@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-193",
+  "seedQid": "q-m2-023",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 3,
+  "text": "A baker made 120 cupcakes for a school fair. She sold 75% of them in the morning and then sold 1/5 of the remaining cupcakes in the afternoon. How many cupcakes were left unsold at the end of the day?",
+  "options": [
+    "18",
+    "24",
+    "30",
+    "6",
+    "20"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find 75% of 120 cupcakes sold in the morning.\n75% = 75/100 = 3/4\n3/4 × 120 = 90 cupcakes sold in the morning.\n\nStep 2: Find how many remained after the morning.\n120 − 90 = 30 cupcakes remaining.\n\nStep 3: Find 1/5 of the remaining 30 cupcakes sold in the afternoon.\n1/5 × 30 = 6 cupcakes sold in the afternoon.\n\nStep 4: Find how many were left unsold.\n30 − 6 = 24 cupcakes left unsold.\n\nThe answer is 24.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:39:50+00:00"
+}

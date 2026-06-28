@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-193",
+  "answer": "B",
+  "steps": "Total cupcakes = 120. Morning: sold 75% = 0.75 * 120 = 90. Remaining after morning = 120 - 90 = 30. Afternoon: sold 1/5 of remaining = (1/5) * 30 = 6. Sold in afternoon = 6. Remaining after afternoon = 30 - 6 = 24. So 24 cupcakes left unsold.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

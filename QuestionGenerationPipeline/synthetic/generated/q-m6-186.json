@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-186",
+  "seedQid": "q-m2-022",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "A pencil costs p pence. Write an expression for the cost of 3 pencils.",
+  "options": [
+    "p + 3",
+    "3p",
+    "p × p × p",
+    "3 + p",
+    "p ÷ 3"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "If one pencil costs p pence, then 3 pencils cost p + p + p = 3 × p = 3p. The correct answer is 3p.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:39:13+00:00"
+}

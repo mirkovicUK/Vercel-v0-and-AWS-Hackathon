@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-205",
+  "seedQid": "q-m2-027",
+  "topic": "algebra",
+  "difficulty": 5,
+  "text": "A rectangular swimming pool has a length that is (3n + 2) metres and a width that is (n + 4) metres. A tiled border runs all the way around the edge of the pool. The total length of the border is 52 metres. What is the value of n?",
+  "options": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: The perimeter of a rectangle is found using the formula P = 2 × (length + width).\n\nStep 2: Substitute the expressions for length and width:\nP = 2 × [(3n + 2) + (n + 4)]\n\nStep 3: Simplify inside the brackets:\n(3n + 2) + (n + 4) = 3n + n + 2 + 4 = 4n + 6\n\nStep 4: So the perimeter = 2 × (4n + 6) = 8n + 12\n\nStep 5: Set this equal to 52:\n8n + 12 = 52\n\nStep 6: Subtract 12 from both sides:\n8n = 40\n\nStep 7: Divide both sides by 8:\nn = 5\n\nThe correct answer is n = 5.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:41:07+00:00"
+}

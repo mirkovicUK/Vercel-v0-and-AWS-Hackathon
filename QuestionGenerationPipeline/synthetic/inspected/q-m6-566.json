@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-566",
+  "answer": "C",
+  "steps": "The baker adds the same number of cupcakes every minute. After 1 minute: 3 cupcakes. After 2 minutes: 6 cupcakes. After 3 minutes: 9 cupcakes. The pattern shows an increase of 3 cupcakes per minute. Starting from 0 minutes, there would be 0 cupcakes. After 1 minute: 0 + 3 = 3. After 2 minutes: 3 + 3 = 6. After 3 minutes: 6 + 3 = 9. After 4 minutes: 9 + 3 = 12 cupcakes.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

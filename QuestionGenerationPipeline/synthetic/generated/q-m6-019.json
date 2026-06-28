@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-019",
+  "seedQid": "q-m1-007",
+  "topic": "ratio_proportion",
+  "difficulty": 4,
+  "text": "A recipe for 8 pancakes uses 200 g of flour, 2 eggs, and 300 ml of milk. Sam wants to make 12 pancakes using the same recipe. He has 280 g of flour, 4 eggs, and 500 ml of milk. Which ingredient will he run out of first?",
+  "options": [
+    "Flour",
+    "Eggs",
+    "Milk",
+    "He has enough of everything",
+    "Both flour and milk"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Find the ratio of 12 pancakes to 8 pancakes. The scale factor is 12 ÷ 8 = 1.5.\n\nStep 2: Calculate the amount of each ingredient needed for 12 pancakes:\n- Flour: 200 g × 1.5 = 300 g\n- Eggs: 2 × 1.5 = 3 eggs\n- Milk: 300 ml × 1.5 = 450 ml\n\nStep 3: Compare what Sam needs with what he has:\n- Flour: needs 300 g, has 280 g → NOT ENOUGH (short by 20 g)\n- Eggs: needs 3, has 4 → enough\n- Milk: needs 450 ml, has 500 ml → enough\n\nStep 4: The only ingredient Sam doesn't have enough of is flour. So flour will run out first.\n\nThe answer is Flour.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-11T19:48:22+00:00"
+}

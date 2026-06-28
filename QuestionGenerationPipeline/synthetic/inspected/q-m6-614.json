@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-614",
+  "answer": "C",
+  "steps": "Let f = number of flowers in one row. Condition: quadruple flowers and subtract 15 equals triple flowers and add 8. Write equation: 4f - 15 = 3f + 8. Subtract 3f from both sides: f - 15 = 8. Add 15 to both sides: f = 23. Check: 4*23 - 15 = 92 - 15 = 77; 3*23 + 8 = 69 + 8 = 77. Correct.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

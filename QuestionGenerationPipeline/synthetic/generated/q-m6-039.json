@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-039",
+  "seedQid": "q-m1-017",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 4,
+  "text": "A baker uses 3/8 of a bag of flour in the morning and 0.45 of the same bag in the afternoon. What percentage of the bag of flour is left at the end of the day?",
+  "options": [
+    "7.5%",
+    "12.5%",
+    "17.5%",
+    "20%",
+    "82.5%"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Convert 3/8 to a decimal. 3 ÷ 8 = 0.375.\nStep 2: Add the morning and afternoon amounts: 0.375 + 0.45 = 0.825.\nStep 3: Find the amount remaining: 1 − 0.825 = 0.175.\nStep 4: Convert 0.175 to a percentage: 0.175 × 100 = 17.5%.\nThe correct answer is 17.5%.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:23:01+00:00"
+}

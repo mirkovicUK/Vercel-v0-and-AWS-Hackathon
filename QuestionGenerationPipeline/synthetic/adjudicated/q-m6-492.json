@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-492",
+  "trigger": "ambiguity",
+  "correctAnswer": "B",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "There are 6 apples, 4 oranges, and 2 bananas, making a total of 12 fruits. The fraction of oranges is 4/12, which simplifies to 1/3. Option B is '1/3', which is correct and unambiguous. Other options are either incorrect or equivalent but not simplified (e.g., 2/6 and 4/6), but only B is both correct and in simplest form as typically expected in such questions.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

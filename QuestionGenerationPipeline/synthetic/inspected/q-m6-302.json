@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-302",
+  "answer": "B) 33 cm",
+  "steps": "Total length = longer piece + shorter piece. Given total = 45 cm, shorter = 12 cm. So x + 12 = 45 → x = 45 - 12 = 33 cm.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

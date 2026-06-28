@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-408",
+  "seedQid": "q-m5-017",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "A baker makes cupcakes using the formula: Total cupcakes = 6n + 8, where n is the number of batches. If the baker made 44 cupcakes in total, how many batches did he make?",
+  "options": [
+    "4",
+    "5",
+    "6",
+    "7",
+    "8"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "We need to find n when 6n + 8 = 44.\n\nStep 1: Subtract 8 from both sides:\n6n = 44 - 8\n6n = 36\n\nStep 2: Divide both sides by 6:\nn = 36 ÷ 6\nn = 6\n\nSo the baker made 6 batches.\n\nCheck: 6 × 6 + 8 = 36 + 8 = 44 ✓",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:05:14+00:00"
+}

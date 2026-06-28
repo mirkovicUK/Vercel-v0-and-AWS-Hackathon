@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-606",
+  "answer": "B) s = 7",
+  "steps": "Let s be the number of stickers Sam started with. After receiving 5 more, he has s + 5 stickers. The problem states he now has 12 stickers in total. So s + 5 = 12. Subtract 5 from both sides: s = 12 - 5 = 7.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

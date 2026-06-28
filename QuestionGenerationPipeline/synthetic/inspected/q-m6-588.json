@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-588",
+  "answer": "D) 750 ml",
+  "steps": "For 3 people: milk = 450 ml, bananas = 6. Milk per person = 450 ml / 3 = 150 ml. For 5 people: milk needed = 150 ml × 5 = 750 ml.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-339",
+  "seedQid": "q-m4-016",
+  "topic": "number",
+  "difficulty": 4,
+  "text": "A baker numbers his loaves each day using consecutive even numbers. On Monday, he bakes 4 loaves and labels them with consecutive even numbers. The sum of all four labels is 84. What is the smallest label number?",
+  "options": [
+    "16",
+    "18",
+    "20",
+    "22",
+    "24"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Let the four consecutive even numbers be n, n+2, n+4, and n+6.\n\nStep 1: Write the equation for their sum:\nn + (n+2) + (n+4) + (n+6) = 84\n\nStep 2: Simplify the left side:\n4n + 12 = 84\n\nStep 3: Subtract 12 from both sides:\n4n = 72\n\nStep 4: Divide both sides by 4:\nn = 18\n\nStep 5: Check: 18 + 20 + 22 + 24 = 84 ✓\n\nThe smallest label number is 18.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:56:33+00:00"
+}

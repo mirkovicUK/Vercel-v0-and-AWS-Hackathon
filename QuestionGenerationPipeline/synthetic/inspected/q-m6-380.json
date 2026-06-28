@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-380",
+  "answer": "B",
+  "steps": "1. The number is 396,472.\n2. Rounding to the nearest ten thousand: Look at the thousands digit (6). Since 6 ≥ 5, round up.\n3. The ten thousands digit is 9; rounding up increases it by 1, making it 400,000.\n4. Difference = |rounded - actual| = |400,000 - 396,472| = 3,528.\n5. Check options: A) 4,472, B) 3,528, C) 6,472, D) 3,472, E) 4,528.\n6. Only B matches 3,528.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

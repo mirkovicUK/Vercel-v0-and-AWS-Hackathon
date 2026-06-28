@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-123",
+  "seedQid": "q-m1-050",
+  "topic": "ratio_proportion",
+  "difficulty": 3,
+  "text": "A smoothie recipe uses fruit and yoghurt in the ratio 3 : 2. If you want to make 600 ml of smoothie, how much yoghurt do you need?",
+  "options": [
+    "200 ml",
+    "240 ml",
+    "300 ml",
+    "360 ml",
+    "400 ml"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Add the parts of the ratio together: 3 + 2 = 5 parts in total.\nStep 2: Find the value of one part: 600 ml ÷ 5 = 120 ml per part.\nStep 3: Yoghurt makes up 2 parts, so yoghurt = 2 × 120 ml = 240 ml.\nThe correct answer is 240 ml.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:32:08+00:00"
+}

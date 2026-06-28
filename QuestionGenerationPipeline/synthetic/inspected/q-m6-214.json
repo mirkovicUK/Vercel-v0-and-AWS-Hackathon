@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-214",
+  "answer": "A",
+  "steps": "First bag: 2.5 kg initial weight, spill 0.375 kg, so remaining = 2.5 - 0.375 = 2.125 kg. Total flour needed = 12.125 kg. Flour still needed after using first bag = 12.125 - 2.125 = 10.0 kg. Each additional full bag weighs 2.5 kg. Number of full bags needed = 10.0 / 2.5 = 4 bags exactly. So she must buy 4 additional full bags.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

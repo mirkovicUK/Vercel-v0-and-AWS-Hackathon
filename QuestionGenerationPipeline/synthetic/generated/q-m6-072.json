@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-072",
+  "seedQid": "q-m1-031",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A farmer has 48 eggs. He sells 3/4 of them at the market. If we let n stand for the number of eggs sold, which equation is correct and what is the value of n?",
+  "options": [
+    "n = 48 ÷ 4 = 12",
+    "n = 48 × 3/4 = 36",
+    "n = 48 × 1/4 = 12",
+    "n = 48 − 4 = 44",
+    "n = 48 × 3/4 = 32"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "To find 3/4 of 48, we multiply 48 by 3/4.\n\nStep 1: Find 1/4 of 48: 48 ÷ 4 = 12\nStep 2: Multiply by 3: 12 × 3 = 36\n\nSo n = 48 × 3/4 = 36.\n\nThe farmer sold 36 eggs. The correct answer is option B.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:26:30+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-299",
+  "seedQid": "q-m3-027",
+  "topic": "algebra",
+  "difficulty": 4,
+  "text": "A factory machine produces bottles at a constant rate. In 15 minutes, it produces 'b' bottles. An expression for the number of bottles produced in 'h' hours is given by the formula: bottles = 4bh. If the machine produces 120 bottles in 15 minutes, how many bottles does it produce in 3.5 hours?",
+  "options": [
+    "1,440",
+    "1,560",
+    "1,680",
+    "1,800",
+    "2,100"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: We know that b = 120 bottles are produced in 15 minutes.\n\nStep 2: The formula given is: bottles = 4bh, where h is the number of hours.\n\nStep 3: We can verify this formula makes sense: there are 4 lots of 15 minutes in 1 hour, so in h hours the machine produces 4 × b × h bottles.\n\nStep 4: Substitute b = 120 and h = 3.5 into the formula:\nbottles = 4 × 120 × 3.5\n\nStep 5: Calculate 4 × 120 = 480\n\nStep 6: Calculate 480 × 3.5 = 480 × 3 + 480 × 0.5 = 1,440 + 240 = 1,680\n\nThe answer is 1,680 bottles.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:52:01+00:00"
+}

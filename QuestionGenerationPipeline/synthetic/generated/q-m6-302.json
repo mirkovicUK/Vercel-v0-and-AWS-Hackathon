@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-302",
+  "seedQid": "q-m3-029",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A ribbon is cut into two pieces. The longer piece is x cm and the shorter piece is 12 cm. The total length of the ribbon is 45 cm. What is the value of x?",
+  "options": [
+    "27 cm",
+    "33 cm",
+    "35 cm",
+    "57 cm",
+    "12 cm"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "We know that the two pieces add up to the total length of the ribbon.\n\nStep 1: Write the equation: x + 12 = 45\n\nStep 2: Subtract 12 from both sides: x = 45 - 12\n\nStep 3: Calculate: x = 33\n\nSo the longer piece is 33 cm. The correct answer is 33 cm.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:52:25+00:00"
+}

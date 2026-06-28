@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-437",
+  "seedQid": "q-m5-028",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 2,
+  "text": "A ribbon is 3.72 metres long. What is 3.72 metres rounded to the nearest tenth of a metre?",
+  "options": [
+    "3.7 m",
+    "3.8 m",
+    "3.70 m",
+    "4.0 m",
+    "3.72 m"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "To round 3.72 to the nearest tenth (one decimal place), we look at the digit in the hundredths place, which is 2. Since 2 is less than 5, we round down. This means the tenths digit stays as 7, giving us 3.7 m. Note that 3.70 m might look correct, but 3.7 m is the standard way to write a number rounded to the nearest tenth.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:08:02+00:00"
+}

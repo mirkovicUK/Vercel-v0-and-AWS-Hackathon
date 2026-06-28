@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-506",
+  "answer": "C",
+  "steps": "The sequence of cookies per day is: Day 1: 3, Day 2: 6, Day 3: 9, Day 4: 12. The difference between consecutive days is constant: 6 - 3 = 3, 9 - 6 = 3, 12 - 9 = 3. So it is an arithmetic sequence with common difference 3. Therefore, Day 5 = Day 4 + 3 = 12 + 3 = 15.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

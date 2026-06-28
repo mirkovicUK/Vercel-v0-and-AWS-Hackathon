@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-110",
+  "seedQid": "q-m1-041",
+  "topic": "number",
+  "difficulty": 5,
+  "text": "A Roman mosaic artist uses Roman numerals to label his designs. He calculates the area of a rectangular mosaic by multiplying its width (XLIV) by its length (XXIX), then subtracts LXXXVII to account for a damaged corner section. What is the remaining area expressed as a normal number?",
+  "options": [
+    "1189",
+    "1276",
+    "1189",
+    "1193",
+    "1189"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Convert XLIV to a normal number. XL = 40, IV = 4, so XLIV = 44.\n\nStep 2: Convert XXIX to a normal number. XX = 20, IX = 9, so XXIX = 29.\n\nStep 3: Convert LXXXVII to a normal number. L = 50, XXX = 30, VII = 7, so LXXXVII = 87.\n\nStep 4: Multiply 44 × 29. Break this down: 44 × 30 = 1320, then subtract 44 × 1 = 44. So 1320 − 44 = 1276.\n\nStep 5: Subtract the damaged section: 1276 − 87 = 1189.\n\nThe answer is 1189.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:30:25+00:00"
+}

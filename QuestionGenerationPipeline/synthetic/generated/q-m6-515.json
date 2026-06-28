@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-515",
+  "seedQid": "q-m6-001",
+  "topic": "number",
+  "difficulty": 5,
+  "text": "A scientist records a measurement as 'four million, seven hundred and six thousand and fifty'. She then subtracts 'three million, nine hundred and ninety-nine thousand, nine hundred and ninety-nine' from this number. What is the result?",
+  "options": [
+    "706,051",
+    "706,151",
+    "706,041",
+    "706,061",
+    "706,001"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Convert 'four million, seven hundred and six thousand and fifty' into figures.\n4,000,000 + 706,000 + 50 = 4,706,050\n\nStep 2: Convert 'three million, nine hundred and ninety-nine thousand, nine hundred and ninety-nine' into figures.\n3,000,000 + 999,000 + 999 = 3,999,999\n\nStep 3: Subtract the second number from the first.\n4,706,050 − 3,999,999\n\nStep 4: To make this easier, note that 3,999,999 = 4,000,000 − 1.\nSo 4,706,050 − 3,999,999 = 4,706,050 − 4,000,000 + 1 = 706,050 + 1 = 706,051\n\nThe correct answer is 706,051.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:17:04+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-616",
+  "seedQid": "q-m6-025",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "Sam has some stickers. He can write the number of stickers he has as the expression 2n + 3. If n = 4, how many stickers does Sam have?",
+  "options": [
+    "9",
+    "10",
+    "11",
+    "12",
+    "14"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "We need to find the value of 2n + 3 when n = 4.\n\nStep 1: Replace n with 4 in the expression: 2 × 4 + 3\nStep 2: Work out 2 × 4 = 8\nStep 3: Add 3: 8 + 3 = 11\n\nSam has 11 stickers. The answer is 11.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:28:07+00:00"
+}

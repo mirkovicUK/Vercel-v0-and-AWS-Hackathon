@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-548",
+  "seedQid": "q-m6-009",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A library has exactly 4,618,253 books in its collection. The librarian wants to know: what is the difference between the value of the digit in the hundred-thousands place and the value of the digit in the thousands place?",
+  "options": [
+    "592,000",
+    "610,000",
+    "592",
+    "618,000",
+    "600,000"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Identify the digits in the number 4,618,253 by their place values.\n- Millions: 4\n- Hundred-thousands: 6\n- Ten-thousands: 1\n- Thousands: 8\n- Hundreds: 2\n- Tens: 5\n- Ones: 3\n\nStep 2: Find the VALUE of the digit in the hundred-thousands place.\nThe digit is 6, and its value is 6 × 100,000 = 600,000.\n\nStep 3: Find the VALUE of the digit in the thousands place.\nThe digit is 8, and its value is 8 × 1,000 = 8,000.\n\nStep 4: Calculate the difference between these two values.\n600,000 − 8,000 = 592,000.\n\nThe correct answer is 592,000.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:20:38+00:00"
+}

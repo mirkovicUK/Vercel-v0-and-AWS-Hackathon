@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-438",
+  "seedQid": "q-m5-028",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 3,
+  "text": "A scientist measures the length of a beetle as 1.867 cm. She needs to round this measurement to the nearest tenth of a centimetre (1 decimal place). What is 1.867 cm rounded to 1 decimal place?",
+  "options": [
+    "1.8 cm",
+    "1.9 cm",
+    "1.87 cm",
+    "2.0 cm",
+    "1.86 cm"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "To round 1.867 to 1 decimal place, we look at the digit in the second decimal place (hundredths). The number is 1.867. The first decimal place digit is 8. The second decimal place digit is 6, which is 5 or more, so we round up. The 8 in the tenths place rounds up to 9. Therefore, 1.867 rounded to 1 decimal place is 1.9 cm.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:08:06+00:00"
+}

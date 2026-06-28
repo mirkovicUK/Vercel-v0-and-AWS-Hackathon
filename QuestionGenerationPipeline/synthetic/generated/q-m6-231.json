@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-231",
+  "seedQid": "q-m2-038",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "A bag of sweets costs £p. Write an expression for the cost of 3 bags of sweets.",
+  "options": [
+    "p + 3",
+    "3p",
+    "p ÷ 3",
+    "p - 3",
+    "3 + p"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: One bag costs £p.\nStep 2: If you buy 3 bags, you multiply the cost of one bag by 3.\nStep 3: p × 3 = 3p.\nSo the correct answer is 3p.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:43:38+00:00"
+}

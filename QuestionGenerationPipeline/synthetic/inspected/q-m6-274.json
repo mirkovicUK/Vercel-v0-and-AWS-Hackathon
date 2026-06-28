@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-274",
+  "answer": "B) 2,853,365",
+  "steps": "Initial distance: 2,748,365 km. Travels 100,000 km away: 2,748,365 + 100,000 = 2,848,365 km. Then moves 5,000 km closer: 2,848,365 - 5,000 = 2,843,365 km. Check options: A) 2,843,365 matches this calculation. However, re-read: 'travels another 100,000 kilometres away from Earth, and then moves 5,000 kilometres closer.' If 'closer' means toward Earth, subtraction is correct. But wait: Option B is 2,853,365, which would be if we added 100,000 and then added 5,000 (i.e., misinterpreted 'closer' as 'further'). Option C is 2,848,365 (only added 100,000, ignored the 5,000). Option D is 2,838,365 (added 100,000 then subtracted 15,000?). Option E is 2,843,865 (added 100,000 then added 500?). The correct arithmetic is 2,748,365 + 100,000 = 2,848,365; 2,848,365 - 5,000 = 2,843,365. That is option A. But let's verify: 2,748,365 + 100,000 = 2,848,365. Subtract 5,000: 2,848,365 - 5,000 = 2,843,365. Yes, that's A. However, the problem says 'moves 5,000 kilometres closer' — if it moves closer, distance decreases. So final is 2,843,365. That is option A. But wait — check addition: 2,748,365 + 100,000 = 2,848,365 exactly. Subtract 5,000: 2,848,365 - 5,000 = 2,843,365. So A is correct. But why is B 2,853,365? That would be if we added 100,000 and then added another 5,000 (maybe misreading 'closer' as 'farther'). So only A matches correct calculation. Therefore answer is A.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": false,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

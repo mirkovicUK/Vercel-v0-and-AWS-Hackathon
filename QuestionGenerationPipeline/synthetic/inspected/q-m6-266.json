@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-266",
+  "answer": "B",
+  "steps": "The tally chart shows: Red: II (2 tally marks), Blue: III (3 tally marks). Each tally mark represents one child. So Blue has 3 tally marks, meaning 3 children chose Blue.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

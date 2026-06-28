@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-619",
+  "seedQid": "q-m6-025",
+  "topic": "algebra",
+  "difficulty": 4,
+  "text": "A bakery has three ovens. Oven X bakes 'n + 4' loaves per hour, Oven Y bakes '2n − 3' loaves per hour, and Oven Z bakes '3n + 5' loaves per hour. After running all three ovens for 2 hours, the bakery has produced 132 loaves in total. What is the value of n?",
+  "options": [
+    "8",
+    "9",
+    "10",
+    "11",
+    "12"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find the total loaves produced per hour by adding the outputs of all three ovens.\nPer hour: (n + 4) + (2n − 3) + (3n + 5) = n + 2n + 3n + 4 − 3 + 5 = 6n + 6\n\nStep 2: Since the ovens run for 2 hours, the total production is:\n2 × (6n + 6) = 12n + 12\n\nStep 3: Set this equal to 132 and solve for n.\n12n + 12 = 132\n12n = 132 − 12\n12n = 120\nn = 120 ÷ 12\nn = 10\n\nThe correct answer is n = 10.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:28:21+00:00"
+}

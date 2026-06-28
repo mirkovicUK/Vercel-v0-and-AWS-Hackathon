@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-003",
+  "seedQid": "q-m1-001",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A charity fundraiser has collected twenty-three thousand, four hundred and sixty pounds. What is this amount written in figures?",
+  "options": [
+    "£23,046",
+    "£23,460",
+    "£23,406",
+    "£2,346",
+    "£230,460"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Break the number into parts.\n'Twenty-three thousand' = 23,000\n'Four hundred' = 400\n'Sixty' = 60\n\nStep 2: Add the parts together.\n23,000 + 400 + 60 = 23,460\n\nStep 3: Write with the pound sign: £23,460\n\nThe correct answer is £23,460.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-11T19:46:23+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-336",
+  "answer": "C",
+  "steps": "Tom has 3 boxes. Each box contains 8 crayons. Total crayons = 3 × 8 = 24.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

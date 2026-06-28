@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-001",
+  "answer": "B",
+  "steps": "The phrase 'two thousand and thirty-six' means 2000 + 36 = 2036. In figures, that is written as 2036. Check each option: A) 2306 is two thousand three hundred six, B) 2036 matches, C) 2360 is two thousand three hundred sixty, D) 20036 is twenty thousand thirty-six, E) 2063 is two thousand sixty-three. Only B matches the given number.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

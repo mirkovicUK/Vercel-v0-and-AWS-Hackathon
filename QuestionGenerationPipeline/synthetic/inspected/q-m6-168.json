@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-168",
+  "answer": "C",
+  "steps": "Monday: d = 0, b = 56 − 8×0 = 56. Tuesday: d = 1, b = 56 − 8×1 = 48. Wednesday: d = 2, b = 56 − 8×2 = 40. Thursday: d = 3, b = 56 − 8×3 = 56 − 24 = 32.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": false,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

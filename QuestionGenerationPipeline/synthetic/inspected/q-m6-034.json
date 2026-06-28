@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-034",
+  "answer": "C",
+  "steps": "Let the unknown number of eggs be x. According to the recipe: (3x + 5) / 2 = 19. Multiply both sides by 2: 3x + 5 = 38. Subtract 5: 3x = 33. Divide by 3: x = 11. Check: start with 11, triple to 33, add 5 to get 38, divide by 2 to get 19, correct.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

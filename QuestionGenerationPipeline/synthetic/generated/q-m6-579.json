@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-579",
+  "seedQid": "q-m6-016",
+  "topic": "ratio_proportion",
+  "difficulty": 4,
+  "text": "A paint mixture uses red, blue, and yellow paint in the ratio 3:5:2. A painter needs 4 litres of the mixture in total. How many millilitres of blue paint does he need?",
+  "options": [
+    "800 ml",
+    "1200 ml",
+    "1600 ml",
+    "2000 ml",
+    "2400 ml"
+  ],
+  "correctIndex": 3,
+  "generatorSolution": "Step 1: Find the total number of parts in the ratio. 3 + 5 + 2 = 10 parts.\n\nStep 2: Find the fraction that is blue paint. Blue = 5 out of 10 parts = 5/10 = 1/2.\n\nStep 3: Calculate the amount of blue paint needed. 1/2 × 4 litres = 2 litres.\n\nStep 4: Convert litres to millilitres. 2 litres = 2000 ml.\n\nThe answer is 2000 ml.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:23:47+00:00"
+}

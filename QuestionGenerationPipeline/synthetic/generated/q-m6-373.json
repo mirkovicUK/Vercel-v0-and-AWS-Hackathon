@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-373",
+  "seedQid": "q-m5-007",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A baker makes batches of cupcakes. She notices that the number of cupcakes she made this week can be divided equally by 3, by 5, and by 4 with no remainder. Which of these could be the number of cupcakes she made?",
+  "options": [
+    "45",
+    "80",
+    "120",
+    "150",
+    "100"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "We need a number that is divisible by 3, 5, and 4.\n\nStep 1: Find the lowest common multiple (LCM) of 3, 5, and 4.\n- LCM of 3 and 5 = 15\n- LCM of 15 and 4 = 60\nSo the number must be a multiple of 60.\n\nStep 2: Check each option:\n- 45 ÷ 4 = 11 remainder 1 ✗\n- 80 ÷ 3 = 26 remainder 2 ✗\n- 120 ÷ 60 = 2 ✓ (120 ÷ 3 = 40, 120 ÷ 5 = 24, 120 ÷ 4 = 30, all whole numbers)\n- 150 ÷ 4 = 37 remainder 2 ✗\n- 100 ÷ 3 = 33 remainder 1 ✗\n\nThe answer is 120.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:00:22+00:00"
+}

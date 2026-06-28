@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-457",
+  "seedQid": "q-m5-033",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 2,
+  "text": "A shop sells three different sizes of juice bottle. The small bottle holds 0.33 litres, the medium bottle holds 0.75 litres, and the large bottle holds 1.5 litres. How much juice do you get in total if you buy one of each size?",
+  "options": [
+    "2.__(2.48 litres)",
+    "2.58 litres",
+    "2.53 litres",
+    "2.68 litres",
+    "2.43 litres"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Add the three amounts together:\n0.33 + 0.75 = 1.08\n1.08 + 1.5 = 2.58\nSo the total is 2.58 litres.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:10:22+00:00"
+}

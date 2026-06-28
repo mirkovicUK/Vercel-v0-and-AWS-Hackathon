@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-189",
+  "answer": "A) 15c + 2 = £15.50",
+  "steps": "1. Let c be the cost of one cupcake.\n2. A box of 5 cupcakes costs £4.50, so 5c = £4.50 → c = £0.90.\n3. Order is for 3 boxes, each containing 5 cupcakes → total cupcakes = 3 × 5 = 15.\n4. Cost for cupcakes alone = 15c.\n5. Fixed delivery charge = £2.00, added once per order.\n6. Total cost expression = 15c + 2.\n7. Substitute c = £0.90: 15 × 0.90 + 2 = 13.50 + 2 = £15.50.\n8. Check options: Only A matches expression 15c + 2 and total £15.50.\n   B has same expression but wrong total (£13.50).\n   C, D, E have wrong expressions or totals.\n9. Therefore, correct option is A.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

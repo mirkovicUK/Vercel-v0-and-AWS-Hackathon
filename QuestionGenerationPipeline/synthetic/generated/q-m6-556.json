@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-556",
+  "seedQid": "q-m6-011",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "A baker puts 5 cupcakes on each tray. He fills 4 trays. How many cupcakes does he have in total?",
+  "options": [
+    "15",
+    "20",
+    "25",
+    "9",
+    "24"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: The baker puts 5 cupcakes on each tray.\nStep 2: He fills 4 trays.\nStep 3: Multiply the number of cupcakes per tray by the number of trays: 5 × 4 = 20.\nThe answer is 20.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:21:32+00:00"
+}

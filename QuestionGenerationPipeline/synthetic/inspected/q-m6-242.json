@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-242",
+  "answer": "C",
+  "steps": "The question states: To find the total of all the interior angles of a polygon, subtract 2 from the number of sides and then multiply by 180°. For a pentagon, number of sides = 5. Subtract 2: 5 - 2 = 3. Multiply by 180°: 3 × 180° = 540°.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-088",
+  "seedQid": "q-m1-036",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "A farmer collects eggs from his hens. Each hen lays n eggs per day. He has 6 hens and collects eggs for 5 days. He then puts all the eggs into boxes that hold 10 eggs each. He fills exactly 9 boxes with no eggs left over. What is the value of n?",
+  "options": [
+    "2",
+    "3",
+    "4",
+    "5",
+    "6"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Write an expression for the total number of eggs. Total eggs = 6 hens × n eggs × 5 days = 30n.\nStep 2: He fills exactly 9 boxes of 10 eggs, so the total number of eggs is 9 × 10 = 90.\nStep 3: Set up the equation: 30n = 90.\nStep 4: Solve for n: n = 90 ÷ 30 = 3.\nThe answer is n = 3.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:28:24+00:00"
+}

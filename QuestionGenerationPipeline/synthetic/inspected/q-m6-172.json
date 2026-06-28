@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-172",
+  "answer": "C",
+  "steps": "Divide total cupcakes by number of boxes: 456 ÷ 8. 8 × 50 = 400, remainder 56. 8 × 7 = 56, remainder 0. So 50 + 7 = 57 cupcakes per box.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-294",
+  "answer": "B",
+  "steps": "Let positions be on a number line, with east as positive. Let post office be at 0. Library is x metres east of post office, so library at x. Bakery is 380 metres west of library, so bakery at x - 380. Distance between post office (0) and bakery (x - 380) is 95 metres, and bakery is west of post office, so bakery position is negative: x - 380 < 0. Distance = |0 - (x - 380)| = |380 - x| = 95. Since bakery is west of post office, 380 - x > 0, so 380 - x = 95 → x = 380 - 95 = 285. Check: library at 285, bakery at 285 - 380 = -95, distance from post office (0) to bakery (-95) is 95, bakery west of post office. So x = 285 m.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

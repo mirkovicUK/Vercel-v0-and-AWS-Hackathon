@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-372",
+  "answer": "B",
+  "steps": "Counts given: Tray A = 47, Tray B = 39, Tray C = 52, Tray D = 44. Compare: 39 < 44 < 47 < 52. The smallest is 39, which is Tray B.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

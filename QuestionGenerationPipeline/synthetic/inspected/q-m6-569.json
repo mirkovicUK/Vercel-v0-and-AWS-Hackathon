@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-569",
+  "answer": "C",
+  "steps": "Given depths: 15, 26, 39, 54. Differences: 26-15 = 11, 39-26 = 13, 54-39 = 15. So differences are 11, 13, 15 — increasing by 2 each time. Next difference = 15 + 2 = 17. Next depth = 54 + 17 = 71.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

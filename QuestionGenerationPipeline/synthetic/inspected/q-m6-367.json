@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-367",
+  "answer": "D",
+  "steps": "1. One pizza cut into quarters means there are 4 quarters in one whole pizza.\n2. For 3 whole pizzas, the number of quarters = 3 × 4 = 12.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

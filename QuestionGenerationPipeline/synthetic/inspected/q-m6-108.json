@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-108",
+  "answer": "B",
+  "steps": "First, convert Roman numerals to decimal: XXXIV = X+X+X+IV = 10+10+10+4 = 34. XII = X+I+I = 10+1+1 = 12. Multiply: 34 × 12 = 34 × (10 + 2) = 34×10 + 34×2 = 340 + 68 = 408. Check options: 408 is option B.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

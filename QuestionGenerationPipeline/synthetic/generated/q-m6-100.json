@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-100",
+  "seedQid": "q-m1-038",
+  "topic": "data_handling",
+  "difficulty": 5,
+  "text": "A survey of 120 students recorded their favourite sport. The results were displayed in a pie chart. Football was shown as a sector of 150°, swimming as 90°, tennis as 60°, and the rest chose athletics. The ratio of boys to girls who chose athletics was 3:1. How many girls chose athletics?",
+  "options": [
+    "5",
+    "6",
+    "10",
+    "15",
+    "20"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Find the angle for athletics. Total degrees in a pie chart = 360°. Athletics angle = 360° - 150° - 90° - 60° = 60°.\n\nStep 2: Find the number of students who chose athletics. The fraction of the pie chart for athletics = 60° ÷ 360° = 1/6. Number of athletics students = 1/6 × 120 = 20.\n\nStep 3: Use the ratio of boys to girls (3:1) to find the number of girls. Total parts = 3 + 1 = 4. Girls = 20 ÷ 4 = 5.\n\nThe answer is 5.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:29:38+00:00"
+}

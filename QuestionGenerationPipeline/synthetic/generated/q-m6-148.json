@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-148",
+  "seedQid": "q-m2-007",
+  "topic": "ratio_proportion",
+  "difficulty": 3,
+  "text": "A recipe for fruit punch uses orange juice and lemonade in the ratio 3:2. If Sam makes 750 ml of fruit punch in total, how much orange juice does he need?",
+  "options": [
+    "300 ml",
+    "375 ml",
+    "400 ml",
+    "450 ml",
+    "500 ml"
+  ],
+  "correctIndex": 3,
+  "generatorSolution": "Step 1: The ratio of orange juice to lemonade is 3:2, so the total number of parts is 3 + 2 = 5.\nStep 2: Find the value of one part by dividing the total amount by the number of parts: 750 ÷ 5 = 150 ml.\nStep 3: Orange juice makes up 3 parts, so the amount of orange juice is 3 × 150 = 450 ml.\nThe correct answer is 450 ml.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:34:55+00:00"
+}

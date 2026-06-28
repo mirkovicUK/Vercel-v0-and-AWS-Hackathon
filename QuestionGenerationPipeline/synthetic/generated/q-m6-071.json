@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-071",
+  "seedQid": "q-m1-031",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "There are 20 stickers in a pack. Mia takes some stickers and has 5 left over. If we call the number of stickers Mia took 'n', which of these is the correct value of n?",
+  "options": [
+    "10",
+    "12",
+    "15",
+    "18",
+    "20"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "We know that the pack starts with 20 stickers. After Mia takes n stickers, there are 5 left. So we can write: 20 - n = 5. To find n, we rearrange: n = 20 - 5 = 15. Therefore Mia took 15 stickers.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:26:25+00:00"
+}

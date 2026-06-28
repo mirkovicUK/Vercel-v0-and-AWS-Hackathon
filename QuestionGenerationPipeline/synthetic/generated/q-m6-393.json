@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-393",
+  "seedQid": "q-m5-014",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "A bakery makes p cupcakes each hour. After 6 hours, the baker has sold 85 cupcakes and has 95 cupcakes left over. What is the value of p?",
+  "options": [
+    "25",
+    "28",
+    "30",
+    "32",
+    "35"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Write an expression for the total cupcakes made in 6 hours: 6 × p = 6p.\nStep 2: The baker sold 85 and has 95 left over, so the total number of cupcakes made is 85 + 95 = 180.\nStep 3: Set up the equation: 6p = 180.\nStep 4: Solve for p by dividing both sides by 6: p = 180 ÷ 6 = 30.\nThe answer is 30.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:02:50+00:00"
+}

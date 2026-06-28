@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-173",
+  "seedQid": "q-m2-017",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A factory produces 756 chocolate bars in one day. The bars are packed equally into 9 boxes. How many chocolate bars are in each box?",
+  "options": [
+    "74",
+    "84",
+    "86",
+    "94",
+    "96"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "We need to calculate 756 ÷ 9.\n\nStep 1: Divide 756 by 9.\nStep 2: 9 × 80 = 720\nStep 3: 756 − 720 = 36\nStep 4: 36 ÷ 9 = 4\nStep 5: 80 + 4 = 84\n\nSo each box contains 84 chocolate bars.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:37:41+00:00"
+}

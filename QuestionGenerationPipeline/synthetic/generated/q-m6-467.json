@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-467",
+  "seedQid": "q-m5-036",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 2,
+  "text": "A baker makes 40 cupcakes for a school fair. She decorates 3/4 of them with pink icing. How many cupcakes have pink icing?",
+  "options": [
+    "10",
+    "20",
+    "25",
+    "30",
+    "35"
+  ],
+  "correctIndex": 3,
+  "generatorSolution": "Step 1: We need to find 3/4 of 40 cupcakes.\nStep 2: Divide 40 by 4 to find one quarter: 40 ÷ 4 = 10.\nStep 3: Multiply by 3 to find three quarters: 10 × 3 = 30.\nTherefore, 30 cupcakes have pink icing.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:11:28+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-598",
+  "seedQid": "q-m6-021",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "A baker makes some loaves of bread each morning. She sells 12 loaves before lunch and then bakes 5 more in the afternoon. At the end of the day she has 18 loaves. If we let b stand for the number of loaves she baked in the morning, which equation matches this problem, and what is b?",
+  "options": [
+    "b − 12 + 5 = 18, so b = 25",
+    "b + 12 − 5 = 18, so b = 11",
+    "b − 12 + 5 = 18, so b = 31",
+    "b − 12 − 5 = 18, so b = 35",
+    "b + 5 − 12 = 18, so b = 20"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: The baker starts the morning with b loaves.\nStep 2: She sells 12 before lunch, so she has b − 12.\nStep 3: She bakes 5 more in the afternoon, so she has b − 12 + 5.\nStep 4: At the end of the day she has 18 loaves, giving the equation: b − 12 + 5 = 18.\nStep 5: Simplify the left side: b − 7 = 18.\nStep 6: Add 7 to both sides: b = 25.\nSo the correct answer is b − 12 + 5 = 18, and b = 25.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:26:02+00:00"
+}

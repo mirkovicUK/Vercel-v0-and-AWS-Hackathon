@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-514",
+  "seedQid": "q-m6-001",
+  "topic": "number",
+  "difficulty": 4,
+  "text": "A scientist records the distance between two cities as 'four hundred thousand and seventy-six kilometres'. She then needs to subtract 9,999 from this number. What answer does she get?",
+  "options": [
+    "390,077",
+    "390,777",
+    "389,077",
+    "400,077",
+    "391,077"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Convert 'four hundred thousand and seventy-six' into figures. Four hundred thousand = 400,000. And seventy-six = 76. So the number is 400,076.\n\nStep 2: Subtract 9,999 from 400,076.\n400,076 − 9,999 = 400,076 − 10,000 + 1 = 390,076 + 1 = 390,077.\n\nStep 3: Check the answer options. 390,077 matches option A.\n\nThe correct answer is 390,077.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:16:58+00:00"
+}

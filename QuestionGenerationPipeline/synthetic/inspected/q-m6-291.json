@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-291",
+  "answer": "C",
+  "steps": "Let the number of stickers Tom has now be x. If he is given 3 more stickers, he will have x + 3 stickers. According to the problem, x + 3 = 10. Solving for x: x = 10 - 3 = 7. Therefore, Tom has 7 stickers now.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

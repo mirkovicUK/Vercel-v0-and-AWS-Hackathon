@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-387",
+  "seedQid": "q-m5-013",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A bag of sweets costs p pence. Tom buys 3 bags and pays with a £5 note. Which expression shows the change he receives in pence?",
+  "options": [
+    "5 - 3p",
+    "500 - 3p",
+    "3p - 500",
+    "500 - p",
+    "5 - p"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Tom pays with a £5 note. Since the answer needs to be in pence, convert £5 to pence: £5 = 500 pence.\n\nStep 2: Tom buys 3 bags at p pence each, so the total cost is 3 × p = 3p pence.\n\nStep 3: Change = amount paid − total cost = 500 − 3p.\n\nThe correct answer is 500 - 3p.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:02:00+00:00"
+}

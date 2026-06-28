@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-527",
+  "seedQid": "q-m6-004",
+  "topic": "number",
+  "difficulty": 2,
+  "text": "A library has 'three hundred and five thousand, two hundred and fourteen' books. Write this number in figures.",
+  "options": [
+    "305,214",
+    "350,214",
+    "305,241",
+    "3,005,214",
+    "30,5214"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Break the number into parts.\n'Three hundred and five thousand' = 305,000\n'Two hundred and fourteen' = 214\n\nStep 2: Add the parts together.\n305,000 + 214 = 305,214\n\nThe correct answer is 305,214.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:18:09+00:00"
+}

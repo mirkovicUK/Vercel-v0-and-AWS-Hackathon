@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-543",
+  "seedQid": "q-m6-008",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A sports stadium has a capacity of 54,739 people. What is the sum of the value of the digit 5 and the value of the digit 7 in this number?",
+  "options": [
+    "50,700",
+    "50,070",
+    "57,000",
+    "5,700",
+    "12"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Identify the value of the digit 5 in 54,739. The digit 5 is in the ten-thousands column, so its value is 50,000.\n\nStep 2: Identify the value of the digit 7 in 54,739. The digit 7 is in the hundreds column, so its value is 700.\n\nStep 3: Add the two values together: 50,000 + 700 = 50,700.\n\nThe correct answer is 50,700.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:19:43+00:00"
+}

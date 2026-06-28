@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-412",
+  "answer": "C",
+  "steps": "The baker made 40 cupcakes. He sold 3/4 of them. To find the number sold, calculate 3/4 of 40: (3/4) × 40 = 3 × (40/4) = 3 × 10 = 30. So he sold 30 cupcakes.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": false,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

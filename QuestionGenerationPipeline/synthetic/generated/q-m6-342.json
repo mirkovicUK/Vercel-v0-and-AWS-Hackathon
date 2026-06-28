@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-342",
+  "seedQid": "q-m4-020",
+  "topic": "ratio_proportion",
+  "difficulty": 2,
+  "text": "In a fruit bowl, the ratio of apples to oranges is 1:3. If there are 4 apples, how many oranges are there?",
+  "options": [
+    "3",
+    "7",
+    "8",
+    "12",
+    "16"
+  ],
+  "correctIndex": 3,
+  "generatorSolution": "The ratio of apples to oranges is 1:3. This means for every 1 apple, there are 3 oranges.\n\nStep 1: We know there are 4 apples.\nStep 2: Since the ratio is 1:3, we multiply the number of apples by 3 to find the number of oranges.\nStep 3: 4 × 3 = 12 oranges.\n\nThe answer is 12.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:56:44+00:00"
+}

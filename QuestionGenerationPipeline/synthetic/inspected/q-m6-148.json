@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-148",
+  "answer": "D",
+  "steps": "The ratio of orange juice to lemonade is 3:2, so the total parts = 3 + 2 = 5 parts. The total amount of fruit punch is 750 ml. Each part = 750 ml / 5 = 150 ml. Orange juice is 3 parts, so orange juice needed = 3 × 150 ml = 450 ml.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

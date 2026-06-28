@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-506",
+  "seedQid": "q-m5-050",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "A baker makes cookies each day. On Day 1 she makes 3 cookies, on Day 2 she makes 6 cookies, on Day 3 she makes 9 cookies, and on Day 4 she makes 12 cookies. How many cookies will she make on Day 5?",
+  "options": [
+    "13",
+    "14",
+    "15",
+    "16",
+    "18"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "The pattern increases by 3 each day:\nDay 1: 3\nDay 2: 6 (3 + 3)\nDay 3: 9 (6 + 3)\nDay 4: 12 (9 + 3)\nDay 5: 12 + 3 = 15\n\nThe rule is: number of cookies = 3 × day number. On Day 5: 3 × 5 = 15.\n\nThe answer is 15.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:16:18+00:00"
+}

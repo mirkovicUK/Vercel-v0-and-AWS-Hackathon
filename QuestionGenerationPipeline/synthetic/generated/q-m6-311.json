@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-311",
+  "seedQid": "q-m4-004",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "Tom has some red marbles and some blue marbles. He has 20 marbles in total. He has 4 more red marbles than blue marbles. How many blue marbles does Tom have?",
+  "options": [
+    "6",
+    "8",
+    "10",
+    "12",
+    "14"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Let the number of blue marbles = b. Then the number of red marbles = b + 4. Together they make 20, so: b + (b + 4) = 20. This gives 2b + 4 = 20. Subtract 4 from both sides: 2b = 16. Divide both sides by 2: b = 8. So Tom has 8 blue marbles.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:53:38+00:00"
+}

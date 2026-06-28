@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-416",
+  "answer": "B",
+  "steps": "1. Each bag costs £2.\n2. If you buy n bags, the total cost is £2 multiplied by n.\n3. In algebraic notation, that is 2 × n, written as 2n.\n4. Check each option: A) n+2 adds 2 to the number of bags, not multiply. B) 2n is correct. C) n-2 subtracts, incorrect. D) n÷2 divides, incorrect. E) 2+2 is constant 4, independent of n, incorrect.\n5. Only option B matches the correct expression.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

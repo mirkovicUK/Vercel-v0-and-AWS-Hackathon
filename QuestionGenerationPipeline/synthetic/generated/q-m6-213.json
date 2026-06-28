@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-213",
+  "seedQid": "q-m2-029",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 3,
+  "text": "A baker has 4.5 kg of flour. She uses 0.75 kg for a cake and then divides the remaining flour equally into bags that each hold 0.5 kg. How many bags can she fill?",
+  "options": [
+    "6",
+    "7",
+    "7.5",
+    "8",
+    "9"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find the remaining flour after making the cake.\n4.5 kg − 0.75 kg = 3.75 kg\n\nStep 2: Divide the remaining flour into bags of 0.5 kg each.\n3.75 ÷ 0.5 = 7.5\n\nStep 3: Since she can only fill complete bags, she can fill 7 full bags (with 0.25 kg left over that doesn't fill a whole bag).\n\nThe answer is 7.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:41:57+00:00"
+}

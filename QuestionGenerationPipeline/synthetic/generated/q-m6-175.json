@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-175",
+  "seedQid": "q-m2-017",
+  "topic": "number",
+  "difficulty": 5,
+  "text": "A factory produces 7,956 identical components in one week. These components are packed equally into boxes of 12, and then the boxes are loaded equally onto 13 pallets. How many boxes are on each pallet?",
+  "options": [
+    "49",
+    "51",
+    "52",
+    "54",
+    "663"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find the total number of boxes by dividing the total components by 12.\n7,956 ÷ 12: First, 12 × 600 = 7,200. Then 7,956 − 7,200 = 756. Next, 12 × 63 = 756. So 7,956 ÷ 12 = 663 boxes.\n\nStep 2: Divide the number of boxes equally onto 13 pallets.\n663 ÷ 13: We know 13 × 50 = 650. Then 663 − 650 = 13, and 13 ÷ 13 = 1. So 663 ÷ 13 = 51.\n\nTherefore, there are 51 boxes on each pallet.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:37:52+00:00"
+}

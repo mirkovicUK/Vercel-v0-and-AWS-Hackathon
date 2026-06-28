@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-587",
+  "seedQid": "q-m6-018",
+  "topic": "ratio_proportion",
+  "difficulty": 2,
+  "text": "A jug of orange squash is made by mixing orange concentrate and water in the ratio 1:4. If Sam uses 150 ml of orange concentrate, how much water does he need?",
+  "options": [
+    "400 ml",
+    "500 ml",
+    "600 ml",
+    "750 ml",
+    "800 ml"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "The ratio of concentrate to water is 1:4. This means for every 1 part of concentrate, Sam needs 4 parts of water.\n\nStep 1: Find the value of 1 part. Since 1 part = 150 ml of concentrate.\n\nStep 2: Calculate the water needed. Water = 4 parts = 4 × 150 ml = 600 ml.\n\nThe answer is 600 ml.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:24:38+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-315",
+  "answer": "A",
+  "steps": "Let non-fiction books = n. Fiction books = 2n. Reference books = n - 90. Total books: n + 2n + (n - 90) = 1200 → 4n - 90 = 1200 → 4n = 1290 → n = 322.5. This is not an integer, so check: maybe '90 fewer reference books than non-fiction' means reference = n - 90, so total = 4n - 90 = 1200 → 4n = 1290 → n = 322.5. But number of books must be integer, so perhaps misprint? However, if we compute fiction = 2n = 645, not an option. Let's re-read: 'twice as many fiction as non-fiction' and '90 fewer reference than non-fiction'. So fiction = 2n, reference = n - 90. Total = 2n + n + n - 90 = 4n - 90 = 1200 → 4n = 1290 → n = 322.5. That gives fiction = 645. Not in options. Maybe they meant '90 fewer reference than fiction'? Then reference = 2n - 90, total = n + 2n + 2n - 90 = 5n - 90 = 1200 → 5n = 1290 → n = 258, fiction = 516 → option A. That matches an option. Likely the problem statement has a misprint, but given the options, only A works if we assume '90 fewer reference than fiction'. Check: If fiction = 516, then non-fiction = 258, reference = 516 - 90 = 426, total = 516 + 258 + 426 = 1200. So correct under that interpretation. Since options are given, and only A yields integer total 1200 with the given conditions if we interpret '90 fewer reference than fiction', we choose A.",
+  "inspectorDifficulty": 3,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": false,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

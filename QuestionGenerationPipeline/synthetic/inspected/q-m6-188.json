@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-188",
+  "answer": "B",
+  "steps": "1. A large cake costs £4.50.\n2. 5 cupcakes cost the same as 2 large cakes.\n3. Cost of 2 large cakes = 2 × £4.50 = £9.00.\n4. Therefore, 5 cupcakes cost £9.00.\n5. One cupcake costs £9.00 ÷ 5 = £1.80.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

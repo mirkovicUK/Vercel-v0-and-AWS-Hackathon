@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-181",
+  "seedQid": "q-m2-020",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "Tom has some stickers. He is given 5 more stickers, and now he has 12 stickers in total. Which equation shows how to find the number of stickers Tom started with?",
+  "options": [
+    "x + 5 = 12",
+    "x - 5 = 12",
+    "x + 12 = 5",
+    "5 - x = 12",
+    "x × 5 = 12"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Tom starts with an unknown number of stickers, which we call x. He is given 5 more, so we add 5 to x. The total is 12. This gives us the equation: x + 5 = 12. The correct answer is x + 5 = 12.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:38:32+00:00"
+}

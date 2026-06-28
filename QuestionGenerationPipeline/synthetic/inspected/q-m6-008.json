@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-008",
+  "answer": "A",
+  "steps": "The number is 36,852.\n- The digit 3 is in the ten-thousands place: 3 × 10,000 = 30,000.\n- The digit 8 is in the hundreds place: 8 × 100 = 800.\n- The difference between the value of the digit 3 and the value of the digit 8 is: 30,000 − 800 = 29,200.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

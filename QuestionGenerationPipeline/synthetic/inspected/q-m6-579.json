@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-579",
+  "answer": "D) 2000 ml",
+  "steps": "1. Ratio of red:blue:yellow = 3:5:2. Total parts = 3 + 5 + 2 = 10 parts.\n2. Blue fraction = 5/10 = 1/2 of total mixture.\n3. Total mixture needed = 4 litres = 4000 ml.\n4. Blue paint needed = (1/2) × 4000 ml = 2000 ml.\n5. Check options: 2000 ml corresponds to option D.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

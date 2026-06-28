@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-107",
+  "seedQid": "q-m1-041",
+  "topic": "number",
+  "difficulty": 2,
+  "text": "A Roman mosaic has XIV tiles in each row and there are III rows. How many tiles are there altogether?",
+  "options": [
+    "36",
+    "39",
+    "42",
+    "45",
+    "48"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Convert the Roman numerals to normal numbers.\nXIV = 10 + 4 = 14\nIII = 3\n\nStep 2: Multiply the number of tiles in each row by the number of rows.\n14 × 3 = 42\n\nThe answer is 42.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:30:08+00:00"
+}

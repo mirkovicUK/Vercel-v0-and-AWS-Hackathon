@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-100",
+  "answer": "A",
+  "steps": "1. Total students = 120. Total degrees in pie chart = 360°. 2. Football = 150°, swimming = 90°, tennis = 60°. Sum of these = 150+90+60 = 300°. 3. Athletics degrees = 360° - 300° = 60°. 4. Fraction of students choosing athletics = 60/360 = 1/6. 5. Number of athletics students = 120 × (1/6) = 20. 6. Ratio boys:girls in athletics = 3:1. Total parts = 3+1 = 4. 7. Girls' share = 1/4 of athletics students = 20 × (1/4) = 5. 8. So number of girls choosing athletics = 5.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

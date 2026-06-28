@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-437",
+  "answer": "A",
+  "steps": "3.72 metres. The tenths place is the first digit after the decimal point: 7. The digit after that is 2, which is less than 5, so we round down. Therefore, 3.72 rounded to the nearest tenth is 3.7 metres. Option A says '3.7 m', which matches. Option C says '3.70 m', which is mathematically equivalent but not the rounded form to the nearest tenth (it implies hundredths precision). The question asks for the rounded value, so 3.7 m is the correct representation.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

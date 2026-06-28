@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-618",
+  "answer": "C",
+  "steps": "Raj: n, Priya: n + 7, Sam: 2n - 3. Total: n + (n + 7) + (2n - 3) = 52. Combine like terms: n + n + 2n + 7 - 3 = 4n + 4 = 52. Subtract 4: 4n = 48. Divide by 4: n = 12.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

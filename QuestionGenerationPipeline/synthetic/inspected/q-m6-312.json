@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-312",
+  "answer": "B",
+  "steps": "Let r = number of rabbits, h = number of hamsters. Total animals: r + h = 50. There are 10 more hamsters than rabbits: h = r + 10. Substitute h into total: r + (r + 10) = 50 → 2r + 10 = 50 → 2r = 40 → r = 20. Check: h = 20 + 10 = 30, total = 20 + 30 = 50, difference = 10. Correct.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

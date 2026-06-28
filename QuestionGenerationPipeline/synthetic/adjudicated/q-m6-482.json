@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-482",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "C",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "The cost of one cupcake is £3.00 ÷ 4 = £0.75. The cost of one milkshake is £2.50 ÷ 2 = £1.25. Therefore, one cupcake and one milkshake cost £0.75 + £1.25 = £2.00. Option C is £2.00, which matches. Option B uses the wrong currency symbol ($), so it is incorrect. Solver 1 gave the correct amount but not the letter; Solver 2 chose A, which is £1.75, incorrect. Only C is correct and unambiguous.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

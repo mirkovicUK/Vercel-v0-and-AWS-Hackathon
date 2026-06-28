@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-068",
+  "seedQid": "q-m1-029",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A baker makes 4.8 kg of dough. She divides it equally into 100 small rolls. What is the weight of each roll in kilograms?",
+  "options": [
+    "0.48 kg",
+    "0.048 kg",
+    "0.0048 kg",
+    "4.8 kg",
+    "48 kg"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "To divide by 100, move the decimal point two places to the left.\n\nStep 1: Start with 4.8\nStep 2: Move the decimal point one place left: 0.48\nStep 3: Move the decimal point another place left: 0.048\n\nSo 4.8 ÷ 100 = 0.048 kg\n\nThe correct answer is 0.048 kg.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:26:09+00:00"
+}

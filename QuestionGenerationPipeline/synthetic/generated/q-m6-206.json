@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-206",
+  "seedQid": "q-m2-028",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "A baker makes 6 loaves of bread every day. How many loaves does he make in 7 days?",
+  "options": [
+    "36",
+    "42",
+    "48",
+    "54",
+    "60"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "To find the total number of loaves made in 7 days, multiply the number of loaves made each day by the number of days:\n\n6 × 7 = 42\n\nThe baker makes 42 loaves in 7 days.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:41:10+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-468",
+  "answer": "B",
+  "steps": "Total cupcakes = 80. Chocolate icing: 3/5 of 80 = (3/5)*80 = 48. Vanilla icing: 25% of 80 = 0.25*80 = 20. Total chocolate + vanilla = 48 + 20 = 68. Strawberry icing = 80 - 68 = 12. Fraction strawberry = 12/80 = simplify by dividing numerator and denominator by 4: 3/20. Check options: 3/20 is option B.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

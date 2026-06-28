@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-152",
+  "answer": "B) 70",
+  "steps": "The number is 4,752. Write it in expanded form: 4,000 + 700 + 50 + 2. The digit 7 is in the hundreds place, so its value is 7 × 100 = 700. Check options: A) 7 is wrong, B) 70 is wrong (that would be tens place), C) 700 matches, D) 7,000 is wrong, E) 7,500 is wrong. Therefore the correct value is 700, which corresponds to option C.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": false,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

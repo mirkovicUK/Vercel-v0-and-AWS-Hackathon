@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-543",
+  "answer": "A",
+  "steps": "The number is 54,739. The digit 5 is in the ten-thousands place, so its value is 5 × 10,000 = 50,000. The digit 7 is in the hundreds place, so its value is 7 × 100 = 700. Sum = 50,000 + 700 = 50,700. Option A is 50,700, which matches. Option B is 50,070, which is incorrect. Option C is 57,000, which is incorrect. Option D is 5,700, which is incorrect. Option E is 12, which is incorrect. Therefore, only A is correct.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

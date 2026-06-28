@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-464",
+  "seedQid": "q-m5-034",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 4,
+  "text": "A jar contains 40 marbles. 25% of the marbles are red, 3/8 of the marbles are blue, and the rest are green. What fraction of the marbles are green, expressed in its simplest form?",
+  "options": [
+    "3/8",
+    "7/16",
+    "1/4",
+    "3/16",
+    "5/8"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Find the number of red marbles. 25% of 40 = 25/100 × 40 = 10 red marbles.\n\nStep 2: Find the number of blue marbles. 3/8 of 40 = 3/8 × 40 = 15 blue marbles.\n\nStep 3: Find the number of green marbles. 40 − 10 − 15 = 15 green marbles.\n\nStep 4: Express green marbles as a fraction of the total. 15/40 = 3/8 (dividing numerator and denominator by 5).\n\nThe answer is 3/8.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:11:04+00:00"
+}

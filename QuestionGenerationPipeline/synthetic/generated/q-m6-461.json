@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-461",
+  "seedQid": "q-m5-034",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 1,
+  "text": "A box contains 10 chocolates. 2 of them are white chocolate. What fraction of the chocolates are white chocolate?",
+  "options": [
+    "1/10",
+    "1/5",
+    "2/5",
+    "1/2",
+    "3/10"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "There are 2 white chocolates out of 10 total chocolates.\nAs a fraction, this is 2/10.\nWe simplify by dividing both the numerator and denominator by 2:\n2 ÷ 2 = 1\n10 ÷ 2 = 5\nSo the fraction is 1/5.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:10:50+00:00"
+}

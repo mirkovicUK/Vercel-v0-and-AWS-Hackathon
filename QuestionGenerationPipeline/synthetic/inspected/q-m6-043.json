@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-043",
+  "answer": "D",
+  "steps": "1 litre = 1000 millilitres. Therefore, 2 litres = 2 × 1000 = 2000 millilitres.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

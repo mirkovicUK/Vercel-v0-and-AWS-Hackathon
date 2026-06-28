@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-187",
+  "seedQid": "q-m2-022",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A bag of marbles costs £p. Tom buys 3 bags and pays with a £10 note. He receives £4 change. What is the value of p?",
+  "options": [
+    "£1.50",
+    "£2",
+    "£2.50",
+    "£3",
+    "£4"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Tom pays £10 and gets £4 change, so he spent £10 − £4 = £6.\nStep 2: He bought 3 bags, so 3 × p = £6.\nStep 3: Divide both sides by 3: p = £6 ÷ 3 = £2.\nThe answer is £2.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:39:17+00:00"
+}

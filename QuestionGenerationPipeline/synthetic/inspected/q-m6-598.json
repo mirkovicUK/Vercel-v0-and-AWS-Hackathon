@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-598",
+  "answer": "A",
+  "steps": "Let b = loaves baked in the morning. After morning baking, she has b loaves. She sells 12 before lunch, so remaining = b - 12. Then she bakes 5 more in the afternoon, so total = b - 12 + 5. At end of day she has 18 loaves. So equation: b - 12 + 5 = 18. Simplify: b - 7 = 18, so b = 25. Check options: A says b − 12 + 5 = 18, so b = 25 — matches our solution. B says b + 12 − 5 = 18, so b = 11 — wrong because it adds 12 instead of subtracting. C says b − 12 + 5 = 18, so b = 31 — wrong arithmetic (31 - 12 + 5 = 24, not 18). D says b − 12 − 5 = 18, so b = 35 — wrong because it subtracts 5 instead of adding. E says b + 5 − 12 = 18, so b = 25 — equation is algebraically equivalent to b - 7 = 18, so b = 25, but the written equation in E is b + 5 − 12 = 18, which simplifies to b - 7 = 18, so b = 25. However, E's description says 'b + 5 − 12 = 18, so b = 20' — that is inconsistent because if b = 20, then 20 + 5 - 12 = 13, not 18. So E's stated b value is wrong. Only A has both correct equation and correct b value.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

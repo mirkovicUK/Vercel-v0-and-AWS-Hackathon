@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-401",
+  "seedQid": "q-m5-016",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "Tom has some stickers. He gives 3 stickers to his friend and has 7 left. How many stickers did Tom start with? If we write this as n − 3 = 7, what is n?",
+  "options": [
+    "4",
+    "7",
+    "10",
+    "11",
+    "21"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "We need to find the value of n in the equation n − 3 = 7.\n\nStep 1: To find n, we add 3 to both sides of the equation.\nn = 7 + 3\n\nStep 2: Calculate 7 + 3 = 10\n\nSo n = 10. Tom started with 10 stickers.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:03:43+00:00"
+}

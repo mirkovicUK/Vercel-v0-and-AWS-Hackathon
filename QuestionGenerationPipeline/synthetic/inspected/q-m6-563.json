@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-563",
+  "answer": "D) 290 litres",
+  "steps": "From 9:00 to 10:00, increase = 185 - 150 = 35 litres. From 10:00 to 11:00, increase = 220 - 185 = 35 litres. So the pattern is a constant addition of 35 litres per hour. At 11:00 it is 220 litres. At 12:00 it will be 220 + 35 = 255 litres. At 1:00 pm it will be 255 + 35 = 290 litres.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

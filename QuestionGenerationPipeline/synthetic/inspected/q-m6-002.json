@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-002",
+  "answer": "C",
+  "steps": "The phrase 'three thousand and forty-seven' means: three thousand = 3000, and forty-seven = 47. Combine them: 3000 + 47 = 3047. Check options: A) 3470 is three thousand four hundred seventy, B) 30047 is thirty thousand forty-seven, C) 3047 matches, D) 3407 is three thousand four hundred seven, E) 347 is three hundred forty-seven. Only C matches the computed value.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

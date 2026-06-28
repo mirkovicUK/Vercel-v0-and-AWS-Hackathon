@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-560",
+  "answer": "B",
+  "steps": "The sequence is: 2, 6, 18, 54, 162. Check the pattern: 2 × 3 = 6, 6 × 3 = 18, 18 × 3 = 54, 54 × 3 = 162. So each term is multiplied by 3 to get the next term. Therefore, the next term is 162 × 3 = 486. Among the options: A) 324, B) 486, C) 216, D) 504, E) 648. Only 486 matches the computed next term.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

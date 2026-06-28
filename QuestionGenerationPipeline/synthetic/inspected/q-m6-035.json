@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-035",
+  "answer": "C",
+  "steps": "Let first volunteer's number be x. Then 3x + 5 = 23 → 3x = 18 → x = 6. Let second volunteer's number be y. Then 2y - 1 = 23 → 2y = 24 → y = 12. Sum = 6 + 12 = 18. Option C is 18.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

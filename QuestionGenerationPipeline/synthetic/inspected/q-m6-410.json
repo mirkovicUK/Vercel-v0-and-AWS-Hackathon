@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-410",
+  "answer": "A",
+  "steps": "We need the smallest integer n such that 3n² − 5n + 7 > 100. Subtract 100: 3n² − 5n + 7 − 100 > 0 → 3n² − 5n − 93 > 0. Solve 3n² − 5n − 93 = 0 using quadratic formula: n = [5 ± √(25 + 4×3×93)]/(2×3) = [5 ± √(25 + 1116)]/6 = [5 ± √1141]/6. √1141 ≈ 33.78 (since 33.78² = 1141.0884). So n ≈ (5 + 33.78)/6 ≈ 38.78/6 ≈ 6.463, and (5 − 33.78)/6 negative. So inequality holds for n > 6.463. The smallest integer n is 7. Check n=6: W = 3×36 − 5×6 + 7 = 108 − 30 + 7 = 85 (≤100). n=7: W = 3×49 − 35 + 7 = 147 − 35 + 7 = 119 (>100). So first day >100 is day 7. Option B says Day 7. Wait, options: A) Day 6, B) Day 7, C) Day 8, D) Day 5, E) Day 9. So B is correct. But check n=5: 3×25 − 25 + 7 = 75 − 25 + 7 = 57. n=8: 3×64 − 40 + 7 = 192 − 40 + 7 = 159 (>100 but later). So indeed first >100 is day 7. Answer is B.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": false,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

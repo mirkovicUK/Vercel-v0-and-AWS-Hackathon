@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-106",
+  "answer": "C",
+  "steps": "Roman numeral X = 10. Roman numeral IV = 4 (I before V means subtract 1 from 5). XIV = X + IV = 10 + 4 = 14.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

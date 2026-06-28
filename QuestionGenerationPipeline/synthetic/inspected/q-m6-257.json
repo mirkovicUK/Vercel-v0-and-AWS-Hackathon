@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-257",
+  "answer": "C",
+  "steps": "Fewer than 3 books means books read = 0, 1, or 2. Number of pupils for 0 books = 3, for 1 book = 5, for 2 books = 8. Total = 3 + 5 + 8 = 16.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

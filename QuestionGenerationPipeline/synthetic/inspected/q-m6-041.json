@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-041",
+  "answer": "A",
+  "steps": "A teaspoon is a small volume used in cooking. Common knowledge from measuring spoons: 1 teaspoon ≈ 5 milliliters. 50 ml is about a shot glass or small cup, too large. 500 ml is half a liter, about the size of a bottle of water, far too large. 5 liters is a large jug, impossible. 50 liters is a huge container, absurd for a teaspoon. Only 5 ml matches a realistic teaspoon volume.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

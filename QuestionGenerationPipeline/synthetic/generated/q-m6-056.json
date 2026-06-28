@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-056",
+  "seedQid": "q-m1-027",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "A bag of apples costs £2. If I buy 3 bags, how much do I spend in total? Let n stand for the number of bags. Use the formula: Total cost = n × £2.",
+  "options": [
+    "£4",
+    "£5",
+    "£6",
+    "£8",
+    "£10"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: We know the cost of one bag is £2.\nStep 2: We are buying n = 3 bags.\nStep 3: Using the formula Total cost = n × £2, we get Total cost = 3 × £2 = £6.\nThe answer is £6.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:25:01+00:00"
+}

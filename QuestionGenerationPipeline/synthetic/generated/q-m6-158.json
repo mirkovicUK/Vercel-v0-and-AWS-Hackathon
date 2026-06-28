@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-158",
+  "seedQid": "q-m2-012",
+  "topic": "ratio_proportion",
+  "difficulty": 3,
+  "text": "A recipe for pancakes uses flour, milk, and eggs in the ratio 2 : 5 : 1. If Sam uses 300 ml of milk, how much flour does he need?",
+  "options": [
+    "100 ml",
+    "120 ml",
+    "150 ml",
+    "200 ml",
+    "60 ml"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "The ratio of flour to milk to eggs is 2 : 5 : 1.\n\nStep 1: Find the value of one part. Milk corresponds to 5 parts, and Sam uses 300 ml of milk.\nOne part = 300 ÷ 5 = 60 ml.\n\nStep 2: Flour corresponds to 2 parts.\nFlour = 2 × 60 = 120 ml.\n\nThe answer is 120 ml.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:35:57+00:00"
+}

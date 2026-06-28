@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-488",
+  "seedQid": "q-m5-043",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 3,
+  "text": "A fish tank holds 8 litres of water. Every hour, 0.5 litres evaporates. After 6 hours, what fraction of the original water remains in the tank?",
+  "options": [
+    "3/8",
+    "5/8",
+    "3/4",
+    "1/4",
+    "7/8"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find how much water evaporates in 6 hours.\n0.5 litres × 6 = 3 litres evaporated.\n\nStep 2: Find how much water remains.\n8 litres − 3 litres = 5 litres remaining.\n\nStep 3: Write the remaining water as a fraction of the original amount.\n5 ÷ 8 = 5/8.\n\nThe correct answer is 5/8.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:13:59+00:00"
+}

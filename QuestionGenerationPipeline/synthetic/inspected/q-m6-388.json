@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-388",
+  "answer": "B) 2p + 3q = 29, so q = £5",
+  "steps": "Given: adult ticket price p = £8, child ticket price q unknown. Family buys 2 adult tickets and 3 child tickets, total £29. So equation: 2p + 3q = 29. Substitute p = 8: 2(8) + 3q = 29 → 16 + 3q = 29 → 3q = 13 → q = 13/3 ≈ 4.333... But options give different q values. Check each: A) q=3 → 16+9=25 ≠29. B) q=5 → 16+15=31 ≠29? Wait recalc: 16+15=31, not 29. That contradicts. Let me recompute: 2p+3q=29, p=8 → 16+3q=29 → 3q=13 → q=13/3 ≈ 4.333... So q is not an integer. Option D says q=£4.33 (approx). But 4.33*3=12.99, plus 16 = 28.99 ≈ 29. Option B says q=5 gives 31 total, wrong. Check option C: 3p+2q=29, p=8 → 24+2q=29 → 2q=5 → q=2.5, not 4. Option E: q=13 → 16+39=55, wrong. So only D matches the equation 2p+3q=29 and the computed q ≈ 4.33. But wait: Option D says q=£4.33, which is rounded. The exact q is 13/3 ≈ 4.333..., so D is approximately correct. However, option B says q=£5, but that gives total 31, not 29. Let me double-check arithmetic: 2*8=16, 3*5=15, sum=31, not 29. So B is incorrect. Option D is the only one with correct equation and approximately correct q. But is q exactly £4.33? No, it's 13/3 ≈ 4.333..., so 4.33 is rounded to 2 decimal places. In UK currency, prices can be in pounds and pence, so q could be £4.33 if rounded. However, the problem says 'what is the price of a child ticket?' Possibly expecting exact fraction? But options: A) £3, B) £5, C) £4 (but equation wrong), D) £4.33, E) £13. Only D matches the computed q from the given equation and p=8. But let's verify: If q=4.33, then 2*8+3*4.33=16+12.99=28.99, which rounds to 29. So D is correct. Wait, but option B says q=£5, which is wrong. However, maybe I misread: The family pays £29 total. With p=8, q=5 gives 31, so not 29. So B is incorrect. Therefore exactly one option is correct: D. But wait, check option C: equation 3p+2q=29, p=8 → q=2.5, but option says q=£4, so wrong. So only D is correct. However, is q exactly £4.33? The problem likely expects exact value, but D gives approximation. In multiple choice, D is the only one that fits. So answer is D.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": false,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

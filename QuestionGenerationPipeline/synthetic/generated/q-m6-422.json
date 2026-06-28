@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-422",
+  "seedQid": "q-m5-024",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A baker makes muffins and places them onto trays. Each tray holds 8 muffins. If the baker has made 50 muffins, and we use the letter t to stand for the number of complete trays he can fill, which of these gives the correct value of t?",
+  "options": [
+    "t = 5",
+    "t = 6",
+    "t = 7",
+    "t = 8",
+    "t = 42"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "We need to find how many complete trays of 8 muffins can be filled from 50 muffins.\n\nStep 1: Divide 50 by 8.\n50 ÷ 8 = 6 remainder 2\n\nStep 2: Since we need complete trays only, we ignore the remainder.\n\nSo t = 6.\n\nThe correct answer is t = 6.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:06:44+00:00"
+}

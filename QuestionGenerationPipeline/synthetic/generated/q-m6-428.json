@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-428",
+  "seedQid": "q-m5-026",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A baker numbers his loaves each day starting from loaf 17. Each loaf after that is numbered by adding 13 to the previous loaf's number. What number will be on the 6th loaf?",
+  "options": [
+    "78",
+    "82",
+    "80",
+    "84",
+    "76"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "The sequence starts at 17 and increases by 13 each time.\nLoaf 1: 17\nLoaf 2: 17 + 13 = 30\nLoaf 3: 30 + 13 = 43\nLoaf 4: 43 + 13 = 56\nLoaf 5: 56 + 13 = 69\nLoaf 6: 69 + 13 = 82\nAlternatively, the 6th loaf = 17 + (5 × 13) = 17 + 65 = 82.\nThe correct answer is 82.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:07:18+00:00"
+}

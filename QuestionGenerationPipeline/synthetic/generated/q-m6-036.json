@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-036",
+  "seedQid": "q-m1-017",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 1,
+  "text": "A pizza is cut into 4 equal slices. Sam eats 1 slice. What fraction of the pizza is left?",
+  "options": [
+    "1/4",
+    "2/4",
+    "3/4",
+    "4/4",
+    "1/2"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "The pizza has 4 equal slices. Sam eats 1 slice, so he eats 1/4 of the pizza. The fraction left is: 4/4 − 1/4 = 3/4. So 3/4 of the pizza is left.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:22:49+00:00"
+}

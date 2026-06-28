@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-443",
+  "seedQid": "q-m5-029",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "A baker makes cupcakes on three days. On Monday, she makes p cupcakes. On Tuesday, she makes double the number she made on Monday. On Wednesday, she makes 10 fewer than she made on Tuesday. If she made 24 cupcakes on Monday, how many cupcakes did she make on Wednesday?",
+  "options": [
+    "34",
+    "38",
+    "48",
+    "58",
+    "14"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: We know p = 24 (cupcakes made on Monday).\nStep 2: On Tuesday, she makes double Monday's amount: 2 × p = 2 × 24 = 48 cupcakes.\nStep 3: On Wednesday, she makes 10 fewer than Tuesday: 48 − 10 = 38 cupcakes.\nTherefore, the answer is 38.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:08:32+00:00"
+}

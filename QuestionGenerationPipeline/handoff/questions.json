@@ -1,0 +1,6218 @@
+[
+  {
+    "id": "q-m6-001",
+    "text": "A library has two thousand and thirty-six books. What is this number in figures?",
+    "options": [
+      "2306",
+      "2036",
+      "2360",
+      "20036",
+      "2063"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-002",
+    "text": "A library has 'three thousand and forty-seven' books. What is this number in figures?",
+    "options": [
+      "3470",
+      "30047",
+      "3047",
+      "3407",
+      "347"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-003",
+    "text": "A charity fundraiser has collected twenty-three thousand, four hundred and sixty pounds. What is this amount written in figures?",
+    "options": [
+      "£23,046",
+      "£23,460",
+      "£23,406",
+      "£2,346",
+      "£230,460"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-004",
+    "text": "A spacecraft travels a distance written in words as 'two million, forty thousand and seven hundred and six' kilometres. Another spacecraft travels 'one million, nine hundred and ninety-nine thousand and sixty' kilometres. What is the difference between these two distances in figures?",
+    "options": [
+      "40,646 km",
+      "41,646 km",
+      "40,746 km",
+      "41,746 km",
+      "39,646 km"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-006",
+    "text": "In the number 5832, what is the value of the digit 8?",
+    "options": [
+      "8",
+      "80",
+      "800",
+      "8000",
+      "8032"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-007",
+    "text": "A library has 5,863 books. What is the value of the digit 8 in this number?",
+    "options": [
+      "8",
+      "80",
+      "800",
+      "8000",
+      "8600"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-008",
+    "text": "A library has 36,852 books. What is the difference between the value of the digit 3 and the value of the digit 8 in this number?",
+    "options": [
+      "29,200",
+      "30,000",
+      "29,150",
+      "29,152",
+      "28,800"
+    ],
+    "correctIndex": 0,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-009",
+    "text": "A scientist records a measurement as 3,072,586. She notices that if she swaps the digit in the ten-thousands place with the digit in the hundreds place, the number changes. What is the difference in value between the digit currently in the ten-thousands place and the digit currently in the hundreds place?",
+    "options": [
+      "69,300",
+      "6,930",
+      "69,500",
+      "64,500",
+      "69,930"
+    ],
+    "correctIndex": 0,
+    "topic": "number",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-010",
+    "text": "A scientist writes down a number where the digit 4 appears exactly three times. The number is 4,304,042. What is the sum of all the values represented by the digit 4 in this number?",
+    "options": [
+      "4,004,040",
+      "4,004,004",
+      "4,400,040",
+      "4,004,042",
+      "4,040,004"
+    ],
+    "correctIndex": 0,
+    "topic": "number",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-011",
+    "text": "What is the next number in this sequence?\n\n10, 20, 30, 40, ___",
+    "options": [
+      "45",
+      "50",
+      "55",
+      "60",
+      "100"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-012",
+    "text": "A baker makes loaves of bread each day. On Monday he made 250 loaves, on Tuesday he made 238 loaves, and on Wednesday he made 226 loaves. If the pattern continues, how many loaves will he make on Thursday?",
+    "options": [
+      "210",
+      "212",
+      "214",
+      "216",
+      "218"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-013",
+    "text": "A lift starts at floor 52 and goes down the same number of floors each time it stops. The floors it stops at are: 52, 45, 38, ___, 24. What is the missing floor number?",
+    "options": [
+      "30",
+      "31",
+      "32",
+      "33",
+      "34"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-014",
+    "text": "A rocket launches and its altitude is recorded every few seconds. The readings in metres are: 1284, 1247, 1210, ___, 1136, 1099. The rocket is descending at a constant rate. What is the missing altitude reading?",
+    "options": [
+      "1167",
+      "1173",
+      "1178",
+      "1183",
+      "1163"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-016",
+    "text": "A recipe uses flour and sugar in the ratio 2:1. If you use 4 cups of flour, how many cups of sugar do you need?",
+    "options": [
+      "1 cup",
+      "2 cups",
+      "3 cups",
+      "4 cups",
+      "5 cups"
+    ],
+    "correctIndex": 1,
+    "topic": "ratio_proportion",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-017",
+    "text": "A recipe uses flour and sugar in the ratio 3:1. If Sam uses 9 tablespoons of flour, how many tablespoons of sugar does he need?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "6",
+      "9"
+    ],
+    "correctIndex": 2,
+    "topic": "ratio_proportion",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-018",
+    "text": "A recipe for 4 people uses 300 grams of flour. Tom wants to make the same recipe for 6 people. How many grams of flour does he need?",
+    "options": [
+      "350 g",
+      "400 g",
+      "450 g",
+      "500 g",
+      "600 g"
+    ],
+    "correctIndex": 2,
+    "topic": "ratio_proportion",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-019",
+    "text": "A recipe for 8 pancakes uses 200 g of flour, 2 eggs, and 300 ml of milk. Sam wants to make 12 pancakes using the same recipe. He has 280 g of flour, 4 eggs, and 500 ml of milk. Which ingredient will he run out of first?",
+    "options": [
+      "Flour",
+      "Eggs",
+      "Milk",
+      "He has enough of everything",
+      "Both flour and milk"
+    ],
+    "correctIndex": 0,
+    "topic": "ratio_proportion",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-020",
+    "text": "A recipe for 8 people uses 360 grams of flour and 240 grams of sugar. Tom wants to make the recipe for 14 people, but he only has 500 grams of flour available. He decides to use all 500 grams of flour and adjust the sugar to keep the flour-to-sugar ratio the same as the original recipe. How many grams of sugar does Tom need?",
+    "options": [
+      "300 g",
+      "320 g",
+      "333⅓ g",
+      "420 g",
+      "500 g"
+    ],
+    "correctIndex": 2,
+    "topic": "ratio_proportion",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-021",
+    "text": "Sam has some stickers. He gives away 5 stickers and has 8 left. How many stickers did Sam start with?\n\nIf we write this as: s − 5 = 8, what is s?",
+    "options": [
+      "3",
+      "8",
+      "13",
+      "14",
+      "15"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-022",
+    "text": "A bag contains some marbles. If you take away 7 marbles, there are 15 left. How many marbles were in the bag to start with?\n\nLet m = the number of marbles at the start.\n\nm − 7 = 15\n\nm = ?",
+    "options": [
+      "8",
+      "20",
+      "22",
+      "23",
+      "21"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-023",
+    "text": "A baker makes some cupcakes in the morning and then bakes 15 more in the afternoon. He sells 8 cupcakes during the day. At the end of the day he has 30 cupcakes left. If n represents the number of cupcakes he made in the morning, which equation is correct and what is the value of n?",
+    "options": [
+      "n + 15 − 8 = 30, so n = 23",
+      "n + 15 − 8 = 30, so n = 37",
+      "n − 15 + 8 = 30, so n = 37",
+      "n + 15 + 8 = 30, so n = 7",
+      "n + 15 − 8 = 30, so n = 25"
+    ],
+    "correctIndex": 0,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-024",
+    "text": "A baker makes cupcakes in batches. He notices that if he triples the number of cupcakes in a batch and then subtracts 14, he gets the same result as if he doubles the batch and adds 9. Let b represent the number of cupcakes in one batch. What is the value of b?",
+    "options": [
+      "15",
+      "19",
+      "23",
+      "25",
+      "27"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-025",
+    "text": "A factory produces gadgets using three machines. Machine A produces 'p' gadgets per hour, Machine B produces '2p + 5' gadgets per hour, and Machine C produces '3p − 8' gadgets per hour. Together, all three machines produce 81 gadgets in one hour. What is the value of p?",
+    "options": [
+      "12",
+      "13",
+      "14",
+      "15",
+      "16"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-026",
+    "text": "A pizza is cut into 4 equal slices. Tom eats 1 slice. What fraction of the pizza is left?",
+    "options": [
+      "1/4",
+      "1/2",
+      "3/4",
+      "2/4",
+      "4/4"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-027",
+    "text": "A charity jar is 1/4 full. After adding some more coins, it becomes 3/4 full. What fraction of the jar was filled by the extra coins?",
+    "options": [
+      "1/4",
+      "1/2",
+      "3/4",
+      "1/3",
+      "2/3"
+    ],
+    "correctIndex": 1,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-028",
+    "text": "A charity fundraiser has reached £45, which is 75% of its target. What is the full target amount?",
+    "options": [
+      "£50",
+      "£55",
+      "£60",
+      "£65",
+      "£70"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-029",
+    "text": "A charity fundraiser has a target of £150. In the first week, they raised 2/5 of the target. In the second week, they raised 35% of the target. What fraction of the target do they still need to raise?",
+    "options": [
+      "1/20",
+      "1/4",
+      "3/10",
+      "2/5",
+      "1/2"
+    ],
+    "correctIndex": 1,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-030",
+    "text": "A charity fundraiser has a target of £450. In the first week, they raised 2/5 of the target. In the second week, they raised 35% of the target. In the third week, they raised 0.15 of the target. What fraction of the target still remains to be raised? Give your answer as a simplified fraction.",
+    "options": [
+      "1/20",
+      "1/10",
+      "3/20",
+      "1/5",
+      "1/4"
+    ],
+    "correctIndex": 1,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-031",
+    "text": "Sophie thinks of a number. She adds 3 to her number. The answer is 8. What number did Sophie first think of?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6",
+      "11"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-032",
+    "text": "Sophie thinks of a number. She adds 5 to her number, then doubles the result. Her answer is 18. What number did Sophie start with?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-033",
+    "text": "A baker has a secret recipe. She starts with a number of eggs, doubles the amount, then adds 5 more eggs. She ends up using 19 eggs in total. How many eggs did she start with?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-034",
+    "text": "A baker has a secret recipe. She starts with an unknown number of eggs, triples that number, adds 5, and then divides the result by 2. The final answer is 19. How many eggs did she start with?",
+    "options": [
+      "9",
+      "10",
+      "11",
+      "12",
+      "13"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-035",
+    "text": "A magician asks two volunteers to each think of a number. The first volunteer multiplies her number by 3 and then adds 5. The second volunteer multiplies his number by 2 and then subtracts 1. The magician reveals that both volunteers ended up with the same result, and that this result is 23. What is the sum of the two original numbers the volunteers thought of?",
+    "options": [
+      "16",
+      "17",
+      "18",
+      "19",
+      "20"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-036",
+    "text": "A pizza is cut into 4 equal slices. Sam eats 1 slice. What fraction of the pizza is left?",
+    "options": [
+      "1/4",
+      "2/4",
+      "3/4",
+      "4/4",
+      "1/2"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-037",
+    "text": "A pizza is cut into 8 equal slices. Sam eats 3 slices. What fraction of the pizza is left?",
+    "options": [
+      "3/8",
+      "4/8",
+      "5/8",
+      "6/8",
+      "7/8"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-038",
+    "text": "A baker uses 3/8 of a bag of flour in the morning and 0.25 of the same bag in the afternoon. What percentage of the bag of flour has he used in total?",
+    "options": [
+      "55%",
+      "60%",
+      "62.5%",
+      "65%",
+      "75%"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-039",
+    "text": "A baker uses 3/8 of a bag of flour in the morning and 0.45 of the same bag in the afternoon. What percentage of the bag of flour is left at the end of the day?",
+    "options": [
+      "7.5%",
+      "12.5%",
+      "17.5%",
+      "20%",
+      "82.5%"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-041",
+    "text": "About how much does a teaspoon hold?",
+    "options": [
+      "5 ml",
+      "50 ml",
+      "500 ml",
+      "5 litres",
+      "50 litres"
+    ],
+    "correctIndex": 0,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-042",
+    "text": "About how much does a standard kitchen teaspoon hold?",
+    "options": [
+      "0.5 ml",
+      "5 ml",
+      "50 ml",
+      "500 ml",
+      "5 litres"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-043",
+    "text": "A family-sized bottle of lemonade holds about 2 litres. How many millilitres is this?",
+    "options": [
+      "200 ml",
+      "500 ml",
+      "1000 ml",
+      "2000 ml",
+      "20000 ml"
+    ],
+    "correctIndex": 3,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-044",
+    "text": "A family uses approximately 150 litres of water per day. Their water tank holds 1,200 litres when full. If the tank starts completely full on Monday morning and no new water is added, on which day will the tank first have less than 200 litres remaining?",
+    "options": [
+      "Friday",
+      "Saturday",
+      "Sunday",
+      "Monday (the following week)",
+      "Thursday"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-045",
+    "text": "A scientist measures out chemicals using different containers. She fills a 2.5-litre flask completely, then pours away 750 ml. She repeats this process 4 times in total. She then divides all the remaining liquid equally into bottles that each hold 175 ml. How many bottles can she fill completely?",
+    "options": [
+      "36",
+      "40",
+      "28",
+      "32",
+      "44"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-047",
+    "text": "A jar contains 200 sweets. If 50 of them are red, what percentage of the sweets are red?",
+    "options": [
+      "10%",
+      "15%",
+      "20%",
+      "25%",
+      "50%"
+    ],
+    "correctIndex": 3,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-048",
+    "text": "A charity collection jar contains £8. If £1.20 of this was donated by children, what percentage of the total was donated by children?",
+    "options": [
+      "12%",
+      "15%",
+      "18%",
+      "20%",
+      "25%"
+    ],
+    "correctIndex": 1,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-049",
+    "text": "A charity fundraiser has a target of £8. So far, they have raised £2.40. What percentage of the target has been raised, and how much more money (as a fraction of the target) do they still need?",
+    "options": [
+      "30% raised, 7/10 still needed",
+      "24% raised, 19/25 still needed",
+      "30% raised, 3/4 still needed",
+      "32% raised, 17/25 still needed",
+      "25% raised, 3/4 still needed"
+    ],
+    "correctIndex": 0,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-051",
+    "text": "A baker makes cookies in batches. He uses this rule:\n\n3 × y = 12\n\nWhat number does y stand for?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-052",
+    "text": "A baker makes biscuits in batches. He has 72 biscuits and puts them equally into boxes. Each box holds Y biscuits, and he fills exactly 8 boxes.\n\n72 ÷ Y = 8\n\nWhat number does Y stand for?",
+    "options": [
+      "6",
+      "8",
+      "9",
+      "10",
+      "12"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-053",
+    "text": "A baker makes biscuits in batches. He uses the formula: Total biscuits = Batches × Y. If he made 96 total biscuits in 8 batches, what number does Y stand for?",
+    "options": [
+      "8",
+      "10",
+      "12",
+      "14",
+      "16"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-054",
+    "text": "A factory produces boxes of chocolates. Each box contains Y rows, and each row has Y chocolates. The factory ships 3 boxes to a shop, and the shop receives 147 chocolates in total. What number does Y stand for?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-055",
+    "text": "A machine processes batches of items using the rule: (P × P − 11) ÷ Q = 18, where P and Q are whole numbers and P is greater than Q. If Q = 5, what is the value of P?",
+    "options": [
+      "9",
+      "10",
+      "11",
+      "101",
+      "7"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 5
+  },
+  {
+    "id": "q-m6-056",
+    "text": "A bag of apples costs £2. If I buy 3 bags, how much do I spend in total? Let n stand for the number of bags. Use the formula: Total cost = n × £2.",
+    "options": [
+      "£4",
+      "£5",
+      "£6",
+      "£8",
+      "£10"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-057",
+    "text": "A cinema ticket normally costs £8. With a loyalty card, you save £2 on every ticket. The loyalty card costs £6. If n stands for the number of visits, which expression shows the total amount saved after n visits (taking away the cost of the card)?",
+    "options": [
+      "2n - 6",
+      "8n - 6",
+      "6 - 2n",
+      "2n + 6",
+      "8n + 6"
+    ],
+    "correctIndex": 0,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-059",
+    "text": "A gym charges £4.80 per session. Members pay only 3/4 of the normal session price. Priya buys a membership for £m and pays the reduced rate. After 10 visits, Priya has spent exactly the same total amount as someone who paid full price for 10 visits without membership. Write an equation and find the value of m.",
+    "options": [
+      "£8",
+      "£10",
+      "£12",
+      "£14",
+      "£16"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-060",
+    "text": "A gym offers two membership plans.\n\nPlan A: Pay £4.50 per visit with no joining fee.\nPlan B: Pay a £20 joining fee, then £2.50 per visit.\n\nLet n represent the number of visits. Write an inequality to find when Plan B becomes cheaper than Plan A, and determine the minimum number of whole visits needed for Plan B to be the better deal.",
+    "options": [
+      "8 visits",
+      "9 visits",
+      "10 visits",
+      "11 visits",
+      "12 visits"
+    ],
+    "correctIndex": 3,
+    "topic": "algebra",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-061",
+    "text": "A baker makes cupcakes. Each cupcake costs 5p to make. If he uses the letter n to stand for the number of cupcakes, which expression shows the total cost in pence?",
+    "options": [
+      "n + 5",
+      "5 + n",
+      "5n",
+      "n ÷ 5",
+      "5 - n"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-062",
+    "text": "A baker uses the rule 'multiply the number of cakes by 3, then add 5' to work out the total cost in pounds. If a customer orders 4 cakes, what is the total cost?",
+    "options": [
+      "£12",
+      "£15",
+      "£17",
+      "£20",
+      "£23"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-063",
+    "text": "A gardener charges £p for mowing a lawn plus £q for each flower bed she weeds. She mows 1 lawn and weeds 4 flower beds, and her total charge is £22. If p = 6, what is the value of q?",
+    "options": [
+      "£3",
+      "£4",
+      "£5",
+      "£5.50",
+      "£16"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-064",
+    "text": "A gardener charges £y for mowing every 50 square metres of lawn. She mows a rectangular garden that is 25 metres long and 14 metres wide. If she earns £24.50 in total for this job, what is the value of y?",
+    "options": [
+      "£2.50",
+      "£3.00",
+      "£3.50",
+      "£4.00",
+      "£4.50"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-065",
+    "text": "A factory machine produces widgets at a constant rate. The cost to run the machine is £p for every 40 widgets produced. On Monday, the machine produced 260 widgets. On Tuesday, it produced 180 widgets. The total running cost for both days was £49.50. What is the value of p?",
+    "options": [
+      "£3.50",
+      "£4.00",
+      "£4.50",
+      "£5.00",
+      "£5.50"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-066",
+    "text": "A baker makes 10 trays of cupcakes. Each tray holds 4.2 dozen cupcakes. How many dozen cupcakes does the baker make in total?",
+    "options": [
+      "4.2",
+      "42",
+      "420",
+      "0.42",
+      "4200"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-067",
+    "text": "A baker makes 4.5 batches of cookies each hour. How many batches does she make in 10 hours?",
+    "options": [
+      "0.45",
+      "4.5",
+      "45",
+      "450",
+      "4500"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-068",
+    "text": "A baker makes 4.8 kg of dough. She divides it equally into 100 small rolls. What is the weight of each roll in kilograms?",
+    "options": [
+      "0.48 kg",
+      "0.048 kg",
+      "0.0048 kg",
+      "4.8 kg",
+      "48 kg"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-069",
+    "text": "A scientist measures a tiny organism that is 0.047 cm long. She needs to express this measurement in a report as a number multiplied by 1000. What value should she write?",
+    "options": [
+      "0.47",
+      "4.7",
+      "47",
+      "470",
+      "4700"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-070",
+    "text": "A scientist measures a bacterium that is 0.00047 cm long. She wants to express this length in a simpler form using powers of 10. Which of the following is equal to 0.00047 cm?",
+    "options": [
+      "4.7 × 10⁻⁵",
+      "47 × 10⁻⁴",
+      "4.7 × 10⁻⁴",
+      "0.47 × 10⁻⁴",
+      "4.7 × 10⁻³"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-071",
+    "text": "There are 20 stickers in a pack. Mia takes some stickers and has 5 left over. If we call the number of stickers Mia took 'n', which of these is the correct value of n?",
+    "options": [
+      "10",
+      "12",
+      "15",
+      "18",
+      "20"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-072",
+    "text": "A farmer has 48 eggs. He sells 3/4 of them at the market. If we let n stand for the number of eggs sold, which equation is correct and what is the value of n?",
+    "options": [
+      "n = 48 ÷ 4 = 12",
+      "n = 48 × 3/4 = 36",
+      "n = 48 × 1/4 = 12",
+      "n = 48 − 4 = 44",
+      "n = 48 × 3/4 = 32"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-073",
+    "text": "A library has n books on a shelf. A student borrows 3/4 of the books and then returns 5 of them. There are now 17 books on the shelf. How many books were on the shelf to start with?",
+    "options": [
+      "36",
+      "44",
+      "48",
+      "52",
+      "56"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-076",
+    "text": "A baker makes 12 cupcakes every hour. If we use the letter h to stand for the number of hours, which expression tells us the total number of cupcakes made?",
+    "options": [
+      "h + 12",
+      "12 × h",
+      "12 + h + 12",
+      "h ÷ 12",
+      "12 - h"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-077",
+    "text": "A baker makes the same number of cupcakes every day. If he makes c cupcakes each day, write an expression for how many cupcakes he makes in 7 days. If c = 36, how many cupcakes does he make in 7 days?",
+    "options": [
+      "216",
+      "242",
+      "252",
+      "262",
+      "272"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-078",
+    "text": "A factory produces boxes of chocolates. Each box contains n chocolates. The factory makes 24 boxes every hour. Write an expression for the total number of chocolates produced in 7 hours, and then find the total if n = 12.",
+    "options": [
+      "1,008",
+      "2,016",
+      "1,680",
+      "2,184",
+      "1,344"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-081",
+    "text": "A jug contains 1.5 litres of juice. Sam pours in another 0.5 litres. How much juice is in the jug now?",
+    "options": [
+      "1.0 litres",
+      "1.5 litres",
+      "2.0 litres",
+      "2.5 litres",
+      "3.0 litres"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-082",
+    "text": "A jug contains 1.5 litres of orange juice. Sam pours out 0.75 litres into a glass. How much juice is left in the jug?",
+    "options": [
+      "0.25 litres",
+      "0.65 litres",
+      "0.75 litres",
+      "1.25 litres",
+      "2.25 litres"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-083",
+    "text": "A baker uses 2.75 kg of flour in the morning. In the afternoon, she uses 1.5 times as much flour as she used in the morning. How much flour does she use altogether during the whole day?",
+    "options": [
+      "5.50 kg",
+      "6.25 kg",
+      "6.875 kg",
+      "4.125 kg",
+      "7.00 kg"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-084",
+    "text": "A baker uses 2.75 kg of flour to make a batch of bread. She discovers that this amount is only 55% of the flour she actually needs for a larger order. How much flour does she need in total for the larger order?",
+    "options": [
+      "4.5 kg",
+      "4.75 kg",
+      "5 kg",
+      "5.25 kg",
+      "5.5 kg"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-085",
+    "text": "A scientist measures the concentration of a chemical solution as 0.375 litres per litre. She needs to increase the concentration by 33⅓%. She then converts the new concentration into a fraction in its simplest form. What fraction does she get?",
+    "options": [
+      "3/8",
+      "1/2",
+      "5/8",
+      "2/5",
+      "7/16"
+    ],
+    "correctIndex": 1,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-086",
+    "text": "Tom has some stickers. He is given 3 more stickers, so now he has 10 stickers altogether. Which equation shows how to find the number of stickers Tom started with?",
+    "options": [
+      "s + 10 = 3",
+      "s - 3 = 10",
+      "s + 3 = 10",
+      "s × 3 = 10",
+      "s + 3 = 13"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-087",
+    "text": "A farmer collects eggs every day. He puts them into trays that hold 6 eggs each. If he fills t trays, the total number of eggs is given by the formula: eggs = 6 × t. How many eggs does the farmer have if he fills 7 trays?",
+    "options": [
+      "36",
+      "38",
+      "42",
+      "48",
+      "54"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-088",
+    "text": "A farmer collects eggs from his hens. Each hen lays n eggs per day. He has 6 hens and collects eggs for 5 days. He then puts all the eggs into boxes that hold 10 eggs each. He fills exactly 9 boxes with no eggs left over. What is the value of n?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-089",
+    "text": "A factory produces tiles that each weigh p grams. The tiles are packed into crates of 12. The weight of one full crate of tiles, in kilograms, is given by the expression 12p ÷ 1000. If three full crates together weigh 10.8 kilograms, what is the value of p?",
+    "options": [
+      "250",
+      "300",
+      "360",
+      "900",
+      "3600"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-092",
+    "text": "A pizza is cut into 10 equal slices. Sam eats 3 slices. What fraction of the pizza has Sam eaten? Give your answer in its simplest form.",
+    "options": [
+      "3/10",
+      "1/3",
+      "3/7",
+      "30/100",
+      "1/10"
+    ],
+    "correctIndex": 0,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-093",
+    "text": "A bakery made 80 cupcakes in the morning. They sold 3/5 of them before lunch. After lunch, they sold 25% of the remaining cupcakes. How many cupcakes were left at the end of the day?",
+    "options": [
+      "18",
+      "20",
+      "24",
+      "28",
+      "32"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-094",
+    "text": "A shop reduces the price of a jacket by 15%. The reduced price is £59.50. What was the original price of the jacket before the reduction?",
+    "options": [
+      "£65.00",
+      "£68.50",
+      "£70.00",
+      "£72.50",
+      "£74.50"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-095",
+    "text": "A shop reduces the price of a jacket by 15%. During a further sale, the already-reduced price is cut by an additional 20%. The jacket originally cost £80. What fraction of the original price does a customer now pay? Give your answer in its simplest form.",
+    "options": [
+      "17/25",
+      "13/20",
+      "3/5",
+      "27/40",
+      "7/10"
+    ],
+    "correctIndex": 0,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-096",
+    "text": "A teacher counted the pets owned by children in her class. She made a tally chart:\n\nDogs: 8\nCats: 5\nFish: 3\nRabbits: 4\n\nHow many pets were there in total?",
+    "options": [
+      "16",
+      "18",
+      "20",
+      "22",
+      "24"
+    ],
+    "correctIndex": 2,
+    "topic": "data_handling",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-097",
+    "text": "A pet shop has 24 animals. The bar chart below shows how many of each type there are:\n\nDogs: 8\nCats: 6\nRabbits: ?\nFish: 4\n\nHow many rabbits are there?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "correctIndex": 2,
+    "topic": "data_handling",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-099",
+    "text": "A survey asked 60 children which sport they prefer. The results are shown in a partially completed bar chart. Football: 20 children. Swimming: unknown. Tennis: unknown. Cricket: 8 children. The number of children who chose Swimming was three times the number who chose Tennis. How many children chose Swimming?",
+    "options": [
+      "18",
+      "21",
+      "24",
+      "27",
+      "32"
+    ],
+    "correctIndex": 2,
+    "topic": "data_handling",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-100",
+    "text": "A survey of 120 students recorded their favourite sport. The results were displayed in a pie chart. Football was shown as a sector of 150°, swimming as 90°, tennis as 60°, and the rest chose athletics. The ratio of boys to girls who chose athletics was 3:1. How many girls chose athletics?",
+    "options": [
+      "5",
+      "6",
+      "10",
+      "15",
+      "20"
+    ],
+    "correctIndex": 0,
+    "topic": "data_handling",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-101",
+    "text": "A bag contains 10 sweets. If you eat 50% of them, how many sweets do you eat?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-102",
+    "text": "A baker made 40 cupcakes. He sold 75% of them at a school fair. How many cupcakes did he sell?",
+    "options": [
+      "25",
+      "28",
+      "30",
+      "32",
+      "35"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-103",
+    "text": "A school has 120 pupils. 35% of them bring a packed lunch. How many pupils bring a packed lunch?",
+    "options": [
+      "38",
+      "40",
+      "42",
+      "45",
+      "48"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-104",
+    "text": "A school has 360 pupils. In a survey, 35% of the pupils said they walk to school, 3/8 of the pupils travel by car, and the rest cycle. How many pupils cycle to school?",
+    "options": [
+      "81",
+      "90",
+      "99",
+      "108",
+      "117"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-105",
+    "text": "A shop reduces the price of a jacket by 15%. During a further sale, the reduced price is then cut by an additional 20%. If the original price was £80, what is the final price of the jacket?",
+    "options": [
+      "£48.00",
+      "$52.40",
+      "£54.40",
+      "£56.00",
+      "£52.00"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-106",
+    "text": "What is the value of the Roman numeral XIV?",
+    "options": [
+      "12",
+      "13",
+      "14",
+      "15",
+      "16"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-107",
+    "text": "A Roman mosaic has XIV tiles in each row and there are III rows. How many tiles are there altogether?",
+    "options": [
+      "36",
+      "39",
+      "42",
+      "45",
+      "48"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-108",
+    "text": "A Roman mosaic artist labels his designs using Roman numerals. He has completed design number XXXIV and wants to multiply it by design number XII to create a catalogue reference number. What is the result of XXXIV × XII?",
+    "options": [
+      "396",
+      "408",
+      "388",
+      "418",
+      "372"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-109",
+    "text": "A Roman mosaic artist uses Roman numerals to label his designs. He calculates the area of a rectangular mosaic by multiplying its width (XXIV) by its length (XXXVII). What is the area of the mosaic?",
+    "options": [
+      "848",
+      "868",
+      "878",
+      "888",
+      "898"
+    ],
+    "correctIndex": 3,
+    "topic": "number",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-111",
+    "text": "Emma thinks of the number 10. She doubles it and then subtracts 4. What answer does she get?",
+    "options": [
+      "14",
+      "16",
+      "18",
+      "20",
+      "24"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-112",
+    "text": "Emma thinks of the number 8. She then doubles it and adds 4. What answer does she get?",
+    "options": [
+      "16",
+      "18",
+      "20",
+      "24",
+      "12"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-113",
+    "text": "Mia thinks of the number 8. She tries five different calculations. Which one does NOT give an answer of 20?",
+    "options": [
+      "Multiply by 3 and subtract 4",
+      "Add 7 and then double the result",
+      "Multiply by 2 and add 4",
+      "Add 2 and then multiply by 2",
+      "Subtract 3 and then multiply by 4"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-114",
+    "text": "Priya thinks of a number. She multiplies it by 4, then subtracts 7, then divides by 3. Her answer is 11. Which of these could be Priya's starting number?",
+    "options": [
+      "8",
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-116",
+    "text": "A baker makes cupcakes in batches of 6. If she has already made 12 cupcakes and needs 30 cupcakes in total, how many more batches does she need to bake?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-117",
+    "text": "A recipe for baking bread says: Allow 20 minutes to preheat the oven, then bake for 15 minutes for every 200 g of dough. If the total time from start to finish is 1 hour and 5 minutes, how heavy is the dough?",
+    "options": [
+      "400 g",
+      "500 g",
+      "600 g",
+      "800 g",
+      "1000 g"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-118",
+    "text": "A swimming pool is being filled with water. The pump first runs for 15 minutes to fill the pipes, during which no water enters the pool. After that, the pump fills the pool at a rate of 200 litres every 5 minutes. If the pump runs for a total of 1 hour and 15 minutes, how many litres of water are in the pool?",
+    "options": [
+      "2000 litres",
+      "2400 litres",
+      "3000 litres",
+      "2800 litres",
+      "1200 litres"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-119",
+    "text": "A swimming pool is being filled with water. The pump first runs at a fast rate for 15 minutes, filling 800 litres. It then switches to a slower rate that fills 200 litres every 5 minutes. The pool needs 4,600 litres in total to be completely full. How many minutes does it take altogether to fill the pool from empty?",
+    "options": [
+      "90 minutes",
+      "95 minutes",
+      "100 minutes",
+      "110 minutes",
+      "120 minutes"
+    ],
+    "correctIndex": 3,
+    "topic": "number",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-121",
+    "text": "A fruit smoothie is made by mixing orange juice and mango juice in the ratio 1:3. How much mango juice is needed to make 8 litres of smoothie?",
+    "options": [
+      "2 litres",
+      "3 litres",
+      "4 litres",
+      "6 litres",
+      "8 litres"
+    ],
+    "correctIndex": 3,
+    "topic": "ratio_proportion",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-122",
+    "text": "A smoothie recipe uses 3 parts banana and 1 part strawberry. How much banana is needed to make 20 litres of smoothie?",
+    "options": [
+      "3 litres",
+      "5 litres",
+      "10 litres",
+      "15 litres",
+      "17 litres"
+    ],
+    "correctIndex": 3,
+    "topic": "ratio_proportion",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-123",
+    "text": "A smoothie recipe uses fruit and yoghurt in the ratio 3 : 2. If you want to make 600 ml of smoothie, how much yoghurt do you need?",
+    "options": [
+      "200 ml",
+      "240 ml",
+      "300 ml",
+      "360 ml",
+      "400 ml"
+    ],
+    "correctIndex": 1,
+    "topic": "ratio_proportion",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-124",
+    "text": "A smoothie recipe uses fruit, yoghurt, and milk in the ratio 5 : 3 : 2. Sam wants to make 1.5 litres of smoothie. He realises he only has 400 ml of yoghurt available. Does he have enough yoghurt, and how much fruit does he need?",
+    "options": [
+      "He has enough yoghurt; he needs 750 ml of fruit",
+      "He does not have enough yoghurt; he needs 750 ml of fruit",
+      "He has enough yoghurt; he needs 500 ml of fruit",
+      "He does not have enough yoghurt; he needs 900 ml of fruit",
+      "He has enough yoghurt; he needs 900 ml of fruit"
+    ],
+    "correctIndex": 1,
+    "topic": "ratio_proportion",
+    "difficulty": 5
+  },
+  {
+    "id": "q-m6-125",
+    "text": "A gardener makes a special fertiliser by mixing nitrogen, phosphorus, and potassium in the ratio 5 : 3 : 2. She has exactly 900 ml of phosphorus available and uses all of it. She then gives away some of the finished fertiliser to her neighbour in the ratio 2 : 3 (gardener : neighbour). How much fertiliser does the neighbour receive?",
+    "options": [
+      "600 ml",
+      "900 ml",
+      "1200 ml",
+      "1800 ml",
+      "2700 ml"
+    ],
+    "correctIndex": 3,
+    "topic": "ratio_proportion",
+    "difficulty": 5
+  },
+  {
+    "id": "q-m6-126",
+    "text": "A bag contains red and blue sweets in the ratio 1:2. If there are 4 red sweets, how many blue sweets are there?",
+    "options": [
+      "2",
+      "4",
+      "6",
+      "8",
+      "10"
+    ],
+    "correctIndex": 3,
+    "topic": "ratio_proportion",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-127",
+    "text": "A recipe uses sugar and flour in the ratio 1:3. If you use 6 cups of sugar, how many cups of flour do you need?",
+    "options": [
+      "12",
+      "15",
+      "18",
+      "21",
+      "9"
+    ],
+    "correctIndex": 2,
+    "topic": "ratio_proportion",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-128",
+    "text": "A recipe for 4 people uses 300g of flour. Tom wants to make the same recipe for 6 people. How much flour does he need?",
+    "options": [
+      "375g",
+      "400g",
+      "450g",
+      "500g",
+      "600g"
+    ],
+    "correctIndex": 2,
+    "topic": "ratio_proportion",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-129",
+    "text": "A recipe for 8 pancakes uses 200g of flour, 2 eggs, and 300ml of milk. Tom wants to make 20 pancakes. He has 480g of flour, 6 eggs, and 800ml of milk. Which ingredient will run out first, and how many pancakes can he actually make with what he has?",
+    "options": [
+      "Flour runs out first; he can make 19 pancakes",
+      "Eggs runs out first; he can make 16 pancakes",
+      "Milk runs out first; he can make 16 pancakes",
+      "Eggs run out first; he can make 24 pancakes",
+      "Flour runs out first; he can make 16 pancakes"
+    ],
+    "correctIndex": 0,
+    "topic": "ratio_proportion",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-130",
+    "text": "A recipe for 8 pancakes uses 200g of flour, 2 eggs, and 300ml of milk. Tom has 750g of flour, 10 eggs, and 900ml of milk. What is the maximum number of pancakes Tom can make without running out of any ingredient?",
+    "options": [
+      "24",
+      "28",
+      "30",
+      "32",
+      "40"
+    ],
+    "correctIndex": 0,
+    "topic": "ratio_proportion",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-131",
+    "text": "Put these numbers in order from smallest to largest: 47, 12, 85, 31. Which list shows the correct order?",
+    "options": [
+      "12, 31, 47, 85",
+      "12, 47, 31, 85",
+      "85, 47, 31, 12",
+      "31, 12, 47, 85",
+      "12, 31, 85, 47"
+    ],
+    "correctIndex": 0,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-132",
+    "text": "A postman has four parcels with the weight labels 3, 0, 7, and 2 on them. He needs to arrange these digits to make the largest possible four-digit number. What number should he make?",
+    "options": [
+      "7320",
+      "7302",
+      "7230",
+      "3720",
+      "7032"
+    ],
+    "correctIndex": 0,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-134",
+    "text": "A teacher writes the digits 3, 0, 7, 2, and 9 on the board. She asks her students to arrange these digits to make the largest possible even number using each digit exactly once. What is the largest even number that can be made?",
+    "options": [
+      "97320",
+      "97302",
+      "97230",
+      "93720",
+      "97032"
+    ],
+    "correctIndex": 0,
+    "topic": "number",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-136",
+    "text": "A class voted for their favourite fruit. The results are shown below:\n\nApple: 8 votes\nBanana: 5 votes\nOrange: 3 votes\nGrapes: 4 votes\n\nHow many votes were there in total?",
+    "options": [
+      "16",
+      "18",
+      "20",
+      "22",
+      "24"
+    ],
+    "correctIndex": 2,
+    "topic": "data_handling",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-138",
+    "text": "A weather station records the temperature at different times of day. The table below shows the readings:\n\nTime: 6 am → 2°C\nTime: 9 am → 7°C\nTime: 12 noon → 13°C\nTime: 3 pm → 11°C\nTime: 6 pm → 5°C\n\nWhat is the difference between the highest and lowest temperatures recorded, and at what time was the temperature rising the fastest (greatest increase between consecutive readings)?",
+    "options": [
+      "Difference: 11°C, fastest rise: 6 am to 9 am",
+      "Difference: 11°C, fastest rise: 9 am to 12 noon",
+      "Difference: 13°C, fastest rise: 9 am to 12 noon",
+      "Difference: 8°C, fastest rise: 6 am to 9 am",
+      "Difference: 11°C, fastest rise: 12 noon to 3 pm"
+    ],
+    "correctIndex": 1,
+    "topic": "data_handling",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-141",
+    "text": "What is the number three thousand and six written in figures?",
+    "options": [
+      "3600",
+      "3006",
+      "306",
+      "3060",
+      "30006"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-142",
+    "text": "A library has six thousand and forty-three books. What is this number written in figures?",
+    "options": [
+      "6,430",
+      "6,043",
+      "6,403",
+      "60,043",
+      "6,143"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-143",
+    "text": "A library has forty-seven thousand, three hundred and six books. What is this number written in figures?",
+    "options": [
+      "47,360",
+      "47,306",
+      "4,736",
+      "470,306",
+      "47,036"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-144",
+    "text": "A museum recorded its visitor numbers over four days. On Monday there were 12,450 visitors. On Tuesday there were two thousand and sixty-seven more visitors than Monday. On Wednesday the number dropped to nine thousand, four hundred and eight. On Thursday the museum had exactly half the number of Wednesday's visitors. What was the total number of visitors across all four days?",
+    "options": [
+      "38,671",
+      "39,079",
+      "41,079",
+      "40,079",
+      "38,079"
+    ],
+    "correctIndex": 3,
+    "topic": "number",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-146",
+    "text": "A baker makes 20 cupcakes and shares them equally between 2 boxes. How many cupcakes are in each box?",
+    "options": [
+      "5",
+      "8",
+      "10",
+      "12",
+      "20"
+    ],
+    "correctIndex": 2,
+    "topic": "ratio_proportion",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-147",
+    "text": "A baker makes 180 cupcakes and shares them equally between 3 shops. How many cupcakes does each shop receive?",
+    "options": [
+      "45",
+      "50",
+      "60",
+      "70",
+      "90"
+    ],
+    "correctIndex": 2,
+    "topic": "ratio_proportion",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-148",
+    "text": "A recipe for fruit punch uses orange juice and lemonade in the ratio 3:2. If Sam makes 750 ml of fruit punch in total, how much orange juice does he need?",
+    "options": [
+      "300 ml",
+      "375 ml",
+      "400 ml",
+      "450 ml",
+      "500 ml"
+    ],
+    "correctIndex": 3,
+    "topic": "ratio_proportion",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-149",
+    "text": "A baker mixes flour, sugar, and butter in the ratio 5 : 3 : 2. If she uses 750 g of flour, how much butter does she need?",
+    "options": [
+      "150 g",
+      "250 g",
+      "300 g",
+      "450 g",
+      "500 g"
+    ],
+    "correctIndex": 2,
+    "topic": "ratio_proportion",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-150",
+    "text": "A grandmother divides £360 among her three grandchildren in the ratio 2 : 3 : 7. The oldest grandchild then gives 40% of his share to a charity. How much money does the oldest grandchild have left after his donation?",
+    "options": [
+      "£126",
+      "£105",
+      "£210",
+      "£84",
+      "£150"
+    ],
+    "correctIndex": 0,
+    "topic": "ratio_proportion",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-151",
+    "text": "In the number 572, what does the 5 stand for?",
+    "options": [
+      "5",
+      "50",
+      "500",
+      "5000",
+      "55"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-152",
+    "text": "A library has 4,752 books. What is the value of the digit 7 in this number?",
+    "options": [
+      "7",
+      "70",
+      "700",
+      "7,000",
+      "7,500"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-155",
+    "text": "A scientist writes a number in which the digit 7 appears three times. The 7 in the thousands place is worth how many times more than the 7 in the tens place, and how many times less than the 7 in the millions place?",
+    "options": [
+      "100 times more and 100 times less",
+      "100 times more and 1000 times less",
+      "10 times more and 100 times less",
+      "100 times more and 10 times less",
+      "1000 times more and 100 times less"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-158",
+    "text": "A recipe for pancakes uses flour, milk, and eggs in the ratio 2 : 5 : 1. If Sam uses 300 ml of milk, how much flour does he need?",
+    "options": [
+      "100 ml",
+      "120 ml",
+      "150 ml",
+      "200 ml",
+      "60 ml"
+    ],
+    "correctIndex": 1,
+    "topic": "ratio_proportion",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-160",
+    "text": "A builder mixes cement, sand, and gravel in the ratio 2 : 5 : 8. He needs exactly 900 kg of the mixture in total. However, he accidentally uses 40 kg too much sand. To keep the total at 900 kg, he reduces only the gravel. What is the new ratio of cement to sand to gravel in its simplest form?",
+    "options": [
+      "6 : 17 : 22",
+      "2 : 7 : 6",
+      "6 : 17 : 7",
+      "4 : 10 : 13",
+      "6 : 16 : 23"
+    ],
+    "correctIndex": 0,
+    "topic": "ratio_proportion",
+    "difficulty": 5
+  },
+  {
+    "id": "q-m6-161",
+    "text": "What is the sum of the digits of the number 34?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8",
+      "12"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-162",
+    "text": "Sophie is thinking of a two-digit number. It is an even number. Its digits add up to 7. It is greater than 30 but less than 50. What number is Sophie thinking of?",
+    "options": [
+      "34",
+      "42",
+      "52",
+      "16",
+      "44"
+    ],
+    "correctIndex": 0,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-166",
+    "text": "A baker makes 5 cupcakes every hour. He starts with 2 cupcakes already made. How many cupcakes does he have after 3 hours?",
+    "options": [
+      "12",
+      "15",
+      "17",
+      "18",
+      "20"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-167",
+    "text": "A baker makes biscuits every day. On Monday he made 50 biscuits, on Tuesday he made 44, on Wednesday he made 38, and on Thursday he made 32. If the pattern continues, how many biscuits will he make on Friday?",
+    "options": [
+      "24",
+      "26",
+      "28",
+      "30",
+      "22"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-170",
+    "text": "A scientist records the temperature inside an experimental chamber every hour. She notices the temperatures form a sequence where each term is generated by the rule: T(n) = T(n-1) − T(n-2) + 3, where T(n-1) is the previous term and T(n-2) is the term before that. If the first temperature is 20°C and the second temperature is 14°C, what is the sixth temperature in the sequence?",
+    "options": [
+      "9°C",
+      "6°C",
+      "3°C",
+      "12°C",
+      "0°C"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-171",
+    "text": "A baker has 48 cupcakes to share equally among 8 boxes. How many cupcakes go in each box?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-172",
+    "text": "A baker makes 456 cupcakes and packs them equally into 8 boxes. How many cupcakes are in each box?",
+    "options": [
+      "54",
+      "56",
+      "57",
+      "58",
+      "62"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-173",
+    "text": "A factory produces 756 chocolate bars in one day. The bars are packed equally into 9 boxes. How many chocolate bars are in each box?",
+    "options": [
+      "74",
+      "84",
+      "86",
+      "94",
+      "96"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-174",
+    "text": "A factory produces 4,536 bottles of juice in one day. The bottles are packed equally into crates that each hold 8 bottles. These crates are then loaded equally onto 9 delivery trucks. How many crates does each truck carry?",
+    "options": [
+      "56",
+      "63",
+      "72",
+      "567",
+      "504"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-175",
+    "text": "A factory produces 7,956 identical components in one week. These components are packed equally into boxes of 12, and then the boxes are loaded equally onto 13 pallets. How many boxes are on each pallet?",
+    "options": [
+      "49",
+      "51",
+      "52",
+      "54",
+      "663"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-176",
+    "text": "A box contains 20 stickers. Sam takes out half of the stickers. How many stickers does Sam take out?",
+    "options": [
+      "5",
+      "8",
+      "10",
+      "12",
+      "15"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-177",
+    "text": "A baker made some cupcakes. He sold 1/4 of them and had 18 cupcakes left. If we call the total number of cupcakes he made 'n', which equation shows this problem correctly?",
+    "options": [
+      "n - 4 = 18",
+      "n ÷ 4 = 18",
+      "n - n ÷ 4 = 18",
+      "n + 18 = 4",
+      "n × 4 = 18"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-178",
+    "text": "A baker made some cupcakes. He sold 2/5 of them in the morning and 1/4 of the original amount in the afternoon. If he had 21 cupcakes left at the end of the day, how many cupcakes did he make altogether?",
+    "options": [
+      "48",
+      "56",
+      "60",
+      "72",
+      "84"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-179",
+    "text": "A baker has a certain number of cupcakes. She sells 2/5 of them in the morning and then sells 1/3 of the remaining cupcakes in the afternoon. If she has 24 cupcakes left at the end of the day, how many cupcakes did she start with?",
+    "options": [
+      "50",
+      "54",
+      "60",
+      "72",
+      "80"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-181",
+    "text": "Tom has some stickers. He is given 5 more stickers, and now he has 12 stickers in total. Which equation shows how to find the number of stickers Tom started with?",
+    "options": [
+      "x + 5 = 12",
+      "x - 5 = 12",
+      "x + 12 = 5",
+      "5 - x = 12",
+      "x × 5 = 12"
+    ],
+    "correctIndex": 0,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-182",
+    "text": "Tom has saved some money in his piggy bank. He calls this amount p. He then earns £12 more from doing chores. If Tom now has £30 altogether, which equation shows how to find p?",
+    "options": [
+      "p + 30 = 12",
+      "p - 12 = 30",
+      "p + 12 = 30",
+      "12 - p = 30",
+      "p + 30 = 42"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-183",
+    "text": "Tom is saving up for a bicycle that costs £p. He already has £28.50 saved. His grandmother gives him £15.75 more. He still needs £20.75 to buy the bicycle. What is the value of p?",
+    "options": [
+      "£55.00",
+      "£60.00",
+      "£65.00",
+      "£64.00",
+      "£70.00"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-184",
+    "text": "A plumber charges a call-out fee of £p plus £12 for every hour worked. After working for 3 hours on one job, the plumber's total charge was £57. Write an equation and solve it to find the call-out fee £p. The plumber then does a second job that takes 5 hours. What is the total charge for the second job?",
+    "options": [
+      "£75",
+      "£81",
+      "£69",
+      "£85",
+      "£60"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-185",
+    "text": "A concert venue sells adult tickets at £a each and child tickets at £c each. On Saturday, they sold 3 times as many child tickets as adult tickets and took £1,140 in total. On Sunday, they sold equal numbers of adult and child tickets and took £900 in total. Given that on Sunday they sold 60 tickets of each type, find the price of an adult ticket (£a).",
+    "options": [
+      "£7.50",
+      "£8.00",
+      "£9.00",
+      "£10.00",
+      "£11.00"
+    ],
+    "correctIndex": 3,
+    "topic": "algebra",
+    "difficulty": 5
+  },
+  {
+    "id": "q-m6-186",
+    "text": "A pencil costs p pence. Write an expression for the cost of 3 pencils.",
+    "options": [
+      "p + 3",
+      "3p",
+      "p × p × p",
+      "3 + p",
+      "p ÷ 3"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-187",
+    "text": "A bag of marbles costs £p. Tom buys 3 bags and pays with a £10 note. He receives £4 change. What is the value of p?",
+    "options": [
+      "£1.50",
+      "£2",
+      "£2.50",
+      "£3",
+      "£4"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-188",
+    "text": "A bakery sells cupcakes so that 5 cupcakes cost the same as 2 large cakes. If a large cake costs £4.50, how much does one cupcake cost?",
+    "options": [
+      "£1.50",
+      "£1.80",
+      "£2.00",
+      "£2.25",
+      "£2.50"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-189",
+    "text": "A bakery sells cupcakes in boxes. The cost of a box depends on how many cupcakes it contains. A box of 5 cupcakes costs £4.50, and there is a fixed delivery charge of £2.00 added to every order regardless of how many boxes you buy. If the cost of one cupcake is represented by 'c', and someone orders 3 boxes (each containing 5 cupcakes) with one delivery charge, which expression shows the total cost, and what is that total cost?",
+    "options": [
+      "15c + 2 = £15.50",
+      "15c + 2 = £13.50",
+      "5c + 2 = £6.50",
+      "15c + 6 = £19.50",
+      "3c + 2 = £4.70"
+    ],
+    "correctIndex": 0,
+    "topic": "algebra",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-192",
+    "text": "A baker made 60 cupcakes. He sold 25% of them in the morning. How many cupcakes did he sell in the morning?",
+    "options": [
+      "10",
+      "12",
+      "15",
+      "20",
+      "25"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-193",
+    "text": "A baker made 120 cupcakes for a school fair. She sold 75% of them in the morning and then sold 1/5 of the remaining cupcakes in the afternoon. How many cupcakes were left unsold at the end of the day?",
+    "options": [
+      "18",
+      "24",
+      "30",
+      "6",
+      "20"
+    ],
+    "correctIndex": 1,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-194",
+    "text": "A school has 360 pupils. 35% of the pupils walk to school, 3/8 of the pupils travel by bus, and the rest cycle. How many pupils cycle to school?",
+    "options": [
+      "81",
+      "90",
+      "99",
+      "108",
+      "117"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-196",
+    "text": "The tally chart below shows the favourite fruits of children in a class.\n\nApple: |||| ||\nBanana: |||| \nOrange: |||\nGrape: |\n\nHow many children chose Apple as their favourite fruit?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "correctIndex": 2,
+    "topic": "data_handling",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-197",
+    "text": "The table below shows how many books four children read during one week.\n\nChild | Books read\nAmy | 3\nBen | 5\nCara | 2\nDan | 4\n\nHow many books did the children read altogether?",
+    "options": [
+      "12",
+      "13",
+      "14",
+      "15",
+      "16"
+    ],
+    "correctIndex": 2,
+    "topic": "data_handling",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-198",
+    "text": "The bar chart below shows how many books five children read during the summer holidays:\n\n• Amy: 8 books\n• Ben: 5 books\n• Cara: 10 books\n• Dan: 7 books\n• Ella: 6 books\n\nEach child spent an average of 3 hours reading each book. How many more hours did Cara spend reading than Ella?",
+    "options": [
+      "9 hours",
+      "12 hours",
+      "15 hours",
+      "18 hours",
+      "21 hours"
+    ],
+    "correctIndex": 1,
+    "topic": "data_handling",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-201",
+    "text": "A book costs £n. Sam buys 2 books. Which expression shows how much Sam pays in total?",
+    "options": [
+      "n + 2",
+      "2n",
+      "n - 2",
+      "n × n",
+      "n ÷ 2"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-202",
+    "text": "A rectangular picture frame has a length of n cm and a width of 3 cm. The total distance around the frame is 20 cm. What is the value of n?",
+    "options": [
+      "5 cm",
+      "6 cm",
+      "7 cm",
+      "8 cm",
+      "10 cm"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-203",
+    "text": "A rectangular garden has a length of (2n + 3) metres and a width of (n + 1) metres. The perimeter of the garden is 38 metres. What is the value of n?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-204",
+    "text": "A rectangular swimming pool has a length that is 3 metres more than twice its width. The total distance around the edge of the pool (its perimeter) is 54 metres. If the width of the pool is w metres, which equation represents this situation, and what is the width of the pool?",
+    "options": [
+      "2w + 2(2w + 3) = 54, so w = 8 metres",
+      "2w + 2(2w + 3) = 54, so w = 9 metres",
+      "w + (2w + 3) = 54, so w = 17 metres",
+      "2w + 2(2w + 3) = 54, so w = 7 metres",
+      "2w + 2(3w + 2) = 54, so w = 5 metres"
+    ],
+    "correctIndex": 0,
+    "topic": "algebra",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-206",
+    "text": "A baker makes 6 loaves of bread every day. How many loaves does he make in 7 days?",
+    "options": [
+      "36",
+      "42",
+      "48",
+      "54",
+      "60"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-207",
+    "text": "A swimming club costs £45 per month. How much does it cost to be a member for 6 months?",
+    "options": [
+      "£240",
+      "£250",
+      "£260",
+      "£270",
+      "£280"
+    ],
+    "correctIndex": 3,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-208",
+    "text": "A swimming club charges £145 per month for membership. Jake joins the club and pays for 8 months. How much does he pay in total?",
+    "options": [
+      "£1,060",
+      "£1,120",
+      "£1,160",
+      "£1,200",
+      "£1,260"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-209",
+    "text": "A family pays £1,245 per month for their mortgage. They also pay a monthly service charge of £168. What is the total amount they pay for both the mortgage and service charge over 9 months?",
+    "options": [
+      "£11,205",
+      "£12,717",
+      "£12,117",
+      "£11,517",
+      "£12,177"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-211",
+    "text": "A ribbon is 2 metres long. Sophie uses 0.5 metres to wrap a present. What fraction of the ribbon did she use?",
+    "options": [
+      "1/2",
+      "1/3",
+      "1/4",
+      "1/5",
+      "3/4"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-213",
+    "text": "A baker has 4.5 kg of flour. She uses 0.75 kg for a cake and then divides the remaining flour equally into bags that each hold 0.5 kg. How many bags can she fill?",
+    "options": [
+      "6",
+      "7",
+      "7.5",
+      "8",
+      "9"
+    ],
+    "correctIndex": 1,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-214",
+    "text": "A baker is making cakes for a school fair. Each bag of flour weighs 2.5 kg. She accidentally spills 0.375 kg from the first bag. If she needs exactly 12.125 kg of flour in total for all her cakes, how many additional full bags of 2.5 kg must she buy (beyond the first bag)?",
+    "options": [
+      "4 bags",
+      "5 bags",
+      "6 bags",
+      "7 bags",
+      "3 bags"
+    ],
+    "correctIndex": 0,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-215",
+    "text": "A baker is making celebration cakes. Each cake requires 0.375 kg of flour. He starts with a 2 kg bag but discovers that 12.5% of it has gone stale and must be thrown away. After using what remains of this bag, he opens additional 2 kg bags (all fully usable). If he needs to make exactly 18 cakes in total, how many additional 2 kg bags must he open?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "correctIndex": 1,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-216",
+    "text": "A jug contains 1 litre of juice. Sam pours out half of the juice into a glass. How many millilitres of juice are left in the jug?",
+    "options": [
+      "250 ml",
+      "400 ml",
+      "500 ml",
+      "750 ml",
+      "600 ml"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-217",
+    "text": "A jug holds 2 litres of juice when full. Sam pours out 0.75 litres into a glass. What fraction of the juice is left in the jug?",
+    "options": [
+      "1/4",
+      "3/8",
+      "5/8",
+      "3/4",
+      "1/2"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-219",
+    "text": "A baker uses 0.75 kg of flour to make a batch of bread rolls. She uses 2/5 of the flour for white rolls and the rest for wholemeal rolls. The wholemeal flour costs £2.40 per kilogram. What is the cost of the wholemeal flour she uses for one batch?",
+    "options": [
+      "£0.96",
+      "£1.08",
+      "£1.20",
+      "£1.44",
+      "£1.80"
+    ],
+    "correctIndex": 1,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-221",
+    "text": "A bag contains some marbles. If y stands for the number of marbles in the bag, and 2 × y = 10, what is the value of y?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6",
+      "8"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-222",
+    "text": "A baker uses the same number of eggs for each cake. If 4 cakes need 20 eggs altogether, how many eggs would 3 cakes need?",
+    "options": [
+      "12",
+      "14",
+      "15",
+      "16",
+      "18"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-223",
+    "text": "A baker uses the same number of eggs, y, in every cake he makes. He baked 4 cakes and used 48 eggs in total. How many eggs would he need to bake 5 cakes?",
+    "options": [
+      "48",
+      "52",
+      "56",
+      "60",
+      "64"
+    ],
+    "correctIndex": 3,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-225",
+    "text": "A factory produces gadgets using two machines. Machine A makes Y gadgets per hour and Machine B makes (Y + 5) gadgets per hour. Together, both machines produce 47 gadgets per hour. The factory runs both machines for 3 hours, then runs only Machine A for 2 more hours. How many gadgets are produced in total?",
+    "options": [
+      "173",
+      "183",
+      "189",
+      "195",
+      "199"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-226",
+    "text": "A pencil costs £0.50 and a rubber costs £0.25. What is the total cost of both items?",
+    "options": [
+      "£0.25",
+      "£0.55",
+      "£0.70",
+      "£0.75",
+      "£1.00"
+    ],
+    "correctIndex": 3,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-227",
+    "text": "A pencil costs £0.35 and a rubber costs £1.5. What is the total cost of both items?",
+    "options": [
+      "£1.40",
+      "£1.53",
+      "£1.85",
+      "£1.80",
+      "£2.00"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-228",
+    "text": "A scientist measures the length of two tiny insects. The first insect is 0.45 cm long and the second is 3.6 cm long. What is the total length of both insects?",
+    "options": [
+      "3.15 cm",
+      "3.65 cm",
+      "4.05 cm",
+      "4.10 cm",
+      "4.50 cm"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-229",
+    "text": "A scientist measures three samples of a chemical. The masses are 0.075 kg, 2.48 kg, and 0.007 kg. She then removes a contaminated portion weighing 0.06 kg from the total. What is the final combined mass of the remaining chemical?",
+    "options": [
+      "2.502 kg",
+      "2.562 kg",
+      "2.492 kg",
+      "2.552 kg",
+      "2.402 kg"
+    ],
+    "correctIndex": 0,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-230",
+    "text": "A scientist measures three samples of a chemical. The masses are 0.007 kg, 0.063 kg, and 0.93 kg. She combines all three samples, then divides the total equally among 5 containers. What is the mass of chemical in each container?",
+    "options": [
+      "0.02 kg",
+      "0.2 kg",
+      "0.002 kg",
+      "0.5 kg",
+      "0.025 kg"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-231",
+    "text": "A bag of sweets costs £p. Write an expression for the cost of 3 bags of sweets.",
+    "options": [
+      "p + 3",
+      "3p",
+      "p ÷ 3",
+      "p - 3",
+      "3 + p"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-232",
+    "text": "A baker makes cookies using this rule: the number of cookies equals 4 times the number of trays plus 2 extra cookies. He uses the letter t to stand for the number of trays. If he bakes 3 trays of cookies, how many cookies does he make in total?",
+    "options": [
+      "10",
+      "12",
+      "14",
+      "16",
+      "18"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-233",
+    "text": "A train leaves the station every t minutes. The first train leaves at 06:00. Emma notices that the 5th train leaves at 07:00. What is the value of t?",
+    "options": [
+      "12",
+      "14",
+      "15",
+      "20",
+      "25"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-235",
+    "text": "A train departs every t minutes from a station. The first train leaves at 06:15. Emma notices that the 8th train departs at 08:36. She writes the equation 06:15 + 7t = 08:36 to find t. Meanwhile, a bus departs every (t + 5) minutes from the same station, starting at 06:15. If n represents the number of bus departures (including the first one at 06:15) that occur from 06:15 up to and including 08:36, write and solve an equation to find n.",
+    "options": [
+      "n = 6",
+      "n = 7",
+      "n = 8",
+      "n = 9",
+      "n = 10"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 5
+  },
+  {
+    "id": "q-m6-236",
+    "text": "A teacher asked 5 children how many pets they have. The results were: 2, 1, 3, 2, 2. What is the most common number of pets?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correctIndex": 1,
+    "topic": "data_handling",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-239",
+    "text": "A class of 30 pupils recorded how many books they read during the summer holiday. The results are shown in this frequency table:\n\nBooks read: 0–2 (frequency 4), 3–5 (frequency 9), 6–8 (frequency 11), 9–11 (frequency 6)\n\nThe teacher says that each pupil who read 6 or more books will receive a certificate. She also knows that each certificate weighs 80 grams. What is the total weight of all the certificates she needs to give out, in kilograms?",
+    "options": [
+      "1.20 kg",
+      "1.28 kg",
+      "1.36 kg",
+      "1.44 kg",
+      "1.60 kg"
+    ],
+    "correctIndex": 2,
+    "topic": "data_handling",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-241",
+    "text": "A triangle has 3 sides. What do all the angles inside a triangle add up to?",
+    "options": [
+      "90°",
+      "180°",
+      "270°",
+      "360°",
+      "540°"
+    ],
+    "correctIndex": 1,
+    "topic": "geometry",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-242",
+    "text": "A pentagon is a shape with 5 sides. To find the total of all the interior angles of a polygon, you subtract 2 from the number of sides and then multiply by 180°. What is the sum of the interior angles of a pentagon?",
+    "options": [
+      "360°",
+      "450°",
+      "540°",
+      "720°",
+      "900°"
+    ],
+    "correctIndex": 2,
+    "topic": "geometry",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-243",
+    "text": "A designer is creating a tile in the shape of a regular hexagon (6 sides). She needs to know the size of each interior angle. What is the size of one interior angle of a regular hexagon?",
+    "options": [
+      "100°",
+      "108°",
+      "120°",
+      "135°",
+      "150°"
+    ],
+    "correctIndex": 2,
+    "topic": "geometry",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-244",
+    "text": "A regular nonagon (9-sided polygon) is used as the shape of a decorative floor tile. What is the size of each interior angle of this tile?",
+    "options": [
+      "120°",
+      "135°",
+      "140°",
+      "144°",
+      "150°"
+    ],
+    "correctIndex": 2,
+    "topic": "geometry",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-247",
+    "text": "A jug contains 2.3 litres of juice. What is 2.3 written as a fraction?",
+    "options": [
+      "2 1/3",
+      "2 3/100",
+      "2 3/10",
+      "23/100",
+      "2 1/10"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-248",
+    "text": "A recipe calls for 2.35 litres of milk. What is 2.35 written as a mixed number in its simplest form?",
+    "options": [
+      "2 7/20",
+      "2 35/100",
+      "2 7/10",
+      "2 3/5",
+      "2 35/10"
+    ],
+    "correctIndex": 0,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-249",
+    "text": "A scientist measures that a chemical reaction is 0.375 complete. She then discovers that an additional 5/8 of the reaction has also finished. What fraction of the total reaction is now complete, expressed in its simplest form?",
+    "options": [
+      "3/4",
+      "7/8",
+      "1",
+      "15/16",
+      "5/6"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-250",
+    "text": "A scientist measures that a chemical reaction is 0.583̄ complete (where the 3 repeats forever). She needs to express this as a fraction in its simplest form, then find what percentage of the reaction is still remaining. What percentage of the reaction is still remaining?",
+    "options": [
+      "41.6̄%",
+      "42%",
+      "41⅔%",
+      "58⅓%",
+      "41.5%"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 5
+  },
+  {
+    "id": "q-m6-251",
+    "text": "Amy thinks of a number and adds 5 to it. Her answer is 12. What number did Amy think of?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8",
+      "17"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-252",
+    "text": "Lily thinks of a number, doubles it, and then adds 7. Her answer is 19. What number did Lily think of?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-253",
+    "text": "A baker thinks of a number of eggs. She divides the number by 4, adds 7, and then multiplies by 3. Her final answer is 33. How many eggs did she start with?",
+    "options": [
+      "12",
+      "16",
+      "20",
+      "24",
+      "28"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-254",
+    "text": "A magic number machine takes a number, adds 7, then divides by 4, and finally multiplies by 5. The output is 30. What number was put into the machine?",
+    "options": [
+      "12",
+      "15",
+      "17",
+      "21",
+      "24"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-256",
+    "text": "The table below shows the number of pets owned by children in a class.\n\nType of pet | Number of children\nDog | 8\nCat | 6\nFish | 3\nRabbit | 2\nNone | 5\n\nHow many children are in the class altogether?",
+    "options": [
+      "19",
+      "24",
+      "20",
+      "22",
+      "16"
+    ],
+    "correctIndex": 1,
+    "topic": "data_handling",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-257",
+    "text": "A class recorded the number of books each pupil read during the summer holiday. The results are shown in this table:\n\nBooks read: 0, 1, 2, 3, 4\nNumber of pupils: 3, 5, 8, 6, 2\n\nHow many pupils read fewer than 3 books?",
+    "options": [
+      "8",
+      "13",
+      "16",
+      "18",
+      "24"
+    ],
+    "correctIndex": 2,
+    "topic": "data_handling",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-258",
+    "text": "A class recorded the number of books each pupil read during the summer holiday. The results are shown in this frequency table:\n\nBooks read: 0, 1, 2, 3, 4, 5\nFrequency: 3, 5, 8, 6, 4, 2\n\nSophie says that to find the total number of books read by the whole class, you multiply each number of books by its frequency and then add all the results together. What is the total number of books read by the class?",
+    "options": [
+      "56",
+      "62",
+      "65",
+      "68",
+      "28"
+    ],
+    "correctIndex": 2,
+    "topic": "data_handling",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-259",
+    "text": "A school recorded the number of books read by pupils in Year 6 over one term. The results are shown in this table:\n\nBooks read: 0–2 → 5 pupils\nBooks read: 3–5 → 8 pupils\nBooks read: 6–8 → 12 pupils\nBooks read: 9–11 → 7 pupils\nBooks read: 12–14 → 3 pupils\n\nThe headteacher says: 'To find the estimated total number of books read by all pupils, you multiply the middle value of each group by the number of pupils in that group, then add all the results together.'\n\nUsing the headteacher's method, which of the following statements is NOT correct?",
+    "options": [
+      "The middle value of the 3–5 group is 4",
+      "The 6–8 group contributes an estimated 84 books to the total",
+      "The estimated total number of books read by all pupils is 215",
+      "The 9–11 group contributes an estimated 70 books to the total",
+      "There are 35 pupils in total"
+    ],
+    "correctIndex": 2,
+    "topic": "data_handling",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-261",
+    "text": "A jar contains 10 sweets. 5 of them are strawberry flavoured. What fraction of the sweets are strawberry?",
+    "options": [
+      "1/5",
+      "1/4",
+      "1/3",
+      "1/2",
+      "2/5"
+    ],
+    "correctIndex": 3,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-264",
+    "text": "A jar contains red, green and yellow sweets. 25% of the sweets are red and 3/8 of the sweets are green. There are 18 yellow sweets in the jar. How many sweets are in the jar altogether?",
+    "options": [
+      "36",
+      "42",
+      "48",
+      "54",
+      "60"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-266",
+    "text": "A teacher asked 5 children what their favourite colour is. The results are shown in the tally chart below:\n\nRed: II\nBlue: III\n\nHow many children chose Blue?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "correctIndex": 1,
+    "topic": "data_handling",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-267",
+    "text": "A teacher records how many books each of 5 pupils read during the holidays: 3, 5, 2, 4, 6. What is the mean (average) number of books read per pupil?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6",
+      "20"
+    ],
+    "correctIndex": 1,
+    "topic": "data_handling",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-268",
+    "text": "A teacher records the number of books read by 6 students during the term: 4, 7, 3, 8, 5, 9. She notices that the three students who read the most books together read a total that is how much more than the total read by the three students who read the fewest books?",
+    "options": [
+      "12",
+      "14",
+      "16",
+      "18",
+      "20"
+    ],
+    "correctIndex": 0,
+    "topic": "data_handling",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-269",
+    "text": "A teacher records the scores of 8 students on a maths test. The mean score of the first 5 students is 14. The mean score of the last 3 students is 18. She displays all 8 scores on a bar chart. What is the mean score of all 8 students combined?",
+    "options": [
+      "14.5",
+      "15",
+      "15.5",
+      "16",
+      "16.5"
+    ],
+    "correctIndex": 2,
+    "topic": "data_handling",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-271",
+    "text": "A library has 5000 books. They receive a delivery of 1000 more books. How many books does the library have now?",
+    "options": [
+      "4000",
+      "5100",
+      "6000",
+      "6100",
+      "51000"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-273",
+    "text": "A school fundraiser has collected £48,365 so far. They then receive a donation of £100,000. What is the new total amount collected?",
+    "options": [
+      "£148,365",
+      "£58,365",
+      "£149,365",
+      "£138,365",
+      "£148,465"
+    ],
+    "correctIndex": 0,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-276",
+    "text": "Mia reads for 30 minutes every day. She reads every day of the week. If we use the letter h to stand for the total number of hours she reads in one week, which of these is the value of h?",
+    "options": [
+      "2.5",
+      "3",
+      "3.5",
+      "4",
+      "4.5"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-277",
+    "text": "Mia goes swimming every weekday (Monday to Friday). Each session lasts 45 minutes. If t stands for the total number of minutes she swims in one week, which equation is correct and what is the value of t?",
+    "options": [
+      "t = 5 × 45 = 225 minutes",
+      "t = 4 × 45 = 180 minutes",
+      "t = 5 × 40 = 200 minutes",
+      "t = 7 × 45 = 315 minutes",
+      "t = 5 × 45 = 250 minutes"
+    ],
+    "correctIndex": 0,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-278",
+    "text": "A swimming pool charges £p per session. Mia swims 3 sessions per week. She also pays a weekly locker fee of £2. Write an expression for her total weekly cost in pounds, then find the total cost when p = 4.",
+    "options": [
+      "£10",
+      "£14",
+      "£12",
+      "£16",
+      "£18"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-279",
+    "text": "A swimming pool charges £p per hour for lane swimming. Mia swims for 45 minutes each session and attends 'd' sessions per week. The total cost for one week is £12. If p = 4, write an equation and find the value of d.",
+    "options": [
+      "d = 3",
+      "d = 4",
+      "d = 5",
+      "d = 6",
+      "d = 8"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-281",
+    "text": "A pencil costs 30p. Sam buys 4 pencils. How much does he spend in total?",
+    "options": [
+      "90p",
+      "£1.00",
+      "£1.20",
+      "£1.50",
+      "£1.60"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-282",
+    "text": "A bakery sells cupcakes for £2 each and cookies for £1 each. Emma buys 4 cupcakes and 3 cookies. How much does she spend in total?",
+    "options": [
+      "£9",
+      "£10",
+      "£11",
+      "£12",
+      "£14"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-283",
+    "text": "At a bowling alley, each game costs £4.75 and shoe hire costs £2.50 per person. A group of friends each plays one game and hires shoes. If the total cost for the group is £36.25, how many friends are in the group?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-284",
+    "text": "A bakery sells cupcakes for £c each and cookies for £d each. Emma buys 4 cupcakes and 6 cookies and pays exactly £13.20. If each cookie costs £0.80, write an expression for the cost of one cupcake in terms of the total, then find the value of c.",
+    "options": [
+      "£1.50",
+      "£2.10",
+      "£2.00",
+      "£1.80",
+      "£2.50"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-286",
+    "text": "Which of the following numbers is a prime number?",
+    "options": [
+      "9",
+      "15",
+      "11",
+      "21",
+      "25"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-287",
+    "text": "Sara picks a prime number between 20 and 40. Her number is also a factor of 93. What is Sara's number?",
+    "options": [
+      "23",
+      "29",
+      "31",
+      "37",
+      "33"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-288",
+    "text": "Sara picks a prime number between 20 and 50. Her number is also a factor of 93. What is Sara's number?",
+    "options": [
+      "23",
+      "29",
+      "31",
+      "37",
+      "43"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-289",
+    "text": "Sara picks a prime number between 20 and 50. When she multiplies her number by 3, the result is a factor of 261. She then adds 10 to her prime number and gets an odd result. What is Sara's prime number?",
+    "options": [
+      "23",
+      "29",
+      "31",
+      "37",
+      "43"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-291",
+    "text": "Tom has some stickers. If he is given 3 more stickers, he will have 10 stickers in total. How many stickers does Tom have now?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8",
+      "13"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-292",
+    "text": "A toy shop is 300 m north of a park. A library is 180 m south of the park. All three buildings are on the same straight road. Let d stand for the distance in metres between the toy shop and the library. Which equation is correct?",
+    "options": [
+      "d = 300 - 180",
+      "d = 300 + 180",
+      "d = 300 × 180",
+      "d = 180 - 300",
+      "d = 300 ÷ 180"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-294",
+    "text": "A delivery drone flies between three landmarks along a straight road. The library is 'x' metres east of the post office. The bakery is 380 metres west of the library. The distance between the post office and the bakery is 95 metres. If the bakery is west of the post office, find the value of x.",
+    "options": [
+      "185 m",
+      "285 m",
+      "475 m",
+      "380 m",
+      "190 m"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-296",
+    "text": "A baker makes 6 cupcakes every hour. If he uses the letter n to stand for the number of hours he works, which expression shows the total number of cupcakes he makes?",
+    "options": [
+      "n + 6",
+      "6n",
+      "n ÷ 6",
+      "6 + n + 6",
+      "n - 6"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-297",
+    "text": "A factory makes n toys every 10 minutes. It makes 24 toys in 1 hour. What is the value of n?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "6",
+      "12"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-298",
+    "text": "A factory machine produces bottles at a constant rate. It makes 'b' bottles every 15 minutes. Write an expression for the number of bottles made in 2 hours, and find the value when b = 40.",
+    "options": [
+      "160",
+      "240",
+      "320",
+      "480",
+      "600"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-299",
+    "text": "A factory machine produces bottles at a constant rate. In 15 minutes, it produces 'b' bottles. An expression for the number of bottles produced in 'h' hours is given by the formula: bottles = 4bh. If the machine produces 120 bottles in 15 minutes, how many bottles does it produce in 3.5 hours?",
+    "options": [
+      "1,440",
+      "1,560",
+      "1,680",
+      "1,800",
+      "2,100"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-301",
+    "text": "Tom has some stickers. He uses the letter n to stand for the number of stickers he has. His friend Sara has 5 more stickers than Tom. Write an expression for the number of stickers Sara has.",
+    "options": [
+      "n - 5",
+      "5n",
+      "n + 5",
+      "n × 5",
+      "5 - n"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-302",
+    "text": "A ribbon is cut into two pieces. The longer piece is x cm and the shorter piece is 12 cm. The total length of the ribbon is 45 cm. What is the value of x?",
+    "options": [
+      "27 cm",
+      "33 cm",
+      "35 cm",
+      "57 cm",
+      "12 cm"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-303",
+    "text": "A rectangular garden has a length of (3x + 5) metres and a width of (x + 2) metres. The perimeter of the garden is 54 metres. What is the value of x?",
+    "options": [
+      "4",
+      "5",
+      "5.5",
+      "6",
+      "7"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-304",
+    "text": "A rectangular swimming pool has a length of (3y + 7) metres and a width of (y + 2) metres. The perimeter of the pool is 58 metres. What is the value of y?",
+    "options": [
+      "4",
+      "5",
+      "5.5",
+      "6",
+      "7"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-306",
+    "text": "How many lines of symmetry does a square have?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "correctIndex": 3,
+    "topic": "geometry",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-307",
+    "text": "A shape has exactly 2 lines of symmetry and rotational symmetry of order 2. Which of these shapes could it be?",
+    "options": [
+      "Equilateral triangle",
+      "Rectangle (not a square)",
+      "Regular pentagon",
+      "Scalene triangle",
+      "Regular hexagon"
+    ],
+    "correctIndex": 1,
+    "topic": "geometry",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-308",
+    "text": "A designer is creating a logo that must look exactly the same when rotated 180° about its centre. Which of the following shapes has this property (called rotational symmetry of order 2 or more)?",
+    "options": [
+      "A scalene triangle",
+      "A regular pentagon",
+      "A parallelogram",
+      "A kite",
+      "An isosceles triangle"
+    ],
+    "correctIndex": 2,
+    "topic": "geometry",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-311",
+    "text": "Tom has some red marbles and some blue marbles. He has 20 marbles in total. He has 4 more red marbles than blue marbles. How many blue marbles does Tom have?",
+    "options": [
+      "6",
+      "8",
+      "10",
+      "12",
+      "14"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-312",
+    "text": "A pet shop has rabbits and hamsters. There are 50 animals in total, and there are 10 more hamsters than rabbits. How many rabbits are there?",
+    "options": [
+      "15",
+      "20",
+      "25",
+      "30",
+      "35"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-313",
+    "text": "A pet shop has a total of 150 fish split between two tanks. Tank A contains 22 more fish than Tank B. How many fish are in Tank A?",
+    "options": [
+      "64",
+      "76",
+      "86",
+      "88",
+      "96"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-314",
+    "text": "A school library has fiction and non-fiction books. There are 3 times as many fiction books as non-fiction books, and there are 56 more fiction books than non-fiction books. Let n represent the number of non-fiction books. Write an equation and solve it to find the total number of books in the library.",
+    "options": [
+      "72",
+      "84",
+      "96",
+      "108",
+      "112"
+    ],
+    "correctIndex": 4,
+    "topic": "algebra",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-318",
+    "text": "A recipe for 4 people uses 300 g of flour and 200 g of sugar. Tom wants to make the recipe for 6 people. How much flour does he need?",
+    "options": [
+      "350 g",
+      "400 g",
+      "450 g",
+      "500 g",
+      "600 g"
+    ],
+    "correctIndex": 2,
+    "topic": "ratio_proportion",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-319",
+    "text": "A recipe for 8 pancakes uses 200 g of flour, 2 eggs, and 300 ml of milk. Sam wants to make 20 pancakes using the same recipe ratio. He has 600 g of flour, 6 eggs, and 800 ml of milk available. Which ingredient will run out first, and how many complete pancakes can Sam actually make?",
+    "options": [
+      "Eggs run out first; Sam can make 18 pancakes",
+      "Milk runs out first; Sam can make 16 pancakes",
+      "Flour runs out first; Sam can make 20 pancakes",
+      "Eggs run out first; Sam can make 24 pancakes",
+      "Milk runs out first; Sam can make 21 pancakes"
+    ],
+    "correctIndex": 1,
+    "topic": "ratio_proportion",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-321",
+    "text": "A bag contains some marbles. If I use the letter m to stand for the number of marbles, and I know that m + 5 = 12, what is the value of m?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8",
+      "17"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-322",
+    "text": "A bag of marbles weighs m grams. If 2m + 5 = 19, how many grams does the bag weigh?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8",
+      "12"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-323",
+    "text": "A baker makes cookies and puts them into bags. He notices that if he puts 5 cookies in each bag, he has 3 cookies left over. He also notices that the total number of cookies equals 4 times the number of bags plus 11. How many bags does the baker have?",
+    "options": [
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-326",
+    "text": "Sam is saving up for a bicycle that costs £100. He saves £10 each week. He has already saved £30. How many more weeks does Sam need to save?",
+    "options": [
+      "5 weeks",
+      "7 weeks",
+      "8 weeks",
+      "10 weeks",
+      "3 weeks"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-327",
+    "text": "Sam is saving up for a bicycle that costs £150. He already has £30 saved. Each week he saves £10. How many more weeks will it take Sam to have enough money for the bicycle?",
+    "options": [
+      "10 weeks",
+      "12 weeks",
+      "15 weeks",
+      "8 weeks",
+      "18 weeks"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-328",
+    "text": "Sam is saving up for a new bicycle that costs £350. He already has £50 saved. Each week he earns £w from his paper round and puts all of it into his savings. After 12 more weeks of saving, he will have exactly enough to buy the bicycle. What is the value of w?",
+    "options": [
+      "£20",
+      "£25",
+      "£30",
+      "£35",
+      "£40"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-329",
+    "text": "A swimming club charges a joining fee of £35 plus £12 per month. Marcus has been a member for some months and has paid a total of £131 so far. He wants to stay until his total payments reach £251. If m represents the number of additional months Marcus needs to stay, which equation correctly represents this situation, and what is the value of m?",
+    "options": [
+      "131 + 12m = 251, so m = 10",
+      "131 + 12m = 251, so m = 8",
+      "131 + 35m = 251, so m = 4",
+      "12m + 35 = 251, so m = 18",
+      "131 + 12m = 286, so m = 12"
+    ],
+    "correctIndex": 0,
+    "topic": "algebra",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-331",
+    "text": "Tom and his dad share some sweets in the ratio 1:2. They have 12 sweets altogether. How many sweets does Tom get?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "6",
+      "8"
+    ],
+    "correctIndex": 2,
+    "topic": "ratio_proportion",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-332",
+    "text": "Tom and his dad share some sweets in the ratio 1:3. If they have 20 sweets altogether, how many sweets does Tom's dad get?",
+    "options": [
+      "5",
+      "10",
+      "12",
+      "15",
+      "18"
+    ],
+    "correctIndex": 3,
+    "topic": "ratio_proportion",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-334",
+    "text": "A recipe uses flour and sugar in the ratio 5 : 2. Tom makes a batch using 350g of flour. He then decides to make a second batch that is 1.5 times larger than the first. How much sugar does he need for the second batch?",
+    "options": [
+      "140g",
+      "180g",
+      "200g",
+      "210g",
+      "240g"
+    ],
+    "correctIndex": 3,
+    "topic": "ratio_proportion",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-336",
+    "text": "Tom has 3 boxes of crayons. Each box contains 8 crayons. How many crayons does Tom have in total?",
+    "options": [
+      "16",
+      "20",
+      "24",
+      "28",
+      "32"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-337",
+    "text": "Three friends have consecutive house numbers on their street. When they add their house numbers together, they get a total of 63. What is the smallest house number?",
+    "options": [
+      "19",
+      "20",
+      "21",
+      "22",
+      "23"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-338",
+    "text": "Three friends collect stickers. Each friend has 2 more stickers than the one before. Together they have 63 stickers. How many stickers does the friend with the most have?",
+    "options": [
+      "19",
+      "21",
+      "23",
+      "25",
+      "27"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-339",
+    "text": "A baker numbers his loaves each day using consecutive even numbers. On Monday, he bakes 4 loaves and labels them with consecutive even numbers. The sum of all four labels is 84. What is the smallest label number?",
+    "options": [
+      "16",
+      "18",
+      "20",
+      "22",
+      "24"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-343",
+    "text": "A model car is built to a scale of 1:50. The real car is 4 metres long. How long is the model car?",
+    "options": [
+      "4 cm",
+      "8 cm",
+      "20 cm",
+      "50 cm",
+      "80 cm"
+    ],
+    "correctIndex": 1,
+    "topic": "ratio_proportion",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-344",
+    "text": "An architect builds a model of a building using a scale of 1:250. The real building is 35 metres tall and 60 metres long. What is the total of the model's height and length in centimetres?",
+    "options": [
+      "28 cm",
+      "38 cm",
+      "14 cm",
+      "24 cm",
+      "48 cm"
+    ],
+    "correctIndex": 1,
+    "topic": "ratio_proportion",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-346",
+    "text": "In a fruit punch, the ratio of orange juice to lemonade is 2:1. If Sam uses 6 cups of orange juice, how many cups of lemonade does he need?",
+    "options": [
+      "2 cups",
+      "3 cups",
+      "4 cups",
+      "5 cups",
+      "6 cups"
+    ],
+    "correctIndex": 1,
+    "topic": "ratio_proportion",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-347",
+    "text": "A lemonade recipe uses 400 ml of water for every 100 ml of lemon juice. If Sam wants to make a smaller batch using only 50 ml of lemon juice, how much water does he need?",
+    "options": [
+      "100 ml",
+      "150 ml",
+      "200 ml",
+      "250 ml",
+      "300 ml"
+    ],
+    "correctIndex": 2,
+    "topic": "ratio_proportion",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-348",
+    "text": "A smoothie recipe uses 400 ml of orange juice for every 150 ml of yoghurt. Jake wants to make a smaller batch using only 200 ml of orange juice. How much yoghurt does he need?",
+    "options": [
+      "50 ml",
+      "60 ml",
+      "75 ml",
+      "100 ml",
+      "120 ml"
+    ],
+    "correctIndex": 2,
+    "topic": "ratio_proportion",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-349",
+    "text": "A paint mixing guide says that for every 750 ml of white paint, you need 250 ml of blue paint and 125 ml of yellow paint to make a specific shade of green. Marcus wants to make a smaller batch using only 100 ml of yellow paint. How much white paint and blue paint does he need in total?",
+    "options": [
+      "600 ml",
+      "700 ml",
+      "800 ml",
+      "900 ml",
+      "1000 ml"
+    ],
+    "correctIndex": 2,
+    "topic": "ratio_proportion",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-351",
+    "text": "What is 10 × 10 × 10?",
+    "options": [
+      "100",
+      "300",
+      "1000",
+      "10000",
+      "30"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-352",
+    "text": "A number is multiplied by itself and then divided by 4. The result is 25. What was the original number?",
+    "options": [
+      "5",
+      "8",
+      "10",
+      "12",
+      "20"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-353",
+    "text": "A mystery number is squared, then the result is multiplied by 5. The final answer is 125. What was the mystery number?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6",
+      "25"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-356",
+    "text": "A box contains 10 identical pencils. The total weight of the box and pencils together is 250 g. The empty box weighs 50 g. What is the weight of one pencil?",
+    "options": [
+      "15 g",
+      "20 g",
+      "25 g",
+      "30 g",
+      "50 g"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-357",
+    "text": "A box contains 50 identical pencils. The total weight of the box and pencils together is 1.3 kg. The empty box weighs 300 g. What is the weight of one pencil?",
+    "options": [
+      "18 g",
+      "20 g",
+      "22 g",
+      "26 g",
+      "30 g"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-358",
+    "text": "A delivery crate contains 250 identical tins of paint and weighs 53 kg in total. The empty crate weighs 3 kg. If w represents the weight of one tin of paint in grams, which equation could be used to find w, and what is the value of w?",
+    "options": [
+      "250w + 3000 = 53000, so w = 200 g",
+      "250w + 3 = 53, so w = 200 g",
+      "250w = 53000, so w = 212 g",
+      "250w + 3000 = 53000, so w = 100 g",
+      "250w - 3000 = 53000, so w = 224 g"
+    ],
+    "correctIndex": 0,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-359",
+    "text": "A delivery van carries 250 identical parcels and has a total weight of 3,020 kg. The van itself weighs 1,520 kg. Each parcel contains an item packed with protective foam that weighs 2 kg. If we let p represent the weight of the item inside each parcel (in kg), which equation correctly represents this situation, and what is the value of p?",
+    "options": [
+      "250(p + 2) + 1520 = 3020, so p = 4 kg",
+      "250p + 1520 = 3020, so p = 6 kg",
+      "250(p + 2) + 1520 = 3020, so p = 6 kg",
+      "250p + 2 + 1520 = 3020, so p = 5.99 kg",
+      "250(p - 2) + 1520 = 3020, so p = 8 kg"
+    ],
+    "correctIndex": 0,
+    "topic": "algebra",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-361",
+    "text": "A recipe uses 2 cups of sugar for every 4 cups of flour. What is the ratio of sugar to flour in its simplest form?",
+    "options": [
+      "1 : 2",
+      "2 : 4",
+      "1 : 4",
+      "2 : 1",
+      "4 : 2"
+    ],
+    "correctIndex": 0,
+    "topic": "ratio_proportion",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-362",
+    "text": "A recipe for pancakes uses flour and milk in the ratio 1 : 3. If you use 200 g of flour, how much milk do you need?",
+    "options": [
+      "300 g",
+      "400 g",
+      "500 g",
+      "600 g",
+      "800 g"
+    ],
+    "correctIndex": 3,
+    "topic": "ratio_proportion",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-363",
+    "text": "A recipe for 12 cupcakes uses 300 g of sugar. Sam wants to make 20 cupcakes using the same recipe. How much sugar does he need?",
+    "options": [
+      "400 g",
+      "450 g",
+      "500 g",
+      "550 g",
+      "600 g"
+    ],
+    "correctIndex": 2,
+    "topic": "ratio_proportion",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-364",
+    "text": "A recipe for 12 cupcakes uses 360 g of sugar and 540 g of flour. Tom wants to make 20 cupcakes using the same recipe. He has already measured out 500 g of flour. How many more grams of flour does he need, and what total weight of sugar will he need?",
+    "options": [
+      "400 g more flour and 600 g of sugar",
+      "360 g more flour and 500 g of sugar",
+      "400 g more flour and 500 g of sugar",
+      "360 g more flour and 600 g of sugar",
+      "500 g more flour and 600 g of sugar"
+    ],
+    "correctIndex": 0,
+    "topic": "ratio_proportion",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-366",
+    "text": "A pizza is cut into halves. How many halves are there in 3 whole pizzas?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6",
+      "9"
+    ],
+    "correctIndex": 3,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-367",
+    "text": "A pizza is cut into quarters. How many quarters are there in 3 whole pizzas?",
+    "options": [
+      "3",
+      "4",
+      "9",
+      "12",
+      "15"
+    ],
+    "correctIndex": 3,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-368",
+    "text": "A baker cuts each pie into fifths. If she has 4 whole pies and an extra 3 fifths of another pie, how many fifths does she have in total?",
+    "options": [
+      "15",
+      "20",
+      "23",
+      "43",
+      "17"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-371",
+    "text": "Which of these numbers is the largest?",
+    "options": [
+      "15",
+      "51",
+      "35",
+      "25",
+      "45"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-372",
+    "text": "A baker counts the cupcakes left on four trays at the end of the day. Tray A has 47 cupcakes, Tray B has 39 cupcakes, Tray C has 52 cupcakes, and Tray D has 44 cupcakes. Which tray has the fewest cupcakes?",
+    "options": [
+      "Tray A",
+      "Tray B",
+      "Tray C",
+      "Tray D",
+      "Tray A and Tray D have the same (tied fewest)"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-373",
+    "text": "A baker makes batches of cupcakes. She notices that the number of cupcakes she made this week can be divided equally by 3, by 5, and by 4 with no remainder. Which of these could be the number of cupcakes she made?",
+    "options": [
+      "45",
+      "80",
+      "120",
+      "150",
+      "100"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-374",
+    "text": "A scientist measures bacteria populations in five different samples. The populations are expressed in different forms. Which sample has the largest population?\n\nSample A: 3/8 of 1000\nSample B: 0.45 × 800\nSample C: 7/20 of 1200\nSample D: 0.6 × 550\nSample E: 5/12 of 840",
+    "options": [
+      "Sample A: 375",
+      "Sample B: 360",
+      "Sample C: 420",
+      "Sample D: 330",
+      "Sample E: 350"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-376",
+    "text": "A library has twelve thousand, four hundred and fifty-six books. What is this number written in digits?",
+    "options": [
+      "12,456",
+      "12,546",
+      "1,2456",
+      "124,56",
+      "12,465"
+    ],
+    "correctIndex": 0,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-377",
+    "text": "A charity fun run had twenty-three thousand, four hundred and fifty-six participants. What is this number rounded to the nearest thousand?",
+    "options": [
+      "23,000",
+      "23,500",
+      "24,000",
+      "23,400",
+      "24,500"
+    ],
+    "correctIndex": 0,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-378",
+    "text": "A charity concert was attended by 124,562 people over the weekend. What is this number rounded to the nearest ten thousand?",
+    "options": [
+      "120,000",
+      "124,000",
+      "125,000",
+      "130,000",
+      "100,000"
+    ],
+    "correctIndex": 0,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-379",
+    "text": "A charity marathon raised exactly £286,549. The organisers want to report this amount rounded to the nearest ten thousand for their headline, and also rounded to the nearest thousand for their detailed report. What is the difference between these two rounded amounts?",
+    "options": [
+      "£3,451",
+      "£4,000",
+      "£3,000",
+      "£10,000",
+      "£7,000"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-382",
+    "text": "A baker makes 60 cupcakes. He sells 3/4 of them in the morning. How many cupcakes does he sell in the morning?",
+    "options": [
+      "40",
+      "45",
+      "48",
+      "50",
+      "54"
+    ],
+    "correctIndex": 1,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-383",
+    "text": "A bakery makes 360 cupcakes in one day. They sell 3/8 of them in the morning and 25% of the total in the afternoon. How many cupcakes are left unsold at the end of the day?",
+    "options": [
+      "90",
+      "135",
+      "180",
+      "225",
+      "270"
+    ],
+    "correctIndex": 1,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-386",
+    "text": "If n = 5, what is the value of n + 3?",
+    "options": [
+      "5",
+      "7",
+      "8",
+      "9",
+      "15"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-387",
+    "text": "A bag of sweets costs p pence. Tom buys 3 bags and pays with a £5 note. Which expression shows the change he receives in pence?",
+    "options": [
+      "5 - 3p",
+      "500 - 3p",
+      "3p - 500",
+      "500 - p",
+      "5 - p"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-392",
+    "text": "A baker makes p cupcakes each day. After 5 days, she gives away 12 cupcakes. She has 28 cupcakes left. What is the value of p?",
+    "options": [
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-393",
+    "text": "A bakery makes p cupcakes each hour. After 6 hours, the baker has sold 85 cupcakes and has 95 cupcakes left over. What is the value of p?",
+    "options": [
+      "25",
+      "28",
+      "30",
+      "32",
+      "35"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-394",
+    "text": "A bakery produces bread rolls in batches. Each batch contains r rolls. On Monday, they made 8 batches and sold 5 batches worth of rolls plus an extra 47 rolls. On Tuesday, they made 6 more batches but sold none. The total number of unsold rolls after both days can be written as 9r − 47. If the bakery has exactly 133 unsold rolls at the end of Tuesday, what is the value of r?",
+    "options": [
+      "18",
+      "20",
+      "22",
+      "24",
+      "26"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-396",
+    "text": "Sophie wants to measure the length of her pencil. Which unit of measurement should she use?",
+    "options": [
+      "Square centimetres (cm²)",
+      "Centimetres (cm)",
+      "Cubic centimetres (cm³)",
+      "Kilograms (kg)",
+      "Litres (l)"
+    ],
+    "correctIndex": 1,
+    "topic": "geometry",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-397",
+    "text": "Priya wants to measure the area of her bedroom floor so she can buy new carpet. What units should she use to measure the area?",
+    "options": [
+      "Metres (m)",
+      "Square metres (m²)",
+      "Cubic metres (m³)",
+      "Kilograms (kg)",
+      "Litres (l)"
+    ],
+    "correctIndex": 1,
+    "topic": "geometry",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-398",
+    "text": "A farmer wants to know how much water a rectangular cattle trough can hold. The trough is 2 metres long, 50 centimetres wide, and 40 centimetres deep. What is the volume of the trough in cubic centimetres?",
+    "options": [
+      "4,000 cm³",
+      "40,000 cm³",
+      "400,000 cm³",
+      "4,000,000 cm³",
+      "90 cm³"
+    ],
+    "correctIndex": 2,
+    "topic": "geometry",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-401",
+    "text": "Tom has some stickers. He gives 3 stickers to his friend and has 7 left. How many stickers did Tom start with? If we write this as n − 3 = 7, what is n?",
+    "options": [
+      "4",
+      "7",
+      "10",
+      "11",
+      "21"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-402",
+    "text": "A baker makes cookies and puts them into boxes of 6. He uses the letter n to stand for the total number of cookies he bakes. Which expression shows how many cookies are left over after he fills as many boxes as possible?",
+    "options": [
+      "n × 6",
+      "n + 6",
+      "n ÷ 6",
+      "n - 6",
+      "the remainder when n ÷ 6"
+    ],
+    "correctIndex": 4,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-406",
+    "text": "A bag of sweets costs £n. If Tom buys 3 bags, he pays £12. What is the value of n?",
+    "options": [
+      "£2",
+      "£3",
+      "£4",
+      "£5",
+      "£6"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-407",
+    "text": "A baker makes cookies using this rule: number of cookies = 6 × n + 4, where n is the number of trays used. How many cookies does the baker make if he uses 5 trays?",
+    "options": [
+      "30",
+      "34",
+      "36",
+      "40",
+      "54"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-408",
+    "text": "A baker makes cupcakes using the formula: Total cupcakes = 6n + 8, where n is the number of batches. If the baker made 44 cupcakes in total, how many batches did he make?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-411",
+    "text": "A baker makes 20 cupcakes. He gives away 1/2 of them. How many cupcakes does he give away?",
+    "options": [
+      "5",
+      "8",
+      "10",
+      "12",
+      "15"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-413",
+    "text": "A school has 120 pupils. 3/8 of the pupils walk to school, and 25% of the pupils cycle. How many pupils either walk or cycle to school?",
+    "options": [
+      "55",
+      "60",
+      "75",
+      "80",
+      "45"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-416",
+    "text": "A bag of sweets costs £2. If n stands for the number of bags you buy, which expression tells you the total cost in pounds?",
+    "options": [
+      "n + 2",
+      "2n",
+      "n - 2",
+      "n ÷ 2",
+      "2 + 2"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-417",
+    "text": "A baker makes cupcakes using this rule: number of cupcakes = 6 × trays + 2 extra. If the baker uses 4 trays, how many cupcakes does the baker make in total?",
+    "options": [
+      "22",
+      "24",
+      "26",
+      "28",
+      "30"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-418",
+    "text": "A baker makes cupcakes using the formula: Total cupcakes = 6n + 4, where n is the number of batches. She also makes cookies using the formula: Total cookies = 4n + 12. For how many batches (n) will the baker have the same number of cupcakes and cookies?",
+    "options": [
+      "n = 2",
+      "n = 3",
+      "n = 4",
+      "n = 5",
+      "n = 6"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-421",
+    "text": "A baker puts 4 cupcakes into each box. If she has 20 cupcakes, how many boxes does she fill? Let b stand for the number of boxes. Which number solves 4 × b = 20?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6",
+      "8"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-422",
+    "text": "A baker makes muffins and places them onto trays. Each tray holds 8 muffins. If the baker has made 50 muffins, and we use the letter t to stand for the number of complete trays he can fill, which of these gives the correct value of t?",
+    "options": [
+      "t = 5",
+      "t = 6",
+      "t = 7",
+      "t = 8",
+      "t = 42"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-423",
+    "text": "A baker makes cupcakes and packs them into boxes of 8. She uses the expression n ÷ 8 to work out how many complete boxes she can fill, where n is the number of cupcakes. One morning she bakes 5 trays of cupcakes with 13 cupcakes on each tray. How many complete boxes can she fill?",
+    "options": [
+      "7",
+      "8",
+      "9",
+      "10",
+      "11"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-426",
+    "text": "A baker makes 5 cupcakes every hour. She starts at 9 am. How many cupcakes has she made by 12 noon?",
+    "options": [
+      "10",
+      "12",
+      "15",
+      "20",
+      "25"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-427",
+    "text": "A baker makes loaves of bread throughout the morning. At 7am he has made 14 loaves, at 8am he has made 23 loaves, at 9am he has made 32 loaves, and at 10am he has made 41 loaves. If this pattern continues, how many loaves will he have made by 11am?",
+    "options": [
+      "48",
+      "49",
+      "50",
+      "51",
+      "52"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-428",
+    "text": "A baker numbers his loaves each day starting from loaf 17. Each loaf after that is numbered by adding 13 to the previous loaf's number. What number will be on the 6th loaf?",
+    "options": [
+      "78",
+      "82",
+      "80",
+      "84",
+      "76"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-431",
+    "text": "A baker makes 200 cupcakes every day. How many cupcakes does the baker make in 3 days?",
+    "options": [
+      "400",
+      "500",
+      "600",
+      "800",
+      "900"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-432",
+    "text": "A factory produces 348 toys per day. If 348 × 20 = 6,960, what is 348 × 10?",
+    "options": [
+      "3,480",
+      "3,840",
+      "34,800",
+      "6,960",
+      "3,048"
+    ],
+    "correctIndex": 0,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-433",
+    "text": "A factory produces 438 bottles per hour. It is known that 438 × 200 = 87,600. Using this fact, what is 438 × 50?",
+    "options": [
+      "21,900",
+      "22,900",
+      "21,400",
+      "43,800",
+      "8,760"
+    ],
+    "correctIndex": 0,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-436",
+    "text": "A pencil is 0.18 m long. What is this length as a fraction of a metre?",
+    "options": [
+      "18/10",
+      "18/100",
+      "18/1000",
+      "1/8",
+      "8/100"
+    ],
+    "correctIndex": 1,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-437",
+    "text": "A ribbon is 3.72 metres long. What is 3.72 metres rounded to the nearest tenth of a metre?",
+    "options": [
+      "3.7 m",
+      "3.8 m",
+      "3.70 m",
+      "4.0 m",
+      "3.72 m"
+    ],
+    "correctIndex": 0,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-438",
+    "text": "A scientist measures the length of a beetle as 1.867 cm. She needs to round this measurement to the nearest tenth of a centimetre (1 decimal place). What is 1.867 cm rounded to 1 decimal place?",
+    "options": [
+      "1.8 cm",
+      "1.9 cm",
+      "1.87 cm",
+      "2.0 cm",
+      "1.86 cm"
+    ],
+    "correctIndex": 1,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-439",
+    "text": "A scientist measures the mass of a sample as 3.672 kg. She needs to express this mass as a fraction of 10 kg, giving her answer as a simplified percentage. She then rounds this percentage to one decimal place. What is the result?",
+    "options": [
+      "36.7%",
+      "36.8%",
+      "37.2%",
+      "3.7%",
+      "36.72%"
+    ],
+    "correctIndex": 0,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-441",
+    "text": "A bag of apples weighs 12 kg. A bag of oranges weighs half as much as the bag of apples. How much does the bag of oranges weigh?",
+    "options": [
+      "3 kg",
+      "4 kg",
+      "6 kg",
+      "8 kg",
+      "24 kg"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-442",
+    "text": "A baker makes 24 cupcakes on Monday. On Tuesday, he makes half as many cupcakes as Monday. On Wednesday, he makes three times as many cupcakes as Tuesday. How many cupcakes does the baker make on Wednesday?",
+    "options": [
+      "12",
+      "24",
+      "36",
+      "48",
+      "72"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-443",
+    "text": "A baker makes cupcakes on three days. On Monday, she makes p cupcakes. On Tuesday, she makes double the number she made on Monday. On Wednesday, she makes 10 fewer than she made on Tuesday. If she made 24 cupcakes on Monday, how many cupcakes did she make on Wednesday?",
+    "options": [
+      "34",
+      "38",
+      "48",
+      "58",
+      "14"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-446",
+    "text": "A rectangle has a length of 8 cm and a width of 3 cm. What is the perimeter of the rectangle?",
+    "options": [
+      "11 cm",
+      "22 cm",
+      "24 cm",
+      "26 cm",
+      "32 cm"
+    ],
+    "correctIndex": 1,
+    "topic": "geometry",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-447",
+    "text": "A rectangular garden has a length of 8 metres and a width of 5 metres. What is the perimeter of the garden?",
+    "options": [
+      "13 m",
+      "26 m",
+      "40 m",
+      "30 m",
+      "21 m"
+    ],
+    "correctIndex": 1,
+    "topic": "geometry",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-448",
+    "text": "A rectangular garden has a length of 0.12 km and a width of 4500 cm. What is the perimeter of the garden in metres?",
+    "options": [
+      "A) 330 m",
+      "B) 150 m",
+      "C) 330 cm",
+      "D) 5400 m",
+      "E) 114 m"
+    ],
+    "correctIndex": 0,
+    "topic": "geometry",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-452",
+    "text": "A baker wants to arrange 18 cupcakes into equal rows with no cupcakes left over. How many different ways can she do this? (Count each different number of rows as one way.)",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "8",
+      "9"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-453",
+    "text": "A teacher asks her class to find all the factors of 36 and then add together only the odd factors. What answer should the students get?",
+    "options": [
+      "13",
+      "15",
+      "9",
+      "12",
+      "16"
+    ],
+    "correctIndex": 0,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-454",
+    "text": "A teacher writes a secret number on the board. She gives these clues: 'My number is between 30 and 50. It has exactly 6 factors. The sum of its digits is 9.' What is the teacher's secret number?",
+    "options": [
+      "36",
+      "45",
+      "48",
+      "42",
+      "44"
+    ],
+    "correctIndex": 0,
+    "topic": "number",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-455",
+    "text": "A teacher writes a secret number on the board. She gives these clues: 'My number is a two-digit number. The sum of all its factors (including 1 and itself) is exactly 42. My number is odd.' What is the teacher's secret number?",
+    "options": [
+      "25",
+      "27",
+      "20",
+      "35",
+      "15"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 5
+  },
+  {
+    "id": "q-m6-456",
+    "text": "A jug contains 2.5 litres of juice. Sam pours out 1.3 litres into a glass. How much juice is left in the jug?",
+    "options": [
+      "0.8 litres",
+      "1.2 litres",
+      "1.8 litres",
+      "3.8 litres",
+      "1.5 litres"
+    ],
+    "correctIndex": 1,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-457",
+    "text": "A shop sells three different sizes of juice bottle. The small bottle holds 0.33 litres, the medium bottle holds 0.75 litres, and the large bottle holds 1.5 litres. How much juice do you get in total if you buy one of each size?",
+    "options": [
+      "2.__(2.48 litres)",
+      "2.58 litres",
+      "2.53 litres",
+      "2.68 litres",
+      "2.43 litres"
+    ],
+    "correctIndex": 1,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-458",
+    "text": "A baker uses 2.75 kg of flour on Monday, 3.4 kg on Tuesday, and 1.85 kg on Wednesday. What is the total amount of flour used over the three days?",
+    "options": [
+      "7.00 kg",
+      "7.55 kg",
+      "8.00 kg",
+      "8.10 kg",
+      "7.90 kg"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-461",
+    "text": "A box contains 10 chocolates. 2 of them are white chocolate. What fraction of the chocolates are white chocolate?",
+    "options": [
+      "1/10",
+      "1/5",
+      "2/5",
+      "1/2",
+      "3/10"
+    ],
+    "correctIndex": 1,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-462",
+    "text": "A bag contains 20 marbles. 4 of the marbles are red. What fraction of the marbles are red? Give your answer in its simplest form.",
+    "options": [
+      "1/4",
+      "1/5",
+      "4/20",
+      "2/5",
+      "1/10"
+    ],
+    "correctIndex": 1,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-463",
+    "text": "A bag contains 24 marbles. 8 of the marbles are blue, 6 are red, and the rest are green. What fraction of the marbles are green? Give your answer in its simplest form.",
+    "options": [
+      "1/3",
+      "5/12",
+      "1/4",
+      "10/24",
+      "2/5"
+    ],
+    "correctIndex": 1,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-466",
+    "text": "A ribbon is 50 cm long. What is this length in metres, written as a decimal?",
+    "options": [
+      "0.05 m",
+      "0.5 m",
+      "5.0 m",
+      "50.0 m",
+      "0.005 m"
+    ],
+    "correctIndex": 1,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-467",
+    "text": "A baker makes 40 cupcakes for a school fair. She decorates 3/4 of them with pink icing. How many cupcakes have pink icing?",
+    "options": [
+      "10",
+      "20",
+      "25",
+      "30",
+      "35"
+    ],
+    "correctIndex": 3,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-468",
+    "text": "A baker makes 80 cupcakes for a school fair. She decorates 3/5 of them with chocolate icing and 25% of them with vanilla icing. The rest have strawberry icing. What fraction of the cupcakes have strawberry icing?",
+    "options": [
+      "1/10",
+      "3/20",
+      "1/5",
+      "3/10",
+      "2/5"
+    ],
+    "correctIndex": 1,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-469",
+    "text": "A factory produces 450 chocolate bars per hour. Each bar weighs 35 g. The factory runs for 8 hours in one day. What percentage of a tonne is the total weight of chocolate bars produced in one day?",
+    "options": [
+      "12.6%",
+      "15.2%",
+      "10.8%",
+      "14.4%",
+      "11.2%"
+    ],
+    "correctIndex": 0,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-471",
+    "text": "Which of these numbers is an even number?",
+    "options": [
+      "13",
+      "27",
+      "36",
+      "45",
+      "51"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-472",
+    "text": "A baker has 36 cupcakes. She puts them into boxes of 4. Which of the following statements about her cupcakes is true?",
+    "options": [
+      "36 is an odd number",
+      "36 divided by 4 gives a remainder of 2",
+      "36 is a multiple of 4",
+      "36 is a prime number",
+      "4 is a factor of 35"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-473",
+    "text": "A baker is numbering trays of bread. He notices that some numbers have interesting properties. Which of the following statements is true?",
+    "options": [
+      "The sum of all factors of 12 is __(equals) 24",
+      "The number 51 is a prime number",
+      "The highest common factor of 18 and 24 is 6",
+      "The lowest common multiple of 6 and 9 is 36",
+      "The number 87 has exactly 3 factors"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-475",
+    "text": "A number N satisfies all of the following conditions:\n• N is a common multiple of 6 and 8\n• N is a factor of 720\n• When N is divided by 5, the remainder is 4\n• N is greater than 100\n\nWhat is N?",
+    "options": [
+      "120",
+      "144",
+      "168",
+      "240",
+      "264"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 5
+  },
+  {
+    "id": "q-m6-476",
+    "text": "A fruit bowl contains 20 pieces of fruit. 5 of them are apples. What percentage of the fruit are apples?",
+    "options": [
+      "5%",
+      "15%",
+      "20%",
+      "25%",
+      "50%"
+    ],
+    "correctIndex": 3,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-477",
+    "text": "A fruit bowl contains 20 pieces of fruit. 5 of them are apples. What fraction of the fruit are apples? Give your answer in its simplest form.",
+    "options": [
+      "1/5",
+      "1/4",
+      "5/20",
+      "1/3",
+      "2/5"
+    ],
+    "correctIndex": 1,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-478",
+    "text": "A fruit bowl contains 15 apples, 10 oranges, 5 bananas and 20 grapes. Tom eats 5 of the apples and 5 of the grapes. What fraction of the remaining fruit are oranges?",
+    "options": [
+      "1/8",
+      "1/5",
+      "1/4",
+      "1/3",
+      "2/5"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-481",
+    "text": "A bag of apples costs £1.50. What is half the cost of one bag of apples?",
+    "options": [
+      "£0.50",
+      "£0.65",
+      "£0.70",
+      "£0.75",
+      "£1.00"
+    ],
+    "correctIndex": 3,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-483",
+    "text": "A bakery sells 4 muffins for £3.60 and 6 cookies for £2.70. Emma buys 2 muffins and 3 cookies. What fraction of her total spending is on muffins?",
+    "options": [
+      "1/4",
+      "2/5",
+      "4/7",
+      "1/2",
+      "3/5"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-486",
+    "text": "A jug contains 1 litre of orange juice. Sam pours out half of the juice. How many millilitres of orange juice are left in the jug?",
+    "options": [
+      "250 ml",
+      "400 ml",
+      "500 ml",
+      "750 ml",
+      "600 ml"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-487",
+    "text": "A jug contains 2 litres of orange juice. Mia pours out 0.25 litres into each glass. How many glasses can she fill?",
+    "options": [
+      "4",
+      "6",
+      "8",
+      "10",
+      "12"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-488",
+    "text": "A fish tank holds 8 litres of water. Every hour, 0.5 litres evaporates. After 6 hours, what fraction of the original water remains in the tank?",
+    "options": [
+      "3/8",
+      "5/8",
+      "3/4",
+      "1/4",
+      "7/8"
+    ],
+    "correctIndex": 1,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-491",
+    "text": "A fruit bowl contains 3 apples, 5 oranges and 2 bananas. What fraction of the fruit are oranges?",
+    "options": [
+      "1/5",
+      "1/2",
+      "3/10",
+      "2/5",
+      "5/8"
+    ],
+    "correctIndex": 1,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-493",
+    "text": "A fruit bowl contains 6 apples, 9 oranges and 5 bananas. Emma picks a piece of fruit at random. What is the probability that she picks a fruit that is not a banana? Give your answer as a simplified fraction.",
+    "options": [
+      "1/4",
+      "1/2",
+      "3/4",
+      "7/10",
+      "3/5"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-496",
+    "text": "A cake costs £10. In a sale, the price is reduced by 50%. What is the sale price of the cake?",
+    "options": [
+      "£4",
+      "£5",
+      "£6",
+      "£7",
+      "£8"
+    ],
+    "correctIndex": 1,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-497",
+    "text": "A cake costs £4.00. In a sale, the price is reduced by 25%. What is the sale price of the cake?",
+    "options": [
+      "£1.00",
+      "£2.00",
+      "£3.00",
+      "£3.25",
+      "£3.75"
+    ],
+    "correctIndex": 2,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-499",
+    "text": "Marcus runs a car wash business. He charges £8.50 per car for a basic wash. On any car where the customer requests a premium polish, he charges an extra 40% on top of the basic wash price. One weekend, Marcus washed 12 cars in total. 25% of those cars had the premium polish. How much money did Marcus earn that weekend?",
+    "options": [
+      "£112.20",
+      "£119.00",
+      "£122.40",
+      "£125.80",
+      "£142.80"
+    ],
+    "correctIndex": 0,
+    "topic": "fractions_decimals_percentages",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-501",
+    "text": "A baker uses this formula to work out the cost in pounds (C) of a birthday cake:\n\nC = 5 + 3n\n\nwhere n is the number of layers.\n\nHow much does a cake with 2 layers cost?",
+    "options": [
+      "£8",
+      "£10",
+      "£11",
+      "£13",
+      "£16"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-502",
+    "text": "A swimming pool charges an entry fee using this formula:\n\nCost = 3 + 2n\n\nwhere n is the number of people in the group.\n\nHow much does it cost for a group of 4 people?",
+    "options": [
+      "£8",
+      "£9",
+      "£10",
+      "£11",
+      "£12"
+    ],
+    "correctIndex": 3,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-503",
+    "text": "A swimming pool charges an entry fee using the formula: C = 5n + 3(n − 2), where C is the total cost in pounds and n is the number of people in a group. A family group has 4 people. What is the total cost for the family?",
+    "options": [
+      "£20",
+      "£26",
+      "£28",
+      "£32",
+      "£35"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-505",
+    "text": "A gym charges a monthly membership fee using the formula: F = 5n² − 3n + 12, where n is the number of classes attended per week. Sarah attends 4 classes per week. Her friend Tom attends 3 classes per week. How much more does Sarah pay per month than Tom?",
+    "options": [
+      "£20",
+      "£26",
+      "£34",
+      "£38",
+      "£42"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 5
+  },
+  {
+    "id": "q-m6-506",
+    "text": "A baker makes cookies each day. On Day 1 she makes 3 cookies, on Day 2 she makes 6 cookies, on Day 3 she makes 9 cookies, and on Day 4 she makes 12 cookies. How many cookies will she make on Day 5?",
+    "options": [
+      "13",
+      "14",
+      "15",
+      "16",
+      "18"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-507",
+    "text": "A baker makes cupcakes each day following this pattern: Day 1 = 5, Day 2 = 10, Day 3 = 15, Day 4 = 20. Which expression gives the number of cupcakes made on Day n?",
+    "options": [
+      "n + 5",
+      "5n",
+      "n × 10",
+      "5n + 5",
+      "n + 4"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-508",
+    "text": "A baker arranges cupcakes in rows. Row 1 has 3 cupcakes, Row 2 has 7 cupcakes, Row 3 has 11 cupcakes, and Row 4 has 15 cupcakes. Which expression gives the number of cupcakes in Row n?",
+    "options": [
+      "3n + 1",
+      "4n - 1",
+      "4n + 1",
+      "3n + 2",
+      "2n + 1"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-511",
+    "text": "A school has one thousand and fifty-two pupils. What is this number written in figures?",
+    "options": [
+      "1502",
+      "1052",
+      "10052",
+      "152",
+      "1520"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-512",
+    "text": "A zoo has four thousand, one hundred and nine animals. What is this number in figures?",
+    "options": [
+      "4019",
+      "4109",
+      "4190",
+      "41009",
+      "4100"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-513",
+    "text": "A sports stadium has a capacity of forty-seven thousand, two hundred and nine spectators. What is this number in figures?",
+    "options": [
+      "47,029",
+      "47,209",
+      "4,729",
+      "470,209",
+      "47,290"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-514",
+    "text": "A scientist records the distance between two cities as 'four hundred thousand and seventy-six kilometres'. She then needs to subtract 9,999 from this number. What answer does she get?",
+    "options": [
+      "390,077",
+      "390,777",
+      "389,077",
+      "400,077",
+      "391,077"
+    ],
+    "correctIndex": 0,
+    "topic": "number",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-516",
+    "text": "A school has 'two thousand and fifteen' pupils. What is this number written in figures?",
+    "options": [
+      "2150",
+      "2015",
+      "20015",
+      "215",
+      "2105"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-517",
+    "text": "A school collected 'two thousand, five hundred and six' cans for a food drive. What is this number written in figures?",
+    "options": [
+      "2,560",
+      "2,506",
+      "2,056",
+      "25,006",
+      "2,516"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-518",
+    "text": "A zoo recorded 'twenty-six thousand and eight' visitors last year. What is this number written in figures?",
+    "options": [
+      "26,800",
+      "26,080",
+      "26,008",
+      "2,608",
+      "260,008"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-519",
+    "text": "A museum recorded its total number of visitors last year as 'two hundred and six thousand, four hundred and eight'. The museum rounds this number to the nearest thousand for its annual report. What is the difference between the exact number and the rounded number?",
+    "options": [
+      "408",
+      "592",
+      "600",
+      "508",
+      "492"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-521",
+    "text": "A school has raised five thousand and twelve pounds for new books. What is this amount written in figures?",
+    "options": [
+      "£5,120",
+      "£5,012",
+      "£512",
+      "£50,012",
+      "£5,102"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-522",
+    "text": "A school has raised fifteen thousand, two hundred and eight pounds for new computers. What is this amount written in figures?",
+    "options": [
+      "£15,028",
+      "£15,208",
+      "£15,280",
+      "£1,528",
+      "£152,008"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-523",
+    "text": "A school is trying to raise money for new computers. So far they have collected fifteen thousand and eight pounds from donations, and another two thousand, seven hundred and fifty pounds from a cake sale. What is the total amount raised, written in figures?",
+    "options": [
+      "£17,__(17,258)",
+      "£17,758",
+      "£17,508",
+      "£15,758",
+      "£17,058"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-524",
+    "text": "A museum recorded its total number of visitors last year as 'one million, forty-seven thousand and eight hundred'. The museum director wants to find the difference between this number and 985,600. What is the difference?",
+    "options": [
+      "62,200",
+      "52,200",
+      "162,200",
+      "61,200",
+      "63,200"
+    ],
+    "correctIndex": 0,
+    "topic": "number",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-526",
+    "text": "Write the number 'three hundred and fifty-two thousand and fourteen' in figures.",
+    "options": [
+      "352,014",
+      "352,140",
+      "350,214",
+      "352,040",
+      "300,52014"
+    ],
+    "correctIndex": 0,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-527",
+    "text": "A library has 'three hundred and five thousand, two hundred and fourteen' books. Write this number in figures.",
+    "options": [
+      "305,214",
+      "350,214",
+      "305,241",
+      "3,005,214",
+      "30,5214"
+    ],
+    "correctIndex": 0,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-528",
+    "text": "A charity raises money over two years. In the first year, they raise 'three million, two hundred and five thousand and eighteen' pounds. In the second year, they raise 'one million, eight hundred and sixty thousand and ninety-four' pounds. What is the total amount raised over both years, written in figures?",
+    "options": [
+      "5,065,112",
+      "4,065,112",
+      "5,065,012",
+      "5,056,112",
+      "4,065,012"
+    ],
+    "correctIndex": 0,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-529",
+    "text": "A charity raises money over two years. In the first year, they raise 'three million, two hundred and five thousand and eighteen' pounds. In the second year, they raise 'one million, eight hundred and sixty-seven thousand, nine hundred and forty-three' pounds. What is the total amount raised over both years, written in figures?",
+    "options": [
+      "5,072,961",
+      "5,072,691",
+      "4,072,961",
+      "5,073,961",
+      "5,062,961"
+    ],
+    "correctIndex": 0,
+    "topic": "number",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-530",
+    "text": "A satellite completes an orbit of 'three million, five hundred and two thousand and eighteen' metres. A second satellite completes an orbit of 'one million, seven hundred and sixty-three thousand, nine hundred and forty-five' metres. A third satellite completes an orbit that is exactly halfway between the other two distances. What is the orbit distance of the third satellite, in figures?",
+    "options": [
+      "2,632,981 metres",
+      "2,632,891 metres",
+      "2,623,981 metres",
+      "2,632,982 metres",
+      "2,633,981 metres"
+    ],
+    "correctIndex": 0,
+    "topic": "number",
+    "difficulty": 5
+  },
+  {
+    "id": "q-m6-536",
+    "text": "A school has 4,729 pupils. What is the value of the digit 7 in this number?",
+    "options": [
+      "7",
+      "70",
+      "700",
+      "7,000",
+      "7,200"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-537",
+    "text": "A cinema sold 4,729 tickets last month. What is the value of the digit 7 in this number?",
+    "options": [
+      "7",
+      "70",
+      "700",
+      "7,000",
+      "7,200"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-538",
+    "text": "A stadium has a capacity of 47,256 people. What is the difference between the value of the digit 4 and the value of the digit 2 in this number?",
+    "options": [
+      "39,800",
+      "40,200",
+      "39,744",
+      "40,000",
+      "42,000"
+    ],
+    "correctIndex": 0,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-540",
+    "text": "A spacecraft travels 4,709,258 kilometres in one year. Marcus writes this number in expanded form. He notices that if you multiply the value of the digit 7 by the value of the digit 5, and then divide by the value of the digit 2, you get a certain number. What is that number?",
+    "options": [
+      "17,500",
+      "175,000",
+      "1,750,000",
+      "1,750",
+      "17,500,000"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 5
+  },
+  {
+    "id": "q-m6-541",
+    "text": "In the number 4,729, what is the value of the digit 7?",
+    "options": [
+      "7",
+      "70",
+      "700",
+      "7,000",
+      "7,200"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-542",
+    "text": "A school has 45,271 pupils registered across all its branches. What is the value of the digit 5 in this number?",
+    "options": [
+      "50",
+      "500",
+      "5,000",
+      "50,000",
+      "5"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-543",
+    "text": "A sports stadium has a capacity of 54,739 people. What is the sum of the value of the digit 5 and the value of the digit 7 in this number?",
+    "options": [
+      "50,700",
+      "50,070",
+      "57,000",
+      "5,700",
+      "12"
+    ],
+    "correctIndex": 0,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-546",
+    "text": "In the number 4,836, what is the value of the digit 8?",
+    "options": [
+      "8",
+      "80",
+      "800",
+      "8000",
+      "8036"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-548",
+    "text": "A library has exactly 4,618,253 books in its collection. The librarian wants to know: what is the difference between the value of the digit in the hundred-thousands place and the value of the digit in the thousands place?",
+    "options": [
+      "592,000",
+      "610,000",
+      "592",
+      "618,000",
+      "600,000"
+    ],
+    "correctIndex": 0,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-549",
+    "text": "A library catalogue lists a rare book's reference number as 4,916,253. The librarian decides to swap the digit in the hundred-thousands place with the digit in the tens place. What is the new number after the swap?",
+    "options": [
+      "4,956,213",
+      "4,516,293",
+      "4,916,523",
+      "4,516,253",
+      "4,956,253"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-551",
+    "text": "In the number 3,456, what is the value of the digit 4?",
+    "options": [
+      "4",
+      "40",
+      "400",
+      "4,000",
+      "44"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-552",
+    "text": "In the number 5,627,653, the digit 5 appears twice. What is the total value of all the 5s in this number?",
+    "options": [
+      "5,050",
+      "500,050",
+      "5,000,050",
+      "550,000",
+      "5,500"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-553",
+    "text": "A library has a book with the catalogue number 3,527,353. The digit 3 appears three times in this number. What is the total value of all the 3s in this catalogue number?",
+    "options": [
+      "3,003,003",
+      "300,353",
+      "3,000,353",
+      "3,000,303",
+      "3,300,003"
+    ],
+    "correctIndex": 3,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-554",
+    "text": "A librarian is labelling shelves with the code number 7,560,757. She notices that the digit 7 appears several times. What is the difference between the largest value and the smallest value represented by the digit 7 in this number?",
+    "options": [
+      "6,999,993",
+      "7,000,000",
+      "6,999,300",
+      "6,993,000",
+      "699,993"
+    ],
+    "correctIndex": 0,
+    "topic": "number",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-556",
+    "text": "A baker puts 5 cupcakes on each tray. He fills 4 trays. How many cupcakes does he have in total?",
+    "options": [
+      "15",
+      "20",
+      "25",
+      "9",
+      "24"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-557",
+    "text": "A baker makes 15 cupcakes every hour. How many cupcakes does she make in 5 hours?",
+    "options": [
+      "60",
+      "65",
+      "70",
+      "75",
+      "80"
+    ],
+    "correctIndex": 3,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-558",
+    "text": "A baker makes cupcakes in batches. On Monday she made 12, on Tuesday she made 24, on Wednesday she made 48, and on Thursday she made 96. If the pattern continues, how many cupcakes will she make on Friday?",
+    "options": [
+      "108",
+      "144",
+      "168",
+      "192",
+      "200"
+    ],
+    "correctIndex": 3,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-561",
+    "text": "A farmer collects eggs each day. On Monday she collected 10 eggs, on Tuesday she collected 20 eggs, and on Wednesday she collected 30 eggs. If the pattern continues, how many eggs will she collect on Thursday?",
+    "options": [
+      "35",
+      "40",
+      "45",
+      "50",
+      "60"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-562",
+    "text": "A gardener plants flowers each week. In week 1 she plants 80 flowers, in week 2 she plants 95 flowers, and in week 3 she plants 110 flowers. If this pattern continues, how many flowers will she plant in week 4?",
+    "options": [
+      "115",
+      "120",
+      "125",
+      "130",
+      "135"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-563",
+    "text": "A swimming pool is being filled with water. At 9:00 am it contains 150 litres, at 10:00 am it contains 185 litres, and at 11:00 am it contains 220 litres. If the pattern continues, how many litres will it contain at 1:00 pm?",
+    "options": [
+      "275 litres",
+      "280 litres",
+      "285 litres",
+      "290 litres",
+      "295 litres"
+    ],
+    "correctIndex": 3,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-566",
+    "text": "A baker puts cupcakes on a cooling rack. She adds the same number of cupcakes every minute. After 1 minute she has 3 cupcakes, after 2 minutes she has 6 cupcakes, after 3 minutes she has 9 cupcakes. How many cupcakes will she have after 4 minutes?",
+    "options": [
+      "10",
+      "11",
+      "12",
+      "13",
+      "15"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-567",
+    "text": "A bus starts at stop number 8 and picks up passengers at every stop as it travels along a route. The stop numbers it visits are: 8, 14, 20, 26, ___. What is the next stop number?",
+    "options": [
+      "30",
+      "32",
+      "34",
+      "28",
+      "36"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-568",
+    "text": "A deep-sea diver descends from the surface at a steady rate. A depth gauge records her position at equal time intervals: 0 m, −8 m, −16 m, ___, −32 m, −40 m. What is the missing depth reading?",
+    "options": [
+      "-20 m",
+      "-22 m",
+      "-24 m",
+      "-26 m",
+      "-28 m"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-569",
+    "text": "A deep-sea submarine descends from the surface. A computer records its depth (in metres below sea level) every minute: 15, 26, 39, 54, ___. The differences between consecutive readings form a pattern. What is the next depth reading?",
+    "options": [
+      "67",
+      "69",
+      "71",
+      "73",
+      "75"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-571",
+    "text": "A baker counts the cupcakes on a tray. She counts: 2, 4, 6, 8, ___. What number comes next?",
+    "options": [
+      "9",
+      "10",
+      "11",
+      "12",
+      "14"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-572",
+    "text": "A diver is descending into the ocean. Her depth readings in metres are recorded every minute: 15, 30, 45, ___, 75, 90. What is the missing depth reading?",
+    "options": [
+      "50",
+      "55",
+      "60",
+      "65",
+      "70"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-573",
+    "text": "A deep-sea diver is descending at a steady rate. Her depth gauge shows the following readings in metres below sea level: 48, 71, 94, ___, 140, 163. What is the missing reading?",
+    "options": [
+      "112",
+      "115",
+      "117",
+      "119",
+      "121"
+    ],
+    "correctIndex": 2,
+    "topic": "number",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-575",
+    "text": "A deep-sea submarine descends and then ascends. Its depth readings in metres below sea level are recorded every 10 seconds: 3742, 3659, 3576, 3493, 3410, ...\n\nAfter the 5th reading, the submarine reverses direction and ascends at a rate that is 1.5 times faster than it descended. What will the submarine's depth reading be after 30 more seconds (3 more readings) of ascending?",
+    "options": [
+      "3161 m",
+      "3035 m",
+      "3161.5 m",
+      "3285 m",
+      "3034.5 m"
+    ],
+    "correctIndex": 1,
+    "topic": "number",
+    "difficulty": 5
+  },
+  {
+    "id": "q-m6-576",
+    "text": "A fruit punch is made by mixing orange juice and lemonade in the ratio 3:1. If you use 6 litres of orange juice, how many litres of lemonade do you need?",
+    "options": [
+      "1 litre",
+      "2 litres",
+      "3 litres",
+      "4 litres",
+      "6 litres"
+    ],
+    "correctIndex": 1,
+    "topic": "ratio_proportion",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-577",
+    "text": "A fruit punch is made by mixing orange juice and lemonade in the ratio 3:1. If Sam uses 9 litres of orange juice, how many litres of lemonade does he need?",
+    "options": [
+      "1 litre",
+      "2 litres",
+      "3 litres",
+      "4 litres",
+      "6 litres"
+    ],
+    "correctIndex": 2,
+    "topic": "ratio_proportion",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-578",
+    "text": "A smoothie recipe uses banana and yoghurt in the ratio 3:5. If Sam uses 12 spoonfuls of banana, how many spoonfuls of yoghurt does he need?",
+    "options": [
+      "15",
+      "18",
+      "20",
+      "24",
+      "25"
+    ],
+    "correctIndex": 2,
+    "topic": "ratio_proportion",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-579",
+    "text": "A paint mixture uses red, blue, and yellow paint in the ratio 3:5:2. A painter needs 4 litres of the mixture in total. How many millilitres of blue paint does he need?",
+    "options": [
+      "800 ml",
+      "1200 ml",
+      "1600 ml",
+      "2000 ml",
+      "2400 ml"
+    ],
+    "correctIndex": 3,
+    "topic": "ratio_proportion",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-581",
+    "text": "A fruit punch is made by mixing orange juice and lemonade in the ratio 2:1. If Tom uses 6 cups of orange juice, how many cups of lemonade does he need?",
+    "options": [
+      "1 cup",
+      "2 cups",
+      "3 cups",
+      "4 cups",
+      "6 cups"
+    ],
+    "correctIndex": 2,
+    "topic": "ratio_proportion",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-582",
+    "text": "A smoothie recipe uses banana and yoghurt in the ratio 2:5. If Mia uses 10 spoonfuls of yoghurt, how many spoonfuls of banana does she need?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5",
+      "25"
+    ],
+    "correctIndex": 2,
+    "topic": "ratio_proportion",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-583",
+    "text": "A fruit punch is made by mixing orange juice and lemonade in the ratio 2:5. If Priya uses 350 ml of lemonade, how many millilitres of orange juice does she need?",
+    "options": [
+      "100 ml",
+      "120 ml",
+      "140 ml",
+      "175 ml",
+      "200 ml"
+    ],
+    "correctIndex": 2,
+    "topic": "ratio_proportion",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-584",
+    "text": "A paint mixture uses red, blue, and yellow paint in the ratio 5:3:2. If a painter uses 750 ml of this mixture in total, how much more red paint than yellow paint does she use?",
+    "options": [
+      "150 ml",
+      "225 ml",
+      "250 ml",
+      "300 ml",
+      "375 ml"
+    ],
+    "correctIndex": 1,
+    "topic": "ratio_proportion",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-588",
+    "text": "A smoothie recipe for 3 people uses 450 ml of milk and 6 bananas. Priya wants to make the same smoothie for 5 people. How much milk does she need?",
+    "options": [
+      "600 ml",
+      "650 ml",
+      "700 ml",
+      "750 ml",
+      "900 ml"
+    ],
+    "correctIndex": 3,
+    "topic": "ratio_proportion",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-589",
+    "text": "A fruit punch recipe uses orange juice and lemonade in the ratio 3:5. Sam makes 2.4 litres of punch for a party, but then decides he needs to increase the total amount to 4 litres while keeping the same ratio. How many extra millilitres of orange juice does he need to add?",
+    "options": [
+      "450 ml",
+      "600 ml",
+      "900 ml",
+      "1500 ml",
+      "750 ml"
+    ],
+    "correctIndex": 1,
+    "topic": "ratio_proportion",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-591",
+    "text": "A fruit squash is made by mixing squash and water in the ratio 1:4. If you use 3 cups of squash, how many cups of water do you need?",
+    "options": [
+      "3 cups",
+      "4 cups",
+      "7 cups",
+      "8 cups",
+      "12 cups"
+    ],
+    "correctIndex": 4,
+    "topic": "ratio_proportion",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-592",
+    "text": "A fruit punch recipe for 4 people uses 200 ml of orange juice, 100 ml of lemonade, and 50 ml of cranberry juice. How much orange juice is needed to make the punch for 6 people?",
+    "options": [
+      "250 ml",
+      "300 ml",
+      "350 ml",
+      "400 ml",
+      "150 ml"
+    ],
+    "correctIndex": 1,
+    "topic": "ratio_proportion",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-593",
+    "text": "A smoothie recipe for 4 servings uses 240 g of strawberries, 3 bananas, and 400 ml of yoghurt. Mia wants to make 6 servings using the same recipe. How many bananas does she need?",
+    "options": [
+      "3 bananas",
+      "4 bananas",
+      "4.5 bananas",
+      "5 bananas",
+      "6 bananas"
+    ],
+    "correctIndex": 2,
+    "topic": "ratio_proportion",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-596",
+    "text": "Lily has some books on her shelf. She buys 3 more books and now has 10 books altogether. If we write this as b + 3 = 10, what is b?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "10",
+      "13"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-597",
+    "text": "Mia has some marbles in a bag. She wins 6 more marbles in a game and now has 15 marbles altogether. If we write this as m + 6 = 15, what is the value of m?",
+    "options": [
+      "7",
+      "8",
+      "9",
+      "10",
+      "21"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-598",
+    "text": "A baker makes some loaves of bread each morning. She sells 12 loaves before lunch and then bakes 5 more in the afternoon. At the end of the day she has 18 loaves. If we let b stand for the number of loaves she baked in the morning, which equation matches this problem, and what is b?",
+    "options": [
+      "b − 12 + 5 = 18, so b = 25",
+      "b + 12 − 5 = 18, so b = 11",
+      "b − 12 + 5 = 18, so b = 31",
+      "b − 12 − 5 = 18, so b = 35",
+      "b + 5 − 12 = 18, so b = 20"
+    ],
+    "correctIndex": 0,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-599",
+    "text": "A baker makes some loaves of bread each morning. She sells half of them before lunch, then bakes 10 more in the afternoon. By the end of the day she has 34 loaves. If we let b represent the number of loaves she baked in the morning, which equation matches this problem, and what is the value of b?",
+    "options": [
+      "b ÷ 2 + 10 = 34, so b = 38",
+      "b ÷ 2 + 10 = 34, so b = 48",
+      "b − 2 + 10 = 34, so b = 26",
+      "b ÷ 2 − 10 = 34, so b = 88",
+      "b ÷ 2 + 10 = 34, so b = 44"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-601",
+    "text": "A shelf has some books on it. If you add 5 more books, there are 12 books on the shelf altogether. How many books were on the shelf to start with?\n\nLet b = the number of books at the start.\n\nb + 5 = 12\n\nb = ?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "12",
+      "17"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-602",
+    "text": "A shelf holds some books. After a librarian adds 8 more books to the shelf, there are now 26 books in total. How many books were on the shelf to start with?\n\nLet b = the number of books at the start.\n\nb + 8 = 26\n\nb = ?",
+    "options": [
+      "16",
+      "18",
+      "20",
+      "34",
+      "22"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-603",
+    "text": "A library shelf holds some books. After a librarian adds 12 more books and then removes 5 damaged ones, there are 30 books on the shelf. How many books were on the shelf to start with?\n\nLet b = the number of books at the start.\n\nb + 12 − 5 = 30\n\nb = ?",
+    "options": [
+      "18",
+      "23",
+      "25",
+      "37",
+      "47"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-604",
+    "text": "A cinema has several rows of seats. Each row holds the same number of seats. When 3 extra chairs are added to each row, each row then holds 11 seats. There are 6 rows in total. If 20 people are already seated, how many empty seats are there altogether in the cinema?",
+    "options": [
+      "46",
+      "48",
+      "44",
+      "66",
+      "28"
+    ],
+    "correctIndex": 0,
+    "topic": "algebra",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-606",
+    "text": "Sam has some stickers. His friend gives him 5 more stickers. He now has 12 stickers in total. If s represents the number of stickers Sam started with, what is the value of s?",
+    "options": [
+      "s = 5",
+      "s = 7",
+      "s = 12",
+      "s = 17",
+      "s = 6"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-607",
+    "text": "A gardener plants some seeds on Monday and then plants 12 more seeds on Tuesday. By Friday, 5 seeds have not grown. She now has 25 growing plants. If s represents the number of seeds she planted on Monday, which equation is correct?",
+    "options": [
+      "s + 12 − 5 = 25, so s = 18",
+      "s + 12 + 5 = 25, so s = 8",
+      "s − 12 + 5 = 25, so s = 32",
+      "s + 12 − 5 = 25, so s = 20",
+      "s + 12 − 5 = 25, so s = 15"
+    ],
+    "correctIndex": 0,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-609",
+    "text": "A charity collects donations over three days. On Monday they collect £p. On Tuesday they collect twice as much as Monday. On Wednesday they collect £12 less than Tuesday. They then spend £25 on supplies. The charity now has £89 left. Which equation is correct, and what is the value of p?",
+    "options": [
+      "p + 2p + (2p − 12) − 25 = 89, so p = 25.2",
+      "p + 2p + (2p − 12) − 25 = 89, so p = 26",
+      "p + 2p + (p − 12) − 25 = 89, so p = 31.5",
+      "p + 2p + (2p + 12) − 25 = 89, so p = 20.4",
+      "p + 2p + (2p − 12) + 25 = 89, so p = 15.2"
+    ],
+    "correctIndex": 1,
+    "topic": "algebra",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-611",
+    "text": "Sam has some stickers. If he adds 5 more stickers, he will have 12 stickers in total. Let s stand for the number of stickers Sam has now. What is the value of s?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8",
+      "17"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-612",
+    "text": "A farmer counts her chickens. She finds that if she doubles the number of chickens and adds 5, she gets 29. Let c stand for the number of chickens. What is the value of c?",
+    "options": [
+      "10",
+      "11",
+      "12",
+      "13",
+      "17"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-613",
+    "text": "A gardener plants flowers in rows. She notices that if she doubles the number of flowers in each row and then adds 5, she gets the same total as if she multiplies the number of flowers by 3 and then subtracts 12. Let f represent the number of flowers in each row. What is the value of f?",
+    "options": [
+      "7",
+      "12",
+      "15",
+      "17",
+      "19"
+    ],
+    "correctIndex": 3,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-614",
+    "text": "A gardener plants flowers in rows. She notices that if she quadruples the number of flowers in each row and then subtracts 15, she gets the same number as if she triples the flowers in each row and adds 8. Let f represent the number of flowers in one row. What is the value of f?",
+    "options": [
+      "17",
+      "19",
+      "23",
+      "25",
+      "27"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 4
+  },
+  {
+    "id": "q-m6-616",
+    "text": "Sam has some stickers. He can write the number of stickers he has as the expression 2n + 3. If n = 4, how many stickers does Sam have?",
+    "options": [
+      "9",
+      "10",
+      "11",
+      "12",
+      "14"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 1
+  },
+  {
+    "id": "q-m6-617",
+    "text": "Sam has some stickers. His sister has twice as many stickers as Sam. Together they have 24 stickers. If Sam has 'n' stickers, what is the value of n?",
+    "options": [
+      "6",
+      "7",
+      "8",
+      "10",
+      "12"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 2
+  },
+  {
+    "id": "q-m6-618",
+    "text": "Three friends are collecting stickers. Raj has 'n' stickers, Priya has 'n + 7' stickers, and Sam has '2n − 3' stickers. Altogether they have 52 stickers. What is the value of n?",
+    "options": [
+      "10",
+      "11",
+      "12",
+      "13",
+      "14"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 3
+  },
+  {
+    "id": "q-m6-619",
+    "text": "A bakery has three ovens. Oven X bakes 'n + 4' loaves per hour, Oven Y bakes '2n − 3' loaves per hour, and Oven Z bakes '3n + 5' loaves per hour. After running all three ovens for 2 hours, the bakery has produced 132 loaves in total. What is the value of n?",
+    "options": [
+      "8",
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "correctIndex": 2,
+    "topic": "algebra",
+    "difficulty": 4
+  }
+]

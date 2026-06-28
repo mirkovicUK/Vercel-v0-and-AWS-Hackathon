@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-019",
+  "answer": "A",
+  "steps": "Recipe for 8 pancakes: flour 200 g, eggs 2, milk 300 ml. To make 12 pancakes, multiply each ingredient by 12/8 = 1.5. Required amounts: flour = 200 × 1.5 = 300 g; eggs = 2 × 1.5 = 3 eggs; milk = 300 × 1.5 = 450 ml. Sam has: flour 280 g, eggs 4, milk 500 ml. Compare required vs available: flour needed 300 g, has 280 g → short by 20 g; eggs needed 3, has 4 → enough; milk needed 450 ml, has 500 ml → enough. Only flour is insufficient, so flour runs out first.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

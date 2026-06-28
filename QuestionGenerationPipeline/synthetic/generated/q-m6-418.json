@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-418",
+  "seedQid": "q-m5-022",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "A baker makes cupcakes using the formula: Total cupcakes = 6n + 4, where n is the number of batches. She also makes cookies using the formula: Total cookies = 4n + 12. For how many batches (n) will the baker have the same number of cupcakes and cookies?",
+  "options": [
+    "n = 2",
+    "n = 3",
+    "n = 4",
+    "n = 5",
+    "n = 6"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "We need to find the value of n where the two expressions are equal.\n\nStep 1: Set the two expressions equal to each other:\n6n + 4 = 4n + 12\n\nStep 2: Subtract 4n from both sides:\n6n - 4n + 4 = 12\n2n + 4 = 12\n\nStep 3: Subtract 4 from both sides:\n2n = 8\n\nStep 4: Divide both sides by 2:\nn = 4\n\nStep 5: Check — when n = 4:\nCupcakes = 6(4) + 4 = 24 + 4 = 28\nCookies = 4(4) + 12 = 16 + 12 = 28 ✓\n\nThe answer is n = 4.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:06:09+00:00"
+}

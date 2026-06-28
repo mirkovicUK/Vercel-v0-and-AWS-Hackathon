@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-053",
+  "seedQid": "q-m1-026",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "A baker makes biscuits in batches. He uses the formula: Total biscuits = Batches × Y. If he made 96 total biscuits in 8 batches, what number does Y stand for?",
+  "options": [
+    "8",
+    "10",
+    "12",
+    "14",
+    "16"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "We know that Total biscuits = Batches × Y.\nSubstitute the values: 96 = 8 × Y.\nTo find Y, divide both sides by 8: Y = 96 ÷ 8 = 12.\nSo Y stands for 12.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:24:37+00:00"
+}

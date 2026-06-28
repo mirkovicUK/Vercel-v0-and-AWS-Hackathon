@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-227",
+  "seedQid": "q-m2-036",
+  "topic": "number",
+  "difficulty": 2,
+  "text": "A pencil costs £0.35 and a rubber costs £1.5. What is the total cost of both items?",
+  "options": [
+    "£1.40",
+    "£1.53",
+    "£1.85",
+    "£1.80",
+    "£2.00"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Write down the two amounts: £0.35 and £1.5 (which is the same as £1.50).\nStep 2: Add the pence: 35p + 50p = 85p.\nStep 3: Add the pounds: £0 + £1 = £1.\nStep 4: Combine: £1 + 85p = £1.85.\nThe correct answer is £1.85.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:43:18+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-042",
+  "seedQid": "q-m1-019",
+  "topic": "number",
+  "difficulty": 2,
+  "text": "About how much does a standard kitchen teaspoon hold?",
+  "options": [
+    "0.5 ml",
+    "5 ml",
+    "50 ml",
+    "500 ml",
+    "5 litres"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "A standard kitchen teaspoon holds about 5 ml of liquid. 0.5 ml is far too small (just a tiny drop). 50 ml is closer to a small cup or egg cup. 500 ml is about the amount in a water bottle. 5 litres is a very large container. So the correct answer is 5 ml.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:23:27+00:00"
+}

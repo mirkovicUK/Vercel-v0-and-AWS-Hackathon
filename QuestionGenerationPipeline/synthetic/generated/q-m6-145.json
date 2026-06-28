@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-145",
+  "seedQid": "q-m2-006",
+  "topic": "number",
+  "difficulty": 5,
+  "text": "A spacecraft's distance computer displays numbers in a special format: it shows the number of millions first, then the number of thousands, then the remaining units. The computer reads out: 'two hundred and three millions, forty-seven thousands, and eight hundred and six units.' However, the display has a fault — it shows the digit sum of each section instead of the full number. What is the digit sum of the complete number when written in figures?",
+  "options": [
+    "25",
+    "29",
+    "30",
+    "32",
+    "27"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Convert the spoken description into a full number.\n'Two hundred and three millions' = 203,000,000\n'Forty-seven thousands' = 47,000\n'Eight hundred and six units' = 806\n\nStep 2: Add these together to get the complete number.\n203,000,000 + 47,000 + 806 = 203,047,806\n\nStep 3: Find the digit sum of 203,047,806.\nDigits: 2 + 0 + 3 + 0 + 4 + 7 + 8 + 0 + 6 = 30\n\nThe digit sum of the complete number is 30.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:34:45+00:00"
+}

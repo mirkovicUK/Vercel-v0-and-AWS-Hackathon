@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-096",
+  "answer": "C",
+  "steps": "Add the number of each pet: Dogs 8 + Cats 5 + Fish 3 + Rabbits 4 = 8 + 5 = 13, 13 + 3 = 16, 16 + 4 = 20. Total = 20.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

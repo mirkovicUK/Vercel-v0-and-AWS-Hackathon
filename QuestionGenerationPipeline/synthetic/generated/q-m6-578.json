@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-578",
+  "seedQid": "q-m6-016",
+  "topic": "ratio_proportion",
+  "difficulty": 3,
+  "text": "A smoothie recipe uses banana and yoghurt in the ratio 3:5. If Sam uses 12 spoonfuls of banana, how many spoonfuls of yoghurt does he need?",
+  "options": [
+    "15",
+    "18",
+    "20",
+    "24",
+    "25"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: The ratio of banana to yoghurt is 3:5.\nStep 2: Sam uses 12 spoonfuls of banana. To find the multiplier, divide 12 by 3: 12 ÷ 3 = 4.\nStep 3: Multiply the yoghurt part of the ratio by the same multiplier: 5 × 4 = 20.\nStep 4: Sam needs 20 spoonfuls of yoghurt.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:23:42+00:00"
+}

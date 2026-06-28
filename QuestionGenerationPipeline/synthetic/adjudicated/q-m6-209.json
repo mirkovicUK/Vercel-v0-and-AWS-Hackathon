@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-209",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "B",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "The monthly total is £1,245 + £168 = £1,413. Over 9 months, this is £1,413 × 9 = £12,717, which corresponds to option B. Solver 1 gave the value £12,117, which is incorrect. Solver 2 selected B, which is correct. The correct option is B and it is unambiguous.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

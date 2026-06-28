@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-225",
+  "seedQid": "q-m2-033",
+  "topic": "algebra",
+  "difficulty": 5,
+  "text": "A factory produces gadgets using two machines. Machine A makes Y gadgets per hour and Machine B makes (Y + 5) gadgets per hour. Together, both machines produce 47 gadgets per hour. The factory runs both machines for 3 hours, then runs only Machine A for 2 more hours. How many gadgets are produced in total?",
+  "options": [
+    "173",
+    "183",
+    "189",
+    "195",
+    "199"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Set up the equation for the two machines working together.\nY + (Y + 5) = 47\n2Y + 5 = 47\n2Y = 42\nY = 21\n\nStep 2: Find each machine's rate.\nMachine A makes 21 gadgets per hour.\nMachine B makes 21 + 5 = 26 gadgets per hour.\n\nStep 3: Calculate gadgets produced when both machines run for 3 hours.\nBoth together produce 47 per hour, so in 3 hours: 47 × 3 = 141 gadgets.\n\nStep 4: Calculate gadgets produced when only Machine A runs for 2 more hours.\nMachine A produces 21 per hour, so in 2 hours: 21 × 2 = 42 gadgets.\n\nStep 5: Find the total.\n141 + 42 = 183 gadgets.\n\nThe answer is 183.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:43:10+00:00"
+}

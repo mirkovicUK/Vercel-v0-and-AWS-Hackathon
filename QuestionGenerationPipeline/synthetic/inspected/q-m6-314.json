@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-314",
+  "answer": "E",
+  "steps": "Let n = number of non-fiction books. Fiction books = 3n. Also, fiction books = n + 56. Set 3n = n + 56 → 3n - n = 56 → 2n = 56 → n = 28. Fiction books = 3n = 84. Total books = n + 3n = 4n = 4 × 28 = 112.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 4,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

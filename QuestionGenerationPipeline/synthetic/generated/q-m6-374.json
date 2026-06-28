@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-374",
+  "seedQid": "q-m5-007",
+  "topic": "number",
+  "difficulty": 4,
+  "text": "A scientist measures bacteria populations in five different samples. The populations are expressed in different forms. Which sample has the largest population?\n\nSample A: 3/8 of 1000\nSample B: 0.45 × 800\nSample C: 7/20 of 1200\nSample D: 0.6 × 550\nSample E: 5/12 of 840",
+  "options": [
+    "Sample A: 375",
+    "Sample B: 360",
+    "Sample C: 420",
+    "Sample D: 330",
+    "Sample E: 350"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "We need to calculate each population and find the largest.\n\nSample A: 3/8 of 1000 = 3 × 1000 ÷ 8 = 3000 ÷ 8 = 375\n\nSample B: 0.45 × 800 = 360\n\nSample C: 7/20 of 1200 = 7 × 1200 ÷ 20 = 8400 ÷ 20 = 420\n\nSample D: 0.6 × 550 = 330\n\nSample E: 5/12 of 840 = 5 × 840 ÷ 12 = 4200 ÷ 12 = 350\n\nComparing: 375, 360, 420, 330, 350\n\nThe largest value is 420, which is Sample C.\n\nThe correct answer is Sample C: 420.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:00:28+00:00"
+}

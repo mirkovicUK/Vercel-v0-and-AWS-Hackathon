@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-182",
+  "seedQid": "q-m2-020",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "Tom has saved some money in his piggy bank. He calls this amount p. He then earns £12 more from doing chores. If Tom now has £30 altogether, which equation shows how to find p?",
+  "options": [
+    "p + 30 = 12",
+    "p - 12 = 30",
+    "p + 12 = 30",
+    "12 - p = 30",
+    "p + 30 = 42"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Tom starts with p pounds.\nStep 2: He earns £12 more, so his total is p + 12.\nStep 3: We are told his total is £30.\nStep 4: So the correct equation is p + 12 = 30.\nThis means p = 30 - 12 = £18, but the question asks for the equation, which is p + 12 = 30.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:38:37+00:00"
+}

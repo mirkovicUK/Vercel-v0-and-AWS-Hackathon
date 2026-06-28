@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-189",
+  "seedQid": "q-m2-022",
+  "topic": "algebra",
+  "difficulty": 4,
+  "text": "A bakery sells cupcakes in boxes. The cost of a box depends on how many cupcakes it contains. A box of 5 cupcakes costs £4.50, and there is a fixed delivery charge of £2.00 added to every order regardless of how many boxes you buy. If the cost of one cupcake is represented by 'c', and someone orders 3 boxes (each containing 5 cupcakes) with one delivery charge, which expression shows the total cost, and what is that total cost?",
+  "options": [
+    "15c + 2 = £15.50",
+    "15c + 2 = £13.50",
+    "5c + 2 = £6.50",
+    "15c + 6 = £19.50",
+    "3c + 2 = £4.70"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Find the cost of one cupcake. A box of 5 cupcakes costs £4.50, so 5c = £4.50, which means c = £4.50 ÷ 5 = £0.90.\n\nStep 2: Write the expression for 3 boxes plus delivery. 3 boxes each contain 5 cupcakes, so that's 15 cupcakes total. The expression is 15c + 2 (15 cupcakes at cost c each, plus £2.00 delivery).\n\nStep 3: Calculate the total cost. 15 × £0.90 = £13.50, then add the delivery charge: £13.50 + £2.00 = £15.50.\n\nStep 4: The correct expression and total is 15c + 2 = £15.50.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:39:29+00:00"
+}

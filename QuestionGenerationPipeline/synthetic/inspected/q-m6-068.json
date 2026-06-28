@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-068",
+  "answer": "B) 0.048 kg",
+  "steps": "Total dough = 4.8 kg. Number of rolls = 100. Weight per roll = 4.8 kg ÷ 100 = 4.8 ÷ 100 = 0.048 kg.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

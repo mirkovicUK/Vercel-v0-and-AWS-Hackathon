@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-469",
+  "seedQid": "q-m5-036",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 4,
+  "text": "A factory produces 450 chocolate bars per hour. Each bar weighs 35 g. The factory runs for 8 hours in one day. What percentage of a tonne is the total weight of chocolate bars produced in one day?",
+  "options": [
+    "12.6%",
+    "15.2%",
+    "10.8%",
+    "14.4%",
+    "11.2%"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Find the total number of bars produced in one day.\n450 bars per hour × 8 hours = 3,600 bars.\n\nStep 2: Find the total weight in grams.\n3,600 bars × 35 g = 126,000 g.\n\nStep 3: Convert grams to kilograms.\n126,000 g ÷ 1,000 = 126 kg.\n\nStep 4: Express this as a percentage of a tonne (1 tonne = 1,000 kg).\n(126 ÷ 1,000) × 100 = 12.6%.\n\nThe correct answer is 12.6%.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:11:38+00:00"
+}

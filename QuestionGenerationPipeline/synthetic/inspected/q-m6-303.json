@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-303",
+  "answer": "B",
+  "steps": "Perimeter of rectangle = 2(length + width). Given length = (3x + 5), width = (x + 2). So perimeter = 2[(3x + 5) + (x + 2)] = 2(4x + 7) = 8x + 14. Set equal to 54: 8x + 14 = 54 → 8x = 40 → x = 5. Check: length = 20, width = 7, perimeter = 2*(20+7) = 54, correct.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

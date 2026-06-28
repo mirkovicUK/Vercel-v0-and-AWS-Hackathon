@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-104",
+  "seedQid": "q-m1-039",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 4,
+  "text": "A school has 360 pupils. In a survey, 35% of the pupils said they walk to school, 3/8 of the pupils travel by car, and the rest cycle. How many pupils cycle to school?",
+  "options": [
+    "81",
+    "90",
+    "99",
+    "108",
+    "117"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find 35% of 360 pupils who walk.\n35% of 360 = 35/100 × 360 = 126 pupils walk.\n\nStep 2: Find 3/8 of 360 pupils who travel by car.\n3/8 × 360 = 1080/8 = 135 pupils travel by car.\n\nStep 3: Find the number who cycle.\nTotal pupils − walkers − car travellers = cyclists\n360 − 126 − 135 = 99 pupils cycle.\n\nThe answer is 99.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:29:55+00:00"
+}

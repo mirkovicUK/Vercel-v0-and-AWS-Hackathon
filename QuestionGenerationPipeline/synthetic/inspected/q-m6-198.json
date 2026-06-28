@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-198",
+  "answer": "B",
+  "steps": "Cara read 10 books, Ella read 6 books. Difference in books = 10 - 6 = 4 books. Each book takes average 3 hours. Difference in hours = 4 × 3 = 12 hours.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

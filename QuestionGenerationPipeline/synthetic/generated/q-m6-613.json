@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-613",
+  "seedQid": "q-m6-024",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "A gardener plants flowers in rows. She notices that if she doubles the number of flowers in each row and then adds 5, she gets the same total as if she multiplies the number of flowers by 3 and then subtracts 12. Let f represent the number of flowers in each row. What is the value of f?",
+  "options": [
+    "7",
+    "12",
+    "15",
+    "17",
+    "19"
+  ],
+  "correctIndex": 3,
+  "generatorSolution": "Step 1: Write an equation based on the information given.\nDoubling and adding 5: 2f + 5\nTripling and subtracting 12: 3f − 12\nThese are equal, so: 2f + 5 = 3f − 12\n\nStep 2: Solve for f.\nSubtract 2f from both sides: 5 = f − 12\nAdd 12 to both sides: 17 = f\n\nStep 3: Check the answer.\n2 × 17 + 5 = 34 + 5 = 39\n3 × 17 − 12 = 51 − 12 = 39 ✓\n\nThe value of f is 17.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:27:40+00:00"
+}

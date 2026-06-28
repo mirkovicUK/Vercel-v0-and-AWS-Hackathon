@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-550",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "B",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "The number is 8,461,253. The digit in the millions place is 8 (value 8,000,000). The digit in the tens place is 5 (value 50), so 8 * 5 = 40. The digit in the hundred-thousands place is 4 (value 400,000). Subtract 40 from 400,000 to get 399,960. This matches option B. Solver 1 gave the correct answer. Solver 2 chose D (360,000), which is incorrect. The correct and unambiguous answer is B.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-452",
+  "answer": "C",
+  "steps": "We need to arrange 18 cupcakes into equal rows with no leftovers. This means the number of rows must be a divisor of 18. The divisors of 18 are: 1, 2, 3, 6, 9, 18. That is 6 divisors. Each divisor corresponds to a different number of rows (e.g., 1 row of 18, 2 rows of 9, 3 rows of 6, 6 rows of 3, 9 rows of 2, 18 rows of 1). So there are 6 different ways. Check options: A)4, B)5, C)6, D)8, E)9. Only 6 matches.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

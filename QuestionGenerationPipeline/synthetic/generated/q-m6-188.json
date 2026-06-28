@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-188",
+  "seedQid": "q-m2-022",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "A bakery sells cupcakes so that 5 cupcakes cost the same as 2 large cakes. If a large cake costs £4.50, how much does one cupcake cost?",
+  "options": [
+    "£1.50",
+    "£1.80",
+    "£2.00",
+    "£2.25",
+    "£2.50"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find the cost of 2 large cakes.\n2 × £4.50 = £9.00\n\nStep 2: Since 5 cupcakes cost the same as 2 large cakes, 5 cupcakes cost £9.00.\n\nStep 3: Find the cost of one cupcake.\n£9.00 ÷ 5 = £1.80\n\nThe answer is £1.80.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:39:21+00:00"
+}

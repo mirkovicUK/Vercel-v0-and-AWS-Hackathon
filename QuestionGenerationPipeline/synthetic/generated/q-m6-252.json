@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-252",
+  "seedQid": "q-m2-046",
+  "topic": "number",
+  "difficulty": 2,
+  "text": "Lily thinks of a number, doubles it, and then adds 7. Her answer is 19. What number did Lily think of?",
+  "options": [
+    "4",
+    "5",
+    "6",
+    "7",
+    "8"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Work backwards from the answer.\n\nLily's steps: think of a number → double it → add 7 → get 19.\n\nStep 1: Undo the 'add 7' by subtracting 7 from 19: 19 − 7 = 12.\nStep 2: Undo the 'double it' by dividing 12 by 2: 12 ÷ 2 = 6.\n\nSo Lily's original number was 6.\n\nCheck: 6 × 2 = 12, then 12 + 7 = 19. ✓",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:46:07+00:00"
+}

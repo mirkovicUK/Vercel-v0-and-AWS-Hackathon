@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-475",
+  "seedQid": "q-m5-038",
+  "topic": "number",
+  "difficulty": 5,
+  "text": "A number N satisfies all of the following conditions:\n• N is a common multiple of 6 and 8\n• N is a factor of 720\n• When N is divided by 5, the remainder is 4\n• N is greater than 100\n\nWhat is N?",
+  "options": [
+    "120",
+    "144",
+    "168",
+    "240",
+    "264"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find the LCM of 6 and 8. LCM(6,8) = 24. So N must be a multiple of 24.\n\nStep 2: Find which multiples of 24 are factors of 720. 720 ÷ 24 = 30, so the multiples of 24 that are factors of 720 are: 24, 48, 72, 96, 120, 144, 240, 360, 720. We check each: 24×1=24 ✓, 24×2=48 ✓, 24×3=72 ✓, 24×4=96 ✓, 24×5=120 ✓, 24×6=144 ✓, 24×10=240 ✓, 24×15=360 ✓, 24×30=720 ✓.\n\nStep 3: N must be greater than 100, so candidates are: 120, 144, 240, 360, 720.\n\nStep 4: Check which gives remainder 4 when divided by 5.\n• 120 ÷ 5 = 24 remainder 0 ✗\n• 144 ÷ 5 = 28 remainder 4 ✓\n• 240 ÷ 5 = 48 remainder 0 ✗\n• 360 ÷ 5 = 72 remainder 0 ✗\n• 720 ÷ 5 = 144 remainder 0 ✗\n\nOnly 144 satisfies all four conditions, so N = 144.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:12:16+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-368",
+  "answer": "C",
+  "steps": "Each whole pie is cut into 5 fifths. So 4 whole pies = 4 × 5 = 20 fifths. There is also an extra 3 fifths. Total fifths = 20 + 3 = 23.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

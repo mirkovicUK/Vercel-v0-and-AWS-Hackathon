@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-406",
+  "seedQid": "q-m5-017",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "A bag of sweets costs £n. If Tom buys 3 bags, he pays £12. What is the value of n?",
+  "options": [
+    "£2",
+    "£3",
+    "£4",
+    "£5",
+    "£6"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "We know that 3 × n = 12. To find n, we divide both sides by 3: n = 12 ÷ 3 = 4. So each bag costs £4.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:05:06+00:00"
+}

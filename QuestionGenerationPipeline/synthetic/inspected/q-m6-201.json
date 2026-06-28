@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-201",
+  "answer": "B",
+  "steps": "1. The cost of one book is £n. 2. Sam buys 2 books. 3. Total cost = cost per book × number of books = n × 2 = 2n. 4. Check options: A) n + 2 is addition, not multiplication by 2. B) 2n matches n × 2. C) n - 2 is subtraction. D) n × n is n squared, not multiplied by 2. E) n ÷ 2 is half of n, not double. 5. Only 2n correctly represents the total cost.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

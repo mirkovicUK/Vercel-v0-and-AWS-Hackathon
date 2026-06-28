@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-345",
+  "answer": "C",
+  "steps": "1. Real stadium length = 360 m, width = 240 m. Model length = 45 cm.\n2. Find scale: model length (cm) / real length (cm). Convert 360 m to cm: 360 × 100 = 36000 cm.\n3. Scale = 45 / 36000 = 45 ÷ 45 / 36000 ÷ 45 = 1 / 800.\n4. Model width = real width × scale. Real width = 240 m = 24000 cm.\n5. Model width = 24000 × (1/800) = 24000 ÷ 800 = 30 cm.\n6. Area of model base = length × width = 45 cm × 30 cm = 1350 cm².",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

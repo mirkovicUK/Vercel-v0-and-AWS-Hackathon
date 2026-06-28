@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-423",
+  "seedQid": "q-m5-024",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "A baker makes cupcakes and packs them into boxes of 8. She uses the expression n ÷ 8 to work out how many complete boxes she can fill, where n is the number of cupcakes. One morning she bakes 5 trays of cupcakes with 13 cupcakes on each tray. How many complete boxes can she fill?",
+  "options": [
+    "7",
+    "8",
+    "9",
+    "10",
+    "11"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find the total number of cupcakes. She bakes 5 trays with 13 cupcakes on each tray, so n = 5 × 13 = 65 cupcakes.\n\nStep 2: Use the expression n ÷ 8 to find how many complete boxes she can fill. 65 ÷ 8 = 8 remainder 1.\n\nStep 3: Since the question asks for complete boxes only, we ignore the remainder. She can fill 8 complete boxes.\n\nThe answer is 8.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:06:49+00:00"
+}

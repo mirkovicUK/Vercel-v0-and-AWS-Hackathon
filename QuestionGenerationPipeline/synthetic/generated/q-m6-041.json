@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-041",
+  "seedQid": "q-m1-019",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "About how much does a teaspoon hold?",
+  "options": [
+    "5 ml",
+    "50 ml",
+    "500 ml",
+    "5 litres",
+    "50 litres"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "A teaspoon is a very small spoon used for stirring tea or measuring small amounts of medicine. It holds about 5 ml of liquid. 50 ml would be closer to a small cup, 500 ml is about a bottle of water, and 5 litres or 50 litres are far too large for a spoon. So the answer is 5 ml.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:23:24+00:00"
+}

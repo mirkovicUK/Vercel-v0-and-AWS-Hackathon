@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-427",
+  "answer": "C",
+  "steps": "At 7am: 14 loaves, 8am: 23 loaves, 9am: 32 loaves, 10am: 41 loaves. The increase each hour: from 7am to 8am: 23 - 14 = 9 loaves, from 8am to 9am: 32 - 23 = 9 loaves, from 9am to 10am: 41 - 32 = 9 loaves. So the pattern is adding 9 loaves each hour. Therefore, from 10am to 11am: 41 + 9 = 50 loaves.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

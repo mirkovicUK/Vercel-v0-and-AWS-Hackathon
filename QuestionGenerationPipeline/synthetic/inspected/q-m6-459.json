@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-459",
+  "answer": "A",
+  "steps": "1. Total flour = Bag A + Bag B + Bag C = 2.75 + 3.4 + 1.85 = 8.0 kg.\n2. 60% used for bread, so 40% used for cakes.\n3. Flour for cakes = 40% of total = 0.4 × 8.0 = 3.2 kg.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

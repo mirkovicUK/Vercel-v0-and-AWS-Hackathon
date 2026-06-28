@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-061",
+  "seedQid": "q-m1-028",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "A baker makes cupcakes. Each cupcake costs 5p to make. If he uses the letter n to stand for the number of cupcakes, which expression shows the total cost in pence?",
+  "options": [
+    "n + 5",
+    "5 + n",
+    "5n",
+    "n ÷ 5",
+    "5 - n"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Each cupcake costs 5p to make.\nStep 2: If the baker makes n cupcakes, we multiply the cost per cupcake by the number of cupcakes.\nStep 3: Total cost = 5 × n = 5n.\nThe correct answer is 5n.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:25:38+00:00"
+}

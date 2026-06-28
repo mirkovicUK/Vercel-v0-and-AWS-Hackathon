@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-033",
+  "answer": "C",
+  "steps": "Let the starting number of eggs be x. Doubling gives 2x. Adding 5 more gives 2x + 5. This equals 19 eggs total. So 2x + 5 = 19. Subtract 5: 2x = 14. Divide by 2: x = 7. Check: start with 7, double to 14, add 5 gives 19. Correct.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

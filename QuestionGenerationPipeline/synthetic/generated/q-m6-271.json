@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-271",
+  "seedQid": "q-m3-011",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "A library has 5000 books. They receive a delivery of 1000 more books. How many books does the library have now?",
+  "options": [
+    "4000",
+    "5100",
+    "6000",
+    "6100",
+    "51000"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Start with the number of books the library already has: 5000.\nStep 2: Add the number of new books delivered: 5000 + 1000 = 6000.\nThe library now has 6000 books.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:48:34+00:00"
+}

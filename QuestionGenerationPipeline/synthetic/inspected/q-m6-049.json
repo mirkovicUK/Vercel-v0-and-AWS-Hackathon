@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-049",
+  "answer": "A",
+  "steps": "1. Target = £8, raised = £2.40.\n2. Percentage raised = (raised / target) × 100 = (2.40 / 8) × 100 = 0.3 × 100 = 30%.\n3. Amount still needed = target - raised = £8 - £2.40 = £5.60.\n4. Fraction of target still needed = (5.60 / 8) = 56/80 = simplify by 8: 7/10.\n5. Check options: A says 30% raised, 7/10 still needed — matches exactly.\n6. Verify others: B says 24% raised — wrong; C says 30% raised but 3/4 still needed — 3/4 = 0.75 ≠ 0.7; D says 32% raised — wrong; E says 25% raised — wrong.\n7. Only A matches both parts correctly.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-466",
+  "answer": "B",
+  "steps": "1 metre = 100 cm. To convert cm to metres, divide by 100. 50 cm ÷ 100 = 0.5 m. Written as a decimal: 0.5 m.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

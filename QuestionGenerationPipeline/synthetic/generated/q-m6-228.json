@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-228",
+  "seedQid": "q-m2-036",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A scientist measures the length of two tiny insects. The first insect is 0.45 cm long and the second is 3.6 cm long. What is the total length of both insects?",
+  "options": [
+    "3.15 cm",
+    "3.65 cm",
+    "4.05 cm",
+    "4.10 cm",
+    "4.50 cm"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Line up the decimal points.\n  0.45\n+ 3.60\n\nStep 2: Add the hundredths column: 5 + 0 = 5\nStep 3: Add the tenths column: 4 + 6 = 10, write 0 and carry 1\nStep 4: Add the ones column: 0 + 3 + 1 (carried) = 4\n\nSo 0.45 + 3.60 = 4.05 cm\n\nThe correct answer is 4.05 cm.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:43:24+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-476",
+  "seedQid": "q-m5-040",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 1,
+  "text": "A fruit bowl contains 20 pieces of fruit. 5 of them are apples. What percentage of the fruit are apples?",
+  "options": [
+    "5%",
+    "15%",
+    "20%",
+    "25%",
+    "50%"
+  ],
+  "correctIndex": 3,
+  "generatorSolution": "Step 1: Find the fraction of fruit that are apples.\nApples = 5, Total fruit = 20\nFraction = 5/20 = 1/4\n\nStep 2: Convert the fraction to a percentage.\n1/4 = 25/100 = 25%\n\nThe answer is 25%.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:12:19+00:00"
+}

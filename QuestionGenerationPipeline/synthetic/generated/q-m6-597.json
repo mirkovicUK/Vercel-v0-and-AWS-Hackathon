@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-597",
+  "seedQid": "q-m6-021",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "Mia has some marbles in a bag. She wins 6 more marbles in a game and now has 15 marbles altogether. If we write this as m + 6 = 15, what is the value of m?",
+  "options": [
+    "7",
+    "8",
+    "9",
+    "10",
+    "21"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "We need to find the value of m in the equation m + 6 = 15.\n\nStep 1: To find m, we subtract 6 from both sides of the equation.\nm = 15 − 6\n\nStep 2: Calculate 15 − 6 = 9\n\nSo m = 9. Mia started with 9 marbles.\n\nThe correct answer is 9.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:25:56+00:00"
+}

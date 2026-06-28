@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-483",
+  "answer": "C",
+  "steps": "First, find the price per muffin: £3.60 for 4 muffins → each muffin costs £3.60 ÷ 4 = £0.90. Next, find the price per cookie: £2.70 for 6 cookies → each cookie costs £2.70 ÷ 6 = £0.45. Emma buys 2 muffins: cost = 2 × £0.90 = £1.80. She buys 3 cookies: cost = 3 × £0.45 = £1.35. Total spending = £1.80 + £1.35 = £3.15. Fraction spent on muffins = (cost of muffins) / (total) = £1.80 / £3.15. Simplify: divide numerator and denominator by 0.45: £1.80 ÷ 0.45 = 4, £3.15 ÷ 0.45 = 7, so fraction = 4/7.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

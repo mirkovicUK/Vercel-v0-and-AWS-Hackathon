@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-516",
+  "answer": "B",
+  "steps": "The phrase 'two thousand and fifteen' means 2000 + 15 = 2015. Check options: A) 2150 is two thousand one hundred fifty, not correct. B) 2015 matches. C) 20015 is twenty thousand fifteen, not correct. D) 215 is two hundred fifteen, not correct. E) 2105 is two thousand one hundred five, not correct. Only B matches the written number.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

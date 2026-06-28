@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-422",
+  "answer": "B",
+  "steps": "Each tray holds 8 muffins. Total muffins = 50. Number of complete trays = floor(50 ÷ 8) = floor(6.25) = 6. So t = 6.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

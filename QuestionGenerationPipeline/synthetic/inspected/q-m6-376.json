@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-376",
+  "answer": "A",
+  "steps": "The number is 'twelve thousand, four hundred and fifty-six'. Twelve thousand = 12,000. Four hundred = 400. Fifty-six = 56. Sum: 12,000 + 400 = 12,400; 12,400 + 56 = 12,456. In digits with comma separators (thousands), it is 12,456.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-472",
+  "seedQid": "q-m5-038",
+  "topic": "number",
+  "difficulty": 2,
+  "text": "A baker has 36 cupcakes. She puts them into boxes of 4. Which of the following statements about her cupcakes is true?",
+  "options": [
+    "36 is an odd number",
+    "36 divided by 4 gives a remainder of 2",
+    "36 is a multiple of 4",
+    "36 is a prime number",
+    "4 is a factor of 35"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Let's check each statement:\n\nA: 36 is an odd number — False. 36 ends in 6, so it is even.\n\nB: 36 divided by 4 gives a remainder of 2 — False. 36 ÷ 4 = 9 exactly, with no remainder.\n\nC: 36 is a multiple of 4 — True. 4 × 9 = 36, so 36 is a multiple of 4.\n\nD: 36 is a prime number — False. 36 has many factors (1, 2, 3, 4, 6, 9, 12, 18, 36).\n\nE: 4 is a factor of 35 — False. 35 ÷ 4 = 8 remainder 3, so 4 does not divide exactly into 35.\n\nThe correct answer is C.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:11:54+00:00"
+}

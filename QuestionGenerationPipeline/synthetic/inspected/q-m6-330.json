@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-330",
+  "answer": "B",
+  "steps": "Let p be the amount raised in week 1. Week 2: p + 30, week 3: p + 60, week 4: p + 90, week 5: p + 120. Total = p + (p+30) + (p+60) + (p+90) + (p+120) = 5p + 300. Set equal to 1250: 5p + 300 = 1250 → 5p = 950 → p = 190. Check: 190 + 220 + 250 + 280 + 310 = 1250. So p = £190.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

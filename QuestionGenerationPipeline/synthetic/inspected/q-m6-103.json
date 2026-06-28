@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-103",
+  "answer": "C",
+  "steps": "35% of 120 = (35/100) × 120 = 0.35 × 120 = 42.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

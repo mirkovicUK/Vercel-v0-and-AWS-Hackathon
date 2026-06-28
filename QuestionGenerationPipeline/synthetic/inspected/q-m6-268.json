@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-268",
+  "answer": "A",
+  "steps": "List the numbers in ascending order: 3, 4, 5, 7, 8, 9. The three students who read the fewest books: 3, 4, 5. Their total = 3 + 4 + 5 = 12. The three students who read the most books: 7, 8, 9. Their total = 7 + 8 + 9 = 24. Difference = 24 - 12 = 12.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

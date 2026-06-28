@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-327",
+  "answer": "B) 12 weeks",
+  "steps": "Cost of bicycle = £150. Already saved = £30. Amount still needed = £150 - £30 = £120. Weekly saving = £10. Weeks needed = £120 ÷ £10 = 12 weeks.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-359",
+  "answer": "A",
+  "steps": "1. Total weight = van weight + weight of all parcels.\n2. Van weight = 1520 kg.\n3. Each parcel consists of item weight p kg plus protective foam weight 2 kg, so each parcel weighs (p + 2) kg.\n4. There are 250 parcels, so total parcel weight = 250(p + 2) kg.\n5. Equation: 250(p + 2) + 1520 = 3020.\n6. Solve: 250(p + 2) = 3020 - 1520 = 1500.\n7. p + 2 = 1500 / 250 = 6.\n8. p = 6 - 2 = 4 kg.\n9. Check options: Option A matches equation and p = 4 kg. Option C has same equation but p = 6 kg, which is wrong after solving. Others do not match correct equation or solution.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

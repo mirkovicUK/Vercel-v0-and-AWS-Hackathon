@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-591",
+  "answer": "E",
+  "steps": "The ratio of squash to water is 1:4. This means for every 1 cup of squash, you need 4 cups of water. If you use 3 cups of squash, then water needed = 3 × 4 = 12 cups.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 4,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

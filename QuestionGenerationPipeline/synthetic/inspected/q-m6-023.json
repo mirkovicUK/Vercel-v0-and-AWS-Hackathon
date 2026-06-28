@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-023",
+  "answer": "A",
+  "steps": "Let n = cupcakes made in morning. Afternoon: add 15 → n + 15. Sold 8 → subtract 8 → n + 15 − 8. End of day: 30 left. So equation: n + 15 − 8 = 30. Simplify: n + 7 = 30 → n = 30 − 7 = 23. Check options: A says n + 15 − 8 = 30, n = 23 → matches. B says same equation but n = 37 → wrong. C says n − 15 + 8 = 30, n = 37 → wrong. D says n + 15 + 8 = 30, n = 7 → wrong. E says same equation as A but n = 25 → wrong. Only A is correct.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

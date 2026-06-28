@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-171",
+  "answer": "C",
+  "steps": "Divide total cupcakes by number of boxes: 48 ÷ 8 = 6. So each box gets 6 cupcakes.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-611",
+  "seedQid": "q-m6-024",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "Sam has some stickers. If he adds 5 more stickers, he will have 12 stickers in total. Let s stand for the number of stickers Sam has now. What is the value of s?",
+  "options": [
+    "5",
+    "6",
+    "7",
+    "8",
+    "17"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "We know that Sam's stickers plus 5 equals 12.\n\nStep 1: Write the equation: s + 5 = 12\n\nStep 2: Subtract 5 from both sides: s = 12 - 5 = 7\n\nSo s = 7. The correct answer is 7.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:27:31+00:00"
+}

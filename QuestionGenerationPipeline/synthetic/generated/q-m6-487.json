@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-487",
+  "seedQid": "q-m5-043",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 2,
+  "text": "A jug contains 2 litres of orange juice. Mia pours out 0.25 litres into each glass. How many glasses can she fill?",
+  "options": [
+    "4",
+    "6",
+    "8",
+    "10",
+    "12"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: We need to find how many times 0.25 litres fits into 2 litres.\nStep 2: Divide 2 by 0.25.\nStep 3: 2 ÷ 0.25 = 8\nAlternatively, since 0.25 litres = 1/4 of a litre, there are 4 glasses per litre. So 2 litres × 4 = 8 glasses.\nThe answer is 8.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:13:54+00:00"
+}

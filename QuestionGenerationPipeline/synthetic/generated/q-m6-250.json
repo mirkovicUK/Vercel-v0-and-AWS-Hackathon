@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-250",
+  "seedQid": "q-m2-045",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 5,
+  "text": "A scientist measures that a chemical reaction is 0.583̄ complete (where the 3 repeats forever). She needs to express this as a fraction in its simplest form, then find what percentage of the reaction is still remaining. What percentage of the reaction is still remaining?",
+  "options": [
+    "41.6̄%",
+    "42%",
+    "41⅔%",
+    "58⅓%",
+    "41.5%"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Convert 0.5833... to a fraction. Let x = 0.5833...\nMultiply by 10: 10x = 5.833...\nMultiply by 100: 100x = 58.333...\nSubtract: 100x - 10x = 58.333... - 5.833... = 52.5\nSo 90x = 52.5, meaning x = 52.5/90 = 525/900.\nSimplify by dividing both by 75: 525 ÷ 75 = 7, 900 ÷ 75 = 12.\nSo 0.5833... = 7/12.\n\nStep 2: Find the fraction remaining: 1 - 7/12 = 5/12.\n\nStep 3: Convert 5/12 to a percentage: 5/12 × 100 = 500/12 = 41⅔%.\n\nThe answer is 41⅔%.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:45:59+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-527",
+  "answer": "A",
+  "steps": "1. The phrase is 'three hundred and five thousand, two hundred and fourteen'. 2. 'Three hundred and five thousand' means 305 thousand, which is 305,000. 3. 'Two hundred and fourteen' means 214. 4. Combine them: 305,000 + 214 = 305,214. 5. Check options: A) 305,214 matches. B) 350,214 is three hundred fifty thousand, not three hundred five thousand. C) 305,241 is three hundred five thousand two hundred forty-one, not fourteen. D) 3,005,214 is three million five thousand two hundred fourteen. E) 30,5214 is not standard notation (comma misplaced).",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-099",
+  "answer": "C",
+  "steps": "Total children = 60. Football = 20, Cricket = 8. So Football + Cricket = 28. Remaining children = 60 - 28 = 32. Remaining children are Swimming (S) and Tennis (T). Given S = 3T. So S + T = 3T + T = 4T = 32. Therefore T = 32 / 4 = 8. Then S = 3 * 8 = 24. Check: 20 + 24 + 8 + 8 = 60. Option C is 24.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

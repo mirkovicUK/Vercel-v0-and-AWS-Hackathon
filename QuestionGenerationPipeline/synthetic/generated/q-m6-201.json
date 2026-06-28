@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-201",
+  "seedQid": "q-m2-027",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "A book costs £n. Sam buys 2 books. Which expression shows how much Sam pays in total?",
+  "options": [
+    "n + 2",
+    "2n",
+    "n - 2",
+    "n × n",
+    "n ÷ 2"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Each book costs £n.\nStep 2: Sam buys 2 books, so we multiply the cost of one book by 2.\nStep 3: 2 × n = 2n.\nTherefore, the total cost is 2n.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:40:44+00:00"
+}

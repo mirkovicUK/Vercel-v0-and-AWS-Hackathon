@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-284",
+  "seedQid": "q-m3-017",
+  "topic": "algebra",
+  "difficulty": 4,
+  "text": "A bakery sells cupcakes for £c each and cookies for £d each. Emma buys 4 cupcakes and 6 cookies and pays exactly £13.20. If each cookie costs £0.80, write an expression for the cost of one cupcake in terms of the total, then find the value of c.",
+  "options": [
+    "£1.50",
+    "£2.10",
+    "£2.00",
+    "£1.80",
+    "£2.50"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Write the equation for Emma's purchase: 4c + 6d = £13.20\n\nStep 2: Substitute d = £0.80 into the equation: 4c + 6 × £0.80 = £13.20\n\nStep 3: Calculate 6 × £0.80 = £4.80\n\nStep 4: So 4c + £4.80 = £13.20\n\nStep 5: Subtract £4.80 from both sides: 4c = £13.20 − £4.80 = £8.40\n\nStep 6: Divide both sides by 4: c = £8.40 ÷ 4 = £2.10\n\nThe cost of one cupcake is £2.10.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:49:54+00:00"
+}

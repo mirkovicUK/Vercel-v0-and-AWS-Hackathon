@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-308",
+  "answer": "C",
+  "steps": "1. The shape must look exactly the same when rotated 180° about its centre. This is rotational symmetry of order 2 (or more).\n2. Check each option:\n   A) Scalene triangle: all sides and angles different. Rotating 180° about its centre does not map it onto itself. No rotational symmetry.\n   B) Regular pentagon: rotational symmetry of order 5 (72° rotations). It does have 180° rotational symmetry as well? For order 2, rotation by 180° must map shape onto itself. In a regular pentagon, 180° rotation does not map vertices onto vertices (since 180° is not a multiple of 72°). So no rotational symmetry of order 2.\n   C) Parallelogram: Rotating a parallelogram 180° about its centre maps it onto itself. Yes, order 2 rotational symmetry.\n   D) Kite: A general kite (not necessarily a rhombus) does not necessarily have 180° rotational symmetry. Only if it is a rhombus (which is a special kite) it does. But a general kite does not have rotational symmetry of order 2.\n   E) Isosceles triangle: Rotating 180° about its centre does not map it onto itself. No rotational symmetry.\n3. Only parallelogram is guaranteed to have 180° rotational symmetry about its centre for all cases.\n4. Confirm: Parallelogram's centre is intersection of diagonals; 180° rotation swaps opposite vertices and sides, preserving shape.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

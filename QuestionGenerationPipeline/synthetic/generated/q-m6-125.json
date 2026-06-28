@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-125",
+  "seedQid": "q-m1-050",
+  "topic": "ratio_proportion",
+  "difficulty": 5,
+  "text": "A gardener makes a special fertiliser by mixing nitrogen, phosphorus, and potassium in the ratio 5 : 3 : 2. She has exactly 900 ml of phosphorus available and uses all of it. She then gives away some of the finished fertiliser to her neighbour in the ratio 2 : 3 (gardener : neighbour). How much fertiliser does the neighbour receive?",
+  "options": [
+    "600 ml",
+    "900 ml",
+    "1200 ml",
+    "1800 ml",
+    "2700 ml"
+  ],
+  "correctIndex": 3,
+  "generatorSolution": "Step 1: The ratio of nitrogen : phosphorus : potassium is 5 : 3 : 2, giving a total of 5 + 3 + 2 = 10 parts.\n\nStep 2: Phosphorus represents 3 parts out of 10. If 3 parts = 900 ml, then 1 part = 900 ÷ 3 = 300 ml.\n\nStep 3: The total amount of fertiliser made = 10 parts × 300 ml = 3000 ml.\n\nStep 4: The fertiliser is shared between the gardener and her neighbour in the ratio 2 : 3, giving a total of 2 + 3 = 5 shares.\n\nStep 5: The neighbour receives 3 out of 5 shares: (3/5) × 3000 ml = 1800 ml.\n\nThe answer is 1800 ml.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:32:25+00:00"
+}

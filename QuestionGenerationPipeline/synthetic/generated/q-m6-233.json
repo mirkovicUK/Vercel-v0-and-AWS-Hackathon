@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-233",
+  "seedQid": "q-m2-038",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "A train leaves the station every t minutes. The first train leaves at 06:00. Emma notices that the 5th train leaves at 07:00. What is the value of t?",
+  "options": [
+    "12",
+    "14",
+    "15",
+    "20",
+    "25"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "The 5th train leaves at 07:00 and the 1st train leaves at 06:00. The time between the 1st and 5th trains is 07:00 − 06:00 = 60 minutes. Between the 1st and 5th trains, there are 4 gaps (since 5 − 1 = 4). Each gap is t minutes, so 4t = 60. Dividing both sides by 4: t = 60 ÷ 4 = 15. Therefore t = 15 minutes.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:43:48+00:00"
+}

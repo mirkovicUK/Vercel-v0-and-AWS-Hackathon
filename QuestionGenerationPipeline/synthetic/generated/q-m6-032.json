@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-032",
+  "seedQid": "q-m1-016",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "Sophie thinks of a number. She adds 5 to her number, then doubles the result. Her answer is 18. What number did Sophie start with?",
+  "options": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Work backwards from the answer.\n\nSophie's final answer is 18.\n\nThe last step was doubling, so before doubling: 18 ÷ 2 = 9.\n\nThe first step was adding 5, so before adding 5: 9 − 5 = 4.\n\nSophie's starting number was 4.\n\nCheck: 4 + 5 = 9, then 9 × 2 = 18. ✓",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:22:32+00:00"
+}

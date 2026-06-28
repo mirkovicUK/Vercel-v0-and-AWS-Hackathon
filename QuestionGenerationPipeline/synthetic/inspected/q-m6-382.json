@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-382",
+  "answer": "B",
+  "steps": "The baker makes 60 cupcakes. He sells 3/4 of them in the morning. To find the number sold: 3/4 of 60 = (3/4) × 60 = (3 × 60) / 4 = 180 / 4 = 45. So he sells 45 cupcakes in the morning.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

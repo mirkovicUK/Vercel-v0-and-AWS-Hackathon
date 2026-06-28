@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-392",
+  "seedQid": "q-m5-014",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A baker makes p cupcakes each day. After 5 days, she gives away 12 cupcakes. She has 28 cupcakes left. What is the value of p?",
+  "options": [
+    "6",
+    "7",
+    "8",
+    "9",
+    "10"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Write an equation for the problem. The baker makes p cupcakes each day for 5 days, so she makes 5 × p cupcakes in total. After giving away 12, she has 28 left.\n\nStep 2: Set up the equation: 5p − 12 = 28\n\nStep 3: Add 12 to both sides: 5p = 28 + 12 = 40\n\nStep 4: Divide both sides by 5: p = 40 ÷ 5 = 8\n\nThe answer is p = 8.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:02:45+00:00"
+}

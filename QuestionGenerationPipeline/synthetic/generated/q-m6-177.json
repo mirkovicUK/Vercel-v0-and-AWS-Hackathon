@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-177",
+  "seedQid": "q-m2-019",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A baker made some cupcakes. He sold 1/4 of them and had 18 cupcakes left. If we call the total number of cupcakes he made 'n', which equation shows this problem correctly?",
+  "options": [
+    "n - 4 = 18",
+    "n ÷ 4 = 18",
+    "n - n ÷ 4 = 18",
+    "n + 18 = 4",
+    "n × 4 = 18"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: The baker started with n cupcakes.\nStep 2: He sold 1/4 of them, which is n ÷ 4.\nStep 3: The cupcakes left over equal the total minus what he sold: n - n ÷ 4.\nStep 4: We are told he had 18 left, so the equation is n - n ÷ 4 = 18.\nThis matches option C. (We can check: if n = 24, then 24 - 24 ÷ 4 = 24 - 6 = 18 ✓)",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:38:02+00:00"
+}

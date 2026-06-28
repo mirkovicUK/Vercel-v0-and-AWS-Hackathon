@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-166",
+  "seedQid": "q-m2-015",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "A baker makes 5 cupcakes every hour. He starts with 2 cupcakes already made. How many cupcakes does he have after 3 hours?",
+  "options": [
+    "12",
+    "15",
+    "17",
+    "18",
+    "20"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: The baker starts with 2 cupcakes.\nStep 2: He makes 5 cupcakes each hour for 3 hours, so he makes 5 × 3 = 15 cupcakes.\nStep 3: Total cupcakes = 2 + 15 = 17.\nThe answer is 17.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:37:01+00:00"
+}

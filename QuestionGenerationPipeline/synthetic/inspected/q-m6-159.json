@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-159",
+  "answer": "D",
+  "steps": "Original ratio flour:sugar:butter = 5:3:2. Flour used = 750 g. Let the common multiplier be k, so 5k = 750 → k = 150. Then original sugar = 3k = 450 g, original butter = 2k = 300 g. New ratio flour:butter should be 5:4. Flour remains 750 g. Let new butter be b g. Then 750 / b = 5 / 4 → 750 * 4 = 5b → 3000 = 5b → b = 600 g. Extra butter = new butter − original butter = 600 − 300 = 300 g. Wait, 300 g is option B. But check: original butter was 300 g, new butter needed is 600 g, so extra = 300 g. However, re-read question: 'She then decides to add extra butter so that the ratio of flour to butter becomes 5 : 4.' That means flour:butter = 5:4. With flour 750 g, butter should be (4/5)*750 = 600 g. Original butter = 300 g, so extra = 300 g. That matches option B. But let's verify if any other interpretation: The original mixture had flour:sugar:butter = 5:3:2, total parts = 10. After adding extra butter, only the flour:butter ratio is specified as 5:4; sugar amount stays the same? The problem doesn't say she changes sugar amount, so sugar remains 450 g. Then new mixture has flour 750, sugar 450, butter 600. That's consistent. So extra butter = 300 g. That is option B. However, I must check if any trick: Perhaps the baker is making a new mixture with the same flour amount but adjusting butter only, so yes. So answer should be B. But wait, I earlier wrote D in answer field by mistake. Let me correct: The correct option is B. I'll put B as answer.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": false,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

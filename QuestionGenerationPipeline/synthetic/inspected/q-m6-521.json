@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-521",
+  "answer": "B) £5,012",
+  "steps": "Five thousand and twelve pounds means 5,000 + 12 = 5,012. In figures, that is £5,012.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

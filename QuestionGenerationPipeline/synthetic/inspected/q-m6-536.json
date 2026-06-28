@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-536",
+  "answer": "C",
+  "steps": "The number is 4,729. Write it in expanded form: 4,000 + 700 + 20 + 9. The digit 7 is in the hundreds place, so its value is 7 × 100 = 700. Check the options: A) 7 is the digit itself, not its place value. B) 70 is the tens place. C) 700 matches the hundreds place. D) 7,000 is the thousands place. E) 7,200 is not a place value. Therefore, the correct value is 700.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

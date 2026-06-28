@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-325",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "A",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "Set the two cost expressions equal: 4w + 3 = 7w - 2(w + 6). Simplify the right-hand side: 7w - 2w - 12 = 5w - 12. Equation becomes 4w + 3 = 5w - 12. Solving: 3 + 12 = 5w - 4w → w = 15. Then charge = 4(15) + 3 = 60 + 3 = £63. This matches option C. However, rechecking: 7w - 2(w + 6) at w=3: 7(3) - 2(9) = 21 - 18 = £3; first company: 4(3)+3=15. Not equal. At w=15: first company: 4(15)+3=63; second: 7(15)-2(21)=105-42=63. Equal. So w=15, charge=63 → option C. But Solver 1 said A, which is wrong. Solver 2 said B. But correct is C. Earlier mistake in solving: 4w + 3 = 5w - 12 → w = 15. So correct option is C. But wait — Solver 1 said A: w=3, charge=15. Check w=3: first: 4(3)+3=15. Second: 7(3)-2(3+6)=21-2(9)=21-18=3 ≠15. Not equal. w=5: first: 4(5)+3=23. Second: 7(5)-2(11)=35-22=13≠23. w=9: 4(9)+3=39; 7(9)-2(15)=63-30=33≠39. w=12: 4(12)+3=51; 7(12)-2(18)=84-36=48≠51. w=15: 4(15)+3=63; 7(15)-2(21)=105-42=63. Equal. So correct answer is C. But Solver 1 and 2 both wrong. So correctAnswer is C. But initial mistake in rationale. Final: correctAnswer is C, unresolved=false, exactlyOneCorrect=true. Rationale: solving 4w+3 = 7w-2(w+6) simplifies to 4w+3=5w-12 → w=15. Charge=4(15)+3=63. Matches option C.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

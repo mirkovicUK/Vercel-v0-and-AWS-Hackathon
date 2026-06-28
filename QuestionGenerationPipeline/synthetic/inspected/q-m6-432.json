@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-432",
+  "answer": "A",
+  "steps": "Given 348 × 20 = 6,960. Since 10 is half of 20, 348 × 10 = half of 6,960. 6,960 ÷ 2 = 3,480. Alternatively, 348 × 10 = 348 × (20 ÷ 2) = (348 × 20) ÷ 2 = 6,960 ÷ 2 = 3,480.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

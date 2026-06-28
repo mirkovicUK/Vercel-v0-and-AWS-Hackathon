@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-032",
+  "answer": "B",
+  "steps": "Let Sophie's starting number be x. She adds 5: x + 5. Then doubles the result: 2(x + 5). This equals 18, so 2(x + 5) = 18. Divide both sides by 2: x + 5 = 9. Subtract 5: x = 4. Check: 4 + 5 = 9, doubled = 18. Option B is 4.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

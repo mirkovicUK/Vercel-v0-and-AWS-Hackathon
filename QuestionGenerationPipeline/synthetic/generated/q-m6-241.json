@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-241",
+  "seedQid": "q-m2-041",
+  "topic": "geometry",
+  "difficulty": 1,
+  "text": "A triangle has 3 sides. What do all the angles inside a triangle add up to?",
+  "options": [
+    "90°",
+    "180°",
+    "270°",
+    "360°",
+    "540°"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "The angles inside any triangle always add up to 180°. You can also use the formula: subtract 2 from the number of sides, then multiply by 180. A triangle has 3 sides, so: (3 − 2) × 180 = 1 × 180 = 180°.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:45:09+00:00"
+}

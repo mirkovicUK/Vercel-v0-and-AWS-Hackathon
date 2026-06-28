@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-593",
+  "seedQid": "q-m6-019",
+  "topic": "ratio_proportion",
+  "difficulty": 3,
+  "text": "A smoothie recipe for 4 servings uses 240 g of strawberries, 3 bananas, and 400 ml of yoghurt. Mia wants to make 6 servings using the same recipe. How many bananas does she need?",
+  "options": [
+    "3 bananas",
+    "4 bananas",
+    "4.5 bananas",
+    "5 bananas",
+    "6 bananas"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find the scale factor. Mia wants 6 servings but the recipe makes 4 servings, so the scale factor is 6 ÷ 4 = 1.5.\n\nStep 2: Multiply the number of bananas in the original recipe by the scale factor. The recipe uses 3 bananas, so Mia needs 3 × 1.5 = 4.5 bananas.\n\nThe correct answer is 4.5 bananas.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:25:22+00:00"
+}

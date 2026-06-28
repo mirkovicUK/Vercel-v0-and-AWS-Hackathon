@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-517",
+  "seedQid": "q-m6-002",
+  "topic": "number",
+  "difficulty": 2,
+  "text": "A school collected 'two thousand, five hundred and six' cans for a food drive. What is this number written in figures?",
+  "options": [
+    "2,560",
+    "2,506",
+    "2,056",
+    "25,006",
+    "2,516"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: 'Two thousand' means 2,000.\nStep 2: 'Five hundred' means 500.\nStep 3: 'And six' means 6.\nStep 4: Add them together: 2,000 + 500 + 6 = 2,506.\nThe correct answer is 2,506.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:17:11+00:00"
+}

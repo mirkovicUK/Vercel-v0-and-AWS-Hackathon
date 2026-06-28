@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-574",
+  "seedQid": "q-m6-014",
+  "topic": "number",
+  "difficulty": 4,
+  "text": "A deep-sea submarine is diving at a constant rate. Its depth readings in metres below sea level are recorded every minute: 3156, 3219, 3282, ___, 3408, 3471. What is the missing depth reading?",
+  "options": [
+    "3335",
+    "3340",
+    "3345",
+    "3350",
+    "3355"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find the constant difference between consecutive readings.\n3219 − 3156 = 63\n3282 − 3219 = 63\nSo the submarine descends 63 metres deeper each minute.\n\nStep 2: Check from the other end.\n3471 − 3408 = 63 ✓\n\nStep 3: Find the missing reading by adding 63 to 3282.\n3282 + 63 = 3345\n\nStep 4: Verify: 3408 − 3345 = 63 ✓\n\nThe missing depth reading is 3345 metres.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:23:12+00:00"
+}

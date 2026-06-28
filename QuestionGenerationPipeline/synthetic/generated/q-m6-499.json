@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-499",
+  "seedQid": "q-m5-048",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 4,
+  "text": "Marcus runs a car wash business. He charges £8.50 per car for a basic wash. On any car where the customer requests a premium polish, he charges an extra 40% on top of the basic wash price. One weekend, Marcus washed 12 cars in total. 25% of those cars had the premium polish. How much money did Marcus earn that weekend?",
+  "options": [
+    "£112.20",
+    "£119.00",
+    "£122.40",
+    "£125.80",
+    "£142.80"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Find how many cars had the premium polish. 25% of 12 = 12 ÷ 4 = 3 cars.\n\nStep 2: Find how many cars had just the basic wash. 12 − 3 = 9 cars.\n\nStep 3: Calculate earnings from basic wash cars. 9 × £8.50 = £76.50.\n\nStep 4: Find the price of a premium polish car. 40% of £8.50 = 0.4 × £8.50 = £3.40. So premium price = £8.50 + £3.40 = £11.90.\n\nStep 5: Calculate earnings from premium polish cars. 3 × £11.90 = £35.70.\n\nStep 6: Find total earnings. £76.50 + £35.70 = £112.20.\n\nThe correct answer is £112.20.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:15:31+00:00"
+}

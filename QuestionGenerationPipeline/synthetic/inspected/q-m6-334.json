@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-334",
+  "answer": "D",
+  "steps": "First batch: flour to sugar ratio is 5:2. For 350g flour, let sugar be S. 5/2 = 350/S → 5S = 700 → S = 140g. First batch uses 140g sugar. Second batch is 1.5 times larger than the first, so sugar needed = 140g × 1.5 = 210g.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

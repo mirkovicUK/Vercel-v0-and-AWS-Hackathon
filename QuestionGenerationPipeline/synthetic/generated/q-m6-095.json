@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-095",
+  "seedQid": "q-m1-037",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 5,
+  "text": "A shop reduces the price of a jacket by 15%. During a further sale, the already-reduced price is cut by an additional 20%. The jacket originally cost £80. What fraction of the original price does a customer now pay? Give your answer in its simplest form.",
+  "options": [
+    "17/25",
+    "13/20",
+    "3/5",
+    "27/40",
+    "7/10"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Find the price after the first reduction of 15%.\n15% of £80 = £12, so the new price = £80 − £12 = £68.\n\nStep 2: Find the price after the second reduction of 20% on £68.\n20% of £68 = £13.60, so the final price = £68 − £13.60 = £54.40.\n\nStep 3: Express the final price as a fraction of the original price.\n£54.40 / £80 = 5440/8000.\n\nStep 4: Simplify the fraction.\n5440 ÷ 80 = 68, and 8000 ÷ 80 = 100, giving 68/100.\n68/100 ÷ 4/4 = 17/25.\n\nAlternatively, a 15% reduction means you pay 85% (= 17/20) and a 20% reduction means you pay 80% (= 4/5).\nMultiplying: 17/20 × 4/5 = 68/100 = 17/25.\n\nThe answer is 17/25.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:29:08+00:00"
+}

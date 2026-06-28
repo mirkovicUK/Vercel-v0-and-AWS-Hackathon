@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-399",
+  "seedQid": "q-m5-015",
+  "topic": "geometry",
+  "difficulty": 4,
+  "text": "A rectangular fish tank has a length of 80 cm, a width of 40 cm, and a height of 50 cm. Water fills the tank to three-quarters of its height. What is the volume of water in the tank?",
+  "options": [
+    "120,000 cm³",
+    "160,000 cm³",
+    "96,000 cm³",
+    "48,000 cm³",
+    "140,000 cm³"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Identify the dimensions of the tank: length = 80 cm, width = 40 cm, height = 50 cm.\n\nStep 2: Find the height of the water. The tank is filled to three-quarters of its height, so water height = ¾ × 50 = 37.5 cm.\n\nStep 3: Calculate the volume of water using the formula for volume of a cuboid: Volume = length × width × height of water.\n\nStep 4: Volume = 80 × 40 × 37.5\n= 80 × 40 = 3,200\n= 3,200 × 37.5 = 120,000 cm³\n\nThe correct answer is 120,000 cm³.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:03:34+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-462",
+  "seedQid": "q-m5-034",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 2,
+  "text": "A bag contains 20 marbles. 4 of the marbles are red. What fraction of the marbles are red? Give your answer in its simplest form.",
+  "options": [
+    "1/4",
+    "1/5",
+    "4/20",
+    "2/5",
+    "1/10"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Write the fraction of red marbles. There are 4 red marbles out of 20 total, so the fraction is 4/20.\n\nStep 2: Simplify the fraction by finding the highest common factor (HCF) of 4 and 20. The HCF of 4 and 20 is 4.\n\nStep 3: Divide both the numerator and denominator by 4:\n4 ÷ 4 = 1\n20 ÷ 4 = 5\n\nSo 4/20 = 1/5.\n\nThe answer is 1/5.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:10:54+00:00"
+}

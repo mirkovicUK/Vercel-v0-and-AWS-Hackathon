@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-307",
+  "answer": "B",
+  "steps": "1. Understand the conditions: exactly 2 lines of symmetry and rotational symmetry of order 2.\n2. Rotational symmetry of order 2 means the shape looks the same after a 180° rotation.\n3. Check each option:\n   A) Equilateral triangle: lines of symmetry = 3, rotational symmetry order = 3 → fails.\n   B) Rectangle (not a square): lines of symmetry = 2 (through midpoints of opposite sides), rotational symmetry order = 2 → meets both conditions.\n   C) Regular pentagon: lines of symmetry = 5, rotational symmetry order = 5 → fails.\n   D) Scalene triangle: lines of symmetry = 0, rotational symmetry order = 1 → fails.\n   E) Regular hexagon: lines of symmetry = 6, rotational symmetry order = 6 → fails.\n4. Only option B satisfies both conditions exactly.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

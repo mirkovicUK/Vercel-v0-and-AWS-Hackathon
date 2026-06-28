@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-412",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "C",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "The baker sold 3/4 of 40 cupcakes. 3/4 × 40 = 30. Option C corresponds to 30, which is correct. All other options are incorrect, so exactly one option is correct and unambiguous.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

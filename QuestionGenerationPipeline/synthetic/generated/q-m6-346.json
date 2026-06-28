@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-346",
+  "seedQid": "q-m4-022",
+  "topic": "ratio_proportion",
+  "difficulty": 1,
+  "text": "In a fruit punch, the ratio of orange juice to lemonade is 2:1. If Sam uses 6 cups of orange juice, how many cups of lemonade does he need?",
+  "options": [
+    "2 cups",
+    "3 cups",
+    "4 cups",
+    "5 cups",
+    "6 cups"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "The ratio of orange juice to lemonade is 2:1. This means for every 2 cups of orange juice, Sam needs 1 cup of lemonade. Sam uses 6 cups of orange juice. To find how many cups of lemonade he needs, divide the orange juice by 2: 6 ÷ 2 = 3. So Sam needs 3 cups of lemonade.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:57:03+00:00"
+}

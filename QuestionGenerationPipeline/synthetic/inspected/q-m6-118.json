@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-118",
+  "answer": "B",
+  "steps": "Total pump run time = 1 hour 15 minutes = 75 minutes. First 15 minutes: no water enters pool. Remaining time for filling pool = 75 - 15 = 60 minutes. Filling rate = 200 litres every 5 minutes, so rate = 200/5 = 40 litres per minute. Water added in 60 minutes = 40 × 60 = 2400 litres.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-270",
+  "seedQid": "q-m3-008",
+  "topic": "data_handling",
+  "difficulty": 5,
+  "status": "failed",
+  "raw": "{\n  \"text\": \"A teacher records the scores of 8 students on a test. The mean score is 72. She then discovers that one student's score was recorded incorrectly as 60 when it should have been 84. She removes the two lowest scores from the corrected data set (which are 55 and 58) to find the mean of the remaining 6 students. What is the new mean of these 6 students?\",\n  \"options\": [\"76\", \"78\", \"79\", \"80\", \"82\"],\n  \"correctIndex\": 3,\n  \"solution\": \"Step 1: Find the total of all 8 original scores. Mean = 72, so total = 72 × 8 = 576.\\n\\nStep 2: Correct the error. The score of 60 should be 84, so the corrected total = 576 - 60 + 84 = 600.\\n\\nStep 3: Remove the two lowest scores (55 and 58) from the corrected data set. New total = 600 - 55 - 58 = 487.\\n\\nStep 4: There are now 6 students remaining. New mean = 487 ÷ 6 = 81.16... \\n\\nWait, let me recalculate to ensure a whole number answer. Let me adjust: if the two lowest scores are 56 and 64.\\n\\nActually, let me redesign: Mean of 8 students = 72, total = 576. Corrected total (60 → 84) = 600. Remove two lowest scores 52 and 68. New total = 600 - 52 - 68 = 480. New mean = 480 ÷ 6 = 80.\\n\\nThe new mean is 80.\"\n}\n\nWait, let me redo this properly:\n\n{\"text\":\"A teacher records the scores of 8 students on a maths test. The mean score is 72. She then discovers that one student's score was recorded incorrectly as 60 when it should have been 84. After correcting this error, she removes the two lowest scores (which are 52 and 68) from the data set. What is the mean of the remaining 6 scores?\",\"options\":[\"76\",\"78\",\"80\",\"82\",\"84\"],\"correctIndex\":2,\"solution\":\"Step 1: Find the total of all 8 original scores. Mean = 72, so total = 72 × 8 = 576.\\n\\nStep 2: Correct the recording error. One score changes from 60 to 84, so the corrected total = 576 − 60 + 84 = 600.\\n\\nStep 3: Remove the two lowest scores from the corrected data. New total = 600 − 52 − 68 = 480.\\n\\nStep 4: Find the mean of the remaining 6 scores. Mean = 480 ÷ 6 = 80.\\n\\nThe answer is 80.\"}",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "createdAt": "2026-06-12T17:48:31+00:00"
+}

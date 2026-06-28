@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-320",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "B) 157.5 litres",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "The ratio of red to blue paint is 3:5, so total parts = 8. With 72 litres total, each part is 72/8 = 9 litres. Thus, blue paint = 5 × 9 = 45 litres. Blue is mixed with yellow in ratio 2:7. So for 45 litres of blue (which corresponds to 2 parts), each part is 45/2 = 22.5 litres. Yellow is 7 parts: 7 × 22.5 = 157.5 litres. Answer B is correct and unambiguous.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

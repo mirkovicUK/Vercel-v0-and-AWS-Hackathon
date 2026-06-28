@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-258",
+  "seedQid": "q-m2-047",
+  "topic": "data_handling",
+  "difficulty": 3,
+  "text": "A class recorded the number of books each pupil read during the summer holiday. The results are shown in this frequency table:\n\nBooks read: 0, 1, 2, 3, 4, 5\nFrequency: 3, 5, 8, 6, 4, 2\n\nSophie says that to find the total number of books read by the whole class, you multiply each number of books by its frequency and then add all the results together. What is the total number of books read by the class?",
+  "options": [
+    "56",
+    "62",
+    "65",
+    "68",
+    "28"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Multiply each number of books by its frequency:\n0 × 3 = 0\n1 × 5 = 5\n2 × 8 = 16\n3 × 6 = 18\n4 × 4 = 16\n5 × 2 = 10\n\nStep 2: Add all the results together:\n0 + 5 + 16 + 18 + 16 + 10 = 65\n\nThe total number of books read by the class is 65.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:46:42+00:00"
+}

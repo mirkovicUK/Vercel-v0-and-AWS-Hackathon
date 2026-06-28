@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-364",
+  "answer": "A",
+  "steps": "Recipe for 12 cupcakes: sugar = 360 g, flour = 540 g. For 20 cupcakes, scaling factor = 20/12 = 5/3. Flour needed = 540 × (5/3) = 900 g. Tom already has 500 g, so more flour needed = 900 - 500 = 400 g. Sugar needed = 360 × (5/3) = 600 g. Check options: A says 400 g more flour and 600 g sugar, which matches. B: 360 g more flour and 500 g sugar – wrong. C: 400 g more flour and 500 g sugar – sugar wrong. D: 360 g more flour and 600 g sugar – flour wrong. E: 500 g more flour and 600 g sugar – flour wrong. Only A matches.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

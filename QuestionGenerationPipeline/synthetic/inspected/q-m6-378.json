@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-378",
+  "answer": "A",
+  "steps": "To round 124,562 to the nearest ten thousand, identify the ten thousands digit. The number is 124,562: the ten thousands digit is '2' (in the 20,000 place). Look at the next digit (thousands digit), which is '4'. Since 4 is less than 5, we round down. Rounding down means the ten thousands digit stays 2 and all lower places become zero. So 124,562 rounded to the nearest ten thousand is 120,000.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

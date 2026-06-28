@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-541",
+  "seedQid": "q-m6-008",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "In the number 4,729, what is the value of the digit 7?",
+  "options": [
+    "7",
+    "70",
+    "700",
+    "7,000",
+    "7,200"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Identify the position of the digit 7 in the number 4,729.\nStep 2: Starting from the right, the digits are: 9 (ones), 2 (tens), 7 (hundreds), 4 (thousands).\nStep 3: The digit 7 is in the hundreds column, so its value is 7 × 100 = 700.\nThe correct answer is 700.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:19:35+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-030",
+  "seedQid": "q-m1-013",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 5,
+  "text": "A charity fundraiser has a target of £450. In the first week, they raised 2/5 of the target. In the second week, they raised 35% of the target. In the third week, they raised 0.15 of the target. What fraction of the target still remains to be raised? Give your answer as a simplified fraction.",
+  "options": [
+    "1/20",
+    "1/10",
+    "3/20",
+    "1/5",
+    "1/4"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Convert all amounts to the same form. Let's use fractions of the target.\n\nWeek 1: 2/5 of the target\nWeek 2: 35% = 35/100 = 7/20 of the target\nWeek 3: 0.15 = 15/100 = 3/20 of the target\n\nStep 2: Add the three fractions together. We need a common denominator. The LCM of 5, 20, and 20 is 20.\n\n2/5 = 8/20\n7/20 = 7/20\n3/20 = 3/20\n\nTotal raised = 8/20 + 7/20 + 3/20 = 18/20 = 9/10\n\nStep 3: Find the fraction remaining.\nRemaining = 1 - 9/10 = 1/10\n\nThe answer is 1/10.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:22:24+00:00"
+}

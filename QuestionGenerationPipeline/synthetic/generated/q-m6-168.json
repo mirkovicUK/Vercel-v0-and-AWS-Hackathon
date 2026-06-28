@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-168",
+  "seedQid": "q-m2-015",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "A baker makes biscuits each day. On Monday she made 56 biscuits. Each day after that, she makes 8 fewer biscuits than the day before. She uses the rule: b = 56 − 8d, where d is the number of days after Monday. How many biscuits does she make on Thursday?",
+  "options": [
+    "24",
+    "28",
+    "32",
+    "36",
+    "40"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Thursday is 3 days after Monday, so d = 3.\nSubstitute into the formula: b = 56 − 8 × 3\nb = 56 − 24\nb = 32... Wait, let me recalculate.\n\nActually, let's list the days:\nMonday (d = 0): 56 − 8 × 0 = 56\nTuesday (d = 1): 56 − 8 × 1 = 48\nWednesday (d = 2): 56 − 8 × 2 = 40\nThursday (d = 3): 56 − 8 × 3 = 32\n\nSo b = 56 − 24 = 32.\n\nThe correct answer is 32.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:37:14+00:00"
+}

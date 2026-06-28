@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-086",
+  "seedQid": "q-m1-036",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "Tom has some stickers. He is given 3 more stickers, so now he has 10 stickers altogether. Which equation shows how to find the number of stickers Tom started with?",
+  "options": [
+    "s + 10 = 3",
+    "s - 3 = 10",
+    "s + 3 = 10",
+    "s × 3 = 10",
+    "s + 3 = 13"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Tom started with an unknown number of stickers, which we call s. He was given 3 more, so we add 3 to s. The total is 10. This gives us the equation: s + 3 = 10. We can check: s = 10 - 3 = 7, and 7 + 3 = 10. ✓ The correct answer is s + 3 = 10.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:28:15+00:00"
+}

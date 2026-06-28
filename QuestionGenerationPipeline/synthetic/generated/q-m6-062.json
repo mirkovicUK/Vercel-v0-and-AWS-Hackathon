@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-062",
+  "seedQid": "q-m1-028",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A baker uses the rule 'multiply the number of cakes by 3, then add 5' to work out the total cost in pounds. If a customer orders 4 cakes, what is the total cost?",
+  "options": [
+    "£12",
+    "£15",
+    "£17",
+    "£20",
+    "£23"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Write down the rule: multiply the number of cakes by 3, then add 5.\nStep 2: The customer orders 4 cakes, so we calculate 4 × 3 = 12.\nStep 3: Then add 5: 12 + 5 = 17.\nThe total cost is £17.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:25:42+00:00"
+}

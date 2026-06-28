@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-467",
+  "answer": "D",
+  "steps": "Total cupcakes = 40. Fraction with pink icing = 3/4. Number with pink icing = 40 × (3/4) = (40 × 3) / 4 = 120 / 4 = 30.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

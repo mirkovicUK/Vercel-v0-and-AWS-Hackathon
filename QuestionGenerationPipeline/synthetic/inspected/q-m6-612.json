@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-612",
+  "answer": "C",
+  "steps": "Let c be the number of chickens. The problem states: double the number of chickens and add 5 gives 29. So, 2c + 5 = 29. Subtract 5 from both sides: 2c = 24. Divide both sides by 2: c = 12.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

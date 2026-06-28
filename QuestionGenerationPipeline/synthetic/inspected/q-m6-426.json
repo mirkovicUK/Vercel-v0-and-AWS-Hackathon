@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-426",
+  "answer": "C",
+  "steps": "The baker starts at 9 am and works until 12 noon. That is a duration of 3 hours (9 am to 10 am = 1 hour, 10 am to 11 am = 1 hour, 11 am to 12 noon = 1 hour). She makes 5 cupcakes per hour. Total cupcakes = 5 cupcakes/hour × 3 hours = 15 cupcakes.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

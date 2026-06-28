@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-585",
+  "answer": "B",
+  "steps": "Initial ratio red:blue:yellow = 5:3:2, total parts = 10. Total paint = 600 ml. So each part = 600/10 = 60 ml. Red = 5*60 = 300 ml, Blue = 3*60 = 180 ml, Yellow = 2*60 = 120 ml. After adding blue, red unchanged = 300 ml, yellow unchanged = 120 ml. New ratio red:blue = 1:1, so new blue must equal red = 300 ml. Original blue = 180 ml, so extra blue added = 300 - 180 = 120 ml. New total paint = original 600 ml + extra blue 120 ml = 720 ml.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

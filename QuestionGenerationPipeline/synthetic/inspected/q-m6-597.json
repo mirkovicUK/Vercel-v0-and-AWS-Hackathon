@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-597",
+  "answer": "C",
+  "steps": "We have m + 6 = 15. To solve for m, subtract 6 from both sides: m = 15 - 6 = 9.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

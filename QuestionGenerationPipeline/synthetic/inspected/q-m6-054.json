@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-054",
+  "answer": "C",
+  "steps": "Each box has Y rows × Y chocolates per row = Y² chocolates per box. 3 boxes total chocolates = 3 × Y² = 147. So Y² = 147 ÷ 3 = 49. Therefore Y = √49 = 7. Check options: A)5 gives 3×25=75, B)6 gives 3×36=108, C)7 gives 3×49=147, D)8 gives 3×64=192, E)9 gives 3×81=243. Only C matches.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

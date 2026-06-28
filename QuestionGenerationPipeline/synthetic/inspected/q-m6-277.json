@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-277",
+  "answer": "A) t = 5 × 45 = 225 minutes",
+  "steps": "Mia swims every weekday (Monday to Friday). That is 5 days. Each session lasts 45 minutes. Total minutes t = number of days × minutes per session = 5 × 45 = 225 minutes. Check options: A says 5 × 45 = 225, correct. B says 4 × 45 = 180, wrong number of days. C says 5 × 40 = 200, wrong minutes per session. D says 7 × 45 = 315, wrong number of days. E says 5 × 45 = 250, calculation error (5 × 45 is 225, not 250). Only A is fully correct.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

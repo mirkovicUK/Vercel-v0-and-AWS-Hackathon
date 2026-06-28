@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-175",
+  "answer": "B",
+  "steps": "1. Total components = 7,956.\n2. Each box holds 12 components, so number of boxes = 7,956 ÷ 12.\n3. 7,956 ÷ 12 = 663 boxes (since 12 × 663 = 7,956).\n4. These 663 boxes are loaded equally onto 13 pallets.\n5. Boxes per pallet = 663 ÷ 13 = 51.\n6. Check: 51 × 13 = 663 boxes total, correct.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

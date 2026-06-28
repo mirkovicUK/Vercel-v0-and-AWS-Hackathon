@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-440",
+  "seedQid": "q-m5-028",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 5,
+  "text": "A scientist measures the mass of a chemical sample as 3.4672 kg. She needs to express this mass as a percentage of 8 kg, rounded to one decimal place. What is her answer?",
+  "options": [
+    "42.3%",
+    "43.3%",
+    "43.4%",
+    "43.8%",
+    "44.0%"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: To express 3.4672 kg as a percentage of 8 kg, we calculate (3.4672 ÷ 8) × 100.\n\nStep 2: Divide 3.4672 by 8.\n3.4672 ÷ 8 = 0.4334\n\nStep 3: Multiply by 100 to convert to a percentage.\n0.4334 × 100 = 43.34%\n\nStep 4: Round to one decimal place. The digit in the second decimal place is 4 (less than 5), so we round down.\n43.34% rounds to 43.3%... \n\nWait, let me recalculate more carefully:\n3.4672 ÷ 8: 8 × 0.4 = 3.2, remainder 0.2672. 8 × 0.03 = 0.24, remainder 0.0272. 8 × 0.003 = 0.024, remainder 0.0032. 8 × 0.0004 = 0.0032. So 3.4672 ÷ 8 = 0.4334 exactly.\n0.4334 × 100 = 43.34%\n\nRounded to one decimal place: look at the second decimal digit which is 4 (less than 5), so round down to 43.3%.\n\nHmm, that gives 43.3%. Let me re-check the intended answer.\n\nActually, let me revise: 3.4672 ÷ 8 = 0.4334, so 43.34% rounds to 43.3%. The correct answer is 43.3%, which is option B (index 1).",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:08:21+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-378",
+  "seedQid": "q-m5-009",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A charity concert was attended by 124,562 people over the weekend. What is this number rounded to the nearest ten thousand?",
+  "options": [
+    "120,000",
+    "124,000",
+    "125,000",
+    "130,000",
+    "100,000"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "To round 124,562 to the nearest ten thousand, we look at the thousands digit. The ten thousands digit is 2 (in 124,562, the digits are: 1 hundred thousand, 2 ten thousands, 4 thousands, 5 hundreds, 6 tens, 2 ones). The thousands digit is 4. Since 4 is less than 5, we round down. This means the ten thousands digit stays as 2, and all digits to the right become zero. So 124,562 rounded to the nearest ten thousand is 120,000.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:00:54+00:00"
+}

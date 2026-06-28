@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-059",
+  "seedQid": "q-m1-027",
+  "topic": "algebra",
+  "difficulty": 4,
+  "text": "A gym charges £4.80 per session. Members pay only 3/4 of the normal session price. Priya buys a membership for £m and pays the reduced rate. After 10 visits, Priya has spent exactly the same total amount as someone who paid full price for 10 visits without membership. Write an equation and find the value of m.",
+  "options": [
+    "£8",
+    "£10",
+    "£12",
+    "£14",
+    "£16"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find the reduced session price. 3/4 of £4.80 = £3.60 per session.\n\nStep 2: Work out the total cost for a non-member over 10 visits: 10 × £4.80 = £48.\n\nStep 3: Work out Priya's total cost over 10 visits: membership fee + 10 reduced sessions = m + 10 × £3.60 = m + £36.\n\nStep 4: Set up the equation since both totals are equal: m + 36 = 48.\n\nStep 5: Solve for m: m = 48 − 36 = £12.\n\nThe answer is £12.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:25:27+00:00"
+}

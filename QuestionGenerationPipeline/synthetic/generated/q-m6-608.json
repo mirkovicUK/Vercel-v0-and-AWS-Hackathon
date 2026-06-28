@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-608",
+  "seedQid": "q-m6-023",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "A gardener plants some tulip bulbs on Monday. On Tuesday she plants 12 more bulbs. On Wednesday, a frost kills 9 of the bulbs. She now has 38 healthy bulbs in total. If b represents the number of bulbs she planted on Monday, which equation is correct?",
+  "options": [
+    "b + 12 − 9 = 38, so b = 35",
+    "b + 12 + 9 = 38, so b = 17",
+    "b − 12 + 9 = 38, so b = 41",
+    "b + 12 − 9 = 38, so b = 29",
+    "b − 12 − 9 = 38, so b = 59"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Write an expression for the total number of healthy bulbs. She starts with b bulbs, adds 12 on Tuesday, then loses 9 on Wednesday: b + 12 − 9.\n\nStep 2: Set this equal to the total she has left: b + 12 − 9 = 38.\n\nStep 3: Simplify the left side: b + 3 = 38.\n\nStep 4: Solve for b: b = 38 − 3 = 35.\n\nThe correct equation is b + 12 − 9 = 38 and b = 35, which is option A.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:27:02+00:00"
+}

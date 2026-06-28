@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-518",
+  "answer": "C",
+  "steps": "The phrase 'twenty-six thousand and eight' means 26,000 plus 8. 'Twenty-six thousand' is 26 × 1000 = 26,000. 'And eight' means adding 8, so the total is 26,000 + 8 = 26,008. In figures, that is written as 26,008. Checking the options: A) 26,800 is twenty-six thousand eight hundred, B) 26,080 is twenty-six thousand eighty, C) 26,008 matches, D) 2,608 is two thousand six hundred eight, E) 260,008 is two hundred sixty thousand eight. Only C matches.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

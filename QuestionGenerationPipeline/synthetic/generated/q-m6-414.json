@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-414",
+  "seedQid": "q-m5-019",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 4,
+  "text": "A school has 240 pupils. 3/8 of the pupils walk to school, 25% cycle, and the rest travel by car. What percentage of the pupils travel by car?",
+  "options": [
+    "37.5%",
+    "40%",
+    "42.5%",
+    "35%",
+    "45%"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Find the fraction that walk: 3/8 of the pupils walk.\nStep 2: Convert 3/8 to a percentage: 3 ÷ 8 = 0.375, so 3/8 = 37.5%.\nStep 3: 25% cycle.\nStep 4: Add the percentages for walking and cycling: 37.5% + 25% = 62.5%.\nStep 5: Subtract from 100% to find those who travel by car: 100% − 62.5% = 37.5%.\nThe answer is 37.5%.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:05:47+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-548",
+  "answer": "A",
+  "steps": "Number: 4,618,253. Write digits with place values: millions: 4, hundred-thousands: 6, ten-thousands: 1, thousands: 8, hundreds: 2, tens: 5, ones: 3. Value of digit in hundred-thousands place = 6 × 100,000 = 600,000. Value of digit in thousands place = 8 × 1,000 = 8,000. Difference = 600,000 − 8,000 = 592,000.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

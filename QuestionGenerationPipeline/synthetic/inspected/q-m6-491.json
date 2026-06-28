@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-491",
+  "answer": "B",
+  "steps": "Total fruit = 3 apples + 5 oranges + 2 bananas = 10 fruit. Fraction that are oranges = number of oranges / total fruit = 5/10 = 1/2.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

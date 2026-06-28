@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-413",
+  "seedQid": "q-m5-019",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 3,
+  "text": "A school has 120 pupils. 3/8 of the pupils walk to school, and 25% of the pupils cycle. How many pupils either walk or cycle to school?",
+  "options": [
+    "55",
+    "60",
+    "75",
+    "80",
+    "45"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find 3/8 of 120 pupils who walk.\n3/8 × 120 = 360 ÷ 8 = 45 pupils walk.\n\nStep 2: Find 25% of 120 pupils who cycle.\n25% = 1/4, so 1/4 × 120 = 30 pupils cycle.\n\nStep 3: Add the two groups together.\n45 + 30 = 75 pupils either walk or cycle.\n\nThe answer is 75.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:05:43+00:00"
+}

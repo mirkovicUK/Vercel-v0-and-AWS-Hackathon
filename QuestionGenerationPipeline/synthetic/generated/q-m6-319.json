@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-319",
+  "seedQid": "q-m4-006",
+  "topic": "ratio_proportion",
+  "difficulty": 4,
+  "text": "A recipe for 8 pancakes uses 200 g of flour, 2 eggs, and 300 ml of milk. Sam wants to make 20 pancakes using the same recipe ratio. He has 600 g of flour, 6 eggs, and 800 ml of milk available. Which ingredient will run out first, and how many complete pancakes can Sam actually make?",
+  "options": [
+    "Eggs run out first; Sam can make 18 pancakes",
+    "Milk runs out first; Sam can make 16 pancakes",
+    "Flour runs out first; Sam can make 20 pancakes",
+    "Eggs run out first; Sam can make 24 pancakes",
+    "Milk runs out first; Sam can make 21 pancakes"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find the amount of each ingredient needed per pancake.\n- Flour: 200 g ÷ 8 = 25 g per pancake\n- Eggs: 2 ÷ 8 = 0.25 eggs per pancake (i.e., 1 egg per 4 pancakes)\n- Milk: 300 ml ÷ 8 = 37.5 ml per pancake\n\nStep 2: Find how many pancakes each available ingredient can make.\n- Flour: 600 g ÷ 25 g = 24 pancakes\n- Eggs: 6 ÷ 0.25 = 24 pancakes\n- Milk: 800 ml ÷ 37.5 ml = 21.33 pancakes\n\nStep 3: Since we need complete pancakes and must maintain the ratio, the limiting ingredient is milk (it runs out first). However, we also need to check that 21 pancakes worth of milk works: 21 × 37.5 = 787.5 ml (which is less than 800 ml available). But for 22 pancakes: 22 × 37.5 = 825 ml (more than 800 ml). Wait — we need whole pancakes that use ingredients in the exact ratio.\n\nSince the recipe is for 8 pancakes, we scale in multiples or find the largest number where all ingredients suffice. For any number of pancakes n: flour needed = 25n, eggs needed = n/4, milk needed = 37.5n.\n\nBut eggs must be whole numbers, so n must be a multiple of 4. The multiples of 4 up to 24 are: 4, 8, 12, 16, 20, 24.\n\nFor n = 20: milk needed = 20 × 37.5 = 750 ml ✓, flour = 500 g ✓, eggs = 5 ✓\nFor n = 24: milk needed = 24 × 37.5 = 900 ml ✗ (only 800 ml available)\n\nSo the maximum number of complete pancakes (in a batch that keeps the ratio exact with whole eggs) is 20. But wait — can Sam make individual pancakes beyond a batch? Re-reading: the question asks about maintaining the recipe ratio. If we allow fractional eggs to be split across pancakes (as in real cooking), then milk limits us to 21 pancakes (21 × 37.5 = 787.5 ml ≤ 800 ml). But since eggs must be used whole and the ratio requires 1 egg per 4 pancakes, Sam can only make multiples of 4. Between 20 and 24, milk limits to 21.33, so the answer is 16... \n\nActually, let me reconsider. The question says 'same recipe ratio' — this means proportional scaling. The recipe scales as: for every 8 pancakes, use 200g flour, 2 eggs, 300ml milk. So batches of 8. With 600g flour: 3 batches (24). With 6 eggs: 3 batches (24). With 800ml milk: 800 ÷ 300 = 2.67 batches = 2 full batches = 16 pancakes.\n\nMilk runs out first, and Sam can make 2 complete batches = 16 pancakes.\n\nThe correct answer is: Milk runs out first; Sam can make 16 pancakes.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:54:34+00:00"
+}

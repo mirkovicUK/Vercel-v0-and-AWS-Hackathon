@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-069",
+  "seedQid": "q-m1-029",
+  "topic": "number",
+  "difficulty": 4,
+  "text": "A scientist measures a tiny organism that is 0.047 cm long. She needs to express this measurement in a report as a number multiplied by 1000. What value should she write?",
+  "options": [
+    "0.47",
+    "4.7",
+    "47",
+    "470",
+    "4700"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "To multiply 0.047 by 1000, we move the decimal point three places to the right.\n\nStep 1: 0.047 × 10 = 0.47 (decimal moves one place right)\nStep 2: 0.47 × 10 = 4.7 (decimal moves another place right)\nStep 3: 4.7 × 10 = 47 (decimal moves a third place right)\n\nSo 0.047 × 1000 = 47.\n\nThe correct answer is 47.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:26:13+00:00"
+}

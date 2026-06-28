@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-297",
+  "seedQid": "q-m3-027",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A factory makes n toys every 10 minutes. It makes 24 toys in 1 hour. What is the value of n?",
+  "options": [
+    "2",
+    "3",
+    "4",
+    "6",
+    "12"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Work out how many 10-minute periods there are in 1 hour.\n1 hour = 60 minutes, so 60 ÷ 10 = 6 periods.\n\nStep 2: The factory makes n toys in each 10-minute period, and there are 6 periods in an hour.\nSo in 1 hour it makes 6 × n = 24 toys.\n\nStep 3: Solve for n.\n6 × n = 24\nn = 24 ÷ 6\nn = 4\n\nThe answer is 4.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:51:50+00:00"
+}

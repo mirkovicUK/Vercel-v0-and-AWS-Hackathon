@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-151",
+  "seedQid": "q-m2-009",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "In the number 572, what does the 5 stand for?",
+  "options": [
+    "5",
+    "50",
+    "500",
+    "5000",
+    "55"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "In the number 572, the digit 5 is in the hundreds column. This means it represents 5 hundreds, which is 500.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:35:08+00:00"
+}

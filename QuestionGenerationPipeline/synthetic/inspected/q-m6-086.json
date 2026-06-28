@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-086",
+  "answer": "C",
+  "steps": "Let s be the number of stickers Tom started with. He is given 3 more stickers, so he has s + 3 stickers. After that, he has 10 stickers altogether. So the equation is s + 3 = 10.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

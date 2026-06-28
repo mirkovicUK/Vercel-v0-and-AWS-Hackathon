@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-010",
+  "seedQid": "q-m1-003",
+  "topic": "number",
+  "difficulty": 5,
+  "text": "A scientist writes down a number where the digit 4 appears exactly three times. The number is 4,304,042. What is the sum of all the values represented by the digit 4 in this number?",
+  "options": [
+    "4,004,040",
+    "4,004,004",
+    "4,400,040",
+    "4,004,042",
+    "4,040,004"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Identify the positions of the digit 4 in 4,304,042.\n\nThe number is: 4,304,042\nPositions (from left to right):\n- 4 is in the millions place (value = 4,000,000)\n- 3 is in the hundred-thousands place\n- 0 is in the ten-thousands place\n- 4 is in the thousands place (value = 4,000)\n- 0 is in the hundreds place\n- 4 is in the tens place (value = 40)\n- 2 is in the units place\n\nStep 2: Add up all the values represented by the digit 4.\n4,000,000 + 4,000 + 40 = 4,004,040\n\nStep 3: The answer is 4,004,040.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-11T19:47:29+00:00"
+}

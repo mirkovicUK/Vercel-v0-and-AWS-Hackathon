@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-481",
+  "answer": "D",
+  "steps": "Half of £1.50 is calculated as £1.50 ÷ 2 = £0.75.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

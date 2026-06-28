@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-298",
+  "seedQid": "q-m3-027",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "A factory machine produces bottles at a constant rate. It makes 'b' bottles every 15 minutes. Write an expression for the number of bottles made in 2 hours, and find the value when b = 40.",
+  "options": [
+    "160",
+    "240",
+    "320",
+    "480",
+    "600"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Work out how many 15-minute intervals fit into 2 hours.\n2 hours = 120 minutes.\n120 ÷ 15 = 8 intervals.\n\nStep 2: Write an expression for the number of bottles made in 2 hours.\nNumber of bottles = 8 × b = 8b.\n\nStep 3: Substitute b = 40 into the expression.\n8 × 40 = 320.\n\nThe correct answer is 320.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:51:55+00:00"
+}

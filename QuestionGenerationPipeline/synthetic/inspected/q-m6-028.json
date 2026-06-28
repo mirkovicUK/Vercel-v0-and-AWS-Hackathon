@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-028",
+  "answer": "C",
+  "steps": "Let the full target amount be T. We are told £45 is 75% of T, so 0.75 × T = 45. Divide both sides by 0.75: T = 45 ÷ 0.75. 45 ÷ 0.75 = 45 ÷ (3/4) = 45 × (4/3) = (45/3) × 4 = 15 × 4 = 60. So the full target is £60.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

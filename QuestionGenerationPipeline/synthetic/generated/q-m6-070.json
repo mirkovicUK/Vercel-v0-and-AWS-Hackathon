@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-070",
+  "seedQid": "q-m1-029",
+  "topic": "number",
+  "difficulty": 5,
+  "text": "A scientist measures a bacterium that is 0.00047 cm long. She wants to express this length in a simpler form using powers of 10. Which of the following is equal to 0.00047 cm?",
+  "options": [
+    "4.7 × 10⁻⁵",
+    "47 × 10⁻⁴",
+    "4.7 × 10⁻⁴",
+    "0.47 × 10⁻⁴",
+    "4.7 × 10⁻³"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: We need to write 0.00047 in the form a × 10ⁿ where a is between 1 and 10.\n\nStep 2: Move the decimal point to the right until we get a number between 1 and 10. Starting at 0.00047, we move the decimal point 4 places to the right to get 4.7.\n\nStep 3: Since we moved the decimal point 4 places to the right, we multiply by 10⁻⁴ to compensate.\n\nStep 4: Therefore 0.00047 = 4.7 × 10⁻⁴.\n\nStep 5: Check — 4.7 × 10⁻⁴ = 4.7 ÷ 10000 = 0.00047 ✓\n\nThe other options are wrong: 4.7 × 10⁻⁵ = 0.000047 (too small), 47 × 10⁻⁴ = 0.0047 (too large), 0.47 × 10⁻⁴ = 0.000047 (too small), and 4.7 × 10⁻³ = 0.0047 (too large).",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:26:20+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-217",
+  "seedQid": "q-m2-030",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 2,
+  "text": "A jug holds 2 litres of juice when full. Sam pours out 0.75 litres into a glass. What fraction of the juice is left in the jug?",
+  "options": [
+    "1/4",
+    "3/8",
+    "5/8",
+    "3/4",
+    "1/2"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find how much juice is left in the jug. 2 litres − 0.75 litres = 1.25 litres.\nStep 2: Write the amount left as a fraction of the full jug. 1.25 ÷ 2 = 0.625.\nStep 3: Convert 0.625 to a fraction. 0.625 = 625/1000 = 5/8.\nSo 5/8 of the juice is left in the jug.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:42:18+00:00"
+}

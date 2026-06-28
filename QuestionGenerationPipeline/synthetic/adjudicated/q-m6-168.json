@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-168",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "C",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "The rule given is b = 56 - 8d, where d is the number of days after Monday. Thursday is 3 days after Monday, so d = 3. Substituting: b = 56 - 8*3 = 56 - 24 = 32. Therefore, the number of biscuits made on Thursday is 32, which corresponds to option C. The answer is unambiguous and exactly one option is correct.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

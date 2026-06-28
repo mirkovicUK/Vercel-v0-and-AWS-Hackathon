@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-255",
+  "answer": "D",
+  "steps": "Let the original number be x. Step 1: double it → 2x. Step 2: add 7 → 2x + 7. Step 3: multiply by 3 → 3(2x + 7) = 6x + 21. Step 4: subtract 9 → 6x + 21 - 9 = 6x + 12. Step 5: divide by 2 → (6x + 12)/2 = 3x + 6. The final answer is 24, so 3x + 6 = 24. Subtract 6: 3x = 18. Divide by 3: x = 6.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": false,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

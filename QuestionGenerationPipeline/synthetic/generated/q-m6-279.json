@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-279",
+  "seedQid": "q-m3-013",
+  "topic": "algebra",
+  "difficulty": 4,
+  "text": "A swimming pool charges £p per hour for lane swimming. Mia swims for 45 minutes each session and attends 'd' sessions per week. The total cost for one week is £12. If p = 4, write an equation and find the value of d.",
+  "options": [
+    "d = 3",
+    "d = 4",
+    "d = 5",
+    "d = 6",
+    "d = 8"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Each session lasts 45 minutes, which is 45 ÷ 60 = 0.75 hours (or ¾ of an hour).\n\nStep 2: The cost per session = p × 0.75. Since p = 4, the cost per session = 4 × 0.75 = £3.\n\nStep 3: The total weekly cost = cost per session × number of sessions = 3 × d.\n\nStep 4: We know the total weekly cost is £12, so we write the equation: 3d = 12.\n\nStep 5: Solving for d: d = 12 ÷ 3 = 4.\n\nTherefore d = 4.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:49:19+00:00"
+}

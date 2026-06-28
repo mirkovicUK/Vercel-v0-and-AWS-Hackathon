@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-363",
+  "seedQid": "q-m5-001",
+  "topic": "ratio_proportion",
+  "difficulty": 3,
+  "text": "A recipe for 12 cupcakes uses 300 g of sugar. Sam wants to make 20 cupcakes using the same recipe. How much sugar does he need?",
+  "options": [
+    "400 g",
+    "450 g",
+    "500 g",
+    "550 g",
+    "600 g"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find how much sugar is needed per cupcake. 300 g ÷ 12 = 25 g per cupcake.\nStep 2: Multiply by the number of cupcakes Sam wants to make. 25 g × 20 = 500 g.\nSo Sam needs 500 g of sugar.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:59:01+00:00"
+}

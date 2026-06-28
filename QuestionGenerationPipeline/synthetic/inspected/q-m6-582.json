@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-582",
+  "answer": "C",
+  "steps": "Ratio banana:yoghurt = 2:5. This means for every 5 spoonfuls of yoghurt, 2 spoonfuls of banana are needed. Mia uses 10 spoonfuls of yoghurt, which is 10/5 = 2 times the 5-unit amount. So banana needed = 2 × 2 = 4 spoonfuls.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

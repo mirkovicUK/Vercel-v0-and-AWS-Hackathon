@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-402",
+  "answer": "E",
+  "steps": "1. The baker puts cookies into boxes of 6, so each full box uses 6 cookies.\n2. The total number of cookies is n.\n3. To find how many cookies are left over after filling as many full boxes as possible, we need the remainder when n is divided by 6.\n4. Option A (n × 6) gives a multiple of n, not a remainder.\n5. Option B (n + 6) increases n by 6, not a remainder.\n6. Option C (n ÷ 6) gives the number of full boxes, not the leftover cookies.\n7. Option D (n - 6) subtracts 6 once, but the number of full boxes might require subtracting many multiples of 6; this only works if n is between 6 and 11, which is not general.\n8. Option E directly states 'the remainder when n ÷ 6', which matches the required leftover cookies.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 4,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

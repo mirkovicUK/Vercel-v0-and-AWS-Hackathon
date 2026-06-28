@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-518",
+  "seedQid": "q-m6-002",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A zoo recorded 'twenty-six thousand and eight' visitors last year. What is this number written in figures?",
+  "options": [
+    "26,800",
+    "26,080",
+    "26,008",
+    "2,608",
+    "260,008"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Break the number into parts. 'Twenty-six thousand' means 26 × 1,000 = 26,000. Step 2: 'and eight' means we add 8 to that total. Step 3: 26,000 + 8 = 26,008. The correct answer is 26,008. Note that there are no hundreds or tens, so those place-value positions are filled with zeros.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:17:16+00:00"
+}

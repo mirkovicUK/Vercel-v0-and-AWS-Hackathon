@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-537",
+  "answer": "C",
+  "steps": "The number is 4,729. Write it in place-value form: thousands, hundreds, tens, ones. 4,729 = 4 thousands (4,000) + 7 hundreds (700) + 2 tens (20) + 9 ones (9). The digit 7 is in the hundreds place, so its value is 700.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

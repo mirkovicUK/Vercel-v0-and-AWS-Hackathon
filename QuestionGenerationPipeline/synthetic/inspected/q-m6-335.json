@@ -1,0 +1,13 @@
+{
+  "qid": "q-m6-335",
+  "answer": null,
+  "steps": null,
+  "inspectorDifficulty": null,
+  "exactlyOneCorrect": null,
+  "inspectorIndex": null,
+  "answersAgree": false,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "failed",
+  "reason": "generated question failed (no usable options to inspect)"
+}

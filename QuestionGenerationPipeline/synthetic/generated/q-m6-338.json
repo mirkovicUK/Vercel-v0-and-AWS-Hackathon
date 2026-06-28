@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-338",
+  "seedQid": "q-m4-016",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "Three friends collect stickers. Each friend has 2 more stickers than the one before. Together they have 63 stickers. How many stickers does the friend with the most have?",
+  "options": [
+    "19",
+    "21",
+    "23",
+    "25",
+    "27"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Let the three amounts be n, n + 2, and n + 4 (since each friend has 2 more than the previous one).\n\nStep 1: Write the equation for the total.\nn + (n + 2) + (n + 4) = 63\n\nStep 2: Simplify.\n3n + 6 = 63\n\nStep 3: Solve for n.\n3n = 57\nn = 19\n\nStep 4: Find the largest number.\nThe largest amount is n + 4 = 19 + 4 = 23.\n\nThe friend with the most stickers has 23.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:56:28+00:00"
+}

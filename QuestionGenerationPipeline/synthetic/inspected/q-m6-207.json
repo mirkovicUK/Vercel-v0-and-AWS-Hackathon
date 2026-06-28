@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-207",
+  "answer": "D",
+  "steps": "Cost per month = £45. Number of months = 6. Total cost = 45 × 6 = 270. So the cost is £270.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

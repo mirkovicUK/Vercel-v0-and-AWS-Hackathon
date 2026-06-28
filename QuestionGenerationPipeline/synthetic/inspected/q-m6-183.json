@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-183",
+  "answer": "C) £65.00",
+  "steps": "Tom has £28.50. Grandmother gives £15.75, so total saved = £28.50 + £15.75 = £44.25. He still needs £20.75, so bicycle cost p = £44.25 + £20.75 = £65.00.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-366",
+  "seedQid": "q-m5-004",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 1,
+  "text": "A pizza is cut into halves. How many halves are there in 3 whole pizzas?",
+  "options": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "9"
+  ],
+  "correctIndex": 3,
+  "generatorSolution": "Each whole pizza has 2 halves. So 3 whole pizzas have 3 × 2 = 6 halves.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:59:31+00:00"
+}

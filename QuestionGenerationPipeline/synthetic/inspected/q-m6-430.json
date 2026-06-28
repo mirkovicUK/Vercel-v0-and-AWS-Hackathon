@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-430",
+  "answer": "C",
+  "steps": "First list the readings: 7, 18, 40, 84, 172. Compute differences: 18 - 7 = 11, 40 - 18 = 22, 84 - 40 = 44, 172 - 84 = 88. So differences are 11, 22, 44, 88. Each difference doubles the previous: 11 * 2 = 22, 22 * 2 = 44, 44 * 2 = 88. Next difference should be 88 * 2 = 176. Add to last reading: 172 + 176 = 348. Check pattern consistency: differences doubling each time fits the scientist's observation. Therefore sixth reading = 348.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

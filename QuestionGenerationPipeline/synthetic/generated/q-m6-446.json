@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-446",
+  "seedQid": "q-m5-030",
+  "topic": "geometry",
+  "difficulty": 1,
+  "text": "A rectangle has a length of 8 cm and a width of 3 cm. What is the perimeter of the rectangle?",
+  "options": [
+    "11 cm",
+    "22 cm",
+    "24 cm",
+    "26 cm",
+    "32 cm"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "To find the perimeter of a rectangle, add up all four sides.\n\nPerimeter = length + width + length + width\nPerimeter = 8 cm + 3 cm + 8 cm + 3 cm = 22 cm\n\nAlternatively, use the formula: Perimeter = 2 × (length + width) = 2 × (8 + 3) = 2 × 11 = 22 cm\n\nThe answer is 22 cm.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:09:07+00:00"
+}

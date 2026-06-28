@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-585",
+  "seedQid": "q-m6-017",
+  "topic": "ratio_proportion",
+  "difficulty": 5,
+  "text": "A paint mixture uses red, blue, and yellow in the ratio 5:3:2. Tom makes a batch using 600 ml of paint in total. He then decides to add more blue paint so that the ratio of red to blue becomes 1:1, while keeping the red and yellow amounts unchanged. How much total paint does he have after adding the extra blue?",
+  "options": [
+    "700 ml",
+    "720 ml",
+    "750 ml",
+    "800 ml",
+    "900 ml"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find the amount of each colour in the original 600 ml mixture.\nThe ratio is 5:3:2, so total parts = 5 + 3 + 2 = 10.\nRed = (5/10) × 600 = 300 ml\nBlue = (3/10) × 600 = 180 ml\nYellow = (2/10) × 600 = 120 ml\n\nStep 2: Tom wants the ratio of red to blue to become 1:1. Red stays at 300 ml, so blue must also become 300 ml.\nExtra blue needed = 300 − 180 = 120 ml\n\nStep 3: Calculate the new total.\nNew total = 600 + 120 = 720 ml\n\nThe answer is 720 ml.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:24:30+00:00"
+}

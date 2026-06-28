@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-358",
+  "answer": "A) 250w + 3000 = 53000, so w = 200 g",
+  "steps": "Total weight = 53 kg = 53000 g. Empty crate weight = 3 kg = 3000 g. Weight of paint tins = total weight - crate weight = 53000 - 3000 = 50000 g. There are 250 tins, so weight per tin w = 50000 / 250 = 200 g. Equation: 250w + 3000 = 53000. Check options: A matches equation and solution. B uses kg incorrectly (3 instead of 3000, 53 instead of 53000) but still gets w=200 g because 250w+3=53 gives w=0.2 kg = 200 g, but equation is dimensionally inconsistent (mixing kg and g without conversion). C ignores crate weight. D has wrong solution. E has wrong equation and solution. Only A is fully correct in both equation and solution, with consistent units.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

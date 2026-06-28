@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-011",
+  "seedQid": "q-m1-005",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "What is the next number in this sequence?\n\n10, 20, 30, 40, ___",
+  "options": [
+    "45",
+    "50",
+    "55",
+    "60",
+    "100"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Look at the difference between each number in the sequence.\n20 − 10 = 10\n30 − 20 = 10\n40 − 30 = 10\n\nStep 2: The pattern is adding 10 each time.\n\nStep 3: Add 10 to the last number: 40 + 10 = 50.\n\nThe answer is 50.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-11T19:47:33+00:00"
+}

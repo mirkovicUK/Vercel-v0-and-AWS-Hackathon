@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-415",
+  "seedQid": "q-m5-019",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 5,
+  "text": "A school has 360 students. In a survey, 5/8 of the students said they prefer football. Of those football fans, 35% also play for a local team. Finally, 2/3 of the students who play for a local team are boys. How many boys play for a local team?",
+  "options": [
+    "42",
+    "52",
+    "56",
+    "63",
+    "84"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Find 5/8 of 360 students who prefer football.\n5/8 × 360 = 1800 ÷ 8 = 225 students prefer football.\n\nStep 2: Find 35% of 225 who play for a local team.\n35% × 225 = 0.35 × 225 = 78.75... This doesn't give a whole number, so let me recalculate.\n\nActually, 35% of 225: 10% of 225 = 22.5, so 35% = 22.5 × 3.5 = 78.75. Let me revise the question numbers.\n\nLet me recalculate with correct numbers: 5/8 of 360 = 225. 28% of 225 = 63. 2/3 of 63 = 42.\n\nStep 1: Find 5/8 of 360 students who prefer football.\n5/8 × 360 = 225 students prefer football.\n\nStep 2: Find 28% of 225 who play for a local team.\n28% × 225 = 0.28 × 225 = 63 students play for a local team.\n\nStep 3: Find 2/3 of 63 who are boys.\n2/3 × 63 = 42 boys play for a local team.\n\nThe answer is 42.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:05:55+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-025",
+  "seedQid": "q-m1-010",
+  "topic": "algebra",
+  "difficulty": 5,
+  "text": "A factory produces gadgets using three machines. Machine A produces 'p' gadgets per hour, Machine B produces '2p + 5' gadgets per hour, and Machine C produces '3p − 8' gadgets per hour. Together, all three machines produce 81 gadgets in one hour. What is the value of p?",
+  "options": [
+    "12",
+    "13",
+    "14",
+    "15",
+    "16"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Write an equation for the total gadgets produced per hour by all three machines.\n\nMachine A: p\nMachine B: 2p + 5\nMachine C: 3p − 8\n\nTotal: p + (2p + 5) + (3p − 8) = 81\n\nStep 2: Collect like terms on the left side.\np + 2p + 3p + 5 − 8 = 81\n6p − 3 = 81\n\nStep 3: Add 3 to both sides.\n6p = 84\n\nStep 4: Divide both sides by 6.\np = 84 ÷ 6 = 14\n\nStep 5: Check — Machine A: 14, Machine B: 2(14) + 5 = 33, Machine C: 3(14) − 8 = 34. Total: 14 + 33 + 34 = 81 ✓\n\nThe answer is 14.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-11T19:48:57+00:00"
+}

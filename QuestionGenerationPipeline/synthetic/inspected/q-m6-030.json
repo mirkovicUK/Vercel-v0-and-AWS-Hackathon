@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-030",
+  "answer": "B",
+  "steps": "Target = £450.\nFirst week: 2/5 of target = (2/5) × 450 = £180.\nSecond week: 35% of target = 0.35 × 450 = £157.50.\nThird week: 0.15 of target = 0.15 × 450 = £67.50.\nTotal raised = 180 + 157.50 + 67.50 = £405.\nRemaining = 450 - 405 = £45.\nFraction remaining = 45/450 = 1/10.\nCheck options: 1/10 corresponds to option B.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

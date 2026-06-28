@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-037",
+  "seedQid": "q-m1-017",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 2,
+  "text": "A pizza is cut into 8 equal slices. Sam eats 3 slices. What fraction of the pizza is left?",
+  "options": [
+    "3/8",
+    "4/8",
+    "5/8",
+    "6/8",
+    "7/8"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: The pizza has 8 slices in total, so the whole pizza = 8/8.\nStep 2: Sam eats 3 slices, which is 3/8 of the pizza.\nStep 3: Subtract the eaten portion from the whole: 8/8 − 3/8 = 5/8.\nSo 5/8 of the pizza is left.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:22:53+00:00"
+}

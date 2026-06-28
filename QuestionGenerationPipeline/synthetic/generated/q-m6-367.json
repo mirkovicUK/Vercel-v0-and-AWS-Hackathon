@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-367",
+  "seedQid": "q-m5-004",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 2,
+  "text": "A pizza is cut into quarters. How many quarters are there in 3 whole pizzas?",
+  "options": [
+    "3",
+    "4",
+    "9",
+    "12",
+    "15"
+  ],
+  "correctIndex": 3,
+  "generatorSolution": "Each whole pizza is cut into 4 quarters. So 1 pizza = 4 quarters. For 3 pizzas, we multiply: 3 × 4 = 12 quarters. The answer is 12.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:59:33+00:00"
+}

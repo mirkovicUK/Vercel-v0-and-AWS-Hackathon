@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-502",
+  "seedQid": "q-m5-049",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A swimming pool charges an entry fee using this formula:\n\nCost = 3 + 2n\n\nwhere n is the number of people in the group.\n\nHow much does it cost for a group of 4 people?",
+  "options": [
+    "£8",
+    "£9",
+    "£10",
+    "£11",
+    "£12"
+  ],
+  "correctIndex": 3,
+  "generatorSolution": "Step 1: Write down the formula: Cost = 3 + 2n\nStep 2: Substitute n = 4 into the formula: Cost = 3 + 2 × 4\nStep 3: Work out 2 × 4 = 8\nStep 4: Add: 3 + 8 = 11\n\nThe cost for a group of 4 people is £11.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:15:53+00:00"
+}

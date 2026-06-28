@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-453",
+  "seedQid": "q-m5-032",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A teacher asks her class to find all the factors of 36 and then add together only the odd factors. What answer should the students get?",
+  "options": [
+    "13",
+    "15",
+    "9",
+    "12",
+    "16"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Find all the factors of 36.\n36 = 1 × 36, 2 × 18, 3 × 12, 4 × 9, 6 × 6\nSo the factors are: 1, 2, 3, 4, 6, 9, 12, 18, 36.\n\nStep 2: Identify which factors are odd.\nThe odd factors are: 1, 3, 9.\n\nStep 3: Add the odd factors together.\n1 + 3 + 9 = 13.\n\nThe correct answer is 13.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:09:54+00:00"
+}

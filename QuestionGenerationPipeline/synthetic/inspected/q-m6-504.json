@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-504",
+  "answer": "A",
+  "steps": "1. Substitute n = 8 into the formula F = 5n + 3(n − 2).\n2. First term: 5n = 5 × 8 = 40.\n3. Second term: 3(n − 2) = 3 × (8 − 2) = 3 × 6 = 18.\n4. Add the terms: 40 + 18 = 58. This is the membership fee before discount.\n5. Apply the one-off £12 joining bonus discount: 58 − 12 = 46.\n6. The final amount is £46.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": false,
+  "inspectorIndex": 0,
+  "answersAgree": false,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

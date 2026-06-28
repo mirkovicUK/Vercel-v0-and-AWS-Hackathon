@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-400",
+  "seedQid": "q-m5-015",
+  "topic": "geometry",
+  "difficulty": 5,
+  "text": "A rectangular water tank has a length of 1.2 m, a width of 80 cm, and a height of 50 cm. Jasmine wants to calculate how many litres of water the tank can hold. She knows that 1 litre = 1000 cm³. What is the capacity of the tank in litres?",
+  "options": [
+    "48 litres",
+    "480 litres",
+    "4800 litres",
+    "4.8 litres",
+    "96 litres"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Convert all measurements to the same unit (centimetres).\nLength = 1.2 m = 120 cm\nWidth = 80 cm\nHeight = 50 cm\n\nStep 2: Calculate the volume of the tank in cm³.\nVolume = length × width × height = 120 × 80 × 50 = 480,000 cm³\n\nStep 3: Convert cm³ to litres using the fact that 1 litre = 1000 cm³.\n480,000 ÷ 1000 = 480 litres\n\nThe correct answer is 480 litres.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:03:39+00:00"
+}

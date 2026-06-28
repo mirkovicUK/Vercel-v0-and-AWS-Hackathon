@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-157",
+  "answer": "C",
+  "steps": "The ratio of flour to sugar is 3:1, meaning for every 3 cups of flour, 1 cup of sugar is used. Sam uses 9 cups of flour. Set up proportion: 3/1 = 9/x, where x is cups of sugar. Cross-multiply: 3x = 9, so x = 3. Therefore, Sam needs 3 cups of sugar.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "_note": "Sources registry for the synthetic question-generation pipeline. The only source is the synthetic 'm6' set, which is generated (not parsed from any document) and reviewed via review_app/m6.html. Slugs namespace the question ids (q-m6-NNN).",
+  "sources": [
+    {
+      "slug": "m6",
+      "parserType": "synthetic",
+      "_note": "Synthetic generated source; no booklet, no answer key."
+    }
+  ]
+}

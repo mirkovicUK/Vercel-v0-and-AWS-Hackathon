@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-316",
+  "seedQid": "q-m4-006",
+  "topic": "ratio_proportion",
+  "difficulty": 1,
+  "text": "A recipe uses flour and sugar in the ratio 3:1. If you use 6 cups of flour, how many cups of sugar do you need?",
+  "options": [
+    "1 cup",
+    "2 cups",
+    "3 cups",
+    "4 cups",
+    "6 cups"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "The ratio of flour to sugar is 3:1. This means for every 3 cups of flour, you need 1 cup of sugar. If you use 6 cups of flour, that is 6 ÷ 3 = 2 groups of 3. So you need 2 × 1 = 2 cups of sugar.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:54:07+00:00"
+}

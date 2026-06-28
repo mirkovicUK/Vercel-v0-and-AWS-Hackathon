@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-349",
+  "answer": "C",
+  "steps": "Original recipe: white = 750 ml, blue = 250 ml, yellow = 125 ml. Ratio white:blue:yellow = 750:250:125 = 6:2:1 (dividing by 125). For 100 ml yellow, multiply ratio by 100. White = 6 × 100 = 600 ml. Blue = 2 × 100 = 200 ml. Total white + blue = 600 + 200 = 800 ml.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

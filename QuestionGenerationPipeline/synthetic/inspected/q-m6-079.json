@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-079",
+  "answer": "C",
+  "steps": "Monday: boxes = 45, chocolates per box = n → total chocolates = 45n.\nTuesday: boxes = 3 × 45 = 135, chocolates per box = n − 4 → total chocolates = 135(n − 4).\nCombined total: 45n + 135(n − 4) = 4860.\nSimplify: 45n + 135n − 540 = 4860 → 180n − 540 = 4860 → 180n = 5400 → n = 30.\nCheck options: n = 30 is option D.\nBut verify: if n = 30, Monday chocolates = 45×30 = 1350, Tuesday chocolates = 135×(26) = 3510, total = 4860 ✓.\nHowever, check if any other option also works? Plug each option into equation 180n − 540 = 4860:\nA) n=24 → 180×24 − 540 = 4320 − 540 = 3780 ≠ 4860.\nB) n=26 → 180×26 − 540 = 4680 − 540 = 4140 ≠ 4860.\nC) n=28 → 180×28 − 540 = 5040 − 540 = 4500 ≠ 4860.\nD) n=30 → 180×30 − 540 = 5400 − 540 = 4860 ✓.\nE) n=32 → 180×32 − 540 = 5760 − 540 = 5220 ≠ 4860.\nOnly D gives 4860. Wait, earlier I wrote answer C but calculation shows D. Correct answer is D.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": false,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

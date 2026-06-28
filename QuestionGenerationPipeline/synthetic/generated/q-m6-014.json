@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-014",
+  "seedQid": "q-m1-005",
+  "topic": "number",
+  "difficulty": 4,
+  "text": "A rocket launches and its altitude is recorded every few seconds. The readings in metres are: 1284, 1247, 1210, ___, 1136, 1099. The rocket is descending at a constant rate. What is the missing altitude reading?",
+  "options": [
+    "1167",
+    "1173",
+    "1178",
+    "1183",
+    "1163"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find the common difference between consecutive terms.\n1284 − 1247 = 37\n1247 − 1210 = 37\nSo the sequence decreases by 37 each time.\n\nStep 2: Check with the later terms.\n1136 − 1099 = 37 ✓\n\nStep 3: Find the missing term by subtracting 37 from 1210.\n1210 − 37 = 1173\n\nStep 4: Verify: 1173 − 37 = 1136 ✓\n\nThe missing altitude reading is 1173 metres.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-11T19:47:47+00:00"
+}

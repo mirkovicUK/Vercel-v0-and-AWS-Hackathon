@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-029",
+  "answer": "B",
+  "steps": "Target = £150. First week: 2/5 of target = (2/5) × 150 = £60. Second week: 35% of target = 0.35 × 150 = £52.50. Total raised = 60 + 52.50 = £112.50. Amount still needed = 150 - 112.50 = £37.50. Fraction of target still needed = 37.50 / 150 = 0.25 = 1/4. Check options: 1/4 is option B.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

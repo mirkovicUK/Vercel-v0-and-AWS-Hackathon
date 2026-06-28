@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-060",
+  "answer": "D",
+  "steps": "Plan A cost: 4.50n. Plan B cost: 20 + 2.50n. Set Plan B < Plan A: 20 + 2.50n < 4.50n. Subtract 2.50n: 20 < 2.00n. Divide by 2: 10 < n. So n > 10. Minimum whole visits is 11.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

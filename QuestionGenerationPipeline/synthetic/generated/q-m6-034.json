@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-034",
+  "seedQid": "q-m1-016",
+  "topic": "algebra",
+  "difficulty": 4,
+  "text": "A baker has a secret recipe. She starts with an unknown number of eggs, triples that number, adds 5, and then divides the result by 2. The final answer is 19. How many eggs did she start with?",
+  "options": [
+    "9",
+    "10",
+    "11",
+    "12",
+    "13"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Let the unknown number of eggs be n.\n\nStep 1: She triples the number: 3n\nStep 2: She adds 5: 3n + 5\nStep 3: She divides by 2: (3n + 5) ÷ 2 = 19\n\nNow solve by working backwards:\n(3n + 5) ÷ 2 = 19\nMultiply both sides by 2: 3n + 5 = 38\nSubtract 5 from both sides: 3n = 33\nDivide both sides by 3: n = 11\n\nCheck: 11 × 3 = 33, then 33 + 5 = 38, then 38 ÷ 2 = 19 ✓\n\nThe answer is 11.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:22:41+00:00"
+}

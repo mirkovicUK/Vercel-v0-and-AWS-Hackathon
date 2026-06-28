@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-018",
+  "seedQid": "q-m1-007",
+  "topic": "ratio_proportion",
+  "difficulty": 3,
+  "text": "A recipe for 4 people uses 300 grams of flour. Tom wants to make the same recipe for 6 people. How many grams of flour does he need?",
+  "options": [
+    "350 g",
+    "400 g",
+    "450 g",
+    "500 g",
+    "600 g"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find how much flour is needed per person. 300 g ÷ 4 = 75 g per person.\nStep 2: Multiply by the number of people Tom is cooking for. 75 g × 6 = 450 g.\nSo Tom needs 450 grams of flour.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-11T19:48:15+00:00"
+}

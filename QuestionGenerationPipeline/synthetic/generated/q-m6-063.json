@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-063",
+  "seedQid": "q-m1-028",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "A gardener charges £p for mowing a lawn plus £q for each flower bed she weeds. She mows 1 lawn and weeds 4 flower beds, and her total charge is £22. If p = 6, what is the value of q?",
+  "options": [
+    "£3",
+    "£4",
+    "£5",
+    "£5.50",
+    "£16"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Write the equation for the total charge: p + 4q = 22.\nStep 2: Substitute p = 6 into the equation: 6 + 4q = 22.\nStep 3: Subtract 6 from both sides: 4q = 16.\nStep 4: Divide both sides by 4: q = 4.\nSo the value of q is £4.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:25:46+00:00"
+}

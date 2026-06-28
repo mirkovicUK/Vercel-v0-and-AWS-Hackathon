@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-268",
+  "seedQid": "q-m3-008",
+  "topic": "data_handling",
+  "difficulty": 3,
+  "text": "A teacher records the number of books read by 6 students during the term: 4, 7, 3, 8, 5, 9. She notices that the three students who read the most books together read a total that is how much more than the total read by the three students who read the fewest books?",
+  "options": [
+    "12",
+    "14",
+    "16",
+    "18",
+    "20"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Arrange the numbers in order from smallest to largest: 3, 4, 5, 7, 8, 9.\n\nStep 2: Find the total of the three highest values (the three students who read the most): 7 + 8 + 9 = 24.\n\nStep 3: Find the total of the three lowest values (the three students who read the fewest): 3 + 4 + 5 = 12.\n\nStep 4: Find the difference: 24 − 12 = 12.\n\nThe answer is 12.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:48:15+00:00"
+}

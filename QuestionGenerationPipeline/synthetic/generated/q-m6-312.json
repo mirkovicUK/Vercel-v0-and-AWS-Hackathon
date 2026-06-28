@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-312",
+  "seedQid": "q-m4-004",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A pet shop has rabbits and hamsters. There are 50 animals in total, and there are 10 more hamsters than rabbits. How many rabbits are there?",
+  "options": [
+    "15",
+    "20",
+    "25",
+    "30",
+    "35"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Let the number of rabbits = r. Then the number of hamsters = r + 10. Together they total 50, so: r + (r + 10) = 50. This gives 2r + 10 = 50. Subtract 10 from both sides: 2r = 40. Divide both sides by 2: r = 20. So there are 20 rabbits.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:53:41+00:00"
+}

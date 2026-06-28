@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-617",
+  "seedQid": "q-m6-025",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "Sam has some stickers. His sister has twice as many stickers as Sam. Together they have 24 stickers. If Sam has 'n' stickers, what is the value of n?",
+  "options": [
+    "6",
+    "7",
+    "8",
+    "10",
+    "12"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Sam has n stickers.\nStep 2: His sister has twice as many, which is 2n stickers.\nStep 3: Together they have n + 2n = 3n stickers.\nStep 4: We know the total is 24, so 3n = 24.\nStep 5: Divide both sides by 3: n = 24 ÷ 3 = 8.\nThe answer is 8.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:28:11+00:00"
+}

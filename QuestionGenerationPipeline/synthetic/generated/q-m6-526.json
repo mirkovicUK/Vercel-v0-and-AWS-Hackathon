@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-526",
+  "seedQid": "q-m6-004",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "Write the number 'three hundred and fifty-two thousand and fourteen' in figures.",
+  "options": [
+    "352,014",
+    "352,140",
+    "350,214",
+    "352,040",
+    "300,52014"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: 'Three hundred and fifty-two thousand' means 352 × 1,000 = 352,000.\nStep 2: 'and fourteen' means we add 14.\nStep 3: 352,000 + 14 = 352,014.\nThe correct answer is 352,014.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:18:05+00:00"
+}

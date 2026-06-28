@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-576",
+  "answer": "B",
+  "steps": "The ratio of orange juice to lemonade is 3:1. This means for every 3 parts orange juice, you need 1 part lemonade. If you use 6 litres of orange juice, that is 6 / 3 = 2 times the '3 parts' unit. So the lemonade needed is 2 times the '1 part' unit: 2 * 1 = 2 litres.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-327",
+  "seedQid": "q-m4-012",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "Sam is saving up for a bicycle that costs £150. He already has £30 saved. Each week he saves £10. How many more weeks will it take Sam to have enough money for the bicycle?",
+  "options": [
+    "10 weeks",
+    "12 weeks",
+    "15 weeks",
+    "8 weeks",
+    "18 weeks"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find how much more Sam needs to save.\n£150 − £30 = £120\n\nStep 2: Find how many weeks it takes to save £120 at £10 per week.\n£120 ÷ £10 = 12 weeks\n\nThe answer is 12 weeks.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:55:23+00:00"
+}

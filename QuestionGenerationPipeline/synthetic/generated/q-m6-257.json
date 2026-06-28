@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-257",
+  "seedQid": "q-m2-047",
+  "topic": "data_handling",
+  "difficulty": 2,
+  "text": "A class recorded the number of books each pupil read during the summer holiday. The results are shown in this table:\n\nBooks read: 0, 1, 2, 3, 4\nNumber of pupils: 3, 5, 8, 6, 2\n\nHow many pupils read fewer than 3 books?",
+  "options": [
+    "8",
+    "13",
+    "16",
+    "18",
+    "24"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "We need to find how many pupils read fewer than 3 books. 'Fewer than 3' means 0, 1, or 2 books.\n\nStep 1: Find the number of pupils who read 0 books = 3\nStep 2: Find the number of pupils who read 1 book = 5\nStep 3: Find the number of pupils who read 2 books = 8\nStep 4: Add these together: 3 + 5 + 8 = 16\n\nThe answer is 16.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:46:37+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-288",
+  "answer": "C",
+  "steps": "1. List prime numbers between 20 and 50: 23, 29, 31, 37, 41, 43, 47.\n2. Find factors of 93: 93 ÷ 3 = 31, so factors are 1, 3, 31, 93.\n3. Among the primes between 20 and 50, only 31 appears in the factors of 93.\n4. Check options: A) 23 (not a factor), B) 29 (not a factor), C) 31 (prime and factor), D) 37 (not a factor), E) 43 (not a factor).\n5. Therefore, Sara's number is 31.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-253",
+  "seedQid": "q-m2-046",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A baker thinks of a number of eggs. She divides the number by 4, adds 7, and then multiplies by 3. Her final answer is 33. How many eggs did she start with?",
+  "options": [
+    "12",
+    "16",
+    "20",
+    "24",
+    "28"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Work backwards from the answer:\n\nStep 1: The last operation was multiplying by 3 to get 33. So before that step: 33 ÷ 3 = 11.\n\nStep 2: Before multiplying by 3, she had added 7. So before adding 7: 11 − 7 = 4.\n\nStep 3: Before adding 7, she had divided by 4. So the original number: 4 × 4 = 16.\n\nCheck: 16 ÷ 4 = 4, then 4 + 7 = 11, then 11 × 3 = 33. ✓\n\nThe answer is 16.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:46:12+00:00"
+}

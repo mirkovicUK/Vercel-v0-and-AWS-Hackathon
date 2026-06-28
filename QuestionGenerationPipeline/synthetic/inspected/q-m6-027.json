@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-027",
+  "answer": "B",
+  "steps": "Let the full jar capacity be 1. Initially jar is 1/4 full. After adding coins, it becomes 3/4 full. Extra coins filled = final amount − initial amount = 3/4 − 1/4 = 2/4 = 1/2. So extra coins filled 1/2 of the jar.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

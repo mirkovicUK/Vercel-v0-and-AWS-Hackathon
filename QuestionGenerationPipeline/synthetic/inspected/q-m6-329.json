@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-329",
+  "answer": "A) 131 + 12m = 251, so m = 10",
+  "steps": "1. Marcus has already paid £131 after some months of membership.\n2. The joining fee is £35, and monthly fee is £12.\n3. The £131 already paid includes the joining fee and monthly fees for the months he has already been a member.\n4. For the additional m months, he will pay £12 per month, with no extra joining fee.\n5. Total payments after m additional months = current payments + 12m.\n6. He wants total payments to reach £251, so equation: 131 + 12m = 251.\n7. Solve: 12m = 251 - 131 = 120, so m = 120 / 12 = 10.\n8. Check options: Option A matches this equation and solution m=10.\n9. Option B has same equation but m=8, which is incorrect.\n10. Option C uses 35m, incorrect because monthly fee is £12, not £35.\n11. Option D uses 12m+35=251, which ignores the £131 already paid.\n12. Option E uses 131+12m=286, which would give m=12.93, not an integer, and total £286 not mentioned in the goal (£251).\n13. Only option A is correct and unambiguous.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

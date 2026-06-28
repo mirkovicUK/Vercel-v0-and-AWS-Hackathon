@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-369",
+  "answer": "B) 12 loaves with no flour left over",
+  "steps": "Flour per loaf = 2/5 kg = 0.4 kg. Total flour = 4.8 kg. Number of loaves = 4.8 ÷ 0.4 = 12. Remainder = 4.8 - (12 × 0.4) = 4.8 - 4.8 = 0 kg. So 12 complete loaves, no flour left.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": false,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

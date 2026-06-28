@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-386",
+  "seedQid": "q-m5-013",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "If n = 5, what is the value of n + 3?",
+  "options": [
+    "5",
+    "7",
+    "8",
+    "9",
+    "15"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "We are told that n = 5. We need to find n + 3. Substituting the value of n: n + 3 = 5 + 3 = 8. The answer is 8.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:01:55+00:00"
+}

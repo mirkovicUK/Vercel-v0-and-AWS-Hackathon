@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-481",
+  "seedQid": "q-m5-042",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 1,
+  "text": "A bag of apples costs £1.50. What is half the cost of one bag of apples?",
+  "options": [
+    "£0.50",
+    "£0.65",
+    "£0.70",
+    "£0.75",
+    "£1.00"
+  ],
+  "correctIndex": 3,
+  "generatorSolution": "Step 1: The cost of one bag of apples is £1.50.\nStep 2: To find half the cost, divide by 2: £1.50 ÷ 2 = £0.75.\nThe answer is £0.75.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:13:05+00:00"
+}

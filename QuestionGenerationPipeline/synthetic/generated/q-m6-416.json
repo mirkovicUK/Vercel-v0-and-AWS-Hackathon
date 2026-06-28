@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-416",
+  "seedQid": "q-m5-022",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "A bag of sweets costs £2. If n stands for the number of bags you buy, which expression tells you the total cost in pounds?",
+  "options": [
+    "n + 2",
+    "2n",
+    "n - 2",
+    "n ÷ 2",
+    "2 + 2"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Each bag costs £2. If you buy n bags, you multiply the cost of one bag by the number of bags: 2 × n = 2n. For example, if you buy 3 bags, the total cost is 2 × 3 = £6, which matches 2n when n = 3. So the correct expression is 2n.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:05:59+00:00"
+}

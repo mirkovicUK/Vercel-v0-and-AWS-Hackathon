@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-208",
+  "seedQid": "q-m2-028",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A swimming club charges £145 per month for membership. Jake joins the club and pays for 8 months. How much does he pay in total?",
+  "options": [
+    "£1,060",
+    "£1,120",
+    "£1,160",
+    "£1,200",
+    "£1,260"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: We need to multiply £145 by 8.\nStep 2: Break it into easier parts: 145 × 8 = (100 × 8) + (40 × 8) + (5 × 8)\nStep 3: 100 × 8 = 800\nStep 4: 40 × 8 = 320\nStep 5: 5 × 8 = 40\nStep 6: Add them together: 800 + 320 + 40 = £1,160\nThe correct answer is £1,160.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:41:17+00:00"
+}

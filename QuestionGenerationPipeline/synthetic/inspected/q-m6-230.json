@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-230",
+  "answer": "B",
+  "steps": "1. Add the masses: 0.007 + 0.063 + 0.93 = 0.07 + 0.93 = 1.000 kg. 2. Divide total by 5: 1.000 ÷ 5 = 0.2 kg.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

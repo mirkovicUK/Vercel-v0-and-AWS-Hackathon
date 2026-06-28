@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-536",
+  "seedQid": "q-m6-007",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "A school has 4,729 pupils. What is the value of the digit 7 in this number?",
+  "options": [
+    "7",
+    "70",
+    "700",
+    "7,000",
+    "7,200"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Look at the number 4,729 and identify the position of the digit 7.\nStep 2: Starting from the right, the digits are: 9 (ones), 2 (tens), 7 (hundreds), 4 (thousands).\nStep 3: The digit 7 is in the hundreds column, so its value is 7 × 100 = 700.\nThe correct answer is 700.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:19:07+00:00"
+}

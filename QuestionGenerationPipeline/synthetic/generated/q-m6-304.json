@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-304",
+  "seedQid": "q-m3-029",
+  "topic": "algebra",
+  "difficulty": 4,
+  "text": "A rectangular swimming pool has a length of (3y + 7) metres and a width of (y + 2) metres. The perimeter of the pool is 58 metres. What is the value of y?",
+  "options": [
+    "4",
+    "5",
+    "5.5",
+    "6",
+    "7"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Write the formula for the perimeter of a rectangle.\nPerimeter = 2 × (length + width)\n\nStep 2: Substitute the expressions into the formula.\n58 = 2 × [(3y + 7) + (y + 2)]\n\nStep 3: Simplify inside the brackets.\n58 = 2 × (3y + y + 7 + 2)\n58 = 2 × (4y + 9)\n\nStep 4: Expand the right side.\n58 = 8y + 18\n\nStep 5: Solve for y.\n58 - 18 = 8y\n40 = 8y\ny = 40 ÷ 8\ny = 5\n\nThe correct answer is 5.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:52:34+00:00"
+}

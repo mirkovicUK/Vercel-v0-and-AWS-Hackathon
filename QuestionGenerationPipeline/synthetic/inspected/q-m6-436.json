@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-436",
+  "answer": "B",
+  "steps": "0.18 m means 18 hundredths of a metre because the first decimal place is tenths and the second is hundredths. So 0.18 = 18/100. Check options: A) 18/10 = 1.8, not 0.18. B) 18/100 = 0.18, correct. C) 18/1000 = 0.018, not 0.18. D) 1/8 = 0.125, not 0.18. E) 8/100 = 0.08, not 0.18. Only B matches exactly.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

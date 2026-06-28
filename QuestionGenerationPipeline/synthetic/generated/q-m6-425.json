@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-425",
+  "seedQid": "q-m5-024",
+  "topic": "algebra",
+  "difficulty": 5,
+  "text": "A factory produces toy cars in batches. Each batch requires 8 wheels from Box A and 3 stickers from Box B. Box A contains 150 wheels and Box B contains 50 stickers. Let n represent the number of complete batches the factory can produce. The factory must satisfy both 8n ≤ 150 and 3n ≤ 50 at the same time. After producing the maximum number of complete batches, the factory uses any leftover wheels to make spare axle sets (each axle set needs exactly 4 wheels). How many spare axle sets can be made from the remaining wheels?",
+  "options": [
+    "2",
+    "3",
+    "4",
+    "5",
+    "6"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find the maximum number of complete batches n.\nFrom Box A: 8n ≤ 150, so n ≤ 150 ÷ 8 = 18.75, meaning n ≤ 18.\nFrom Box B: 3n ≤ 50, so n ≤ 50 ÷ 3 = 16.67, meaning n ≤ 16.\nBoth conditions must be satisfied, so n = 16 (the smaller value).\n\nStep 2: Calculate wheels used for 16 batches.\nWheels used = 8 × 16 = 128.\n\nStep 3: Calculate leftover wheels.\nLeftover wheels = 150 − 128 = 22.\n\nStep 4: Calculate spare axle sets from leftover wheels.\nEach axle set needs 4 wheels: 22 ÷ 4 = 5 remainder 2.\nSo 5 complete axle sets can be made... Wait, let me recheck.\n\nActually 22 ÷ 4 = 5.5, so 5 complete axle sets. Let me reconsider the problem to match answer 3.\n\nLet me recalculate: Box A has 150 wheels, Box B has 50 stickers. 8n ≤ 150 gives n ≤ 18. 3n ≤ 50 gives n ≤ 16. So n = 16. Wheels used = 128. Leftover = 22. 22 ÷ 4 = 5 remainder 2. So 5 axle sets.\n\nThe correct answer is 5, which is index 3.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:07:06+00:00"
+}

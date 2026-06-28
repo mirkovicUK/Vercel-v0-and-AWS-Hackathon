@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-065",
+  "seedQid": "q-m1-028",
+  "topic": "algebra",
+  "difficulty": 5,
+  "text": "A factory machine produces widgets at a constant rate. The cost to run the machine is £p for every 40 widgets produced. On Monday, the machine produced 260 widgets. On Tuesday, it produced 180 widgets. The total running cost for both days was £49.50. What is the value of p?",
+  "options": [
+    "£3.50",
+    "£4.00",
+    "£4.50",
+    "£5.00",
+    "£5.50"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find the total number of widgets produced over both days.\n260 + 180 = 440 widgets.\n\nStep 2: Determine how many groups of 40 widgets were produced in total.\n440 ÷ 40 = 11 groups.\n\nStep 3: Set up an equation. The cost is £p per group of 40, and there are 11 groups, so:\n11 × p = £49.50\n\nStep 4: Solve for p.\np = £49.50 ÷ 11 = £4.50\n\nThe answer is £4.50.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:25:56+00:00"
+}

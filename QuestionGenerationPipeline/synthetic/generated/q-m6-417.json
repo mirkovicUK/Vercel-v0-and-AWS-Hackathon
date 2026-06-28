@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-417",
+  "seedQid": "q-m5-022",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A baker makes cupcakes using this rule: number of cupcakes = 6 × trays + 2 extra. If the baker uses 4 trays, how many cupcakes does the baker make in total?",
+  "options": [
+    "22",
+    "24",
+    "26",
+    "28",
+    "30"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Write down the rule: number of cupcakes = 6 × trays + 2.\nStep 2: Substitute trays = 4 into the rule: number of cupcakes = 6 × 4 + 2.\nStep 3: Calculate 6 × 4 = 24.\nStep 4: Add the extra 2: 24 + 2 = 26.\nThe baker makes 26 cupcakes in total.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:06:03+00:00"
+}

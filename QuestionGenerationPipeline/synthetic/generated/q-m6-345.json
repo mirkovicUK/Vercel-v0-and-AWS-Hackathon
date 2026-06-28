@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-345",
+  "seedQid": "q-m4-020",
+  "topic": "ratio_proportion",
+  "difficulty": 5,
+  "text": "An architect builds a scale model of a sports stadium. The real stadium is 360 metres long and 240 metres wide. On the model, the length is 45 cm. What is the area of the model's base in square centimetres?",
+  "options": [
+    "1050 cm²",
+    "1200 cm²",
+    "1350 cm²",
+    "1500 cm²",
+    "1800 cm²"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find the scale factor. The real length is 360 m = 36000 cm. The model length is 45 cm. So the scale is 45 ÷ 36000 = 1/800. This means the scale is 1:800.\n\nStep 2: Find the model width. The real width is 240 m = 24000 cm. Model width = 24000 ÷ 800 = 30 cm.\n\nStep 3: Calculate the area of the model's base. Area = length × width = 45 cm × 30 cm = 1350 cm².\n\nThe correct answer is 1350 cm².",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:56:59+00:00"
+}

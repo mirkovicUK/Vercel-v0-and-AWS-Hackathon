@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-292",
+  "seedQid": "q-m3-022",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A toy shop is 300 m north of a park. A library is 180 m south of the park. All three buildings are on the same straight road. Let d stand for the distance in metres between the toy shop and the library. Which equation is correct?",
+  "options": [
+    "d = 300 - 180",
+    "d = 300 + 180",
+    "d = 300 × 180",
+    "d = 180 - 300",
+    "d = 300 ÷ 180"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "The toy shop is 300 m north of the park and the library is 180 m south of the park. Since they are on opposite sides of the park, the total distance between them is found by adding: d = 300 + 180 = 480 m. Therefore the correct equation is d = 300 + 180.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:51:01+00:00"
+}

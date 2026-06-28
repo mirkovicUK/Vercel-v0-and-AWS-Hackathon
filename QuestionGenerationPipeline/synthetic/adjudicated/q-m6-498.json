@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-498",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "A",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "25% of £180 is £45 from cupcakes. 1/3 of £180 is £60 from brownies. Total from cupcakes and brownies is £45 + £60 = £105. The remainder from Victoria sponge is £180 - £105 = £75. This matches option A. All calculations are unambiguous and only A is correct.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

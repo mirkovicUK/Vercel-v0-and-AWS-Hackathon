@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-531",
+  "seedQid": "q-m6-006",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "A library has 4,617 books. What is the value of the digit 6 in this number?",
+  "options": [
+    "6",
+    "60",
+    "600",
+    "6000",
+    "6017"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Look at the number 4,617 and identify the position of the digit 6.\nStep 2: Starting from the right, the digits are: 7 (ones), 1 (tens), 6 (hundreds), 4 (thousands).\nStep 3: The digit 6 is in the hundreds place, so its value is 6 × 100 = 600.\nThe correct answer is 600.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:18:41+00:00"
+}

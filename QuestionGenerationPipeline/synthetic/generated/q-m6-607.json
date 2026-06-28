@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-607",
+  "seedQid": "q-m6-023",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A gardener plants some seeds on Monday and then plants 12 more seeds on Tuesday. By Friday, 5 seeds have not grown. She now has 25 growing plants. If s represents the number of seeds she planted on Monday, which equation is correct?",
+  "options": [
+    "s + 12 − 5 = 25, so s = 18",
+    "s + 12 + 5 = 25, so s = 8",
+    "s − 12 + 5 = 25, so s = 32",
+    "s + 12 − 5 = 25, so s = 20",
+    "s + 12 − 5 = 25, so s = 15"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: The gardener planted s seeds on Monday and 12 more on Tuesday, giving a total of s + 12 seeds.\n\nStep 2: 5 seeds did not grow, so we subtract 5 from the total: s + 12 − 5.\n\nStep 3: She has 25 growing plants, so the equation is: s + 12 − 5 = 25.\n\nStep 4: Simplify the left side: s + 7 = 25.\n\nStep 5: Solve for s: s = 25 − 7 = 18.\n\nThe correct equation is s + 12 − 5 = 25, and s = 18.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:26:55+00:00"
+}

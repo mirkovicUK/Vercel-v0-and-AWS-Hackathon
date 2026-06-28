@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-130",
+  "answer": "A",
+  "steps": "For 8 pancakes: flour = 200g, eggs = 2, milk = 300ml. Per pancake: flour = 200/8 = 25g, eggs = 2/8 = 0.25, milk = 300/8 = 37.5ml. Tom has: flour = 750g, eggs = 10, milk = 900ml. Maximum pancakes from flour: 750 / 25 = 30. From eggs: 10 / 0.25 = 40. From milk: 900 / 37.5 = 24. The limiting ingredient is milk, giving max 24 pancakes. Check options: 24 is option A.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

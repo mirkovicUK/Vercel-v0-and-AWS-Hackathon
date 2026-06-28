@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-142",
+  "answer": "B",
+  "steps": "Six thousand and forty-three means 6 thousands, 0 hundreds, 4 tens, and 3 ones. Six thousand = 6000, forty = 40, three = 3. So 6000 + 40 + 3 = 6043. In figures, that is 6,043.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

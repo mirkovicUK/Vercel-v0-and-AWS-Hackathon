@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-299",
+  "answer": "C",
+  "steps": "Given: In 15 minutes, produces b bottles. Formula: bottles = 4bh. Given b = 120 (since produces 120 bottles in 15 minutes). For h = 3.5 hours, substitute into formula: bottles = 4 × 120 × 3.5 = 4 × 120 = 480, then 480 × 3.5 = 1,680.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

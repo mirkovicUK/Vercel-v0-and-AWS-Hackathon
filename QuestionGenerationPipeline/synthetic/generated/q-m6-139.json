@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-139",
+  "seedQid": "q-m2-004",
+  "topic": "data_handling",
+  "difficulty": 4,
+  "text": "A scientist records the temperature in a city every 3 hours over a 24-hour period starting at midnight. The temperatures (in °C) are: 2, 1, 0, 3, 7, 10, 8, 5, 3. She notices that the city is exactly 6 hours ahead of another city where her colleague is recording data at the same moments in time. Her colleague records temperatures of: 15, 13, 11, 9, 12, 16, 19, 21, 18. What is the difference between the mean temperature of the first city and the median temperature of the second city?",
+  "options": [
+    "5.3°C",
+    "9.7°C",
+    "10.7°C",
+    "11.0°C",
+    "10.3°C"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find the mean temperature of the first city.\nTemperatures: 2, 1, 0, 3, 7, 10, 8, 5, 3\nSum = 2 + 1 + 0 + 3 + 7 + 10 + 8 + 5 + 3 = 39\nMean = 39 ÷ 9 = 4.33°C (approximately 4.3°C)\n\nStep 2: Find the median temperature of the second city.\nTemperatures: 15, 13, 11, 9, 12, 16, 19, 21, 18\nArrange in order: 9, 11, 12, 13, 15, 16, 18, 19, 21\nThere are 9 values, so the median is the 5th value = 15°C\n\nStep 3: Find the difference between the mean of the first city and the median of the second city.\nDifference = 15 - 4.33... = 10.67°C, which rounds to 10.7°C\n\nThe correct answer is 10.7°C.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:34:04+00:00"
+}

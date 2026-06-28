@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-044",
+  "seedQid": "q-m1-019",
+  "topic": "number",
+  "difficulty": 4,
+  "text": "A family uses approximately 150 litres of water per day. Their water tank holds 1,200 litres when full. If the tank starts completely full on Monday morning and no new water is added, on which day will the tank first have less than 200 litres remaining?",
+  "options": [
+    "Friday",
+    "Saturday",
+    "Sunday",
+    "Monday (the following week)",
+    "Thursday"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: The tank starts with 1,200 litres and the family uses 150 litres per day.\n\nStep 2: We need to find when the remaining water first drops below 200 litres.\n\nStep 3: Calculate how much water needs to be used: 1,200 − 200 = 1,000 litres must be used before the level drops below 200.\n\nStep 4: Number of full days needed: 1,000 ÷ 150 = 6.67 days. So after 6 full days, they have used 6 × 150 = 900 litres, leaving 300 litres (not yet below 200). After 7 full days, they have used 7 × 150 = 1,050 litres, leaving 150 litres (which IS below 200).\n\nStep 5: Counting from Monday: end of Day 1 = Monday evening, Day 2 = Tuesday, Day 3 = Wednesday, Day 4 = Thursday, Day 5 = Friday, Day 6 = Saturday, Day 7 = Sunday.\n\nStep 6: At the end of Sunday (7 days), the tank first has less than 200 litres remaining (150 litres left).\n\nThe answer is Sunday.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:23:39+00:00"
+}

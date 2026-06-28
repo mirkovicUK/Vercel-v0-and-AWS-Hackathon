@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-318",
+  "seedQid": "q-m4-006",
+  "topic": "ratio_proportion",
+  "difficulty": 3,
+  "text": "A recipe for 4 people uses 300 g of flour and 200 g of sugar. Tom wants to make the recipe for 6 people. How much flour does he need?",
+  "options": [
+    "350 g",
+    "400 g",
+    "450 g",
+    "500 g",
+    "600 g"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: The recipe serves 4 people and uses 300 g of flour.\nStep 2: Tom wants to serve 6 people, so he needs to scale up the recipe.\nStep 3: The scale factor is 6 ÷ 4 = 1.5\nStep 4: Multiply the flour by the scale factor: 300 g × 1.5 = 450 g\nTherefore, Tom needs 450 g of flour.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:54:15+00:00"
+}

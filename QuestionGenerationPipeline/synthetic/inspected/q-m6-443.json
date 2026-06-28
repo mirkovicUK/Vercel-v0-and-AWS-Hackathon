@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-443",
+  "answer": "B",
+  "steps": "Monday: p = 24 cupcakes. Tuesday: double Monday = 2 × 24 = 48 cupcakes. Wednesday: 10 fewer than Tuesday = 48 − 10 = 38 cupcakes.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

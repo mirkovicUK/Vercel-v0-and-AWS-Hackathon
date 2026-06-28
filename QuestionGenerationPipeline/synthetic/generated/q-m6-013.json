@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-013",
+  "seedQid": "q-m1-005",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A lift starts at floor 52 and goes down the same number of floors each time it stops. The floors it stops at are: 52, 45, 38, ___, 24. What is the missing floor number?",
+  "options": [
+    "30",
+    "31",
+    "32",
+    "33",
+    "34"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find the pattern by looking at the difference between consecutive numbers.\n52 - 45 = 7\n45 - 38 = 7\nSo the sequence decreases by 7 each time.\n\nStep 2: Find the missing number.\n38 - 7 = 31\n\nStep 3: Check the answer by confirming the next term.\n31 - 7 = 24 ✓\n\nThe missing floor number is 31.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-11T19:47:42+00:00"
+}

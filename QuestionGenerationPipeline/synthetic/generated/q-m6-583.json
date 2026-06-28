@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-583",
+  "seedQid": "q-m6-017",
+  "topic": "ratio_proportion",
+  "difficulty": 3,
+  "text": "A fruit punch is made by mixing orange juice and lemonade in the ratio 2:5. If Priya uses 350 ml of lemonade, how many millilitres of orange juice does she need?",
+  "options": [
+    "100 ml",
+    "120 ml",
+    "140 ml",
+    "175 ml",
+    "200 ml"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "The ratio of orange juice to lemonade is 2:5. This means for every 5 parts of lemonade, there are 2 parts of orange juice.\n\nStep 1: Find the value of one part. Since lemonade = 5 parts = 350 ml, one part = 350 ÷ 5 = 70 ml.\n\nStep 2: Find the amount of orange juice. Orange juice = 2 parts = 2 × 70 = 140 ml.\n\nThe answer is 140 ml.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:24:19+00:00"
+}

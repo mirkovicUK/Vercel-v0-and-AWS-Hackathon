@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-081",
+  "answer": "C) 2.0 litres",
+  "steps": "Initial juice = 1.5 litres. Added juice = 0.5 litres. Total juice = 1.5 + 0.5 = 2.0 litres.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

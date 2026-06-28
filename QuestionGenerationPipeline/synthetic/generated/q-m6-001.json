@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-001",
+  "seedQid": "q-m1-001",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "A library has two thousand and thirty-six books. What is this number in figures?",
+  "options": [
+    "2306",
+    "2036",
+    "2360",
+    "20036",
+    "2063"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: 'Two thousand' means 2000.\nStep 2: 'and thirty-six' means 36.\nStep 3: Add them together: 2000 + 36 = 2036.\nThe correct answer is 2036.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-11T19:46:10+00:00"
+}

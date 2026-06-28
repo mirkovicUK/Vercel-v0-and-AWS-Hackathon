@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-274",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "A",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "Starting distance: 2,748,365 km. After moving 100,000 km away: 2,748,365 + 100,000 = 2,848,365 km. Then moving 5,000 km closer: 2,848,365 - 5,000 = 2,843,365 km. This matches option A. Solver 1 is correct; Solver 2 likely added 100,000 and 5,000 instead of subtracting. The correct answer is unambiguous.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

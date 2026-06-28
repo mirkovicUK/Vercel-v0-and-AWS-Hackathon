@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-434",
+  "seedQid": "q-m5-027",
+  "topic": "number",
+  "difficulty": 4,
+  "text": "A factory produces 748 bottles per hour. The manager knows that 748 × 80 = 59,840. Using this fact, what is 748 × 160?",
+  "options": [
+    "109,680",
+    "119,680",
+    "118,480",
+    "59,920",
+    "129,680"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Recognise that 160 = 80 × 2.\nStep 2: Since 748 × 80 = 59,840, we can find 748 × 160 by doubling this result.\nStep 3: 59,840 × 2 = 119,680.\nTherefore, 748 × 160 = 119,680.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:07:50+00:00"
+}

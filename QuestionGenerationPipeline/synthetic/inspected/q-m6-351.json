@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-351",
+  "answer": "C",
+  "steps": "10 × 10 = 100. Then 100 × 10 = 1000.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

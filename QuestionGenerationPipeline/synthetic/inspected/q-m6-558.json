@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-558",
+  "answer": "D",
+  "steps": "The sequence given is: Monday 12, Tuesday 24, Wednesday 48, Thursday 96. Each day's number is double the previous day's: 12 × 2 = 24, 24 × 2 = 48, 48 × 2 = 96. Continuing the pattern, Friday's number = 96 × 2 = 192.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-398",
+  "answer": "C",
+  "steps": "1. Convert all dimensions to centimetres: length = 2 m = 200 cm, width = 50 cm, depth = 40 cm.\n2. Volume of a rectangular prism = length × width × depth.\n3. Volume = 200 cm × 50 cm × 40 cm.\n4. First multiply 200 × 50 = 10,000.\n5. Then multiply 10,000 × 40 = 400,000.\n6. Volume = 400,000 cm³.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

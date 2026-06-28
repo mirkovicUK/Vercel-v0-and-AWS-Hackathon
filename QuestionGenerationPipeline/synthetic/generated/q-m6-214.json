@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-214",
+  "seedQid": "q-m2-029",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 4,
+  "text": "A baker is making cakes for a school fair. Each bag of flour weighs 2.5 kg. She accidentally spills 0.375 kg from the first bag. If she needs exactly 12.125 kg of flour in total for all her cakes, how many additional full bags of 2.5 kg must she buy (beyond the first bag)?",
+  "options": [
+    "4 bags",
+    "5 bags",
+    "6 bags",
+    "7 bags",
+    "3 bags"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "Step 1: Work out how much usable flour she gets from the first bag.\nFirst bag = 2.5 kg − 0.375 kg = 2.125 kg\n\nStep 2: Work out how much more flour she still needs.\n12.125 kg − 2.125 kg = 10 kg\n\nStep 3: Work out how many full bags of 2.5 kg are needed to provide 10 kg.\n10 ÷ 2.5 = 4 bags\n\nSo she must buy 4 additional bags.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:42:02+00:00"
+}

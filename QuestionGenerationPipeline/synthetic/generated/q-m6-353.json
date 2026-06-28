@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-353",
+  "seedQid": "q-m4-027",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A mystery number is squared, then the result is multiplied by 5. The final answer is 125. What was the mystery number?",
+  "options": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "25"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Let the mystery number be n. We are told that n² × 5 = 125.\nStep 2: Divide both sides by 5: n² = 125 ÷ 5 = 25.\nStep 3: Find the square root of 25: n = √25 = 5.\nTherefore, the mystery number is 5.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:57:50+00:00"
+}

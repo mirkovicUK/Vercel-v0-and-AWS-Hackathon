@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-190",
+  "seedQid": "q-m2-022",
+  "topic": "algebra",
+  "difficulty": 5,
+  "text": "At a bakery, the cost of 3 croissants and 2 muffins is £4.10. The cost of 1 croissant and 4 muffins is £3.70. A customer buys 5 croissants and 6 muffins. What is the total cost?",
+  "options": [
+    "£7.50",
+    "£7.80",
+    "£7.90",
+    "£8.10",
+    "£8.40"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Let c = cost of one croissant and m = cost of one muffin.\n\nEquation 1: 3c + 2m = £4.10\nEquation 2: c + 4m = £3.70\n\nStep 1: Multiply Equation 2 by 3: 3c + 12m = £11.10\n\nStep 2: Subtract Equation 1 from this result:\n(3c + 12m) − (3c + 2m) = £11.10 − £4.10\n10m = £7.00\nm = £0.70\n\nStep 3: Substitute m = £0.70 into Equation 2:\nc + 4(£0.70) = £3.70\nc + £2.80 = £3.70\nc = £0.90\n\nStep 4: Calculate the cost of 5 croissants and 6 muffins:\n5 × £0.90 + 6 × £0.70 = £4.50 + £4.20 = £7.90\n\nBut we can also verify: notice that 5c + 6m = (3c + 2m) + (c + 4m) + (c + 0m). Actually, let's verify directly: 5(0.90) + 6(0.70) = 4.50 + 4.20 = £7.90.\n\nThe correct answer is £7.90.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:39:37+00:00"
+}

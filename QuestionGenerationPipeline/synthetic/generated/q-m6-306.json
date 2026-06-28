@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-306",
+  "seedQid": "q-m4-001",
+  "topic": "geometry",
+  "difficulty": 1,
+  "text": "How many lines of symmetry does a square have?",
+  "options": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "8"
+  ],
+  "correctIndex": 3,
+  "generatorSolution": "A square has 4 lines of symmetry. You can fold it in half along: (1) a vertical line down the middle, (2) a horizontal line across the middle, (3) a diagonal line from the top-left corner to the bottom-right corner, and (4) a diagonal line from the top-right corner to the bottom-left corner. Each of these fold lines divides the square into two identical halves, so the answer is 4.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:52:43+00:00"
+}

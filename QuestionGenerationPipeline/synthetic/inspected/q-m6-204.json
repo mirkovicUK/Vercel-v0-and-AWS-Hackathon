@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-204",
+  "answer": "A",
+  "steps": "Let width = w metres. Length is 3 metres more than twice width, so length = 2w + 3. Perimeter of rectangle = 2 × (length + width) = 2 × ((2w + 3) + w) = 2 × (3w + 3) = 6w + 6. Given perimeter = 54, so 6w + 6 = 54 → 6w = 48 → w = 8. The equation 2w + 2(2w + 3) = 54 simplifies to 2w + 4w + 6 = 54 → 6w + 6 = 54, same as above. Check options: A has equation 2w + 2(2w + 3) = 54 and w = 8 → correct. B same equation but w = 9 → wrong. C equation w + (2w + 3) = 54 → 3w + 3 = 54 → w = 17, but equation is not correct perimeter formula → wrong. D same equation as A but w = 7 → wrong. E equation 2w + 2(3w + 2) = 54 → 2w + 6w + 4 = 54 → 8w = 50 → w = 6.25, not 5 → wrong. Only A is fully correct.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

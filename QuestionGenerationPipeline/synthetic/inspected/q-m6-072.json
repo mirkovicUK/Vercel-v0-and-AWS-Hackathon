@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-072",
+  "answer": "B) n = 48 × 3/4 = 36",
+  "steps": "The farmer sells 3/4 of 48 eggs. So n = 48 × (3/4) = (48 × 3) / 4 = 144 / 4 = 36. Check options: A gives 12, B gives 36, C gives 12, D gives 44, E says 48 × 3/4 = 32 but 48 × 3/4 is actually 36, so E's stated result is wrong. Only B correctly states the equation and the correct numerical result.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

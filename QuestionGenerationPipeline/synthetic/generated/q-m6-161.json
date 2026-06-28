@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-161",
+  "seedQid": "q-m2-014",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "What is the sum of the digits of the number 34?",
+  "options": [
+    "5",
+    "6",
+    "7",
+    "8",
+    "12"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "To find the sum of the digits of 34, we add the tens digit and the units digit together:\n3 + 4 = 7\nThe answer is 7.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:36:14+00:00"
+}

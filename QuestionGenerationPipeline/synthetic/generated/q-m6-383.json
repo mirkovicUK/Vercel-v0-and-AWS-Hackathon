@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-383",
+  "seedQid": "q-m5-010",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 3,
+  "text": "A bakery makes 360 cupcakes in one day. They sell 3/8 of them in the morning and 25% of the total in the afternoon. How many cupcakes are left unsold at the end of the day?",
+  "options": [
+    "90",
+    "135",
+    "180",
+    "225",
+    "270"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find how many cupcakes are sold in the morning.\n3/8 of 360 = 360 ÷ 8 × 3 = 45 × 3 = 135 cupcakes.\n\nStep 2: Find how many cupcakes are sold in the afternoon.\n25% of 360 = 360 ÷ 4 = 90 cupcakes.\n\nStep 3: Find the total number sold.\n135 + 90 = 225 cupcakes sold.\n\nStep 4: Subtract from the total to find how many are left.\n360 − 225 = 135 cupcakes.\n\nThe answer is 135.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:01:17+00:00"
+}

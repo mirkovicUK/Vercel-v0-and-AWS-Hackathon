@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-264",
+  "answer": "C",
+  "steps": "Let total sweets = T. Red = 25% = 1/4 T. Green = 3/8 T. Yellow = T - (1/4 T + 3/8 T) = T - (2/8 T + 3/8 T) = T - 5/8 T = 3/8 T. Given yellow = 18, so 3/8 T = 18 → T = 18 * 8 / 3 = 144 / 3 = 48. Check: Red = 12, Green = 18, Yellow = 18, total = 48. Options: A=36, B=42, C=48, D=54, E=60. Only 48 matches.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

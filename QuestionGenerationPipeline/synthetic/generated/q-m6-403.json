@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-403",
+  "seedQid": "q-m5-016",
+  "topic": "algebra",
+  "difficulty": 3,
+  "status": "failed",
+  "raw": "{\n  \"text\": \"A baker makes cookies and packs them into boxes of 6. He uses the letter n to represent the total number of cookies he bakes. After filling as many boxes as possible, he has 4 cookies left over. He bakes more than 30 but fewer than 50 cookies. Which of the following could be the value of n?\",\n  \"options\": [\"36\", \"38\", \"40\", \"46\", \"48\"],\n  \"correctIndex\": 2,\n  \"solution\": \"Step 1: We need a number n where n ÷ 6 leaves a remainder of 4.\\nStep 2: This means n = 6 × (some whole number) + 4.\\nStep 3: List multiples of 6 and add 4: 6×5+4=34, 6×6+4=40, 6×7+4=46... Wait, let me check 46: 46÷6=7 remainder 4. Let me check 40: 40÷6=6 remainder 4. Both give remainder 4.\\nStep 4: But we must check which options are listed. 40 and 46 are both in the options. Let me recheck 46: 6×7=42, 46-42=4. Yes, remainder 4.\\nStep 5: Actually both 40 and 46 give remainder 4. Let me reconsider — I need to ensure only one answer is correct. 46÷6: 6×7=42, remainder=4. So 46 also works.\\nLet me revise: I'll adjust the remainder. The baker has 4 left over, and checking each option: 36÷6=6 r0, 38÷6=6 r2, 40÷6=6 r4 ✓, 46÷6=7 r4 ✓, 48÷6=8 r0.\\nSince both 40 and 46 give remainder 4, I need to add another constraint. The problem states more than 30 but fewer than 50, and he fills EXACTLY 6 full boxes. So n÷6 gives quotient 6 with remainder 4, meaning n=6×6+4=40.\\nStep 6: Therefore n = 40.\"\n}\n\nWait, let me redo this properly:\n\n{\"text\":\"A baker makes cookies and packs them into boxes of 6. He uses the letter n to represent the total number of cookies he bakes. After filling exactly 6 full boxes, he has some cookies left over. If n = 6 × 6 + r, where r is the number of cookies left over, and n is between 37 and 45, what is the value of n if r = 4?\",\"options\":[\"38\",\"39\",\"40\",\"42\",\"44\"],\"correctIndex\":2,\"solution\":\"Step 1: We are told that n = 6 × 6 + r, where r = 4.\\nStep 2: Calculate n = 6 × 6 + 4 = 36 + 4 = 40.\\nStep 3: Check that 40 is between 37 and 45. Yes it is.\\nStep 4: Therefore n = 40.\"}",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "createdAt": "2026-06-12T18:04:04+00:00"
+}

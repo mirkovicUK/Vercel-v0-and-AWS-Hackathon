@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-559",
+  "seedQid": "q-m6-011",
+  "topic": "number",
+  "difficulty": 4,
+  "text": "A clock tower chimes every day at noon. On Monday it chimes 1 time, on Tuesday it chimes 4 times, on Wednesday it chimes 9 times, and on Thursday it chimes 16 times. If this pattern continues, how many total chimes will the clock tower have made from Monday through Saturday?",
+  "options": [
+    "81",
+    "86",
+    "91",
+    "96",
+    "101"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "First, identify the pattern. The chimes each day are: 1, 4, 9, 16, ...\nThese are square numbers: 1², 2², 3², 4², ...\n\nSo:\nMonday = 1² = 1\nTuesday = 2² = 4\nWednesday = 3² = 9\nThursday = 4² = 16\nFriday = 5² = 25\nSaturday = 6² = 36\n\nNow find the total from Monday through Saturday:\n1 + 4 + 9 + 16 + 25 + 36\n= 5 + 9 + 16 + 25 + 36\n= 14 + 16 + 25 + 36\n= 30 + 25 + 36\n= 55 + 36\n= 91\n\nThe answer is 91.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:21:44+00:00"
+}

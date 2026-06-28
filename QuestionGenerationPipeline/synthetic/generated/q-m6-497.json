@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-497",
+  "seedQid": "q-m5-048",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 2,
+  "text": "A cake costs £4.00. In a sale, the price is reduced by 25%. What is the sale price of the cake?",
+  "options": [
+    "£1.00",
+    "£2.00",
+    "£3.00",
+    "£3.25",
+    "£3.75"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find 25% of £4.00.\n25% means 25 out of 100, which is the same as one quarter.\n£4.00 ÷ 4 = £1.00\n\nStep 2: Subtract the discount from the original price.\n£4.00 − £1.00 = £3.00\n\nThe sale price of the cake is £3.00.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:15:19+00:00"
+}

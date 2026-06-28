@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-447",
+  "seedQid": "q-m5-030",
+  "topic": "geometry",
+  "difficulty": 2,
+  "text": "A rectangular garden has a length of 8 metres and a width of 5 metres. What is the perimeter of the garden?",
+  "options": [
+    "13 m",
+    "26 m",
+    "40 m",
+    "30 m",
+    "21 m"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "To find the perimeter of a rectangle, we add up all four sides.\n\nPerimeter = length + length + width + width\nPerimeter = 8 m + 8 m + 5 m + 5 m = 26 m\n\nAlternatively, we can use the formula: Perimeter = 2 × (length + width) = 2 × (8 + 5) = 2 × 13 = 26 m\n\nThe correct answer is 26 m.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:09:10+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-047",
+  "answer": "D",
+  "steps": "Total sweets = 200. Red sweets = 50. Percentage of red sweets = (50 / 200) × 100 = (1/4) × 100 = 25%.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": false,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

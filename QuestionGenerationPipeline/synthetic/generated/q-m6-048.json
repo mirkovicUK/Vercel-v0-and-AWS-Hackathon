@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-048",
+  "seedQid": "q-m1-022",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 3,
+  "text": "A charity collection jar contains £8. If £1.20 of this was donated by children, what percentage of the total was donated by children?",
+  "options": [
+    "12%",
+    "15%",
+    "18%",
+    "20%",
+    "25%"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Write the amount donated by children as a fraction of the total: £1.20 out of £8.00.\nStep 2: Convert to a fraction: 1.20 ÷ 8 = 0.15\nStep 3: Convert the decimal to a percentage: 0.15 × 100 = 15%\nTherefore, 15% of the total was donated by children.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:23:59+00:00"
+}

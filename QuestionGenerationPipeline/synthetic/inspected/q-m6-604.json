@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-604",
+  "answer": "A",
+  "steps": "Let original seats per row = x. After adding 3 chairs per row, each row holds x+3 = 11, so x = 8. Total rows = 6. Total seats after adding chairs = 6 * 11 = 66. Already seated = 20, so empty seats = 66 - 20 = 46.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

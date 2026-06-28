@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-412",
+  "seedQid": "q-m5-019",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 2,
+  "text": "A baker made 40 cupcakes. He sold 3/4 of them in the morning. How many cupcakes did he sell?",
+  "options": [
+    "25",
+    "28",
+    "30",
+    "32",
+    "35"
+  ],
+  "correctIndex": 3,
+  "generatorSolution": "To find 3/4 of 40, divide 40 by 4 to get one quarter: 40 ÷ 4 = 10. Then multiply by 3 to get three quarters: 10 × 3 = 30. Wait, let me recalculate. 40 ÷ 4 = 10, and 10 × 3 = 30. Actually, let me recheck: 3/4 of 40 = (3 × 40) ÷ 4 = 120 ÷ 4 = 30. The correct answer is 30.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:05:38+00:00"
+}

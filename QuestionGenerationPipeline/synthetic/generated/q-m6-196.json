@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-196",
+  "seedQid": "q-m2-025",
+  "topic": "data_handling",
+  "difficulty": 1,
+  "text": "The tally chart below shows the favourite fruits of children in a class.\n\nApple: |||| ||\nBanana: |||| \nOrange: |||\nGrape: |\n\nHow many children chose Apple as their favourite fruit?",
+  "options": [
+    "5",
+    "6",
+    "7",
+    "8",
+    "9"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Count the tally marks next to Apple.\nStep 2: |||| represents 5 (a group of five) and || represents 2 more.\nStep 3: 5 + 2 = 7\n\nTherefore, 7 children chose Apple as their favourite fruit.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:40:05+00:00"
+}

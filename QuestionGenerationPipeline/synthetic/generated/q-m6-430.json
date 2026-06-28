@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-430",
+  "seedQid": "q-m5-026",
+  "topic": "number",
+  "difficulty": 5,
+  "text": "A scientist records temperature readings that follow a pattern. The first five readings are: 7, 18, 40, 84, 172. She notices that the differences between consecutive readings form their own pattern. What will the sixth reading be?",
+  "options": [
+    "340",
+    "344",
+    "348",
+    "352",
+    "356"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find the first differences between consecutive terms.\n18 − 7 = 11\n40 − 18 = 22\n84 − 40 = 44\n172 − 84 = 88\n\nStep 2: Find the second differences (differences of the differences).\n22 − 11 = 11\n44 − 22 = 22\n88 − 44 = 44\n\nStep 3: Notice that the first differences are 11, 22, 44, 88 — each one doubles the previous difference.\n\nStep 4: The next first difference should be 88 × 2 = 176.\n\nStep 5: Add this to the fifth term: 172 + 176 = 348.\n\nThe sixth reading is 348.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:07:33+00:00"
+}

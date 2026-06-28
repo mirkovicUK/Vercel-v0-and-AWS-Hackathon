@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-057",
+  "answer": "A",
+  "steps": "1. Without loyalty card, cost for n visits = 8n.\n2. With loyalty card: each ticket costs £8 - £2 = £6, so total cost = 6n + £6 (card cost).\n3. Total amount saved = cost without card - cost with card = 8n - (6n + 6) = 8n - 6n - 6 = 2n - 6.\n4. Check options: A) 2n - 6 matches.\n5. Verify others: B) 8n - 6 is total cost without card minus card cost, not savings.\nC) 6 - 2n would be negative savings for n>3, not correct.\nD) 2n + 6 is not savings minus card cost.\nE) 8n + 6 is unrelated to savings.\n6. Only A matches the derived expression.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

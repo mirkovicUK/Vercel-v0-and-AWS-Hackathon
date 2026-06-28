@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-230",
+  "seedQid": "q-m2-036",
+  "topic": "number",
+  "difficulty": 5,
+  "text": "A scientist measures three samples of a chemical. The masses are 0.007 kg, 0.063 kg, and 0.93 kg. She combines all three samples, then divides the total equally among 5 containers. What is the mass of chemical in each container?",
+  "options": [
+    "0.02 kg",
+    "0.2 kg",
+    "0.002 kg",
+    "0.5 kg",
+    "0.025 kg"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Add the three masses together.\n0.007 + 0.063 = 0.070\n0.070 + 0.93 = 1.000 kg\n\nStep 2: Divide the total by 5.\n1.000 ÷ 5 = 0.2 kg\n\nTherefore each container holds 0.2 kg of chemical.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:43:34+00:00"
+}

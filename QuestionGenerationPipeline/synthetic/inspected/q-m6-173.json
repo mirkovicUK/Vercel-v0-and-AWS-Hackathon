@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-173",
+  "answer": "B",
+  "steps": "Divide the total number of chocolate bars by the number of boxes: 756 ÷ 9. 9 × 80 = 720, remainder 36. 36 ÷ 9 = 4, so 80 + 4 = 84. Therefore, each box contains 84 chocolate bars.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-433",
+  "seedQid": "q-m5-027",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A factory produces 438 bottles per hour. It is known that 438 × 200 = 87,600. Using this fact, what is 438 × 50?",
+  "options": [
+    "21,900",
+    "22,900",
+    "21,400",
+    "43,800",
+    "8,760"
+  ],
+  "correctIndex": 0,
+  "generatorSolution": "We know that 438 × 200 = 87,600.\n\nSince 50 is one quarter of 200 (because 200 ÷ 4 = 50), we can find 438 × 50 by dividing 87,600 by 4.\n\nStep 1: 87,600 ÷ 4 = 21,900\n\nAlternatively, 50 = 200 ÷ 4, so 438 × 50 = 87,600 ÷ 4 = 21,900.\n\nThe correct answer is 21,900.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:07:45+00:00"
+}

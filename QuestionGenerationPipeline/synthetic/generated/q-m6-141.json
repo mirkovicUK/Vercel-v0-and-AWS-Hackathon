@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-141",
+  "seedQid": "q-m2-006",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "What is the number three thousand and six written in figures?",
+  "options": [
+    "3600",
+    "3006",
+    "306",
+    "3060",
+    "30006"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: 'Three thousand' means 3000.\nStep 2: 'And six' means we add 6.\nStep 3: 3000 + 6 = 3006.\nThe correct answer is 3006.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:34:21+00:00"
+}

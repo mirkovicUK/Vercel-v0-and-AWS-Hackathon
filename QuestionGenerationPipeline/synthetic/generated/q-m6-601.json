@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-601",
+  "seedQid": "q-m6-022",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "A shelf has some books on it. If you add 5 more books, there are 12 books on the shelf altogether. How many books were on the shelf to start with?\n\nLet b = the number of books at the start.\n\nb + 5 = 12\n\nb = ?",
+  "options": [
+    "5",
+    "6",
+    "7",
+    "12",
+    "17"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "We know that the number of books at the start plus 5 equals 12.\n\nStep 1: Write the equation: b + 5 = 12\n\nStep 2: To find b, subtract 5 from both sides: b = 12 − 5 = 7\n\nSo there were 7 books on the shelf to start with.\n\nThe correct answer is 7.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:26:21+00:00"
+}

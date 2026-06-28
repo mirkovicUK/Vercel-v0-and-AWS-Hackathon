@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-593",
+  "answer": "C",
+  "steps": "The recipe for 4 servings uses 3 bananas. To find bananas for 6 servings, set up proportion: 3 bananas / 4 servings = x bananas / 6 servings. Cross-multiply: 4x = 18, so x = 18 / 4 = 4.5 bananas.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

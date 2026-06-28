@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-305",
+  "seedQid": "q-m3-029",
+  "topic": "algebra",
+  "difficulty": 5,
+  "text": "A rectangular swimming pool has a length of (3x + 2.7) metres and a width of (x + 1.45) metres. The perimeter of the pool is 40.3 metres. Find the value of x.",
+  "options": [
+    "3.5",
+    "4.2",
+    "4.0",
+    "4.5",
+    "3.8"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Write the formula for the perimeter of a rectangle.\nPerimeter = 2 × (length + width)\n\nStep 2: Substitute the expressions into the formula.\n40.3 = 2 × [(3x + 2.7) + (x + 1.45)]\n\nStep 3: Simplify inside the brackets.\n40.3 = 2 × (3x + x + 2.7 + 1.45)\n40.3 = 2 × (4x + 4.15)\n\nStep 4: Expand the right side.\n40.3 = 8x + 8.3\n\nStep 5: Solve for x.\n40.3 − 8.3 = 8x\n32 = 8x\nx = 32 ÷ 8\nx = 4.0\n\nThe correct answer is 4.0.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:52:39+00:00"
+}

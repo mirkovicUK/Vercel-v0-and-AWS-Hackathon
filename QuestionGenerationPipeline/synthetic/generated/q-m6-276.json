@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-276",
+  "seedQid": "q-m3-013",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "Mia reads for 30 minutes every day. She reads every day of the week. If we use the letter h to stand for the total number of hours she reads in one week, which of these is the value of h?",
+  "options": [
+    "2.5",
+    "3",
+    "3.5",
+    "4",
+    "4.5"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Mia reads for 30 minutes each day.\nStep 2: There are 7 days in a week, so she reads for 7 × 30 = 210 minutes per week.\nStep 3: To convert minutes to hours, divide by 60: 210 ÷ 60 = 3.5 hours.\nTherefore h = 3.5.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:49:01+00:00"
+}

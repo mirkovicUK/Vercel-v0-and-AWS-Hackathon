@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-281",
+  "answer": "C",
+  "steps": "One pencil costs 30p. To find the cost of 4 pencils, multiply: 30p × 4 = 120p. Convert pence to pounds: 120p = £1.20.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

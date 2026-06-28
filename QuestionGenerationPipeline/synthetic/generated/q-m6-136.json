@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-136",
+  "seedQid": "q-m2-004",
+  "topic": "data_handling",
+  "difficulty": 1,
+  "text": "A class voted for their favourite fruit. The results are shown below:\n\nApple: 8 votes\nBanana: 5 votes\nOrange: 3 votes\nGrapes: 4 votes\n\nHow many votes were there in total?",
+  "options": [
+    "16",
+    "18",
+    "20",
+    "22",
+    "24"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "To find the total number of votes, add up all the votes for each fruit:\n\nApple + Banana + Orange + Grapes\n= 8 + 5 + 3 + 4\n= 20\n\nThe total number of votes is 20.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:33:43+00:00"
+}

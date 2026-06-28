@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-332",
+  "answer": "D",
+  "steps": "Let Tom's sweets = x, dad's sweets = 3x. Total sweets = x + 3x = 4x = 20. So x = 5. Dad's sweets = 3x = 3 * 5 = 15.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

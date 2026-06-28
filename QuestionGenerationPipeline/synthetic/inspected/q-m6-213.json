@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-213",
+  "answer": "B",
+  "steps": "Initial flour = 4.5 kg. Used for cake = 0.75 kg. Remaining flour = 4.5 - 0.75 = 3.75 kg. Each bag holds 0.5 kg. Number of bags = 3.75 ÷ 0.5 = 7.5 bags. Since bags must be full, she can fill 7 full bags (0.5 × 7 = 3.5 kg used) with 0.25 kg left over. The question asks 'How many bags can she fill?' implying full bags, so answer is 7.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

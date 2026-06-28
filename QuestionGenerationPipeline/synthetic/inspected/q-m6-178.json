@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-178",
+  "answer": "C",
+  "steps": "Let total cupcakes = x. Sold in morning = (2/5)x. Sold in afternoon = (1/4)x. Total sold = (2/5)x + (1/4)x = (8/20 + 5/20)x = (13/20)x. Left = x - (13/20)x = (7/20)x. Given left = 21, so (7/20)x = 21 → x = 21 * (20/7) = 3 * 20 = 60. Check: morning sold = 24, afternoon sold = 15, total sold = 39, left = 60 - 39 = 21. Correct.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-234",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "B",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "Emma arrives at 07:33 and waits 12 minutes, so her train departs at 07:45. The first train is at 06:15, so the time from 06:15 to 07:45 is 90 minutes. Trains depart every t minutes, so 07:45 must be a multiple of t minutes after 06:15. However, Emma catches the 'next' train after 07:33, meaning no train departs between 06:15 and 07:33 that she could have taken earlier. The last train before 07:33 must have departed at or before 07:33, and the next one is at 07:45. The time from 06:15 to 07:33 is 78 minutes. For the train schedule to align so that a train comes exactly 12 minutes after 07:33 (i.e., at 07:45), 78 minutes must be a multiple of t (so a train just missed at 07:33), and t must divide 78 evenly. Thus, 78 ÷ t = whole number, which is option B. Option A (90 ÷ t) would mean a train at 07:45, which is true, but does not ensure that the previous train was at or before 07:33 — only that 07:45 is on the schedule. But the key is that Emma 'catches the next train', implying she missed one at or just before 07:33, so t must divide 78. Hence, B is correct and unambiguous.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

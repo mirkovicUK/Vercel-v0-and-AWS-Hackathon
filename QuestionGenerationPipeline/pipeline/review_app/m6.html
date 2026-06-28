@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M6 Synthetic Question Review</title>
+    <link rel="stylesheet" href="review.css" />
+    <style>
+      /* m6-specific tweaks layered on the shared review.css */
+      .q-stem { font-size: 1.2rem; line-height: 1.5; margin: 0 0 1rem; white-space: pre-wrap; }
+
+      /* evidence pane */
+      .evidence h3 { margin: 0 0 0.4rem; font-size: 0.9rem; color: #64748b; }
+      .evidence-block { margin: 0 0 1rem; }
+      .evidence-block:last-child { margin-bottom: 0; }
+      .evidence-text { white-space: pre-wrap; font-size: 0.9rem; color: #334155; margin: 0.2rem 0 0; }
+      .verdict-row { display: flex; gap: 6px; flex-wrap: wrap; margin: 4px 0; }
+      .verdict-kv { font-size: 13px; color: #475569; }
+      .verdict-kv b { color: #0f172a; }
+      /* inspector fields: one key/value per line for easier scanning */
+      .kv-stack .verdict-kv { display: block; margin: 2px 0; }
+      .reasons { margin: 6px 0 0; padding-left: 18px; color: #b45309; font-size: 13px; }
+      .dups { margin: 6px 0 0; padding-left: 18px; color: #475569; font-size: 13px; }
+
+      /* duplicates — inline comparison cards */
+      .dup-card { border: 1px solid #e2e8f0; border-radius: 6px; padding: 0.5rem 0.6rem; margin: 6px 0; background: #f8fafc; }
+      .dup-card:first-child { margin-top: 6px; }
+      .dup-head { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 4px; }
+      .dup-head code { font-size: 13px; color: #0f172a; }
+      .dup-jump { margin-left: auto; font-size: 12px; padding: 2px 8px; cursor: pointer; }
+      .dup-options { margin: 4px 0 0; }
+
+      .triage-green { background: #14b8a6; color: #fff; }
+      .triage-flagged { background: #f43f5e; color: #fff; }
+
+      /* edit fields */
+      .edit-fields { display: flex; flex-direction: column; gap: 0.5rem; }
+      .edit-fields label { font-size: 0.78rem; color: #475569; display: flex; flex-direction: column; gap: 0.2rem; }
+      .edit-fields textarea { width: 100%; }
+      .edit-option-row { display: flex; gap: 0.4rem; align-items: center; }
+      .edit-option-row input[type="text"] { flex: 1; }
+      .edit-option-row .opt-letter { font-weight: 700; color: #64748b; min-width: 1.1rem; }
+      .confirm-row { font-size: 0.85rem; color: #b45309; }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-left">
+        <strong>M6 Synthetic Question Review</strong>
+        <span id="progress" class="progress"></span>
+      </div>
+      <div class="topbar-right">
+        <button id="prev-btn">← Prev</button>
+        <input id="jump-input" type="number" min="1" placeholder="#" title="Jump to question" />
+        <button id="next-btn">Next →</button>
+        <label style="font-size:13px;color:#475569;">
+          <input type="checkbox" id="only-flagged" /> only needs-review
+        </label>
+        <button id="export-btn" class="primary">Export decisions</button>
+      </div>
+    </header>
+
+    <main id="main" class="layout">
+      <!-- LEFT: the question as a child would see it (with correct marked) -->
+      <section class="pane child-view" id="question-view">
+        <div id="flags" class="flags"></div>
+        <h2 id="q-heading" class="q-heading"></h2>
+        <p id="q-stem" class="q-stem"></p>
+        <ul id="q-options" class="q-options"></ul>
+      </section>
+
+      <!-- MIDDLE: all solver evidence -->
+      <section class="pane source-view evidence">
+        <div class="evidence-block">
+          <h3>Generator solution</h3>
+          <p id="gen-solution" class="evidence-text"></p>
+        </div>
+        <div class="evidence-block">
+          <h3>Inspector (cold solve)</h3>
+          <div id="inspector-box"></div>
+        </div>
+        <div class="evidence-block">
+          <h3>Adjudicator</h3>
+          <div id="adjudicator-box"></div>
+        </div>
+        <div class="evidence-block">
+          <h3>Triage</h3>
+          <div id="triage-box"></div>
+        </div>
+        <div class="evidence-block">
+          <h3>Duplicates</h3>
+          <div id="dups-box"></div>
+        </div>
+      </section>
+
+      <!-- RIGHT: decision + editable fields -->
+      <aside class="pane controls">
+        <div class="control-group">
+          <label class="control-label">Decision</label>
+          <div class="decision-row">
+            <label><input type="radio" name="decision" value="approve" /> Approve</label>
+            <label><input type="radio" name="decision" value="reject" /> Reject</label>
+          </div>
+          <div id="confirm-row" class="confirm-row" hidden>
+            <label><input type="checkbox" id="confirm-reviewed" />
+              I reviewed this flagged item and confirm it is correct</label>
+          </div>
+        </div>
+
+        <details class="edit-group" id="edit-group">
+          <summary>Adjust question (stem / options / answer / topic / difficulty)</summary>
+          <div class="edit-fields">
+            <label>Stem
+              <textarea id="edit-stem" rows="3"></textarea>
+            </label>
+            <div id="edit-options"></div>
+            <label>Correct option
+              <select id="edit-correct"></select>
+            </label>
+            <label>Topic
+              <select id="edit-topic">
+                <option value="number">number</option>
+                <option value="fractions_decimals_percentages">fractions_decimals_percentages</option>
+                <option value="ratio_proportion">ratio_proportion</option>
+                <option value="algebra">algebra</option>
+                <option value="geometry">geometry</option>
+                <option value="data_handling">data_handling</option>
+              </select>
+            </label>
+            <label>Difficulty
+              <select id="edit-difficulty">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </label>
+          </div>
+        </details>
+
+        <div class="control-group">
+          <label class="control-label" for="note-input">Note</label>
+          <textarea id="note-input" rows="2" placeholder="optional"></textarea>
+        </div>
+
+        <div id="warning" class="warning" hidden></div>
+      </aside>
+    </main>
+
+    <script src="m6.js"></script>
+  </body>
+</html>

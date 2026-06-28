@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-003",
+  "answer": "B) £23,460",
+  "steps": "The amount is 'twenty-three thousand, four hundred and sixty pounds'. Twenty-three thousand = 23,000. Four hundred = 400. Sixty = 60. Sum: 23,000 + 400 = 23,400; 23,400 + 60 = 23,460. In figures: £23,460.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

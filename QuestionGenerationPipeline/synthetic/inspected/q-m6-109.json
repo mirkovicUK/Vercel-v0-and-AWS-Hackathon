@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-109",
+  "answer": "D",
+  "steps": "First, convert Roman numerals to numbers: XXIV = 10 + 10 + (5 - 1) = 24; XXXVII = 10 + 10 + 10 + 5 + 1 + 1 = 37. Multiply width by length: 24 × 37 = 24 × (30 + 7) = (24 × 30) + (24 × 7) = 720 + 168 = 888.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 3,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

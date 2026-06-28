@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-254",
+  "seedQid": "q-m2-046",
+  "topic": "number",
+  "difficulty": 4,
+  "text": "A magic number machine takes a number, adds 7, then divides by 4, and finally multiplies by 5. The output is 30. What number was put into the machine?",
+  "options": [
+    "12",
+    "15",
+    "17",
+    "21",
+    "24"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Work backwards from the output:\n\nStep 1: The last operation was 'multiply by 5' giving 30. So before this step: 30 ÷ 5 = 6.\n\nStep 2: The previous operation was 'divide by 4' giving 6. So before this step: 6 × 4 = 24.\n\nStep 3: The first operation was 'add 7' giving 24. So the original number was: 24 − 7 = 17.\n\nCheck: 17 + 7 = 24, then 24 ÷ 4 = 6, then 6 × 5 = 30. ✓\n\nThe answer is 17.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:46:17+00:00"
+}

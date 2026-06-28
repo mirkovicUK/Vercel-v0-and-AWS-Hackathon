@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-025",
+  "answer": "C",
+  "steps": "Machine A: p gadgets/hour. Machine B: 2p + 5 gadgets/hour. Machine C: 3p − 8 gadgets/hour. Total per hour: p + (2p + 5) + (3p − 8) = 81. Combine like terms: p + 2p + 3p = 6p, constants: 5 − 8 = −3. So equation: 6p − 3 = 81. Add 3 to both sides: 6p = 84. Divide both sides by 6: p = 14. Check: A: 14, B: 2*14+5=33, C: 3*14−8=34. Sum: 14+33+34=81. Correct.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

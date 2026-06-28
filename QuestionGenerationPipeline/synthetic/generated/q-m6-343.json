@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-343",
+  "seedQid": "q-m4-020",
+  "topic": "ratio_proportion",
+  "difficulty": 3,
+  "text": "A model car is built to a scale of 1:50. The real car is 4 metres long. How long is the model car?",
+  "options": [
+    "4 cm",
+    "8 cm",
+    "20 cm",
+    "50 cm",
+    "80 cm"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: The scale 1:50 means that 1 unit on the model represents 50 units in real life.\n\nStep 2: The real car is 4 metres long. Convert this to centimetres: 4 m = 400 cm.\n\nStep 3: To find the model length, divide the real length by the scale factor: 400 cm ÷ 50 = 8 cm.\n\nSo the model car is 8 cm long.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:56:47+00:00"
+}

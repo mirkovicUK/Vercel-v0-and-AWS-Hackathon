@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-256",
+  "seedQid": "q-m2-047",
+  "topic": "data_handling",
+  "difficulty": 1,
+  "text": "The table below shows the number of pets owned by children in a class.\n\nType of pet | Number of children\nDog | 8\nCat | 6\nFish | 3\nRabbit | 2\nNone | 5\n\nHow many children are in the class altogether?",
+  "options": [
+    "19",
+    "24",
+    "20",
+    "22",
+    "16"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "To find the total number of children in the class, we add up all the numbers in the table:\n\nDog: 8\nCat: 6\nFish: 3\nRabbit: 2\nNone: 5\n\n8 + 6 = 14\n14 + 3 = 17\n17 + 2 = 19\n19 + 5 = 24\n\nThe total number of children in the class is 24.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:46:31+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-398",
+  "seedQid": "q-m5-015",
+  "topic": "geometry",
+  "difficulty": 3,
+  "text": "A farmer wants to know how much water a rectangular cattle trough can hold. The trough is 2 metres long, 50 centimetres wide, and 40 centimetres deep. What is the volume of the trough in cubic centimetres?",
+  "options": [
+    "4,000 cm³",
+    "40,000 cm³",
+    "400,000 cm³",
+    "4,000,000 cm³",
+    "90 cm³"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Convert all measurements to the same unit (centimetres).\n- Length: 2 metres = 200 cm\n- Width: 50 cm (already in cm)\n- Depth: 40 cm (already in cm)\n\nStep 2: Use the formula for the volume of a cuboid:\nVolume = length × width × height\n\nStep 3: Calculate:\nVolume = 200 × 50 × 40\n= 200 × 50 = 10,000\n= 10,000 × 40 = 400,000 cm³\n\nThe correct answer is 400,000 cm³.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:03:29+00:00"
+}

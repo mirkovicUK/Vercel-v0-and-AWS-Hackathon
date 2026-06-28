@@ -1,0 +1,205 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36">
+  <diagram name="ApexMaths Architecture" id="apexmaths-arch">
+    <mxGraphModel dx="3501" dy="2034" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="950" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cVercel" parent="1" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fontStyle=1;fontSize=14;fillColor=#f5f5f5;strokeColor=#000000;fontColor=#000000;arcSize=2;" value="▲ Vercel — Next.js (App Router)" vertex="1">
+          <mxGeometry height="540" width="320" x="300" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cStripe" parent="1" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fontStyle=1;fontSize=14;fillColor=#f0efff;strokeColor=#635bff;fontColor=#4b45cc;arcSize=4;" value="Stripe — payments (hosted Checkout, Customer Portal, webhooks)." vertex="1">
+          <mxGeometry height="160" width="320" x="300" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="browser" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8eaf6;strokeColor=#3f51b5;fontColor=#000000;fontSize=13;" value="&lt;br&gt;&lt;br&gt;&lt;br&gt;Parent&#39;s Browser&lt;br&gt;(desktop / mobile web)" vertex="1">
+          <mxGeometry height="115" width="190" x="50" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="rsc" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000000;strokeColor=#000000;fontColor=#ffffff;fontSize=12;" value="Server Components&#xa;&amp; Server Actions" vertex="1">
+          <mxGeometry height="60" width="280" x="320" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="guard" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000000;strokeColor=#000000;fontColor=#ffffff;fontSize=12;" value="Auth guard&#xa;httpOnly cookies · JWT verify (JWKS)" vertex="1">
+          <mxGeometry height="60" width="280" x="320" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="help" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000000;strokeColor=#000000;fontColor=#ffffff;fontSize=12;" value="/api/practice/help&#xa;streaming AI hints" vertex="1">
+          <mxGeometry height="55" width="280" x="322.5" y="302.5" as="geometry" />
+        </mxCell>
+        <mxCell id="report" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000000;strokeColor=#000000;fontColor=#ffffff;fontSize=12;" value="/api/children/report&#xa;streamed AI parent report" vertex="1">
+          <mxGeometry height="55" width="275" x="325" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="webhook" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000000;strokeColor=#000000;fontColor=#ffffff;fontSize=12;" value="/api/stripe/webhook&#xa;signed · idempotent" vertex="1">
+          <mxGeometry height="55" width="280" x="320" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="checkout" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#635bff;strokeColor=#4b45cc;fontColor=#ffffff;fontSize=12;" value="Checkout + Customer Portal" vertex="1">
+          <mxGeometry height="45" width="280" x="320" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="whsrc" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#635bff;strokeColor=#4b45cc;fontColor=#ffffff;fontSize=12;" value="Webhook events" vertex="1">
+          <mxGeometry height="45" width="280" x="320" y="758" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="browser" style="endArrow=classic;startArrow=classic;html=1;strokeColor=#333333;fontSize=11;" target="rsc" value="HTTPS">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="browser" style="endArrow=classic;startArrow=classic;html=1;strokeColor=#333333;fontSize=11;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="help" value="hints &lt;br&gt;(stream)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="browser" style="endArrow=classic;startArrow=classic;html=1;strokeColor=#333333;fontSize=11;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" target="report" value="report &lt;br&gt;(stream)">
+          <mxGeometry relative="1" x="-0.0605" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="browser" style="endArrow=classic;startArrow=classic;html=1;strokeColor=#635bff;fontSize=11;" target="checkout" value="hosted Checkout / Portal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="rsc" style="endArrow=classic;html=1;strokeColor=#333333;" target="guard">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="guard" style="endArrow=classic;startArrow=classic;html=1;strokeColor=#333333;fontSize=11;" target="Xys_7gWTUdJqR-W8Jheh-7" value="verify JWT (JWKS)">
+          <mxGeometry relative="1" x="0.3142" y="4" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="730" y="168.21428571428578" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="rsc" style="endArrow=classic;startArrow=classic;html=1;strokeColor=#2e73b8;fontSize=11;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="7tAmmRTBDYlF_D7Bp7DB-31" value="RDS Data API (HTTPS) — reads + writes.">
+          <mxGeometry relative="1" x="0.221" y="-2" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="1020" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="webhook" style="endArrow=classic;startArrow=none;html=1;strokeColor=#2e73b8;fontSize=11;startFill=0;" target="7tAmmRTBDYlF_D7Bp7DB-31" value="subscriptions · revenue">
+          <mxGeometry relative="1" x="-0.4153" y="-5" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="985" y="691.7256637168141" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="help" style="endArrow=classic;startArrow=classic;html=1;strokeColor=#333333;fontSize=11;entryX=-0.002;entryY=0.612;entryDx=0;entryDy=0;entryPerimeter=0;" target="Xys_7gWTUdJqR-W8Jheh-10" value="streamText">
+          <mxGeometry relative="1" x="0.6892" y="-9" as="geometry">
+            <mxPoint y="-1" as="offset" />
+            <Array as="points" />
+            <mxPoint x="1060" y="172.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="report" style="endArrow=classic;startArrow=classic;html=1;strokeColor=#333333;fontSize=11;entryX=0;entryY=0.75;entryDx=0;entryDy=0;entryPerimeter=0;" target="Xys_7gWTUdJqR-W8Jheh-10" value="">
+          <mxGeometry relative="1" x="-0.2173" y="-59" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="1083.4939759036147" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e17" edge="1" parent="1" source="whsrc" style="endArrow=classic;html=1;strokeColor=#635bff;fontSize=11;" target="webhook" value="signed POST">
+          <mxGeometry relative="1" x="0.108" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="rsc" style="endArrow=classic;html=1;dashed=1;strokeColor=#b35900;fontSize=11;" target="Xys_7gWTUdJqR-W8Jheh-11" value="OIDC → STS AssumeRole">
+          <mxGeometry relative="1" x="0.6128" y="-2" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="1060" y="233" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e18" edge="1" parent="1" source="rsc" style="endArrow=classic;html=1;dashed=1;strokeColor=#b35900;fontSize=11;" target="Xys_7gWTUdJqR-W8Jheh-7" value="&lt;font&gt;AdminDeleteUser (GDPR)&lt;/font&gt;">
+          <mxGeometry relative="1" x="-0.0769" y="15" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="730" y="135" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Xys_7gWTUdJqR-W8Jheh-3" parent="1" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_region;strokeColor=#00A4A6;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#147EBA;dashed=1;" value="Region" vertex="1">
+          <mxGeometry height="870" width="740" x="700" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Xys_7gWTUdJqR-W8Jheh-6" parent="Xys_7gWTUdJqR-W8Jheh-3" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;color: rgb(36, 111, 176);&quot;&gt;eu-west-2 London&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="100" x="610" y="6" as="geometry" />
+        </mxCell>
+        <mxCell id="Xys_7gWTUdJqR-W8Jheh-7" parent="Xys_7gWTUdJqR-W8Jheh-3" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.cognito;" value="Amazon Cognito" vertex="1">
+          <mxGeometry height="100" width="70" x="130" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Xys_7gWTUdJqR-W8Jheh-9" parent="Xys_7gWTUdJqR-W8Jheh-3" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="User Pool (no client secret) · &#39;admins&#39; group" vertex="1">
+          <mxGeometry height="20" width="187" x="190" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="Xys_7gWTUdJqR-W8Jheh-10" parent="Xys_7gWTUdJqR-W8Jheh-3" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock;" value="" vertex="1">
+          <mxGeometry height="68" width="68" x="460" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="Xys_7gWTUdJqR-W8Jheh-11" parent="Xys_7gWTUdJqR-W8Jheh-3" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.iam;fillColor=#759C3E;gradientColor=none;" value="" vertex="1">
+          <mxGeometry height="81" width="42" x="388" y="206" as="geometry" />
+        </mxCell>
+        <mxCell id="Xys_7gWTUdJqR-W8Jheh-12" parent="Xys_7gWTUdJqR-W8Jheh-3" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#DD344C;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.role;" value="" vertex="1">
+          <mxGeometry height="44" width="78" x="160" y="296" as="geometry" />
+        </mxCell>
+        <mxCell id="Xys_7gWTUdJqR-W8Jheh-13" parent="Xys_7gWTUdJqR-W8Jheh-3" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="IAM&amp;nbsp; &lt;br&gt;trusts oidc.vercel.com&amp;nbsp;" vertex="1">
+          <mxGeometry height="50" width="158" x="360" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="Xys_7gWTUdJqR-W8Jheh-15" parent="Xys_7gWTUdJqR-W8Jheh-3" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;IAM role — least privilege&lt;br&gt;Data API · Secrets read · Bedrock · Cognito admin&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="250" x="80" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="7tAmmRTBDYlF_D7Bp7DB-3" parent="Xys_7gWTUdJqR-W8Jheh-3" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.secrets_manager;" value="AWS Secrets Manager" vertex="1">
+          <mxGeometry height="110" width="80" x="550" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="7tAmmRTBDYlF_D7Bp7DB-4" parent="Xys_7gWTUdJqR-W8Jheh-3" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="app_user &lt;br&gt;DB credential (ARN only)" vertex="1">
+          <mxGeometry height="30" width="90" x="460" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="7tAmmRTBDYlF_D7Bp7DB-5" parent="Xys_7gWTUdJqR-W8Jheh-3" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_vpc2;strokeColor=#8C4FFF;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#AAB7B8;dashed=0;" value="VPC" vertex="1">
+          <mxGeometry height="310" width="430" x="110" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="7tAmmRTBDYlF_D7Bp7DB-6" parent="7tAmmRTBDYlF_D7Bp7DB-5" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;color: rgb(76, 0, 153);&quot;&gt;NAT Free (0 NAT Gateways)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="170" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="7tAmmRTBDYlF_D7Bp7DB-7" parent="7tAmmRTBDYlF_D7Bp7DB-5" style="sketch=0;outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_subnet;strokeColor=#879196;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#879196;dashed=0;" value="Subnet" vertex="1">
+          <mxGeometry height="230" width="372.5" x="27.5" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="7tAmmRTBDYlF_D7Bp7DB-8" parent="7tAmmRTBDYlF_D7Bp7DB-5" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;color: rgb(128, 128, 128);&quot;&gt;Private isolated&amp;nbsp; (2 AZ)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="190" x="80" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="7tAmmRTBDYlF_D7Bp7DB-31" parent="7tAmmRTBDYlF_D7Bp7DB-5" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#C925D1;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.rds;" value="" vertex="1">
+          <mxGeometry height="78" width="78" x="174.75" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="7tAmmRTBDYlF_D7Bp7DB-32" parent="7tAmmRTBDYlF_D7Bp7DB-5" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div style=&quot;text-align: start;&quot;&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;font color=&quot;#192325&quot; face=&quot;Circular, Helvetica Neue, Helvetica, Arial, sans-serif&quot;&gt;&lt;b&gt;Amazon Aurora PostgreSQL (Serverless v2) — primary DB: questions, sessions, mastery, billing. Reached via RDS Data API&lt;/b&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="340" x="40" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="Xys_7gWTUdJqR-W8Jheh-3" style="endArrow=classic;html=1;dashed=1;strokeColor=#b35900;fontSize=11;" target="7tAmmRTBDYlF_D7Bp7DB-3" value="fetch DB password">
+          <mxGeometry relative="1" x="0.2274" y="-2" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="365" y="614" as="sourcePoint" />
+            <mxPoint x="500.91379310344837" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="Xys_7gWTUdJqR-W8Jheh-3" style="endArrow=classic;html=1;dashed=1;strokeColor=#b35900;fontSize=11;" target="Xys_7gWTUdJqR-W8Jheh-12" value="temp creds">
+          <mxGeometry relative="1" x="-0.0575" y="1" as="geometry">
+            <mxPoint x="1" as="offset" />
+            <mxPoint x="340" y="230" as="sourcePoint" />
+            <mxPoint x="311.6666666666665" y="261" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7tAmmRTBDYlF_D7Bp7DB-19" parent="Xys_7gWTUdJqR-W8Jheh-3" style="dashed=0;html=1;shape=mxgraph.aws3.cloud;fillColor=#F58536;gradientColor=none;dashed=0;" value="" vertex="1">
+          <mxGeometry height="36" width="52" x="550" as="geometry" />
+        </mxCell>
+        <mxCell id="IEEGKgq1p8DRBhdDTJhT-3" parent="Xys_7gWTUdJqR-W8Jheh-3" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;ul&gt;&lt;li&gt;streaming tutor hints&lt;/li&gt;&lt;li&gt;per-question review&amp;nbsp;&lt;/li&gt;&lt;li&gt;parent dashboard summary&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="86" width="200" x="520" y="86" as="geometry" />
+        </mxCell>
+        <mxCell id="IEEGKgq1p8DRBhdDTJhT-4" parent="Xys_7gWTUdJqR-W8Jheh-3" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Amazon Bedrock — Claude Sonnet 4.6 (EU inference profile)" vertex="1">
+          <mxGeometry height="30" width="178" x="542" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="7tAmmRTBDYlF_D7Bp7DB-1" parent="1" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.users;fillColor=#D2D3D3;gradientColor=none;" value="" vertex="1">
+          <mxGeometry height="53" width="56" x="117" y="350" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;a aria-label=&quot;ApexMaths home&quot; href=&quot;https://vercel-v0-and-aws-hackathon.vercel.app/&quot; style=&quot;box-sizing: border-box; border: 0px solid lab(91.7353 -0.998765 -4.76968); margin: 0px; padding: 0px; outline-color: oklab(0.545989 -0.0266954 -0.21362 / 0.5); text-decoration: inherit; font-family: Inter, &amp;quot;Inter Fallback&amp;quot;, ui-sans-serif, system-ui, sans-serif; text-align: start; background-color: oklab(0.983998 -0.00114051 -0.00275558 / 0.8);&quot;&gt;&lt;span class=&quot;inline-flex items-center gap-2&quot; style=&quot;box-sizing: border-box; border: 0px solid lab(91.7353 -0.998765 -4.76968); margin: 0px; padding: 0px; outline-color: oklab(0.545989 -0.0266954 -0.21362 / 0.5); display: inline-flex; align-items: center; gap: 8px;&quot;&gt;&lt;span class=&quot;font-heading text-lg font-bold tracking-tight text-foreground&quot; style=&quot;box-sizing: border-box; border: 0px solid lab(91.7353 -0.998765 -4.76968); margin: 0px; padding: 0px; outline-color: oklab(0.545989 -0.0266954 -0.21362 / 0.5); font-family: &amp;quot;Plus Jakarta Sans&amp;quot;, &amp;quot;Plus Jakarta Sans Fallback&amp;quot;, ui-sans-serif, system-ui, sans-serif; line-height: 1.55556; --tw-font-weight: 700; font-weight: 700; --tw-tracking: -.025em; letter-spacing: -0.45px; color: lab(7.78673 1.82345 -15.0537);&quot;&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;Apex&lt;span class=&quot;text-primary&quot; style=&quot;box-sizing: border-box; border: 0px solid lab(91.7353 -0.998765 -4.76968); margin: 0px; padding: 0px; outline-color: oklab(0.545989 -0.0266954 -0.21362 / 0.5); color: lab(44.7706 21.0793 -75.6308);&quot;&gt;Maths&lt;/span&gt;&lt;/font&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;" linkTarget="_blank" id="7tAmmRTBDYlF_D7Bp7DB-13">
+          <mxCell parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1">
+            <mxGeometry height="40" width="120" x="80" y="50" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="7tAmmRTBDYlF_D7Bp7DB-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;color: rgb(45, 142, 255);&quot;&gt;lhr1 London&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="70" x="427.5" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7tAmmRTBDYlF_D7Bp7DB-24" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Production-ready B2C SaaS&lt;br&gt;for UK 11+ Maths Preparation" vertex="1">
+          <mxGeometry height="30" width="240" x="25" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="7tAmmRTBDYlF_D7Bp7DB-29" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;Built for:&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;H0: Hack the Zero Stack with Vercel v0 &amp;amp; AWS Databases&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="510" x="-70" y="890" as="geometry" />
+        </mxCell>
+        <mxCell id="7tAmmRTBDYlF_D7Bp7DB-30" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;a href=&quot;https://devpost.com/Aurora75&quot;&gt;by&amp;nbsp; Aurora75 (devpost)&lt;/a&gt;" vertex="1">
+          <mxGeometry height="30" width="170" x="350" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="capTitleA" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#1A237E;" value="ApexMaths — Runtime Architecture &amp;nbsp;·&amp;nbsp; H0 Hackathon · Track 1 (B2C) &amp;nbsp;·&amp;nbsp; Page 1 of 2" vertex="1">
+          <mxGeometry height="34" width="1280" x="20" y="-118" as="geometry" />
+        </mxCell>
+        <mxCell id="capBodyA" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8;fontSize=12;fontColor=#333333;fillColor=#EEF2FF;strokeColor=#C5CAE9;arcSize=4;" value="Frontend: Next.js (v0-scaffolded) on &lt;b&gt;Vercel&lt;/b&gt; — lhr1 London &amp;nbsp; • &amp;nbsp; Primary database: &lt;b&gt;Amazon Aurora PostgreSQL (Serverless v2)&lt;/b&gt; via the &lt;b&gt;RDS Data API&lt;/b&gt; &amp;nbsp; • &amp;nbsp; AWS region: eu-west-2&#xa;How it connects: the browser is a thin client; all privileged work (auth, grading, billing, AI) runs server-side on Vercel and reaches AWS with &lt;b&gt;no static keys&lt;/b&gt; (OIDC → STS).&#xa;Bridge → the offline Question-Generation pipeline (Page 2) seeds the Aurora &lt;i&gt;questions&lt;/i&gt; table this app reads." vertex="1">
+          <mxGeometry height="62" width="1280" x="20" y="-78" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

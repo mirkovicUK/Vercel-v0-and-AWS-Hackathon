@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-396",
+  "seedQid": "q-m5-015",
+  "topic": "geometry",
+  "difficulty": 1,
+  "text": "Sophie wants to measure the length of her pencil. Which unit of measurement should she use?",
+  "options": [
+    "Square centimetres (cm²)",
+    "Centimetres (cm)",
+    "Cubic centimetres (cm³)",
+    "Kilograms (kg)",
+    "Litres (l)"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Think about what we are measuring. Sophie wants to measure the length of her pencil. Length is a distance from one end to the other.\n\nStep 2: Look at each option:\n- Square centimetres (cm²) are used to measure area (flat surfaces), not length.\n- Centimetres (cm) are used to measure length or distance.\n- Cubic centimetres (cm³) are used to measure volume (3D space).\n- Kilograms (kg) are used to measure weight/mass.\n- Litres (l) are used to measure the capacity of liquids.\n\nStep 3: Since length is a simple distance measurement, the correct unit is centimetres (cm).\n\nThe answer is centimetres (cm).",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:03:19+00:00"
+}

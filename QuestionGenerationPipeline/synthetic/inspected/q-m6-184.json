@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-184",
+  "answer": "B",
+  "steps": "Let p be the call-out fee in £. The plumber charges £12 per hour. For 3 hours, the labour cost is 12 × 3 = £36. Total charge for first job is p + 36 = 57. So p = 57 - 36 = £21. For the second job, hours = 5, labour cost = 12 × 5 = £60. Total charge = call-out fee p + labour = 21 + 60 = £81.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

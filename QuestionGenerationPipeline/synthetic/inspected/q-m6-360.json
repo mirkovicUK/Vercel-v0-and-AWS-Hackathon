@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-360",
+  "answer": "B",
+  "steps": "Let n = number of crates per pallet. There are 3 pallets, so total crates = 3n. Each crate weighs 12 kg, so total crate weight = 12 * 3n = 36n kg. Each empty pallet weighs 18 kg, so total pallet weight = 3 * 18 = 54 kg. Combined total weight = 36n + 54 = 894 kg. Subtract 54 from both sides: 36n = 840. Divide both sides by 36: n = 840 / 36 = 23.333... This is not an integer, but the problem states n is the number of crates per pallet, which must be an integer. Check calculation: 36n + 54 = 894 → 36n = 840 → n = 840/36 = 70/3 ≈ 23.333. However, if we re-check: 36*23 = 828, plus 54 = 882, not 894. 36*23.333 = 840, plus 54 = 894. But 23.333 crates per pallet is impossible. Maybe the total weight includes only the crates and pallets, but perhaps the van itself? No, it says 'total weight of all the crates and pallets together'. Possibly a misprint? But among the options, 23 is closest. Let's test each option: For n=20: 36*20 + 54 = 720 + 54 = 774 ≠ 894. For n=23: 36*23 + 54 = 828 + 54 = 882 ≠ 894. For n=25: 36*25 + 54 = 900 + 54 = 954 ≠ 894. For n=26: 36*26 + 54 = 936 + 54 = 990 ≠ 894. For n=28: 36*28 + 54 = 1008 + 54 = 1062 ≠ 894. None match exactly. Wait, maybe I misread: 'Each crate weighs 12 kg' and 'Each empty pallet weighs 18 kg' and 'total weight of all the crates and pallets together is 894 kg'. So equation: 3*(18 + 12n) = 894? Because each pallet with its crates weighs 18 + 12n, and there are 3 pallets. That gives 3*(18 + 12n) = 894 → 54 + 36n = 894 → 36n = 840 → n = 23.333 again. But if we interpret as total weight of crates plus total weight of pallets, it's the same. Possibly the intended answer is n=23, and the total weight is approximate? But 23.333 is not an integer. Maybe the total weight is 882 kg? That would give n=23 exactly: 36*23 + 54 = 828 + 54 = 882. So likely a typo in the problem statement: 894 should be 882. Among options, only n=23 gives integer. Check: 3*(18 + 12*23) = 3*(18 + 276) = 3*294 = 882. So if total were 882, n=23. Since 894 is given, none work exactly, but n=23 is the only one that yields a plausible integer if the total were 882. Possibly the problem expects n=23. Given the options, only n=23 is close to 23.333. So I'll choose B.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": false,
+  "inspectorIndex": 1,
+  "answersAgree": false,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

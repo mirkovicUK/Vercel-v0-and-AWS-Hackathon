@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-301",
+  "seedQid": "q-m3-029",
+  "topic": "algebra",
+  "difficulty": 1,
+  "text": "Tom has some stickers. He uses the letter n to stand for the number of stickers he has. His friend Sara has 5 more stickers than Tom. Write an expression for the number of stickers Sara has.",
+  "options": [
+    "n - 5",
+    "5n",
+    "n + 5",
+    "n × 5",
+    "5 - n"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: We know Tom has n stickers.\nStep 2: Sara has 5 MORE stickers than Tom.\nStep 3: 'More' means we add, so Sara has n + 5 stickers.\nThe correct answer is n + 5.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:52:21+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-572",
+  "seedQid": "q-m6-014",
+  "topic": "number",
+  "difficulty": 2,
+  "text": "A diver is descending into the ocean. Her depth readings in metres are recorded every minute: 15, 30, 45, ___, 75, 90. What is the missing depth reading?",
+  "options": [
+    "50",
+    "55",
+    "60",
+    "65",
+    "70"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find the pattern by looking at the difference between consecutive numbers.\n30 - 15 = 15\n45 - 30 = 15\nThe depth increases by 15 metres each minute.\n\nStep 2: Add 15 to the last known value before the gap.\n45 + 15 = 60\n\nStep 3: Check by continuing the pattern: 60 + 15 = 75 ✓ and 75 + 15 = 90 ✓\n\nThe missing depth reading is 60 metres.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:23:01+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-004",
+  "seedQid": "q-m1-001",
+  "topic": "number",
+  "difficulty": 4,
+  "text": "A spacecraft travels a distance written in words as 'two million, forty thousand and seven hundred and six' kilometres. Another spacecraft travels 'one million, nine hundred and ninety-nine thousand and sixty' kilometres. What is the difference between these two distances in figures?",
+  "options": [
+    "40,646 km",
+    "41,646 km",
+    "40,746 km",
+    "41,746 km",
+    "39,646 km"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Convert the first distance to figures.\n'Two million, forty thousand and seven hundred and six' = 2,040,706\n\nStep 2: Convert the second distance to figures.\n'One million, nine hundred and ninety-nine thousand and sixty' = 1,999,060\n\nStep 3: Find the difference.\n2,040,706 − 1,999,060\n= 2,040,706 − 2,000,000 + 940\n= 40,706 + 940\n= 41,646\n\nAlternatively: 2,040,706 − 1,999,060. Subtract units: 6 − 0 = 6. Tens: 0 − 6, borrow to get 10 − 6 = 4 (carry). Hundreds: 7 − 0 − 1 = 6. Thousands: 0 − 9, borrow to get 10 − 9 = 1 (carry). Ten-thousands: 4 − 9 − 1, borrow to get 14 − 10 = 4 (carry). Hundred-thousands: 0 − 9 − 1, borrow to get 10 − 10 = 0 (carry). Millions: 2 − 1 − 1 = 0.\nResult: 041,646 = 41,646 km\n\nThe correct answer is 41,646 km.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-11T19:46:31+00:00"
+}

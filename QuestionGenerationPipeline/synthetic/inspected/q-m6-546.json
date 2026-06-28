@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-546",
+  "answer": "C) 800",
+  "steps": "The number 4,836 is written in decimal place value. From left to right: the digit 4 is in the thousands place (value 4,000), the digit 8 is in the hundreds place (value 800), the digit 3 is in the tens place (value 30), and the digit 6 is in the ones place (value 6). Therefore, the value of the digit 8 is 800.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

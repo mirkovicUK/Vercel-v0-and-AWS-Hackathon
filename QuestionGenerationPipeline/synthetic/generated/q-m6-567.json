@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-567",
+  "seedQid": "q-m6-013",
+  "topic": "number",
+  "difficulty": 2,
+  "text": "A bus starts at stop number 8 and picks up passengers at every stop as it travels along a route. The stop numbers it visits are: 8, 14, 20, 26, ___. What is the next stop number?",
+  "options": [
+    "30",
+    "32",
+    "34",
+    "28",
+    "36"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find the pattern by looking at the difference between each stop number.\n14 - 8 = 6\n20 - 14 = 6\n26 - 20 = 6\n\nStep 2: The bus visits stops that go up by 6 each time.\n\nStep 3: Add 6 to the last stop number: 26 + 6 = 32.\n\nThe next stop number is 32.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:22:38+00:00"
+}

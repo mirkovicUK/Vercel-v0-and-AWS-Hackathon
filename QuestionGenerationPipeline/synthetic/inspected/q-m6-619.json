@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-619",
+  "answer": "C",
+  "steps": "Oven X rate = n + 4 loaves/hour, Oven Y rate = 2n - 3 loaves/hour, Oven Z rate = 3n + 5 loaves/hour. Combined hourly rate = (n + 4) + (2n - 3) + (3n + 5) = n + 4 + 2n - 3 + 3n + 5 = (n + 2n + 3n) + (4 - 3 + 5) = 6n + 6. In 2 hours, total loaves = 2 × (6n + 6) = 12n + 12. Given total = 132, so 12n + 12 = 132 → 12n = 120 → n = 10. Check: n = 10 gives X = 14, Y = 17, Z = 35 per hour, total hourly = 66, in 2 hours = 132, correct.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

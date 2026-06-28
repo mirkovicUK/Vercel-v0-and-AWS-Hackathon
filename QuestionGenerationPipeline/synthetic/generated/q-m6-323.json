@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-323",
+  "seedQid": "q-m4-009",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "A baker makes cookies and puts them into bags. He notices that if he puts 5 cookies in each bag, he has 3 cookies left over. He also notices that the total number of cookies equals 4 times the number of bags plus 11. How many bags does the baker have?",
+  "options": [
+    "6",
+    "7",
+    "8",
+    "9",
+    "10"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Let b = the number of bags.\n\nThe total number of cookies is 5b + 3 (since 5 go in each bag with 3 left over).\n\nWe're also told the total number of cookies equals 4b + 11.\n\nSo we set up the equation:\n5b + 3 = 4b + 11\n\nSubtract 4b from both sides:\nb + 3 = 11\n\nSubtract 3 from both sides:\nb = 8\n\nThe baker has 8 bags.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:54:54+00:00"
+}

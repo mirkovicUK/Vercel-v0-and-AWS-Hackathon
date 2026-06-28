@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-568",
+  "answer": "C) -24 m",
+  "steps": "The diver descends at a steady rate. The recorded depths are: 0, -8, -16, ___, -32, -40. The differences between consecutive known readings: from -16 to -32 is -16 over two time intervals (since one reading is missing). So each interval's descent is constant: from 0 to -8 is -8 per interval; from -8 to -16 is -8 per interval; from -32 to -40 is -8 per interval. Therefore, the missing depth after -16 should be -16 + (-8) = -24, and then -24 + (-8) = -32, which matches the given sequence. So missing reading is -24 m.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

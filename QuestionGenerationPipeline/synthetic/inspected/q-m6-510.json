@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-510",
+  "answer": "B",
+  "steps": "Given sequence: 2, 6, 12, 20, 30, ...\nGeneral term: n² + a n.\nFor n=1: 1² + a*1 = 1 + a = 2 → a = 1.\nCheck n=2: 2² + 1*2 = 4 + 2 = 6 ✓.\nn=3: 9 + 3 = 12 ✓.\nSo a = 1, term = n² + n = n(n+1).\n8th term: n=8 → 8² + 8 = 64 + 8 = 72.\nCheck options: A)64, B)72, C)80, D)56, E)90. Only B matches 72.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

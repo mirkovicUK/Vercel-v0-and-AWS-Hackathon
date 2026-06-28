@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-150",
+  "answer": "A",
+  "steps": "1. Total ratio parts = 2 + 3 + 7 = 12 parts.\n2. Value of one part = £360 ÷ 12 = £30.\n3. Oldest grandchild's share = 7 parts × £30 = £210.\n4. Oldest gives 40% to charity, so keeps 60%.\n5. Money left = 60% of £210 = 0.6 × 210 = £126.\n6. Check options: £126 matches option A.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

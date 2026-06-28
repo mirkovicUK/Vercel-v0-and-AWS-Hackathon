@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-143",
+  "seedQid": "q-m2-006",
+  "topic": "number",
+  "difficulty": 3,
+  "text": "A library has forty-seven thousand, three hundred and six books. What is this number written in figures?",
+  "options": [
+    "47,360",
+    "47,306",
+    "4,736",
+    "470,306",
+    "47,036"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Break the number into parts.\n'Forty-seven thousand' = 47,000\n'Three hundred' = 300\n'And six' = 6\n\nStep 2: Add the parts together.\n47,000 + 300 + 6 = 47,306\n\nStep 3: Check the answer matches option B: 47,306. ✓\n\nCommon mistakes: Swapping digits to get 47,360, or misplacing the zero to get 47,036.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:34:30+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-123",
+  "answer": "B) 240 ml",
+  "steps": "The ratio of fruit to yoghurt is 3:2, so total parts = 3 + 2 = 5 parts. Yoghurt is 2 parts out of 5. For 600 ml smoothie, yoghurt needed = (2/5) × 600 = 2 × 120 = 240 ml.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

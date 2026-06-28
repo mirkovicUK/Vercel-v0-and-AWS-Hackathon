@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-044",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "B",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "The tank starts with 1,200 litres and loses 150 litres per day. After n days, water remaining is 1,200 - 150n. We solve 1,200 - 150n < 200 → 1,000 < 150n → n > 6.67. So on day 7 (Sunday), the tank first drops below 200 litres. Day 0 is Monday; day 6 is Sunday. Thus, Sunday is the correct answer, which corresponds to option B. Both solvers effectively chose Sunday, so the answer is unambiguous.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

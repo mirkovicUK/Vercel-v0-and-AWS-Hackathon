@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-496",
+  "seedQid": "q-m5-048",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 1,
+  "text": "A cake costs £10. In a sale, the price is reduced by 50%. What is the sale price of the cake?",
+  "options": [
+    "£4",
+    "£5",
+    "£6",
+    "£7",
+    "£8"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find 50% of £10.\n50% means half, so 50% of £10 = £10 ÷ 2 = £5.\n\nStep 2: Subtract the discount from the original price.\n£10 − £5 = £5.\n\nThe sale price of the cake is £5.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:15:15+00:00"
+}

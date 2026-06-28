@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-203",
+  "seedQid": "q-m2-027",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "A rectangular garden has a length of (2n + 3) metres and a width of (n + 1) metres. The perimeter of the garden is 38 metres. What is the value of n?",
+  "options": [
+    "4",
+    "5",
+    "6",
+    "7",
+    "8"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Write the formula for the perimeter of a rectangle: P = 2 × (length + width).\n\nStep 2: Substitute the expressions: 38 = 2 × ((2n + 3) + (n + 1)).\n\nStep 3: Simplify inside the brackets: (2n + 3) + (n + 1) = 3n + 4.\n\nStep 4: So 38 = 2 × (3n + 4) = 6n + 8.\n\nStep 5: Subtract 8 from both sides: 30 = 6n.\n\nStep 6: Divide both sides by 6: n = 5.\n\nThe correct answer is 5.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:40:55+00:00"
+}

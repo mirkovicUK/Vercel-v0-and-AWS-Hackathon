@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-243",
+  "seedQid": "q-m2-041",
+  "topic": "geometry",
+  "difficulty": 3,
+  "text": "A designer is creating a tile in the shape of a regular hexagon (6 sides). She needs to know the size of each interior angle. What is the size of one interior angle of a regular hexagon?",
+  "options": [
+    "100°",
+    "108°",
+    "120°",
+    "135°",
+    "150°"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find the sum of interior angles of a hexagon. Use the formula: (number of sides − 2) × 180°. For a hexagon: (6 − 2) × 180° = 4 × 180° = 720°.\n\nStep 2: Since the hexagon is regular, all angles are equal. Divide the total by the number of angles: 720° ÷ 6 = 120°.\n\nThe answer is 120°.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:45:19+00:00"
+}

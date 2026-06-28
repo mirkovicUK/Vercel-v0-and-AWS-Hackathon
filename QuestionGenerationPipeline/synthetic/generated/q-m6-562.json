@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-562",
+  "seedQid": "q-m6-012",
+  "topic": "number",
+  "difficulty": 2,
+  "text": "A gardener plants flowers each week. In week 1 she plants 80 flowers, in week 2 she plants 95 flowers, and in week 3 she plants 110 flowers. If this pattern continues, how many flowers will she plant in week 4?",
+  "options": [
+    "115",
+    "120",
+    "125",
+    "130",
+    "135"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Find the pattern by looking at the difference between each week.\nWeek 1 to Week 2: 95 − 80 = 15\nWeek 2 to Week 3: 110 − 95 = 15\nThe number of flowers increases by 15 each week.\n\nStep 2: Add 15 to the week 3 total to find week 4.\n110 + 15 = 125\n\nThe gardener will plant 125 flowers in week 4.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:21:57+00:00"
+}

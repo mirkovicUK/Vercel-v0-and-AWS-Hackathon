@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-357",
+  "seedQid": "q-m4-029",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A box contains 50 identical pencils. The total weight of the box and pencils together is 1.3 kg. The empty box weighs 300 g. What is the weight of one pencil?",
+  "options": [
+    "18 g",
+    "20 g",
+    "22 g",
+    "26 g",
+    "30 g"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Convert the total weight to grams. 1.3 kg = 1300 g.\nStep 2: Subtract the weight of the empty box to find the total weight of the pencils. 1300 g − 300 g = 1000 g.\nStep 3: Divide by the number of pencils to find the weight of one pencil. 1000 g ÷ 50 = 20 g.\nThe answer is 20 g.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:58:24+00:00"
+}

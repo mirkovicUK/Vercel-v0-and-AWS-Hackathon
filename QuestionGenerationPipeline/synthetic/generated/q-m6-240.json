@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-240",
+  "seedQid": "q-m2-039",
+  "topic": "data_handling",
+  "difficulty": 5,
+  "text": "A scientist records the masses of soil samples collected over a week. The results are shown in the table below.\n\nDay | Number of samples | Mass per sample\nMon | 4 | 750 g\nTue | 6 | 500 g\nWed | 3 | 1.2 kg\nThu | 5 | 800 g\nFri | 2 | 1.5 kg\n\nShe calculates the mean (average) total mass collected per day across all five days. What is the mean daily mass in kilograms?",
+  "options": [
+    "2.48 kg",
+    "2.72 kg",
+    "2.92 kg",
+    "3.04 kg",
+    "3.12 kg"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Calculate the total mass for each day.\nMonday: 4 × 750 g = 3000 g\nTuesday: 6 × 500 g = 3000 g\nWednesday: 3 × 1.2 kg = 3 × 1200 g = 3600 g\nThursday: 5 × 800 g = 4000 g\nFriday: 2 × 1.5 kg = 2 × 1500 g = 3000 g\n\nStep 2: Find the total mass across all five days.\n3000 + 3000 + 3600 + 4000 + 3000 = 16600 g\n\nStep 3: Calculate the mean daily mass.\n16600 g ÷ 5 = 3320 g... Wait, let me recalculate.\n3000 + 3000 = 6000; 6000 + 3600 = 9600; 9600 + 4000 = 13600; 13600 + 3000 = 14600 g\n14600 ÷ 5 = 2920 g\n\nStep 4: Convert to kilograms.\n2920 g = 2.92 kg\n\nThe answer is 2.92 kg.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:45:06+00:00"
+}

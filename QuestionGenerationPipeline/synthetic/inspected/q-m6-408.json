@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-408",
+  "answer": "C",
+  "steps": "Total cupcakes = 6n + 8. Set equal to 44: 6n + 8 = 44. Subtract 8 from both sides: 6n = 36. Divide both sides by 6: n = 6. So the number of batches is 6.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

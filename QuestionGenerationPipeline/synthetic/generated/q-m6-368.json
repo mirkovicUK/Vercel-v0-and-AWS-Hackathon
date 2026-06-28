@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-368",
+  "seedQid": "q-m5-004",
+  "topic": "fractions_decimals_percentages",
+  "difficulty": 3,
+  "text": "A baker cuts each pie into fifths. If she has 4 whole pies and an extra 3 fifths of another pie, how many fifths does she have in total?",
+  "options": [
+    "15",
+    "20",
+    "23",
+    "43",
+    "17"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Each whole pie is cut into fifths, so each pie has 5 fifths.\nStep 2: She has 4 whole pies, so that gives 4 × 5 = 20 fifths.\nStep 3: She also has an extra 3 fifths from another pie.\nStep 4: Total fifths = 20 + 3 = 23.\nThe correct answer is 23.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:59:38+00:00"
+}

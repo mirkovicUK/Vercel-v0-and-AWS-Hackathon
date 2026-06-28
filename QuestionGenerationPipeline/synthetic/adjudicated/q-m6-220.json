@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-220",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "A",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "The baker uses 37.5% = 3/8 of the flour for white loaves and 1/3 for wholemeal. Convert to a common denominator: 3/8 = 9/24, 1/3 = 8/24. Total used = 9/24 + 8/24 = 17/24. Remaining for sourdough = 1 - 17/24 = 7/24. This matches option A. Solver 1 gave the correct fraction; Solver 2 chose B, which is incorrect. The correct answer is clearly A, and it is unambiguous.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

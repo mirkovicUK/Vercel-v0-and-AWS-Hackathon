@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-286",
+  "answer": "C",
+  "steps": "A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself. Check each option: A) 9 = 3 × 3, not prime. B) 15 = 3 × 5, not prime. C) 11 is only divisible by 1 and 11, so it is prime. D) 21 = 3 × 7, not prime. E) 25 = 5 × 5, not prime. Only option C is prime.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

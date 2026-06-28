@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-158",
+  "answer": "B",
+  "steps": "The ratio of flour : milk : eggs is 2 : 5 : 1. This means for every 5 parts of milk, there are 2 parts of flour. Sam uses 300 ml of milk. Let one part be x ml. Then milk = 5x = 300 ml, so x = 300 / 5 = 60 ml. Flour = 2x = 2 * 60 = 120 ml.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

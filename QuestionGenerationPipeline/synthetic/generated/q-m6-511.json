@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-511",
+  "seedQid": "q-m6-001",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "A school has one thousand and fifty-two pupils. What is this number written in figures?",
+  "options": [
+    "1502",
+    "1052",
+    "10052",
+    "152",
+    "1520"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: 'One thousand' means 1000.\nStep 2: 'and fifty-two' means 52.\nStep 3: Add them together: 1000 + 52 = 1052.\nThe correct answer is 1052.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:16:45+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-143",
+  "answer": "B",
+  "steps": "The number is forty-seven thousand, three hundred and six. Forty-seven thousand = 47,000. Three hundred = 300. Six = 6. Adding: 47,000 + 300 + 6 = 47,306. Check options: A) 47,360 (wrong), B) 47,306 (matches), C) 4,736 (wrong), D) 470,306 (wrong), E) 47,036 (wrong).",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

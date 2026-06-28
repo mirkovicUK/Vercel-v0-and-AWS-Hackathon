@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-224",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "B",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "The equation 4Y + 10 = 50 solves to Y = 10. Then 3Y - 5 = 3(10) - 5 = 25, which corresponds to option B. The answer is unambiguous and exactly one option is correct.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

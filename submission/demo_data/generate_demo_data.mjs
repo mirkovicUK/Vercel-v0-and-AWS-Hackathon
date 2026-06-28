@@ -35,7 +35,11 @@ if (!CLUSTER_ARN || !SECRET_ARN) {
 
 const client = new RDSDataClient({ region: REGION })
 
-const PARENT_ID = "d68272f4-d061-70a6-0186-c5ee1aa779cc"
+// Target parent — override with DEMO_PARENT_ID=<cognito sub> to seed a different
+// account. The three profiles below (top/mid/bottom) are bound to that parent's
+// children in created-at order. Defaults to the original demo account.
+const DEFAULT_PARENT_ID = "d68272f4-d061-70a6-0186-c5ee1aa779cc"
+let PARENT_ID = process.env.DEMO_PARENT_ID ?? DEFAULT_PARENT_ID
 
 const TOPICS = [
   "number",
@@ -54,12 +58,12 @@ const TYPE_CONFIG = {
   adaptive: { count: 15, limit: 1200, mixed: true },
 }
 
-// Children + their mastery profiles. topicOffset shapes strengths/weaknesses;
-// drift is the gentle improvement applied across the month.
-const CHILDREN = [
+// Mastery profiles in fixed order: top (~85%), mid (~50%), bottom (~30%).
+// topicOffset shapes per-topic strengths/weaknesses; drift is the gentle
+// improvement applied across the month. Bound to real children at runtime.
+const PROFILES = [
   {
-    id: "7a30eaa2-fdba-4069-8e52-64bbe5791889",
-    name: "Nina",
+    tier: "top",
     year: 6,
     base: 0.85,
     drift: 0.06,
@@ -74,8 +78,7 @@ const CHILDREN = [
     },
   },
   {
-    id: "506c640c-5340-4537-850e-fa9681ab073f",
-    name: "Amara",
+    tier: "mid",
     year: 5,
     base: 0.5,
     drift: 0.05,
@@ -90,8 +93,7 @@ const CHILDREN = [
     },
   },
   {
-    id: "4ab8cb02-23fe-47f1-b5ac-ebc9b2423623",
-    name: "Lui",
+    tier: "bottom",
     year: 4,
     base: 0.3,
     drift: 0.05,
@@ -106,6 +108,42 @@ const CHILDREN = [
     },
   },
 ]
+
+// The original demo account's children (used when DEMO_PARENT_ID is not set).
+const DEFAULT_CHILDREN = [
+  { id: "7a30eaa2-fdba-4069-8e52-64bbe5791889", name: "Nina" },
+  { id: "506c640c-5340-4537-850e-fa9681ab073f", name: "Amara" },
+  { id: "4ab8cb02-23fe-47f1-b5ac-ebc9b2423623", name: "Lui" },
+]
+
+// Resolved at runtime (id/name from the DB or the default) merged with a profile.
+let CHILDREN = []
+
+/**
+ * Bind the three profiles to actual children. With DEMO_PARENT_ID set, the
+ * parent's active children are read in created-at order and assigned
+ * top/mid/bottom respectively; otherwise the original demo children are used.
+ */
+async function resolveChildren() {
+  let baseList
+  if (process.env.DEMO_PARENT_ID) {
+    const rows = await exec(
+      `SELECT id, display_name FROM children
+       WHERE parent_id = :pid AND deleted_at IS NULL
+       ORDER BY created_at ASC LIMIT 3`,
+      [pStr("pid", PARENT_ID)],
+    )
+    if (rows.length === 0) throw new Error(`No active children found for DEMO_PARENT_ID=${PARENT_ID}`)
+    baseList = rows.map((r) => ({ id: r.id, name: r.display_name }))
+  } else {
+    baseList = DEFAULT_CHILDREN
+  }
+  CHILDREN = baseList.map((c, i) => {
+    const p = PROFILES[Math.min(i, PROFILES.length - 1)]
+    return { id: c.id, name: c.name, year: p.year, base: p.base, drift: p.drift, seed: p.seed, topicOffset: p.topicOffset }
+  })
+  return CHILDREN
+}
 
 // Date window (inclusive) — 1 Jun 2026 .. 22 Jun 2026.
 const START = new Date("2026-06-01T00:00:00Z")
@@ -535,6 +573,7 @@ async function writeChild(child, gen) {
 // Verify
 // ---------------------------------------------------------------------------
 async function verify() {
+  if (CHILDREN.length === 0) await resolveChildren()
   for (const child of CHILDREN) {
     const rows = await exec(
       `SELECT topic, attempts, correct, mastery_score, classification
@@ -569,6 +608,9 @@ async function main() {
   }
 
   console.log(`Region=${REGION} db=${DATABASE}`)
+  console.log(`Target parent: ${PARENT_ID}`)
+  await resolveChildren()
+  console.log("Children:", CHILDREN.map((c) => `${c.name} → ~${Math.round(c.base * 100)}%`).join("  "))
   console.log("Loading question pool ...")
   const pool = await loadQuestionPool()
   console.log(`  ${pool.all} active questions`)

@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-181",
+  "answer": "A",
+  "steps": "Let x be the number of stickers Tom started with. He is given 5 more stickers, so he has x + 5 stickers. After that, he has 12 stickers in total. Therefore, the equation is x + 5 = 12.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 0,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-275",
+  "seedQid": "q-m3-011",
+  "topic": "number",
+  "difficulty": 5,
+  "status": "failed",
+  "raw": "{\n  \"text\": \"A spacecraft's distance counter shows 4,827,659 km. During its journey, it first travels another 300,000 km, then passes through a wormhole that multiplies its total distance by 10, and finally travels an additional 7,000,000 km. What does the distance counter show at the end?\",\n  \"options\": [\"58,276,590 km\", \"59,276,590 km\", \"51,276,590 km\", \"58,976,590 km\", \"59,276,490 km\"],\n  \"correctIndex\": 1,\n  \"solution\": \"Step 1: Start with 4,827,659 km.\\nStep 2: Add 300,000 km: 4,827,659 + 300,000 = 5,127,659 km.\\nStep 3: Multiply by 10 (passing through the wormhole): 5,127,659 × 10 = 51,276,590 km.\\nStep 4: Add 7,000,000 km: 51,276,590 + 7,000,000 = 58,276,590 km.\\n\\nWait — let me recheck. 51,276,590 + 7,000,000 = 58,276,590 km.\\n\\nActually let me recalculate more carefully:\\nStep 2: 4,827,659 + 300,000 = 5,127,659\\nStep 3: 5,127,659 × 10 = 51,276,590\\nStep 4: 51,276,590 + 7,000,000 = 58,276,590\\n\\nHmm, that gives 58,276,590 which is option A. Let me revise.\\n\\nActually, let me redo this with corrected numbers. Start: 4,927,659. Add 300,000 = 5,227,659. Multiply by 10 = 52,276,590. Add 7,000,000 = 59,276,590. The answer is 59,276,590 km, which is option B.\"\n}\n\nWait, let me redo this properly.\n\n{\"text\":\"A spacecraft's distance counter shows 4,927,659 km. During its journey, it first travels another 300,000 km, then passes through a wormhole that multiplies its total distance by 10, and finally travels an additional 7,000,000 km. What does the distance counter show at the end?\",\"options\":[\"58,276,590 km\",\"59,276,590 km\",\"52,276,590 km\",\"59,276,490 km\",\"59,976,590 km\"],\"correctIndex\":1,\"solution\":\"Step 1: Start with 4,927,659 km.\\nStep 2: Add 300,000 km: 4,927,659 + 300,000 = 5,227,659 km.\\nStep 3: Multiply by 10 (passing through the wormhole): 5,227,659 × 10 = 52,276,590 km.\\nStep 4: Add 7,000,000 km: 52,276,590 + 7,000,000 = 59,276,590 km.\\nThe correct answer is 59,276,590 km.\"}",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "createdAt": "2026-06-12T17:48:57+00:00"
+}

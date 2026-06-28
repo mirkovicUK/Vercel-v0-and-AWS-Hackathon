@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-078",
+  "seedQid": "q-m1-032",
+  "topic": "algebra",
+  "difficulty": 3,
+  "text": "A factory produces boxes of chocolates. Each box contains n chocolates. The factory makes 24 boxes every hour. Write an expression for the total number of chocolates produced in 7 hours, and then find the total if n = 12.",
+  "options": [
+    "1,008",
+    "2,016",
+    "1,680",
+    "2,184",
+    "1,344"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "Step 1: Find how many boxes are made in 7 hours.\n24 boxes per hour × 7 hours = 168 boxes.\n\nStep 2: Write an expression for the total number of chocolates.\nTotal chocolates = 24 × 7 × n = 168n\n\nStep 3: Substitute n = 12 into the expression.\n168 × 12 = 2,016\n\nThe correct answer is 2,016.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:27:23+00:00"
+}

@@ -1,0 +1,11 @@
+{
+  "qid": "q-m6-389",
+  "trigger": "answer_mismatch",
+  "correctAnswer": "B",
+  "unresolved": false,
+  "exactlyOneCorrect": true,
+  "rationale": "The equations are 3p + 5q = 44 and 2p + 5q = 37. Subtracting the second from the first gives p = 7. Substituting p = 7 into the second equation gives 2(7) + 5q = 37 → 14 + 5q = 37 → 5q = 23 → q = 4.6. However, option B states p = 7 and q = 5, which does not satisfy the equations. Rechecking: 3(7) + 5(5) = 21 + 25 = 46 ≠ 44. But option D has q = 4.60, so 3(7) + 5(4.60) = 21 + 23 = 44 and 2(7) + 5(4.60) = 14 + 23 = 37. So D is correct. But Solver 1 said C (p=8,q=4): 3(8)+5(4)=24+20=44, 2(8)+5(4)=16+20=36≠37. Solver 2 said B: already invalid. Only D satisfies both equations. But D says q=4.60, which is 4.6, correct. So correct answer is D, not B. Earlier mistake in rationale: correcting. Final: D is correct. Solver 2 is wrong. Solver 1 is wrong. D is correct and only one. So correctAnswer is D.",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "promptVersion": "m6-adjudicate-v1",
+  "status": "ok"
+}

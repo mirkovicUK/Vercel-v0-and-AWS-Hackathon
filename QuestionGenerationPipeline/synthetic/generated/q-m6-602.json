@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-602",
+  "seedQid": "q-m6-022",
+  "topic": "algebra",
+  "difficulty": 2,
+  "text": "A shelf holds some books. After a librarian adds 8 more books to the shelf, there are now 26 books in total. How many books were on the shelf to start with?\n\nLet b = the number of books at the start.\n\nb + 8 = 26\n\nb = ?",
+  "options": [
+    "16",
+    "18",
+    "20",
+    "34",
+    "22"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "We know that the number of books at the start plus 8 equals 26.\n\nStep 1: Write the equation: b + 8 = 26\n\nStep 2: To find b, subtract 8 from both sides: b = 26 − 8\n\nStep 3: b = 18\n\nSo there were 18 books on the shelf to start with. The correct answer is 18.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:26:25+00:00"
+}

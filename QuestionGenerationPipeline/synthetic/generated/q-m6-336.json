@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-336",
+  "seedQid": "q-m4-016",
+  "topic": "number",
+  "difficulty": 1,
+  "text": "Tom has 3 boxes of crayons. Each box contains 8 crayons. How many crayons does Tom have in total?",
+  "options": [
+    "16",
+    "20",
+    "24",
+    "28",
+    "32"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: Tom has 3 boxes, and each box contains 8 crayons.\nStep 2: Multiply the number of boxes by the number of crayons in each box: 3 × 8 = 24.\nTherefore, Tom has 24 crayons in total.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:56:19+00:00"
+}

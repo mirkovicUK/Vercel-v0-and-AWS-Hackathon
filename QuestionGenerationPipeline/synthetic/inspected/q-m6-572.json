@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-572",
+  "answer": "C",
+  "steps": "The sequence of depths is: 15, 30, 45, ___, 75, 90. Check the differences: 30 - 15 = 15, 45 - 30 = 15, so likely an arithmetic progression with common difference 15. Then missing term = 45 + 15 = 60. Verify: 60 + 15 = 75, 75 + 15 = 90. All differences consistent. Options: 60 is option C.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

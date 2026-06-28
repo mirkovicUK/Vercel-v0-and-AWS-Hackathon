@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-410",
+  "seedQid": "q-m5-017",
+  "topic": "algebra",
+  "difficulty": 5,
+  "text": "A factory produces widgets. The number of widgets made each day follows the rule: W = 3n² − 5n + 7, where n is the day number. On which day does the factory first produce more than 100 widgets?",
+  "options": [
+    "Day 6",
+    "Day 7",
+    "Day 8",
+    "Day 5",
+    "Day 9"
+  ],
+  "correctIndex": 1,
+  "generatorSolution": "We need to find the smallest value of n where 3n² − 5n + 7 > 100.\n\nLet's test values:\n\nDay 5: W = 3(25) − 5(5) + 7 = 75 − 25 + 7 = 57. Not more than 100.\n\nDay 6: W = 3(36) − 5(6) + 7 = 108 − 30 + 7 = 85. Not more than 100.\n\nDay 7: W = 3(49) − 5(7) + 7 = 147 − 35 + 7 = 119. This IS more than 100.\n\nSo the factory first produces more than 100 widgets on Day 7.\n\nThe answer is Day 7.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T18:05:30+00:00"
+}

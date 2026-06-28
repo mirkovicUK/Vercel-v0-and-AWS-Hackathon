@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-069",
+  "answer": "C",
+  "steps": "The measurement is 0.047 cm. Expressing it as a number multiplied by 1000 means we want to find x such that x * 1000 = 0.047. So x = 0.047 / 1000 = 0.000047. Alternatively, the question likely means: rewrite 0.047 as a number times 1000, i.e., 0.047 = y * 1000, so y = 0.047 / 1000 = 0.000047. But that is not among the options. Alternatively, maybe they want to express the length in a different unit: 0.047 cm = 0.047 * 10 mm = 0.47 mm, but that is multiplied by 1, not 1000. Another interpretation: 'express as a number multiplied by 1000' could mean: take the original number and multiply it by 1000, then write that result as the number to report. So 0.047 * 1000 = 47. That gives 47, which is option C. Checking: 47 = 47 * 1000? No, 47 = 0.047 * 1000, so the report would say '47 (×1000?)' Actually, if she writes '47' as the value, and the report says it's multiplied by 1000, that means the actual length is 47/1000 = 0.047 cm. That matches. So the value she should write is 47.",
+  "inspectorDifficulty": 2,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 2,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

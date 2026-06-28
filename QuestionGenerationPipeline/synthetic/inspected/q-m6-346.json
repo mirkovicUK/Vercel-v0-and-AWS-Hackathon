@@ -1,0 +1,12 @@
+{
+  "qid": "q-m6-346",
+  "answer": "B",
+  "steps": "The ratio of orange juice to lemonade is 2:1. This means for every 2 parts orange juice, there is 1 part lemonade. If Sam uses 6 cups of orange juice, we can set up the proportion: 2 parts orange juice corresponds to 6 cups, so 1 part corresponds to 6 ÷ 2 = 3 cups. Therefore, the lemonade needed is 3 cups.",
+  "inspectorDifficulty": 1,
+  "exactlyOneCorrect": true,
+  "inspectorIndex": 1,
+  "answersAgree": true,
+  "model": "deepseek.v3.2",
+  "promptVersion": "m6-cold-solve-v2",
+  "status": "ok"
+}

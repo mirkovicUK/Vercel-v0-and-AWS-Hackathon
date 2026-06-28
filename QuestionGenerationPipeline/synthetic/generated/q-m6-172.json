@@ -1,0 +1,20 @@
+{
+  "qid": "q-m6-172",
+  "seedQid": "q-m2-017",
+  "topic": "number",
+  "difficulty": 2,
+  "text": "A baker makes 456 cupcakes and packs them equally into 8 boxes. How many cupcakes are in each box?",
+  "options": [
+    "54",
+    "56",
+    "57",
+    "58",
+    "62"
+  ],
+  "correctIndex": 2,
+  "generatorSolution": "Step 1: We need to calculate 456 ÷ 8.\nStep 2: 8 × 50 = 400, so we have 456 - 400 = 56 remaining.\nStep 3: 8 × 7 = 56, which uses up the remainder exactly.\nStep 4: 50 + 7 = 57.\nTherefore, each box contains 57 cupcakes.",
+  "model": "eu.anthropic.claude-opus-4-6-v1",
+  "promptVersion": "m6-generate-v1",
+  "status": "ok",
+  "createdAt": "2026-06-12T17:37:38+00:00"
+}
