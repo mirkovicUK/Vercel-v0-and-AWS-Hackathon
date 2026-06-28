@@ -122,10 +122,15 @@ export async function getMasteryTimeline(
   const topics = TOPICS.filter((t) => (totalByTopic.get(t) ?? 0) >= TIMELINE_MIN_ATTEMPTS)
   const plottable = new Set(topics)
 
-  // Span-adaptive bucket from the spread of distinct session times.
+  // Span-adaptive bucket, but never COARSER than the selected range allows, so
+  // 30 days is always daily, 3 months weekly, and All adapts to full history.
+  // (Short spans may still go finer — e.g. a single day of sessions -> session.)
+  const BUCKET_ORDER: Bucket[] = ["session", "day", "week", "month"]
+  const MAX_BUCKET: Record<TimelineRange, Bucket> = { "30d": "day", "3m": "week", all: "month" }
   const times = rows.filter((r) => r.attempts > 0).map((r) => new Date(r.completed_at).getTime())
   const spanDays = times.length > 0 ? (Math.max(...times) - Math.min(...times)) / DAY_MS : 0
-  const bucket = chooseBucket(spanDays)
+  const bucket =
+    BUCKET_ORDER[Math.min(BUCKET_ORDER.indexOf(chooseBucket(spanDays)), BUCKET_ORDER.indexOf(MAX_BUCKET[range]))]
 
   // Bucket → { earliest date, overall correct/attempts, per-topic correct/attempts }.
   interface Agg {
