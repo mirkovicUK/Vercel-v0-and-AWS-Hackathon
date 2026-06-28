@@ -70,7 +70,7 @@ export async function getMasteryTimeline(
   range: TimelineRange = "30d",
 ): Promise<MasteryTimeline> {
   const cfg = RANGE_CONFIG[range]
-  const sinceClause = cfg.days != null ? "AND s.completed_at >= now() - make_interval(days => :since)" : ""
+  const sinceClause = cfg.days != null ? "AND s.completed_at >= now() - make_interval(days => :since::int)" : ""
   const params: Record<string, ParamValue> = { childId, bucket: cfg.bucket }
   if (cfg.days != null) params.since = cfg.days
 
