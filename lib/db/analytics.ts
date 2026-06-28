@@ -1,5 +1,5 @@
 import "server-only"
-import { query } from "@/lib/aws/rds-data"
+import { query, type ParamValue } from "@/lib/aws/rds-data"
 import { TOPICS, type Topic } from "@/lib/domain"
 
 /**
@@ -16,66 +16,104 @@ import { TOPICS, type Topic } from "@/lib/domain"
 
 const COMPLETED = `s.status IN ('completed','expired')`
 
-// ---- 1. Mastery over time (6 topics) — window functions --------------------
+// ---- 1. Mastery over time — time-bucketed, range-aware ---------------------
+
+/** Selectable history window for the mastery chart. */
+export type TimelineRange = "30d" | "3m" | "all"
+
+/** A topic line is only plotted once it has at least this many attempts in the
+ *  range — below it the sample is too small to be meaningful (mirrors the
+ *  `insufficient_data` classification floor on the `progress` rollup). */
+const TIMELINE_MIN_ATTEMPTS = 10
+
+const RANGE_CONFIG: Record<TimelineRange, { bucket: "day" | "week" | "month"; days: number | null }> = {
+  "30d": { bucket: "day", days: 30 },
+  "3m": { bucket: "week", days: 92 },
+  all: { bucket: "month", days: null },
+}
 
 export interface MasteryTimelinePoint {
-  /** ISO timestamp of the session that produced this point. */
+  /** ISO timestamp of the start of the bucket (day / week / month). */
   date: string
-  /** Cumulative accuracy (0-100) per topic AS OF this session; null until a
-   *  topic has been attempted at least once. */
+  /** Overall accuracy (0-100) across all topics IN THIS BUCKET, or null. */
+  overall?: number | null
+  /** Per-topic accuracy (0-100) IN THIS BUCKET; only topics that clear the
+   *  attempt floor over the range appear. */
   values: Partial<Record<Topic, number>>
 }
 
-interface TimelineRow {
-  completed_at: string
+export interface MasteryTimeline {
+  range: TimelineRange
+  bucket: "day" | "week" | "month"
+  points: MasteryTimelinePoint[]
+  /** Topics with enough attempts in the range to plot (the chart's chips). */
+  topics: Topic[]
+}
+
+interface BucketRow {
+  bucket: string
   topic: Topic
-  cumulative_pct: number
+  attempts: number
+  correct: number
 }
 
 /**
- * Cumulative accuracy per topic after each completed session, in chronological
- * order. Uses a window function (PARTITION BY topic ORDER BY time) to compute a
- * running correct/attempts ratio — i.e. "mastery as it was at each point in
- * time", which the snapshot `progress` table cannot give us.
+ * Accuracy per topic per time-bucket over the selected range. Unlike a raw
+ * per-session series (which grows unbounded and flattens as a lifetime average),
+ * this groups answers into day/week/month buckets in SQL via `date_trunc`, so
+ * the chart stays legible at any history length and each point reflects recent
+ * form. Bucketing + aggregation happen in Aurora; only ~4-30 points cross the
+ * wire. A per-bucket overall accuracy is included for the default single line.
  */
-export async function getMasteryTimeline(childId: string): Promise<MasteryTimelinePoint[]> {
-  const rows = await query<TimelineRow>(
-    `WITH per_session_topic AS (
-       SELECT s.completed_at, sa.topic,
-              count(*) FILTER (WHERE sa.is_correct IS NOT NULL) AS attempts,
-              count(*) FILTER (WHERE sa.is_correct)             AS correct
-       FROM sessions s
-       JOIN session_answers sa ON sa.session_id = s.id
-       WHERE s.child_id = :childId AND ${COMPLETED} AND s.completed_at IS NOT NULL
-       GROUP BY s.completed_at, sa.topic
-     )
-     SELECT completed_at,
-            topic,
-            round(
-              sum(correct) OVER w * 100.0 / NULLIF(sum(attempts) OVER w, 0)
-            )::int AS cumulative_pct
-     FROM per_session_topic
-     WHERE attempts > 0
-     WINDOW w AS (PARTITION BY topic ORDER BY completed_at
-                  ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)
-     ORDER BY completed_at ASC`,
-    { childId },
+export async function getMasteryTimeline(
+  childId: string,
+  range: TimelineRange = "30d",
+): Promise<MasteryTimeline> {
+  const cfg = RANGE_CONFIG[range]
+  const sinceClause = cfg.days != null ? "AND s.completed_at >= now() - make_interval(days => :since)" : ""
+  const params: Record<string, ParamValue> = { childId, bucket: cfg.bucket }
+  if (cfg.days != null) params.since = cfg.days
+
+  const rows = await query<BucketRow>(
+    `SELECT date_trunc(:bucket, s.completed_at) AS bucket,
+            sa.topic,
+            count(*) FILTER (WHERE sa.is_correct IS NOT NULL)::int AS attempts,
+            count(*) FILTER (WHERE sa.is_correct)::int             AS correct
+     FROM sessions s
+     JOIN session_answers sa ON sa.session_id = s.id
+     WHERE s.child_id = :childId AND ${COMPLETED} AND s.completed_at IS NOT NULL
+       ${sinceClause}
+     GROUP BY 1, 2
+     ORDER BY 1 ASC`,
+    params,
   )
 
-  // Pivot into one point per distinct session time, carrying each topic's last
-  // known cumulative value forward so lines stay continuous between sessions.
-  const points: MasteryTimelinePoint[] = []
-  const last: Partial<Record<Topic, number>> = {}
-  let current: MasteryTimelinePoint | null = null
+  // Topics that clear the attempt floor over the whole range are plottable.
+  const totalByTopic = new Map<Topic, number>()
+  for (const r of rows) totalByTopic.set(r.topic, (totalByTopic.get(r.topic) ?? 0) + r.attempts)
+  const topics = TOPICS.filter((t) => (totalByTopic.get(t) ?? 0) >= TIMELINE_MIN_ATTEMPTS)
+  const plottable = new Set(topics)
+
+  // Group rows into one point per bucket: per-bucket overall + per-topic pct.
+  const byBucket = new Map<string, { correct: number; attempts: number; values: Partial<Record<Topic, number>> }>()
   for (const r of rows) {
-    if (!current || current.date !== r.completed_at) {
-      current = { date: r.completed_at, values: { ...last } }
-      points.push(current)
-    }
-    last[r.topic] = r.cumulative_pct
-    current.values[r.topic] = r.cumulative_pct
+    if (r.attempts === 0) continue
+    const b = byBucket.get(r.bucket) ?? { correct: 0, attempts: 0, values: {} }
+    b.correct += r.correct
+    b.attempts += r.attempts
+    if (plottable.has(r.topic)) b.values[r.topic] = Math.round((r.correct * 100) / r.attempts)
+    byBucket.set(r.bucket, b)
   }
-  return points
+
+  const points: MasteryTimelinePoint[] = [...byBucket.entries()]
+    .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))
+    .map(([date, b]) => ({
+      date,
+      overall: b.attempts > 0 ? Math.round((b.correct * 100) / b.attempts) : null,
+      values: b.values,
+    }))
+
+  return { range, bucket: cfg.bucket, points, topics }
 }
 
 // ---- 2. Accuracy by difficulty — JOIN answers × questions ------------------
