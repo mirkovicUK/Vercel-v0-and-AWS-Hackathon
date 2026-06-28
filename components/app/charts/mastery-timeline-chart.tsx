@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts"
 import { TOPIC_LABELS, type Topic } from "@/lib/domain"
@@ -42,7 +42,17 @@ export function MasteryTimelineChart({
   const router = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()
-  const [shown, setShown] = useState<Set<Topic>>(new Set(defaultTopics ?? []))
+  // SSR-stable initial selection = the 2 weakest (server can't know the screen
+  // width). After mount we widen to ALL topics on desktop/laptop. Runs once so
+  // it never clobbers the reviewer's manual chip toggles afterwards.
+  const [shown, setShown] = useState<Set<Topic>>(new Set((defaultTopics ?? []).slice(0, 2)))
+
+  useEffect(() => {
+    const isDesktop = window.matchMedia("(min-width: 1024px)").matches
+    setShown(isDesktop ? new Set(timeline.topics) : new Set((defaultTopics ?? []).slice(0, 2)))
+    // mount-only: set the responsive default once, then leave it to the user.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   function setRange(r: TimelineRange) {
     const p = new URLSearchParams(searchParams?.toString() ?? "")
