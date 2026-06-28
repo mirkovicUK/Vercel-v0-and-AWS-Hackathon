@@ -233,6 +233,25 @@ honestly in [`submission/well-architected.md`](submission/well-architected.md).
 
 ---
 
+## Write-ups & articles
+
+I wrote up how ApexMaths was built on the Vercel + AWS "Zero Stack" — three
+published pieces, each a different angle (**#H0Hackathon**):
+
+- **AWS Builder Center** — *Serverless + relational, without the pain: connecting
+  Vercel to Amazon Aurora over the RDS Data API* —
+  https://builder.aws.com/content/39q76RB0I0jB8AaTgqziSfYk5lo/serverless-relational-without-the-pain-connecting-vercel-to-amazon-aurora-over-the-rds-data-api
+- **Medium** — *I built an AI 11+ maths tutor solo on the "Zero Stack" — Vercel +
+  AWS Aurora* —
+  https://medium.com/@uros1311/i-built-an-ai-11-maths-tutor-solo-on-the-zero-stack-vercel-aws-aurora-65f00c096cc5
+- **dev.to** — *6 things I learned shipping a full-stack app on Vercel + Amazon
+  Aurora* —
+  https://dev.to/aurora75/6-things-i-learned-shipping-a-full-stack-app-on-vercel-amazon-aurora-3im4
+
+Source copies live in [`submission/BonusPoints/`](submission/BonusPoints/).
+
+---
+
 ## Run locally
 
 ```bash

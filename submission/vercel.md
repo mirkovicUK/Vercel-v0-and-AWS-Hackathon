@@ -55,7 +55,7 @@ flowchart TB
     RSC --> ACTIONS
     ACTIONS <--> DB
     ACTIONS <-->|checkout / portal| PAY
-    ACTIONS <-->|after() review, post-response| AI
+    ACTIONS <-->|"after() review, post-response"| AI
     HELP <-->|streamText| AI
     HELP --> DB
     PAY -->|webhook| HOOK
