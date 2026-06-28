@@ -26,14 +26,16 @@ export type TimelineRange = "30d" | "3m" | "all"
  *  `insufficient_data` classification floor on the `progress` rollup). */
 const TIMELINE_MIN_ATTEMPTS = 10
 
-const RANGE_CONFIG: Record<TimelineRange, { bucket: "day" | "week" | "month"; days: number | null }> = {
-  "30d": { bucket: "day", days: 30 },
-  "3m": { bucket: "week", days: 92 },
-  all: { bucket: "month", days: null },
-}
+/** Time window for the chart's range selector (the data FILTER); the bucket
+ *  granularity is then chosen from the actual data span, not fixed. */
+const RANGE_DAYS: Record<TimelineRange, number | null> = { "30d": 30, "3m": 92, all: null }
+
+/** Bucket granularity. "session" is the per-session fallback for very short
+ *  spans, so a single sitting still draws more than one point. */
+type Bucket = "session" | "day" | "week" | "month"
 
 export interface MasteryTimelinePoint {
-  /** ISO timestamp of the start of the bucket (day / week / month). */
+  /** ISO timestamp representing the bucket (its earliest session). */
   date: string
   /** Overall accuracy (0-100) across all topics IN THIS BUCKET, or null. */
   overall?: number | null
@@ -44,38 +46,64 @@ export interface MasteryTimelinePoint {
 
 export interface MasteryTimeline {
   range: TimelineRange
-  bucket: "day" | "week" | "month"
+  bucket: Bucket
   points: MasteryTimelinePoint[]
   /** Topics with enough attempts in the range to plot (the chart's chips). */
   topics: Topic[]
 }
 
-interface BucketRow {
-  bucket: string
+interface SessionTopicRow {
+  completed_at: string
   topic: Topic
   attempts: number
   correct: number
 }
 
+const DAY_MS = 86_400_000
+
+/** Pick a bucket size from the data's actual span so the chart neither collapses
+ *  to one point (e.g. three weeks of data under monthly buckets) nor overcrowds
+ *  (a year under daily buckets). */
+function chooseBucket(spanDays: number): Bucket {
+  if (spanDays <= 2) return "session"
+  if (spanDays <= 14) return "day"
+  if (spanDays <= 120) return "week"
+  return "month"
+}
+
+/** A sortable key that collapses a timestamp into its bucket. */
+function bucketKeyOf(d: Date, bucket: Bucket): string {
+  if (bucket === "session") return d.toISOString()
+  if (bucket === "month") return d.toISOString().slice(0, 7) // YYYY-MM
+  if (bucket === "day") return d.toISOString().slice(0, 10) // YYYY-MM-DD
+  // week: ISO week starting Monday
+  const dt = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()))
+  const mondayOffset = (dt.getUTCDay() + 6) % 7
+  dt.setUTCDate(dt.getUTCDate() - mondayOffset)
+  return dt.toISOString().slice(0, 10)
+}
+
 /**
- * Accuracy per topic per time-bucket over the selected range. Unlike a raw
- * per-session series (which grows unbounded and flattens as a lifetime average),
- * this groups answers into day/week/month buckets in SQL via `date_trunc`, so
- * the chart stays legible at any history length and each point reflects recent
- * form. Bucketing + aggregation happen in Aurora; only ~4-30 points cross the
- * wire. A per-bucket overall accuracy is included for the default single line.
+ * Accuracy per topic per time-bucket over the selected range, plus a per-bucket
+ * overall line. Unlike a raw per-session series (which grows unbounded and
+ * flattens into a lifetime average), this buckets answers by period so the chart
+ * stays legible at any history length and each point reflects recent form. The
+ * bucket size adapts to the data's actual span (per-session → day → week →
+ * month), so a 3-week demo, a single sitting, and a year of history all render
+ * with a sensible number of points. Aggregation runs in Aurora (the GROUP BY);
+ * bucketing is applied in app code so it can adapt to the span.
  */
 export async function getMasteryTimeline(
   childId: string,
   range: TimelineRange = "30d",
 ): Promise<MasteryTimeline> {
-  const cfg = RANGE_CONFIG[range]
-  const sinceClause = cfg.days != null ? "AND s.completed_at >= now() - make_interval(days => :since::int)" : ""
-  const params: Record<string, ParamValue> = { childId, bucket: cfg.bucket }
-  if (cfg.days != null) params.since = cfg.days
+  const days = RANGE_DAYS[range]
+  const sinceClause = days != null ? "AND s.completed_at >= now() - make_interval(days => :since::int)" : ""
+  const params: Record<string, ParamValue> = { childId }
+  if (days != null) params.since = days
 
-  const rows = await query<BucketRow>(
-    `SELECT date_trunc(:bucket, s.completed_at) AS bucket,
+  const rows = await query<SessionTopicRow>(
+    `SELECT s.completed_at,
             sa.topic,
             count(*) FILTER (WHERE sa.is_correct IS NOT NULL)::int AS attempts,
             count(*) FILTER (WHERE sa.is_correct)::int             AS correct
@@ -83,8 +111,8 @@ export async function getMasteryTimeline(
      JOIN session_answers sa ON sa.session_id = s.id
      WHERE s.child_id = :childId AND ${COMPLETED} AND s.completed_at IS NOT NULL
        ${sinceClause}
-     GROUP BY 1, 2
-     ORDER BY 1 ASC`,
+     GROUP BY s.completed_at, sa.topic
+     ORDER BY s.completed_at ASC`,
     params,
   )
 
@@ -94,26 +122,53 @@ export async function getMasteryTimeline(
   const topics = TOPICS.filter((t) => (totalByTopic.get(t) ?? 0) >= TIMELINE_MIN_ATTEMPTS)
   const plottable = new Set(topics)
 
-  // Group rows into one point per bucket: per-bucket overall + per-topic pct.
-  const byBucket = new Map<string, { correct: number; attempts: number; values: Partial<Record<Topic, number>> }>()
+  // Span-adaptive bucket from the spread of distinct session times.
+  const times = rows.filter((r) => r.attempts > 0).map((r) => new Date(r.completed_at).getTime())
+  const spanDays = times.length > 0 ? (Math.max(...times) - Math.min(...times)) / DAY_MS : 0
+  const bucket = chooseBucket(spanDays)
+
+  // Bucket → { earliest date, overall correct/attempts, per-topic correct/attempts }.
+  interface Agg {
+    date: string
+    correct: number
+    attempts: number
+    topics: Map<Topic, { correct: number; attempts: number }>
+  }
+  const byBucket = new Map<string, Agg>()
   for (const r of rows) {
     if (r.attempts === 0) continue
-    const b = byBucket.get(r.bucket) ?? { correct: 0, attempts: 0, values: {} }
+    const key = bucketKeyOf(new Date(r.completed_at), bucket)
+    let b = byBucket.get(key)
+    if (!b) {
+      b = { date: r.completed_at, correct: 0, attempts: 0, topics: new Map() }
+      byBucket.set(key, b)
+    }
+    if (r.completed_at < b.date) b.date = r.completed_at
     b.correct += r.correct
     b.attempts += r.attempts
-    if (plottable.has(r.topic)) b.values[r.topic] = Math.round((r.correct * 100) / r.attempts)
-    byBucket.set(r.bucket, b)
+    if (plottable.has(r.topic)) {
+      const e = b.topics.get(r.topic) ?? { correct: 0, attempts: 0 }
+      e.correct += r.correct
+      e.attempts += r.attempts
+      b.topics.set(r.topic, e)
+    }
   }
 
-  const points: MasteryTimelinePoint[] = [...byBucket.entries()]
-    .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))
-    .map(([date, b]) => ({
-      date,
-      overall: b.attempts > 0 ? Math.round((b.correct * 100) / b.attempts) : null,
-      values: b.values,
-    }))
+  const points: MasteryTimelinePoint[] = [...byBucket.values()]
+    .sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0))
+    .map((b) => {
+      const values: Partial<Record<Topic, number>> = {}
+      for (const [topic, e] of b.topics) {
+        if (e.attempts > 0) values[topic] = Math.round((e.correct * 100) / e.attempts)
+      }
+      return {
+        date: b.date,
+        overall: b.attempts > 0 ? Math.round((b.correct * 100) / b.attempts) : null,
+        values,
+      }
+    })
 
-  return { range, bucket: cfg.bucket, points, topics }
+  return { range, bucket, points, topics }
 }
 
 // ---- 2. Accuracy by difficulty — JOIN answers × questions ------------------

@@ -61,6 +61,14 @@ export default async function ChildDetailPage({
 
   const overall = overallMastery(progress)
   const weakest = weakestTopic(progress)
+
+  // Pre-select the 3 weakest attempted topics so the chart opens with colour and
+  // signal (the chart still defaults the bold "Overall" line on too).
+  const weakestThreeTopics = progress
+    .filter((p) => p.attempts > 0)
+    .sort((a, b) => a.masteryScore - b.masteryScore)
+    .slice(0, 3)
+    .map((p) => p.topic)
   const hasActivity = progress.some((p) => p.attempts > 0)
 
   // Cheap header stats derived from already-fetched data (no extra query).
@@ -158,7 +166,7 @@ export default async function ChildDetailPage({
           </p>
         </CardHeader>
         <CardContent>
-          <MasteryTimelineChart timeline={timeline} overallPct={overall} />
+          <MasteryTimelineChart timeline={timeline} overallPct={overall} defaultTopics={weakestThreeTopics} />
         </CardContent>
       </Card>
 
